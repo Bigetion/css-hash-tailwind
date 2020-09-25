@@ -1,10 +1,14 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import { spacing } from "../constants";
 
 const position = ["static", "fixed", "absolute", "relative", "sticky"];
 
-const trbl = [0, "auto"];
+const positionOptions = Object.assign(spacing, {
+  0: "0",
+  auto: "auto",
+});
 
 const responsiveCssString = generateCss(({ orientationPrefix }) => {
   const generatePosition = () => {
@@ -21,32 +25,32 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
 
   const generateTRBL = () => {
     let str = "";
-    trbl.forEach((value) => {
+    Object.entries(positionOptions).forEach(([key, value]) => {
       str += `
-        .${orientationPrefix}inset-${value} {
+        .${orientationPrefix}inset-${key} {
           top: ${value};
           right: ${value};
           bottom: ${value};
           left: ${value};
         }
-        .${orientationPrefix}inset-x-${value} {
+        .${orientationPrefix}inset-x-${key} {
           right: ${value};
           left: ${value};
         }
-        .${orientationPrefix}inset-y-${value} {
+        .${orientationPrefix}inset-y-${key} {
           top: ${value};
           bottom: ${value};
         }
-        .${orientationPrefix}top-${value} {
+        .${orientationPrefix}top-${key} {
           top: ${value};
         }
-        .${orientationPrefix}right-${value} {
+        .${orientationPrefix}right-${key} {
           right: ${value};
         }
-        .${orientationPrefix}bottom-${value} {
+        .${orientationPrefix}bottom-${key} {
           bottom: ${value};
         }
-        .${orientationPrefix}left-${value} {
+        .${orientationPrefix}left-${key} {
           left: ${value};
         }
       `;

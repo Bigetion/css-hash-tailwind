@@ -6,7 +6,7 @@ const prefix = "overflow";
 
 const overflow = ["auto", "hidden", "visible", "scroll"];
 
-let cssString = generateCss(({ orientationPrefix }) => {
+let responsiveCssString = generateCss(({ orientationPrefix }) => {
   const generateOverflow = () => {
     let str = "";
     overflow.forEach((item) => {
@@ -37,4 +37,4 @@ let cssString = generateCss(({ orientationPrefix }) => {
   return cssString;
 });
 
-cssHash(() => cssString);
+cssHash(() => responsiveCssString);
