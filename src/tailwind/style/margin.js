@@ -9,30 +9,31 @@ const extraSpacing = {
 };
 
 const responsiveCssString = generateCss(({ pseudoClass }) => {
-  const generateMargin = (key, value) => {
+  const generateMargin = (key, value, isNegative) => {
+    const negativePrefix = isNegative ? "-" : "";
     return `
-      ${pseudoClass(`${prefix}-${key}`)} {
-        margin: ${value};
+      ${pseudoClass(`${negativePrefix}${prefix}-${key}`)} {
+        margin: ${negativePrefix}${value};
       }
-      ${pseudoClass(`${prefix}y-${key}`)} {
-        margin-top: ${value};
-        margin-bottom: ${value};
+      ${pseudoClass(`${negativePrefix}${prefix}y-${key}`)} {
+        margin-top: ${negativePrefix}${value};
+        margin-bottom: ${negativePrefix}${value};
       }
-      ${pseudoClass(`${prefix}x-${key}`)} {
-        margin-left: ${value};
-        margin-right: ${value};
+      ${pseudoClass(`${negativePrefix}${prefix}x-${key}`)} {
+        margin-left: ${negativePrefix}${value};
+        margin-right: ${negativePrefix}${value};
       }
-      ${pseudoClass(`${prefix}t-${key}`)} {
-        margin-top: ${value};
+      ${pseudoClass(`${negativePrefix}${prefix}t-${key}`)} {
+        margin-top: ${negativePrefix}${value};
       }
-      ${pseudoClass(`${prefix}r-${key}`)} {
-        margin-right: ${value};
+      ${pseudoClass(`${negativePrefix}${prefix}r-${key}`)} {
+        margin-right: ${negativePrefix}${value};
       }
-      ${pseudoClass(`${prefix}b-${key}`)} {
-        margin-bottom: ${value};
+      ${pseudoClass(`${negativePrefix}${prefix}b-${key}`)} {
+        margin-bottom: ${negativePrefix}${value};
       }
-      ${pseudoClass(`${prefix}l-${key}`)} {
-        margin-left: ${value};
+      ${pseudoClass(`${negativePrefix}${prefix}l-${key}`)} {
+        margin-left: ${negativePrefix}${value};
       }
     `;
   };
@@ -41,6 +42,7 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
   Object.entries(Object.assign(spacing, extraSpacing)).forEach(
     ([space, spaceValue]) => {
       cssString += generateMargin(space, spaceValue);
+      cssString += generateMargin(space, spaceValue, true);
     }
   );
   return cssString;

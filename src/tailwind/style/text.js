@@ -75,7 +75,7 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(transform).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${prefix}-${key} {
+        .${orientationPrefix}${key} {
           text-transform: ${value};
         }
       `;
