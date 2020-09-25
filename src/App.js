@@ -10,6 +10,7 @@ import "./tailwind/style/container";
 import "./tailwind/style/display";
 import "./tailwind/style/flex";
 import "./tailwind/style/float";
+import "./tailwind/style/form";
 import "./tailwind/style/height";
 import "./tailwind/style/interactivity";
 import "./tailwind/style/justify";
