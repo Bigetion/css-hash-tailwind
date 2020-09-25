@@ -1,53 +1,31 @@
 import { cssHash } from "css-hash";
 
+import { generateCss } from "../utils";
 import { screens } from "../constants";
 
 const prefix = "container";
 
-const generateContainer = (width) => {
-  let containerString = `
-    .${prefix} {
-      width: 100%;
-    }
-  `;
-  if (width) {
-    containerString = `
-      @media (min-width: ${width}) {
-        .${prefix} {
-          max-width: ${width};
-        }
-      }
-    `;
-  }
-  return containerString;
-};
-
-const generateContainerScreen = (orientation) => {
-  let containerString = "";
-  Object.values(screens).forEach((width) => {
-    containerString += `
-      @media (min-width: ${width}) {
-        .${orientation}\\:${prefix} {
-          max-width: ${width};
-        }
-      }
-    `;
-  });
-  return `
-    @media (min-width: 640px) {
-      .sm\\:container {
+const responsiveCssString = generateCss(({ orientationPrefix }) => {
+  const generateContainer = () => {
+    let str = `
+      .${orientationPrefix}${prefix} {
         width: 100%;
       }
-      ${containerString}
-    }
-  `;
-};
+    `;
+    Object.entries(screens).forEach((screenItem) => {
+      str += `
+        @media (min-width: ${screenItem[1]}) {
+          .${orientationPrefix}${prefix} {
+            max-width: ${screenItem[1]};
+          }
+        }
+      `;
+    });
+    return str;
+  };
 
-let cssString = generateContainer();
-
-Object.entries(screens).forEach(([screen, screenValue]) => {
-  cssString += generateContainer(screenValue);
-  cssString += generateContainerScreen(screen);
+  const cssString = generateContainer();
+  return cssString;
 });
 
-cssHash(() => cssString);
+cssHash(() => responsiveCssString);
