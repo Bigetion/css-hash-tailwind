@@ -1,9 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
-import { screens } from "../constants";
+import configOptions from "../config";
 
-const prefix = "container";
+const { prefix: globalPrefix, screens } = configOptions;
+
+const prefix = `${globalPrefix}container`;
 
 const responsiveCssString = generateCss(({ orientationPrefix }) => {
   const generateContainer = () => {

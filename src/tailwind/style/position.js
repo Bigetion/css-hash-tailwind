@@ -1,7 +1,9 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
-import { spacing } from "../constants";
+import configOptions from "../config";
+
+const { prefix, spacing } = configOptions;
 
 const position = ["static", "fixed", "absolute", "relative", "sticky"];
 
@@ -15,10 +17,10 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
     let str = "";
     position.forEach((value) => {
       str += `
-      .${orientationPrefix}${value} {
-        position: ${value};
-      }
-    `;
+        .${orientationPrefix}${prefix}${value} {
+          position: ${value};
+        }
+      `;
     });
     return str;
   };
@@ -27,30 +29,30 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
     let str = "";
     Object.entries(positionOptions).forEach(([key, value]) => {
       str += `
-        .${orientationPrefix}inset-${key} {
+        .${orientationPrefix}${prefix}inset-${key} {
           top: ${value};
           right: ${value};
           bottom: ${value};
           left: ${value};
         }
-        .${orientationPrefix}inset-x-${key} {
+        .${orientationPrefix}${prefix}inset-x-${key} {
           right: ${value};
           left: ${value};
         }
-        .${orientationPrefix}inset-y-${key} {
+        .${orientationPrefix}${prefix}inset-y-${key} {
           top: ${value};
           bottom: ${value};
         }
-        .${orientationPrefix}top-${key} {
+        .${orientationPrefix}${prefix}top-${key} {
           top: ${value};
         }
-        .${orientationPrefix}right-${key} {
+        .${orientationPrefix}${prefix}right-${key} {
           right: ${value};
         }
-        .${orientationPrefix}bottom-${key} {
+        .${orientationPrefix}${prefix}bottom-${key} {
           bottom: ${value};
         }
-        .${orientationPrefix}left-${key} {
+        .${orientationPrefix}${prefix}left-${key} {
           left: ${value};
         }
       `;

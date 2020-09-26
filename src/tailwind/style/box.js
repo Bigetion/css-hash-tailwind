@@ -1,8 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
 
-const prefix = "box";
+const { prefix: globalPrefix } = configOptions;
+
+const prefix = `${globalPrefix}box`;
 
 const boxSizing = ["border", "content"];
 

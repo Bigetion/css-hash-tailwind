@@ -1,8 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
 
-const prefix = "overscroll";
+const { prefix: globalPrefix } = configOptions;
+
+const prefix = `${globalPrefix}overscroll`;
 
 const overscroll = ["auto", "contain", "none"];
 

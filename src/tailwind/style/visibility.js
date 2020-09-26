@@ -1,13 +1,16 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
+
+const { prefix } = configOptions;
 
 const responsiveCssString = generateCss(
   ({ orientationPrefix }) => `
-    .${orientationPrefix}visible {
+    .${orientationPrefix}${prefix}visible {
       visibility: visible;
     }
-    .${orientationPrefix}invisible {
+    .${orientationPrefix}${prefix}invisible {
       visibility: hidden;
     }
   `

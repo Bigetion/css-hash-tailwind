@@ -1,8 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
 
-const prefix = "z";
+const { prefix: globalPrefix } = configOptions;
+
+const prefix = `${globalPrefix}z`;
 
 const zIndex = [0, 10, 20, 30, 40, 50, "auto"];
 

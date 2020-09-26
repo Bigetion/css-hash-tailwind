@@ -1,8 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
 
-const prefix = "float";
+const { prefix: globalPrefix } = configOptions;
+
+const prefix = `${globalPrefix}float`;
 
 const float = ["left", "right", "none"];
 
@@ -21,12 +24,12 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
 
   let cssString = generateFloat();
   cssString += `
-      .${orientationPrefix}clearfix:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-    `;
+    .${orientationPrefix}clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  `;
   return cssString;
 });
 

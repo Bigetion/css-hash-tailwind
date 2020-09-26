@@ -1,9 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss, hexToRgb } from "../utils";
-import { colors, opacity } from "../constants";
+import configOptions from "../config";
 
-const prefix = "bg";
+const { prefix: globalPrefix, colors, opacity } = configOptions;
+
+const prefix = `${globalPrefix}bg`;
 
 const backgroundAttachment = ["fixed", "local", "scroll"];
 const backgroundClip = ["border", "padding", "content", "text"];
@@ -34,10 +36,10 @@ const responsiveCssString = generateCss(
       let str = "";
       backgroundAttachment.forEach((item) => {
         str += `
-        .${orientationPrefix}${prefix}-${item} {
-          background-attachment: ${item};
-        }
-      `;
+          .${orientationPrefix}${prefix}-${item} {
+            background-attachment: ${item};
+          }
+        `;
       });
       return str;
     };
@@ -46,10 +48,10 @@ const responsiveCssString = generateCss(
       let str = "";
       backgroundClip.forEach((item) => {
         str += `
-        .${orientationPrefix}${prefix}-clip-${item} {
-          background-clip: ${item}${item !== "text" ? "-box" : ""};
-        }
-      `;
+          .${orientationPrefix}${prefix}-clip-${item} {
+            background-clip: ${item}${item !== "text" ? "-box" : ""};
+          }
+        `;
       });
       return str;
     };
@@ -58,10 +60,10 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(opacity).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${prefix}-opacity-${key} {
-          --bg-opacity: ${value};
-        }
-      `;
+          .${orientationPrefix}${prefix}-opacity-${key} {
+            --bg-opacity: ${value};
+          }
+        `;
       });
       return str;
     };
@@ -70,10 +72,10 @@ const responsiveCssString = generateCss(
       let str = "";
       backgroundPosition.forEach((item) => {
         str += `
-        .${orientationPrefix}${prefix}-${item} {
-          background-position: ${item.replace("-", " ")};
-        }
-      `;
+          .${orientationPrefix}${prefix}-${item} {
+            background-position: ${item.replace("-", " ")};
+          }
+        `;
       });
       return str;
     };
@@ -82,10 +84,10 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(backgroundRepeat).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${prefix}-${key} {
-          background-repeat: ${value};
-        }
-      `;
+          .${orientationPrefix}${prefix}-${key} {
+            background-repeat: ${value};
+          }
+        `;
       });
       return str;
     };
@@ -94,20 +96,20 @@ const responsiveCssString = generateCss(
       let str = "";
       backgroundSize.forEach((item) => {
         str += `
-        .${orientationPrefix}${prefix}-${item} {
-          background-size: ${item};
-        }
-      `;
+          .${orientationPrefix}${prefix}-${item} {
+            background-size: ${item};
+          }
+        `;
       });
       return str;
     };
 
     const generateBackgroundImage = () => {
       let str = `
-      .${orientationPrefix}${prefix}-none {
-        background-image: none;
-      }
-    `;
+        .${orientationPrefix}${prefix}-none {
+          background-image: none;
+        }
+      `;
       return str;
     };
 

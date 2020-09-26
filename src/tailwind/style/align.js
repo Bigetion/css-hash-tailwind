@@ -1,6 +1,9 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
+
+const { prefix } = configOptions;
 
 const alignContent = {
   start: "flex-start",
@@ -32,7 +35,7 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
     let str = "";
     Object.entries(alignContent).forEach(([key, value]) => {
       str += `
-        .${orientationPrefix}content-${key} {
+        .${orientationPrefix}${prefix}content-${key} {
           align-content: ${value};
         }
       `;
@@ -44,7 +47,7 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
     let str = "";
     Object.entries(alignItems).forEach(([key, value]) => {
       str += `
-        .${orientationPrefix}items-${key} {
+        .${orientationPrefix}${prefix}items-${key} {
           align-items: ${value};
         }
       `;
@@ -56,7 +59,7 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
     let str = "";
     Object.entries(alignSelf).forEach(([key, value]) => {
       str += `
-        .${orientationPrefix}self-${key} {
+        .${orientationPrefix}${prefix}self-${key} {
           align-self: ${value};
         }
       `;

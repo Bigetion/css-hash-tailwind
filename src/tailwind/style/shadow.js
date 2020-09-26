@@ -1,8 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
 
-const prefix = "shadow";
+const { prefix: globalPrefix } = configOptions;
+
+const prefix = `${globalPrefix}shadow`;
 
 const shadow = {
   xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",

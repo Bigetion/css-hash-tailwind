@@ -1,8 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
 
-const prefix = "object";
+const { prefix: globalPrefix } = configOptions;
+
+const prefix = `${globalPrefix}object`;
 
 const objectFit = ["contain", "cover", "fill", "none", "scale-down"];
 const objectPosition = [

@@ -2,6 +2,10 @@ import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
 
+import configOptions from "../config";
+
+const { prefix } = configOptions;
+
 const display = [
   "block",
   "inline-block",
@@ -29,7 +33,9 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
     let str = "";
     display.forEach((value) => {
       str += `
-        ${pseudoClass(`${value === "none" ? "hidden" : value}`)} {
+        ${pseudoClass(
+          `${value === "none" ? `${prefix}hidden` : `${prefix}${value}`}`
+        )} {
           display: ${value};
         }
       `;

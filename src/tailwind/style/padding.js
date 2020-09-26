@@ -1,9 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
-import { spacing } from "../constants";
+import configOptions from "../config";
 
-const prefix = "p";
+const { prefix: globalPrefix, spacing } = configOptions;
+
+const prefix = `${globalPrefix}p`;
 
 const responsiveCssString = generateCss(({ pseudoClass }) => {
   const generatePadding = (key, value) => {

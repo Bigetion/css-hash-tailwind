@@ -1,6 +1,9 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
+
+const { prefix } = configOptions;
 
 const cursor = [
   "auto",
@@ -14,7 +17,7 @@ const cursor = [
 
 const responsiveCssString = generateCss(({ pseudoClass }) => {
   const generateAppearance = () => `    
-    ${pseudoClass("appearance-none")} {
+    ${pseudoClass(`${prefix}appearance-none`)} {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
@@ -25,7 +28,7 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
     let str = "";
     cursor.forEach((value) => {
       str += `
-        ${pseudoClass(`cursor-${value}`)} {
+        ${pseudoClass(`${prefix}cursor-${value}`)} {
           cursor: ${value};
         }
       `;
@@ -34,55 +37,55 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
   };
 
   const generateOutline = () => `    
-    ${pseudoClass("outline-none")} {
+    ${pseudoClass(`${prefix}outline-none`)} {
       outline: 0;
     }
   `;
 
   const generatePointerEvents = () => `    
-    ${pseudoClass("pointer-events-none")} {
+    ${pseudoClass(`${prefix}pointer-events-none`)} {
       pointer-events: none;
     }
-    ${pseudoClass("pointer-events-auto")} {
+    ${pseudoClass(`${prefix}pointer-events-auto`)} {
       pointer-events: auto;
     }
   `;
 
   const generateResize = () => `    
-    ${pseudoClass("resize-none")} {
+    ${pseudoClass(`${prefix}resize-none`)} {
       resize: none;
     }
-    ${pseudoClass("resize-y")} {
+    ${pseudoClass(`${prefix}resize-y`)} {
       resize: vertical;
     }
-    ${pseudoClass("resize-x")} {
+    ${pseudoClass(`${prefix}resize-x`)} {
       resize: horizontal;
     }
-    ${pseudoClass("resize")} {
+    ${pseudoClass(`${prefix}resize`)} {
       resize: both;
     }
   `;
 
   const generateUserSelect = () => `    
-    ${pseudoClass("select-none")} {
+    ${pseudoClass(`${prefix}select-none`)} {
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
     }
-    ${pseudoClass("select-text")} {
+    ${pseudoClass(`${prefix}select-text`)} {
       -webkit-user-select: text;
       -moz-user-select: text;
       -ms-user-select: text;
       user-select: text;
     }
-    ${pseudoClass("select-all")} {
+    ${pseudoClass(`${prefix}select-all`)} {
       -webkit-user-select: all;
       -moz-user-select: all;
       -ms-user-select: all;
       user-select: all;
     }
-    ${pseudoClass("select-auto")} {
+    ${pseudoClass(`${prefix}select-auto`)} {
       -webkit-user-select: auto;
       -moz-user-select: auto;
       -ms-user-select: auto;

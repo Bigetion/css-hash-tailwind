@@ -1,9 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
-import { opacity } from "../constants";
+import configOptions from "../config";
 
-const prefix = "opacity";
+const { prefix: globalPrefix, opacity } = configOptions;
+
+const prefix = `${globalPrefix}opacity`;
 
 const responsiveCssString = generateCss(({ pseudoClass }) => {
   const generateClear = () => {

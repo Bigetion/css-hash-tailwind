@@ -2,9 +2,11 @@ import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
 
-import { spacing } from "../constants";
+import configOptions from "../config";
 
-const prefix = "h";
+const { prefix: globalPrefix, spacing } = configOptions;
+
+const prefix = `${globalPrefix}h`;
 const extraSpacing = {
   auto: "auto",
   full: "100%",

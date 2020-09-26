@@ -1,9 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss, hexToRgb } from "../utils";
-import { colors, opacity } from "../constants";
+import configOptions from "../config";
 
-const prefix = "border";
+const { prefix: globalPrefix, colors, opacity } = configOptions;
+
+const prefix = `${globalPrefix}border`;
 
 const borderRadius = {
   none: "0",
@@ -120,10 +122,10 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(opacity).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${prefix}-opacity-${key} {
-          --border-opacity: ${value};
-        }
-      `;
+          .${orientationPrefix}${prefix}-opacity-${key} {
+            --border-opacity: ${value};
+          }
+        `;
       });
       return str;
     };

@@ -1,8 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
+import configOptions from "../config";
 
-const prefix = "tracking";
+const { prefix: globalPrefix } = configOptions;
+
+const prefix = `${globalPrefix}tracking`;
 
 const letterSpacing = {
   tighter: "-0.05em",

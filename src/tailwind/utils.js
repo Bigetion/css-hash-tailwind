@@ -1,4 +1,6 @@
-import { screens } from "./constants";
+import configOptions from "./config";
+
+const { screens } = configOptions;
 
 export const generateCss = (getCssString = () => {}, isResponsive = true) => {
   let orientationPrefix = "";
@@ -25,10 +27,10 @@ export const generateCss = (getCssString = () => {}, isResponsive = true) => {
     Object.entries(screens).forEach(([screen, screenValue]) => {
       orientationPrefix = `${screen}\\:`;
       cssString += `
-      @media (min-width: ${screenValue}) {
-        ${getCssString({ orientationPrefix, pseudoClass })}     
-      }
-    `;
+        @media (min-width: ${screenValue}) {
+          ${getCssString({ orientationPrefix, pseudoClass })}     
+        }
+      `;
     });
   }
 

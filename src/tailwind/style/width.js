@@ -1,7 +1,9 @@
 import { cssHash } from "css-hash";
 
 import { generateCss } from "../utils";
-import { screens, spacing } from "../constants";
+import configOptions from "../config";
+
+const { prefix: globalPrefix, screens, spacing } = configOptions;
 
 const prefix = "w";
 const extraSpacing = {
@@ -54,20 +56,20 @@ const maxWidth = {
 const responsiveCssString = generateCss(({ orientationPrefix }) => {
   const generateWidth = (key, value) => {
     return `
-    .${orientationPrefix}${prefix}-${key.replace("/", `\\/`)} {
+    .${orientationPrefix}${globalPrefix}${prefix}-${key.replace("/", `\\/`)} {
       width: ${value}; 
     }
   `;
   };
 
   const generateMinWidth = () => `
-  .${orientationPrefix}min-${prefix}-0 {
+  .${orientationPrefix}${globalPrefix}min-${prefix}-0 {
     min-width: 0;
   }
-  .${orientationPrefix}min-${prefix}-full {
+  .${orientationPrefix}${globalPrefix}min-${prefix}-full {
     min-width: 100%;
   }
-  .${orientationPrefix}min-${prefix}-screen {
+  .${orientationPrefix}${globalPrefix}min-${prefix}-screen {
     min-width: 100vw;
   }
 `;
@@ -76,14 +78,14 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
     let str = "";
     Object.entries(maxWidth).forEach(([key, value]) => {
       str += `
-        .${orientationPrefix}max-${prefix}-${key} {
+        .${orientationPrefix}${globalPrefix}max-${prefix}-${key} {
           max-width: ${value};
         }
      `;
     });
     Object.entries(screens).forEach(([key, value]) => {
       str += `
-        .${orientationPrefix}max-${prefix}-screen-${key} {
+        .${orientationPrefix}${globalPrefix}max-${prefix}-screen-${key} {
           max-width: ${value};
         }
       `;

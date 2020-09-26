@@ -1,9 +1,11 @@
 import { cssHash } from "css-hash";
 
 import { generateCss, hexToRgb } from "../utils";
-import { colors, opacity } from "../constants";
+import configOptions from "../config";
 
-const prefix = "placeholder";
+const { prefix: globalPrefix, colors, opacity } = configOptions;
+
+const prefix = `${globalPrefix}placeholder`;
 const pseudoElements = ["", "focus"];
 
 const responsiveCssString = generateCss(({ orientationPrefix }) => {

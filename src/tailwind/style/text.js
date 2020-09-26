@@ -1,9 +1,17 @@
 import { cssHash } from "css-hash";
 
 import { generateCss, hexToRgb } from "../utils";
-import { colors, opacity, fontSize, fontWeight } from "../constants";
+import configOptions from "../config";
 
-const prefix = "text";
+const {
+  prefix: globalPrefix,
+  colors,
+  opacity,
+  fontSize,
+  fontWeight,
+} = configOptions;
+
+const prefix = `${globalPrefix}text`;
 
 const alignment = ["left", "center", "right", "justify"];
 const decoration = {
@@ -39,10 +47,10 @@ const responsiveCssString = generateCss(
       let str = "";
       alignment.forEach((align) => {
         str += `
-        .${orientationPrefix}${prefix}-${align} {
-          text-align: ${align};
-        }
-      `;
+          .${orientationPrefix}${prefix}-${align} {
+            text-align: ${align};
+          }
+        `;
       });
       return str;
     };
@@ -51,10 +59,10 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(opacity).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${prefix}-opacity-${key} {
-          --text-opacity: ${value};
-        }
-      `;
+          .${orientationPrefix}${prefix}-opacity-${key} {
+            --text-opacity: ${value};
+          }
+        `;
       });
       return str;
     };
@@ -63,10 +71,10 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(decoration).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${prefix}-${key} {
-          text-decoration: ${value};
-        }
-      `;
+          .${orientationPrefix}${prefix}-${key} {
+            text-decoration: ${value};
+          }
+        `;
       });
       return str;
     };
@@ -75,10 +83,10 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(transform).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${key} {
-          text-transform: ${value};
-        }
-      `;
+          .${orientationPrefix}${globalPrefix}${key} {
+            text-transform: ${value};
+          }
+        `;
       });
       return str;
     };
@@ -87,42 +95,42 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(fontSize).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}${prefix}-${key} {
-          font-size: ${value};
-        }
-      `;
+          .${orientationPrefix}${prefix}-${key} {
+            font-size: ${value};
+          }
+        `;
       });
       return str;
     };
 
     const generateTextSmooth = () => `  
-    .antialiased {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    .subpixel-antialiased {
-      -webkit-font-smoothing: auto;
-      -moz-osx-font-smoothing: auto;
-    }
-  `;
+      .${orientationPrefix}${prefix}antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .${orientationPrefix}${prefix}subpixel-antialiased {
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+      }
+    `;
 
     const generateTextStyle = () => `  
-    .italic {
-      font-style: italic;
-    }
-    .not-italic {
-      font-style: normal;
-    }
-  `;
+      .${orientationPrefix}${prefix}italic {
+        font-style: italic;
+      }
+      .${orientationPrefix}${prefix}not-italic {
+        font-style: normal;
+      }
+    `;
 
     const generateTextWeight = () => {
       let str = "";
       Object.entries(fontWeight).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}font-${key} {
-          font-weight: ${value};
-        }
-      `;
+          .${orientationPrefix}${globalPrefix}font-${key} {
+            font-weight: ${value};
+          }
+        `;
       });
       return str;
     };
@@ -131,10 +139,10 @@ const responsiveCssString = generateCss(
       let str = "";
       verticalAlignment.forEach((align) => {
         str += `
-        .${orientationPrefix}align-${align} {
-          vertical-align: ${align};
-        }
-      `;
+          .${orientationPrefix}${prefix}align-${align} {
+            vertical-align: ${align};
+          }
+        `;
       });
       return str;
     };
@@ -143,31 +151,31 @@ const responsiveCssString = generateCss(
       let str = "";
       Object.entries(whitespace).forEach(([key, value]) => {
         str += `
-        .${orientationPrefix}whitespace-${key} {
-          white-space: ${value};
-        }
-      `;
+          .${orientationPrefix}${globalPrefix}whitespace-${key} {
+            white-space: ${value};
+          }
+        `;
       });
       return str;
     };
 
     const generateWordBreak = () => `
-    .break-normal {
-      overflow-wrap: normal;
-      word-break: normal;
-    }
-    .break-words {
-      overflow-wrap: break-word;
-    }
-    .break-all {
-      word-break: break-all;
-    }
-    .truncate {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  `;
+      .${orientationPrefix}${globalPrefix}break-normal {
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .${orientationPrefix}${globalPrefix}break-words {
+        overflow-wrap: break-word;
+      }
+      .${orientationPrefix}${globalPrefix}break-all {
+        word-break: break-all;
+      }
+      .${orientationPrefix}${globalPrefix}truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    `;
 
     const generateTextColor = (name, htmlColor) => {
       let str = "";
