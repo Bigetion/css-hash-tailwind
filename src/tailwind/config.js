@@ -1,6 +1,5 @@
 const configOptions = {
   prefix: "",
-  important: false,
   screens: {
     sm: "640px",
     md: "768px",
