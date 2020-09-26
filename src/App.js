@@ -56,7 +56,7 @@ function Menu({ title, items }) {
           <li key={index} className="mb-3 lg:mb-1">
             <a
               className="px-2 -mx-2 py-1 transition duration-200 ease-in-out relative block hover:translate-x-2px hover:text-gray-900 text-gray-600 font-medium"
-              href="#"
+              href="/"
             >
               <span className="rounded absolute inset-0 bg-teal-200 opacity-0"></span>
               <span className="relative">{item.label}</span>
@@ -128,7 +128,7 @@ function App() {
             <div className="flex items-center -mx-6">
               <div className="lg:w-1/4 xl:w-1/5 pl-6 pr-6 lg:pr-8">
                 <div className="flex items-center">
-                  <a className="block lg:mr-4" href="#">
+                  <a className="block lg:mr-4" href="/">
                     <svg
                       className="w-auto hidden md:block h-10"
                       viewBox="0 0 273 64"
