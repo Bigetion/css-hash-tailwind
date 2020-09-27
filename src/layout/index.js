@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-import { cssHash } from "css-hash";
+import { cssHash, classNames } from "css-hash";
 
 const sidebarClass = cssHash(
   (className) => `
@@ -15,23 +15,41 @@ const sidebarClass = cssHash(
 );
 
 function Menu({ title, items }) {
+  const location = useLocation();
+  const { pathname = "" } = location;
+
   return (
     <div className="mb-8">
       <h5 className="mb-3 lg:mb-2 uppercase tracking-wide font-bold text-sm lg:text-xs text-gray-500">
         {title}
       </h5>
       <ul>
-        {items.map((item, index) => (
-          <li key={index} className="mb-3 lg:mb-1">
-            <Link
-              className="px-2 -mx-2 py-1 transition duration-200 ease-in-out relative block hover:translate-x-2px hover:text-gray-900 text-gray-600 font-medium"
-              to={`/${item.label.toLowerCase().split(" ").join("-")}`}
-            >
-              <span className="rounded absolute inset-0 bg-teal-200 opacity-0"></span>
-              <span className="relative">{item.label}</span>
-            </Link>
-          </li>
-        ))}
+        {items.map((item, index) => {
+          const path = `/${item.label.toLowerCase().split(" ").join("-")}`;
+          const isActive = pathname === path;
+          return (
+            <li key={index} className="mb-3 lg:mb-1">
+              <Link
+                className={classNames(
+                  "px-2 -mx-2 py-1 transition duration-200 ease-in-out relative block",
+                  isActive
+                    ? "text-teal-600 "
+                    : "hover:translate-x-2px hover:text-gray-900 text-gray-600",
+                  "font-medium"
+                )}
+                to={path}
+              >
+                <span
+                  className={classNames(
+                    "rounded absolute inset-0 bg-teal-200",
+                    isActive ? "opacity-25" : "opacity-0"
+                  )}
+                ></span>
+                <span className="relative">{item.label}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

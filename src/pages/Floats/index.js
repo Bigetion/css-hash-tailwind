@@ -11,11 +11,11 @@ export default function Floats() {
           <h1 className="text-3xl">Floats</h1>
         </div>
         <PanelSection title="FLoat right">
-          <div class="rounded overflow-hidden border border-gray-400 p-4">
-            <div class="bg-gray-200 p-4">
+          <div className="rounded overflow-hidden border border-gray-400 p-4">
+            <div className="bg-gray-200 p-4">
               <img
                 alt=""
-                class="float-right ml-4 my-2 h-32"
+                className="float-right ml-4 my-2 h-32"
                 src="https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
               />
               <p>
@@ -38,11 +38,11 @@ export default function Floats() {
           </div>
         </PanelSection>
         <PanelSection title="Float left">
-          <div class="rounded overflow-hidden border border-gray-400 p-4">
-            <div class="bg-gray-200 p-4">
+          <div className="rounded overflow-hidden border border-gray-400 p-4">
+            <div className="bg-gray-200 p-4">
               <img
                 alt=""
-                class="float-left mr-4 my-2 h-32"
+                className="float-left mr-4 my-2 h-32"
                 src="https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
               />
               <p>
@@ -65,11 +65,11 @@ export default function Floats() {
           </div>
         </PanelSection>
         <PanelSection title="Don't float">
-          <div class="rounded overflow-hidden border border-gray-400 p-4">
-            <div class="bg-gray-200 p-4">
+          <div className="rounded overflow-hidden border border-gray-400 p-4">
+            <div className="bg-gray-200 p-4">
               <img
                 alt=""
-                class="float-none mb-4 h-32"
+                className="float-none mb-4 h-32"
                 src="https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
               />
               <p>
