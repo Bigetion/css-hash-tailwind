@@ -8,7 +8,7 @@ const spinnerClass = cssHash(
     .${className} {
       border: 16px solid #f3f3f3;
       border-radius: 50%;
-      border-top: 16px solid #3498db;
+      border-top: 16px solid #319795;
       width: 120px;
       height: 120px;
       -webkit-animation: ${className}-spin 1s linear infinite;
