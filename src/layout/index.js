@@ -176,12 +176,12 @@ function Layout(props) {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-auto min-w-0 lg:w-3/4 xl:w-4/5">
-                <div className="flex-auto"></div>
+              <div className="flex flex-grow min-w-0 lg:w-3/4 xl:w-4/5">
+                <div className="w-full min-w-0 lg:px-6 xl:w-3/4 xl:px-12"></div>
                 <button
                   type="button"
                   className={classNames(
-                    "flex flex-grow px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
+                    "flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
                     showSidebar ? "hidden" : ""
                   )}
                   aria-label="Open site navigation"
@@ -198,7 +198,7 @@ function Layout(props) {
                 <button
                   type="button"
                   className={classNames(
-                    "flex flex-grow px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
+                    "flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
                     showSidebar ? "" : "hidden"
                   )}
                   aria-label="Close site navigation"
