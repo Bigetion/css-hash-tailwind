@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "objectPosition",
+    path: "/object-position",
+    exact: true,
+    component: () => import("pages/ObjectPosition"),
+  },
+  {
     id: "objectFit",
     path: "/object-fit",
     exact: true,
