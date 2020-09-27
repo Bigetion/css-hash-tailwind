@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "overflow",
+    path: "/overflow",
+    exact: true,
+    component: () => import("pages/Overflow"),
+  },
+  {
     id: "objectPosition",
     path: "/object-position",
     exact: true,
