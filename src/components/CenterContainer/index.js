@@ -1,46 +1,28 @@
-import React from 'react';
-import { cssHash, classNames } from 'css-hash';
+import React from "react";
+import { cssHash, classNames } from "css-hash";
 
-const xCenterContainerClass = cssHash(
-  className => `
-    .${className} {
-      position: relative;
-    }
-    .${className} > :first-child {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%)
-    }
-  `,
-);
-
-const yCenterContainerClass = cssHash(
-  className => `
+const centerContainerClass = cssHash(
+  (className) => `
     .${className} {
       position: relative;
     }
     .${className} > :first-child {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%)
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-  `,
+  `
 );
 
 function CenterContainer(props) {
-  const { children, className, position = '' } = props;
+  const { children, className } = props;
 
   const nProps = Object.assign({}, props);
   delete nProps.className;
   delete nProps.children;
 
-  const xy = position !== 'x' && position !== 'y';
-  const centerClass = classNames(
-    position === 'x' && xCenterContainerClass,
-    position === 'y' && yCenterContainerClass,
-    xy && `${xCenterContainerClass} ${yCenterContainerClass}`,
-    className,
-  );
+  const centerClass = classNames(centerContainerClass, className);
 
   return (
     <div className={centerClass} {...nProps}>
