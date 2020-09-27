@@ -6,7 +6,8 @@ import { cssHash, classNames } from "css-hash";
 const sidebarClass = cssHash(
   (className) => `
     html {
-      line-height: 1.5
+      line-height: 1.5;
+      font-family: Inter, sans-serif;
     }
     .${className} {
       height: calc(100vh - 4rem) !important;
