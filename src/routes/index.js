@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "topRightBottomLeft",
+    path: "/top-right-bottom-left",
+    exact: true,
+    component: () => import("pages/TopRightBottomLeft"),
+  },
+  {
     id: "position",
     path: "/position",
     exact: true,

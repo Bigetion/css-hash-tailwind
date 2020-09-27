@@ -71,7 +71,7 @@ function Layout(props) {
         { label: "Overflow" },
         { label: "Overscroll Behavior" },
         { label: "Position" },
-        { label: "Top Right Bottom Let" },
+        { label: "Top Right Bottom Left" },
         { label: "Visibility" },
         { label: "Z-Index" },
       ],
