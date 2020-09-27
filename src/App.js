@@ -40,9 +40,7 @@ import "tailwind/style/visibility";
 import "tailwind/style/width";
 import "tailwind/style/zindex";
 
-function PageLoader() {
-  return <div className="h-screen w-screen"></div>;
-}
+import PageLoader from "components/PageLoader";
 
 const loadComponent = (component) =>
   Loadable({
