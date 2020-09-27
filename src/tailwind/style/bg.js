@@ -73,7 +73,7 @@ const responsiveCssString = generateCss(
       backgroundPosition.forEach((item) => {
         str += `
           .${orientationPrefix}${prefix}-${item} {
-            background-position: ${item.replace("-", " ")};
+            background-position: ${item.split("-").join(" ")};
           }
         `;
       });
