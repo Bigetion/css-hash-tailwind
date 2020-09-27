@@ -9,21 +9,18 @@ const prefix = `${globalPrefix}clear`;
 
 const clear = ["left", "right", "both", "none"];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateClear = () => {
-    let str = "";
-    clear.forEach((item) => {
-      str += `
-        .${orientationPrefix}${prefix}-${item} {
-          clear: ${item};
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      clear,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          clear: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateClear();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

@@ -12,23 +12,19 @@ const positionOptions = Object.assign(spacing, {
   auto: "auto",
 });
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generatePosition = () => {
-    let str = "";
-    position.forEach((value) => {
-      str += `
-        .${orientationPrefix}${prefix}${value} {
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      position,
+      (key, value) => `
+        .${orientationPrefix}${prefix}${key} {
           position: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateTRBL = () => {
-    let str = "";
-    Object.entries(positionOptions).forEach(([key, value]) => {
-      str += `
+      `
+    );
+    cssString += getCssByOptions(
+      positionOptions,
+      (key, value) => `
         .${orientationPrefix}${prefix}inset-${key} {
           top: ${value};
           right: ${value};
@@ -55,14 +51,10 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
         .${orientationPrefix}${prefix}left-${key} {
           left: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generatePosition();
-  cssString += generateTRBL();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

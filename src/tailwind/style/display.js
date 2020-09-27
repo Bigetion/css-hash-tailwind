@@ -28,22 +28,17 @@ const display = [
   "none",
 ];
 
-const responsiveCssString = generateCss(({ pseudoClass }) => {
-  const generateDisplay = () => {
-    let str = "";
-    display.forEach((value) => {
-      str += `
-        ${pseudoClass(
-          `${value === "none" ? `${prefix}hidden` : `${prefix}${value}`}`
-        )} {
-          display: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generateDisplay();
+const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
+  const cssString = getCssByOptions(
+    display,
+    (key, value) => `
+      ${pseudoClass(
+        `${key === "none" ? `${prefix}hidden` : `${prefix}${key}`}`
+      )} {
+        display: ${value};
+      }
+    `
+  );
   return cssString;
 });
 

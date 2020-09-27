@@ -20,33 +20,26 @@ const objectPosition = [
   "top",
 ];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateObjectFit = () => {
-    let str = "";
-    objectFit.forEach((item) => {
-      str += `
-        .${orientationPrefix}${prefix}-${item} {
-          object-fit: ${item};
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      objectFit,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          object-fit: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateObjectPosition = () => {
-    let str = "";
-    objectPosition.forEach((item) => {
-      str += `
-        .${orientationPrefix}${prefix}-${item} {
-          object-position: ${item.split("-").join(" ")};
-        }
-      `;
-    });
-    return str;
-  };
-  let cssString = generateObjectFit();
-  cssString += generateObjectPosition();
-  return cssString;
-});
+      `
+    );
+    cssString += getCssByOptions(
+      objectPosition,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          object-position: ${value.split("-").join(" ")};
+        } 
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

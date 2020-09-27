@@ -9,27 +9,24 @@ const prefix = `${globalPrefix}overscroll`;
 
 const overscroll = ["auto", "contain", "none"];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateOverscroll = () => {
-    let str = "";
-    overscroll.forEach((item) => {
-      str += `
-        .${orientationPrefix}${prefix}-${item} {
-          overscroll-behavior: ${item};
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      overscroll,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          overscroll-behavior: ${value};
         }
-        .${orientationPrefix}${prefix}-x-${item} {
-          overscroll-behavior-x: ${item};
+        .${orientationPrefix}${prefix}-x-${key} {
+          overscroll-behavior-x: ${value};
         }
-        .${orientationPrefix}${prefix}-y-${item} {
-          overscroll-behavior-y: ${item};
+        .${orientationPrefix}${prefix}-y-${key} {
+          overscroll-behavior-y: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateOverscroll();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

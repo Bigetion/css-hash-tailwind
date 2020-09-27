@@ -9,28 +9,25 @@ const prefix = `${globalPrefix}float`;
 
 const float = ["left", "right", "none"];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateFloat = () => {
-    let str = "";
-    float.forEach((item) => {
-      str += `
-        .${orientationPrefix}${prefix}-${item} {
-          float: ${item};
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      float,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          float: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generateFloat();
-  cssString += `
-    .${orientationPrefix}clearfix:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-  `;
-  return cssString;
-});
+      `
+    );
+    cssString += `
+      .${orientationPrefix}${globalPrefix}clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    `;
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

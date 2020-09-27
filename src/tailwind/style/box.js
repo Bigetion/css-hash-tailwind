@@ -9,20 +9,15 @@ const prefix = `${globalPrefix}box`;
 
 const boxSizing = ["border", "content"];
 
-const responsiveCssString = generateCss(({ pseudoClass }) => {
-  const generateBox = () => {
-    let str = "";
-    boxSizing.forEach((item) => {
-      str += `
-        ${pseudoClass(`${prefix}-${item}`)} {
-          box-sizing: ${item}-box;
-        }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateBox();
+const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
+  const cssString = getCssByOptions(
+    boxSizing,
+    (key, value) => `
+      ${pseudoClass(`${prefix}-${key}`)} {
+        box-sizing: ${value}-box;
+      }
+    `
+  );
   return cssString;
 });
 

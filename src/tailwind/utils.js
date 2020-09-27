@@ -21,14 +21,37 @@ export const generateCss = (getCssString = () => {}, isResponsive = true) => {
     return classArray.join(", ");
   };
 
-  let cssString = getCssString({ orientationPrefix, pseudoClass });
+  const getCssByOptions = (options = {}, getStr = () => {}) => {
+    let nOptions = Object.assign({}, options);
+    if (Array.isArray(options)) {
+      nOptions = options.reduce(
+        (currentObj, value) => Object.assign(currentObj, { [value]: value }),
+        {}
+      );
+    }
+    let str = "";
+    Object.entries(nOptions).forEach(([key, value]) => {
+      str += getStr(key, value);
+    });
+    return str;
+  };
+
+  let cssString = getCssString({
+    orientationPrefix,
+    pseudoClass,
+    getCssByOptions,
+  });
 
   if (isResponsive) {
     Object.entries(screens).forEach(([screen, screenValue]) => {
       orientationPrefix = `${screen}\\:`;
       cssString += `
         @media (min-width: ${screenValue}) {
-          ${getCssString({ orientationPrefix, pseudoClass })}     
+          ${getCssString({
+            orientationPrefix,
+            pseudoClass,
+            getCssByOptions,
+          })}     
         }
       `;
     });

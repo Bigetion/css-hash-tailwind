@@ -9,35 +9,32 @@ const prefix = `${globalPrefix}overflow`;
 
 const overflow = ["auto", "hidden", "visible", "scroll"];
 
-let responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateOverflow = () => {
-    let str = "";
-    overflow.forEach((item) => {
-      str += `
-        .${orientationPrefix}${prefix}-${item} {
-          overflow: ${item};
+let responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      overflow,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          overflow: ${value};
         }
-        .${orientationPrefix}${prefix}-x-${item} {
-          overflow-x: ${item};
+        .${orientationPrefix}${prefix}-x-${key} {
+          overflow-x: ${value};
         }
-        .${orientationPrefix}${prefix}-y-${item} {
-          overflow-y: ${item};
+        .${orientationPrefix}${prefix}-y-${key} {
+          overflow-y: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generateOverflow();
-  cssString += `
-    .${orientationPrefix}${globalPrefix}scrolling-touch {
-      -webkit-overflow-scrolling: touch;
-    }
-    .${orientationPrefix}${globalPrefix}scrolling-auto {
-      -webkit-overflow-scrolling: auto;
-    }
-  `;
-  return cssString;
-});
+      `
+    );
+    cssString += `
+      .${orientationPrefix}${globalPrefix}scrolling-touch {
+        -webkit-overflow-scrolling: touch;
+      }
+      .${orientationPrefix}${globalPrefix}scrolling-auto {
+        -webkit-overflow-scrolling: auto;
+      }
+    `;
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

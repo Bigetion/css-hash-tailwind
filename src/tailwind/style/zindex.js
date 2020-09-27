@@ -9,21 +9,18 @@ const prefix = `${globalPrefix}z`;
 
 const zIndex = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, "auto"];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateClear = () => {
-    let str = "";
-    zIndex.forEach((item) => {
-      str += `
-        .${orientationPrefix}${prefix}-${item} {
-          z-index: ${item};
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      zIndex,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          z-index: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateClear();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);
