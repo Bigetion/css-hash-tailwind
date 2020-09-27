@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { cssHash, classNames } from "css-hash";
@@ -58,6 +58,33 @@ function Menu({ title, items }) {
 
 function Layout(props) {
   const { children } = props;
+
+  const isClient = typeof window === "object";
+  const getSize = () => ({
+    width: isClient ? window.innerWidth : undefined,
+    height: isClient ? window.innerHeight : undefined,
+  });
+
+  const mobileWidth = 1024;
+  const { width } = getSize();
+  const [showSidebar, setShowSidebar] = useState(width > mobileWidth);
+
+  useEffect(
+    () => {
+      if (!isClient) {
+        return false;
+      }
+      const handleResize = () => {
+        const { width } = getSize();
+        setShowSidebar(width > mobileWidth);
+      };
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   const menus = [
     {
       title: "Layout",
@@ -149,25 +176,70 @@ function Layout(props) {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-grow min-w-0 lg:w-3/4 xl:w-4/5"></div>
+              <div className="flex flex-auto min-w-0 lg:w-3/4 xl:w-4/5">
+                <div className="flex-auto"></div>
+                <button
+                  type="button"
+                  className={classNames(
+                    "flex flex-grow px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
+                    showSidebar ? "hidden" : ""
+                  )}
+                  aria-label="Open site navigation"
+                  onClick={() => setShowSidebar(true)}
+                >
+                  <svg
+                    className="fill-current w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className={classNames(
+                    "flex flex-grow px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
+                    showSidebar ? "" : "hidden"
+                  )}
+                  aria-label="Close site navigation"
+                  onClick={() => setShowSidebar(false)}
+                >
+                  <svg
+                    className="fill-current w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="w-full max-w-screen-xl mx-auto px-6">
         <div className="lg:flex -mx-6">
-          <div className="fixed inset-0 h-full bg-white z-90 w-full border-b border-r -mb-16 lg:-mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:border-b-0 lg:pt-0 lg:w-1/4 lg:block xl:w-1/5 hidden pt-16">
-            <div className="overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-16 bg-white">
-              <div
-                className={`px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 ${sidebarClass}`}
-              >
-                {menus.map((item, index) => (
-                  <Menu key={index} {...item} />
-                ))}
+          {showSidebar && (
+            <div className="fixed inset-0 h-full bg-white z-90 w-full border-b border-r -mb-16 lg:-mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:border-b-0 lg:pt-0 lg:w-1/4 lg:block xl:w-1/5 pt-16">
+              <div className="overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-16 bg-white">
+                <div
+                  className={`px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
+                >
+                  {menus.map((item, index) => (
+                    <Menu key={index} {...item} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5">
+          )}
+          <div
+            className={classNames(
+              "min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5",
+              showSidebar &&
+                width <= mobileWidth &&
+                "overflow-hidden max-h-screen fixed"
+            )}
+          >
             <div>
               <div className="flex">
                 <div className="pb-16 w-full pt-24 lg:pt-28">{children}</div>
