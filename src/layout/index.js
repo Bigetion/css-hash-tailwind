@@ -39,7 +39,6 @@ function Menu({ title, items }) {
 
 function Layout(props) {
   const { children } = props;
-  console.log(props);
   const menus = [
     {
       title: "Layout",
