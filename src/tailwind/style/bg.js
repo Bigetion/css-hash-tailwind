@@ -31,91 +31,9 @@ const backgroundRepeat = {
 const backgroundSize = ["auto", "cover", "contain"];
 
 const responsiveCssString = generateCss(
-  ({ orientationPrefix, pseudoClass }) => {
-    const generateBackgroundAttachment = () => {
-      let str = "";
-      backgroundAttachment.forEach((item) => {
-        str += `
-          .${orientationPrefix}${prefix}-${item} {
-            background-attachment: ${item};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateBackgroundClip = () => {
-      let str = "";
-      backgroundClip.forEach((item) => {
-        str += `
-          .${orientationPrefix}${prefix}-clip-${item} {
-            background-clip: ${item}${item !== "text" ? "-box" : ""};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateBackgroundOpacity = () => {
-      let str = "";
-      Object.entries(opacity).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${prefix}-opacity-${key} {
-            --bg-opacity: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateBackgroundPosition = () => {
-      let str = "";
-      backgroundPosition.forEach((item) => {
-        str += `
-          .${orientationPrefix}${prefix}-${item} {
-            background-position: ${item.split("-").join(" ")};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateBackgroundRepeat = () => {
-      let str = "";
-      Object.entries(backgroundRepeat).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${prefix}-${key} {
-            background-repeat: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateBackgroundSize = () => {
-      let str = "";
-      backgroundSize.forEach((item) => {
-        str += `
-          .${orientationPrefix}${prefix}-${item} {
-            background-size: ${item};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateBackgroundImage = () => {
-      let str = `
-        .${orientationPrefix}${prefix}-none {
-          background-image: none;
-        }
-      `;
-      return str;
-    };
-
+  ({ orientationPrefix, pseudoClass, getCssByOptions }) => {
     const generateBgColor = (name, htmlColor) => {
       let str = "";
-
       if (htmlColor === "transparent") {
         str += `
           ${pseudoClass(`${prefix}-${name}`)} {
@@ -136,22 +54,68 @@ const responsiveCssString = generateCss(
     };
 
     let cssString = "";
-    Object.entries(colors).forEach(([color, colorValue]) => {
-      if (typeof colorValue === "string") {
-        cssString += `${generateBgColor(color, colorValue)} `;
-      } else if (typeof colorValue === "object") {
-        Object.entries(colorValue).forEach(([key, value]) => {
-          cssString += `${generateBgColor(`${color}-${key}`, value)} `;
+    Object.entries(colors).forEach(([key1, value1]) => {
+      if (typeof value1 === "string") {
+        cssString += `${generateBgColor(key1, value1)} `;
+      } else if (typeof value1 === "object") {
+        Object.entries(value1).forEach(([key2, value2]) => {
+          cssString += `${generateBgColor(`${key1}-${key2}`, value2)} `;
         });
       }
     });
-    cssString += generateBackgroundAttachment();
-    cssString += generateBackgroundClip();
-    cssString += generateBackgroundOpacity();
-    cssString += generateBackgroundPosition();
-    cssString += generateBackgroundRepeat();
-    cssString += generateBackgroundSize();
-    cssString += generateBackgroundImage();
+    cssString += getCssByOptions(
+      backgroundAttachment,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          background-attachment: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      backgroundClip,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-clip-${key} {
+          background-clip: ${value !== "text" ? `${value}-box` : value};
+        }  
+      `
+    );
+    cssString += getCssByOptions(
+      opacity,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-opacity-${key} {
+          --bg-opacity: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      backgroundPosition,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          background-position: ${value.split("-").join(" ")};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      backgroundRepeat,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          background-repeat: ${value};
+        }  
+      `
+    );
+    cssString += getCssByOptions(
+      backgroundSize,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          background-size: ${value};
+        }
+      `
+    );
+    cssString += `
+      .${orientationPrefix}${prefix}-none {
+        background-image: none;
+      }
+    `;
     return cssString;
   }
 );

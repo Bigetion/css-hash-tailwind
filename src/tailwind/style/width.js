@@ -53,55 +53,48 @@ const maxWidth = {
   full: "100%",
 };
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateWidth = (key, value) => {
-    return `
-    .${orientationPrefix}${globalPrefix}${prefix}-${key.replace("/", `\\/`)} {
-      width: ${value}; 
-    }
-  `;
-  };
-
-  const generateMinWidth = () => `
-  .${orientationPrefix}${globalPrefix}min-${prefix}-0 {
-    min-width: 0;
-  }
-  .${orientationPrefix}${globalPrefix}min-${prefix}-full {
-    min-width: 100%;
-  }
-  .${orientationPrefix}${globalPrefix}min-${prefix}-screen {
-    min-width: 100vw;
-  }
-`;
-
-  const generateMaxWidth = () => {
-    let str = "";
-    Object.entries(maxWidth).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      Object.assign(spacing, extraSpacing),
+      (key, value) => {
+        const k = key.replace("/", `\\/`);
+        return `
+          .${orientationPrefix}${globalPrefix}${prefix}-${k} {
+            width: ${value}; 
+          }
+        `;
+      }
+    );
+    cssString += getCssByOptions(
+      maxWidth,
+      (key, value) => `
         .${orientationPrefix}${globalPrefix}max-${prefix}-${key} {
           max-width: ${value};
         }
-     `;
-    });
-    Object.entries(screens).forEach(([key, value]) => {
-      str += `
+      `
+    );
+    cssString += getCssByOptions(
+      screens,
+      (key, value) => `
         .${orientationPrefix}${globalPrefix}max-${prefix}-screen-${key} {
           max-width: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = "";
-  Object.entries(Object.assign(spacing, extraSpacing)).forEach(
-    ([space, spaceValue]) => {
-      cssString += generateWidth(space, spaceValue);
-    }
-  );
-  cssString += generateMinWidth();
-  cssString += generateMaxWidth();
-  return cssString;
-});
+      `
+    );
+    cssString += `
+      .${orientationPrefix}${globalPrefix}min-${prefix}-0 {
+        min-width: 0;
+      }
+      .${orientationPrefix}${globalPrefix}min-${prefix}-full {
+        min-width: 100%;
+      }
+      .${orientationPrefix}${globalPrefix}min-${prefix}-screen {
+        min-width: 100vw;
+      }
+    `;
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

@@ -30,47 +30,34 @@ const alignSelf = {
   stretch: "stretch",
 };
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateAlignContent = () => {
-    let str = "";
-    Object.entries(alignContent).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      alignContent,
+      (key, value) => `
         .${orientationPrefix}${prefix}content-${key} {
           align-content: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateAlignItems = () => {
-    let str = "";
-    Object.entries(alignItems).forEach(([key, value]) => {
-      str += `
+      `
+    );
+    cssString += getCssByOptions(
+      alignItems,
+      (key, value) => `
         .${orientationPrefix}${prefix}items-${key} {
           align-items: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
-  const generateAlignSelf = () => {
-    let str = "";
-    Object.entries(alignSelf).forEach(([key, value]) => {
-      str += `
+        }  
+      `
+    );
+    cssString += getCssByOptions(
+      alignSelf,
+      (key, value) => `
         .${orientationPrefix}${prefix}self-${key} {
           align-self: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generateAlignContent();
-  cssString += generateAlignItems();
-  cssString += generateAlignSelf();
-  return cssString;
-});
+        }    
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

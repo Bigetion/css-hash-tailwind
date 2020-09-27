@@ -17,39 +17,31 @@ const placeContent = {
   stretch: "stretch",
 };
 
-const placeItems = ["auto", "start", "center", "end", "stretch"];
+const placeItemsAndSelf = ["auto", "start", "center", "end", "stretch"];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generatePlaceContent = () => {
-    let str = "";
-    Object.entries(placeContent).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      placeContent,
+      (key, value) => `
         .${orientationPrefix}${prefix}-content-${key} {
           place-content: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generatePlaceItems = () => {
-    let str = "";
-    placeItems.forEach((value) => {
-      str += `
-        .${orientationPrefix}${prefix}-items-${value} {
+      `
+    );
+    cssString += getCssByOptions(
+      placeItemsAndSelf,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-items-${key} {
           place-items: ${value};
         }
-        .${orientationPrefix}${prefix}-self-${value} {
+        .${orientationPrefix}${prefix}-self-${key} {
           place-self: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generatePlaceContent();
-  cssString += generatePlaceItems();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

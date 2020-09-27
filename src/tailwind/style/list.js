@@ -13,29 +13,26 @@ const listStyleType = {
   decimal: "decimal",
 };
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateTracking = () => {
-    let str = "";
-    Object.entries(listStyleType).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      listStyleType,
+      (key, value) => `
         .${orientationPrefix}${prefix}-${key} {
           list-style-type: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generateTracking();
-  cssString += `
-    .${orientationPrefix}list-inside {
-      list-style-position: inside;
-    }
-    .${orientationPrefix}list-outside {
-      list-style-position: outside;
-    }
-  `;
-  return cssString;
-});
+      `
+    );
+    cssString += `
+      .${orientationPrefix}list-inside {
+        list-style-position: inside;
+      }
+      .${orientationPrefix}list-outside {
+        list-style-position: outside;
+      }
+    `;
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

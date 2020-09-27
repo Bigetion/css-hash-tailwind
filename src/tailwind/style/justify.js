@@ -16,39 +16,31 @@ const justifyContent = {
   evenly: "space-evenly",
 };
 
-const justifyItems = ["auto", "start", "center", "end", "stretch"];
+const justifyItemsAndSelf = ["auto", "start", "center", "end", "stretch"];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateJustifyContent = () => {
-    let str = "";
-    Object.entries(justifyContent).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      justifyContent,
+      (key, value) => `
         .${orientationPrefix}${prefix}-${key} {
           justify-content: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateJustifyItems = () => {
-    let str = "";
-    justifyItems.forEach((value) => {
-      str += `
-        .${orientationPrefix}${prefix}-items-${value} {
+      `
+    );
+    cssString += getCssByOptions(
+      justifyItemsAndSelf,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-items-${key} {
           justify-items: ${value};
         }
-        .${orientationPrefix}${prefix}-self-${value} {
+        .${orientationPrefix}${prefix}-self-${key} {
           justify-self: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generateJustifyContent();
-  cssString += generateJustifyItems();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

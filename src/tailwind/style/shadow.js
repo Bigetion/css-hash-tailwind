@@ -21,21 +21,15 @@ const shadow = {
   none: "none",
 };
 
-const responsiveCssString = generateCss(({ pseudoClass }) => {
-  const generateShadow = () => {
-    let str = "";
-    Object.entries(shadow).forEach(([key, value]) => {
-      const k = key !== "default" ? `-${key}` : "";
-      str += `
-        ${pseudoClass(`${prefix}${k}`)} {
-          box-shadow: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateShadow();
+const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
+  const cssString = getCssByOptions(shadow, (key, value) => {
+    const k = key !== "default" ? `-${key}` : "";
+    return `
+      ${pseudoClass(`${prefix}${k}`)} {
+        box-shadow: ${value};
+      }
+    `;
+  });
   return cssString;
 });
 

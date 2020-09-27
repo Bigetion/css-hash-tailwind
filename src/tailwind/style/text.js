@@ -42,141 +42,7 @@ const whitespace = {
 };
 
 const responsiveCssString = generateCss(
-  ({ orientationPrefix, pseudoClass }) => {
-    const generateTextAlign = () => {
-      let str = "";
-      alignment.forEach((align) => {
-        str += `
-          .${orientationPrefix}${prefix}-${align} {
-            text-align: ${align};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateTextOpacity = () => {
-      let str = "";
-      Object.entries(opacity).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${prefix}-opacity-${key} {
-            --text-opacity: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateTextDecoration = () => {
-      let str = "";
-      Object.entries(decoration).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${prefix}-${key} {
-            text-decoration: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateTextTransform = () => {
-      let str = "";
-      Object.entries(transform).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${globalPrefix}${key} {
-            text-transform: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateTextSize = () => {
-      let str = "";
-      Object.entries(fontSize).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${prefix}-${key} {
-            font-size: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateTextSmooth = () => `  
-      .${orientationPrefix}${prefix}antialiased {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      .${orientationPrefix}${prefix}subpixel-antialiased {
-        -webkit-font-smoothing: auto;
-        -moz-osx-font-smoothing: auto;
-      }
-    `;
-
-    const generateTextStyle = () => `  
-      .${orientationPrefix}${prefix}italic {
-        font-style: italic;
-      }
-      .${orientationPrefix}${prefix}not-italic {
-        font-style: normal;
-      }
-    `;
-
-    const generateTextWeight = () => {
-      let str = "";
-      Object.entries(fontWeight).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${globalPrefix}font-${key} {
-            font-weight: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateVerticalAlign = () => {
-      let str = "";
-      verticalAlignment.forEach((align) => {
-        str += `
-          .${orientationPrefix}${prefix}align-${align} {
-            vertical-align: ${align};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateWhitespace = () => {
-      let str = "";
-      Object.entries(whitespace).forEach(([key, value]) => {
-        str += `
-          .${orientationPrefix}${globalPrefix}whitespace-${key} {
-            white-space: ${value};
-          }
-        `;
-      });
-      return str;
-    };
-
-    const generateWordBreak = () => `
-      .${orientationPrefix}${globalPrefix}break-normal {
-        overflow-wrap: normal;
-        word-break: normal;
-      }
-      .${orientationPrefix}${globalPrefix}break-words {
-        overflow-wrap: break-word;
-      }
-      .${orientationPrefix}${globalPrefix}break-all {
-        word-break: break-all;
-      }
-      .${orientationPrefix}${globalPrefix}truncate {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-    `;
-
+  ({ orientationPrefix, pseudoClass, getCssByOptions }) => {
     const generateTextColor = (name, htmlColor) => {
       let str = "";
       if (htmlColor === "transparent") {
@@ -208,17 +74,101 @@ const responsiveCssString = generateCss(
         });
       }
     });
-    cssString += generateTextAlign();
-    cssString += generateTextOpacity();
-    cssString += generateTextDecoration();
-    cssString += generateTextTransform();
-    cssString += generateTextSize();
-    cssString += generateTextSmooth();
-    cssString += generateTextStyle();
-    cssString += generateTextWeight();
-    cssString += generateVerticalAlign();
-    cssString += generateWhitespace();
-    cssString += generateWordBreak();
+    cssString += getCssByOptions(
+      alignment,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          text-align: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      opacity,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-opacity-${key} {
+          --text-opacity: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      decoration,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          text-decoration: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      transform,
+      (key, value) => `
+        .${orientationPrefix}${globalPrefix}${key} {
+          text-transform: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      fontSize,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-${key} {
+          font-size: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      fontWeight,
+      (key, value) => `
+        .${orientationPrefix}${globalPrefix}font-${key} {
+          font-weight: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      verticalAlignment,
+      (key, value) => `
+        .${orientationPrefix}${prefix}align-${key} {
+          vertical-align: ${value};
+        }
+      `
+    );
+    cssString += getCssByOptions(
+      whitespace,
+      (key, value) => `
+        .${orientationPrefix}${globalPrefix}whitespace-${key} {
+          white-space: ${value};
+        }
+      `
+    );
+    cssString += `
+      .${orientationPrefix}${prefix}antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .${orientationPrefix}${prefix}subpixel-antialiased {
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+      }
+      .${orientationPrefix}${prefix}italic {
+        font-style: italic;
+      }
+      .${orientationPrefix}${prefix}not-italic {
+        font-style: normal;
+      }
+      .${orientationPrefix}${globalPrefix}break-normal {
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .${orientationPrefix}${globalPrefix}break-words {
+        overflow-wrap: break-word;
+      }
+      .${orientationPrefix}${globalPrefix}break-all {
+        word-break: break-all;
+      }
+      .${orientationPrefix}${globalPrefix}truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    `;
     return cssString;
   }
 );

@@ -8,47 +8,27 @@ const { prefix: globalPrefix, colors, opacity } = configOptions;
 const prefix = `${globalPrefix}placeholder`;
 const pseudoElements = ["", "focus"];
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generatePlaceholderOpacity = () => {
-    let str = "";
-    Object.entries(opacity).forEach(([key, value]) => {
-      str += `
-        .${orientationPrefix}${prefix}-opacity-${key}::-webkit-input-placeholder {
-          --placeholder-opacity: ${value};
-        }
-        .${orientationPrefix}${prefix}-opacity-${key}:-ms-input-placeholder {
-          --placeholder-opacity: ${value};
-        }
-        .${orientationPrefix}${prefix}-opacity-${key}::-ms-input-placeholder {
-          --placeholder-opacity: ${value};
-        }
-        .${orientationPrefix}${prefix}-opacity-${key}::placeholder {
-          --placeholder-opacity: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
-  const generatePlaceholderColor = (name, htmlColor) => {
-    let str = "";
-    const classList = (placeholderPseudo = "") =>
-      pseudoElements
-        .map((item) => {
-          let className = `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    const generatePlaceholderColor = (name, htmlColor) => {
+      let str = "";
+      const classList = (placeholderPseudo = "") =>
+        pseudoElements
+          .map((item) => {
+            let className = `
           .${orientationPrefix}${prefix}-${name}${placeholderPseudo}
         `;
-          if (item !== "") {
-            className = `
+            if (item !== "") {
+              className = `
             .${orientationPrefix}${item}\\:${prefix}-${name}:${item}${placeholderPseudo}
           `;
-          }
-          return className;
-        })
-        .join(", ");
+            }
+            return className;
+          })
+          .join(", ");
 
-    if (htmlColor === "transparent") {
-      str += `
+      if (htmlColor === "transparent") {
+        str += `
         ${classList("::-webkit-input-placeholder")} {
           color: transparent;
         }
@@ -62,9 +42,9 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
           color: transparent;
         }
       `;
-    } else {
-      const rgbColor = hexToRgb(htmlColor);
-      str += `
+      } else {
+        const rgbColor = hexToRgb(htmlColor);
+        str += `
         ${classList("::-webkit-input-placeholder")} {
           --placeholder-opacity: 1;
           color: ${htmlColor};
@@ -86,22 +66,39 @@ const responsiveCssString = generateCss(({ orientationPrefix }) => {
           color: rgba(${rgbColor}, var(--placeholder-opacity));
         }
       `;
-    }
-    return str;
-  };
+      }
+      return str;
+    };
 
-  let cssString = "";
-  Object.entries(colors).forEach(([color, colorValue]) => {
-    if (typeof colorValue === "string") {
-      cssString += `${generatePlaceholderColor(color, colorValue)} `;
-    } else if (typeof colorValue === "object") {
-      Object.entries(colorValue).forEach(([key, value]) => {
-        cssString += `${generatePlaceholderColor(`${color}-${key}`, value)} `;
-      });
-    }
-  });
-  cssString += generatePlaceholderOpacity();
-  return cssString;
-});
+    let cssString = "";
+    Object.entries(colors).forEach(([color, colorValue]) => {
+      if (typeof colorValue === "string") {
+        cssString += `${generatePlaceholderColor(color, colorValue)} `;
+      } else if (typeof colorValue === "object") {
+        Object.entries(colorValue).forEach(([key, value]) => {
+          cssString += `${generatePlaceholderColor(`${color}-${key}`, value)} `;
+        });
+      }
+    });
+    cssString += getCssByOptions(
+      opacity,
+      (key, value) => `
+        .${orientationPrefix}${prefix}-opacity-${key}::-webkit-input-placeholder {
+          --placeholder-opacity: ${value};
+        }
+        .${orientationPrefix}${prefix}-opacity-${key}:-ms-input-placeholder {
+          --placeholder-opacity: ${value};
+        }
+        .${orientationPrefix}${prefix}-opacity-${key}::-ms-input-placeholder {
+          --placeholder-opacity: ${value};
+        }
+        .${orientationPrefix}${prefix}-opacity-${key}::placeholder {
+          --placeholder-opacity: ${value};
+        }
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

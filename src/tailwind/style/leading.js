@@ -23,21 +23,18 @@ const lineHeight = Object.assign(
   }
 );
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateLeading = () => {
-    let str = "";
-    Object.entries(lineHeight).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      lineHeight,
+      (key, value) => `
         .${orientationPrefix}${prefix}-${key} {
           line-height: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateLeading();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

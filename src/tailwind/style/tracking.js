@@ -16,21 +16,18 @@ const letterSpacing = {
   widest: "0.1em",
 };
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateTracking = () => {
-    let str = "";
-    Object.entries(letterSpacing).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      letterSpacing,
+      (key, value) => `
         .${orientationPrefix}${prefix}-${key} {
           letter-spacing: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateTracking();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);

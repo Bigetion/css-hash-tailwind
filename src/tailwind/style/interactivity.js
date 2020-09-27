@@ -15,43 +15,30 @@ const cursor = [
   "not-allowed",
 ];
 
-const responsiveCssString = generateCss(({ pseudoClass }) => {
-  const generateAppearance = () => `    
+const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
+  let cssString = getCssByOptions(
+    cursor,
+    (key, value) => `
+      ${pseudoClass(`${prefix}cursor-${key}`)} {
+        cursor: ${value};
+      }
+    `
+  );
+  cssString += `
     ${pseudoClass(`${prefix}appearance-none`)} {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
     }
-  `;
-
-  const generateCursor = () => {
-    let str = "";
-    cursor.forEach((value) => {
-      str += `
-        ${pseudoClass(`${prefix}cursor-${value}`)} {
-          cursor: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
-  const generateOutline = () => `    
     ${pseudoClass(`${prefix}outline-none`)} {
       outline: 0;
     }
-  `;
-
-  const generatePointerEvents = () => `    
     ${pseudoClass(`${prefix}pointer-events-none`)} {
       pointer-events: none;
     }
     ${pseudoClass(`${prefix}pointer-events-auto`)} {
       pointer-events: auto;
     }
-  `;
-
-  const generateResize = () => `    
     ${pseudoClass(`${prefix}resize-none`)} {
       resize: none;
     }
@@ -64,9 +51,6 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
     ${pseudoClass(`${prefix}resize`)} {
       resize: both;
     }
-  `;
-
-  const generateUserSelect = () => `    
     ${pseudoClass(`${prefix}select-none`)} {
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -92,13 +76,6 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
       user-select: auto;
     }
   `;
-
-  let cssString = generateAppearance();
-  cssString += generateCursor();
-  cssString += generateOutline();
-  cssString += generatePointerEvents();
-  cssString += generateResize();
-  cssString += generateUserSelect();
   return cssString;
 });
 

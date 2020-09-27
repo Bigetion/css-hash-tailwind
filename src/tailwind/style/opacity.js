@@ -7,20 +7,15 @@ const { prefix: globalPrefix, opacity } = configOptions;
 
 const prefix = `${globalPrefix}opacity`;
 
-const responsiveCssString = generateCss(({ pseudoClass }) => {
-  const generateClear = () => {
-    let str = "";
-    Object.entries(opacity).forEach(([key, value]) => {
-      str += `
-        ${pseudoClass(`${prefix}-${key}`)} {
-          opacity: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
-  const cssString = generateClear();
+const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
+  const cssString = getCssByOptions(
+    opacity,
+    (key, value) => `
+      ${pseudoClass(`${prefix}-${key}`)} {
+        opacity: ${value};
+      }
+    `
+  );
   return cssString;
 });
 

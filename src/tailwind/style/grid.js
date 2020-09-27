@@ -17,7 +17,7 @@ const gridAutoFlow = {
   "col-dense": "column dense",
 };
 
-const responsiveCssString = generateCss(({ pseudoClass }) => {
+const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
   const generateGrid = (name, arrays) => {
     const shortName = name.substr(0, 3);
     const templateArrays = [...arrays, "none"];
@@ -61,19 +61,6 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
 
     return str;
   };
-
-  const generateGridAutoFlow = () => {
-    let str = "";
-    Object.entries(gridAutoFlow).forEach(([key, value]) => {
-      str += `
-        ${pseudoClass(`${prefix}-flow-${key}`)} {
-          grid-auto-flow: ${value};
-        }
-      `;
-    });
-    return str;
-  };
-
   const generateGap = (position) => {
     const p = position ? `-${position}` : "";
     let cr = "";
@@ -96,10 +83,17 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
 
   let cssString = generateGrid("column", gridColumnsArray);
   cssString += generateGrid("row", gridRowsArray);
-  cssString += generateGridAutoFlow();
   cssString += generateGap();
   cssString += generateGap("x");
   cssString += generateGap("y");
+  cssString += getCssByOptions(
+    gridAutoFlow,
+    (key, value) => `
+      ${pseudoClass(`${prefix}-flow-${key}`)} {
+        grid-auto-flow: ${value};
+      }
+    `
+  );
   return cssString;
 });
 

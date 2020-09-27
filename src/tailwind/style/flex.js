@@ -49,86 +49,58 @@ const order = Object.assign(
   }
 );
 
-const responsiveCssString = generateCss(({ orientationPrefix }) => {
-  const generateFlexDirection = () => {
-    let str = "";
-    Object.entries(flexDirection).forEach(([key, value]) => {
-      str += `
+const responsiveCssString = generateCss(
+  ({ orientationPrefix, getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      flexDirection,
+      (key, value) => `
         .${orientationPrefix}${prefix}-${key} {
           flex-direction: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateFlexWrap = () => {
-    let str = "";
-    Object.entries(flexWrap).forEach(([key, value]) => {
-      str += `
+      `
+    );
+    cssString += getCssByOptions(
+      flexWrap,
+      (key, value) => `
         .${orientationPrefix}${prefix}-${key} {
           flex-wrap: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateFlexSize = () => {
-    let str = "";
-    Object.entries(flexSize).forEach(([key, value]) => {
-      str += `
+      `
+    );
+    cssString += getCssByOptions(
+      flexSize,
+      (key, value) => `
         .${orientationPrefix}${prefix}-${key} {
           flex: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateFlexGrow = () => {
-    let str = "";
-    Object.entries(flexGrow).forEach(([key, value]) => {
-      str += `
-        .${orientationPrefix}${prefix}-${key} {
+      `
+    );
+    cssString += getCssByOptions(
+      flexGrow,
+      (key, value) => `
+        .${orientationPrefix}${prefix}${key !== "" ? `-${key}` : ""} {
           flex-grow: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateFlexShrink = () => {
-    let str = "";
-    Object.entries(flexShrink).forEach(([key, value]) => {
-      str += `
-        .${orientationPrefix}${prefix}-${key} {
+      `
+    );
+    cssString += getCssByOptions(
+      flexShrink,
+      (key, value) => `
+        .${orientationPrefix}${prefix}${key !== "" ? `-${key}` : ""} {
           flex-shrink: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  const generateOrder = () => {
-    let str = "";
-    Object.entries(order).forEach(([key, value]) => {
-      str += `
+      `
+    );
+    cssString += getCssByOptions(
+      order,
+      (key, value) => `
         .${orientationPrefix}order-${key} {
           order: ${value};
         }
-      `;
-    });
-    return str;
-  };
-
-  let cssString = generateFlexDirection();
-  cssString += generateFlexWrap();
-  cssString += generateFlexSize();
-  cssString += generateFlexGrow();
-  cssString += generateFlexShrink();
-  cssString += generateOrder();
-  return cssString;
-});
+      `
+    );
+    return cssString;
+  }
+);
 
 cssHash(() => responsiveCssString);
