@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "overscrollBehavior",
+    path: "/overscroll-behavior",
+    exact: true,
+    component: () => import("pages/OverscrollBehavior"),
+  },
+  {
     id: "overflow",
     path: "/overflow",
     exact: true,
