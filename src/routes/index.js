@@ -1,11 +1,17 @@
 const routes = [
   // -- APPEND ROUTES HERE --
-{
-  id: "floats",
-  path: "/floats",
-  exact: true,
-  component: () => import("pages/Floats")
-},
+  {
+    id: "clear",
+    path: "/clear",
+    exact: true,
+    component: () => import("pages/Clear"),
+  },
+  {
+    id: "floats",
+    path: "/floats",
+    exact: true,
+    component: () => import("pages/Floats"),
+  },
   {
     id: "display",
     path: "/display",
