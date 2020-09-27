@@ -86,7 +86,7 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
     let str = "";
     Object.entries(spacing).forEach(([key, value]) => {
       str += `
-        ${pseudoClass(`.gap${p}${key}`)} {
+        ${pseudoClass(`${globalPrefix}gap${p}${key}`)} {
           ${cr}gap: ${value};
         }
       `;
