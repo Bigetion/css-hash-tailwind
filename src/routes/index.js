@@ -1,6 +1,18 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "zIndex",
+    path: "/z-index",
+    exact: true,
+    component: () => import("pages/ZIndex"),
+  },
+  {
+    id: "visibility",
+    path: "/visibility",
+    exact: true,
+    component: () => import("pages/Visibility"),
+  },
+  {
     id: "topRightBottomLeft",
     path: "/top-right-bottom-left",
     exact: true,
