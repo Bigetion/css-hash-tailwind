@@ -54,6 +54,7 @@ export const generateCss = (getCssString = () => {}, isResponsive = true) => {
     orientationPrefix,
     pseudoClass,
     getCssByOptions,
+    getCssFromColors,
   });
 
   if (isResponsive) {
