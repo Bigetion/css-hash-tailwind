@@ -3,6 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 
 import { cssHash, classNames } from "css-hash";
 
+import { debounce } from "utils/general";
+
+import menus from "./menus";
+
 const sidebarClass = cssHash(
   (className) => `
     html {
@@ -98,58 +102,10 @@ function Layout(props) {
     []
   );
 
-  const menus = [
-    {
-      title: "Layout",
-      items: [
-        { label: "Box Sizing" },
-        { label: "Display" },
-        { label: "Floats" },
-        { label: "Clear" },
-        { label: "Object Fit" },
-        { label: "Object Position" },
-        { label: "Overflow" },
-        { label: "Overscroll Behavior" },
-        { label: "Position" },
-        { label: "Top Right Bottom Left" },
-        { label: "Visibility" },
-        { label: "Z-Index" },
-      ],
-    },
-    {
-      title: "Flexbox",
-      items: [
-        { label: "Flex Direction" },
-        { label: "Flex Wrap" },
-        { label: "Flex" },
-        { label: "Flex Grow" },
-        { label: "Flex Shrink" },
-        { label: "Order" },
-      ],
-    },
-    {
-      title: "Box Alignment",
-      items: [
-        { label: "Justify Content" },
-        { label: "Justify Items" },
-        { label: "Justify Self" },
-        { label: "Align Content" },
-        { label: "Align Items" },
-        { label: "Align Self" },
-        { label: "Place Content" },
-        { label: "Place Items" },
-        { label: "Place Self" },
-      ],
-    },
-    {
-      title: "Spacing",
-      items: [
-        { label: "Padding" },
-        { label: "Margin" },
-        { label: "Space Between" },
-      ],
-    },
-  ];
+  const onChangeSidebarScrollTop = debounce((val) => {
+    setSidebarScrollTop(val);
+  }, 500);
+
   return (
     <React.Fragment>
       <div className="bg-white antialiased">
@@ -238,7 +194,7 @@ function Layout(props) {
                 <div
                   ref={sidebarRef}
                   onScroll={() => {
-                    setSidebarScrollTop(sidebarRef.current.scrollTop);
+                    onChangeSidebarScrollTop(sidebarRef.current.scrollTop);
                   }}
                   className={`px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
                 >

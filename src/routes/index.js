@@ -1,6 +1,42 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "gap",
+    path: "/gap",
+    exact: true,
+    component: () => import("pages/Gap"),
+  },
+  {
+    id: "gridAutoFlow",
+    path: "/grid-auto-flow",
+    exact: true,
+    component: () => import("pages/GridAutoFlow"),
+  },
+  {
+    id: "gridRowStartEnd",
+    path: "/grid-row-start-end",
+    exact: true,
+    component: () => import("pages/GridRowStartEnd"),
+  },
+  {
+    id: "gridTemplateRows",
+    path: "/grid-template-rows",
+    exact: true,
+    component: () => import("pages/GridTemplateRows"),
+  },
+  {
+    id: "gridColumnStartEnd",
+    path: "/grid-column-start-end",
+    exact: true,
+    component: () => import("pages/GridColumnStartEnd"),
+  },
+  {
+    id: "gridTemplateColumns",
+    path: "/grid-template-columns",
+    exact: true,
+    component: () => import("pages/GridTemplateColumns"),
+  },
+  {
     id: "order",
     path: "/order",
     exact: true,

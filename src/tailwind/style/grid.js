@@ -45,16 +45,16 @@ const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
           grid-${name}: ${v};
         }
         ${pseudoClass(`${globalPrefix}${shortName}-start-${value}`)} {
-          grid-${name}-start: ${value};
+          grid-${name}-start: ${value} !important;
         }
         ${pseudoClass(`${globalPrefix}${shortName}-start-${maxValue}`)} {
-          grid-${name}-start: ${maxValue};
+          grid-${name}-start: ${maxValue} !important;
         }
         ${pseudoClass(`${globalPrefix}${shortName}-end-${value}`)} {
-          grid-${name}-end: ${value};
+          grid-${name}-end: ${value} !important;
         }
         ${pseudoClass(`${globalPrefix}${shortName}-end-${maxValue}`)} {
-          grid-${name}-end: ${maxValue};
+          grid-${name}-end: ${maxValue} !important;
         }
       `;
     });
@@ -65,10 +65,10 @@ const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
     const p = position ? `-${position}` : "";
     let cr = "";
     if (position === "x") {
-      cr = "column";
+      cr = "column-";
     }
     if (position === "y") {
-      cr = "row";
+      cr = "row-";
     }
     let str = "";
     Object.entries(spacing).forEach(([key, value]) => {
