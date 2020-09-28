@@ -61,7 +61,8 @@ function Menu({ title, items, sidebarScrollTop }) {
 function Layout(props) {
   const { children } = props;
 
-  const { state } = useLocation();
+  const { state = {} } = useLocation();
+  const { sidebarScrollTop: lastSidebarScrollTop = 0 } = state;
 
   const sidebarRef = useRef();
 
@@ -75,13 +76,13 @@ function Layout(props) {
   const { width } = getSize();
   const [showSidebar, setShowSidebar] = useState(width > mobileWidth);
   const [sidebarScrollTop, setSidebarScrollTop] = useState(
-    state.sidebarScrollTop
+    lastSidebarScrollTop
   );
 
   useEffect(
     () => {
-      if (state.sidebarScrollTop) {
-        sidebarRef.current.scrollTop = state.sidebarScrollTop;
+      if (sidebarRef.current) {
+        sidebarRef.current.scrollTop = lastSidebarScrollTop;
       }
       if (!isClient) {
         return false;
