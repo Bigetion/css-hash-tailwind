@@ -1,6 +1,60 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "placeSelf",
+    path: "/place-self",
+    exact: true,
+    component: () => import("pages/PlaceSelf"),
+  },
+  {
+    id: "placeItems",
+    path: "/place-items",
+    exact: true,
+    component: () => import("pages/PlaceItems"),
+  },
+  {
+    id: "placeContent",
+    path: "/place-content",
+    exact: true,
+    component: () => import("pages/PlaceContent"),
+  },
+  {
+    id: "alignSelf",
+    path: "/align-self",
+    exact: true,
+    component: () => import("pages/AlignSelf"),
+  },
+  {
+    id: "alignItems",
+    path: "/align-items",
+    exact: true,
+    component: () => import("pages/AlignItems"),
+  },
+  {
+    id: "alignContent",
+    path: "/align-content",
+    exact: true,
+    component: () => import("pages/AlignContent"),
+  },
+  {
+    id: "justifySelf",
+    path: "/justify-self",
+    exact: true,
+    component: () => import("pages/JustifySelf"),
+  },
+  {
+    id: "justifyItems",
+    path: "/justify-items",
+    exact: true,
+    component: () => import("pages/JustifyItems"),
+  },
+  {
+    id: "justifyContent",
+    path: "/justify-content",
+    exact: true,
+    component: () => import("pages/JustifyContent"),
+  },
+  {
     id: "gap",
     path: "/gap",
     exact: true,
