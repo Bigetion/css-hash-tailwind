@@ -1,6 +1,42 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "order",
+    path: "/order",
+    exact: true,
+    component: () => import("pages/Order"),
+  },
+  {
+    id: "flexShrink",
+    path: "/flex-shrink",
+    exact: true,
+    component: () => import("pages/FlexShrink"),
+  },
+  {
+    id: "flexGrow",
+    path: "/flex-grow",
+    exact: true,
+    component: () => import("pages/FlexGrow"),
+  },
+  {
+    id: "flex",
+    path: "/flex",
+    exact: true,
+    component: () => import("pages/Flex"),
+  },
+  {
+    id: "flexWrap",
+    path: "/flex-wrap",
+    exact: true,
+    component: () => import("pages/FlexWrap"),
+  },
+  {
+    id: "flexDirection",
+    path: "/flex-direction",
+    exact: true,
+    component: () => import("pages/FlexDirection"),
+  },
+  {
     id: "zIndex",
     path: "/z-index",
     exact: true,

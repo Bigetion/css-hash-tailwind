@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
 import routes from "routes";
-import history from "routes/history";
 
 import "tailwind/style/base";
 import "tailwind/style/align";
@@ -51,7 +50,7 @@ const loadComponent = (component) =>
 function App() {
   return (
     <React.Fragment>
-      <Router history={history}>
+      <Router>
         <Switch>
           {routes.map(({ id, path, component, exact }) => (
             <Route
