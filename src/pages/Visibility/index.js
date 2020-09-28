@@ -11,17 +11,17 @@ export default function Visibility() {
           <h1 className="text-3xl">Visibility</h1>
         </div>
         <PanelSection title="Visible">
-          <div class="rounded-lg overflow-hidden border border-gray-400 flex justify-center p-4">
-            <div class="bg-gray-400 w-32 h-12"></div>
-            <div class="visible bg-gray-600 w-32 h-12"></div>
-            <div class="bg-gray-400 w-32 h-12"></div>
+          <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-center p-4">
+            <div className="bg-gray-400 w-32 h-12"></div>
+            <div className="visible bg-gray-600 w-32 h-12"></div>
+            <div className="bg-gray-400 w-32 h-12"></div>
           </div>
         </PanelSection>
         <PanelSection title="Invisible">
-          <div class="rounded-lg overflow-hidden border border-gray-400 flex justify-center p-4">
-            <div class="bg-gray-400 w-32 h-12"></div>
-            <div class="invisible bg-gray-600 w-32 h-12"></div>
-            <div class="bg-gray-400 w-32 h-12"></div>
+          <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-center p-4">
+            <div className="bg-gray-400 w-32 h-12"></div>
+            <div className="invisible bg-gray-600 w-32 h-12"></div>
+            <div className="bg-gray-400 w-32 h-12"></div>
           </div>
         </PanelSection>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { cssHash, classNames } from "css-hash";
@@ -15,9 +15,8 @@ const sidebarClass = cssHash(
   `
 );
 
-function Menu({ title, items }) {
-  const location = useLocation();
-  const { pathname = "" } = location;
+function Menu({ title, items, sidebarScrollTop }) {
+  const { pathname = "" } = useLocation();
 
   return (
     <div className="mb-8">
@@ -38,7 +37,10 @@ function Menu({ title, items }) {
                     : "hover:translate-x-2px hover:text-gray-900 text-gray-600",
                   "font-medium"
                 )}
-                to={path}
+                to={{
+                  pathname: path,
+                  state: { sidebarScrollTop },
+                }}
               >
                 <span
                   className={classNames(
@@ -59,6 +61,10 @@ function Menu({ title, items }) {
 function Layout(props) {
   const { children } = props;
 
+  const { state } = useLocation();
+
+  const sidebarRef = useRef();
+
   const isClient = typeof window === "object";
   const getSize = () => ({
     width: isClient ? window.innerWidth : undefined,
@@ -68,9 +74,15 @@ function Layout(props) {
   const mobileWidth = 1024;
   const { width } = getSize();
   const [showSidebar, setShowSidebar] = useState(width > mobileWidth);
+  const [sidebarScrollTop, setSidebarScrollTop] = useState(
+    state.sidebarScrollTop
+  );
 
   useEffect(
     () => {
+      if (state.sidebarScrollTop) {
+        sidebarRef.current.scrollTop = state.sidebarScrollTop;
+      }
       if (!isClient) {
         return false;
       }
@@ -223,10 +235,18 @@ function Layout(props) {
             <div className="fixed inset-0 h-full bg-white z-90 w-full border-b border-r -mb-16 lg:-mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:border-b-0 lg:pt-0 lg:w-1/4 lg:block xl:w-1/5 pt-16">
               <div className="overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-16 bg-white">
                 <div
+                  ref={sidebarRef}
+                  onScroll={() => {
+                    setSidebarScrollTop(sidebarRef.current.scrollTop);
+                  }}
                   className={`px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
                 >
                   {menus.map((item, index) => (
-                    <Menu key={index} {...item} />
+                    <Menu
+                      sidebarScrollTop={sidebarScrollTop}
+                      key={index}
+                      {...item}
+                    />
                   ))}
                 </div>
               </div>
