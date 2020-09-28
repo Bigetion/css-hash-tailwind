@@ -1,6 +1,42 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "maxHeight",
+    path: "/max-height",
+    exact: true,
+    component: () => import("pages/MaxHeight"),
+  },
+  {
+    id: "minHeight",
+    path: "/min-height",
+    exact: true,
+    component: () => import("pages/MinHeight"),
+  },
+  {
+    id: "height",
+    path: "/height",
+    exact: true,
+    component: () => import("pages/Height"),
+  },
+  {
+    id: "maxWidth",
+    path: "/max-width",
+    exact: true,
+    component: () => import("pages/MaxWidth"),
+  },
+  {
+    id: "minWidth",
+    path: "/min-width",
+    exact: true,
+    component: () => import("pages/MinWidth"),
+  },
+  {
+    id: "width",
+    path: "/width",
+    exact: true,
+    component: () => import("pages/Width"),
+  },
+  {
     id: "spaceBetween",
     path: "/space-between",
     exact: true,
