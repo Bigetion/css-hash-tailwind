@@ -1,6 +1,24 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "spaceBetween",
+    path: "/space-between",
+    exact: true,
+    component: () => import("pages/SpaceBetween"),
+  },
+  {
+    id: "margin",
+    path: "/margin",
+    exact: true,
+    component: () => import("pages/Margin"),
+  },
+  {
+    id: "padding",
+    path: "/padding",
+    exact: true,
+    component: () => import("pages/Padding"),
+  },
+  {
     id: "placeSelf",
     path: "/place-self",
     exact: true,
