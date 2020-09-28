@@ -1,9 +1,9 @@
 import { cssHash } from "css-hash";
 
-import { generateCss, hexToRgb } from "../utils";
+import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix, colors, opacity } = configOptions;
+const { prefix: globalPrefix, opacity } = configOptions;
 
 const prefix = `${globalPrefix}border`;
 
@@ -27,19 +27,18 @@ const borderWidth = {
 const borderStyle = ["solid", "dashed", "dotted", "double", "none"];
 
 const responsiveCssString = generateCss(
-  ({ orientationPrefix, pseudoClass, getCssByOptions }) => {
-    const generateBorderColor = (name, htmlColor) => {
+  ({ orientationPrefix, pseudoClass, getCssByOptions, getCssFromColors }) => {
+    let cssString = getCssFromColors((colorName, htmlColor, rgbColor) => {
       let str = "";
       if (htmlColor === "transparent") {
         str += `
-          ${pseudoClass(`${prefix}-${name}`)} {
+          ${pseudoClass(`${prefix}-${colorName}`)} {
             border-color: transparent;
           }
         `;
       } else {
-        const rgbColor = hexToRgb(htmlColor);
         str += `
-          ${pseudoClass(`${prefix}-${name}`)} {
+          ${pseudoClass(`${prefix}-${colorName}`)} {
             --border-opacity: 1;
             border-color: ${htmlColor};
             border-color: rgba(${rgbColor}, var(--border-opacity));
@@ -47,17 +46,6 @@ const responsiveCssString = generateCss(
         `;
       }
       return str;
-    };
-
-    let cssString = "";
-    Object.entries(colors).forEach(([color, colorValue]) => {
-      if (typeof colorValue === "string") {
-        cssString += `${generateBorderColor(color, colorValue)} `;
-      } else if (typeof colorValue === "object") {
-        Object.entries(colorValue).forEach(([key, value]) => {
-          cssString += `${generateBorderColor(`${color}-${key}`, value)} `;
-        });
-      }
     });
     cssString += getCssByOptions(borderRadius, (key, value) => {
       const k = key !== "default" ? `-${key}` : "";

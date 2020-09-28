@@ -1,9 +1,9 @@
 import { cssHash } from "css-hash";
 
-import { generateCss, hexToRgb } from "../utils";
+import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix, colors, opacity } = configOptions;
+const { prefix: globalPrefix, opacity } = configOptions;
 
 const prefix = `${globalPrefix}bg`;
 
@@ -31,19 +31,18 @@ const backgroundRepeat = {
 const backgroundSize = ["auto", "cover", "contain"];
 
 const responsiveCssString = generateCss(
-  ({ orientationPrefix, pseudoClass, getCssByOptions }) => {
-    const generateBgColor = (name, htmlColor) => {
+  ({ orientationPrefix, pseudoClass, getCssByOptions, getCssFromColors }) => {
+    let cssString = getCssFromColors((colorName, htmlColor, rgbColor) => {
       let str = "";
       if (htmlColor === "transparent") {
         str += `
-          ${pseudoClass(`${prefix}-${name}`)} {
+          ${pseudoClass(`${prefix}-${colorName}`)} {
             background-color: transparent;
           }
         `;
       } else {
-        const rgbColor = hexToRgb(htmlColor);
         str += `
-          ${pseudoClass(`${prefix}-${name}`)} {
+          ${pseudoClass(`${prefix}-${colorName}`)} {
             --bg-opacity: 1;
             background-color: ${htmlColor};
             background-color: rgba(${rgbColor}, var(--bg-opacity));
@@ -51,17 +50,6 @@ const responsiveCssString = generateCss(
         `;
       }
       return str;
-    };
-
-    let cssString = "";
-    Object.entries(colors).forEach(([key1, value1]) => {
-      if (typeof value1 === "string") {
-        cssString += `${generateBgColor(key1, value1)} `;
-      } else if (typeof value1 === "object") {
-        Object.entries(value1).forEach(([key2, value2]) => {
-          cssString += `${generateBgColor(`${key1}-${key2}`, value2)} `;
-        });
-      }
     });
     cssString += getCssByOptions(
       backgroundAttachment,

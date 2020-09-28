@@ -1,15 +1,9 @@
 import { cssHash } from "css-hash";
 
-import { generateCss, hexToRgb } from "../utils";
+import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const {
-  prefix: globalPrefix,
-  colors,
-  opacity,
-  fontSize,
-  fontWeight,
-} = configOptions;
+const { prefix: globalPrefix, opacity, fontSize, fontWeight } = configOptions;
 
 const prefix = `${globalPrefix}text`;
 
@@ -42,19 +36,18 @@ const whitespace = {
 };
 
 const responsiveCssString = generateCss(
-  ({ orientationPrefix, pseudoClass, getCssByOptions }) => {
-    const generateTextColor = (name, htmlColor) => {
+  ({ orientationPrefix, pseudoClass, getCssByOptions, getCssFromColors }) => {
+    let cssString = getCssFromColors((colorName, htmlColor, rgbColor) => {
       let str = "";
       if (htmlColor === "transparent") {
         str += `
-          ${pseudoClass(`${prefix}-${name}`)} {
+          ${pseudoClass(`${prefix}-${colorName}`)} {
             color: transparent;
           }
         `;
       } else {
-        const rgbColor = hexToRgb(htmlColor);
         str += `
-          ${pseudoClass(`${prefix}-${name}`)} {
+          ${pseudoClass(`${prefix}-${colorName}`)} {
             --text-opacity: 1;
             color: ${htmlColor};
             color: rgba(${rgbColor}, var(--text-opacity));
@@ -62,17 +55,6 @@ const responsiveCssString = generateCss(
         `;
       }
       return str;
-    };
-
-    let cssString = "";
-    Object.entries(colors).forEach(([color, colorValue]) => {
-      if (typeof colorValue === "string") {
-        cssString += `${generateTextColor(color, colorValue)} `;
-      } else if (typeof colorValue === "object") {
-        Object.entries(colorValue).forEach(([key, value]) => {
-          cssString += `${generateTextColor(`${color}-${key}`, value)} `;
-        });
-      }
     });
     cssString += getCssByOptions(
       alignment,

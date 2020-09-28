@@ -1,6 +1,6 @@
 import configOptions from "./config";
 
-const { screens } = configOptions;
+const { screens, colors } = configOptions;
 
 export const generateCss = (getCssString = () => {}, isResponsive = true) => {
   let orientationPrefix = "";
@@ -36,6 +36,20 @@ export const generateCss = (getCssString = () => {}, isResponsive = true) => {
     return str;
   };
 
+  const getCssFromColors = (getStr = () => {}) => {
+    let str = "";
+    Object.entries(colors).forEach(([key1, value1]) => {
+      if (typeof value1 === "string") {
+        str += `${getStr(key1, value1, hexToRgb(value1))} `;
+      } else if (typeof value1 === "object") {
+        Object.entries(value1).forEach(([key2, value2]) => {
+          str += `${getStr(`${key1}-${key2}`, value2, hexToRgb(value2))} `;
+        });
+      }
+    });
+    return str;
+  };
+
   let cssString = getCssString({
     orientationPrefix,
     pseudoClass,
@@ -51,6 +65,7 @@ export const generateCss = (getCssString = () => {}, isResponsive = true) => {
             orientationPrefix,
             pseudoClass,
             getCssByOptions,
+            getCssFromColors,
           })}     
         }
       `;

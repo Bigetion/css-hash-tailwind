@@ -1,27 +1,27 @@
 import { cssHash } from "css-hash";
 
-import { generateCss, hexToRgb } from "../utils";
+import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix, colors, opacity } = configOptions;
+const { prefix: globalPrefix, opacity } = configOptions;
 
 const prefix = `${globalPrefix}placeholder`;
 const pseudoElements = ["", "focus"];
 
 const responsiveCssString = generateCss(
-  ({ orientationPrefix, getCssByOptions }) => {
-    const generatePlaceholderColor = (name, htmlColor) => {
+  ({ orientationPrefix, getCssByOptions, getCssFromColors }) => {
+    let cssString = getCssFromColors((colorName, htmlColor, rgbColor) => {
       let str = "";
       const classList = (placeholderPseudo = "") =>
         pseudoElements
           .map((item) => {
             let className = `
-          .${orientationPrefix}${prefix}-${name}${placeholderPseudo}
-        `;
+              .${orientationPrefix}${prefix}-${colorName}${placeholderPseudo}
+            `;
             if (item !== "") {
               className = `
-            .${orientationPrefix}${item}\\:${prefix}-${name}:${item}${placeholderPseudo}
-          `;
+                .${orientationPrefix}${item}\\:${prefix}-${colorName}:${item}${placeholderPseudo}
+              `;
             }
             return className;
           })
@@ -29,56 +29,44 @@ const responsiveCssString = generateCss(
 
       if (htmlColor === "transparent") {
         str += `
-        ${classList("::-webkit-input-placeholder")} {
-          color: transparent;
-        }
-        ${classList(":-ms-input-placeholder")} {
-          color: transparent;
-        }
-        ${classList("::-ms-input-placeholder")} {
-          color: transparent;
-        }
-        ${classList("::placeholder")} {
-          color: transparent;
-        }
-      `;
+          ${classList("::-webkit-input-placeholder")} {
+            color: transparent;
+          }
+          ${classList(":-ms-input-placeholder")} {
+            color: transparent;
+          }
+          ${classList("::-ms-input-placeholder")} {
+            color: transparent;
+          }
+          ${classList("::placeholder")} {
+            color: transparent;
+          }
+        `;
       } else {
-        const rgbColor = hexToRgb(htmlColor);
         str += `
-        ${classList("::-webkit-input-placeholder")} {
-          --placeholder-opacity: 1;
-          color: ${htmlColor};
-          color: rgba(${rgbColor}, var(--placeholder-opacity));
-        }
-        ${classList(":-ms-input-placeholder")} {
-          --placeholder-opacity: 1;
-          color: ${htmlColor};
-          color: rgba(${rgbColor}, var(--placeholder-opacity));
-        }
-        ${classList("::-ms-input-placeholder")} { 
-          --placeholder-opacity: 1;
-          color: ${htmlColor};
-          color: rgba(${rgbColor}, var(--placeholder-opacity));
-        }
-        ${classList("::placeholder")} {
-          --placeholder-opacity: 1;
-          color: ${htmlColor};
-          color: rgba(${rgbColor}, var(--placeholder-opacity));
-        }
-      `;
+          ${classList("::-webkit-input-placeholder")} {
+            --placeholder-opacity: 1;
+            color: ${htmlColor};
+            color: rgba(${rgbColor}, var(--placeholder-opacity));
+          }
+          ${classList(":-ms-input-placeholder")} {
+            --placeholder-opacity: 1;
+            color: ${htmlColor};
+            color: rgba(${rgbColor}, var(--placeholder-opacity));
+          }
+          ${classList("::-ms-input-placeholder")} { 
+            --placeholder-opacity: 1;
+            color: ${htmlColor};
+            color: rgba(${rgbColor}, var(--placeholder-opacity));
+          }
+          ${classList("::placeholder")} {
+            --placeholder-opacity: 1;
+            color: ${htmlColor};
+            color: rgba(${rgbColor}, var(--placeholder-opacity));
+          }
+        `;
       }
       return str;
-    };
-
-    let cssString = "";
-    Object.entries(colors).forEach(([color, colorValue]) => {
-      if (typeof colorValue === "string") {
-        cssString += `${generatePlaceholderColor(color, colorValue)} `;
-      } else if (typeof colorValue === "object") {
-        Object.entries(colorValue).forEach(([key, value]) => {
-          cssString += `${generatePlaceholderColor(`${color}-${key}`, value)} `;
-        });
-      }
     });
     cssString += getCssByOptions(
       opacity,
