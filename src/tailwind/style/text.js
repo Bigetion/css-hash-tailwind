@@ -125,7 +125,7 @@ const responsiveCssString = generateCss(
     cssString += getCssByOptions(
       verticalAlignment,
       (key, value) => `
-        .${orientationPrefix}${prefix}align-${key} {
+        .${orientationPrefix}${globalPrefix}align-${key} {
           vertical-align: ${value};
         }
       `
@@ -147,10 +147,10 @@ const responsiveCssString = generateCss(
         -webkit-font-smoothing: auto;
         -moz-osx-font-smoothing: auto;
       }
-      .${orientationPrefix}${prefix}italic {
+      .${orientationPrefix}${globalPrefix}italic {
         font-style: italic;
       }
-      .${orientationPrefix}${prefix}not-italic {
+      .${orientationPrefix}${globalPrefix}not-italic {
         font-style: normal;
       }
       .${orientationPrefix}${globalPrefix}break-normal {
