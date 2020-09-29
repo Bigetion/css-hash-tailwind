@@ -56,6 +56,4 @@ const responsiveCssString = generateCss(({ pseudoClass, getCssFromColors }) => {
   return cssString;
 });
 
-console.log(responsiveCssString);
-
 cssHash(() => responsiveCssString);
