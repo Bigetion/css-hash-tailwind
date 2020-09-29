@@ -41,6 +41,7 @@ import "tailwind/style/visibility";
 import "tailwind/style/width";
 import "tailwind/style/zindex";
 
+import Layout from "layout";
 import PageLoader from "components/PageLoader";
 
 cssHash(
@@ -62,16 +63,18 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-        <Switch>
-          {routes.map(({ id, path, component, exact }) => (
-            <Route
-              key={id}
-              path={path}
-              component={loadComponent(component)}
-              exact={exact}
-            />
-          ))}
-        </Switch>
+        <Layout>
+          <Switch>
+            {routes.map(({ id, path, component, exact }) => (
+              <Route
+                key={id}
+                path={path}
+                component={loadComponent(component)}
+                exact={exact}
+              />
+            ))}
+          </Switch>
+        </Layout>
       </Router>
     </React.Fragment>
   );
