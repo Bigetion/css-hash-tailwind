@@ -6,9 +6,11 @@ export default function NotFound() {
       <div className="flex items-center">
         <h1 className="text-3xl">404</h1>
       </div>
-      <p className="mt-0 mb-4 text-gray-600">
-        The page you requested was not found
-      </p>
+      <div className="mt-4">
+        <h1 className="text-xl text-gray-700">
+          The page you requested was not found
+        </h1>
+      </div>
     </div>
   );
 }

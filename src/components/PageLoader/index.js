@@ -7,7 +7,7 @@ export default function PageLoader() {
         <h1 className="text-3xl">.....</h1>
       </div>
       <div className="mt-4">
-        <h1 className="text-xl">..........</h1>
+        <h1 className="text-xl text-gray-700">..........</h1>
       </div>
     </div>
   );
