@@ -75,6 +75,7 @@ function Layout(props) {
 
   const mobileWidth = 1024;
   const { width } = getSize();
+  const [isMobile, setIsmobile] = useState(width < mobileWidth);
   const [showSidebar, setShowSidebar] = useState(width > mobileWidth);
   const [sidebarScrollTop, setSidebarScrollTop] = useState(
     lastSidebarScrollTop
@@ -90,6 +91,7 @@ function Layout(props) {
       }
       const handleResize = () => {
         const { width } = getSize();
+        setIsmobile(width < mobileWidth);
         setShowSidebar(width > mobileWidth);
       };
       window.addEventListener("resize", handleResize);
@@ -200,7 +202,7 @@ function Layout(props) {
                       sidebarScrollTop={sidebarScrollTop}
                       key={index}
                       onClickLink={() => {
-                        setShowSidebar(false);
+                        setShowSidebar(!isMobile);
                       }}
                       {...item}
                     />
@@ -212,9 +214,7 @@ function Layout(props) {
           <div
             className={classNames(
               "min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5",
-              showSidebar &&
-                width <= mobileWidth &&
-                "overflow-hidden max-h-screen fixed"
+              showSidebar && isMobile && "overflow-hidden max-h-screen fixed"
             )}
           >
             <div>
