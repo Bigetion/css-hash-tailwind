@@ -15,7 +15,7 @@ const sidebarClass = cssHash(
   `
 );
 
-function Menu({ title, items, sidebarScrollTop }) {
+function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
   const { pathname = "" } = useLocation();
 
   return (
@@ -41,6 +41,7 @@ function Menu({ title, items, sidebarScrollTop }) {
                   pathname: path,
                   state: { sidebarScrollTop },
                 }}
+                onClick={onClickLink}
               >
                 <span
                   className={classNames(
@@ -198,6 +199,9 @@ function Layout(props) {
                     <Menu
                       sidebarScrollTop={sidebarScrollTop}
                       key={index}
+                      onClickLink={() => {
+                        setShowSidebar(false);
+                      }}
                       {...item}
                     />
                   ))}
