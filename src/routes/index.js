@@ -1,6 +1,30 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "divideStyle",
+    path: "/divide-style",
+    exact: true,
+    component: () => import("pages/DivideStyle"),
+  },
+  {
+    id: "divideOpacity",
+    path: "/divide-opacity",
+    exact: true,
+    component: () => import("pages/DivideOpacity"),
+  },
+  {
+    id: "divideColor",
+    path: "/divide-color",
+    exact: true,
+    component: () => import("pages/DivideColor"),
+  },
+  {
+    id: "divideWidth",
+    path: "/divide-width",
+    exact: true,
+    component: () => import("pages/DivideWidth"),
+  },
+  {
     id: "gradientColorStops",
     path: "/gradient-color-stops",
     exact: true,

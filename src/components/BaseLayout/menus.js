@@ -116,6 +116,10 @@ const menus = [
       { label: "Border Color" },
       { label: "Border Opacity" },
       { label: "Border Style" },
+      { label: "Divide Width" },
+      { label: "Divide Color" },
+      { label: "Divide Opacity" },
+      { label: "Divide Style" },
     ],
   },
   {

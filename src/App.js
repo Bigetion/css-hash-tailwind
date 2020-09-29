@@ -14,6 +14,7 @@ import "tailwind/style/box";
 import "tailwind/style/clear";
 import "tailwind/style/container";
 import "tailwind/style/display";
+import "tailwind/style/divide";
 import "tailwind/style/flex";
 import "tailwind/style/float";
 import "tailwind/style/form";
