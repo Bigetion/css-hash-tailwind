@@ -36,6 +36,7 @@ import "tailwind/style/placeholder";
 import "tailwind/style/position";
 import "tailwind/style/shadow";
 import "tailwind/style/space";
+import "tailwind/style/table";
 import "tailwind/style/text";
 import "tailwind/style/tracking";
 import "tailwind/style/visibility";

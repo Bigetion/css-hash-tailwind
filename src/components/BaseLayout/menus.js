@@ -130,6 +130,17 @@ const menus = [
     title: "Effects",
     items: [{ label: "Box Shadow" }, { label: "Opacity" }],
   },
+  {
+    title: "Interactivity",
+    items: [
+      { label: "Appearance" },
+      { label: "Cursor" },
+      { label: "Outline" },
+      { label: "Pointer Events" },
+      { label: "Resize" },
+      { label: "User Select" },
+    ],
+  },
 ];
 
 export default menus;

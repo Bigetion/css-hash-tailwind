@@ -119,6 +119,14 @@ const responsiveCssString = generateCss(
         }
       `
     );
+    cssString += `
+      .${orientationPrefix}${prefix}-collapse {
+        border-collapse: collapse;
+      }
+      .${orientationPrefix}${prefix}-separate {
+        border-collapse: separate;
+      }
+    `;
     return cssString;
   }
 );

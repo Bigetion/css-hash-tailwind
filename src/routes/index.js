@@ -1,6 +1,66 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "userSelect",
+    path: "/user-select",
+    exact: true,
+    component: () => import("pages/UserSelect"),
+  },
+  {
+    id: "resize",
+    path: "/resize",
+    exact: true,
+    component: () => import("pages/Resize"),
+  },
+  {
+    id: "pointerEvents",
+    path: "/pointer-events",
+    exact: true,
+    component: () => import("pages/PointerEvents"),
+  },
+  {
+    id: "outline",
+    path: "/outline",
+    exact: true,
+    component: () => import("pages/Outline"),
+  },
+  {
+    id: "cursor",
+    path: "/cursor",
+    exact: true,
+    component: () => import("pages/Cursor"),
+  },
+  {
+    id: "appearance",
+    path: "/appearance",
+    exact: true,
+    component: () => import("pages/Appearance"),
+  },
+  {
+    id: "opacity",
+    path: "/opacity",
+    exact: true,
+    component: () => import("pages/Opacity"),
+  },
+  {
+    id: "boxShadow",
+    path: "/box-shadow",
+    exact: true,
+    component: () => import("pages/BoxShadow"),
+  },
+  {
+    id: "tableLayout",
+    path: "/table-layout",
+    exact: true,
+    component: () => import("pages/TableLayout"),
+  },
+  {
+    id: "borderCollapse",
+    path: "/border-collapse",
+    exact: true,
+    component: () => import("pages/BorderCollapse"),
+  },
+  {
     id: "borderStyle",
     path: "/border-style",
     exact: true,
