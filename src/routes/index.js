@@ -1,6 +1,60 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "gradientColorStops",
+    path: "/gradient-color-stops",
+    exact: true,
+    component: () => import("pages/GradientColorStops"),
+  },
+  {
+    id: "backgroundImage",
+    path: "/background-image",
+    exact: true,
+    component: () => import("pages/BackgroundImage"),
+  },
+  {
+    id: "backgroundSize",
+    path: "/background-size",
+    exact: true,
+    component: () => import("pages/BackgroundSize"),
+  },
+  {
+    id: "backgroundRepeat",
+    path: "/background-repeat",
+    exact: true,
+    component: () => import("pages/BackgroundRepeat"),
+  },
+  {
+    id: "backgroundPosition",
+    path: "/background-position",
+    exact: true,
+    component: () => import("pages/BackgroundPosition"),
+  },
+  {
+    id: "backgroundOpacity",
+    path: "/background-opacity",
+    exact: true,
+    component: () => import("pages/BackgroundOpacity"),
+  },
+  {
+    id: "backgroundColor",
+    path: "/background-color",
+    exact: true,
+    component: () => import("pages/BackgroundColor"),
+  },
+  {
+    id: "backgroundClip",
+    path: "/background-clip",
+    exact: true,
+    component: () => import("pages/BackgroundClip"),
+  },
+  {
+    id: "backgroundAttachment",
+    path: "/background-attachment",
+    exact: true,
+    component: () => import("pages/BackgroundAttachment"),
+  },
+  {
     id: "wordBreak",
     path: "/word-break",
     exact: true,

@@ -63,6 +63,7 @@ const responsiveCssString = generateCss(
       backgroundClip,
       (key, value) => `
         .${orientationPrefix}${prefix}-clip-${key} {
+          -webkit-background-clip: ${value !== "text" ? `${value}-box` : value};
           background-clip: ${value !== "text" ? `${value}-box` : value};
         }  
       `
