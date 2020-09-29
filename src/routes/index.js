@@ -1,6 +1,36 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "borderStyle",
+    path: "/border-style",
+    exact: true,
+    component: () => import("pages/BorderStyle"),
+  },
+  {
+    id: "borderOpacity",
+    path: "/border-opacity",
+    exact: true,
+    component: () => import("pages/BorderOpacity"),
+  },
+  {
+    id: "borderColor",
+    path: "/border-color",
+    exact: true,
+    component: () => import("pages/BorderColor"),
+  },
+  {
+    id: "borderWidth",
+    path: "/border-width",
+    exact: true,
+    component: () => import("pages/BorderWidth"),
+  },
+  {
+    id: "borderRadius",
+    path: "/border-radius",
+    exact: true,
+    component: () => import("pages/BorderRadius"),
+  },
+  {
     id: "divideStyle",
     path: "/divide-style",
     exact: true,
