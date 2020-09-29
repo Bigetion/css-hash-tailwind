@@ -1,7 +1,8 @@
 import React from "react";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loadable from "react-loadable";
+
+import { cssHash } from "css-hash";
 
 import routes from "routes";
 
@@ -40,6 +41,15 @@ import "tailwind/style/width";
 import "tailwind/style/zindex";
 
 import PageLoader from "components/PageLoader";
+
+cssHash(
+  () => `
+    html {
+      line-height: 1.5;
+      font-family: Inter, sans-serif;
+    }
+  `
+);
 
 const loadComponent = (component) =>
   Loadable({
