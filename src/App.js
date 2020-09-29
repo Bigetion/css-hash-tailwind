@@ -41,7 +41,7 @@ import "tailwind/style/visibility";
 import "tailwind/style/width";
 import "tailwind/style/zindex";
 
-import Layout from "layout";
+import Layout from "components/BaseLayout";
 import PageLoader from "components/PageLoader";
 
 cssHash(
