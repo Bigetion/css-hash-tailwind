@@ -64,11 +64,11 @@ const menus = [
     title: "Sizing",
     items: [
       { label: "Width" },
-      { label: "Min Width" },
-      { label: "Max Width" },
+      { label: "Min-Width" },
+      { label: "Max-Width" },
       { label: "Height" },
-      { label: "Min Height" },
-      { label: "Max Height" },
+      { label: "Min-Height" },
+      { label: "Max-Height" },
     ],
   },
   {
