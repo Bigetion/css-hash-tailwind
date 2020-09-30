@@ -3,26 +3,24 @@ import { cssHash } from "css-hash";
 import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
-export default function generateClear(globalConfigOptions = {}) {
+export default function generateOpacity(globalConfigOptions = {}) {
   const configOptions = Object.assign(
     {},
     defaultConfigOptions,
     globalConfigOptions
   );
 
-  const { prefix: globalPrefix } = configOptions;
+  const { prefix: globalPrefix, opacity } = configOptions;
 
-  const prefix = `${globalPrefix}clear`;
-
-  const clear = ["left", "right", "both", "none"];
+  const prefix = `${globalPrefix}opacity`;
 
   const responsiveCssString = generateCssWithOptions(
-    ({ orientationPrefix, getCssByOptions }) => {
+    ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        clear,
+        opacity,
         (key, value) => `
-          .${orientationPrefix}${prefix}-${key} {
-            clear: ${value};
+          ${pseudoClass(`${prefix}-${key}`)} {
+            opacity: ${value};
           }
         `
       );

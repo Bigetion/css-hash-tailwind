@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateVisibility(globalConfigOptions = {}) {
@@ -12,7 +12,7 @@ export default function generateVisibility(globalConfigOptions = {}) {
 
   const { prefix } = configOptions;
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix }) => `
       .${orientationPrefix}${prefix}visible {
         visibility: visible;

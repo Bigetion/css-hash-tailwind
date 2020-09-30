@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateContainer(globalConfigOptions = {}) {
@@ -13,7 +13,7 @@ export default function generateContainer(globalConfigOptions = {}) {
 
   const prefix = `${globalPrefix}container`;
 
-  const responsiveCssString = generateCss2(({ orientationPrefix }) => {
+  const responsiveCssString = generateCssWithOptions(({ orientationPrefix }) => {
     let cssString = `
       .${orientationPrefix}${prefix} {
         width: 100%;

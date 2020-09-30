@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateGradient(globalConfigOptions = {}) {
@@ -14,7 +14,7 @@ export default function generateGradient(globalConfigOptions = {}) {
 
   const prefix = `${globalPrefix}bg`;
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ pseudoClass, getCssFromColors }) => {
       let cssString = getCssFromColors((colorName, htmlColor, rgbColor) => {
         let str = "";

@@ -76,7 +76,7 @@ export const generateCss = (getCssString = () => {}, isResponsive = true) => {
   return cssString;
 };
 
-export const generateCss2 = (
+export const generateCssWithOptions = (
   getCssString = () => {},
   options,
   isResponsive = true

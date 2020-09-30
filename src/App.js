@@ -6,43 +6,6 @@ import { cssHash } from "css-hash";
 
 import routes from "routes";
 
-// import "tailwind/style/base";
-// import "tailwind/style/align";
-// import "tailwind/style/bg";
-// import "tailwind/style/border";
-// import "tailwind/style/box";
-// import "tailwind/style/clear";
-// import "tailwind/style/container";
-// import "tailwind/style/display";
-// import "tailwind/style/divide";
-// import "tailwind/style/flex";
-// import "tailwind/style/float";
-// import "tailwind/style/form";
-// import "tailwind/style/gradient";
-// import "tailwind/style/grid";
-import "tailwind/style/height";
-import "tailwind/style/interactivity";
-import "tailwind/style/justify";
-import "tailwind/style/leading";
-import "tailwind/style/list";
-import "tailwind/style/margin";
-// import "tailwind/style/object";
-import "tailwind/style/opacity";
-// import "tailwind/style/overflow";
-// import "tailwind/style/overscroll";
-import "tailwind/style/padding";
-import "tailwind/style/place";
-import "tailwind/style/placeholder";
-// import "tailwind/style/position";
-import "tailwind/style/shadow";
-import "tailwind/style/space";
-import "tailwind/style/table";
-import "tailwind/style/text";
-import "tailwind/style/tracking";
-// import "tailwind/style/visibility";
-import "tailwind/style/width";
-// import "tailwind/style/zindex";
-
 import generateTailwindCss from "tailwind/generators";
 
 import Layout from "components/BaseLayout";

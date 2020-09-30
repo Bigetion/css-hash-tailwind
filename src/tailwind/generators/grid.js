@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 
 import defaultConfigOptions from "../config";
 
@@ -24,7 +24,7 @@ export default function generateGrid(globalConfigOptions = {}) {
     "col-dense": "column dense",
   };
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ pseudoClass, getCssByOptions }) => {
       const generateGrid = (name, arrays) => {
         const shortName = name.substr(0, 3);

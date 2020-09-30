@@ -3,7 +3,7 @@ import { cssHash } from "css-hash";
 import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
-export default function generateOverscroll(globalConfigOptions = {}) {
+export default function generateLeading(globalConfigOptions = {}) {
   const configOptions = Object.assign(
     {},
     defaultConfigOptions,
@@ -12,23 +12,31 @@ export default function generateOverscroll(globalConfigOptions = {}) {
 
   const { prefix: globalPrefix } = configOptions;
 
-  const prefix = `${globalPrefix}overscroll`;
+  const prefix = `${globalPrefix}leading`;
 
-  const overscroll = ["auto", "contain", "none"];
+  const lineHeight = Object.assign(
+    [3, 4, 5, 6, 7, 8, 9, 10].reduce(
+      (currentObj, size) =>
+        Object.assign(currentObj, { [size]: `${size / 4}rem` }),
+      {}
+    ),
+    {
+      none: "1",
+      tight: "1.25",
+      snug: "1.375",
+      normal: "1.5",
+      relaxed: "1.625",
+      loose: "2",
+    }
+  );
 
   const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        overscroll,
+        lineHeight,
         (key, value) => `
           .${orientationPrefix}${prefix}-${key} {
-            overscroll-behavior: ${value};
-          }
-          .${orientationPrefix}${prefix}-x-${key} {
-            overscroll-behavior-x: ${value};
-          }
-          .${orientationPrefix}${prefix}-y-${key} {
-            overscroll-behavior-y: ${value};
+            line-height: ${value};
           }
         `
       );

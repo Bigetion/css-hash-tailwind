@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateOverflow(globalConfigOptions = {}) {
@@ -16,7 +16,7 @@ export default function generateOverflow(globalConfigOptions = {}) {
 
   const overflow = ["auto", "hidden", "visible", "scroll"];
 
-  let responsiveCssString = generateCss2(
+  let responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       let cssString = getCssByOptions(
         overflow,

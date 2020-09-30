@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateDivide(globalConfigOptions = {}) {
@@ -17,7 +17,7 @@ export default function generateDivide(globalConfigOptions = {}) {
   const divideSpacing = ["default", 0, 2, 4, 8];
   const divideStyle = ["solid", "dashed", "dotted", "double", "none"];
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions, getCssFromColors }) => {
       const generateDivideWidth = (position, key, value) => {
         let dividePosition = "x";

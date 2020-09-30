@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateZIndex(globalConfigOptions = {}) {
@@ -16,7 +16,7 @@ export default function generateZIndex(globalConfigOptions = {}) {
 
   const zIndex = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, "auto"];
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       const cssString = getCssByOptions(
         zIndex,

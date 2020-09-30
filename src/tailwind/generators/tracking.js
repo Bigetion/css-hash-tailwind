@@ -1,34 +1,35 @@
 import { cssHash } from "css-hash";
 
 import { generateCssWithOptions } from "../utils";
-import defaultConfigOptions from "../config";
+import defaultonfigOptions from "../config";
 
-export default function generateOverscroll(globalConfigOptions = {}) {
+export default function generateTracking(globalConfigOptions = {}) {
   const configOptions = Object.assign(
     {},
-    defaultConfigOptions,
+    defaultonfigOptions,
     globalConfigOptions
   );
 
   const { prefix: globalPrefix } = configOptions;
 
-  const prefix = `${globalPrefix}overscroll`;
+  const prefix = `${globalPrefix}tracking`;
 
-  const overscroll = ["auto", "contain", "none"];
+  const letterSpacing = {
+    tighter: "-0.05em",
+    tight: "-0.025em",
+    normal: "0",
+    wide: "0.025em",
+    wider: "0.05em",
+    widest: "0.1em",
+  };
 
   const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        overscroll,
+        letterSpacing,
         (key, value) => `
           .${orientationPrefix}${prefix}-${key} {
-            overscroll-behavior: ${value};
-          }
-          .${orientationPrefix}${prefix}-x-${key} {
-            overscroll-behavior-x: ${value};
-          }
-          .${orientationPrefix}${prefix}-y-${key} {
-            overscroll-behavior-y: ${value};
+            letter-spacing: ${value};
           }
         `
       );

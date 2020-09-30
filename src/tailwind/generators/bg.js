@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateBg(globalConfigOptions = {}) {
@@ -37,7 +37,7 @@ export default function generateBg(globalConfigOptions = {}) {
   };
   const backgroundSize = ["auto", "cover", "contain"];
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, pseudoClass, getCssByOptions, getCssFromColors }) => {
       let cssString = getCssFromColors((colorName, htmlColor, rgbColor) => {
         let str = "";

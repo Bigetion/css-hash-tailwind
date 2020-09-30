@@ -75,7 +75,7 @@ const responsiveCssString = generateCss(
     cssString += getCssByOptions(
       decoration,
       (key, value) => `
-        .${orientationPrefix}${prefix}-${key} {
+        .${orientationPrefix}${globalPrefix}${key} {
           text-decoration: ${value};
         }
       `

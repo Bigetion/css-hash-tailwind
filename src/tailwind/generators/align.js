@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateAlign(globalConfigOptions = {}) {
@@ -37,7 +37,7 @@ export default function generateAlign(globalConfigOptions = {}) {
     stretch: "stretch",
   };
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       let cssString = getCssByOptions(
         alignContent,

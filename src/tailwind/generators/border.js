@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateBorder(globalConfigOptions = {}) {
@@ -33,7 +33,7 @@ export default function generateBorder(globalConfigOptions = {}) {
 
   const borderStyle = ["solid", "dashed", "dotted", "double", "none"];
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, pseudoClass, getCssByOptions, getCssFromColors }) => {
       let cssString = getCssFromColors((colorName, htmlColor, rgbColor) => {
         let str = "";

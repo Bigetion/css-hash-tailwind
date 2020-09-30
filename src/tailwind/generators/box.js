@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateBox(globalConfigOptions = {}) {
@@ -15,7 +15,7 @@ export default function generateBox(globalConfigOptions = {}) {
 
   const boxSizing = ["border", "content"];
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
         boxSizing,

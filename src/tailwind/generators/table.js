@@ -3,7 +3,7 @@ import { cssHash } from "css-hash";
 import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
-export default function generateOverscroll(globalConfigOptions = {}) {
+export default function generateTable(globalConfigOptions = {}) {
   const configOptions = Object.assign(
     {},
     defaultConfigOptions,
@@ -12,23 +12,17 @@ export default function generateOverscroll(globalConfigOptions = {}) {
 
   const { prefix: globalPrefix } = configOptions;
 
-  const prefix = `${globalPrefix}overscroll`;
+  const prefix = `${globalPrefix}table`;
 
-  const overscroll = ["auto", "contain", "none"];
+  const objectFit = ["auto", "fixed"];
 
   const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        overscroll,
+        objectFit,
         (key, value) => `
           .${orientationPrefix}${prefix}-${key} {
-            overscroll-behavior: ${value};
-          }
-          .${orientationPrefix}${prefix}-x-${key} {
-            overscroll-behavior-x: ${value};
-          }
-          .${orientationPrefix}${prefix}-y-${key} {
-            overscroll-behavior-y: ${value};
+            table-layout: ${value};
           }
         `
       );

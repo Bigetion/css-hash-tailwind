@@ -3,7 +3,7 @@ import { cssHash } from "css-hash";
 import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
-export default function generateObject(globalConfigOptions = {}) {
+export default function generateJustify(globalConfigOptions = {}) {
   const configOptions = Object.assign(
     {},
     defaultConfigOptions,
@@ -12,37 +12,38 @@ export default function generateObject(globalConfigOptions = {}) {
 
   const { prefix: globalPrefix } = configOptions;
 
-  const prefix = `${globalPrefix}object`;
+  const prefix = `${globalPrefix}justify`;
 
-  const objectFit = ["contain", "cover", "fill", "none", "scale-down"];
-  const objectPosition = [
-    "bottom",
-    "center",
-    "left",
-    "left-bottom",
-    "left-top",
-    "right",
-    "right-bottom",
-    "right-top",
-    "top",
-  ];
+  const justifyContent = {
+    start: "flex-start",
+    end: "flex-end",
+    center: "center",
+    between: "space-between",
+    around: "space-around",
+    evenly: "space-evenly",
+  };
+
+  const justifyItemsAndSelf = ["auto", "start", "center", "end", "stretch"];
 
   const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       let cssString = getCssByOptions(
-        objectFit,
+        justifyContent,
         (key, value) => `
           .${orientationPrefix}${prefix}-${key} {
-            object-fit: ${value};
+            justify-content: ${value};
           }
         `
       );
       cssString += getCssByOptions(
-        objectPosition,
+        justifyItemsAndSelf,
         (key, value) => `
-          .${orientationPrefix}${prefix}-${key} {
-            object-position: ${value.split("-").join(" ")};
-          } 
+          .${orientationPrefix}${prefix}-items-${key} {
+            justify-items: ${value};
+          }
+          .${orientationPrefix}${prefix}-self-${key} {
+            justify-self: ${value};
+          }
         `
       );
       return cssString;

@@ -1,6 +1,6 @@
 import { cssHash } from "css-hash";
 
-import { generateCss2 } from "../utils";
+import { generateCssWithOptions } from "../utils";
 import defaultConfigOptions from "../config";
 
 export default function generateFlex(globalConfigOptions = {}) {
@@ -56,7 +56,7 @@ export default function generateFlex(globalConfigOptions = {}) {
     }
   );
 
-  const responsiveCssString = generateCss2(
+  const responsiveCssString = generateCssWithOptions(
     ({ orientationPrefix, getCssByOptions }) => {
       let cssString = getCssByOptions(
         flexDirection,
