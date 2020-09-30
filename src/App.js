@@ -6,20 +6,20 @@ import { cssHash } from "css-hash";
 
 import routes from "routes";
 
-import "tailwind/style/base";
-import "tailwind/style/align";
-import "tailwind/style/bg";
-import "tailwind/style/border";
+// import "tailwind/style/base";
+// import "tailwind/style/align";
+// import "tailwind/style/bg";
+// import "tailwind/style/border";
 // import "tailwind/style/box";
 // import "tailwind/style/clear";
 // import "tailwind/style/container";
-import "tailwind/style/display";
-import "tailwind/style/divide";
-import "tailwind/style/flex";
+// import "tailwind/style/display";
+// import "tailwind/style/divide";
+// import "tailwind/style/flex";
 // import "tailwind/style/float";
-import "tailwind/style/form";
-import "tailwind/style/gradient";
-import "tailwind/style/grid";
+// import "tailwind/style/form";
+// import "tailwind/style/gradient";
+// import "tailwind/style/grid";
 import "tailwind/style/height";
 import "tailwind/style/interactivity";
 import "tailwind/style/justify";
@@ -39,9 +39,9 @@ import "tailwind/style/space";
 import "tailwind/style/table";
 import "tailwind/style/text";
 import "tailwind/style/tracking";
-import "tailwind/style/visibility";
+// import "tailwind/style/visibility";
 import "tailwind/style/width";
-import "tailwind/style/zindex";
+// import "tailwind/style/zindex";
 
 import generateTailwindCss from "tailwind/generators";
 
