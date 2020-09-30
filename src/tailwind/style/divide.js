@@ -88,5 +88,4 @@ const responsiveCssString = generateCss(
   }
 );
 
-console.log(responsiveCssString);
 cssHash(() => responsiveCssString);
