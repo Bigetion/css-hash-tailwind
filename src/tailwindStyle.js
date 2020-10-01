@@ -36,7 +36,7 @@ import {
   generateTracking,
   generateVisibility,
   generateWidth,
-  generateZIndex
+  generateZIndex,
 } from "tailwind-css-generator";
 
 let cssString = "";
