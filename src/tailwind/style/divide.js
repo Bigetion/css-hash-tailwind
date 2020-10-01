@@ -3,11 +3,10 @@ import { cssHash } from "css-hash";
 import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix, opacity } = configOptions;
+const { prefix: globalPrefix, opacity, divideSpacing } = configOptions;
 
 const prefix = `${globalPrefix}divide`;
 
-const divideSpacing = ["default", 0, 2, 4, 8];
 const divideStyle = ["solid", "dashed", "dotted", "double", "none"];
 
 const responsiveCssString = generateCss(
@@ -22,20 +21,19 @@ const responsiveCssString = generateCss(
         border2 = "bottom";
       }
       const k = key !== "default" ? `-${key}` : "";
-      const v = value !== "default" ? value : "1";
       return `
         .${orientationPrefix}${prefix}-${dividePosition}${k} > :not(template) ~ :not(template) {
           --divide-${dividePosition}-reverse: 0;
-          border-${border1}-width: calc(${v}px * calc(1 - var(--divide-${dividePosition}-reverse)));
-          border-${border2}-width: calc(${v}px * var(--divide-${dividePosition}-reverse));
+          border-${border1}-width: calc(${value} * calc(1 - var(--divide-${dividePosition}-reverse)));
+          border-${border2}-width: calc(${value} * var(--divide-${dividePosition}-reverse));
         }
       `;
     };
 
     let cssString = "";
-    divideSpacing.forEach((value) => {
-      cssString += generateDivideWidth("y", value, value);
-      cssString += generateDivideWidth("x", value, value);
+    Object.entries(divideSpacing).forEach(([key, value]) => {
+      cssString += generateDivideWidth("y", key, value);
+      cssString += generateDivideWidth("x", key, value);
     });
     cssString += `
       .${orientationPrefix}${prefix}-y-reverse > :not(template) ~ :not(template) {

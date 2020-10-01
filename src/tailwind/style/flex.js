@@ -3,7 +3,7 @@ import { cssHash } from "css-hash";
 import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix } = configOptions;
+const { prefix: globalPrefix, order } = configOptions;
 
 const prefix = `${globalPrefix}flex`;
 
@@ -36,18 +36,6 @@ const flexShrink = {
   0: 0,
   "": 1,
 };
-
-const order = Object.assign(
-  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].reduce(
-    (currentObj, size) => Object.assign(currentObj, { [size]: size }),
-    {}
-  ),
-  {
-    first: "-9999",
-    last: "9999",
-    none: "0",
-  }
-);
 
 const responsiveCssString = generateCss(
   ({ orientationPrefix, getCssByOptions }) => {

@@ -3,12 +3,9 @@ import { cssHash } from "css-hash";
 import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix, spacing } = configOptions;
+const { prefix: globalPrefix, spacing, extendMargin = {} } = configOptions;
 
 const prefix = `${globalPrefix}m`;
-const extraSpacing = {
-  auto: "auto",
-};
 
 const responsiveCssString = generateCss(({ pseudoClass }) => {
   const generateMargin = (key, value, isNegative) => {
@@ -41,7 +38,7 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
   };
 
   let cssString = "";
-  Object.entries(Object.assign(spacing, extraSpacing)).forEach(
+  Object.entries(Object.assign(spacing, extendMargin)).forEach(
     ([space, spaceValue]) => {
       cssString += generateMargin(space, spaceValue);
       cssString += generateMargin(space, spaceValue, true);

@@ -3,15 +3,9 @@ import { cssHash } from "css-hash";
 import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix } = configOptions;
+const { prefix: globalPrefix, listStyleType } = configOptions;
 
 const prefix = `${globalPrefix}list`;
-
-const listStyleType = {
-  none: "none",
-  disc: "disc",
-  decimal: "decimal",
-};
 
 const responsiveCssString = generateCss(
   ({ orientationPrefix, getCssByOptions }) => {

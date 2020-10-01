@@ -4,19 +4,14 @@ import { generateCss } from "../utils";
 
 import configOptions from "../config";
 
-const { prefix: globalPrefix, spacing } = configOptions;
+const { prefix: globalPrefix, spacing, extendHeight = {} } = configOptions;
 
 const prefix = `${globalPrefix}h`;
-const extraSpacing = {
-  auto: "auto",
-  full: "100%",
-  screen: "100vh",
-};
 
 const responsiveCssString = generateCss(
   ({ orientationPrefix, getCssByOptions }) => {
     let cssString = getCssByOptions(
-      Object.assign(spacing, extraSpacing),
+      Object.assign(spacing, extendHeight),
       (key, value) => `
         .${orientationPrefix}${prefix}-${key.replace("/", `\\/`)} {
           height: ${value}; 

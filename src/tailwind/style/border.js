@@ -3,26 +3,14 @@ import { cssHash } from "css-hash";
 import { generateCss } from "../utils";
 import configOptions from "../config";
 
-const { prefix: globalPrefix, opacity } = configOptions;
+const {
+  prefix: globalPrefix,
+  opacity,
+  borderRadius,
+  borderWidth,
+} = configOptions;
 
 const prefix = `${globalPrefix}border`;
-
-const borderRadius = {
-  none: "0",
-  sm: "0.125rem",
-  default: "0.25rem",
-  md: "0.375rem",
-  lg: "0.5rem",
-  full: "9999px",
-};
-
-const borderWidth = {
-  default: "1px",
-  0: "0",
-  2: "2px",
-  4: "4px",
-  8: "8px",
-};
 
 const borderStyle = ["solid", "dashed", "dotted", "double", "none"];
 
