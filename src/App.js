@@ -9,7 +9,7 @@ import routes from "routes";
 import Layout from "components/BaseLayout";
 import PageLoader from "components/PageLoader";
 
-import "./tailwindGenerator";
+import "./tailwindStyle";
 
 cssHash(
   () => `
