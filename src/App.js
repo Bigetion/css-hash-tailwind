@@ -16,6 +16,7 @@ cssHash(
     html {
       line-height: 1.5;
       font-family: Inter, sans-serif;
+      overflow-y: scroll;
     }
   `
 );
