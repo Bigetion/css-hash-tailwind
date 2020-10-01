@@ -6,12 +6,10 @@ import { cssHash } from "css-hash";
 
 import routes from "routes";
 
-import generateTailwindCss from "tailwind/generators";
-
 import Layout from "components/BaseLayout";
 import PageLoader from "components/PageLoader";
 
-generateTailwindCss();
+import "./tailwindGenerator";
 
 cssHash(
   () => `
