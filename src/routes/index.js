@@ -1,6 +1,36 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "transformOrigin",
+    path: "/transform-origin",
+    exact: true,
+    component: () => import("pages/TransformOrigin"),
+  },
+  {
+    id: "skew",
+    path: "/skew",
+    exact: true,
+    component: () => import("pages/Skew"),
+  },
+  {
+    id: "translate",
+    path: "/translate",
+    exact: true,
+    component: () => import("pages/Translate"),
+  },
+  {
+    id: "rotate",
+    path: "/rotate",
+    exact: true,
+    component: () => import("pages/Rotate"),
+  },
+  {
+    id: "scale",
+    path: "/scale",
+    exact: true,
+    component: () => import("pages/Scale"),
+  },
+  {
     id: "userSelect",
     path: "/user-select",
     exact: true,

@@ -131,6 +131,16 @@ const menus = [
     items: [{ label: "Box Shadow" }, { label: "Opacity" }],
   },
   {
+    title: "Transforms",
+    items: [
+      { label: "Scale" },
+      { label: "Rotate" },
+      { label: "Translate" },
+      { label: "Skew" },
+      { label: "Transform Origin" },
+    ],
+  },
+  {
     title: "Interactivity",
     items: [
       { label: "Appearance" },

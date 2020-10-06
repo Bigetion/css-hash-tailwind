@@ -34,6 +34,7 @@ import {
   generateTable,
   generateText,
   generateTracking,
+  generateTransform,
   generateVisibility,
   generateWidth,
   generateZIndex,
@@ -73,6 +74,7 @@ cssString += generateSpace();
 cssString += generateTable();
 cssString += generateText();
 cssString += generateTracking();
+cssString += generateTransform();
 cssString += generateVisibility();
 cssString += generateWidth();
 cssString += generateZIndex();

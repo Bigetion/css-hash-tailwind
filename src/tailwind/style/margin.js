@@ -7,7 +7,7 @@ const { prefix: globalPrefix, spacing, extendMargin = {} } = configOptions;
 
 const prefix = `${globalPrefix}m`;
 
-const responsiveCssString = generateCss(({ pseudoClass }) => {
+const responsiveCssString = generateCss(({ pseudoClass, getCssByOptions }) => {
   const generateMargin = (key, value, isNegative) => {
     const negativePrefix = isNegative ? "-" : "";
     return `
@@ -37,11 +37,13 @@ const responsiveCssString = generateCss(({ pseudoClass }) => {
     `;
   };
 
-  let cssString = "";
-  Object.entries(Object.assign(spacing, extendMargin)).forEach(
-    ([space, spaceValue]) => {
-      cssString += generateMargin(space, spaceValue);
-      cssString += generateMargin(space, spaceValue, true);
+  const cssString = getCssByOptions(
+    Object.assign(spacing, extendMargin),
+    (key, value) => {
+      let str = "";
+      str += generateMargin(key, value);
+      str += generateMargin(key, value, true);
+      return str;
     }
   );
   return cssString;

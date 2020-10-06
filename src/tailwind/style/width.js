@@ -7,7 +7,7 @@ const {
   prefix: globalPrefix,
   screens,
   spacing,
-  extendWidth,
+  extendWidth = {},
   maxWidth,
 } = configOptions;
 
