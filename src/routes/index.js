@@ -1,6 +1,24 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "strokeWidth",
+    path: "/stroke-width",
+    exact: true,
+    component: () => import("pages/StrokeWidth"),
+  },
+  {
+    id: "stroke",
+    path: "/stroke",
+    exact: true,
+    component: () => import("pages/Stroke"),
+  },
+  {
+    id: "fill",
+    path: "/fill",
+    exact: true,
+    component: () => import("pages/Fill"),
+  },
+  {
     id: "transformOrigin",
     path: "/transform-origin",
     exact: true,

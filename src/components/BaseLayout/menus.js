@@ -151,6 +151,10 @@ const menus = [
       { label: "User Select" },
     ],
   },
+  {
+    title: "SVG",
+    items: [{ label: "Fill" }, { label: "Stroke" }, { label: "Stroke Width" }],
+  },
 ];
 
 export default menus;
