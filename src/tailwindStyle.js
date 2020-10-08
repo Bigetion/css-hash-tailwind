@@ -31,6 +31,7 @@ import {
   generatePosition,
   generateShadow,
   generateSpace,
+  generateSvg,
   generateTable,
   generateText,
   generateTracking,
@@ -71,6 +72,7 @@ cssString += generatePlaceholder();
 cssString += generatePosition();
 cssString += generateShadow();
 cssString += generateSpace();
+cssString += generateSvg();
 cssString += generateTable();
 cssString += generateText();
 cssString += generateTracking();
