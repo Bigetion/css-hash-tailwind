@@ -66,7 +66,7 @@ const responsiveCssString = generateCss(
     cssString += getCssByOptions(
       flexGrow,
       (key, value) => `
-        .${orientationPrefix}${prefix}${key !== "" ? `-${key}` : ""} {
+        .${orientationPrefix}${prefix}-grow${key !== "" ? `-${key}` : ""} {
           flex-grow: ${value};
         }
       `
@@ -74,7 +74,7 @@ const responsiveCssString = generateCss(
     cssString += getCssByOptions(
       flexShrink,
       (key, value) => `
-        .${orientationPrefix}${prefix}${key !== "" ? `-${key}` : ""} {
+        .${orientationPrefix}${prefix}-shrink${key !== "" ? `-${key}` : ""} {
           flex-shrink: ${value};
         }
       `

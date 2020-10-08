@@ -2,6 +2,7 @@ import { cssHash } from "css-hash";
 
 import {
   generateBase,
+  generateForm,
   generateAlign,
   generateBg,
   generateBorder,
@@ -12,7 +13,6 @@ import {
   generateDivide,
   generateFlex,
   generateFloat,
-  generateForm,
   generateGradient,
   generateGrid,
   generateHeight,
@@ -42,6 +42,7 @@ import {
 
 let cssString = "";
 cssString += generateBase();
+cssString += generateForm();
 cssString += generateAlign();
 cssString += generateBg();
 cssString += generateBorder();
@@ -52,7 +53,6 @@ cssString += generateDisplay();
 cssString += generateDivide();
 cssString += generateFlex();
 cssString += generateFloat();
-cssString += generateForm();
 cssString += generateGradient();
 cssString += generateGrid();
 cssString += generateHeight();
