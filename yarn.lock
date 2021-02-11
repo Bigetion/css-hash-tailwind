@@ -10706,10 +10706,10 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
-tailwind-css-generator@^1.0.31:
-  version "1.0.31"
-  resolved "https://registry.yarnpkg.com/tailwind-css-generator/-/tailwind-css-generator-1.0.31.tgz#56cfb0c66ca86557c0df58d3ef5fec27790b2ec5"
-  integrity sha512-XEsifihuRvADfuoJkOt9PN4I6/qJFa52hptfCtNTO8Wwwru6Y+Jv3ml7ggSU7epXRV/r8Iqu85Bt8d5TbpaJtQ==
+tailwind-css-generator@^1.1.10:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/tailwind-css-generator/-/tailwind-css-generator-1.1.10.tgz#ddace1ebae106e41f13b465664aee5081f0a50f4"
+  integrity sha512-vOZ3ZK2WeuPrqBRt7ULehrvWizFoMKFgTqpgQQyWXz6OoS4bpdfPBky7Ph6lAapysXNoflBMYfmnS07nREvCJA==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
