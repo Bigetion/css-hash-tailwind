@@ -56,6 +56,16 @@ export const getConfigOptions = (options = {}) => {
       ...defaultConfigOptions.variants.visibility,
     ],
     zIndex: zIndexVariants = [...defaultConfigOptions.variants.zIndex],
+    flexDirection: flexDirectionVariants = [
+      ...defaultConfigOptions.variants.flexDirection,
+    ],
+    flexWrap: flexWrapVariants = [...defaultConfigOptions.variants.flexWrap],
+    flex: flexVariants = [...defaultConfigOptions.variants.flex],
+    flexGrow: flexGrowVariants = [...defaultConfigOptions.variants.flexGrow],
+    flexShrink: flexShrinkVariants = [
+      ...defaultConfigOptions.variants.flexShrink,
+    ],
+    order: orderVariants = [...defaultConfigOptions.variants.order],
     extend: variantsExtend = {},
   } = variants;
 
@@ -72,6 +82,12 @@ export const getConfigOptions = (options = {}) => {
     inset: insetVariantsExtend = [],
     visibility: visibilityVariantsExtend = [],
     zIndex: zIndexVariantsExtend = [],
+    flexDirection: flexDirectionVariantsExtend = [],
+    flexWrap: flexWrapVariantsExtend = [],
+    flex: flexVariantsExtend = [],
+    flexGrow: flexGrowVariantsExtend = [],
+    flexShrink: flexShrinkVariantsExtend = [],
+    order: orderVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -93,6 +109,12 @@ export const getConfigOptions = (options = {}) => {
     inset: [...insetVariants, ...insetVariantsExtend],
     visibility: [...visibilityVariants, ...visibilityVariantsExtend],
     zIndex: [...zIndexVariants, ...zIndexVariantsExtend],
+    flexDirection: [...flexDirectionVariants, ...flexDirectionVariantsExtend],
+    flexWrap: [...flexWrapVariants, ...flexWrapVariantsExtend],
+    flex: [...flexVariants, ...flexVariantsExtend],
+    flexGrow: [...flexGrowVariants, ...flexGrowVariantsExtend],
+    flexShrink: [...flexShrinkVariants, ...flexShrinkVariantsExtend],
+    order: [...orderVariants, ...orderVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -103,12 +125,20 @@ export const getConfigOptions = (options = {}) => {
   const {
     inset: insetTheme = {},
     zIndex: zIndexTheme = {},
+    flex: flexTheme = {},
+    flexGrow: flexGrowTheme = {},
+    flexShrink: flexShrinkTheme = {},
+    order: orderTheme = {},
     extend: themeExtend = {},
   } = theme;
 
   const {
     inset: insetThemeExtend = {},
     zIndex: zIndexThemeExtend = {},
+    flex: flexThemeExtend = {},
+    flexGrow: flexGrowThemeExtend = {},
+    flexShrink: flexShrinkThemeExtend = {},
+    order: orderThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -121,6 +151,26 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.zIndex,
       zIndexTheme,
       zIndexThemeExtend
+    ),
+    flex: Object.assign(
+      defaultConfigOptions.theme.flex,
+      flexTheme,
+      flexThemeExtend
+    ),
+    flexGrow: Object.assign(
+      defaultConfigOptions.theme.flexGrow,
+      flexGrowTheme,
+      flexGrowThemeExtend
+    ),
+    flexShrink: Object.assign(
+      defaultConfigOptions.theme.flexShrink,
+      flexShrinkTheme,
+      flexShrinkThemeExtend
+    ),
+    order: Object.assign(
+      defaultConfigOptions.theme.order,
+      orderTheme,
+      orderThemeExtend
     ),
   };
 

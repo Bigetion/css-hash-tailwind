@@ -31,7 +31,7 @@ export default function generateDisplay(configOptions = {}) {
         propertyOptions,
         (key, value) => `
           ${pseudoClass(
-            `${key === "none" ? `${prefix}hidden` : `${prefix}${key}`}`,
+            key === "none" ? `${prefix}hidden` : `${prefix}${key}`,
             variants.display
           )} {
             display: ${value};

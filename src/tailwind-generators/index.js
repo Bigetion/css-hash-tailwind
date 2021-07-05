@@ -13,6 +13,12 @@ import generatePosition from "./generators/position";
 import generateInset from "./generators/inset";
 import generateVisibility from "./generators/visibility";
 import generateZIndex from "./generators/zIndex";
+import generateFlexDirection from "./generators/flexDirection";
+import generateFlexWrap from "./generators/flexWrap";
+import generateFlex from "./generators/flex";
+import generateFlexGrow from "./generators/flexGrow";
+import generateFlexShrink from "./generators/flexShrink";
+import generateOrder from "./generators/order";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -35,6 +41,14 @@ function generateTailwindCss(options = {}) {
   cssString += corePlugins.inset ? generateInset(configOptions) : "";
   cssString += corePlugins.visibility ? generateVisibility(configOptions) : "";
   cssString += corePlugins.zIndex ? generateZIndex(configOptions) : "";
+  cssString += corePlugins.flexDirection
+    ? generateFlexDirection(configOptions)
+    : "";
+  cssString += corePlugins.flexWrap ? generateFlexWrap(configOptions) : "";
+  cssString += corePlugins.flex ? generateFlex(configOptions) : "";
+  cssString += corePlugins.flexGrow ? generateFlexGrow(configOptions) : "";
+  cssString += corePlugins.flexShrink ? generateFlexShrink(configOptions) : "";
+  cssString += corePlugins.order ? generateOrder(configOptions) : "";
   return cssString;
 }
 
