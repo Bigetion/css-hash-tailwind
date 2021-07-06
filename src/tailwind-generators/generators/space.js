@@ -22,7 +22,8 @@ export default function generateSpace(configOptions = {}) {
         }
         return `
           ${pseudoClass(
-            `${prefix}-${spacePosition}-${key} > :not(template) ~ :not(template)`,
+            (pseudoString) =>
+              `${prefix}-${spacePosition}-${key}${pseudoString} > :not(template) ~ :not(template)`,
             variants.space
           )} {
             --space-${spacePosition}-reverse: 0;
@@ -30,7 +31,9 @@ export default function generateSpace(configOptions = {}) {
             margin-${margin2}: calc(${value} * var(--space-${spacePosition}-reverse));
           }
           ${pseudoClass(
-            `-${prefix}-${key} > :not(template) ~ :not(template)`
+            (pseudoString) =>
+              `-${prefix}-${key}${pseudoString} > :not(template) ~ :not(template)`,
+            variants.space
           )} {
             --space-${spacePosition}-reverse: 0;
             margin-${margin1}: calc(-${value} * calc(1 - var(--space-${spacePosition}-reverse)));

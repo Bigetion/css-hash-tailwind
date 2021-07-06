@@ -4,29 +4,19 @@ export const getConfigOptions = (options = {}) => {
   const {
     prefix = "",
     screens = {},
-    colors = {},
     extend: extendOptions = {},
     variants = {},
     corePlugins = {},
     theme = {},
   } = options;
 
-  const {
-    screens: screensExtend = {},
-    colors: colorsExtend = {},
-  } = extendOptions;
+  const { screens: screensExtend = {} } = extendOptions;
 
   const newScreens = Object.assign(
     {},
     defaultConfigOptions.screens,
     screens,
     screensExtend
-  );
-  const newColors = Object.assign(
-    {},
-    defaultConfigOptions.colors,
-    colors,
-    colorsExtend
   );
 
   const {
@@ -122,6 +112,36 @@ export const getConfigOptions = (options = {}) => {
     height: heightVariants = [...defaultConfigOptions.variants.height],
     minHeight: minHeightVariants = [...defaultConfigOptions.variants.minHeight],
     maxHeight: maxHeightVariants = [...defaultConfigOptions.variants.maxHeight],
+    fontSize: fontSizeVariants = [...defaultConfigOptions.variants.fontSize],
+    fontSmoothing: fontSmoothingVariants = [
+      ...defaultConfigOptions.variants.fontSmoothing,
+    ],
+    fontStyle: fontStyleVariants = [...defaultConfigOptions.variants.fontStyle],
+    fontWeight: fontWeightVariants = [
+      ...defaultConfigOptions.variants.fontWeight,
+    ],
+    fontVariantNumeric: fontVariantNumericVariants = [
+      ...defaultConfigOptions.variants.fontVariantNumeric,
+    ],
+    letterSpacing: letterSpacingVariants = [
+      ...defaultConfigOptions.variants.letterSpacing,
+    ],
+    lineHeight: lineHeightVariants = [
+      ...defaultConfigOptions.variants.lineHeight,
+    ],
+    listStyleType: listStyleTypeVariants = [
+      ...defaultConfigOptions.variants.listStyleType,
+    ],
+    listStylePosition: listStylePositionVariants = [
+      ...defaultConfigOptions.variants.listStylePosition,
+    ],
+    placeholderColor: placeholderColorVariants = [
+      ...defaultConfigOptions.variants.placeholderColor,
+    ],
+    placeholderOpacity: placeholderOpacityVariants = [
+      ...defaultConfigOptions.variants.placeholderOpacity,
+    ],
+    textAlign: textAlignVariants = [...defaultConfigOptions.variants.textAlign],
     extend: variantsExtend = {},
   } = variants;
 
@@ -174,6 +194,18 @@ export const getConfigOptions = (options = {}) => {
     height: heightVariantsExtend = [],
     minHeight: minHeightVariantsExtend = [],
     maxHeight: maxHeightVariantsExtend = [],
+    fontSize: fontSizeVariantsExtend = [],
+    fontSmoothing: fontSmoothingVariantsExtend = [],
+    fontStyle: fontStyleVariantsExtend = [],
+    fontWeight: fontWeightVariantsExtend = [],
+    fontVariantNumeric: fontVariantNumericVariantsExtend = [],
+    letterSpacing: letterSpacingVariantsExtend = [],
+    lineHeight: lineHeightVariantsExtend = [],
+    listStyleType: listStyleTypeVariantsExtend = [],
+    listStylePosition: listStylePositionVariantsExtend = [],
+    placeholderColor: placeholderColorVariantsExtend = [],
+    placeholderOpacity: placeholderOpacityVariantsExtend = [],
+    textAlign: textAlignVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -246,6 +278,30 @@ export const getConfigOptions = (options = {}) => {
     height: [...heightVariants, ...heightVariantsExtend],
     minHeight: [...minHeightVariants, ...minHeightVariantsExtend],
     maxHeight: [...maxHeightVariants, ...maxHeightVariantsExtend],
+    fontSize: [...fontSizeVariants, ...fontSizeVariantsExtend],
+    fontSmoothing: [...fontSmoothingVariants, ...fontSmoothingVariantsExtend],
+    fontStyle: [...fontStyleVariants, ...fontStyleVariantsExtend],
+    fontWeight: [...fontWeightVariants, ...fontWeightVariantsExtend],
+    fontVariantNumeric: [
+      ...fontVariantNumericVariants,
+      ...fontVariantNumericVariantsExtend,
+    ],
+    letterSpacing: [...letterSpacingVariants, ...letterSpacingVariantsExtend],
+    lineHeight: [...lineHeightVariants, ...lineHeightVariantsExtend],
+    listStyleType: [...listStyleTypeVariants, ...listStyleTypeVariantsExtend],
+    listStylePosition: [
+      ...listStylePositionVariants,
+      ...listStylePositionVariantsExtend,
+    ],
+    placeholderColor: [
+      ...placeholderColorVariants,
+      ...placeholderColorVariantsExtend,
+    ],
+    placeholderOpacity: [
+      ...placeholderOpacityVariants,
+      ...placeholderOpacityVariantsExtend,
+    ],
+    textAlign: [...textAlignVariants, ...textAlignVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -255,6 +311,8 @@ export const getConfigOptions = (options = {}) => {
 
   const {
     spacing: spacingTheme = {},
+    colors: colorsTheme = {},
+    opacity: opacityTheme = {},
     inset: insetTheme = {},
     zIndex: zIndexTheme = {},
     flex: flexTheme = {},
@@ -281,11 +339,20 @@ export const getConfigOptions = (options = {}) => {
     height: heightTheme = {},
     minHeight: minHeightTheme = {},
     maxHeight: maxHeightTheme = {},
+    fontSize: fontSizeTheme = {},
+    fontWeight: fontWeightTheme = {},
+    letterSpacing: letterSpacingTheme = {},
+    lineHeight: lineHeightTheme = {},
+    listStyleType: listStyleTypeTheme = {},
+    placeholderColor: placeholderColorTheme = {},
+    placeholderOpacity: placeholderOpacityTheme = {},
     extend: themeExtend = {},
   } = theme;
 
   const {
     spacing: spacingThemeExtend = {},
+    colors: colorsThemeExtend = {},
+    opacity: opacityThemeExtend = {},
     inset: insetThemeExtend = {},
     zIndex: zIndexThemeExtend = {},
     flex: flexThemeExtend = {},
@@ -312,6 +379,13 @@ export const getConfigOptions = (options = {}) => {
     height: heightThemeExtend = {},
     minHeight: minHeightThemeExtend = {},
     maxHeight: maxHeightThemeExtend = {},
+    fontSize: fontSizeThemeExtend = {},
+    fontWeight: fontWeightThemeExtend = {},
+    letterSpacing: letterSpacingThemeExtend = {},
+    lineHeight: lineHeightThemeExtend = {},
+    listStyleType: listStyleTypeThemeExtend = {},
+    placeholderColor: placeholderColorThemeExtend = {},
+    placeholderOpacity: placeholderOpacityThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -319,6 +393,16 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.spacing,
       spacingTheme,
       spacingThemeExtend
+    ),
+    colors: Object.assign(
+      defaultConfigOptions.theme.colors,
+      colorsTheme,
+      colorsThemeExtend
+    ),
+    opacity: Object.assign(
+      defaultConfigOptions.theme.opacity,
+      opacityTheme,
+      opacityThemeExtend
     ),
     inset: Object.assign(
       defaultConfigOptions.theme.inset,
@@ -450,12 +534,46 @@ export const getConfigOptions = (options = {}) => {
       maxHeightTheme,
       maxHeightThemeExtend
     ),
+    fontSize: Object.assign(
+      defaultConfigOptions.theme.fontSize,
+      fontSizeTheme,
+      fontSizeThemeExtend
+    ),
+    fontWeight: Object.assign(
+      defaultConfigOptions.theme.fontWeight,
+      fontWeightTheme,
+      fontWeightThemeExtend
+    ),
+    letterSpacing: Object.assign(
+      defaultConfigOptions.theme.letterSpacing,
+      letterSpacingTheme,
+      letterSpacingThemeExtend
+    ),
+    lineHeight: Object.assign(
+      defaultConfigOptions.theme.lineHeight,
+      lineHeightTheme,
+      lineHeightThemeExtend
+    ),
+    listStyleType: Object.assign(
+      defaultConfigOptions.theme.listStyleType,
+      listStyleTypeTheme,
+      listStyleTypeThemeExtend
+    ),
+    placeholderColor: Object.assign(
+      defaultConfigOptions.theme.placeholderColor,
+      placeholderColorTheme,
+      placeholderColorThemeExtend
+    ),
+    placeholderOpacity: Object.assign(
+      defaultConfigOptions.theme.placeholderOpacity,
+      placeholderOpacityTheme,
+      placeholderOpacityThemeExtend
+    ),
   };
 
   return {
     prefix,
     screens: newScreens,
-    colors: newColors,
     variants: newVariants,
     corePlugins: newCorePlugins,
     theme: newTheme,
@@ -467,11 +585,36 @@ export const generateCssString = (
   options,
   isResponsive = true
 ) => {
-  const { screens, colors } = options;
+  const { screens } = options;
   let orientationPrefix = "";
 
+  const isFunction = (functionToCheck) => {
+    return (
+      functionToCheck &&
+      {}.toString.call(functionToCheck) === "[object Function]"
+    );
+  };
+
+  const hexToRgb = (hex) => {
+    const rgba = hex
+      .replace(
+        /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
+        (...args) =>
+          "#" + args[1] + args[1] + args[2] + args[2] + args[3] + args[3]
+      )
+      .substring(1)
+      .match(/.{2}/g)
+      .map((x) => parseInt(x, 16))
+      .join(",");
+
+    if (rgba.indexOf("NaN") >= 0) return "";
+    return rgba;
+  };
+
   const pseudoClass = (value, pseudoElements = ["hover", "focus"]) => {
-    const classArray = [`.${orientationPrefix}${value}`];
+    const classArray = [
+      `.${orientationPrefix}${isFunction(value) ? value("") : value}`,
+    ];
     if (Array.isArray(pseudoElements)) {
       let pseudoElementsNew = pseudoElements.slice(0);
       const responsiveIndex = pseudoElements.indexOf("responsive");
@@ -482,7 +625,11 @@ export const generateCssString = (
         if (typeof pseudoItem === "string") {
           if (pseudoItem !== "") {
             classArray.push(
-              `.${orientationPrefix}${pseudoItem}\\:${value}:${pseudoItem}`
+              `.${orientationPrefix}${pseudoItem}\\:${
+                isFunction(value)
+                  ? value(`:${pseudoItem}`)
+                  : `${value}:${pseudoItem}`
+              }`
             );
           }
         }
@@ -506,7 +653,7 @@ export const generateCssString = (
     return str;
   };
 
-  const getCssFromColors = (getStr = () => {}) => {
+  const getCssByColors = (colors, getStr = () => {}) => {
     let str = "";
     Object.entries(colors).forEach(([key1, value1]) => {
       if (typeof value1 === "string") {
@@ -524,7 +671,7 @@ export const generateCssString = (
     orientationPrefix,
     pseudoClass,
     getCssByOptions,
-    getCssFromColors,
+    getCssByColors,
   });
 
   if (isResponsive) {
@@ -536,7 +683,7 @@ export const generateCssString = (
             orientationPrefix,
             pseudoClass,
             getCssByOptions,
-            getCssFromColors,
+            getCssByColors,
           })}     
         }
       `;
@@ -544,16 +691,4 @@ export const generateCssString = (
   }
 
   return cssString;
-};
-
-export const hexToRgb = (hex) => {
-  return hex
-    .replace(
-      /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
-      (m, r, g, b) => "#" + r + r + g + g + b + b
-    )
-    .substring(1)
-    .match(/.{2}/g)
-    .map((x) => parseInt(x, 16))
-    .join(",");
 };

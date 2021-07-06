@@ -49,6 +49,18 @@ import generateMaxWidth from "./generators/maxWidth";
 import generateHeight from "./generators/height";
 import generateMinHeight from "./generators/minHeight";
 import generateMaxHeight from "./generators/maxHeight";
+import generateFontSize from "./generators/fontSize";
+import generateFontSmoothing from "./generators/fontSmoothing";
+import generateFontStyle from "./generators/fontStyle";
+import generateFontWeight from "./generators/fontWeight";
+import generateFontVariantNumeric from "./generators/fontVariantNumeric";
+import generateLetterSpacing from "./generators/letterSpacing";
+import generateLineHeight from "./generators/lineHeight";
+import generateListStyleType from "./generators/listStyleType";
+import generateListStylePosition from "./generators/listStylePosition";
+import generatePlaceholderColor from "./generators/placeholderColor";
+import generatePlaceholderOpacity from "./generators/placeholderOpacity";
+import generateTextAlign from "./generators/textAlign";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -135,6 +147,32 @@ function generateTailwindCss(options = {}) {
   cssString += corePlugins.height ? generateHeight(configOptions) : "";
   cssString += corePlugins.minHeight ? generateMinHeight(configOptions) : "";
   cssString += corePlugins.maxHeight ? generateMaxHeight(configOptions) : "";
+  cssString += corePlugins.fontSize ? generateFontSize(configOptions) : "";
+  cssString += corePlugins.fontSmoothing
+    ? generateFontSmoothing(configOptions)
+    : "";
+  cssString += corePlugins.fontStyle ? generateFontStyle(configOptions) : "";
+  cssString += corePlugins.fontWeight ? generateFontWeight(configOptions) : "";
+  cssString += corePlugins.fontVariantNumeric
+    ? generateFontVariantNumeric(configOptions)
+    : "";
+  cssString += corePlugins.letterSpacing
+    ? generateLetterSpacing(configOptions)
+    : "";
+  cssString += corePlugins.lineHeight ? generateLineHeight(configOptions) : "";
+  cssString += corePlugins.listStyleType
+    ? generateListStyleType(configOptions)
+    : "";
+  cssString += corePlugins.listStylePosition
+    ? generateListStylePosition(configOptions)
+    : "";
+  cssString += corePlugins.placeholderColor
+    ? generatePlaceholderColor(configOptions)
+    : "";
+  cssString += corePlugins.placeholderOpacity
+    ? generatePlaceholderOpacity(configOptions)
+    : "";
+  cssString += corePlugins.textAlign ? generateTextAlign(configOptions) : "";
   return cssString;
 }
 
