@@ -116,6 +116,12 @@ export const getConfigOptions = (options = {}) => {
     padding: paddingVariants = [...defaultConfigOptions.variants.padding],
     margin: marginVariants = [...defaultConfigOptions.variants.margin],
     space: spaceVariants = [...defaultConfigOptions.variants.space],
+    width: widthVariants = [...defaultConfigOptions.variants.width],
+    minWidth: minWidthVariants = [...defaultConfigOptions.variants.minWidth],
+    maxWidth: maxWidthVariants = [...defaultConfigOptions.variants.maxWidth],
+    height: heightVariants = [...defaultConfigOptions.variants.height],
+    minHeight: minHeightVariants = [...defaultConfigOptions.variants.minHeight],
+    maxHeight: maxHeightVariants = [...defaultConfigOptions.variants.maxHeight],
     extend: variantsExtend = {},
   } = variants;
 
@@ -162,6 +168,12 @@ export const getConfigOptions = (options = {}) => {
     padding: paddingVariantsExtend = [],
     margin: marginVariantsExtend = [],
     space: spaceVariantsExtend = [],
+    width: widthVariantsExtend = [],
+    minWidth: minWidthVariantsExtend = [],
+    maxWidth: maxWidthVariantsExtend = [],
+    height: heightVariantsExtend = [],
+    minHeight: minHeightVariantsExtend = [],
+    maxHeight: maxHeightVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -228,6 +240,12 @@ export const getConfigOptions = (options = {}) => {
     padding: [...paddingVariants, ...paddingVariantsExtend],
     margin: [...marginVariants, ...marginVariantsExtend],
     space: [...spaceVariants, ...spaceVariantsExtend],
+    width: [...widthVariants, ...widthVariantsExtend],
+    minWidth: [...minWidthVariants, ...minWidthVariantsExtend],
+    maxWidth: [...maxWidthVariants, ...maxWidthVariantsExtend],
+    height: [...heightVariants, ...heightVariantsExtend],
+    minHeight: [...minHeightVariants, ...minHeightVariantsExtend],
+    maxHeight: [...maxHeightVariants, ...maxHeightVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -257,6 +275,12 @@ export const getConfigOptions = (options = {}) => {
     padding: paddingTheme = {},
     margin: marginTheme = {},
     space: spaceTheme = {},
+    width: widthTheme = {},
+    minWidth: minWidthTheme = {},
+    maxWidth: maxWidthTheme = {},
+    height: heightTheme = {},
+    minHeight: minHeightTheme = {},
+    maxHeight: maxHeightTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -282,6 +306,12 @@ export const getConfigOptions = (options = {}) => {
     padding: paddingThemeExtend = {},
     margin: marginThemeExtend = {},
     space: spaceThemeExtend = {},
+    width: widthThemeExtend = {},
+    minWidth: minWidthThemeExtend = {},
+    maxWidth: maxWidthThemeExtend = {},
+    height: heightThemeExtend = {},
+    minHeight: minHeightThemeExtend = {},
+    maxHeight: maxHeightThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -389,6 +419,36 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.space,
       spaceTheme,
       spaceThemeExtend
+    ),
+    width: Object.assign(
+      defaultConfigOptions.theme.width,
+      widthTheme,
+      widthThemeExtend
+    ),
+    minWidth: Object.assign(
+      defaultConfigOptions.theme.minWidth,
+      minWidthTheme,
+      minWidthThemeExtend
+    ),
+    maxWidth: Object.assign(
+      defaultConfigOptions.theme.maxWidth,
+      maxWidthTheme,
+      maxWidthThemeExtend
+    ),
+    height: Object.assign(
+      defaultConfigOptions.theme.height,
+      heightTheme,
+      heightThemeExtend
+    ),
+    minHeight: Object.assign(
+      defaultConfigOptions.theme.minHeight,
+      minHeightTheme,
+      minHeightThemeExtend
+    ),
+    maxHeight: Object.assign(
+      defaultConfigOptions.theme.maxHeight,
+      maxHeightTheme,
+      maxHeightThemeExtend
     ),
   };
 

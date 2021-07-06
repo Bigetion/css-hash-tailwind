@@ -43,6 +43,12 @@ import generatePlaceSelf from "./generators/placeSelf";
 import generatePadding from "./generators/padding";
 import generateMargin from "./generators/margin";
 import generateSpace from "./generators/space";
+import generateWidth from "./generators/width";
+import generateMinWidth from "./generators/minWidth";
+import generateMaxWidth from "./generators/maxWidth";
+import generateHeight from "./generators/height";
+import generateMinHeight from "./generators/minHeight";
+import generateMaxHeight from "./generators/maxHeight";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -123,6 +129,12 @@ function generateTailwindCss(options = {}) {
   cssString += corePlugins.padding ? generatePadding(configOptions) : "";
   cssString += corePlugins.margin ? generateMargin(configOptions) : "";
   cssString += corePlugins.space ? generateSpace(configOptions) : "";
+  cssString += corePlugins.width ? generateWidth(configOptions) : "";
+  cssString += corePlugins.minWidth ? generateMinWidth(configOptions) : "";
+  cssString += corePlugins.maxWidth ? generateMaxWidth(configOptions) : "";
+  cssString += corePlugins.height ? generateHeight(configOptions) : "";
+  cssString += corePlugins.minHeight ? generateMinHeight(configOptions) : "";
+  cssString += corePlugins.maxHeight ? generateMaxHeight(configOptions) : "";
   return cssString;
 }
 
