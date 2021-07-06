@@ -40,6 +40,9 @@ import generateAlignSelf from "./generators/alignSelf";
 import generatePlaceContent from "./generators/placeContent";
 import generatePlaceItems from "./generators/placeItems";
 import generatePlaceSelf from "./generators/placeSelf";
+import generatePadding from "./generators/padding";
+import generateMargin from "./generators/margin";
+import generateSpace from "./generators/space";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -117,6 +120,9 @@ function generateTailwindCss(options = {}) {
     : "";
   cssString += corePlugins.placeItems ? generatePlaceItems(configOptions) : "";
   cssString += corePlugins.placeSelf ? generatePlaceSelf(configOptions) : "";
+  cssString += corePlugins.padding ? generatePadding(configOptions) : "";
+  cssString += corePlugins.margin ? generateMargin(configOptions) : "";
+  cssString += corePlugins.space ? generateSpace(configOptions) : "";
   return cssString;
 }
 

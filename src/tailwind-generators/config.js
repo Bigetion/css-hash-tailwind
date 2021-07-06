@@ -162,7 +162,10 @@ const configOptions = {
     alignSelf: false,
     placeContent: false,
     placeItems: false,
-    placeSelf: true,
+    placeSelf: false,
+    padding: false,
+    margin: false,
+    space: true,
   },
   variants: {
     boxSizing: ["responsive", "hover", "focus"],
@@ -204,6 +207,9 @@ const configOptions = {
     placeContent: ["responsive", "hover", "focus"],
     placeItems: ["responsive", "hover", "focus"],
     placeSelf: ["responsive", "hover", "focus"],
+    padding: ["responsive", "hover", "focus"],
+    margin: ["responsive", "hover", "focus"],
+    space: ["responsive", "hover", "focus"],
   },
   theme: {
     spacing: {
@@ -409,6 +415,9 @@ const configOptions = {
       fr: "minmax(0, 1fr)",
     },
     gap: {},
+    padding: {},
+    margin: {},
+    space: {},
   },
 };
 

@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils";
 
-export default function generateZIndex(configOptions = {}) {
+export default function generateGap(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}gap`;

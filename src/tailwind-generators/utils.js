@@ -113,6 +113,9 @@ export const getConfigOptions = (options = {}) => {
       ...defaultConfigOptions.variants.placeItems,
     ],
     placeSelf: placeSelfVariants = [...defaultConfigOptions.variants.placeSelf],
+    padding: paddingVariants = [...defaultConfigOptions.variants.padding],
+    margin: marginVariants = [...defaultConfigOptions.variants.margin],
+    space: spaceVariants = [...defaultConfigOptions.variants.space],
     extend: variantsExtend = {},
   } = variants;
 
@@ -156,6 +159,9 @@ export const getConfigOptions = (options = {}) => {
     placeContent: placeContentVariantsExtend = [],
     placeItems: placeItemsVariantsExtend = [],
     placeSelf: placeSelfVariantsExtend = [],
+    padding: paddingVariantsExtend = [],
+    margin: marginVariantsExtend = [],
+    space: spaceVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -219,6 +225,9 @@ export const getConfigOptions = (options = {}) => {
     placeContent: [...placeContentVariants, ...placeContentVariantsExtend],
     placeItems: [...placeItemsVariants, ...placeItemsVariantsExtend],
     placeSelf: [...placeSelfVariants, ...placeSelfVariantsExtend],
+    padding: [...paddingVariants, ...paddingVariantsExtend],
+    margin: [...marginVariants, ...marginVariantsExtend],
+    space: [...spaceVariants, ...spaceVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -245,6 +254,9 @@ export const getConfigOptions = (options = {}) => {
     gridAutoColumns: gridAutoColumnsTheme = {},
     gridAutoRows: gridAutoRowsTheme = {},
     gap: gapTheme = {},
+    padding: paddingTheme = {},
+    margin: marginTheme = {},
+    space: spaceTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -267,6 +279,9 @@ export const getConfigOptions = (options = {}) => {
     gridAutoColumns: gridAutoColumnsThemeExtend = {},
     gridAutoRows: gridAutoRowsThemeExtend = {},
     gap: gapThemeExtend = {},
+    padding: paddingThemeExtend = {},
+    margin: marginThemeExtend = {},
+    space: spaceThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -359,6 +374,21 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.gap,
       gapTheme,
       gapThemeExtend
+    ),
+    padding: Object.assign(
+      defaultConfigOptions.theme.padding,
+      paddingTheme,
+      paddingThemeExtend
+    ),
+    margin: Object.assign(
+      defaultConfigOptions.theme.margin,
+      marginTheme,
+      marginThemeExtend
+    ),
+    space: Object.assign(
+      defaultConfigOptions.theme.space,
+      spaceTheme,
+      spaceThemeExtend
     ),
   };
 
