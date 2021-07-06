@@ -1,13 +1,16 @@
 import { generateCssString } from "../utils";
 
-export default function generateBoxSizing(configOptions = {}) {
+export default function generateAlignSelf(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
-  const prefix = `${globalPrefix}box`;
+  const prefix = `${globalPrefix}self`;
 
   const propertyOptions = {
-    border: "border-box",
-    content: "content-box",
+    auto: "auto",
+    start: "flex-start",
+    end: "flex-end",
+    center: "center",
+    stretch: "stretch",
   };
 
   const responsiveCssString = generateCssString(
@@ -15,15 +18,15 @@ export default function generateBoxSizing(configOptions = {}) {
       const cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.boxSizing)} {
-            box-sizing: ${value};
+          ${pseudoClass(`${prefix}-${key}`, variants.alignSelf)} {
+            align-self: ${value};
           }
         `
       );
       return cssString;
     },
     configOptions,
-    variants.boxSizing.indexOf("responsive") >= 0
+    variants.alignSelf.indexOf("responsive") >= 0
   );
 
   return responsiveCssString;

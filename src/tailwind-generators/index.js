@@ -31,6 +31,15 @@ import generateGridAutoFlow from "./generators/gridAutoFlow";
 import generateGridAutoColumns from "./generators/gridAutoFlow";
 import generateGridAutoRows from "./generators/gridAutoRows";
 import generateGap from "./generators/gap";
+import generateJustifyContent from "./generators/justifyContent";
+import generateJustifyItems from "./generators/justifyItems";
+import generateJustifySelf from "./generators/justifySelf";
+import generateAlignContent from "./generators/alignContent";
+import generateAlignItems from "./generators/alignItems";
+import generateAlignSelf from "./generators/alignSelf";
+import generatePlaceContent from "./generators/placeContent";
+import generatePlaceItems from "./generators/placeItems";
+import generatePlaceSelf from "./generators/placeSelf";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -89,6 +98,25 @@ function generateTailwindCss(options = {}) {
     ? generateGridAutoRows(configOptions)
     : "";
   cssString += corePlugins.gap ? generateGap(configOptions) : "";
+  cssString += corePlugins.justifyContent
+    ? generateJustifyContent(configOptions)
+    : "";
+  cssString += corePlugins.justifyItems
+    ? generateJustifyItems(configOptions)
+    : "";
+  cssString += corePlugins.justifySelf
+    ? generateJustifySelf(configOptions)
+    : "";
+  cssString += corePlugins.alignContent
+    ? generateAlignContent(configOptions)
+    : "";
+  cssString += corePlugins.alignItems ? generateAlignItems(configOptions) : "";
+  cssString += corePlugins.alignSelf ? generateAlignSelf(configOptions) : "";
+  cssString += corePlugins.placeContent
+    ? generatePlaceContent(configOptions)
+    : "";
+  cssString += corePlugins.placeItems ? generatePlaceItems(configOptions) : "";
+  cssString += corePlugins.placeSelf ? generatePlaceSelf(configOptions) : "";
   return cssString;
 }
 

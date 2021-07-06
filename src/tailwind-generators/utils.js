@@ -90,6 +90,29 @@ export const getConfigOptions = (options = {}) => {
       ...defaultConfigOptions.variants.gridAutoRows,
     ],
     gap: gapVariants = [...defaultConfigOptions.variants.gap],
+    justifyContent: justifyContentVariants = [
+      ...defaultConfigOptions.variants.justifyContent,
+    ],
+    justifyItems: justifyItemsVariants = [
+      ...defaultConfigOptions.variants.justifyItems,
+    ],
+    justifySelf: justifySelfVariants = [
+      ...defaultConfigOptions.variants.justifySelf,
+    ],
+    alignContent: alignContentVariants = [
+      ...defaultConfigOptions.variants.alignContent,
+    ],
+    alignItems: alignItemsVariants = [
+      ...defaultConfigOptions.variants.alignItems,
+    ],
+    alignSelf: alignSelfVariants = [...defaultConfigOptions.variants.alignSelf],
+    placeContent: placeContentVariants = [
+      ...defaultConfigOptions.variants.placeContent,
+    ],
+    placeItems: placeItemsVariants = [
+      ...defaultConfigOptions.variants.placeItems,
+    ],
+    placeSelf: placeSelfVariants = [...defaultConfigOptions.variants.placeSelf],
     extend: variantsExtend = {},
   } = variants;
 
@@ -124,6 +147,15 @@ export const getConfigOptions = (options = {}) => {
     gridAutoColumns: gridAutoColumnsVariantsExtend = [],
     gridAutoRows: gridAutoRowsVariantsExtend = [],
     gap: gapVariantsExtend = [],
+    justifyContent: justifyContentVariantsExtend = [],
+    justifyItems: justifyItemsVariantsExtend = [],
+    justifySelf: justifySelfVariantsExtend = [],
+    alignContent: alignContentVariantsExtend = [],
+    alignItems: alignItemsVariantsExtend = [],
+    alignSelf: alignSelfVariantsExtend = [],
+    placeContent: placeContentVariantsExtend = [],
+    placeItems: placeItemsVariantsExtend = [],
+    placeSelf: placeSelfVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -175,6 +207,18 @@ export const getConfigOptions = (options = {}) => {
     ],
     gridAutoRows: [...gridAutoRowsVariants, ...gridAutoRowsVariantsExtend],
     gap: [...gapVariants, ...gapVariantsExtend],
+    justifyContent: [
+      ...justifyContentVariants,
+      ...justifyContentVariantsExtend,
+    ],
+    justifyItems: [...justifyItemsVariants, ...justifyItemsVariantsExtend],
+    justifySelf: [...justifySelfVariants, ...justifySelfVariantsExtend],
+    alignContent: [...alignContentVariants, ...alignContentVariantsExtend],
+    alignItems: [...alignItemsVariants, ...alignItemsVariantsExtend],
+    alignSelf: [...alignSelfVariants, ...alignSelfVariantsExtend],
+    placeContent: [...placeContentVariants, ...placeContentVariantsExtend],
+    placeItems: [...placeItemsVariants, ...placeItemsVariantsExtend],
+    placeSelf: [...placeSelfVariants, ...placeSelfVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(

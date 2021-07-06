@@ -1,13 +1,18 @@
 import { generateCssString } from "../utils";
 
-export default function generateBoxSizing(configOptions = {}) {
+export default function generatePlaceContent(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
-  const prefix = `${globalPrefix}box`;
+  const prefix = `${globalPrefix}place-content`;
 
   const propertyOptions = {
-    border: "border-box",
-    content: "content-box",
+    start: "start",
+    end: "end",
+    center: "center",
+    between: "space-between",
+    around: "space-around",
+    evenly: "space-evenly",
+    stretch: "stretch",
   };
 
   const responsiveCssString = generateCssString(
@@ -15,15 +20,15 @@ export default function generateBoxSizing(configOptions = {}) {
       const cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.boxSizing)} {
-            box-sizing: ${value};
+          ${pseudoClass(`${prefix}-${key}`, variants.placeContent)} {
+            place-content: ${value};
           }
         `
       );
       return cssString;
     },
     configOptions,
-    variants.boxSizing.indexOf("responsive") >= 0
+    variants.placeContent.indexOf("responsive") >= 0
   );
 
   return responsiveCssString;
