@@ -19,6 +19,18 @@ import generateFlex from "./generators/flex";
 import generateFlexGrow from "./generators/flexGrow";
 import generateFlexShrink from "./generators/flexShrink";
 import generateOrder from "./generators/order";
+import generateGridTemplateColumns from "./generators/gridTemplateColumns";
+import generateGridColumn from "./generators/gridColumn";
+import generateGridColumnStart from "./generators/gridColumnStart";
+import generateGridColumnEnd from "./generators/gridColumnEnd";
+import generateGridTemplateRows from "./generators/gridTemplateRows";
+import generateGridRow from "./generators/gridRow";
+import generateGridRowStart from "./generators/gridRowStart";
+import generateGridRowEnd from "./generators/gridRowEnd";
+import generateGridAutoFlow from "./generators/gridAutoFlow";
+import generateGridAutoColumns from "./generators/gridAutoFlow";
+import generateGridAutoRows from "./generators/gridAutoRows";
+import generateGap from "./generators/gap";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -49,6 +61,34 @@ function generateTailwindCss(options = {}) {
   cssString += corePlugins.flexGrow ? generateFlexGrow(configOptions) : "";
   cssString += corePlugins.flexShrink ? generateFlexShrink(configOptions) : "";
   cssString += corePlugins.order ? generateOrder(configOptions) : "";
+  cssString += corePlugins.gridTemplateColumns
+    ? generateGridTemplateColumns(configOptions)
+    : "";
+  cssString += corePlugins.gridColumn ? generateGridColumn(configOptions) : "";
+  cssString += corePlugins.gridColumnStart
+    ? generateGridColumnStart(configOptions)
+    : "";
+  cssString += corePlugins.gridColumnEnd
+    ? generateGridColumnEnd(configOptions)
+    : "";
+  cssString += corePlugins.gridTemplateRows
+    ? generateGridTemplateRows(configOptions)
+    : "";
+  cssString += corePlugins.gridRow ? generateGridRow(configOptions) : "";
+  cssString += corePlugins.gridRowStart
+    ? generateGridRowStart(configOptions)
+    : "";
+  cssString += corePlugins.gridRowEnd ? generateGridRowEnd(configOptions) : "";
+  cssString += corePlugins.gridAutoFlow
+    ? generateGridAutoFlow(configOptions)
+    : "";
+  cssString += corePlugins.gridAutoColumns
+    ? generateGridAutoColumns(configOptions)
+    : "";
+  cssString += corePlugins.gridAutoRows
+    ? generateGridAutoRows(configOptions)
+    : "";
+  cssString += corePlugins.gap ? generateGap(configOptions) : "";
   return cssString;
 }
 

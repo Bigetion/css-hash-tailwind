@@ -5,7 +5,6 @@ export const getConfigOptions = (options = {}) => {
     prefix = "",
     screens = {},
     colors = {},
-    spacing = {},
     extend: extendOptions = {},
     variants = {},
     corePlugins = {},
@@ -15,7 +14,6 @@ export const getConfigOptions = (options = {}) => {
   const {
     screens: screensExtend = {},
     colors: colorsExtend = {},
-    spacing: spacingExtend = {},
   } = extendOptions;
 
   const newScreens = Object.assign(
@@ -29,12 +27,6 @@ export const getConfigOptions = (options = {}) => {
     defaultConfigOptions.colors,
     colors,
     colorsExtend
-  );
-  const newSpacing = Object.assign(
-    {},
-    defaultConfigOptions.spacing,
-    spacing,
-    spacingExtend
   );
 
   const {
@@ -66,6 +58,38 @@ export const getConfigOptions = (options = {}) => {
       ...defaultConfigOptions.variants.flexShrink,
     ],
     order: orderVariants = [...defaultConfigOptions.variants.order],
+    gridTemplateColumns: gridTemplateColumnsVariants = [
+      ...defaultConfigOptions.variants.gridTemplateColumns,
+    ],
+    gridColumn: gridColumnVariants = [
+      ...defaultConfigOptions.variants.gridColumn,
+    ],
+    gridColumnStart: gridColumnStartVariants = [
+      ...defaultConfigOptions.variants.gridColumnStart,
+    ],
+    gridColumnEnd: gridColumnEndVariants = [
+      ...defaultConfigOptions.variants.gridColumnEnd,
+    ],
+    gridTemplateRows: gridTemplateRowsVariants = [
+      ...defaultConfigOptions.variants.gridTemplateRows,
+    ],
+    gridRow: gridRowVariants = [...defaultConfigOptions.variants.gridRow],
+    gridRowStart: gridRowStartVariants = [
+      ...defaultConfigOptions.variants.gridRowStart,
+    ],
+    gridRowEnd: gridRowEndVariants = [
+      ...defaultConfigOptions.variants.gridRowEnd,
+    ],
+    gridAutoFlow: gridAutoFlowVariants = [
+      ...defaultConfigOptions.variants.gridAutoFlow,
+    ],
+    gridAutoColumns: gridAutoColumnsVariants = [
+      ...defaultConfigOptions.variants.gridAutoColumns,
+    ],
+    gridAutoRows: gridAutoRowsVariants = [
+      ...defaultConfigOptions.variants.gridAutoRows,
+    ],
+    gap: gapVariants = [...defaultConfigOptions.variants.gap],
     extend: variantsExtend = {},
   } = variants;
 
@@ -88,6 +112,18 @@ export const getConfigOptions = (options = {}) => {
     flexGrow: flexGrowVariantsExtend = [],
     flexShrink: flexShrinkVariantsExtend = [],
     order: orderVariantsExtend = [],
+    gridTemplateColumns: gridTemplateColumnsVariantsExtend = [],
+    gridColumn: gridColumnVariantsExtend = [],
+    gridColumnStart: gridColumnStartVariantsExtend = [],
+    gridColumnEnd: gridColumnEndVariantsExtend = [],
+    gridTemplateRows: gridTemplateRowsVariantsExtend = [],
+    gridRow: gridRowVariantsExtend = [],
+    gridRowStart: gridRowStartVariantsExtend = [],
+    gridRowEnd: gridRowEndVariantsExtend = [],
+    gridAutoFlow: gridAutoFlowVariantsExtend = [],
+    gridAutoColumns: gridAutoColumnsVariantsExtend = [],
+    gridAutoRows: gridAutoRowsVariantsExtend = [],
+    gap: gapVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -115,6 +151,30 @@ export const getConfigOptions = (options = {}) => {
     flexGrow: [...flexGrowVariants, ...flexGrowVariantsExtend],
     flexShrink: [...flexShrinkVariants, ...flexShrinkVariantsExtend],
     order: [...orderVariants, ...orderVariantsExtend],
+    gridTemplateColumns: [
+      ...gridTemplateColumnsVariants,
+      ...gridTemplateColumnsVariantsExtend,
+    ],
+    gridColumn: [...gridColumnVariants, ...gridColumnVariantsExtend],
+    gridColumnStart: [
+      ...gridColumnStartVariants,
+      ...gridColumnStartVariantsExtend,
+    ],
+    gridColumnEnd: [...gridColumnEndVariants, ...gridColumnEndVariantsExtend],
+    gridTemplateRows: [
+      ...gridTemplateRowsVariants,
+      ...gridTemplateRowsVariantsExtend,
+    ],
+    gridRow: [...gridRowVariants, ...gridRowVariantsExtend],
+    gridRowStart: [...gridRowStartVariants, ...gridRowStartVariantsExtend],
+    gridRowEnd: [...gridRowEndVariants, ...gridRowEndVariantsExtend],
+    gridAutoFlow: [...gridAutoFlowVariants, ...gridAutoFlowVariantsExtend],
+    gridAutoColumns: [
+      ...gridAutoColumnsVariants,
+      ...gridAutoColumnsVariantsExtend,
+    ],
+    gridAutoRows: [...gridAutoRowsVariants, ...gridAutoRowsVariantsExtend],
+    gap: [...gapVariants, ...gapVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -123,25 +183,54 @@ export const getConfigOptions = (options = {}) => {
   );
 
   const {
+    spacing: spacingTheme = {},
     inset: insetTheme = {},
     zIndex: zIndexTheme = {},
     flex: flexTheme = {},
     flexGrow: flexGrowTheme = {},
     flexShrink: flexShrinkTheme = {},
     order: orderTheme = {},
+    gridTemplateColumns: gridTemplateColumnsTheme = {},
+    gridColumn: gridColumnTheme = {},
+    gridColumnStart: gridColumnStartTheme = {},
+    gridColumnEnd: gridColumnEndTheme = {},
+    gridTemplateRows: gridTemplateRowsTheme = {},
+    gridRow: gridRowTheme = {},
+    gridRowStart: gridRowStartTheme = {},
+    gridRowEnd: gridRowEndTheme = {},
+    gridAutoColumns: gridAutoColumnsTheme = {},
+    gridAutoRows: gridAutoRowsTheme = {},
+    gap: gapTheme = {},
     extend: themeExtend = {},
   } = theme;
 
   const {
+    spacing: spacingThemeExtend = {},
     inset: insetThemeExtend = {},
     zIndex: zIndexThemeExtend = {},
     flex: flexThemeExtend = {},
     flexGrow: flexGrowThemeExtend = {},
     flexShrink: flexShrinkThemeExtend = {},
     order: orderThemeExtend = {},
+    gridTemplateColumns: gridTemplateColumnsThemeExtend = {},
+    gridColumn: gridColumnThemeExtend = {},
+    gridColumnStart: gridColumnStartThemeExtend = {},
+    gridColumnEnd: gridColumnEndThemeExtend = {},
+    gridTemplateRows: gridTemplateRowsThemeExtend = {},
+    gridRow: gridRowThemeExtend = {},
+    gridRowStart: gridRowStartThemeExtend = {},
+    gridRowEnd: gridRowEndThemeExtend = {},
+    gridAutoColumns: gridAutoColumnsThemeExtend = {},
+    gridAutoRows: gridAutoRowsThemeExtend = {},
+    gap: gapThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
+    spacing: Object.assign(
+      defaultConfigOptions.theme.spacing,
+      spacingTheme,
+      spacingThemeExtend
+    ),
     inset: Object.assign(
       defaultConfigOptions.theme.inset,
       insetTheme,
@@ -172,13 +261,67 @@ export const getConfigOptions = (options = {}) => {
       orderTheme,
       orderThemeExtend
     ),
+    gridTemplateColumns: Object.assign(
+      defaultConfigOptions.theme.gridTemplateColumns,
+      gridTemplateColumnsTheme,
+      gridTemplateColumnsThemeExtend
+    ),
+    gridColumn: Object.assign(
+      defaultConfigOptions.theme.gridColumn,
+      gridColumnTheme,
+      gridColumnThemeExtend
+    ),
+    gridColumnStart: Object.assign(
+      defaultConfigOptions.theme.gridColumnStart,
+      gridColumnStartTheme,
+      gridColumnStartThemeExtend
+    ),
+    gridColumnEnd: Object.assign(
+      defaultConfigOptions.theme.gridColumnEnd,
+      gridColumnEndTheme,
+      gridColumnEndThemeExtend
+    ),
+    gridTemplateRows: Object.assign(
+      defaultConfigOptions.theme.gridTemplateRows,
+      gridTemplateRowsTheme,
+      gridTemplateRowsThemeExtend
+    ),
+    gridRow: Object.assign(
+      defaultConfigOptions.theme.gridRow,
+      gridRowTheme,
+      gridRowThemeExtend
+    ),
+    gridRowStart: Object.assign(
+      defaultConfigOptions.theme.gridRowStart,
+      gridRowStartTheme,
+      gridRowStartThemeExtend
+    ),
+    gridRowEnd: Object.assign(
+      defaultConfigOptions.theme.gridRowEnd,
+      gridRowEndTheme,
+      gridRowEndThemeExtend
+    ),
+    gridAutoColumns: Object.assign(
+      defaultConfigOptions.theme.gridAutoColumns,
+      gridAutoColumnsTheme,
+      gridAutoColumnsThemeExtend
+    ),
+    gridAutoRows: Object.assign(
+      defaultConfigOptions.theme.gridAutoRows,
+      gridAutoRowsTheme,
+      gridAutoRowsThemeExtend
+    ),
+    gap: Object.assign(
+      defaultConfigOptions.theme.gap,
+      gapTheme,
+      gapThemeExtend
+    ),
   };
 
   return {
     prefix,
     screens: newScreens,
     colors: newColors,
-    spacing: newSpacing,
     variants: newVariants,
     corePlugins: newCorePlugins,
     theme: newTheme,
