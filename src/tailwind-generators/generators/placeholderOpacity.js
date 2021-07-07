@@ -11,14 +11,23 @@ export default function generatePlaceholderOpacity(configOptions = {}) {
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.placeholderOpacity)} {
+      const cssString = getCssByOptions(propertyOptions, (key, value) => {
+        const placeholderOpacityString = (placeholderPseudo) => `
+          ${pseudoClass(
+            (pseudoString) =>
+              `${prefix}-${key}${pseudoString}${placeholderPseudo}`,
+            variants.placeholderColor
+          )} {
             --placeholder-opacity: ${value};
           }
-        `
-      );
+        `;
+        return `
+          ${placeholderOpacityString("::-webkit-input-placeholder")}
+          ${placeholderOpacityString("::-moz-placeholder")}
+          ${placeholderOpacityString(":-ms-input-placeholder")}
+          ${placeholderOpacityString(":-moz-placeholder")}
+        `;
+      });
       return cssString;
     },
     configOptions,

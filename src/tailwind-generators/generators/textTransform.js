@@ -1,11 +1,13 @@
 import { generateCssString } from "../utils";
 
-export default function generateFontStyle(configOptions = {}) {
+export default function generateTextTransform(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = {
-    italic: "italic",
-    "not-italic": "normal",
+    uppercase: "uppercase",
+    lowercase: "lowercase",
+    capitalize: "capitalize",
+    "normal-case": "none",
   };
 
   const responsiveCssString = generateCssString(
@@ -13,15 +15,15 @@ export default function generateFontStyle(configOptions = {}) {
       const cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
-          ${pseudoClass(`${prefix}${key}`, variants.fontStyle)} {
-            font-style: ${value};
+          ${pseudoClass(`${prefix}${key}`, variants.textTransform)} {
+            text-transform: ${value};
           }
         `
       );
       return cssString;
     },
     configOptions,
-    variants.fontStyle.indexOf("responsive") >= 0
+    variants.textTransform.indexOf("responsive") >= 0
   );
 
   return responsiveCssString;

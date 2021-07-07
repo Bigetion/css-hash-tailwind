@@ -47,13 +47,13 @@ export default function generateSpace(configOptions = {}) {
         cssString += generateSpace("x", space, spaceValue);
       });
       cssString += `
-      .${prefix}-y-reverse > :not(template) ~ :not(template) {
-        --space-y-reverse: 1;
-      }
-      .${prefix}-x-reverse > :not(template) ~ :not(template) {
-        --space-x-reverse: 1;
-      }
-    `;
+        .${prefix}-x-reverse > :not(template) ~ :not(template) {
+          --space-x-reverse: 1;
+        }
+        .${prefix}-y-reverse > :not(template) ~ :not(template) {
+          --space-y-reverse: 1;
+        }
+      `;
       return cssString;
     },
     configOptions,

@@ -19,7 +19,7 @@ export default function generatePlaceholderColor(configOptions = {}) {
             rgbPropertyValue = `color: rgba(${rgbValue}, var(--placeholder-opacity));`;
           }
           const propertyValue = `--placeholder-opacity: 1; color: ${value}; ${rgbPropertyValue}`;
-          const placeholderString = (placeholderPseudo) => `
+          const placeholderColorString = (placeholderPseudo) => `
             ${pseudoClass(
               (pseudoString) =>
                 `${prefix}-${key}${pseudoString}${placeholderPseudo}`,
@@ -29,10 +29,10 @@ export default function generatePlaceholderColor(configOptions = {}) {
             }
           `;
           return `
-            ${placeholderString("::-webkit-input-placeholder")}
-            ${placeholderString("::-moz-placeholder")}
-            ${placeholderString(":-ms-input-placeholder")}
-            ${placeholderString(":-moz-placeholder")}
+            ${placeholderColorString("::-webkit-input-placeholder")}
+            ${placeholderColorString("::-moz-placeholder")}
+            ${placeholderColorString(":-ms-input-placeholder")}
+            ${placeholderColorString(":-moz-placeholder")}
           `;
         }
       );

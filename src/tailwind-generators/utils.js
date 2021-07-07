@@ -142,6 +142,23 @@ export const getConfigOptions = (options = {}) => {
       ...defaultConfigOptions.variants.placeholderOpacity,
     ],
     textAlign: textAlignVariants = [...defaultConfigOptions.variants.textAlign],
+    textColor: textColorVariants = [...defaultConfigOptions.variants.textColor],
+    textOpacity: textOpacityVariants = [
+      ...defaultConfigOptions.variants.textOpacity,
+    ],
+    textDecoration: textDecorationVariants = [
+      ...defaultConfigOptions.variants.textDecoration,
+    ],
+    textTransform: textTransformVariants = [
+      ...defaultConfigOptions.variants.textTransform,
+    ],
+    verticalAlign: verticalAlignVariants = [
+      ...defaultConfigOptions.variants.verticalAlign,
+    ],
+    whitespace: whitespaceVariants = [
+      ...defaultConfigOptions.variants.whitespace,
+    ],
+    wordBreak: wordBreakVariants = [...defaultConfigOptions.variants.wordBreak],
     extend: variantsExtend = {},
   } = variants;
 
@@ -206,6 +223,13 @@ export const getConfigOptions = (options = {}) => {
     placeholderColor: placeholderColorVariantsExtend = [],
     placeholderOpacity: placeholderOpacityVariantsExtend = [],
     textAlign: textAlignVariantsExtend = [],
+    textColor: textColorVariantsExtend = [],
+    textOpacity: textOpacityVariantsExtend = [],
+    textDecoration: textDecorationVariantsExtend = [],
+    textTransform: textTransformVariantsExtend = [],
+    verticalAlign: verticalAlignVariantsExtend = [],
+    whitespace: whitespaceVariantsExtend = [],
+    wordBreak: wordBreakVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -302,6 +326,16 @@ export const getConfigOptions = (options = {}) => {
       ...placeholderOpacityVariantsExtend,
     ],
     textAlign: [...textAlignVariants, ...textAlignVariantsExtend],
+    textColor: [...textColorVariants, ...textColorVariantsExtend],
+    textOpacity: [...textOpacityVariants, ...textOpacityVariantsExtend],
+    textDecoration: [
+      ...textDecorationVariants,
+      ...textDecorationVariantsExtend,
+    ],
+    textTransform: [...textTransformVariants, ...textTransformVariantsExtend],
+    verticalAlign: [...verticalAlignVariants, ...verticalAlignVariantsExtend],
+    whitespace: [...whitespaceVariants, ...whitespaceVariantsExtend],
+    wordBreak: [...wordBreakVariants, ...wordBreakVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -346,6 +380,8 @@ export const getConfigOptions = (options = {}) => {
     listStyleType: listStyleTypeTheme = {},
     placeholderColor: placeholderColorTheme = {},
     placeholderOpacity: placeholderOpacityTheme = {},
+    textColor: textColorTheme = {},
+    textOpacity: textOpacityTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -386,6 +422,8 @@ export const getConfigOptions = (options = {}) => {
     listStyleType: listStyleTypeThemeExtend = {},
     placeholderColor: placeholderColorThemeExtend = {},
     placeholderOpacity: placeholderOpacityThemeExtend = {},
+    textColor: textColorThemeExtend = {},
+    textOpacity: textOpacityThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -569,6 +607,16 @@ export const getConfigOptions = (options = {}) => {
       placeholderOpacityTheme,
       placeholderOpacityThemeExtend
     ),
+    textColor: Object.assign(
+      defaultConfigOptions.theme.textColor,
+      textColorTheme,
+      textColorThemeExtend
+    ),
+    textOpacity: Object.assign(
+      defaultConfigOptions.theme.textOpacity,
+      textOpacityTheme,
+      textOpacityThemeExtend
+    ),
   };
 
   return {
@@ -616,14 +664,12 @@ export const generateCssString = (
       `.${orientationPrefix}${isFunction(value) ? value("") : value}`,
     ];
     if (Array.isArray(pseudoElements)) {
-      let pseudoElementsNew = pseudoElements.slice(0);
-      const responsiveIndex = pseudoElements.indexOf("responsive");
-      if (responsiveIndex >= 0) {
-        pseudoElementsNew.splice(responsiveIndex, 1);
-      }
-      pseudoElementsNew.forEach((pseudoItem) => {
+      pseudoElements.forEach((pseudoItem) => {
         if (typeof pseudoItem === "string") {
-          if (pseudoItem !== "") {
+          if (
+            pseudoItem !== "" &&
+            ["responsive", "group-hover"].indexOf(pseudoItem) < 0
+          ) {
             classArray.push(
               `.${orientationPrefix}${pseudoItem}\\:${
                 isFunction(value)
@@ -634,6 +680,13 @@ export const generateCssString = (
           }
         }
       });
+      if (pseudoElements.indexOf("group-hover") >= 0) {
+        classArray.push(
+          `.${orientationPrefix}group:hover .group-hover\\:${
+            isFunction(value) ? value() : value
+          }`
+        );
+      }
     }
     return classArray.join(", ");
   };
@@ -648,7 +701,7 @@ export const generateCssString = (
     }
     let str = "";
     Object.entries(nOptions).forEach(([key, value]) => {
-      str += getStr(key, value);
+      str += getStr(key.replace("/", `\\/`), value);
     });
     return str;
   };

@@ -17,6 +17,12 @@ export default function generateGap(configOptions = {}) {
           ${pseudoClass(`${prefix}-${key}`, variants.gap)} {
             gap: ${value};
           }
+          ${pseudoClass(`${prefix}-x-${key}`, variants.gap)} {
+            column-gap: ${value};
+          }
+          ${pseudoClass(`${prefix}-y-${key}`, variants.gap)} {
+            row-gap: ${value};
+          }
         `
       );
       return cssString;

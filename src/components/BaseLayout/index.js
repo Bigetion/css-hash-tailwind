@@ -189,13 +189,13 @@ function Layout(props) {
         <div className="lg:flex -mx-6">
           {showSidebar && (
             <div className="fixed inset-0 h-full bg-white z-90 w-full border-b border-r -mb-16 lg:-mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:border-b-0 lg:pt-0 lg:w-1/4 lg:block xl:w-1/5 pt-16">
-              <div className="overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-16 bg-white">
+              <div className="overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-0 lg:pt-16 bg-white">
                 <div
                   ref={sidebarRef}
                   onScroll={() => {
                     onChangeSidebarScrollTop(sidebarRef.current.scrollTop);
                   }}
-                  className={`px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
+                  className={`overscroll-contain px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
                 >
                   {menus.map((item, index) => (
                     <Menu

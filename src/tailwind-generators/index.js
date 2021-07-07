@@ -1,5 +1,6 @@
 import { getConfigOptions } from "./utils";
 
+import generateBase from "./generators/base";
 import generateContainer from "./generators/container";
 import generateBoxSizing from "./generators/boxSizing";
 import generateDisplay from "./generators/display";
@@ -61,11 +62,19 @@ import generateListStylePosition from "./generators/listStylePosition";
 import generatePlaceholderColor from "./generators/placeholderColor";
 import generatePlaceholderOpacity from "./generators/placeholderOpacity";
 import generateTextAlign from "./generators/textAlign";
+import generateTextColor from "./generators/textColor";
+import generateTextOpacity from "./generators/textOpacity";
+import generateTextDecoration from "./generators/textDecoration";
+import generateTextTransform from "./generators/textTransform";
+import generateVerticalAlign from "./generators/verticalAlign";
+import generateWhitespace from "./generators/whitespace";
+import generateWordBreak from "./generators/wordBreak";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
   const { corePlugins = {} } = configOptions;
   let cssString = "";
+  cssString += corePlugins.base ? generateBase(configOptions) : "";
   cssString += corePlugins.container ? generateContainer(configOptions) : "";
   cssString += corePlugins.boxSizing ? generateBoxSizing(configOptions) : "";
   cssString += corePlugins.display ? generateDisplay(configOptions) : "";
@@ -173,6 +182,21 @@ function generateTailwindCss(options = {}) {
     ? generatePlaceholderOpacity(configOptions)
     : "";
   cssString += corePlugins.textAlign ? generateTextAlign(configOptions) : "";
+  cssString += corePlugins.textColor ? generateTextColor(configOptions) : "";
+  cssString += corePlugins.textOpacity
+    ? generateTextOpacity(configOptions)
+    : "";
+  cssString += corePlugins.textDecoration
+    ? generateTextDecoration(configOptions)
+    : "";
+  cssString += corePlugins.textTransform
+    ? generateTextTransform(configOptions)
+    : "";
+  cssString += corePlugins.verticalAlign
+    ? generateVerticalAlign(configOptions)
+    : "";
+  cssString += corePlugins.whitespace ? generateWhitespace(configOptions) : "";
+  cssString += corePlugins.wordBreak ? generateWordBreak(configOptions) : "";
   return cssString;
 }
 
