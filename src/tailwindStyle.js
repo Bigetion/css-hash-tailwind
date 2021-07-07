@@ -3,7 +3,7 @@ import { cssHash } from "css-hash";
 import {
   // generateAlign,
   // generateBase,
-  generateBg,
+  // generateBg,
   generateBorder,
   // generateBox,
   // generateClear,
@@ -119,13 +119,22 @@ cssHash(() =>
       verticalAlign: true,
       whitespace: true,
       wordBreak: true,
+      backgroundAttachment: true,
+      backgroundClip: true,
+      backgroundColor: true,
+      backgroundOpacity: true,
+      backgroundPosition: true,
+      backgroundRepeat: true,
+      backgroundSize: true,
+      backgroundImage: true,
+      gradientColorStops: true,
     },
   })
 );
 
 // cssHash(() => generateAlign());
 // cssHash(() => generateBase());
-cssHash(() => generateBg());
+// cssHash(() => generateBg());
 cssHash(() => generateBorder());
 // cssHash(() => generateBox());
 // cssHash(() => generateClear());

@@ -1,6 +1,7 @@
 import { getConfigOptions } from "./utils";
 
 import generateBase from "./generators/base";
+import generateForm from "./generators/form";
 import generateContainer from "./generators/container";
 import generateBoxSizing from "./generators/boxSizing";
 import generateDisplay from "./generators/display";
@@ -69,12 +70,22 @@ import generateTextTransform from "./generators/textTransform";
 import generateVerticalAlign from "./generators/verticalAlign";
 import generateWhitespace from "./generators/whitespace";
 import generateWordBreak from "./generators/wordBreak";
+import generateBackgroundAttachment from "./generators/backgroundAttachment";
+import generateBackgroundClip from "./generators/backgroundClip";
+import generateBackgroundColor from "./generators/backgroundColor";
+import generateBackgroundOpacity from "./generators/backgroundOpacity";
+import generateBackgroundPosition from "./generators/backgroundPosition";
+import generateBackgroundRepeat from "./generators/backgroundRepeat";
+import generateBackgroundSize from "./generators/backgroundSize";
+import generateBackgroundImage from "./generators/backgroundImage";
+import generateGradientColorStops from "./generators/gradientColorStops";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
   const { corePlugins = {} } = configOptions;
   let cssString = "";
   cssString += corePlugins.base ? generateBase(configOptions) : "";
+  cssString += corePlugins.form ? generateForm(configOptions) : "";
   cssString += corePlugins.container ? generateContainer(configOptions) : "";
   cssString += corePlugins.boxSizing ? generateBoxSizing(configOptions) : "";
   cssString += corePlugins.display ? generateDisplay(configOptions) : "";
@@ -197,6 +208,33 @@ function generateTailwindCss(options = {}) {
     : "";
   cssString += corePlugins.whitespace ? generateWhitespace(configOptions) : "";
   cssString += corePlugins.wordBreak ? generateWordBreak(configOptions) : "";
+  cssString += corePlugins.backgroundAttachment
+    ? generateBackgroundAttachment(configOptions)
+    : "";
+  cssString += corePlugins.backgroundClip
+    ? generateBackgroundClip(configOptions)
+    : "";
+  cssString += corePlugins.backgroundColor
+    ? generateBackgroundColor(configOptions)
+    : "";
+  cssString += corePlugins.backgroundOpacity
+    ? generateBackgroundOpacity(configOptions)
+    : "";
+  cssString += corePlugins.backgroundPosition
+    ? generateBackgroundPosition(configOptions)
+    : "";
+  cssString += corePlugins.backgroundRepeat
+    ? generateBackgroundRepeat(configOptions)
+    : "";
+  cssString += corePlugins.backgroundSize
+    ? generateBackgroundSize(configOptions)
+    : "";
+  cssString += corePlugins.backgroundImage
+    ? generateBackgroundImage(configOptions)
+    : "";
+  cssString += corePlugins.gradientColorStops
+    ? generateGradientColorStops(configOptions)
+    : "";
   return cssString;
 }
 

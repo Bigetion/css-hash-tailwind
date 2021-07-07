@@ -9,6 +9,7 @@ const configOptions = {
   extend: {},
   corePlugins: {
     base: false,
+    form: false,
     container: false,
     boxSizing: false,
     display: false,
@@ -77,6 +78,15 @@ const configOptions = {
     verticalAlign: false,
     whitespace: false,
     wordBreak: false,
+    backgroundAttachment: false,
+    backgroundClip: false,
+    backgroundColor: false,
+    backgroundOpacity: false,
+    backgroundPosition: false,
+    backgroundRepeat: false,
+    backgroundSize: false,
+    backgroundImage: false,
+    gradientColorStops: false,
   },
   variants: {
     boxSizing: ["responsive", "hover", "focus"],
@@ -146,6 +156,27 @@ const configOptions = {
     verticalAlign: ["responsive", "focus", "hover"],
     whitespace: ["responsive", "focus", "hover"],
     wordBreak: ["responsive", "focus", "hover"],
+    backgroundAttachment: ["responsive", "hover", "focus"],
+    backgroundClip: ["responsive", "hover", "focus"],
+    backgroundColor: ["responsive", "hover", "focus", "active", "group-hover"],
+    backgroundOpacity: [
+      "responsive",
+      "hover",
+      "focus",
+      "active",
+      "group-hover",
+    ],
+    backgroundPosition: ["responsive", "hover", "focus"],
+    backgroundRepeat: ["responsive", "hover", "focus"],
+    backgroundSize: ["responsive", "hover", "focus"],
+    backgroundImage: ["responsive", "hover", "focus"],
+    gradientColorStops: [
+      "responsive",
+      "hover",
+      "focus",
+      "active",
+      "group-hover",
+    ],
   },
   theme: {
     spacing: {
@@ -629,6 +660,55 @@ const configOptions = {
       10: "0.1",
       20: "0.2",
       95: "0.95",
+    },
+    backgroundColor: {
+      primary: "#3490dc",
+      secondary: "#ffed4a",
+      danger: "#e3342f",
+    },
+    backgroundOpacity: {
+      10: "0.1",
+      20: "0.2",
+      95: "0.95",
+    },
+    backgroundPosition: {
+      bottom: "bottom",
+      center: "center",
+      left: "left",
+      "left-bottom": "left bottom",
+      "left-top": "left top",
+      right: "right",
+      "right-bottom": "right bottom",
+      "right-top": "right top",
+      top: "top",
+    },
+    backgroundSize: {
+      auto: "auto",
+      cover: "cover",
+      contain: "contain",
+      "50%": "50%",
+      16: "4rem",
+    },
+    backgroundImage: {
+      none: "none",
+      "gradient-to-t": "linear-gradient(to top, var(--gradient-color-stops))",
+      "gradient-to-tr":
+        "linear-gradient(to top right, var(--gradient-color-stops))",
+      "gradient-to-r": "linear-gradient(to right, var(--gradient-color-stops))",
+      "gradient-to-br":
+        "linear-gradient(to bottom right, var(--gradient-color-stops))",
+      "gradient-to-b":
+        "linear-gradient(to bottom, var(--gradient-color-stops))",
+      "gradient-to-bl":
+        "linear-gradient(to bottom left, var(--gradient-color-stops))",
+      "gradient-to-l": "linear-gradient(to left, var(--gradient-color-stops))",
+      "gradient-to-tl":
+        "linear-gradient(to top left, var(--gradient-color-stops))",
+    },
+    gradientColorStops: {
+      primary: "#3490dc",
+      secondary: "#ffed4a",
+      danger: "#e3342f",
     },
   },
 };

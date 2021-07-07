@@ -159,6 +159,33 @@ export const getConfigOptions = (options = {}) => {
       ...defaultConfigOptions.variants.whitespace,
     ],
     wordBreak: wordBreakVariants = [...defaultConfigOptions.variants.wordBreak],
+    backgroundAttachment: backgroundAttachmentVariants = [
+      ...defaultConfigOptions.variants.backgroundAttachment,
+    ],
+    backgroundClip: backgroundClipVariants = [
+      ...defaultConfigOptions.variants.backgroundClip,
+    ],
+    backgroundColor: backgroundColorVariants = [
+      ...defaultConfigOptions.variants.backgroundColor,
+    ],
+    backgroundOpacity: backgroundOpacityVariants = [
+      ...defaultConfigOptions.variants.backgroundOpacity,
+    ],
+    backgroundPosition: backgroundPositionVariants = [
+      ...defaultConfigOptions.variants.backgroundPosition,
+    ],
+    backgroundRepeat: backgroundRepeatVariants = [
+      ...defaultConfigOptions.variants.backgroundRepeat,
+    ],
+    backgroundSize: backgroundSizeVariants = [
+      ...defaultConfigOptions.variants.backgroundSize,
+    ],
+    backgroundImage: backgroundImageVariants = [
+      ...defaultConfigOptions.variants.backgroundImage,
+    ],
+    gradientColorStops: gradientColorStopsVariants = [
+      ...defaultConfigOptions.variants.gradientColorStops,
+    ],
     extend: variantsExtend = {},
   } = variants;
 
@@ -230,6 +257,15 @@ export const getConfigOptions = (options = {}) => {
     verticalAlign: verticalAlignVariantsExtend = [],
     whitespace: whitespaceVariantsExtend = [],
     wordBreak: wordBreakVariantsExtend = [],
+    backgroundAttachment: backgroundAttachmentVariantsExtend = [],
+    backgroundClip: backgroundClipVariantsExtend = [],
+    backgroundColor: backgroundColorVariantsExtend = [],
+    backgroundOpacity: backgroundOpacityVariantsExtend = [],
+    backgroundPosition: backgroundPositionVariantsExtend = [],
+    backgroundRepeat: backgroundRepeatVariantsExtend = [],
+    backgroundSize: backgroundSizeVariantsExtend = [],
+    backgroundImage: backgroundImageVariantsExtend = [],
+    gradientColorStops: gradientColorStopsVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -336,6 +372,42 @@ export const getConfigOptions = (options = {}) => {
     verticalAlign: [...verticalAlignVariants, ...verticalAlignVariantsExtend],
     whitespace: [...whitespaceVariants, ...whitespaceVariantsExtend],
     wordBreak: [...wordBreakVariants, ...wordBreakVariantsExtend],
+    backgroundAttachment: [
+      ...backgroundAttachmentVariants,
+      ...backgroundAttachmentVariantsExtend,
+    ],
+    backgroundClip: [
+      ...backgroundClipVariants,
+      ...backgroundClipVariantsExtend,
+    ],
+    backgroundColor: [
+      ...backgroundColorVariants,
+      ...backgroundColorVariantsExtend,
+    ],
+    backgroundOpacity: [
+      ...backgroundOpacityVariants,
+      ...backgroundOpacityVariantsExtend,
+    ],
+    backgroundPosition: [
+      ...backgroundPositionVariants,
+      ...backgroundPositionVariantsExtend,
+    ],
+    backgroundRepeat: [
+      ...backgroundRepeatVariants,
+      ...backgroundRepeatVariantsExtend,
+    ],
+    backgroundSize: [
+      ...backgroundSizeVariants,
+      ...backgroundSizeVariantsExtend,
+    ],
+    backgroundImage: [
+      ...backgroundImageVariants,
+      ...backgroundImageVariantsExtend,
+    ],
+    gradientColorStops: [
+      ...gradientColorStopsVariants,
+      ...gradientColorStopsVariantsExtend,
+    ],
   };
 
   const newCorePlugins = Object.assign(
@@ -382,6 +454,12 @@ export const getConfigOptions = (options = {}) => {
     placeholderOpacity: placeholderOpacityTheme = {},
     textColor: textColorTheme = {},
     textOpacity: textOpacityTheme = {},
+    backgroundColor: backgroundColorTheme = {},
+    backgroundOpacity: backgroundOpacityTheme = {},
+    backgroundPosition: backgroundPositionTheme = {},
+    backgroundSize: backgroundSizeTheme = {},
+    backgroundImage: backgroundImageTheme = {},
+    gradientColorStops: gradientColorStopsTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -424,6 +502,12 @@ export const getConfigOptions = (options = {}) => {
     placeholderOpacity: placeholderOpacityThemeExtend = {},
     textColor: textColorThemeExtend = {},
     textOpacity: textOpacityThemeExtend = {},
+    backgroundColor: backgroundColorThemeExtend = {},
+    backgroundOpacity: backgroundOpacityThemeExtend = {},
+    backgroundPosition: backgroundPositionThemeExtend = {},
+    backgroundSize: backgroundSizeThemeExtend = {},
+    backgroundImage: backgroundImageThemeExtend = {},
+    gradientColorStops: gradientColorStopsThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -616,6 +700,36 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.textOpacity,
       textOpacityTheme,
       textOpacityThemeExtend
+    ),
+    backgroundColor: Object.assign(
+      defaultConfigOptions.theme.backgroundColor,
+      backgroundColorTheme,
+      backgroundColorThemeExtend
+    ),
+    backgroundOpacity: Object.assign(
+      defaultConfigOptions.theme.backgroundOpacity,
+      backgroundOpacityTheme,
+      backgroundOpacityThemeExtend
+    ),
+    backgroundPosition: Object.assign(
+      defaultConfigOptions.theme.backgroundPosition,
+      backgroundPositionTheme,
+      backgroundPositionThemeExtend
+    ),
+    backgroundSize: Object.assign(
+      defaultConfigOptions.theme.backgroundSize,
+      backgroundSizeTheme,
+      backgroundSizeThemeExtend
+    ),
+    backgroundImage: Object.assign(
+      defaultConfigOptions.theme.backgroundImage,
+      backgroundImageTheme,
+      backgroundImageThemeExtend
+    ),
+    gradientColorStops: Object.assign(
+      defaultConfigOptions.theme.gradientColorStops,
+      gradientColorStopsTheme,
+      gradientColorStopsThemeExtend
     ),
   };
 
