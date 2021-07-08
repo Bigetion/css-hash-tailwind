@@ -16,7 +16,7 @@ import {
   // generateGradient,
   // generateGrid,
   // generateHeight,
-  generateInteractivity,
+  // generateInteractivity,
   // generateJustify,
   // generateLeading,
   // generateList,
@@ -146,6 +146,12 @@ cssHash(() =>
       translate: true,
       skew: true,
       transformOrigin: true,
+      appearance: true,
+      cursor: true,
+      outline: true,
+      pointerEvents: true,
+      resize: true,
+      userSelect: true,
     },
   })
 );
@@ -165,7 +171,7 @@ cssHash(() =>
 // cssHash(() => generateGradient());
 // cssHash(() => generateGrid());
 // cssHash(() => generateHeight());
-cssHash(() => generateInteractivity());
+// cssHash(() => generateInteractivity());
 // cssHash(() => generateJustify());
 // cssHash(() => generateLeading());
 // cssHash(() => generateList());

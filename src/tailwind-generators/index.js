@@ -98,6 +98,12 @@ import generateRotate from "./generators/rotate";
 import generateTranslate from "./generators/translate";
 import generateSkew from "./generators/skew";
 import generateTransformOrigin from "./generators/transformOrigin";
+import generateAppearance from "./generators/appearance";
+import generateCursor from "./generators/cursor";
+import generateOutline from "./generators/outline";
+import generatePointerEvents from "./generators/pointerEvents";
+import generateResize from "./generators/resize";
+import generateUserSelect from "./generators/userSelect";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -297,6 +303,14 @@ function generateTailwindCss(options = {}) {
   cssString += corePlugins.transformOrigin
     ? generateTransformOrigin(configOptions)
     : "";
+  cssString += corePlugins.appearance ? generateAppearance(configOptions) : "";
+  cssString += corePlugins.cursor ? generateCursor(configOptions) : "";
+  cssString += corePlugins.outline ? generateOutline(configOptions) : "";
+  cssString += corePlugins.pointerEvents
+    ? generatePointerEvents(configOptions)
+    : "";
+  cssString += corePlugins.resize ? generateResize(configOptions) : "";
+  cssString += corePlugins.userSelect ? generateUserSelect(configOptions) : "";
   return cssString;
 }
 

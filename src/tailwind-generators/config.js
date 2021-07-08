@@ -106,6 +106,12 @@ const configOptions = {
     translate: false,
     skew: false,
     transformOrigin: false,
+    appearance: false,
+    cursor: false,
+    outline: false,
+    pointerEvents: false,
+    resize: false,
+    userSelect: false,
   },
   variants: {
     boxSizing: ["responsive", "hover", "focus"],
@@ -214,6 +220,12 @@ const configOptions = {
     translate: ["responsive", "hover", "focus", "active", "group-hover"],
     skew: ["responsive", "hover", "focus", "active", "group-hover"],
     transformOrigin: ["responsive", "hover", "focus"],
+    appearance: ["responsive", "hover", "focus"],
+    cursor: ["responsive", "hover", "focus"],
+    outline: ["responsive", "hover", "focus"],
+    pointerEvents: ["responsive", "hover", "focus"],
+    resize: ["responsive", "hover", "focus"],
+    userSelect: ["responsive", "hover", "focus"],
   },
   theme: {
     spacing: {

@@ -228,6 +228,18 @@ export const getConfigOptions = (options = {}) => {
     transformOrigin: transformOriginVariants = [
       ...defaultConfigOptions.variants.transformOrigin,
     ],
+    appearance: appearanceVariants = [
+      ...defaultConfigOptions.variants.appearance,
+    ],
+    cursor: cursorVariants = [...defaultConfigOptions.variants.cursor],
+    outline: outlineVariants = [...defaultConfigOptions.variants.outline],
+    pointerEvents: pointerEventsVariants = [
+      ...defaultConfigOptions.variants.pointerEvents,
+    ],
+    resize: resizeVariants = [...defaultConfigOptions.variants.resize],
+    userSelect: userSelectVariants = [
+      ...defaultConfigOptions.variants.userSelect,
+    ],
     extend: variantsExtend = {},
   } = variants;
 
@@ -326,6 +338,12 @@ export const getConfigOptions = (options = {}) => {
     translate: translateVariantsExtend = [],
     skew: skewVariantsExtend = [],
     transformOrigin: transformOriginVariantsExtend = [],
+    appearance: appearanceVariantsExtend = [],
+    cursor: cursorVariantsExtend = [],
+    outline: outlineVariantsExtend = [],
+    pointerEvents: pointerEventsVariantsExtend = [],
+    resize: resizeVariantsExtend = [],
+    userSelect: userSelectVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -492,6 +510,12 @@ export const getConfigOptions = (options = {}) => {
       ...transformOriginVariants,
       ...transformOriginVariantsExtend,
     ],
+    appearance: [...appearanceVariants, ...appearanceVariantsExtend],
+    cursor: [...cursorVariants, ...cursorVariantsExtend],
+    outline: [...outlineVariants, ...outlineVariantsExtend],
+    pointerEvents: [...pointerEventsVariants, ...pointerEventsVariantsExtend],
+    resize: [...resizeVariants, ...resizeVariantsExtend],
+    userSelect: [...userSelectVariants, ...userSelectVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
