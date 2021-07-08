@@ -107,6 +107,7 @@ import generateUserSelect from "./generators/userSelect";
 import generateFill from "./generators/fill";
 import generateStroke from "./generators/stroke";
 import generateStrokeWidth from "./generators/strokeWidth";
+import generateAccessibility from "./generators/accessibility";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -318,6 +319,9 @@ function generateTailwindCss(options = {}) {
   cssString += corePlugins.stroke ? generateStroke(configOptions) : "";
   cssString += corePlugins.strokeWidth
     ? generateStrokeWidth(configOptions)
+    : "";
+  cssString += corePlugins.accessibility
+    ? generateAccessibility(configOptions)
     : "";
   return cssString;
 }

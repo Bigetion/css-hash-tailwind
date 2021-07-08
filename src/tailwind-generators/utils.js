@@ -245,6 +245,9 @@ export const getConfigOptions = (options = {}) => {
     strokeWidth: strokeWidthVariants = [
       ...defaultConfigOptions.variants.strokeWidth,
     ],
+    accessibility: accessibilityVariants = [
+      ...defaultConfigOptions.variants.accessibility,
+    ],
     extend: variantsExtend = {},
   } = variants;
 
@@ -352,6 +355,7 @@ export const getConfigOptions = (options = {}) => {
     fill: fillVariantsExtend = [],
     stroke: strokeVariantsExtend = [],
     strokeWidth: strokeWidthVariantsExtend = [],
+    accessibility: accessibilityVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -527,6 +531,7 @@ export const getConfigOptions = (options = {}) => {
     fill: [...fillVariants, ...fillVariantsExtend],
     stroke: [...strokeVariants, ...strokeVariantsExtend],
     strokeWidth: [...strokeWidthVariants, ...strokeWidthVariantsExtend],
+    accessibility: [...accessibilityVariants, ...accessibilityVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(

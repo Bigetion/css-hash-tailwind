@@ -115,6 +115,7 @@ const configOptions = {
     fill: true,
     stroke: true,
     strokeWidth: true,
+    accessibility: true,
   },
   variants: {
     boxSizing: ["responsive", "hover", "focus"],
@@ -232,6 +233,7 @@ const configOptions = {
     fill: ["responsive", "hover", "focus"],
     stroke: ["responsive", "hover", "focus"],
     strokeWidth: ["responsive", "hover", "focus"],
+    accessibility: ["responsive", "hover", "focus", "active"],
   },
   theme: {
     spacing: {
