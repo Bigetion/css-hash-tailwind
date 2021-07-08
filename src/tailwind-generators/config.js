@@ -92,10 +92,14 @@ const configOptions = {
     borderColor: false,
     borderOpacity: false,
     borderStyle: false,
-    divideWidth: true,
+    divideWidth: false,
     divideColor: false,
     divideOpacity: false,
     divideStyle: false,
+    borderCollapse: false,
+    tableLayout: false,
+    boxShadow: true,
+    opacity: false,
   },
   variants: {
     boxSizing: ["responsive", "hover", "focus"],
@@ -195,6 +199,10 @@ const configOptions = {
     divideColor: ["responsive", "hover", "focus"],
     divideOpacity: ["responsive", "hover", "focus"],
     divideStyle: ["responsive", "hover", "focus"],
+    borderCollapse: ["responsive", "hover", "focus"],
+    tableLayout: ["responsive", "hover", "focus"],
+    boxShadow: ["responsive", "hover", "focus", "active", "group-hover"],
+    opacity: ["responsive", "hover", "focus", "active", "group-hover"],
   },
   theme: {
     spacing: {
@@ -338,9 +346,17 @@ const configOptions = {
     },
     opacity: {
       0: "0",
-      25: "0.25",
-      50: "0.5",
-      75: "0.75",
+      10: ".1",
+      20: ".2",
+      25: ".25",
+      30: ".3",
+      40: ".4",
+      50: ".5",
+      60: ".6",
+      70: ".7",
+      75: ".75",
+      80: ".8",
+      90: ".9",
       100: "1",
     },
     inset: {
@@ -664,31 +680,19 @@ const configOptions = {
       secondary: "#ffed4a",
       danger: "#e3342f",
     },
-    placeholderOpacity: {
-      10: "0.1",
-      20: "0.2",
-      95: "0.95",
-    },
+    placeholderOpacity: {},
     textColor: {
       primary: "#3490dc",
       secondary: "#ffed4a",
       danger: "#e3342f",
     },
-    textOpacity: {
-      10: "0.1",
-      20: "0.2",
-      95: "0.95",
-    },
+    textOpacity: {},
     backgroundColor: {
       primary: "#3490dc",
       secondary: "#ffed4a",
       danger: "#e3342f",
     },
-    backgroundOpacity: {
-      10: "0.1",
-      20: "0.2",
-      95: "0.95",
-    },
+    backgroundOpacity: {},
     backgroundPosition: {
       bottom: "bottom",
       center: "center",
@@ -748,21 +752,29 @@ const configOptions = {
       secondary: "#ffed4a",
       danger: "#e3342f",
     },
-    borderOpacity: {
-      10: "0.1",
-      20: "0.2",
-      95: "0.95",
-    },
+    borderOpacity: {},
     divideWidth: {},
     divideColor: {
       primary: "#3490dc",
       secondary: "#ffed4a",
       danger: "#e3342f",
     },
-    divideOpacity: {
-      10: "0.1",
-      20: "0.2",
-      95: "0.95",
+    divideOpacity: {},
+    boxShadow: {
+      xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
+      sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      default:
+        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+      md:
+        "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      lg:
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      xl:
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+      outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
+      none: "none",
     },
   },
 };

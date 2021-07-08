@@ -213,6 +213,14 @@ export const getConfigOptions = (options = {}) => {
     divideStyle: divideStyleVariants = [
       ...defaultConfigOptions.variants.divideStyle,
     ],
+    borderCollapse: borderCollapseVariants = [
+      ...defaultConfigOptions.variants.borderCollapse,
+    ],
+    tableLayout: tableLayoutVariants = [
+      ...defaultConfigOptions.variants.tableLayout,
+    ],
+    boxShadow: boxShadowVariants = [...defaultConfigOptions.variants.boxShadow],
+    opacity: opacityVariants = [...defaultConfigOptions.variants.opacity],
     extend: variantsExtend = {},
   } = variants;
 
@@ -302,6 +310,10 @@ export const getConfigOptions = (options = {}) => {
     divideColor: divideColorVariantsExtend = [],
     divideOpacity: divideOpacityVariantsExtend = [],
     divideStyle: divideStyleVariantsExtend = [],
+    borderCollapse: borderCollapseVariantsExtend = [],
+    tableLayout: tableLayoutVariantsExtend = [],
+    boxShadow: boxShadowVariantsExtend = [],
+    opacity: opacityVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -453,6 +465,13 @@ export const getConfigOptions = (options = {}) => {
     divideColor: [...divideColorVariants, ...divideColorVariantsExtend],
     divideOpacity: [...divideOpacityVariants, ...divideOpacityVariantsExtend],
     divideStyle: [...divideStyleVariants, ...divideStyleVariantsExtend],
+    borderCollapse: [
+      ...borderCollapseVariants,
+      ...borderCollapseVariantsExtend,
+    ],
+    tableLayout: [...tableLayoutVariants, ...tableLayoutVariantsExtend],
+    boxShadow: [...boxShadowVariants, ...boxShadowVariantsExtend],
+    opacity: [...opacityVariants, ...opacityVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -512,6 +531,7 @@ export const getConfigOptions = (options = {}) => {
     divideWidth: divideWidthTheme = {},
     divideColor: divideColorTheme = {},
     divideOpacity: divideOpacityTheme = {},
+    boxShadow: boxShadowTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -567,6 +587,7 @@ export const getConfigOptions = (options = {}) => {
     divideWidth: divideWidthThemeExtend = {},
     divideColor: divideColorThemeExtend = {},
     divideOpacity: divideOpacityThemeExtend = {},
+    boxShadow: boxShadowThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -824,6 +845,11 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.divideOpacity,
       divideOpacityTheme,
       divideOpacityThemeExtend
+    ),
+    boxShadow: Object.assign(
+      defaultConfigOptions.theme.boxShadow,
+      boxShadowTheme,
+      boxShadowThemeExtend
     ),
   };
 

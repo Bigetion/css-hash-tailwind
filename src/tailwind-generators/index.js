@@ -88,6 +88,10 @@ import generateDivideWidth from "./generators/divideWidth";
 import generateDivideColor from "./generators/divideColor";
 import generateDivideOpacity from "./generators/divideOpacity";
 import generateDivideStyle from "./generators/divideStyle";
+import generateBorderCollapse from "./generators/borderCollapse";
+import generateTableLayout from "./generators/tableLayout";
+import generateBoxShadow from "./generators/boxShadow";
+import generateOpacity from "./generators/opacity";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -271,6 +275,14 @@ function generateTailwindCss(options = {}) {
   cssString += corePlugins.divideStyle
     ? generateDivideStyle(configOptions)
     : "";
+  cssString += corePlugins.borderCollapse
+    ? generateBorderCollapse(configOptions)
+    : "";
+  cssString += corePlugins.tableLayout
+    ? generateTableLayout(configOptions)
+    : "";
+  cssString += corePlugins.boxShadow ? generateBoxShadow(configOptions) : "";
+  cssString += corePlugins.opacity ? generateOpacity(configOptions) : "";
   return cssString;
 }
 

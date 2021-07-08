@@ -18,23 +18,23 @@ import {
   // generateHeight,
   generateInteractivity,
   // generateJustify,
-  generateLeading,
-  generateList,
+  // generateLeading,
+  // generateList,
   // generateMargin,
   // generateObject,
-  generateOpacity,
+  // generateOpacity,
   // generateOverflow,
   // generateOverscroll,
   // generatePadding,
   // generatePlace,
   // generatePlaceholder,
   // generatePosition,
-  generateShadow,
+  // generateShadow,
   // generateSpace,
   generateSvg,
-  generateTable,
+  // generateTable,
   // generateText,
-  generateTracking,
+  // generateTracking,
   generateTransform,
   // generateVisibility,
   // generateWidth,
@@ -138,6 +138,10 @@ cssHash(() =>
       divideColor: true,
       divideOpacity: true,
       divideStyle: true,
+      borderCollapse: true,
+      tableLayout: true,
+      boxShadow: true,
+      opacity: true,
     },
   })
 );
@@ -159,23 +163,23 @@ cssHash(() =>
 // cssHash(() => generateHeight());
 cssHash(() => generateInteractivity());
 // cssHash(() => generateJustify());
-cssHash(() => generateLeading());
-cssHash(() => generateList());
+// cssHash(() => generateLeading());
+// cssHash(() => generateList());
 // cssHash(() => generateMargin());
 // cssHash(() => generateObject());
-cssHash(() => generateOpacity());
+// cssHash(() => generateOpacity());
 // cssHash(() => generateOverflow());
 // cssHash(() => generateOverscroll());
 // cssHash(() => generatePadding());
 // cssHash(() => generatePlace());
 // cssHash(() => generatePlaceholder());
 // cssHash(() => generatePosition());
-cssHash(() => generateShadow());
+// cssHash(() => generateShadow());
 // cssHash(() => generateSpace());
 cssHash(() => generateSvg());
-cssHash(() => generateTable());
+// cssHash(() => generateTable());
 // cssHash(() => generateText());
-cssHash(() => generateTracking());
+// cssHash(() => generateTracking());
 cssHash(() => generateTransform());
 // cssHash(() => generateVisibility());
 // cssHash(() => generateWidth());
