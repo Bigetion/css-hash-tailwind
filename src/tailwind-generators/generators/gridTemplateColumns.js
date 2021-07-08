@@ -14,7 +14,7 @@ export default function generateGridTemplateColumns(configOptions = {}) {
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.gridTemplateColumns)} {
             grid-template-columns: ${
-              isNaN(value) ? value : `repeat(${value}, minmax(0, 1fr));`
+              isNaN(value) ? value : `repeat(${value}, minmax(0, 1fr))`
             };
           }
         `
