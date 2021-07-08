@@ -104,6 +104,9 @@ import generateOutline from "./generators/outline";
 import generatePointerEvents from "./generators/pointerEvents";
 import generateResize from "./generators/resize";
 import generateUserSelect from "./generators/userSelect";
+import generateFill from "./generators/fill";
+import generateStroke from "./generators/stroke";
+import generateStrokeWidth from "./generators/strokeWidth";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -311,6 +314,11 @@ function generateTailwindCss(options = {}) {
     : "";
   cssString += corePlugins.resize ? generateResize(configOptions) : "";
   cssString += corePlugins.userSelect ? generateUserSelect(configOptions) : "";
+  cssString += corePlugins.fill ? generateFill(configOptions) : "";
+  cssString += corePlugins.stroke ? generateStroke(configOptions) : "";
+  cssString += corePlugins.strokeWidth
+    ? generateStrokeWidth(configOptions)
+    : "";
   return cssString;
 }
 

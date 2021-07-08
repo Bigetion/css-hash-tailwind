@@ -240,6 +240,11 @@ export const getConfigOptions = (options = {}) => {
     userSelect: userSelectVariants = [
       ...defaultConfigOptions.variants.userSelect,
     ],
+    fill: fillVariants = [...defaultConfigOptions.variants.fill],
+    stroke: strokeVariants = [...defaultConfigOptions.variants.stroke],
+    strokeWidth: strokeWidthVariants = [
+      ...defaultConfigOptions.variants.strokeWidth,
+    ],
     extend: variantsExtend = {},
   } = variants;
 
@@ -344,6 +349,9 @@ export const getConfigOptions = (options = {}) => {
     pointerEvents: pointerEventsVariantsExtend = [],
     resize: resizeVariantsExtend = [],
     userSelect: userSelectVariantsExtend = [],
+    fill: fillVariantsExtend = [],
+    stroke: strokeVariantsExtend = [],
+    strokeWidth: strokeWidthVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -516,6 +524,9 @@ export const getConfigOptions = (options = {}) => {
     pointerEvents: [...pointerEventsVariants, ...pointerEventsVariantsExtend],
     resize: [...resizeVariants, ...resizeVariantsExtend],
     userSelect: [...userSelectVariants, ...userSelectVariantsExtend],
+    fill: [...fillVariants, ...fillVariantsExtend],
+    stroke: [...strokeVariants, ...strokeVariantsExtend],
+    strokeWidth: [...strokeWidthVariants, ...strokeWidthVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -582,6 +593,9 @@ export const getConfigOptions = (options = {}) => {
     translate: translateTheme = {},
     skew: skewTheme = {},
     transformOrigin: transformOriginTheme = {},
+    fill: fillTheme = {},
+    stroke: strokeTheme = {},
+    strokeWidth: strokeWidthTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -643,6 +657,9 @@ export const getConfigOptions = (options = {}) => {
     translate: translateThemeExtend = {},
     skew: skewThemeExtend = {},
     transformOrigin: transformOriginThemeExtend = {},
+    fill: fillThemeExtend = {},
+    stroke: strokeThemeExtend = {},
+    strokeWidth: strokeWidthThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -987,6 +1004,24 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.transformOrigin,
       transformOriginTheme,
       transformOriginThemeExtend
+    ),
+    fill: Object.assign(
+      {},
+      defaultConfigOptions.theme.fill,
+      fillTheme,
+      fillThemeExtend
+    ),
+    stroke: Object.assign(
+      {},
+      defaultConfigOptions.theme.stroke,
+      strokeTheme,
+      strokeThemeExtend
+    ),
+    strokeWidth: Object.assign(
+      {},
+      defaultConfigOptions.theme.strokeWidth,
+      strokeWidthTheme,
+      strokeWidthThemeExtend
     ),
   };
 
