@@ -7,7 +7,7 @@ export default function generatePlaceholderColor(configOptions = {}) {
 
   const { colors, placeholderColor } = theme;
 
-  const propertyOptions = Object.assign(colors, placeholderColor);
+  const propertyOptions = Object.assign({}, colors, placeholderColor);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {

@@ -7,7 +7,7 @@ export default function generateMaxWidth(configOptions = {}) {
 
   const { spacing = {}, maxWidth = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, maxWidth);
+  const propertyOptions = Object.assign({}, spacing, maxWidth);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

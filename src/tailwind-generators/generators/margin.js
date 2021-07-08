@@ -5,12 +5,10 @@ export default function generateMargin(configOptions = {}) {
 
   const { spacing = {}, margin = {} } = theme;
 
-  const negativeSpacing = {};
+  const propertyOptions = Object.assign({}, spacing, margin);
   Object.entries(spacing).forEach(([key, value]) => {
-    negativeSpacing[`-${key}`] = `-${value}`;
+    propertyOptions[`-${key}`] = `-${value}`;
   });
-
-  const propertyOptions = Object.assign(spacing, negativeSpacing, margin);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

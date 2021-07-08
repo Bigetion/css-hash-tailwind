@@ -7,7 +7,7 @@ export default function generateSpace(configOptions = {}) {
 
   const { spacing = {}, space = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, space);
+  const propertyOptions = Object.assign({}, spacing, space);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass }) => {

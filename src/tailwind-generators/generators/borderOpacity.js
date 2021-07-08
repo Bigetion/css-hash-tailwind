@@ -7,7 +7,7 @@ export default function generateBorderOpacity(configOptions = {}) {
 
   const { opacity = {}, borderOpacity = {} } = theme;
 
-  const propertyOptions = Object.assign(opacity, borderOpacity);
+  const propertyOptions = Object.assign({}, opacity, borderOpacity);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

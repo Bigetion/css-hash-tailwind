@@ -5,7 +5,7 @@ export default function generateGradientColorStops(configOptions = {}) {
 
   const { colors, gradientColorStops } = theme;
 
-  const propertyOptions = Object.assign(colors, gradientColorStops);
+  const propertyOptions = Object.assign({}, colors, gradientColorStops);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {

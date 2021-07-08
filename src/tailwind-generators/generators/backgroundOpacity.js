@@ -7,7 +7,7 @@ export default function generateBackgroundOpacity(configOptions = {}) {
 
   const { opacity = {}, backgroundOpacity = {} } = theme;
 
-  const propertyOptions = Object.assign(opacity, backgroundOpacity);
+  const propertyOptions = Object.assign({}, opacity, backgroundOpacity);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

@@ -1,28 +1,26 @@
 import { generateCssString } from "../utils";
 
-export default function generateTextOpacity(configOptions = {}) {
+export default function generateTransformOrigin(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
-  const prefix = `${globalPrefix}text-opacity`;
+  const prefix = `${globalPrefix}origin`;
 
-  const { opacity = {}, textOpacity = {} } = theme;
-
-  const propertyOptions = Object.assign({}, opacity, textOpacity);
+  const { transformOrigin: propertyOptions = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.textOpacity)} {
-            --text-opacity: ${value};
+          ${pseudoClass(`${prefix}-${key}`, variants.transformOrigin)} {
+            transform-origin: ${value} !important;
           }
         `
       );
       return cssString;
     },
     configOptions,
-    variants.textOpacity.indexOf("responsive") >= 0
+    variants.transformOrigin.indexOf("responsive") >= 0
   );
 
   return responsiveCssString;

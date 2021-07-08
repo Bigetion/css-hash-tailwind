@@ -7,7 +7,7 @@ export default function generatePadding(configOptions = {}) {
 
   const { spacing = {}, padding = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, padding);
+  const propertyOptions = Object.assign({}, spacing, padding);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

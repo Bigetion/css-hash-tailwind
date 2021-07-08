@@ -35,7 +35,7 @@ import {
   // generateTable,
   // generateText,
   // generateTracking,
-  generateTransform,
+  // generateTransform,
   // generateVisibility,
   // generateWidth,
   // generateZIndex,
@@ -43,8 +43,6 @@ import {
 
 import generateTailwindCss from "tailwind-generators";
 
-// console.log(generateWidth());
-// console.log("AAAAAAAAAAAAAAAAAAAAA");
 console.log(generateTailwindCss());
 
 cssHash(() =>
@@ -52,6 +50,7 @@ cssHash(() =>
     corePlugins: {
       base: true,
       form: true,
+      transform: true,
       container: true,
       boxSizing: true,
       display: true,
@@ -142,6 +141,11 @@ cssHash(() =>
       tableLayout: true,
       boxShadow: true,
       opacity: true,
+      scale: true,
+      rotate: true,
+      translate: true,
+      skew: true,
+      transformOrigin: true,
     },
   })
 );
@@ -180,7 +184,7 @@ cssHash(() => generateSvg());
 // cssHash(() => generateTable());
 // cssHash(() => generateText());
 // cssHash(() => generateTracking());
-cssHash(() => generateTransform());
+// cssHash(() => generateTransform());
 // cssHash(() => generateVisibility());
 // cssHash(() => generateWidth());
 // cssHash(() => generateZIndex());

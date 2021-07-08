@@ -221,6 +221,13 @@ export const getConfigOptions = (options = {}) => {
     ],
     boxShadow: boxShadowVariants = [...defaultConfigOptions.variants.boxShadow],
     opacity: opacityVariants = [...defaultConfigOptions.variants.opacity],
+    scale: scaleVariants = [...defaultConfigOptions.variants.scale],
+    rotate: rotateVariants = [...defaultConfigOptions.variants.rotate],
+    translate: translateVariants = [...defaultConfigOptions.variants.translate],
+    skew: skewVariants = [...defaultConfigOptions.variants.skew],
+    transformOrigin: transformOriginVariants = [
+      ...defaultConfigOptions.variants.transformOrigin,
+    ],
     extend: variantsExtend = {},
   } = variants;
 
@@ -314,6 +321,11 @@ export const getConfigOptions = (options = {}) => {
     tableLayout: tableLayoutVariantsExtend = [],
     boxShadow: boxShadowVariantsExtend = [],
     opacity: opacityVariantsExtend = [],
+    scale: scaleVariantsExtend = [],
+    rotate: rotateVariantsExtend = [],
+    translate: translateVariantsExtend = [],
+    skew: skewVariantsExtend = [],
+    transformOrigin: transformOriginVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -472,9 +484,18 @@ export const getConfigOptions = (options = {}) => {
     tableLayout: [...tableLayoutVariants, ...tableLayoutVariantsExtend],
     boxShadow: [...boxShadowVariants, ...boxShadowVariantsExtend],
     opacity: [...opacityVariants, ...opacityVariantsExtend],
+    scale: [...scaleVariants, ...scaleVariantsExtend],
+    rotate: [...rotateVariants, ...rotateVariantsExtend],
+    translate: [...translateVariants, ...translateVariantsExtend],
+    skew: [...skewVariants, ...skewVariantsExtend],
+    transformOrigin: [
+      ...transformOriginVariants,
+      ...transformOriginVariantsExtend,
+    ],
   };
 
   const newCorePlugins = Object.assign(
+    {},
     defaultConfigOptions.corePlugins,
     corePlugins
   );
@@ -532,6 +553,11 @@ export const getConfigOptions = (options = {}) => {
     divideColor: divideColorTheme = {},
     divideOpacity: divideOpacityTheme = {},
     boxShadow: boxShadowTheme = {},
+    scale: scaleTheme = {},
+    rotate: rotateTheme = {},
+    translate: translateTheme = {},
+    skew: skewTheme = {},
+    transformOrigin: transformOriginTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -588,268 +614,355 @@ export const getConfigOptions = (options = {}) => {
     divideColor: divideColorThemeExtend = {},
     divideOpacity: divideOpacityThemeExtend = {},
     boxShadow: boxShadowThemeExtend = {},
+    scale: scaleThemeExtend = {},
+    rotate: rotateThemeExtend = {},
+    translate: translateThemeExtend = {},
+    skew: skewThemeExtend = {},
+    transformOrigin: transformOriginThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
     spacing: Object.assign(
+      {},
       defaultConfigOptions.theme.spacing,
       spacingTheme,
       spacingThemeExtend
     ),
     colors: Object.assign(
+      {},
       defaultConfigOptions.theme.colors,
       colorsTheme,
       colorsThemeExtend
     ),
     opacity: Object.assign(
+      {},
       defaultConfigOptions.theme.opacity,
       opacityTheme,
       opacityThemeExtend
     ),
     inset: Object.assign(
+      {},
       defaultConfigOptions.theme.inset,
       insetTheme,
       insetThemeExtend
     ),
     zIndex: Object.assign(
+      {},
       defaultConfigOptions.theme.zIndex,
       zIndexTheme,
       zIndexThemeExtend
     ),
     flex: Object.assign(
+      {},
       defaultConfigOptions.theme.flex,
       flexTheme,
       flexThemeExtend
     ),
     flexGrow: Object.assign(
+      {},
       defaultConfigOptions.theme.flexGrow,
       flexGrowTheme,
       flexGrowThemeExtend
     ),
     flexShrink: Object.assign(
+      {},
       defaultConfigOptions.theme.flexShrink,
       flexShrinkTheme,
       flexShrinkThemeExtend
     ),
     order: Object.assign(
+      {},
       defaultConfigOptions.theme.order,
       orderTheme,
       orderThemeExtend
     ),
     gridTemplateColumns: Object.assign(
+      {},
       defaultConfigOptions.theme.gridTemplateColumns,
       gridTemplateColumnsTheme,
       gridTemplateColumnsThemeExtend
     ),
     gridColumn: Object.assign(
+      {},
       defaultConfigOptions.theme.gridColumn,
       gridColumnTheme,
       gridColumnThemeExtend
     ),
     gridColumnStart: Object.assign(
+      {},
       defaultConfigOptions.theme.gridColumnStart,
       gridColumnStartTheme,
       gridColumnStartThemeExtend
     ),
     gridColumnEnd: Object.assign(
+      {},
       defaultConfigOptions.theme.gridColumnEnd,
       gridColumnEndTheme,
       gridColumnEndThemeExtend
     ),
     gridTemplateRows: Object.assign(
+      {},
       defaultConfigOptions.theme.gridTemplateRows,
       gridTemplateRowsTheme,
       gridTemplateRowsThemeExtend
     ),
     gridRow: Object.assign(
+      {},
       defaultConfigOptions.theme.gridRow,
       gridRowTheme,
       gridRowThemeExtend
     ),
     gridRowStart: Object.assign(
+      {},
       defaultConfigOptions.theme.gridRowStart,
       gridRowStartTheme,
       gridRowStartThemeExtend
     ),
     gridRowEnd: Object.assign(
+      {},
       defaultConfigOptions.theme.gridRowEnd,
       gridRowEndTheme,
       gridRowEndThemeExtend
     ),
     gridAutoColumns: Object.assign(
+      {},
       defaultConfigOptions.theme.gridAutoColumns,
       gridAutoColumnsTheme,
       gridAutoColumnsThemeExtend
     ),
     gridAutoRows: Object.assign(
+      {},
       defaultConfigOptions.theme.gridAutoRows,
       gridAutoRowsTheme,
       gridAutoRowsThemeExtend
     ),
     gap: Object.assign(
+      {},
       defaultConfigOptions.theme.gap,
       gapTheme,
       gapThemeExtend
     ),
     padding: Object.assign(
+      {},
       defaultConfigOptions.theme.padding,
       paddingTheme,
       paddingThemeExtend
     ),
     margin: Object.assign(
+      {},
       defaultConfigOptions.theme.margin,
       marginTheme,
       marginThemeExtend
     ),
     space: Object.assign(
+      {},
       defaultConfigOptions.theme.space,
       spaceTheme,
       spaceThemeExtend
     ),
     width: Object.assign(
+      {},
       defaultConfigOptions.theme.width,
       widthTheme,
       widthThemeExtend
     ),
     minWidth: Object.assign(
+      {},
       defaultConfigOptions.theme.minWidth,
       minWidthTheme,
       minWidthThemeExtend
     ),
     maxWidth: Object.assign(
+      {},
       defaultConfigOptions.theme.maxWidth,
       maxWidthTheme,
       maxWidthThemeExtend
     ),
     height: Object.assign(
+      {},
       defaultConfigOptions.theme.height,
       heightTheme,
       heightThemeExtend
     ),
     minHeight: Object.assign(
+      {},
       defaultConfigOptions.theme.minHeight,
       minHeightTheme,
       minHeightThemeExtend
     ),
     maxHeight: Object.assign(
+      {},
       defaultConfigOptions.theme.maxHeight,
       maxHeightTheme,
       maxHeightThemeExtend
     ),
     fontSize: Object.assign(
+      {},
       defaultConfigOptions.theme.fontSize,
       fontSizeTheme,
       fontSizeThemeExtend
     ),
     fontWeight: Object.assign(
+      {},
       defaultConfigOptions.theme.fontWeight,
       fontWeightTheme,
       fontWeightThemeExtend
     ),
     letterSpacing: Object.assign(
+      {},
       defaultConfigOptions.theme.letterSpacing,
       letterSpacingTheme,
       letterSpacingThemeExtend
     ),
     lineHeight: Object.assign(
+      {},
       defaultConfigOptions.theme.lineHeight,
       lineHeightTheme,
       lineHeightThemeExtend
     ),
     listStyleType: Object.assign(
+      {},
       defaultConfigOptions.theme.listStyleType,
       listStyleTypeTheme,
       listStyleTypeThemeExtend
     ),
     placeholderColor: Object.assign(
+      {},
       defaultConfigOptions.theme.placeholderColor,
       placeholderColorTheme,
       placeholderColorThemeExtend
     ),
     placeholderOpacity: Object.assign(
+      {},
       defaultConfigOptions.theme.placeholderOpacity,
       placeholderOpacityTheme,
       placeholderOpacityThemeExtend
     ),
     textColor: Object.assign(
+      {},
       defaultConfigOptions.theme.textColor,
       textColorTheme,
       textColorThemeExtend
     ),
     textOpacity: Object.assign(
+      {},
       defaultConfigOptions.theme.textOpacity,
       textOpacityTheme,
       textOpacityThemeExtend
     ),
     backgroundColor: Object.assign(
+      {},
       defaultConfigOptions.theme.backgroundColor,
       backgroundColorTheme,
       backgroundColorThemeExtend
     ),
     backgroundOpacity: Object.assign(
+      {},
       defaultConfigOptions.theme.backgroundOpacity,
       backgroundOpacityTheme,
       backgroundOpacityThemeExtend
     ),
     backgroundPosition: Object.assign(
+      {},
       defaultConfigOptions.theme.backgroundPosition,
       backgroundPositionTheme,
       backgroundPositionThemeExtend
     ),
     backgroundSize: Object.assign(
+      {},
       defaultConfigOptions.theme.backgroundSize,
       backgroundSizeTheme,
       backgroundSizeThemeExtend
     ),
     backgroundImage: Object.assign(
+      {},
       defaultConfigOptions.theme.backgroundImage,
       backgroundImageTheme,
       backgroundImageThemeExtend
     ),
     gradientColorStops: Object.assign(
+      {},
       defaultConfigOptions.theme.gradientColorStops,
       gradientColorStopsTheme,
       gradientColorStopsThemeExtend
     ),
     borderRadius: Object.assign(
+      {},
       defaultConfigOptions.theme.borderRadius,
       borderRadiusTheme,
       borderRadiusThemeExtend
     ),
     borderWidth: Object.assign(
+      {},
       defaultConfigOptions.theme.borderWidth,
       borderWidthTheme,
       borderWidthThemeExtend
     ),
     borderColor: Object.assign(
+      {},
       defaultConfigOptions.theme.borderColor,
       borderColorTheme,
       borderColorThemeExtend
     ),
     borderOpacity: Object.assign(
+      {},
       defaultConfigOptions.theme.borderOpacity,
       borderOpacityTheme,
       borderOpacityThemeExtend
     ),
     divideWidth: Object.assign(
+      {},
       defaultConfigOptions.theme.divideWidth,
       divideWidthTheme,
       divideWidthThemeExtend
     ),
     divideColor: Object.assign(
+      {},
       defaultConfigOptions.theme.divideColor,
       divideColorTheme,
       divideColorThemeExtend
     ),
     divideOpacity: Object.assign(
+      {},
       defaultConfigOptions.theme.divideOpacity,
       divideOpacityTheme,
       divideOpacityThemeExtend
     ),
     boxShadow: Object.assign(
+      {},
       defaultConfigOptions.theme.boxShadow,
       boxShadowTheme,
       boxShadowThemeExtend
+    ),
+    scale: Object.assign(
+      {},
+      defaultConfigOptions.theme.scale,
+      scaleTheme,
+      scaleThemeExtend
+    ),
+    rotate: Object.assign(
+      {},
+      defaultConfigOptions.theme.rotate,
+      rotateTheme,
+      rotateThemeExtend
+    ),
+    translate: Object.assign(
+      {},
+      defaultConfigOptions.theme.translate,
+      translateTheme,
+      translateThemeExtend
+    ),
+    skew: Object.assign(
+      {},
+      defaultConfigOptions.theme.skew,
+      skewTheme,
+      skewThemeExtend
+    ),
+    transformOrigin: Object.assign(
+      {},
+      defaultConfigOptions.theme.transformOrigin,
+      transformOriginTheme,
+      transformOriginThemeExtend
     ),
   };
 
@@ -929,7 +1042,8 @@ export const generateCssString = (
     let nOptions = Object.assign({}, options);
     if (Array.isArray(options)) {
       nOptions = options.reduce(
-        (currentObj, value) => Object.assign(currentObj, { [value]: value }),
+        (currentObj, value) =>
+          Object.assign({}, currentObj, { [value]: value }),
         {}
       );
     }

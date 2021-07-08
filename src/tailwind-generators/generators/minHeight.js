@@ -7,7 +7,7 @@ export default function generateMinHeight(configOptions = {}) {
 
   const { spacing = {}, minHeight = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, minHeight);
+  const propertyOptions = Object.assign({}, spacing, minHeight);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

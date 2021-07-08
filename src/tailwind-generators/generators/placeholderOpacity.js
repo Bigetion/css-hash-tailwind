@@ -7,7 +7,7 @@ export default function generatePlaceholderOpacity(configOptions = {}) {
 
   const { opacity = {}, placeholderOpacity = {} } = theme;
 
-  const propertyOptions = Object.assign(opacity, placeholderOpacity);
+  const propertyOptions = Object.assign({}, opacity, placeholderOpacity);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

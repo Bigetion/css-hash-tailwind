@@ -2,6 +2,7 @@ import { getConfigOptions } from "./utils";
 
 import generateBase from "./generators/base";
 import generateForm from "./generators/form";
+import generateTransform from "./generators/transform";
 import generateContainer from "./generators/container";
 import generateBoxSizing from "./generators/boxSizing";
 import generateDisplay from "./generators/display";
@@ -92,6 +93,11 @@ import generateBorderCollapse from "./generators/borderCollapse";
 import generateTableLayout from "./generators/tableLayout";
 import generateBoxShadow from "./generators/boxShadow";
 import generateOpacity from "./generators/opacity";
+import generateScale from "./generators/scale";
+import generateRotate from "./generators/rotate";
+import generateTranslate from "./generators/translate";
+import generateSkew from "./generators/skew";
+import generateTransformOrigin from "./generators/transformOrigin";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -99,6 +105,7 @@ function generateTailwindCss(options = {}) {
   let cssString = "";
   cssString += corePlugins.base ? generateBase(configOptions) : "";
   cssString += corePlugins.form ? generateForm(configOptions) : "";
+  cssString += corePlugins.transform ? generateTransform(configOptions) : "";
   cssString += corePlugins.container ? generateContainer(configOptions) : "";
   cssString += corePlugins.boxSizing ? generateBoxSizing(configOptions) : "";
   cssString += corePlugins.display ? generateDisplay(configOptions) : "";
@@ -283,6 +290,13 @@ function generateTailwindCss(options = {}) {
     : "";
   cssString += corePlugins.boxShadow ? generateBoxShadow(configOptions) : "";
   cssString += corePlugins.opacity ? generateOpacity(configOptions) : "";
+  cssString += corePlugins.scale ? generateScale(configOptions) : "";
+  cssString += corePlugins.rotate ? generateRotate(configOptions) : "";
+  cssString += corePlugins.translate ? generateTranslate(configOptions) : "";
+  cssString += corePlugins.skew ? generateSkew(configOptions) : "";
+  cssString += corePlugins.transformOrigin
+    ? generateTransformOrigin(configOptions)
+    : "";
   return cssString;
 }
 

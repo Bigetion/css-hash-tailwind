@@ -7,7 +7,7 @@ export default function generateMaxHeight(configOptions = {}) {
 
   const { spacing = {}, maxHeight = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, maxHeight);
+  const propertyOptions = Object.assign({}, spacing, maxHeight);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

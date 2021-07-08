@@ -7,7 +7,7 @@ export default function generateTextColor(configOptions = {}) {
 
   const { colors, textColor } = theme;
 
-  const propertyOptions = Object.assign(colors, textColor);
+  const propertyOptions = Object.assign({}, colors, textColor);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {

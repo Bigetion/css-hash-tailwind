@@ -7,7 +7,7 @@ export default function generateDivideColor(configOptions = {}) {
 
   const { colors, divideColor } = theme;
 
-  const propertyOptions = Object.assign(colors, divideColor);
+  const propertyOptions = Object.assign({}, colors, divideColor);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {

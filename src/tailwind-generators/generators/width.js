@@ -7,7 +7,7 @@ export default function generateWidth(configOptions = {}) {
 
   const { spacing = {}, width = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, width);
+  const propertyOptions = Object.assign({}, spacing, width);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

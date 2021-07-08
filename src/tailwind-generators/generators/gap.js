@@ -7,7 +7,7 @@ export default function generateGap(configOptions = {}) {
 
   const { spacing = {}, gap = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, gap);
+  const propertyOptions = Object.assign({}, spacing, gap);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

@@ -7,7 +7,7 @@ export default function generateDivideOpacity(configOptions = {}) {
 
   const { opacity = {}, divideOpacity = {} } = theme;
 
-  const propertyOptions = Object.assign(opacity, divideOpacity);
+  const propertyOptions = Object.assign({}, opacity, divideOpacity);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

@@ -7,7 +7,7 @@ export default function generateBackgroundColor(configOptions = {}) {
 
   const { colors, backgroundColor } = theme;
 
-  const propertyOptions = Object.assign(colors, backgroundColor);
+  const propertyOptions = Object.assign({}, colors, backgroundColor);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {

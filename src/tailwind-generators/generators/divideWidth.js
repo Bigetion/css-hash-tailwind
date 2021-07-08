@@ -7,7 +7,7 @@ export default function generateDivideWidth(configOptions = {}) {
 
   const { borderWidth, divideWidth } = theme;
 
-  const propertyOptions = Object.assign(borderWidth, divideWidth);
+  const propertyOptions = Object.assign({}, borderWidth, divideWidth);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass }) => {

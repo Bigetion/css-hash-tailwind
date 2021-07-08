@@ -7,7 +7,7 @@ export default function generateBorderColor(configOptions = {}) {
 
   const { colors, borderColor } = theme;
 
-  const propertyOptions = Object.assign(colors, borderColor);
+  const propertyOptions = Object.assign({}, colors, borderColor);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {

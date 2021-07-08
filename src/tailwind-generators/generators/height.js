@@ -7,7 +7,7 @@ export default function generateHeight(configOptions = {}) {
 
   const { spacing = {}, height = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, height);
+  const propertyOptions = Object.assign({}, spacing, height);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

@@ -7,7 +7,7 @@ export default function generateMinWidth(configOptions = {}) {
 
   const { spacing = {}, minWidth = {} } = theme;
 
-  const propertyOptions = Object.assign(spacing, minWidth);
+  const propertyOptions = Object.assign({}, spacing, minWidth);
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
