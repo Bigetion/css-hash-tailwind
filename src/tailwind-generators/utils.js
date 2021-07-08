@@ -186,6 +186,33 @@ export const getConfigOptions = (options = {}) => {
     gradientColorStops: gradientColorStopsVariants = [
       ...defaultConfigOptions.variants.gradientColorStops,
     ],
+    borderRadius: borderRadiusVariants = [
+      ...defaultConfigOptions.variants.borderRadius,
+    ],
+    borderWidth: borderWidthVariants = [
+      ...defaultConfigOptions.variants.borderWidth,
+    ],
+    borderColor: borderColorVariants = [
+      ...defaultConfigOptions.variants.borderColor,
+    ],
+    borderOpacity: borderOpacityVariants = [
+      ...defaultConfigOptions.variants.borderOpacity,
+    ],
+    borderStyle: borderStyleVariants = [
+      ...defaultConfigOptions.variants.borderStyle,
+    ],
+    divideWidth: divideWidthVariants = [
+      ...defaultConfigOptions.variants.divideWidth,
+    ],
+    divideColor: divideColorVariants = [
+      ...defaultConfigOptions.variants.divideColor,
+    ],
+    divideOpacity: divideOpacityVariants = [
+      ...defaultConfigOptions.variants.divideOpacity,
+    ],
+    divideStyle: divideStyleVariants = [
+      ...defaultConfigOptions.variants.divideStyle,
+    ],
     extend: variantsExtend = {},
   } = variants;
 
@@ -266,6 +293,15 @@ export const getConfigOptions = (options = {}) => {
     backgroundSize: backgroundSizeVariantsExtend = [],
     backgroundImage: backgroundImageVariantsExtend = [],
     gradientColorStops: gradientColorStopsVariantsExtend = [],
+    borderRadius: borderRadiusVariantsExtend = [],
+    borderWidth: borderWidthVariantsExtend = [],
+    borderColor: borderColorVariantsExtend = [],
+    borderOpacity: borderOpacityVariantsExtend = [],
+    borderStyle: borderStyleVariantsExtend = [],
+    divideWidth: divideWidthVariantsExtend = [],
+    divideColor: divideColorVariantsExtend = [],
+    divideOpacity: divideOpacityVariantsExtend = [],
+    divideStyle: divideStyleVariantsExtend = [],
   } = variantsExtend;
 
   const newVariants = {
@@ -408,6 +444,15 @@ export const getConfigOptions = (options = {}) => {
       ...gradientColorStopsVariants,
       ...gradientColorStopsVariantsExtend,
     ],
+    borderRadius: [...borderRadiusVariants, ...borderRadiusVariantsExtend],
+    borderWidth: [...borderWidthVariants, ...borderWidthVariantsExtend],
+    borderColor: [...borderColorVariants, ...borderColorVariantsExtend],
+    borderOpacity: [...borderOpacityVariants, ...borderOpacityVariantsExtend],
+    borderStyle: [...borderStyleVariants, ...borderStyleVariantsExtend],
+    divideWidth: [...divideWidthVariants, ...divideWidthVariantsExtend],
+    divideColor: [...divideColorVariants, ...divideColorVariantsExtend],
+    divideOpacity: [...divideOpacityVariants, ...divideOpacityVariantsExtend],
+    divideStyle: [...divideStyleVariants, ...divideStyleVariantsExtend],
   };
 
   const newCorePlugins = Object.assign(
@@ -460,6 +505,13 @@ export const getConfigOptions = (options = {}) => {
     backgroundSize: backgroundSizeTheme = {},
     backgroundImage: backgroundImageTheme = {},
     gradientColorStops: gradientColorStopsTheme = {},
+    borderRadius: borderRadiusTheme = {},
+    borderWidth: borderWidthTheme = {},
+    borderColor: borderColorTheme = {},
+    borderOpacity: borderOpacityTheme = {},
+    divideWidth: divideWidthTheme = {},
+    divideColor: divideColorTheme = {},
+    divideOpacity: divideOpacityTheme = {},
     extend: themeExtend = {},
   } = theme;
 
@@ -508,6 +560,13 @@ export const getConfigOptions = (options = {}) => {
     backgroundSize: backgroundSizeThemeExtend = {},
     backgroundImage: backgroundImageThemeExtend = {},
     gradientColorStops: gradientColorStopsThemeExtend = {},
+    borderRadius: borderRadiusThemeExtend = {},
+    borderWidth: borderWidthThemeExtend = {},
+    borderColor: borderColorThemeExtend = {},
+    borderOpacity: borderOpacityThemeExtend = {},
+    divideWidth: divideWidthThemeExtend = {},
+    divideColor: divideColorThemeExtend = {},
+    divideOpacity: divideOpacityThemeExtend = {},
   } = themeExtend;
 
   const newTheme = {
@@ -730,6 +789,41 @@ export const getConfigOptions = (options = {}) => {
       defaultConfigOptions.theme.gradientColorStops,
       gradientColorStopsTheme,
       gradientColorStopsThemeExtend
+    ),
+    borderRadius: Object.assign(
+      defaultConfigOptions.theme.borderRadius,
+      borderRadiusTheme,
+      borderRadiusThemeExtend
+    ),
+    borderWidth: Object.assign(
+      defaultConfigOptions.theme.borderWidth,
+      borderWidthTheme,
+      borderWidthThemeExtend
+    ),
+    borderColor: Object.assign(
+      defaultConfigOptions.theme.borderColor,
+      borderColorTheme,
+      borderColorThemeExtend
+    ),
+    borderOpacity: Object.assign(
+      defaultConfigOptions.theme.borderOpacity,
+      borderOpacityTheme,
+      borderOpacityThemeExtend
+    ),
+    divideWidth: Object.assign(
+      defaultConfigOptions.theme.divideWidth,
+      divideWidthTheme,
+      divideWidthThemeExtend
+    ),
+    divideColor: Object.assign(
+      defaultConfigOptions.theme.divideColor,
+      divideColorTheme,
+      divideColorThemeExtend
+    ),
+    divideOpacity: Object.assign(
+      defaultConfigOptions.theme.divideOpacity,
+      divideOpacityTheme,
+      divideOpacityThemeExtend
     ),
   };
 

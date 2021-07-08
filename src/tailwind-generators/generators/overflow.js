@@ -8,7 +8,7 @@ export default function generateOverflow(configOptions = {}) {
   const propertyOptions = ["auto", "hidden", "visible", "scroll"];
 
   const responsiveCssString = generateCssString(
-    ({ orientationPrefix, pseudoClass, getCssByOptions }) => {
+    ({ pseudoClass, getCssByOptions }) => {
       let cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
@@ -24,10 +24,10 @@ export default function generateOverflow(configOptions = {}) {
         `
       );
       cssString += `
-        .${orientationPrefix}${globalPrefix}scrolling-touch {
+        ${pseudoClass(`${globalPrefix}scrolling-touch`, variants.overflow)} {
           -webkit-overflow-scrolling: touch;
         }
-        .${orientationPrefix}${globalPrefix}scrolling-auto {
+        ${pseudoClass(`${globalPrefix}scrolling-auto`, variants.overflow)} {
           -webkit-overflow-scrolling: auto;
         }
       `;

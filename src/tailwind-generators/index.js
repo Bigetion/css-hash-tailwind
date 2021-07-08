@@ -79,6 +79,15 @@ import generateBackgroundRepeat from "./generators/backgroundRepeat";
 import generateBackgroundSize from "./generators/backgroundSize";
 import generateBackgroundImage from "./generators/backgroundImage";
 import generateGradientColorStops from "./generators/gradientColorStops";
+import generateBorderRadius from "./generators/borderRadius";
+import generateBorderWidth from "./generators/borderWidth";
+import generateBorderColor from "./generators/borderColor";
+import generateBorderOpacity from "./generators/borderOpacity";
+import generateBorderStyle from "./generators/borderStyle";
+import generateDivideWidth from "./generators/divideWidth";
+import generateDivideColor from "./generators/divideColor";
+import generateDivideOpacity from "./generators/divideOpacity";
+import generateDivideStyle from "./generators/divideStyle";
 
 function generateTailwindCss(options = {}) {
   const configOptions = getConfigOptions(options);
@@ -234,6 +243,33 @@ function generateTailwindCss(options = {}) {
     : "";
   cssString += corePlugins.gradientColorStops
     ? generateGradientColorStops(configOptions)
+    : "";
+  cssString += corePlugins.borderRadius
+    ? generateBorderRadius(configOptions)
+    : "";
+  cssString += corePlugins.borderWidth
+    ? generateBorderWidth(configOptions)
+    : "";
+  cssString += corePlugins.borderColor
+    ? generateBorderColor(configOptions)
+    : "";
+  cssString += corePlugins.borderOpacity
+    ? generateBorderOpacity(configOptions)
+    : "";
+  cssString += corePlugins.borderStyle
+    ? generateBorderStyle(configOptions)
+    : "";
+  cssString += corePlugins.divideWidth
+    ? generateDivideWidth(configOptions)
+    : "";
+  cssString += corePlugins.divideColor
+    ? generateDivideColor(configOptions)
+    : "";
+  cssString += corePlugins.divideOpacity
+    ? generateDivideOpacity(configOptions)
+    : "";
+  cssString += corePlugins.divideStyle
+    ? generateDivideStyle(configOptions)
     : "";
   return cssString;
 }

@@ -8,7 +8,7 @@ export default function generateFloat(configOptions = {}) {
   const propertyOptions = ["left", "right", "none"];
 
   const responsiveCssString = generateCssString(
-    ({ orientationPrefix, pseudoClass, getCssByOptions }) => {
+    ({ pseudoClass, getCssByOptions }) => {
       let cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
@@ -18,7 +18,10 @@ export default function generateFloat(configOptions = {}) {
         `
       );
       cssString += `
-        .${orientationPrefix}${globalPrefix}clearfix:after {
+        ${pseudoClass(
+          (pseudoString) => `${globalPrefix}clearfix${pseudoString}:after`,
+          variants.float
+        )} {
           content: "";
           display: table;
           clear: both;

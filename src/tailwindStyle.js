@@ -4,16 +4,16 @@ import {
   // generateAlign,
   // generateBase,
   // generateBg,
-  generateBorder,
+  // generateBorder,
   // generateBox,
   // generateClear,
   // generateContainer,
   // generateDisplay,
-  generateDivide,
+  // generateDivide,
   // generateFlex,
   // generateFloat,
-  generateForm,
-  generateGradient,
+  // generateForm,
+  // generateGradient,
   // generateGrid,
   // generateHeight,
   generateInteractivity,
@@ -51,6 +51,7 @@ cssHash(() =>
   generateTailwindCss({
     corePlugins: {
       base: true,
+      form: true,
       container: true,
       boxSizing: true,
       display: true,
@@ -128,6 +129,15 @@ cssHash(() =>
       backgroundSize: true,
       backgroundImage: true,
       gradientColorStops: true,
+      borderRadius: true,
+      borderWidth: true,
+      borderColor: true,
+      borderOpacity: true,
+      borderStyle: true,
+      divideWidth: true,
+      divideColor: true,
+      divideOpacity: true,
+      divideStyle: true,
     },
   })
 );
@@ -135,16 +145,16 @@ cssHash(() =>
 // cssHash(() => generateAlign());
 // cssHash(() => generateBase());
 // cssHash(() => generateBg());
-cssHash(() => generateBorder());
+// cssHash(() => generateBorder());
 // cssHash(() => generateBox());
 // cssHash(() => generateClear());
 // cssHash(() => generateContainer());
 // cssHash(() => generateDisplay());
-cssHash(() => generateDivide());
+// cssHash(() => generateDivide());
 // cssHash(() => generateFlex());
 // cssHash(() => generateFloat());
-cssHash(() => generateForm());
-cssHash(() => generateGradient());
+// cssHash(() => generateForm());
+// cssHash(() => generateGradient());
 // cssHash(() => generateGrid());
 // cssHash(() => generateHeight());
 cssHash(() => generateInteractivity());
