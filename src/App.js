@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
+import generateTailwindCss from "tailwind-css-generator";
 import { cssHash } from "css-hash";
 
 import routes from "routes";
@@ -9,14 +10,13 @@ import routes from "routes";
 import Layout from "components/BaseLayout";
 import PageLoader from "components/PageLoader";
 
-import "./tailwindStyle";
+generateTailwindCss();
 
 cssHash(
   () => `
     html {
       line-height: 1.5;
       font-family: Inter, sans-serif;
-      overflow-y: scroll;
     }
   `
 );
