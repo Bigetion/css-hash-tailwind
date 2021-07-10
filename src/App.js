@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
-import generateTailwindCss from "tailwind-css-generator";
+import generateTailwindCss from "tailwind-generator";
 import { cssHash } from "css-hash";
 
 import routes from "routes";
