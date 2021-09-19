@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateGridAutoFlow(configOptions = {}) {
+module.exports = function generateGridAutoFlow(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}grid-flow`;
@@ -29,4 +29,4 @@ export default function generateGridAutoFlow(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

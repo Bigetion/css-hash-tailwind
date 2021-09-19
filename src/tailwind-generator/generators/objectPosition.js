@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateObjectPosition(configOptions = {}) {
+module.exports = function generateObjectPosition(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}object`;
@@ -34,4 +34,4 @@ export default function generateObjectPosition(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateListStyleType(configOptions = {}) {
+module.exports = function generateListStyleType(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}list`;
@@ -24,4 +24,4 @@ export default function generateListStyleType(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

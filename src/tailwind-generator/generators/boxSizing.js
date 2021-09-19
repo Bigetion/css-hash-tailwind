@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateBoxSizing(configOptions = {}) {
+module.exports = function generateBoxSizing(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}box`;
@@ -27,4 +27,4 @@ export default function generateBoxSizing(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

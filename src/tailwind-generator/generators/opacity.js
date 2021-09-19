@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateOpacity(configOptions = {}) {
+module.exports = function generateOpacity(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}opacity`;
@@ -24,4 +24,4 @@ export default function generateOpacity(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

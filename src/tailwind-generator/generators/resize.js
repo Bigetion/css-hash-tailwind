@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateResize(configOptions = {}) {
+module.exports = function generateResize(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}resize`;
@@ -29,4 +29,4 @@ export default function generateResize(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateTranslate(configOptions = {}) {
+module.exports = function generateTranslate(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const { spacing = {}, translate = {} } = theme;
@@ -35,4 +35,4 @@ export default function generateTranslate(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

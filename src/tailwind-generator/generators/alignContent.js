@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateAlignContent(configOptions = {}) {
+module.exports = function generateAlignContent(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}content`;
@@ -31,4 +31,4 @@ export default function generateAlignContent(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

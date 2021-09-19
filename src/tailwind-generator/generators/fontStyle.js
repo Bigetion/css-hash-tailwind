@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateFontStyle(configOptions = {}) {
+module.exports = function generateFontStyle(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = {
@@ -25,4 +25,4 @@ export default function generateFontStyle(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

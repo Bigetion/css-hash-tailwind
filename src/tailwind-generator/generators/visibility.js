@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateVisibility(configOptions = {}) {
+module.exports = function generateVisibility(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = {
@@ -25,4 +25,4 @@ export default function generateVisibility(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

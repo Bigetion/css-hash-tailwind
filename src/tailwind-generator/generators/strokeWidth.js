@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateStrokeWidth(configOptions = {}) {
+module.exports = function generateStrokeWidth(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}stroke`;
@@ -24,4 +24,4 @@ export default function generateStrokeWidth(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateBackgroundPosition(configOptions = {}) {
+module.exports = function generateBackgroundPosition(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}bg`;
@@ -24,4 +24,4 @@ export default function generateBackgroundPosition(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

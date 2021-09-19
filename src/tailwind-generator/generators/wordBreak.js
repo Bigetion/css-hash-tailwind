@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateWordBreak(configOptions = {}) {
+module.exports = function generateWordBreak(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const responsiveCssString = generateCssString(
@@ -29,4 +29,4 @@ export default function generateWordBreak(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

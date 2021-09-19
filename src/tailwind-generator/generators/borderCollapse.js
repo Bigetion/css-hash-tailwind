@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateBorderCollapse(configOptions = {}) {
+module.exports = function generateBorderCollapse(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}border`;
@@ -24,4 +24,4 @@ export default function generateBorderCollapse(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

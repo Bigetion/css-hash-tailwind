@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateScale(configOptions = {}) {
+module.exports = function generateScale(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}scale`;
@@ -31,4 +31,4 @@ export default function generateScale(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

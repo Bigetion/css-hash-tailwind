@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateLineHeight(configOptions = {}) {
+module.exports = function generateLineHeight(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}leading`;
@@ -24,4 +24,4 @@ export default function generateLineHeight(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};
