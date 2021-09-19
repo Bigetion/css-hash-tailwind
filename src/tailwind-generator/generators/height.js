@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateHeight(configOptions = {}) {
+module.exports = function generateHeight(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}h`;
@@ -26,4 +26,4 @@ export default function generateHeight(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

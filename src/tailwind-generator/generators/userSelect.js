@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateUserSelect(configOptions = {}) {
+module.exports = function generateUserSelect(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}select`;
@@ -27,4 +27,4 @@ export default function generateUserSelect(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

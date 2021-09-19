@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateAppearance(configOptions = {}) {
+module.exports = function generateAppearance(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const responsiveCssString = generateCssString(
@@ -18,4 +18,4 @@ export default function generateAppearance(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

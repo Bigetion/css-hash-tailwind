@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateBackgroundAttachment(configOptions = {}) {
+module.exports = function generateBackgroundAttachment(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}bg`;
@@ -24,4 +24,4 @@ export default function generateBackgroundAttachment(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

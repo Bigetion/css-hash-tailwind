@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateAlignSelf(configOptions = {}) {
+module.exports = function generateAlignSelf(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}self`;
@@ -30,4 +30,4 @@ export default function generateAlignSelf(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateCursor(configOptions = {}) {
+module.exports = function generateCursor(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}cursor`;
@@ -32,4 +32,4 @@ export default function generateCursor(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

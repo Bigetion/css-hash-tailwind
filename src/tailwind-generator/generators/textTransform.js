@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateTextTransform(configOptions = {}) {
+module.exports = function generateTextTransform(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = {
@@ -27,4 +27,4 @@ export default function generateTextTransform(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

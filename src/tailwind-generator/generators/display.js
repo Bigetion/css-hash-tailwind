@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateDisplay(configOptions = {}) {
+module.exports = function generateDisplay(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = [
@@ -45,4 +45,4 @@ export default function generateDisplay(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

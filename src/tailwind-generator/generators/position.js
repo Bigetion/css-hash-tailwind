@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generatePosition(configOptions = {}) {
+module.exports = function generatePosition(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = ["static", "fixed", "absolute", "relative", "sticky"];
@@ -22,4 +22,4 @@ export default function generatePosition(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};

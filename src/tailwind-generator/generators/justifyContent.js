@@ -1,6 +1,6 @@
-import { generateCssString } from "../utils";
+const { generateCssString } = require("../utils");
 
-export default function generateJustifyContent(configOptions = {}) {
+module.exports = function generateJustifyContent(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}justify`;
@@ -31,4 +31,4 @@ export default function generateJustifyContent(configOptions = {}) {
   );
 
   return responsiveCssString;
-}
+};
