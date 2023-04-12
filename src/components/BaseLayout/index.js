@@ -20,22 +20,21 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
 
   return (
     <div className="mb-8">
-      <h5 className="mb-3 lg:mb-2 uppercase tracking-wide font-bold text-sm lg:text-xs text-gray-500">
+      <h5 className="mb-3 lg:mb-2 tracking-wide font-semibold text-slate-900">
         {title}
       </h5>
-      <ul>
+      <ul className="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
         {items.map((item, index) => {
           const path = `/${item.label.toLowerCase().split(" ").join("-")}`;
           const isActive = pathname === path;
           return (
-            <li key={index} className="mb-3 lg:mb-1">
+            <li key={index}>
               <Link
                 className={classNames(
-                  "px-2 -mx-2 py-1 transition duration-200 ease-in-out relative block",
+                  "text-slate-700 border-l pl-4 -ml-px transition duration-200 ease-in-out relative block",
                   isActive
-                    ? "text-teal-600 "
-                    : "hover:translate-x-2px hover:text-gray-900 text-gray-600",
-                  "font-medium"
+                    ? "text-sky-500 font-semibold border-sky-500"
+                    : "border-transparent hover:border-slate-400"
                 )}
                 to={{
                   pathname: path,
@@ -43,12 +42,6 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
                 }}
                 onClick={onClickLink}
               >
-                <span
-                  className={classNames(
-                    "rounded absolute inset-0 bg-teal-200",
-                    isActive ? "opacity-25" : "opacity-0"
-                  )}
-                ></span>
                 <span className="relative">{item.label}</span>
               </Link>
             </li>

@@ -9,20 +9,21 @@ export default function Stroke() {
         <h1 className="text-3xl">Stroke</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
-          <svg
-            className="stroke-current text-purple-500 inline-block h-12 w-12"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="8" cy="21" r="2"></circle>
-            <circle cx="20" cy="21" r="2"></circle>
-            <path d="M5.67 6H23l-1.68 8.39a2 2 0 0 1-2 1.61H8.75a2 2 0 0 1-2-1.74L5.23 2.74A2 2 0 0 0 3.25 1H1"></path>
-          </svg>
+        <div class="relative rounded-xl overflow-auto p-8">
+          <div class="flex items-center justify-center">
+            <svg
+              class="stroke-cyan-500 h-10"
+              viewBox="0 0 48 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 39 1 36.7614 1 34V13Z"
+                strokeWidth="2"
+              ></path>
+              <circle cx="24" cy="23" r="9" strokeWidth="2"></circle>
+            </svg>
+          </div>
         </div>
       </PanelSection>
     </div>

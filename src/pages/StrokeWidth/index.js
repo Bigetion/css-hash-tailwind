@@ -9,37 +9,47 @@ export default function StrokeWidth() {
         <h1 className="text-3xl">Stroke Width</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
-          <svg
-            className="stroke-current stroke-1 text-green-500 inline-block h-24 w-24"
-            viewBox="0 0 24 24"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
-            <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
-            <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
-            <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
-            <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
-            <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
-          </svg>
-          <svg
-            className="stroke-current stroke-2 text-green-500 inline-block h-24 w-24"
-            viewBox="0 0 24 24"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
-            <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
-            <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
-            <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
-            <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
-            <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
-          </svg>
+        <div className="relative rounded-xl overflow-auto p-8">
+          <div className="flex items-center justify-center space-x-8">
+            <svg
+              className="stroke-indigo-500 stroke-1"
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="24" cy="24" r="23" strokeLinejoin="round"></circle>
+              <path
+                d="M23 1C23 1 15 10.4901 15 24C15 37.5099 23 47 23 47"
+                strokeLinejoin="round"
+              ></path>
+              <path
+                d="M25 1C25 1 33 10.4901 33 24C33 37.5099 25 47 25 47"
+                strokeLinejoin="round"
+              ></path>
+              <path d="M1 24H47"></path>
+            </svg>
+            <svg
+              className="stroke-indigo-500 stroke-2"
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="24" cy="24" r="23" strokeLinejoin="round"></circle>
+              <path
+                d="M23 1C23 1 15 10.4901 15 24C15 37.5099 23 47 23 47"
+                strokeLinejoin="round"
+              ></path>
+              <path
+                d="M25 1C25 1 33 10.4901 33 24C33 37.5099 25 47 25 47"
+                strokeLinejoin="round"
+              ></path>
+              <path d="M1 24H47"></path>
+            </svg>
+          </div>
         </div>
       </PanelSection>
     </div>
