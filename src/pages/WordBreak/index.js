@@ -9,7 +9,7 @@ export default function WordBreak() {
         <h1 className="text-3xl">Word Break</h1>
       </div>
       <PanelSection title="Normal">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="break-normal max-w-xs p-2 bg-gray-200 mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam
@@ -18,7 +18,7 @@ export default function WordBreak() {
         </div>
       </PanelSection>
       <PanelSection title="Break Words">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="break-words max-w-xs p-2 bg-gray-200 mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam
@@ -27,7 +27,7 @@ export default function WordBreak() {
         </div>
       </PanelSection>
       <PanelSection title="Break All">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="break-all max-w-xs p-2 bg-gray-200 mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam
@@ -36,7 +36,7 @@ export default function WordBreak() {
         </div>
       </PanelSection>
       <PanelSection title="Truncate">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="truncate max-w-xs p-2 bg-gray-200 mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Blanditiisitaquequodpraesentiumexplicaboincidunt? Dolores beatae nam

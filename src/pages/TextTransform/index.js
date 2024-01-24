@@ -9,28 +9,28 @@ export default function TextTransform() {
         <h1 className="text-3xl">Text Transform</h1>
       </div>
       <PanelSection title="Normal case">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="normal-case text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>
         </div>
       </PanelSection>
       <PanelSection title="Uppercase">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="uppercase text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>
         </div>
       </PanelSection>
       <PanelSection title="Lowercase">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="lowercase text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>
         </div>
       </PanelSection>
       <PanelSection title="Capitalize">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="capitalize text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>

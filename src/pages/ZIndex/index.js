@@ -9,7 +9,7 @@ export default function ZIndex() {
         <h1 className="text-3xl">Z Index</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="relative h-32 text-center">
             <div className="z-40 absolute w-24 h-24 ml-0 mt-0 bg-gray-400 flex justify-center items-center">
               z-40

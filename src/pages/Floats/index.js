@@ -9,7 +9,7 @@ export default function Floats() {
         <h1 className="text-3xl">Floats</h1>
       </div>
       <PanelSection title="FLoat right">
-        <div className="rounded overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <img
               alt=""
@@ -35,7 +35,7 @@ export default function Floats() {
         </div>
       </PanelSection>
       <PanelSection title="Float left">
-        <div className="rounded overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <img
               alt=""
@@ -61,7 +61,7 @@ export default function Floats() {
         </div>
       </PanelSection>
       <PanelSection title="Don't float">
-        <div className="rounded overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <img
               alt=""

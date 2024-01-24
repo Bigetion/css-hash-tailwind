@@ -9,7 +9,7 @@ export default function Translate() {
         <h1 className="text-3xl">Translate</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-white lg:flex justify-around items-center text-sm p-4 py-12">
+        <div className="bg-white lg:flex justify-around items-center text-sm p-4 py-12">
           <img
             alt=""
             className="h-16 w-16 rounded transform translate-y-6"

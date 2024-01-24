@@ -9,7 +9,7 @@ export default function BackgroundRepeat() {
         <h1 className="text-3xl">Background Repeat</h1>
       </div>
       <PanelSection title="Repeat">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full bg-gray-400 h-48 bg-center bg-repeat"
             style={{
@@ -19,7 +19,7 @@ export default function BackgroundRepeat() {
         </div>
       </PanelSection>
       <PanelSection title="No Repeat">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full bg-gray-400 h-48 bg-center bg-no-repeat"
             style={{
@@ -29,7 +29,7 @@ export default function BackgroundRepeat() {
         </div>
       </PanelSection>
       <PanelSection title="Repeat Horizontally">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full bg-gray-400 h-48 bg-center bg-repeat-x"
             style={{
@@ -39,7 +39,7 @@ export default function BackgroundRepeat() {
         </div>
       </PanelSection>
       <PanelSection title="Repeat Vertically">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full bg-gray-400 h-48 bg-center bg-repeat-y"
             style={{

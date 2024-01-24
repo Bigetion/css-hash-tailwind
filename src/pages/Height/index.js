@@ -9,19 +9,19 @@ export default function Height() {
         <h1 className="text-3xl">Height</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="h-auto w-32 text-center mx-auto bg-gray-400 p-6">
             h-auto
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Screen Height">
-        <div className="rounded-lg overflow-hidden border border-gray-400 overflow-x-scroll p-4">
+        <div className="overflow-x-scroll p-4">
           <div className="bg-gray-400 h-screen"></div>
         </div>
       </PanelSection>
       <PanelSection title="Fixed Height">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around items-end text-sm p-4">
+        <div className="flex justify-around items-end text-sm p-4">
           <div className="mr-3">
             <div className="h-8 w-8 bg-gray-400"></div>
             <p className="text-center mt-2 text-sm">h-8</p>
@@ -37,7 +37,7 @@ export default function Height() {
         </div>
       </PanelSection>
       <PanelSection title="Full Height">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around items-end text-sm p-4">
+        <div className="flex justify-around items-end text-sm p-4">
           <div className="h-48">
             <div className="h-full p-6 bg-gray-400">h-full</div>
           </div>

@@ -9,14 +9,14 @@ export default function FontStyle() {
         <h1 className="text-3xl">Font Style</h1>
       </div>
       <PanelSection title="Non italics">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="not-italic text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>
         </div>
       </PanelSection>
       <PanelSection title="Italics">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="italic text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>

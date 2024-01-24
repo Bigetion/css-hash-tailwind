@@ -9,7 +9,7 @@ export default function MaxWidth() {
         <h1 className="text-3xl">Max Width</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="max-w-md mx-auto text-center p-6 bg-gray-300">
             max-w-md
           </div>

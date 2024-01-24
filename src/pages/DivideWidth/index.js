@@ -9,7 +9,7 @@ export default function DivideWidth() {
         <h1 className="text-3xl">Divide Width</h1>
       </div>
       <PanelSection title="Add borders between horizontal children">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 divide-x divide-gray-400">
             <div className="text-center">1</div>
             <div className="text-center">2</div>
@@ -18,7 +18,7 @@ export default function DivideWidth() {
         </div>
       </PanelSection>
       <PanelSection title="Add borders between stacked children">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="divide-y divide-gray-400">
             <div className="text-center py-2">1</div>
             <div className="text-center py-2">2</div>
@@ -27,7 +27,7 @@ export default function DivideWidth() {
         </div>
       </PanelSection>
       <PanelSection title="Reversing children order">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex flex-col-reverse divide-y divide-y-reverse divide-gray-400">
             <div className="text-center py-2">1</div>
             <div className="text-center py-2">2</div>

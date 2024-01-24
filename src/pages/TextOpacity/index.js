@@ -9,7 +9,7 @@ export default function TextOpacity() {
         <h1 className="text-3xl">Text Opacity</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="space-y-4">
             <p className="font-semibold text-xl text-purple-700 text-opacity-100">
               The quick brown fox jumped over the lazy dog.

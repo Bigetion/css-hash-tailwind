@@ -9,7 +9,7 @@ export default function BorderOpacity() {
         <h1 className="text-3xl">Border Opacity</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-checkered p-4">
+        <div className="bg-checkered p-4">
           <div className="flex justify-around">
             <div className="h-16 w-16 rounded border-4 border-blue-500 border-opacity-100"></div>
             <div className="h-16 w-16 rounded border-4 border-blue-500 border-opacity-75"></div>

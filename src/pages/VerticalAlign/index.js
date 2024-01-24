@@ -9,7 +9,7 @@ export default function VerticalAlign() {
         <h1 className="text-3xl">Vertical Align</h1>
       </div>
       <PanelSection title="Baseline">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="leading-none relative">
             <span className="w-1 h-8 inline-block align-baseline bg-blue-300">
               <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
@@ -20,7 +20,7 @@ export default function VerticalAlign() {
         </div>
       </PanelSection>
       <PanelSection title="Top">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="leading-none relative">
             <span className="w-1 h-8 inline-block align-top bg-blue-300">
               <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
@@ -31,7 +31,7 @@ export default function VerticalAlign() {
         </div>
       </PanelSection>
       <PanelSection title="Middle">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="leading-none relative">
             <span className="w-1 h-8 inline-block align-middle bg-blue-300">
               <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
@@ -42,7 +42,7 @@ export default function VerticalAlign() {
         </div>
       </PanelSection>
       <PanelSection title="Bottom">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="leading-none relative">
             <span className="w-1 h-8 inline-block align-bottom bg-blue-300">
               <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
@@ -53,7 +53,7 @@ export default function VerticalAlign() {
         </div>
       </PanelSection>
       <PanelSection title="Text top">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="leading-none relative">
             <span className="w-1 h-8 inline-block align-text-top bg-blue-300">
               <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
@@ -64,7 +64,7 @@ export default function VerticalAlign() {
         </div>
       </PanelSection>
       <PanelSection title="Text bottom">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="leading-none relative">
             <span className="w-1 h-8 inline-block align-text-bottom bg-blue-300">
               <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>

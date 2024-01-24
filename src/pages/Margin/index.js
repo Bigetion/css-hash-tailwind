@@ -10,7 +10,7 @@ export default function Margin() {
       </div>
 
       <PanelSection title="Add margin to a single side">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-start">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">mt-8</p>
@@ -40,7 +40,7 @@ export default function Margin() {
         </div>
       </PanelSection>
       <PanelSection title="Add horizontal margin">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-center">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">mx-8</p>
@@ -52,7 +52,7 @@ export default function Margin() {
         </div>
       </PanelSection>
       <PanelSection title="Add vertical margin">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-center">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">my-8</p>
@@ -64,7 +64,7 @@ export default function Margin() {
         </div>
       </PanelSection>
       <PanelSection title="Add margin to a all sides">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-center">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">m-8</p>
@@ -76,7 +76,7 @@ export default function Margin() {
         </div>
       </PanelSection>
       <PanelSection title="Negative margins">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-center">
             <div>
               <div className="bg-gray-400 h-16 w-32"></div>

@@ -9,7 +9,7 @@ export default function BackgroundOpacity() {
         <h1 className="text-3xl">Background Opacity</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-checkered p-4">
+        <div className="bg-checkered p-4">
           <div className="flex justify-around">
             <div className="h-16 w-16 rounded bg-blue-500 bg-opacity-100"></div>
             <div className="h-16 w-16 rounded bg-blue-500 bg-opacity-75"></div>

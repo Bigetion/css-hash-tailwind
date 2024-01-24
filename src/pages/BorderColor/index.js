@@ -9,7 +9,7 @@ export default function BorderColor() {
         <h1 className="text-3xl">Border Color</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="max-w-xs w-full mx-auto">
             <input
               className="border border-red-500 bg-white text-gray-900 appearance-none block w-full text-gray-900 border rounded py-3 px-4 focus:outline-none"

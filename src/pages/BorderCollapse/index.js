@@ -9,7 +9,7 @@ export default function BorderCollapse() {
         <h1 className="text-3xl">Border Collapse</h1>
       </div>
       <PanelSection title="Collapse">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <table className="border-collapse border-2 border-gray-500">
             <thead>
               <tr>
@@ -41,7 +41,7 @@ export default function BorderCollapse() {
         </div>
       </PanelSection>
       <PanelSection title="Separate">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <table className="border-separate border-2 border-gray-500">
             <thead>
               <tr>

@@ -9,7 +9,7 @@ export default function LineHeight() {
         <h1 className="text-3xl">Line Height</h1>
       </div>
       <PanelSection title="Relative line-heights">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.leading-none</p>
             <p className="leading-none text-gray-800">
@@ -67,7 +67,7 @@ export default function LineHeight() {
         </div>
       </PanelSection>
       <PanelSection title="Fixed line-heights">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.leading-3</p>
             <p className="leading-3 text-gray-800">

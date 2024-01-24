@@ -9,7 +9,7 @@ export default function BackgroundImage() {
         <h1 className="text-3xl">Background Image</h1>
       </div>
       <PanelSection title="Linear Gradient">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-8">
+        <div className="p-8">
           <div className="h-24 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500"></div>
         </div>
       </PanelSection>

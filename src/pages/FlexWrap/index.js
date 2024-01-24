@@ -9,7 +9,7 @@ export default function FlexWrap() {
         <h1 className="text-3xl">Flex Wrap</h1>
       </div>
       <PanelSection title="Don't Wrap">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex flex-no-wrap bg-gray-200">
             <div className="w-2/5 flex-none p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>
@@ -24,7 +24,7 @@ export default function FlexWrap() {
         </div>
       </PanelSection>
       <PanelSection title="Wrap">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex flex-wrap bg-gray-200">
             <div className="w-2/5 p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>
@@ -39,7 +39,7 @@ export default function FlexWrap() {
         </div>
       </PanelSection>
       <PanelSection title="Wrap Reversed">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex flex-wrap-reverse bg-gray-200">
             <div className="w-2/5 p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>

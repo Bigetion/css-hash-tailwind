@@ -9,7 +9,7 @@ export default function Width() {
         <h1 className="text-3xl">Width</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="w-auto bg-gray-400 mb-4 px-2">
             .w-auto on block element
           </div>
@@ -19,12 +19,12 @@ export default function Width() {
         </div>
       </PanelSection>
       <PanelSection title="Screen Width">
-        <div className="rounded-lg overflow-hidden border border-gray-400 overflow-x-scroll p-4">
+        <div className="overflow-x-scroll p-4">
           <div className="w-screen bg-gray-400 h-4"></div>
         </div>
       </PanelSection>
       <PanelSection title="Fixed Width">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex items-center mb-1">
             <p className="text-sm text-gray-600 w-12 mr-2">.w-0</p>
             <div className="h-4 bg-gray-400 w-0"></div>
@@ -104,7 +104,7 @@ export default function Width() {
         </div>
       </PanelSection>
       <PanelSection title="Fluid Width">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <div className="flex mb-4">
               <div className="w-1/2 p-2 bg-gray-400 text-center">.w-1/2</div>

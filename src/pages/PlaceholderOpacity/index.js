@@ -9,7 +9,7 @@ export default function PlaceholderOpacity() {
         <h1 className="text-3xl">Placeholder Opacity</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="space-y-4">
             <div className="max-w-xs">
               <input

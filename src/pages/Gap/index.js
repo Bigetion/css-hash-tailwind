@@ -9,7 +9,7 @@ export default function Gap() {
         <h1 className="text-3xl">Gap</h1>
       </div>
       <PanelSection title="Gap">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div>
             <div className="mb-1 text-sm text-gray-600">gap-1</div>
             <div className="grid grid-cols-2 gap-1">
@@ -40,7 +40,7 @@ export default function Gap() {
         </div>
       </PanelSection>
       <PanelSection title="Row Gap">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div>
             <div className="mb-1 text-sm text-gray-600">gap-y-1</div>
             <div className="grid grid-cols-2 gap-y-1">
@@ -73,7 +73,7 @@ export default function Gap() {
         </div>
       </PanelSection>
       <PanelSection title="Column Gap">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div>
             <div className="mb-1 text-sm text-gray-600">gap-x-1</div>
             <div className="grid grid-cols-2 gap-x-1">

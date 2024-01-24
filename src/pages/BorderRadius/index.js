@@ -9,7 +9,7 @@ export default function BorderRadius() {
         <h1 className="text-3xl">Border Radius</h1>
       </div>
       <PanelSection title="Rounded corners">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around text-sm p-4">
+        <div className="flex justify-around text-sm p-4">
           <div className="bg-gray-400 mr-3 p-4 rounded-sm">.rounded-sm</div>
           <div className="bg-gray-400 mr-3 p-4 rounded">.rounded</div>
           <div className="bg-gray-400 mr-3 p-4 rounded-md">.rounded-md</div>
@@ -17,7 +17,7 @@ export default function BorderRadius() {
         </div>
       </PanelSection>
       <PanelSection title="Pills and circles">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex items-center justify-around text-sm p-4">
+        <div className="flex items-center justify-around text-sm p-4">
           <div className="bg-gray-400 mr-3 py-2 px-4 rounded-full">
             Pill shape
           </div>
@@ -27,12 +27,12 @@ export default function BorderRadius() {
         </div>
       </PanelSection>
       <PanelSection title="No rounding">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around text-sm p-4 py-8">
+        <div className="flex justify-around text-sm p-4 py-8">
           <div className="p-4 rounded-none bg-gray-400">.rounded-none</div>
         </div>
       </PanelSection>
       <PanelSection title="Rounding sides separately">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around text-sm p-4">
+        <div className="flex justify-around text-sm p-4">
           <div className="bg-gray-400 mr-3 p-4 rounded-t-lg">.rounded-t-lg</div>
           <div className="bg-gray-400 mr-3 p-4 rounded-r-lg">.rounded-r-lg</div>
           <div className="bg-gray-400 mr-3 p-4 rounded-b-lg">.rounded-b-lg</div>
@@ -40,7 +40,7 @@ export default function BorderRadius() {
         </div>
       </PanelSection>
       <PanelSection title="Rounding corners separately">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around text-sm p-4">
+        <div className="flex justify-around text-sm p-4">
           <div className="bg-gray-400 mr-3 p-4 rounded-tl-lg">
             .rounded-tl-lg
           </div>

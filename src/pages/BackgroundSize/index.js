@@ -9,7 +9,7 @@ export default function BackgroundSize() {
         <h1 className="text-3xl">Background Size</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full bg-gray-400 h-48 bg-center bg-no-repeat bg-auto"
             style={{
@@ -19,7 +19,7 @@ export default function BackgroundSize() {
         </div>
       </PanelSection>
       <PanelSection title="Cover">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full bg-gray-400 h-48 bg-center bg-no-repeat bg-cover"
             style={{
@@ -29,7 +29,7 @@ export default function BackgroundSize() {
         </div>
       </PanelSection>
       <PanelSection title="Contain">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full bg-gray-400 h-48 bg-center bg-no-repeat bg-contain"
             style={{

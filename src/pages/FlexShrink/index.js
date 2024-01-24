@@ -9,7 +9,7 @@ export default function FlexShrink() {
         <h1 className="text-3xl">Flex Shrink</h1>
       </div>
       <PanelSection title="Shrink">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="flex-none text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               Longer content that cannot flex
@@ -24,7 +24,7 @@ export default function FlexShrink() {
         </div>
       </PanelSection>
       <PanelSection title="Don't Shrink">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="flex-shrink text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               Item that can shrink if needed

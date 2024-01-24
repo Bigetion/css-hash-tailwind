@@ -9,7 +9,7 @@ export default function ListStylePosition() {
         <h1 className="text-3xl">List Style Position</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4 px-8">
+        <div className="p-4 px-8">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.list-inside</p>
             <ul className="list-disc list-inside bg-gray-200 text-gray-800 py-2">

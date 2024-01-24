@@ -9,7 +9,7 @@ export default function Display() {
         <h1 className="text-3xl">Display</h1>
       </div>
       <PanelSection title="Block">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <span className="block text-gray-700 text-center bg-gray-400 px-4 py-2">
               1
@@ -24,7 +24,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Flow-Root">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flow-root bg-gray-400">
             <div className="my-4 block text-gray-700 text-center bg-gray-500 px-4 py-2">
               1
@@ -38,7 +38,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Inline Block">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200">
             <div className="inline-block text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -53,7 +53,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Inline">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200">
             <div className="inline text-gray-700 text-center bg-gray-400 px-4 py-2">
               1
@@ -68,7 +68,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Flex">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -83,7 +83,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Inline Flex">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="inline-flex bg-gray-200">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -98,7 +98,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Grid">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-white p-8">
+        <div className="bg-white p-8">
           <div className="grid gap-4 grid-cols-3">
             <div className="bg-gray-300 h-12"></div>
             <div className="bg-gray-500 h-12"></div>
@@ -113,7 +113,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Inline Grid">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-white p-8">
+        <div className="bg-white p-8">
           <span className="inline-grid grid-cols-3 gap-x-4 p-2 bg-gray-200">
             <span className="px-4 py-2 text-center bg-gray-400">1</span>
             <span className="px-4 py-2 text-center bg-gray-400">1</span>
@@ -127,7 +127,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Contents">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -147,7 +147,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Table">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="table w-full">
             <div className="table-row-group">
               <div className="table-row">
@@ -177,7 +177,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Hidden">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="hidden text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1

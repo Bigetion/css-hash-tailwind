@@ -9,7 +9,7 @@ export default function ListStyleType() {
         <h1 className="text-3xl">List Style Type</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.list-disc</p>
             <ul className="list-disc list-inside">

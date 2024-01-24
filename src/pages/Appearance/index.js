@@ -9,7 +9,7 @@ export default function Appearance() {
         <h1 className="text-3xl">Appearance</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="max-w-sm mx-auto">
             <div className="flex my-4">
               <select className="w-16">

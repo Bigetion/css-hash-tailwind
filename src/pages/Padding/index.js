@@ -9,7 +9,7 @@ export default function Padding() {
         <h1 className="text-3xl">Padding</h1>
       </div>
       <PanelSection title="Add padding to a single side">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-start">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">pt-8</p>
@@ -39,7 +39,7 @@ export default function Padding() {
         </div>
       </PanelSection>
       <PanelSection title="Add horizontal padding">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-center">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">px-8</p>
@@ -51,7 +51,7 @@ export default function Padding() {
         </div>
       </PanelSection>
       <PanelSection title="Add vertical padding">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-center">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">py-8</p>
@@ -63,7 +63,7 @@ export default function Padding() {
         </div>
       </PanelSection>
       <PanelSection title="Add padding to a all sides">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around items-center">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">p-8</p>

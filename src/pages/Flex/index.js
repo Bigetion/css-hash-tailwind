@@ -9,7 +9,7 @@ export default function Flex() {
         <h1 className="text-3xl">Flex</h1>
       </div>
       <PanelSection title="Initial">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="text-sm text-gray-600 mb-1">
             Items don't grow when there's extra space
           </p>
@@ -40,7 +40,7 @@ export default function Flex() {
         </div>
       </PanelSection>
       <PanelSection title="Flex 1">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="text-sm text-gray-600 mb-1">Default behavior</p>
           <div className="flex bg-gray-200 mb-6">
             <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
@@ -70,7 +70,7 @@ export default function Flex() {
         </div>
       </PanelSection>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="text-sm text-gray-600 mb-1">Default behavior</p>
           <div className="flex bg-gray-200 mb-6">
             <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
@@ -100,7 +100,7 @@ export default function Flex() {
         </div>
       </PanelSection>
       <PanelSection title="None">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               Item that can grow or shrink if needed

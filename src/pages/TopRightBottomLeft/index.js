@@ -9,7 +9,7 @@ export default function TopRightBottomLeft() {
         <h1 className="text-3xl">Top Right Bottom Left</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around mb-8">
             <div>
               <p className="text-center text-sm text-gray-600 mb-1">

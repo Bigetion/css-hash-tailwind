@@ -9,7 +9,7 @@ export default function OverscrollBehavior() {
         <h1 className="text-3xl">Overscroll Behavior</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="overscroll-auto overflow-auto h-32 bg-gray-300 text-gray-700 p-4">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
@@ -36,7 +36,7 @@ export default function OverscrollBehavior() {
         </div>
       </PanelSection>
       <PanelSection title="Contain">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="overscroll-contain overflow-auto h-32 bg-gray-300 text-gray-700 p-4">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
@@ -63,7 +63,7 @@ export default function OverscrollBehavior() {
         </div>
       </PanelSection>
       <PanelSection title="None">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="overscroll-none overflow-auto h-32 bg-gray-300 text-gray-700 p-4">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris

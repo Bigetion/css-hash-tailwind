@@ -9,7 +9,7 @@ export default function Outline() {
         <h1 className="text-3xl">Outline</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center bg-gray-200 p-4">
+        <div className="text-center bg-gray-200 p-4">
           <input type="text" className="px-2 m-2" placeholder="Focus me" />
           <input
             type="text"

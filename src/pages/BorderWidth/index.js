@@ -9,7 +9,7 @@ export default function BorderWidth() {
         <h1 className="text-3xl">Border Width</h1>
       </div>
       <PanelSection title="All sides">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex">
             <div className="w-1/2 sm:flex-1">
               <p className="text-center text-sm text-gray-600 mb-1">
@@ -43,7 +43,7 @@ export default function BorderWidth() {
         </div>
       </PanelSection>
       <PanelSection title="Individual sides">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex">
             <div className="w-1/2 sm:flex-1">
               <p className="text-center text-sm text-gray-600 mb-1">

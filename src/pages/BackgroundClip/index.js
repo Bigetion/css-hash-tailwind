@@ -9,7 +9,7 @@ export default function BackgroundClip() {
         <h1 className="text-3xl">Background Clip</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around">
             <div className="flex-1">
               <p className="text-center text-sm text-gray-600 mb-1">
@@ -33,7 +33,7 @@ export default function BackgroundClip() {
         </div>
       </PanelSection>
       <PanelSection title="Cropping to text">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-8">
+        <div className="p-8">
           <div className="text-center text-5xl font-extrabold leading-none tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
               Hello world

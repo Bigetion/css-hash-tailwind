@@ -9,7 +9,7 @@ export default function GridTemplateRows() {
         <h1 className="text-3xl">Grid Template Rows</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-white p-8">
+        <div className="bg-white p-8">
           <div className="h-64 grid grid-rows-3 grid-flow-col gap-4">
             <div className="bg-gray-300 flex items-center justify-center">
               1

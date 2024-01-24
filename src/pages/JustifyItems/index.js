@@ -9,7 +9,7 @@ export default function JustifyItems() {
         <h1 className="text-3xl">Justify Items</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 gap-4 justify-items-auto h-48">
             <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
               1
@@ -33,7 +33,7 @@ export default function JustifyItems() {
         </div>
       </PanelSection>
       <PanelSection title="Start">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 gap-4 justify-items-start h-48">
             <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
               1
@@ -57,7 +57,7 @@ export default function JustifyItems() {
         </div>
       </PanelSection>
       <PanelSection title="Center">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 gap-4 justify-items-center h-48">
             <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
               1
@@ -81,7 +81,7 @@ export default function JustifyItems() {
         </div>
       </PanelSection>
       <PanelSection title="End">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 gap-4 justify-items-end h-48">
             <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
               1
@@ -105,7 +105,7 @@ export default function JustifyItems() {
         </div>
       </PanelSection>
       <PanelSection title="Stretch">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 gap-4 justify-items-stretch h-48">
             <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
               1

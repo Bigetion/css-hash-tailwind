@@ -9,14 +9,14 @@ export default function FontSmoothing() {
         <h1 className="text-3xl">Font Smoothing</h1>
       </div>
       <PanelSection title="Subpixel Antialiasing">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="subpixel-antialiased text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>
         </div>
       </PanelSection>
       <PanelSection title="Grayscale Antialiasing">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="antialiased text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>

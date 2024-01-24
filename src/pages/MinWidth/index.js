@@ -9,7 +9,7 @@ export default function MinWidth() {
         <h1 className="text-3xl">Min Width</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="w-24 min-w-full text-center p-6 bg-gray-300">
             min-w-full
           </div>

@@ -9,7 +9,7 @@ export default function LetterSpacing() {
         <h1 className="text-3xl">Letter Spacing</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.tracking-tighter</p>
             <p className="tracking-tighter text-lg text-gray-800">

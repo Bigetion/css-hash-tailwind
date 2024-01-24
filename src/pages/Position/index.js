@@ -9,7 +9,7 @@ export default function Position() {
         <h1 className="text-3xl">Position</h1>
       </div>
       <PanelSection title="Static">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="relative bg-gray-400 p-4">
             <div className="static h-32 bg-gray-600 p-4 text-gray-900">
               <p>Static parent</p>
@@ -21,7 +21,7 @@ export default function Position() {
         </div>
       </PanelSection>
       <PanelSection title="Relative">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="relative bg-gray-400 p-4">
             <div className="relative h-32 bg-gray-600 p-4 text-gray-900">
               <p>Relative parent</p>
@@ -33,7 +33,7 @@ export default function Position() {
         </div>
       </PanelSection>
       <PanelSection title="Absolute">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="text-sm text-gray-600 mb-1">With static positioning</p>
           <div className="relative bg-gray-400 px-4 pt-2 pb-4 mb-6">
             <p className="mb-2 text-gray-700">Relative parent</p>
@@ -66,7 +66,7 @@ export default function Position() {
         </div>
       </PanelSection>
       <PanelSection title="Fixed">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="rounded-b overflow-hidden max-w-md mx-auto mt-4 mb-4">
             <div className="rounded-t border border-gray-400 bg-gray-200 flex px-4 py-3">
               <div className="mr-6">
@@ -174,7 +174,7 @@ export default function Position() {
         </div>
       </PanelSection>
       <PanelSection title="Sticky">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="h-64 overflow-auto">
             <div>
               <div className="sticky top-0 bg-gray-400 px-2 py-1 font-bold text-gray-700">

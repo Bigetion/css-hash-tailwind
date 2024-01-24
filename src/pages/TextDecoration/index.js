@@ -9,21 +9,21 @@ export default function TextDecoration() {
         <h1 className="text-3xl">Text Decoration</h1>
       </div>
       <PanelSection title="Underline">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="underline text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>
         </div>
       </PanelSection>
       <PanelSection title="Line through">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <p className="line-through text-lg text-gray-800">
             The quick brown fox jumped over the lazy dog.
           </p>
         </div>
       </PanelSection>
       <PanelSection title="No underline">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="text-center">
             <a href="/" className="no-underline text-blue-500 text-lg">
               Link with no underline

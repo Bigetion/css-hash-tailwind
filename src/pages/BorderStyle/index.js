@@ -9,7 +9,7 @@ export default function BorderStyle() {
         <h1 className="text-3xl">Border Style</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="block sm:flex sm:justify-around">
             <div className="sm:w-3/5 sm:mb-0 flex justify-around mb-6">
               <div className="flex-1">

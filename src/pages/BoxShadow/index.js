@@ -9,7 +9,7 @@ export default function BoxShadow() {
         <h1 className="text-3xl">Box Shadow</h1>
       </div>
       <PanelSection title="Outer shadow">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-gray-100 lg:flex justify-around items-center text-sm p-4 py-8">
+        <div className="bg-gray-100 lg:flex justify-around items-center text-sm p-4 py-8">
           <div className="text-center px-2">
             <div className="mb-1 text-xs text-gray-600">xs</div>
             <div className="mx-auto h-6 w-6 text-xs bg-white rounded shadow-xs"></div>
@@ -41,14 +41,14 @@ export default function BoxShadow() {
         </div>
       </PanelSection>
       <PanelSection title="Inner shadow">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around text-sm p-4 py-8">
+        <div className="flex justify-around text-sm p-4 py-8">
           <div className="rounded p-4 bg-gray-200 shadow-inner">
             .shadow-inner
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Focus outline shadow">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-center text-sm p-4 py-8">
+        <div className="flex justify-center text-sm p-4 py-8">
           <button className="focus:outline-none focus:shadow-outline bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-32 mr-6">
             Unfocused
           </button>
@@ -58,7 +58,7 @@ export default function BoxShadow() {
         </div>
       </PanelSection>
       <PanelSection title="No shadow">
-        <div className="rounded-lg overflow-hidden border border-gray-400 flex justify-around text-sm p-4 py-8">
+        <div className="flex justify-around text-sm p-4 py-8">
           <div className="rounded p-4 shadow-none bg-gray-200">
             .shadow-none
           </div>

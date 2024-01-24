@@ -9,7 +9,7 @@ export default function TableLayout() {
         <h1 className="text-3xl">Table Layout</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <table className="table-auto">
             <thead>
               <tr>
@@ -42,7 +42,7 @@ export default function TableLayout() {
         </div>
       </PanelSection>
       <PanelSection title="Fixed">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <table className="table-fixed">
             <thead>
               <tr>

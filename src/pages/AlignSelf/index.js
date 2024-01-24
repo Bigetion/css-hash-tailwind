@@ -9,7 +9,7 @@ export default function AlignSelf() {
         <h1 className="text-3xl">Align Self</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex items-stretch bg-gray-200 h-24">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -24,7 +24,7 @@ export default function AlignSelf() {
         </div>
       </PanelSection>
       <PanelSection title="Start">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex items-stretch bg-gray-200 h-24">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -39,7 +39,7 @@ export default function AlignSelf() {
         </div>
       </PanelSection>
       <PanelSection title="Center">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex items-stretch bg-gray-200 h-24">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -54,7 +54,7 @@ export default function AlignSelf() {
         </div>
       </PanelSection>
       <PanelSection title="End">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex items-stretch bg-gray-200 h-24">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -69,7 +69,7 @@ export default function AlignSelf() {
         </div>
       </PanelSection>
       <PanelSection title="Stretch">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex items-start bg-gray-200 h-24">
             <div className="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1

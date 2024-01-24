@@ -9,7 +9,7 @@ export default function Order() {
         <h1 className="text-3xl">Order</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="order-last text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1

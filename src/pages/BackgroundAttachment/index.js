@@ -9,7 +9,7 @@ export default function BackgroundAttachment() {
         <h1 className="text-3xl">Background Attachment</h1>
       </div>
       <PanelSection title="Fixed">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full h-48 bg-fixed bg-center overflow-y-scroll"
             style={{
@@ -21,7 +21,7 @@ export default function BackgroundAttachment() {
         </div>
       </PanelSection>
       <PanelSection title="Local">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full h-48 bg-local bg-center overflow-y-scroll"
             style={{
@@ -33,7 +33,7 @@ export default function BackgroundAttachment() {
         </div>
       </PanelSection>
       <PanelSection title="Scroll">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div
             className="w-full h-48 bg-scroll bg-center overflow-y-scroll"
             style={{

@@ -9,7 +9,7 @@ export default function TextAlign() {
         <h1 className="text-3xl">Text Align</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.text-left</p>
             <p className="text-left text-base text-gray-800">

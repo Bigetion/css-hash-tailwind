@@ -9,7 +9,7 @@ export default function GridTemplateColumns() {
         <h1 className="text-3xl">Grid Template Columns</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-white p-8">
+        <div className="bg-white p-8">
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-gray-300 h-12 flex items-center justify-center">
               1

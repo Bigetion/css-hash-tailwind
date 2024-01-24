@@ -9,7 +9,7 @@ export default function GridRowStartEnd() {
         <h1 className="text-3xl">Grid Row Start End</h1>
       </div>
       <PanelSection title="Spanning rows">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-white p-8">
+        <div className="bg-white p-8">
           <div className="h-64 grid grid-rows-3 grid-flow-col gap-4">
             <div className="row-span-3 bg-gray-500"></div>
             <div className="row-span-1 col-span-2 bg-gray-300"></div>
@@ -18,7 +18,7 @@ export default function GridRowStartEnd() {
         </div>
       </PanelSection>
       <PanelSection title="Starting and ending lines">
-        <div className="rounded-lg overflow-hidden border border-gray-400 bg-white p-8">
+        <div className="bg-white p-8">
           <div className="h-64 grid grid-rows-3 grid-flow-col gap-4">
             <div className="row-start-2 row-span-2 bg-gray-500"></div>
             <div className="row-end-3 row-span-2 bg-gray-300"></div>

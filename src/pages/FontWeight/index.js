@@ -9,7 +9,7 @@ export default function FontWeight() {
         <h1 className="text-3xl">Font Weight</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 font-sans p-4">
+        <div className="font-sans p-4">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.font-hairline</p>
             <p className="font-hairline text-xl text-gray-800">

@@ -9,7 +9,7 @@ export default function ObjectFit() {
         <h1 className="text-3xl">Object Fit</h1>
       </div>
       <PanelSection title="Contain">
-        <div className="rounded-t-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="p-4">
             <div className="bg-gray-400">
               <img
@@ -22,7 +22,7 @@ export default function ObjectFit() {
         </div>
       </PanelSection>
       <PanelSection title="Cover">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="p-4">
             <div className="bg-gray-400">
               <img
@@ -35,7 +35,7 @@ export default function ObjectFit() {
         </div>
       </PanelSection>
       <PanelSection title="Fill">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="p-4">
             <div className="bg-gray-400">
               <img
@@ -48,7 +48,7 @@ export default function ObjectFit() {
         </div>
       </PanelSection>
       <PanelSection title="None">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="p-4">
             <div className="bg-gray-400">
               <img
@@ -61,7 +61,7 @@ export default function ObjectFit() {
         </div>
       </PanelSection>
       <PanelSection title="Scale down">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="p-4">
             <div className="bg-gray-400">
               <img

@@ -9,7 +9,7 @@ export default function FontSize() {
         <h1 className="text-3xl">Font Size</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="mb-6">
             <p className="text-sm text-gray-600">.text-xs</p>
             <p className="text-xs truncate text-gray-800">

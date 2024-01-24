@@ -9,7 +9,7 @@ export default function PointerEvents() {
         <h1 className="text-3xl">Pointer Events</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="max-w-sm">
             <p className="text-sm text-gray-700">
               Try clicking the caret icon to open the dropdown

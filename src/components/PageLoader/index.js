@@ -4,7 +4,7 @@ function ContentLoader() {
   return (
     <div className="mt-4">
       <h1 className="text-xl text-gray-700 mb-2">.....</h1>
-      <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+      <div className="">
         <div className="space-y-6">
           <div className="text-gray-700 bg-gray-400 h-5 rounded-lg"></div>
           <div className="text-gray-700 bg-gray-400 h-5 rounded-lg"></div>

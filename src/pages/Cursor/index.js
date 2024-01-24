@@ -9,49 +9,49 @@ export default function Cursor() {
         <h1 className="text-3xl">Cursor</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="cursor-auto max-w-xs p-2 bg-gray-200 mx-auto">
             Hover over this text
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Default">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="cursor-default max-w-xs p-2 bg-gray-200 mx-auto">
             Hover over this text
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Pointer">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="cursor-pointer max-w-xs p-2 bg-gray-200 mx-auto">
             Hover over this text
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Wait">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="cursor-wait max-w-xs p-2 bg-gray-200 mx-auto">
             Hover over this text
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Text">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="cursor-text max-w-xs p-2 bg-gray-200 mx-auto">
             Hover over this text
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Move">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="cursor-move max-w-xs p-2 bg-gray-200 mx-auto">
             Hover over this text
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Not Allowed">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-4">
+        <div className="text-center p-4">
           <div className="cursor-not-allowed max-w-xs p-2 bg-gray-200 mx-auto">
             Hover over this text
           </div>

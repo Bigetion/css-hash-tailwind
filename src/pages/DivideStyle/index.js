@@ -9,7 +9,7 @@ export default function DivideStyle() {
         <h1 className="text-3xl">Divide Style</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="divide-y-2 divide-gray-500 divide-dashed">
             <div className="text-center py-2">1</div>
             <div className="text-center py-2">2</div>

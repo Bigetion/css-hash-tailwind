@@ -9,7 +9,7 @@ export default function PlaceholderColor() {
         <h1 className="text-3xl">Placeholder Color</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 text-center p-6">
+        <div className="text-center p-6">
           <div className="max-w-xs">
             <input
               className="block appearance-none placeholder-gray-500 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

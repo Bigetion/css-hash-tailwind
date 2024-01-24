@@ -9,7 +9,7 @@ export default function BackgroundPosition() {
         <h1 className="text-3xl">Background Position</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex justify-around mb-8">
             <div className="flex-1">
               <p className="text-center text-sm text-gray-600 mb-1">

@@ -9,7 +9,7 @@ export default function Clear() {
         <h1 className="text-3xl">Clear</h1>
       </div>
       <PanelSection title="Clear left">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <img
               alt=""
@@ -40,7 +40,7 @@ export default function Clear() {
         </div>
       </PanelSection>
       <PanelSection title="Clear right">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <img
               alt=""
@@ -71,7 +71,7 @@ export default function Clear() {
         </div>
       </PanelSection>
       <PanelSection title="Clear both">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <img
               alt=""
@@ -102,7 +102,7 @@ export default function Clear() {
         </div>
       </PanelSection>
       <PanelSection title="Don't clear">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="bg-gray-200 p-4">
             <img
               alt=""

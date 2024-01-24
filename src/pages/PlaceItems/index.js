@@ -9,7 +9,7 @@ export default function PlaceItems() {
         <h1 className="text-3xl">Place Items</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 place-items-auto bg-gray-200 h-48">
             <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -33,7 +33,7 @@ export default function PlaceItems() {
         </div>
       </PanelSection>
       <PanelSection title="Start">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 place-items-start bg-gray-200 h-48">
             <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -57,7 +57,7 @@ export default function PlaceItems() {
         </div>
       </PanelSection>
       <PanelSection title="Center">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 place-items-center bg-gray-200 h-48">
             <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -81,7 +81,7 @@ export default function PlaceItems() {
         </div>
       </PanelSection>
       <PanelSection title="End">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 place-items-end bg-gray-200 h-48">
             <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1
@@ -105,7 +105,7 @@ export default function PlaceItems() {
         </div>
       </PanelSection>
       <PanelSection title="Stretch">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="grid grid-cols-3 place-items-stretch bg-gray-200 h-48">
             <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               1

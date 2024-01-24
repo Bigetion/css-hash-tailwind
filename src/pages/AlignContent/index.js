@@ -9,7 +9,7 @@ export default function AlignContent() {
         <h1 className="text-3xl">Align Content</h1>
       </div>
       <PanelSection title="Start">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex content-start flex-wrap bg-gray-200 h-48">
             <div className="w-1/3 p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>
@@ -30,7 +30,7 @@ export default function AlignContent() {
         </div>
       </PanelSection>
       <PanelSection title="Center">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex content-center flex-wrap bg-gray-200 h-48">
             <div className="w-1/3 p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>
@@ -51,7 +51,7 @@ export default function AlignContent() {
         </div>
       </PanelSection>
       <PanelSection title="End">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex content-end flex-wrap bg-gray-200 h-48">
             <div className="w-1/3 p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>
@@ -72,7 +72,7 @@ export default function AlignContent() {
         </div>
       </PanelSection>
       <PanelSection title="Space Between">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex content-between flex-wrap bg-gray-200 h-48">
             <div className="w-1/3 p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>
@@ -93,7 +93,7 @@ export default function AlignContent() {
         </div>
       </PanelSection>
       <PanelSection title="Space Around">
-        <div className="rounded-lg overflow-hidden border border-gray-400 p-4">
+        <div className="">
           <div className="flex content-around flex-wrap bg-gray-200 h-48">
             <div className="w-1/3 p-2">
               <div className="text-gray-700 text-center bg-gray-400 p-2">1</div>
