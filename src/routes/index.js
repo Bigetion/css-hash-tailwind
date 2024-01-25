@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "boxDecorationBreak",
+    path: "/box-decoration-break",
+    exact: true,
+    component: () => import("pages/BoxDecorationBreak"),
+  },
+  {
     id: "strokeWidth",
     path: "/stroke-width",
     exact: true,

@@ -20,6 +20,7 @@ const generateBorderOpacity = require("./generators/borderOpacity");
 const generateBorderRadius = require("./generators/borderRadius");
 const generateBorderStyle = require("./generators/borderStyle");
 const generateBorderWidth = require("./generators/borderWidth");
+const generateBoxDecorationBreak = require("./generators/boxDecorationBreak");
 const generateBoxShadow = require("./generators/boxShadow");
 const generateBoxSizing = require("./generators/boxSizing");
 const generateClear = require("./generators/clear");
@@ -58,6 +59,7 @@ const generateGridTemplateColumns = require("./generators/gridTemplateColumns");
 const generateGridTemplateRows = require("./generators/gridTemplateRows");
 const generateHeight = require("./generators/height");
 const generateInset = require("./generators/inset");
+const generateIsolation = require("./generators/isolation");
 const generateJustifyContent = require("./generators/justifyContent");
 const generateJustifyItems = require("./generators/justifyItems");
 const generateJustifySelf = require("./generators/justifySelf");
@@ -136,6 +138,7 @@ const generateOptions = {
   borderRadius: generateBorderRadius,
   borderStyle: generateBorderStyle,
   borderWidth: generateBorderWidth,
+  boxDecorationBreak: generateBoxDecorationBreak,
   boxShadow: generateBoxShadow,
   boxSizing: generateBoxSizing,
   clear: generateClear,
@@ -173,6 +176,7 @@ const generateOptions = {
   gridTemplateRows: generateGridTemplateRows,
   height: generateHeight,
   inset: generateInset,
+  isolation: generateIsolation,
   justifyContent: generateJustifyContent,
   justifyItems: generateJustifyItems,
   justifySelf: generateJustifySelf,
