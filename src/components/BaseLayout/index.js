@@ -25,7 +25,10 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
       </h5>
       <ul className="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
         {items.map((item, index) => {
-          const path = `/${item.label.toLowerCase().split(" ").join("-")}`;
+          const path = `/${item.label
+            .toLowerCase()
+            .replaceAll(" / ", " ")
+            .replaceAll(" ", "-")}`;
           const isActive = pathname === path;
           return (
             <li key={index}>
@@ -212,7 +215,7 @@ function Layout(props) {
           >
             <div>
               <div className="flex">
-                <div className="pb-16 w-full pt-24 lg:pt-28">{children}</div>
+                <div className="w-full py-24">{children}</div>
               </div>
             </div>
           </div>

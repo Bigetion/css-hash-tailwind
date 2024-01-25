@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "flexBasis",
+    path: "/flex-basis",
+    exact: true,
+    component: () => import("pages/FlexBasis"),
+  },
+  {
     id: "boxDecorationBreak",
     path: "/box-decoration-break",
     exact: true,

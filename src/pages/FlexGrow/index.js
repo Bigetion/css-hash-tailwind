@@ -9,7 +9,7 @@ export default function FlexGrow() {
         <h1 className="text-3xl">Flex Grow</h1>
       </div>
       <PanelSection title="Grow">
-        <div className="rounded-lg overflow-hidden border border-r border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="flex-none text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               Content that cannot flex
@@ -24,7 +24,7 @@ export default function FlexGrow() {
         </div>
       </PanelSection>
       <PanelSection title="Don't Grow">
-        <div className="rounded-lg overflow-hidden border border-r border-gray-400 p-4">
+        <div className="">
           <div className="flex bg-gray-200">
             <div className="flex-grow text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
               Will grow

@@ -1,4 +1,4 @@
-const { getConfigOptions } = require("./utils");
+const { getConfigOptions } = require("./utils/index");
 
 const generateAccessibility = require("./generators/accessibility");
 const generateAlignContent = require("./generators/alignContent");
@@ -33,6 +33,7 @@ const generateDivideStyle = require("./generators/divideStyle");
 const generateDivideWidth = require("./generators/divideWidth");
 const generateFill = require("./generators/fill");
 const generateFlex = require("./generators/flex");
+const generateFlexBasis = require("./generators/flexBasis");
 const generateFlexDirection = require("./generators/flexDirection");
 const generateFlexGrow = require("./generators/flexGrow");
 const generateFlexShrink = require("./generators/flexShrink");
@@ -151,6 +152,7 @@ const generateOptions = {
   divideWidth: generateDivideWidth,
   fill: generateFill,
   flex: generateFlex,
+  flexBasis: generateFlexBasis,
   flexDirection: generateFlexDirection,
   flexGrow: generateFlexGrow,
   flexShrink: generateFlexShrink,
