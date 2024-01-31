@@ -2,18 +2,11 @@ const menus = [
   {
     title: "Layout",
     items: [
-      { label: "Aspect Ratio" },
-      { label: "Container" },
-      { label: "Columns" },
-      { label: "Break After" },
-      { label: "Break Before" },
-      { label: "Break Inside" },
       { label: "Box Decoration Break" },
       { label: "Box Sizing" },
       { label: "Display" },
       { label: "Floats" },
       { label: "Clear" },
-      { label: "Isolation" },
       { label: "Object Fit" },
       { label: "Object Position" },
       { label: "Overflow" },

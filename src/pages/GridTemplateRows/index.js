@@ -10,7 +10,7 @@ export default function GridTemplateRows() {
       </div>
       <PanelSection title="Usage">
         <div className="bg-white p-8">
-          <div className="h-64 grid grid-rows-3 grid-flow-col gap-4">
+          <div className="h-64 grid grid-rows-4 grid-flow-col gap-4">
             <div className="bg-gray-300 flex items-center justify-center">
               1
             </div>

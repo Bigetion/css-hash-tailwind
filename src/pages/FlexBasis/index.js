@@ -10,14 +10,14 @@ export default function FlexBasis() {
       </div>
       <PanelSection title="Row">
         <div className="">
-          <div class="flex flex-row space-x-4 font-mono text-white text-sm font-bold leading-6">
-            <div class="basis-1/4 h-14 flex items-center justify-center bg-gray-500 shadow-lg">
+          <div class="flex flex-row space-x-4 text-gray-700 leading-6">
+            <div class="basis-1/4 h-14 flex items-center justify-center bg-gray-400 shadow-lg">
               01
             </div>
-            <div class="basis-1/4 h-14 flex items-center justify-center bg-gray-500 shadow-lg">
+            <div class="basis-1/4 h-14 flex items-center justify-center bg-gray-400 shadow-lg">
               02
             </div>
-            <div class="basis-1/2 h-14 flex items-center justify-center bg-gray-500 shadow-lg">
+            <div class="basis-1/2 h-14 flex items-center justify-center bg-gray-400 shadow-lg">
               03
             </div>
           </div>
