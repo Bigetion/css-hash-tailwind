@@ -4,6 +4,7 @@ const plugins = {
   alignItems: true,
   alignSelf: true,
   appearance: true,
+  aspect: true,
   backgroundAttachment: true,
   backgroundClip: true,
   backgroundColor: true,

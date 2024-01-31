@@ -4,6 +4,7 @@ const variants = {
   alignItems: ["responsive"],
   alignSelf: ["responsive"],
   appearance: ["responsive"],
+  aspect: ["responsive", "hover", "focus"],
   backgroundAttachment: ["responsive"],
   backgroundClip: ["responsive"],
   backgroundColor: [

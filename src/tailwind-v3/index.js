@@ -5,6 +5,7 @@ const generateAlignContent = require("./generators/alignContent");
 const generateAlignItems = require("./generators/alignItems");
 const generateAlignSelf = require("./generators/alignSelf");
 const generateAppearance = require("./generators/appearance");
+const generateAspect = require("./generators/aspect");
 const generateBackgroundAttachment = require("./generators/backgroundAttachment");
 const generateBackgroundClip = require("./generators/backgroundClip");
 const generateBackgroundColor = require("./generators/backgroundColor");
@@ -125,6 +126,7 @@ const generateOptions = {
   alignItems: generateAlignItems,
   alignSelf: generateAlignSelf,
   appearance: generateAppearance,
+  aspect: generateAspect,
   backgroundAttachment: generateBackgroundAttachment,
   backgroundClip: generateBackgroundClip,
   backgroundColor: generateBackgroundColor,

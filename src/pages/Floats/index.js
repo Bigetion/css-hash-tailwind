@@ -3,89 +3,89 @@ import React from "react";
 import PanelSection from "components/PanelSection";
 
 export default function Floats() {
-  return (
-    <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
-      <div className="flex items-center">
-        <h1 className="text-3xl">Floats</h1>
-      </div>
-      <PanelSection title="FLoat right">
-        <div className="">
-          <div className="bg-gray-200 p-4">
-            <img
-              alt=""
-              className="float-right ml-4 my-2 h-32"
-              src="https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-            />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              venenatis et lorem sit amet vehicula. Etiam vel nibh nec nisi
-              euismod mollis ultrices condimentum velit. Proin velit libero,
-              interdum ac rhoncus sit amet, pellentesque ac turpis. Quisque ac
-              luctus turpis, vel efficitur ante. Cras convallis risus vel
-              vehicula dapibus. Donec eget neque fringilla, faucibus mi quis,
-              porttitor magna. Cras pellentesque leo est, et luctus neque rutrum
-              eu. Aliquam consequat velit sed sem posuere, vitae sollicitudin mi
-              consequat. Mauris eget ipsum sed dui rutrum fringilla. Donec
-              varius vehicula magna sit amet auctor. Ut congue vehicula lectus
-              in blandit. Vivamus suscipit eleifend turpis, nec sodales sem
-              vulputate a. Curabitur pulvinar libero viverra, efficitur odio eu,
-              finibus justo. Etiam eu vehicula felis.
-            </p>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Float left">
-        <div className="">
-          <div className="bg-gray-200 p-4">
-            <img
-              alt=""
-              className="float-left mr-4 my-2 h-32"
-              src="https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-            />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              venenatis et lorem sit amet vehicula. Etiam vel nibh nec nisi
-              euismod mollis ultrices condimentum velit. Proin velit libero,
-              interdum ac rhoncus sit amet, pellentesque ac turpis. Quisque ac
-              luctus turpis, vel efficitur ante. Cras convallis risus vel
-              vehicula dapibus. Donec eget neque fringilla, faucibus mi quis,
-              porttitor magna. Cras pellentesque leo est, et luctus neque rutrum
-              eu. Aliquam consequat velit sed sem posuere, vitae sollicitudin mi
-              consequat. Mauris eget ipsum sed dui rutrum fringilla. Donec
-              varius vehicula magna sit amet auctor. Ut congue vehicula lectus
-              in blandit. Vivamus suscipit eleifend turpis, nec sodales sem
-              vulputate a. Curabitur pulvinar libero viverra, efficitur odio eu,
-              finibus justo. Etiam eu vehicula felis.
-            </p>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Don't float">
-        <div className="">
-          <div className="bg-gray-200 p-4">
-            <img
-              alt=""
-              className="float-none mb-4 h-32"
-              src="https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-            />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              venenatis et lorem sit amet vehicula. Etiam vel nibh nec nisi
-              euismod mollis ultrices condimentum velit. Proin velit libero,
-              interdum ac rhoncus sit amet, pellentesque ac turpis. Quisque ac
-              luctus turpis, vel efficitur ante. Cras convallis risus vel
-              vehicula dapibus. Donec eget neque fringilla, faucibus mi quis,
-              porttitor magna. Cras pellentesque leo est, et luctus neque rutrum
-              eu. Aliquam consequat velit sed sem posuere, vitae sollicitudin mi
-              consequat. Mauris eget ipsum sed dui rutrum fringilla. Donec
-              varius vehicula magna sit amet auctor. Ut congue vehicula lectus
-              in blandit. Vivamus suscipit eleifend turpis, nec sodales sem
-              vulputate a. Curabitur pulvinar libero viverra, efficitur odio eu,
-              finibus justo. Etiam eu vehicula felis.
-            </p>
-          </div>
-        </div>
-      </PanelSection>
-    </div>
-  );
+	return (
+		<div className='mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12'>
+			<div className='flex items-center'>
+				<h1 className='text-3xl'>Floats</h1>
+			</div>
+			<PanelSection title='Floating elements to the right' paddingless>
+				<div className='mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400'>
+					<div className='float-right ml-6'>
+						<div className='relative aspect aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-20 sm:w-44'>
+							<img
+								alt=''
+								className='object-cover rounded-lg'
+								src='https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80'
+							/>
+							<div className='absolute inset-0 ring-1 ring-inset rounded-lg' />
+						</div>
+					</div>
+					<p className='text-justify'>
+						Maybe we can live without libraries, people like you and me. Maybe.
+						Sure, we're too old to change the world, but what about that kid,
+						sitting down, opening a book, right now, in a branch at the local
+						library and finding drawings of pee-pees and wee-wees on the Cat in
+						the Hat and the Five Chinese Brothers? Doesn't HE deserve better?
+						Look. If you think this is about overdue fines and missing books,
+						you'd better think again. This is about that kid's right to read a
+						book without getting his mind warped! Or: maybe that turns you on,
+						Seinfeld; maybe that's how y'get your kicks. You and your good-time
+						buddies.
+					</p>
+				</div>
+			</PanelSection>
+			<PanelSection title='Floating elements to the left' paddingless>
+				<div className='mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400'>
+					<div className='float-left mr-6'>
+						<div className='aspect aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-20 sm:w-44'>
+							<img
+								alt=''
+								className='object-cover rounded-lg'
+								src='https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80'
+							/>
+							<div className='absolute inset-0 ring-1 ring-inset rounded-lg' />
+						</div>
+					</div>
+					<p className='text-justify'>
+						Maybe we can live without libraries, people like you and me. Maybe.
+						Sure, we're too old to change the world, but what about that kid,
+						sitting down, opening a book, right now, in a branch at the local
+						library and finding drawings of pee-pees and wee-wees on the Cat in
+						the Hat and the Five Chinese Brothers? Doesn't HE deserve better?
+						Look. If you think this is about overdue fines and missing books,
+						you'd better think again. This is about that kid's right to read a
+						book without getting his mind warped! Or: maybe that turns you on,
+						Seinfeld; maybe that's how y'get your kicks. You and your good-time
+						buddies.
+					</p>
+				</div>
+			</PanelSection>
+			<PanelSection title='Disabling a float' paddingless>
+				<div className='mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400'>
+					<div className='inline-block relative mb-4'>
+						<div className='aspect aspect-w-16 aspect-h-9 w-44'>
+							<img
+								alt=''
+								className='object-cover rounded-lg'
+								src='https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80'
+							/>
+							<div className='absolute inset-0 ring-1 ring-inset rounded-lg' />
+						</div>
+					</div>
+					<p className='text-justify'>
+						Maybe we can live without libraries, people like you and me. Maybe.
+						Sure, we're too old to change the world, but what about that kid,
+						sitting down, opening a book, right now, in a branch at the local
+						library and finding drawings of pee-pees and wee-wees on the Cat in
+						the Hat and the Five Chinese Brothers? Doesn't HE deserve better?
+						Look. If you think this is about overdue fines and missing books,
+						you'd better think again. This is about that kid's right to read a
+						book without getting his mind warped! Or: maybe that turns you on,
+						Seinfeld; maybe that's how y'get your kicks. You and your good-time
+						buddies.
+					</p>
+				</div>
+			</PanelSection>
+		</div>
+	);
 }
