@@ -1,19 +1,19 @@
 const { generateCssString } = require("../utils");
 
 module.exports = function generateMaxWidth(configOptions = {}) {
-	const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
-	const prefix = `${globalPrefix}aspect`;
+  const prefix = `${globalPrefix}aspect`;
 
-	const { spacing = {} } = theme;
+  const { spacing = {} } = theme;
 
-	const propertyOptions = Object.assign({}, spacing);
+  const propertyOptions = Object.assign({}, spacing);
 
-	const responsiveCssString = generateCssString(
-		({ pseudoClass, getCssByOptions }) => {
-			const cssString = getCssByOptions(
-				propertyOptions,
-				(key) => `
+  const responsiveCssString = generateCssString(
+    ({ pseudoClass, getCssByOptions }) => {
+      const cssString = getCssByOptions(
+        propertyOptions,
+        (key) => `
           ${pseudoClass(`${prefix}-h-${key}`, variants.aspect)} {
             --aspect-h: ${key};
           }
@@ -23,14 +23,14 @@ module.exports = function generateMaxWidth(configOptions = {}) {
             --aspect-w: ${key};
           }
         `
-			);
-			return cssString;
-		},
-		configOptions,
-		variants.aspect.indexOf("responsive") >= 0
-	);
+      );
+      return cssString;
+    },
+    configOptions,
+    variants.aspect.indexOf("responsive") >= 0
+  );
 
-	return `
+  return `
     ${responsiveCssString}
     .aspect>* {
       position: absolute;

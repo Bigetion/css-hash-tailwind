@@ -7,7 +7,7 @@ module.exports = function generateSkew(configOptions = {}) {
 
   const propertyOptions = Object.assign({}, skew);
   Object.entries(propertyOptions).forEach(([key, value]) => {
-    propertyOptions[`-${key}`] = `-${value}`;
+    propertyOptions[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
   const responsiveCssString = generateCssString(

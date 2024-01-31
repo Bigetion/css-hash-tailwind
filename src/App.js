@@ -13,7 +13,7 @@ import PageLoader from "components/PageLoader";
 generateTailwindCss();
 
 cssHash(
-	() => `
+  () => `
     html {
       line-height: 1.5;
       font-family: Quicksand, sans-serif;
@@ -28,30 +28,30 @@ cssHash(
 );
 
 const loadComponent = (component) =>
-	Loadable({
-		loader: component,
-		loading: PageLoader,
-	});
+  Loadable({
+    loader: component,
+    loading: PageLoader,
+  });
 
 function App() {
-	return (
-		<React.Fragment>
-			<Router>
-				<Layout>
-					<Switch>
-						{routes.map(({ id, path, component, exact }) => (
-							<Route
-								key={id}
-								path={path}
-								component={loadComponent(component)}
-								exact={exact}
-							/>
-						))}
-					</Switch>
-				</Layout>
-			</Router>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <Router>
+        <Layout>
+          <Switch>
+            {routes.map(({ id, path, component, exact }) => (
+              <Route
+                key={id}
+                path={path}
+                component={loadComponent(component)}
+                exact={exact}
+              />
+            ))}
+          </Switch>
+        </Layout>
+      </Router>
+    </React.Fragment>
+  );
 }
 
 export default App;

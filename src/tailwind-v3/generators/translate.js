@@ -7,7 +7,7 @@ module.exports = function generateTranslate(configOptions = {}) {
 
   const propertyOptions = Object.assign({}, spacing, translate);
   Object.entries(propertyOptions).forEach(([key, value]) => {
-    propertyOptions[`-${key}`] = `-${value}`;
+    propertyOptions[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
   const responsiveCssString = generateCssString(

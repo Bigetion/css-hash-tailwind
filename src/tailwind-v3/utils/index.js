@@ -108,7 +108,7 @@ const generateCssString = (
       ["hover", "focus"].forEach((item) => {
         if (pseudoElements.indexOf(`group-${item}`) >= 0) {
           classArray.push(
-            `.${orientationPrefix}group:${item} .group-${item}\\:${
+            `.group:${item} .${orientationPrefix}group-${item}\\:${
               isFunction(value) ? value() : value
             }`
           );

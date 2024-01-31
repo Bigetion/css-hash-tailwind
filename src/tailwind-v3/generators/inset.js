@@ -7,7 +7,7 @@ module.exports = function generateInset(configOptions = {}) {
 
   const propertyOptions = Object.assign({}, spacing, inset);
   Object.entries(spacing).forEach(([key, value]) => {
-    propertyOptions[`-${key}`] = `-${value}`;
+    propertyOptions[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
   const responsiveCssString = generateCssString(

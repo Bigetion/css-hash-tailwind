@@ -9,7 +9,7 @@ module.exports = function generateSpace(configOptions = {}) {
 
   const propertyOptions = Object.assign({}, spacing, space);
   Object.entries(spacing).forEach(([key, value]) => {
-    propertyOptions[`-${key}`] = `-${value}`;
+    propertyOptions[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
   const responsiveCssString = generateCssString(
