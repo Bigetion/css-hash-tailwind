@@ -8,269 +8,296 @@ export default function Position() {
       <div className="flex items-center">
         <h1 className="text-3xl">Position</h1>
       </div>
-      <PanelSection title="Static">
-        <div className="">
-          <div className="relative bg-gray-400 p-4">
-            <div className="static h-32 bg-gray-600 p-4 text-gray-900">
-              <p>Static parent</p>
-              <div className="absolute bottom-0 left-0 bg-gray-800 p-4 text-gray-400">
+      <PanelSection title="Statically positioning elements">
+        <div className="relative text-sm font-medium leading-6">
+          <div className="bg-purple-400 bg-opacity-20 border border-purple-700 border-opacity-10 rounded-lg p-4 dark:bg-sky-900/70 dark:border-0">
+            <div className="static bg-purple-400 bg-opacity-20 border border-purple-700 border-opacity-10 p-4 h-32 dark:bg-sky-400/20 dark:border-0">
+              <p className="text-purple-700 dark:text-sky-200">Static parent</p>
+              <div className="absolute bottom-0 left-0 bg-purple-500 shadow-lg rounded-lg p-4 text-white dark:bg-sky-500">
                 <p>Absolute child</p>
               </div>
             </div>
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="Relative">
-        <div className="">
-          <div className="relative bg-gray-400 p-4">
-            <div className="relative h-32 bg-gray-600 p-4 text-gray-900">
-              <p>Relative parent</p>
-              <div className="absolute bottom-0 left-0 bg-gray-800 p-4 text-gray-400">
+      <PanelSection title="Relatively positioning elements">
+        <div className="relative text-sm font-medium leading-6">
+          <div className="bg-sky-400 bg-opacity-20 border border-sky-700 border-opacity-10 rounded-lg p-4 dark:bg-blue-900/70 dark:border-0">
+            <div className="relative bg-sky-400 bg-opacity-20 border border-sky-700 border-opacity-10 p-4 h-32 dark:bg-blue-400/20 dark:border-0">
+              <p className="text-sky-700 dark:text-white">Relative parent</p>
+              <div className="absolute bottom-0 left-0 bg-sky-500 shadow-lg rounded-lg p-4 text-white dark:bg-blue-500">
                 <p>Absolute child</p>
               </div>
             </div>
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="Absolute">
-        <div className="">
-          <p className="text-sm text-gray-600 mb-1">With static positioning</p>
-          <div className="relative bg-gray-400 px-4 pt-2 pb-4 mb-6">
-            <p className="mb-2 text-gray-700">Relative parent</p>
-            <div className="static bg-gray-500 p-4 text-gray-700">
-              <p className="mb-2">Static parent</p>
-              <div className="static bottom-0 left-0 bg-gray-800 p-4 text-gray-400 inline-block">
-                <p>Static child</p>
-              </div>
-              <div className="bg-gray-400 p-4 text-gray-700 inline-block">
-                <p>Static sibling</p>
-              </div>
-            </div>
-          </div>
-
-          <p className="text-sm text-gray-600 mb-1">
-            With absolute positioning
-          </p>
-          <div className="relative bg-gray-400 px-4 pt-2 pb-4">
-            <p className="mb-2 text-gray-700">Relative parent</p>
-            <div className="static bg-gray-500 p-4 text-gray-700">
-              <p className="mb-2">Static parent</p>
-              <div className="absolute top-0 right-0 bg-gray-800 p-4 text-gray-400 inline-block">
-                <p>Absolute child</p>
-              </div>
-              <div className="bg-gray-400 p-4  text-gray-700 inline-block">
-                <p>Static sibling</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Fixed">
-        <div className="">
-          <div className="rounded-b overflow-hidden max-w-md mx-auto mt-4 mb-4">
-            <div className="rounded-t border border-gray-400 bg-gray-200 flex px-4 py-3">
-              <div className="mr-6">
-                <span className="inline-block rounded-full bg-gray-500 h-3 w-3 mr-1"></span>
-                <span className="inline-block rounded-full bg-gray-500 h-3 w-3 mr-1"></span>
-                <span className="inline-block rounded-full bg-gray-500 h-3 w-3"></span>
-              </div>
-              <div className="flex-1 bg-white border border-gray-400 rounded mr-4"></div>
-            </div>
-            <div className="relative bg-gray-400 h-64">
-              <div className="absolute left-0 right-0 top-0 bg-gray-800 text-gray-400 z-10 px-4 py-3">
-                Fixed child
-                <div className="absolute top-0 bottom-0 right-0 px-4 py-3 bg-gray-500 text-gray-800">
-                  Absolute child
+      <PanelSection title="Absolutely positioning elements">
+        <div className="relative rounded-xl overflow-auto p-8">
+          <div className="space-y-8">
+            <div>
+              <p className="text-sm text-slate-500 font-medium mb-4">
+                With static positioning
+              </p>
+              <div className="relative text-sm font-medium leading-6">
+                <div className="relative bg-indigo-400 bg-opacity-20 border border-indigo-700 border-opacity-10 rounded-lg p-4 dark:bg-indigo-900/80 dark:border-0">
+                  <p className="text-indigo-700 -mt-2 mb-2 dark:text-indigo-200">
+                    Relative parent
+                  </p>
+                  <div className="static bg-indigo-400 bg-opacity-20 border border-indigo-700 border-opacity-10 p-4 h-32 flex flex-col justify-between dark:border-0">
+                    <p className="text-indigo-700 dark:text-indigo-200">
+                      Static parent
+                    </p>
+                    <div className="flex gap-4">
+                      <div className=" bottom-0 left-0 bg-indigo-500 shadow-lg rounded-lg p-4 text-white">
+                        <p>Static child</p>
+                      </div>
+                      <div className="bg-indigo-100 shadow-lg rounded-lg p-4 text-indigo-600">
+                        <p>Static sibling</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="absolute inset-0 overflow-auto pt-16 px-4 pb-4">
-                <p className="mb-4">Scroll me!</p>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer nec odio. Praesent libero. Sed cursus ante dapibus
-                  diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-                  Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed
-                  augue semper porta. Mauris massa. Vestibulum lacinia arcu eget
-                  nulla. Class aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos. Curabitur sodales
-                  ligula in libero.
-                </p>
-                <p className="mb-4">
-                  Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque
-                  nibh. Aenean quam. In scelerisque sem at dolor. Maecenas
-                  mattis. Sed convallis tristique sem. Proin ut ligula vel nunc
-                  egestas porttitor. Morbi lectus risus, iaculis vel, suscipit
-                  quis, luctus non, massa. Fusce ac turpis quis ligula lacinia
-                  aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel,
-                  tincidunt sed, euismod in, nibh. Quisque volutpat condimentum
-                  velit. Class aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos.
-                </p>
-                <p className="mb-4">
-                  Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor
-                  neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla
-                  facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a
-                  tellus consequat imperdiet. Vestibulum sapien. Proin quam.
-                  Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.
-                  Sed lectus. Integer euismod lacus luctus magna.
-                </p>
-                <p className="mb-4">
-                  Quisque cursus, metus vitae pharetra auctor, sem massa mattis
-                  sem, at interdum magna augue eget diam. Vestibulum ante ipsum
-                  primis in faucibus orci luctus et ultrices posuere cubilia
-                  Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed
-                  non quam. In vel mi sit amet augue congue elementum. Morbi in
-                  ipsum sit amet pede facilisis laoreet. Donec lacus nunc,
-                  viverra nec, blandit vel, egestas et, augue. Vestibulum
-                  tincidunt malesuada tellus. Ut ultrices ultrices enim.
-                  Curabitur sit amet mauris. Morbi in dui quis est pulvinar
-                  ullamcorper. Nulla facilisi.
-                </p>
-                <p className="mb-4">
-                  Integer lacinia sollicitudin massa. Cras metus. Sed aliquet
-                  risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis,
-                  venenatis tristique, dignissim in, ultrices sit amet, augue.
-                  Proin sodales libero eget ante. Nulla quam. Aenean laoreet.
-                  Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies
-                  eu, pede. Ut orci risus, accumsan porttitor, cursus quis,
-                  aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at
-                  pede suscipit sodales. Aenean lectus elit, fermentum non,
-                  convallis id, sagittis at, neque.
-                </p>
-                <p className="mb-4">
-                  Nullam mauris orci, aliquet et, iaculis et, viverra vitae,
-                  ligula. Nulla ut felis in purus aliquam imperdiet. Maecenas
-                  aliquet mollis lectus. Vivamus consectetuer risus et tortor.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer nec odio. Praesent libero. Sed cursus ante dapibus
-                  diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-                  Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed
-                  augue semper porta. Mauris massa.
-                </p>
-                <p className="mb-4">
-                  Vestibulum lacinia arcu eget nulla. Class aptent taciti
-                  sociosqu ad litora torquent per conubia nostra, per inceptos
-                  himenaeos. Curabitur sodales ligula in libero. Sed dignissim
-                  lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean
-                  quam. In scelerisque sem at dolor. Maecenas mattis. Sed
-                  convallis tristique sem. Proin ut ligula vel nunc egestas
-                  porttitor. Morbi lectus risus, iaculis vel, suscipit quis,
-                  luctus non, massa. Fusce ac turpis quis ligula lacinia
-                  aliquet.
-                </p>
-                <p>
-                  Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt
-                  sed, euismod in, nibh. Quisque volutpat condimentum velit.
-                  Class aptent taciti sociosqu ad litora torquent per conubia
-                  nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia,
-                  urna non tincidunt mattis, tortor neque adipiscing diam, a
-                  cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.
-                  Suspendisse potenti. Nunc feugiat mi a tellus consequat
-                  imperdiet. Vestibulum sapien. Proin quam.
-                </p>
+            </div>
+            <div>
+              <p className="text-sm text-slate-500 font-medium mb-4">
+                With absolute positioning
+              </p>
+              <div className="relative text-sm font-medium leading-6">
+                <div className="relative bg-indigo-400 bg-opacity-20 border-indigo-700 border-opacity-10 rounded-lg p-4 dark:bg-indigo-900/80 dark:border-0">
+                  <p className="text-indigo-700 -mt-2 mb-2 dark:text-indigo-200">
+                    Relative parent
+                  </p>
+                  <div className="static bg-indigo-400 bg-opacity-20 border-indigo-700 border-opacity-10 p-4 h-32 flex flex-col justify-between dark:border-0">
+                    <p className="text-indigo-700 dark:text-indigo-200">
+                      Static parent
+                    </p>
+                    <div className="flex gap-4">
+                      <div className="absolute top-0 right-0 bg-indigo-500 shadow-lg rounded-lg p-4 text-white">
+                        <p>Absolute child</p>
+                      </div>
+                      <div className="bg-indigo-100 shadow-lg rounded-lg p-4 text-indigo-600">
+                        <p>Static sibling</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </PanelSection>
+      <PanelSection title="Fixed positioning elements">
+        <div className="relative max-w-md mx-auto bg-white dark:bg-slate-800 shadow-lg h-80 overflow-hidden ring-1 ring-slate-900/5">
+          <div className="absolute top-0 left-0 right-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 dark:text-slate-200 bg-slate-50 bg-opacity-90 dark:bg-slate-700/90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10 dark:ring-black/10">
+            Contacts
+          </div>
+          <div className="overflow-auto flex flex-col divide-y h-80 dark:divide-slate-200/5">
+            <div className="flex items-center gap-4 p-4">
+              <img
+                alt=""
+                className="w-12 h-12 rounded-full"
+                src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+              />
+              <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                Andrew Alfred
+              </strong>
+            </div>
+            <div className="flex items-center gap-4 p-4">
+              <img
+                alt=""
+                className="w-12 h-12 rounded-full"
+                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+              />
+              <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                Debra Houston
+              </strong>
+            </div>
+            <div className="flex items-center gap-4 p-4">
+              <img
+                alt=""
+                className="w-12 h-12 rounded-full"
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+              />
+              <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                Jane White
+              </strong>
+            </div>
+            <div className="flex items-center gap-4 p-4">
+              <img
+                alt=""
+                className="w-12 h-12 rounded-full"
+                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+              />
+              <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                Ray Flint
+              </strong>
+            </div>
+            <div className="flex items-center gap-4 p-4">
+              <img
+                alt=""
+                className="w-12 h-12 rounded-full"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+              />
+              <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                Mindy Albrect
+              </strong>
+            </div>
+            <div className="flex items-center gap-4 p-4">
+              <img
+                alt=""
+                className="w-12 h-12 rounded-full"
+                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+              />
+              <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                David Arnold
+              </strong>
             </div>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Sticky">
-        <div className="">
-          <div className="h-64 overflow-auto">
-            <div>
-              <div className="sticky top-0 bg-gray-400 px-2 py-1 font-bold text-gray-700">
-                Sticky Heading 1
-              </div>
-              <p className="py-4">
-                Quisque cursus, metus vitae pharetra auctor, sem massa mattis
-                sem, at interdum magna augue eget diam. Vestibulum ante ipsum
-                primis in faucibus orci luctus et ultrices posuere cubilia
-                Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed
-                non quam. In vel mi sit amet augue congue elementum. Morbi in
-                ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra
-                nec, blandit vel, egestas et, augue. Vestibulum tincidunt
-                malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet
-                mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla
-                facilisi.
-              </p>
+        <div className="relative max-w-md mx-auto bg-white dark:bg-slate-800 shadow-lg h-80 overflow-auto ring-1 ring-slate-900/5 -my-px">
+          <div className="relative">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 dark:text-slate-200 bg-slate-50 bg-opacity-90 dark:bg-slate-700/90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10 dark:ring-black/10">
+              A
             </div>
-            <div>
-              <div className="sticky top-0 bg-gray-400 px-2 py-1 font-bold text-gray-700">
-                Sticky Heading 2
+            <div className="divide-y dark:divide-slate-200/5">
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Andrew Alfred
+                </strong>
               </div>
-              <p className="py-4">
-                Integer lacinia sollicitudin massa. Cras metus. Sed aliquet
-                risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis,
-                venenatis tristique, dignissim in, ultrices sit amet, augue.
-                Proin sodales libero eget ante. Nulla quam. Aenean laoreet.
-                Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu,
-                pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet
-                eget, justo. Sed pretium blandit orci. Ut eu diam at pede
-                suscipit sodales. Aenean lectus elit, fermentum non, convallis
-                id, sagittis at, neque.
-              </p>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Aisha Houston
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Anna White
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Andy Flint
+                </strong>
+              </div>
             </div>
-            <div>
-              <div className="sticky top-0 bg-gray-400 px-2 py-1 font-bold text-gray-700">
-                Sticky Heading 3
-              </div>
-              <p className="py-4">
-                Nullam mauris orci, aliquet et, iaculis et, viverra vitae,
-                ligula. Nulla ut felis in purus aliquam imperdiet. Maecenas
-                aliquet mollis lectus. Vivamus consectetuer risus et tortor.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed
-                nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-                ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-                Mauris massa.
-              </p>
+          </div>
+          <div className="relative">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 dark:text-slate-200 bg-slate-50 bg-opacity-90 dark:bg-slate-700/90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10 dark:ring-black/10">
+              B
             </div>
-            <div>
-              <div className="sticky top-0 bg-gray-400 px-2 py-1 font-bold text-gray-700">
-                Sticky Heading 4
+            <div className="divide-y dark:divide-slate-200/5">
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Bob Alfred
+                </strong>
               </div>
-              <p className="py-4">
-                Quisque cursus, metus vitae pharetra auctor, sem massa mattis
-                sem, at interdum magna augue eget diam. Vestibulum ante ipsum
-                primis in faucibus orci luctus et ultrices posuere cubilia
-                Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed
-                non quam. In vel mi sit amet augue congue elementum. Morbi in
-                ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra
-                nec, blandit vel, egestas et, augue. Vestibulum tincidunt
-                malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet
-                mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla
-                facilisi.
-              </p>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Bianca Houston
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Brianna White
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Bert Flint
+                </strong>
+              </div>
             </div>
-            <div>
-              <div className="sticky top-0 bg-gray-400 px-2 py-1 font-bold text-gray-700">
-                Sticky Heading 5
-              </div>
-              <p className="py-4">
-                Integer lacinia sollicitudin massa. Cras metus. Sed aliquet
-                risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis,
-                venenatis tristique, dignissim in, ultrices sit amet, augue.
-                Proin sodales libero eget ante. Nulla quam. Aenean laoreet.
-                Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu,
-                pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet
-                eget, justo. Sed pretium blandit orci. Ut eu diam at pede
-                suscipit sodales. Aenean lectus elit, fermentum non, convallis
-                id, sagittis at, neque.
-              </p>
+          </div>
+          <div className="relative">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 dark:text-slate-200 bg-slate-50 bg-opacity-90 dark:bg-slate-700/90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10 dark:ring-black/10">
+              C
             </div>
-            <div>
-              <div className="sticky top-0 bg-gray-400 px-2 py-1 font-bold text-gray-700">
-                Sticky Heading 6
+            <div className="divide-y dark:divide-slate-200/5">
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Colton Alfred
+                </strong>
               </div>
-              <p className="py-4">
-                Nullam mauris orci, aliquet et, iaculis et, viverra vitae,
-                ligula. Nulla ut felis in purus aliquam imperdiet. Maecenas
-                aliquet mollis lectus. Vivamus consectetuer risus et tortor.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed
-                nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-                ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-                Mauris massa.
-              </p>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Cynthia Houston
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Cheyenne White
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium dark:text-slate-200">
+                  Charlie Flint
+                </strong>
+              </div>
             </div>
           </div>
         </div>

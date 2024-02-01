@@ -34,7 +34,7 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
             <li key={index}>
               <Link
                 className={classNames(
-                  "text-slate-700 border-l pl-4 -ml-px transition duration-200 ease-in-out relative block",
+                  "text-slate-700 border-l pl-2 -ml-px transition duration-200 ease-in-out relative block",
                   isActive
                     ? "text-sky-500 font-semibold border-sky-500"
                     : "border-transparent hover:border-slate-400"
