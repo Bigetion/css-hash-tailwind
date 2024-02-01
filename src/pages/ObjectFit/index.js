@@ -1,6 +1,6 @@
 import React from "react";
 
-import { grayStripes } from "utils/stripes";
+import stripes from "utils/stripes";
 
 import PanelSection from "components/PanelSection";
 
@@ -21,7 +21,7 @@ export default function ObjectFit() {
       </PanelSection>
       <PanelSection title="Containing an element">
         <div className="relative rounded-lg text-center overflow-hidden w-56 sm:w-96 mx-auto">
-          <div className={`absolute inset-0 opacity-50 ${grayStripes}`} />
+          <div className={`absolute inset-0 opacity-50 ${stripes.gray}`} />
           <img
             alt=""
             className="relative z-10 object-contain h-48 w-full"
@@ -40,7 +40,7 @@ export default function ObjectFit() {
       </PanelSection>
       <PanelSection title="Scaling down if too large">
         <div className="relative rounded-lg text-center overflow-hidden w-56 sm:w-96 mx-auto">
-          <div className={`absolute inset-0 opacity-50 ${grayStripes}`} />
+          <div className={`absolute inset-0 opacity-50 ${stripes.gray}`} />
           <img
             alt=""
             className="relative z-10 object-scale-down h-48 w-full"

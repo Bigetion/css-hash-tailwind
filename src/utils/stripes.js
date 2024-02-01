@@ -27,30 +27,35 @@ export const generateStripedBackground = ({
   );
 };
 
-export const purpleStripes = generateStripedBackground({
-  color1: "rgba(213, 172, 251, 0.3)",
-  color2: "rgba(213, 172, 251, 1)",
-  ratio: 75,
-  angle: 135,
-});
-
-export const fuchsiaStripes = generateStripedBackground({
-  color1: "rgba(231, 155, 245, 0.3)",
-  color2: "rgba(231, 155, 245, 1)",
-  ratio: 75,
-  angle: 135,
-});
-
-export const skyStripes = generateStripedBackground({
-  color1: "rgba(122, 202, 238, 0.3)",
-  color2: "rgba(122, 202, 238, 1)",
-  ratio: 75,
-  angle: 135,
-});
-
-export const grayStripes = generateStripedBackground({
-  color1: "rgb(211, 215, 221, 0.3)",
-  color2: "rgb(211, 215, 221, 1)",
-  ratio: 75,
-  angle: 135,
-});
+export default [
+  { name: "slate", color: "146, 161, 182" },
+  { name: "gray", color: "152, 159, 171" },
+  { name: "zinc", color: "161, 161, 170" },
+  { name: "neutral", color: "163, 163, 163" },
+  { name: "stone", color: "168, 162, 158" },
+  { name: "red", color: "248, 113, 113" },
+  { name: "orange", color: "251, 146, 60" },
+  { name: "amber", color: "251, 191, 36" },
+  { name: "yellow", color: "250, 204, 21" },
+  { name: "lime", color: "163, 230, 53" },
+  { name: "green", color: "74, 222, 128" },
+  { name: "emerald", color: "52, 211, 153" },
+  { name: "teal", color: "45, 212, 191" },
+  { name: "cyan", color: "34, 211, 238" },
+  { name: "sky", color: "56, 189, 248" },
+  { name: "blue", color: "96, 165, 250" },
+  { name: "indigo", color: "129, 140, 248" },
+  { name: "violet", color: "167, 139, 250" },
+  { name: "purple", color: "192, 132, 252" },
+  { name: "fuchsia", color: "232, 121, 249" },
+  { name: "pink", color: "244, 114, 182" },
+  { name: "rose", color: "251, 113, 133" },
+].reduce((currentData, item) => {
+  currentData[item.name] = generateStripedBackground({
+    color1: `rgba(${item.color}, 0.3)`,
+    color2: `rgba(${item.color}, 1)`,
+    ratio: 80,
+    angle: 135,
+  });
+  return currentData;
+}, {});

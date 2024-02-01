@@ -1,6 +1,6 @@
 import React from "react";
 
-import { purpleStripes, fuchsiaStripes, skyStripes } from "utils/stripes";
+import stripes from "utils/stripes";
 
 import PanelSection from "components/PanelSection";
 
@@ -37,7 +37,7 @@ export default function Display() {
       </PanelSection>
       <PanelSection title="Flow Root" paddingless>
         <div className="mx-auto max-w-xs bg-white shadow-xl p-4 text-slate-500 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
-          <div className={`flow-root mb-1 ${purpleStripes}`}>
+          <div className={`flow-root mb-1 ${stripes.purple}`}>
             <div className="my-4 bg-white dark:bg-slate-800">
               Well, let me tell you something, funny boy. Y'know that little
               stamp, the one that says "New York Public Library"? Well that may
@@ -45,7 +45,7 @@ export default function Display() {
               hell of a lot.
             </div>
           </div>
-          <div className={`flow-root mt-1 ${purpleStripes}`}>
+          <div className={`flow-root mt-1 ${stripes.purple}`}>
             <div className="my-4 bg-white dark:bg-slate-800">
               Sure, go ahead, laugh if you want to. I've seen your type before:
               Flashy, making the scene, flaunting convention. Yeah, I know what
@@ -96,7 +96,7 @@ export default function Display() {
       </PanelSection>
       <PanelSection title="Grid">
         <div
-          className={`grid grid-cols-3 grid-rows-3 gap-4 font-mono text-white text-sm font-bold leading-6 rounded-lg text-center ${fuchsiaStripes}`}
+          className={`grid grid-cols-3 grid-rows-3 gap-4 font-mono text-white text-sm font-bold leading-6 rounded-lg text-center ${stripes.fuchsia}`}
         >
           <div className="p-4 bg-fuchsia-500 shadow-lg rounded-lg">01</div>
           <div className="p-4 bg-fuchsia-500 shadow-lg rounded-lg">02</div>
@@ -112,7 +112,7 @@ export default function Display() {
       <PanelSection title="Inline Grid">
         <div className="space-x-3 overflow-x-auto w-full whitespace-nowrap">
           <div
-            className={`inline-grid grid-cols-3 gap-4 font-mono text-white text-sm font-bold leading-6 rounded-lg text-center ${skyStripes}`}
+            className={`inline-grid grid-cols-3 gap-4 font-mono text-white text-sm font-bold leading-6 rounded-lg text-center ${stripes.sky}`}
           >
             <div className="p-4 w-14 h-14 bg-sky-500 shadow-lg rounded-lg">
               01
@@ -134,7 +134,7 @@ export default function Display() {
             </div>
           </div>
           <div
-            className={`inline-grid grid-cols-3 gap-4 font-mono text-white text-sm font-bold leading-6 rounded-lg text-center ${skyStripes}`}
+            className={`inline-grid grid-cols-3 gap-4 font-mono text-white text-sm font-bold leading-6 rounded-lg text-center ${stripes.sky}`}
           >
             <div className="p-4 w-14 h-14 bg-sky-500 shadow-lg rounded-lg">
               01
@@ -159,7 +159,7 @@ export default function Display() {
       </PanelSection>
       <PanelSection title="Contents">
         <div
-          className={`flex gap-4 font-mono text-white text-sm font-bold leading-6 ${purpleStripes} rounded-lg text-center`}
+          className={`flex gap-4 font-mono text-white text-sm font-bold leading-6 ${stripes.purple} rounded-lg text-center`}
         >
           <div className="flex-1 p-4 bg-purple-500 shadow-lg rounded-lg">
             01
@@ -233,7 +233,7 @@ export default function Display() {
       </PanelSection>
       <PanelSection title="Hidden">
         <div
-          className={`flex gap-4 font-mono text-white text-sm font-bold leading-6 ${purpleStripes} rounded-lg text-center`}
+          className={`flex gap-4 font-mono text-white text-sm font-bold leading-6 ${stripes.purple} rounded-lg text-center`}
         >
           <div className="hidden p-4 w-14 h-14 bg-purple-500 shadow-lg rounded-lg">
             01
