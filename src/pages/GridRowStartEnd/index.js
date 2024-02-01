@@ -1,5 +1,7 @@
 import React from "react";
 
+import stripes from "utils/stripes";
+
 import PanelSection from "components/PanelSection";
 
 export default function GridRowStartEnd() {
@@ -9,20 +11,32 @@ export default function GridRowStartEnd() {
         <h1 className="text-3xl">Grid Row Start End</h1>
       </div>
       <PanelSection title="Spanning rows">
-        <div className="bg-white p-8">
-          <div className="h-64 grid grid-rows-3 grid-flow-col gap-4">
-            <div className="row-span-3 bg-gray-500"></div>
-            <div className="row-span-1 col-span-2 bg-gray-300"></div>
-            <div className="row-span-2 col-span-2 bg-gray-300"></div>
+        <div
+          className={`grid grid-rows-3 grid-flow-col gap-4 font-mono text-white text-sm text-center font-bold leading-6 ${stripes.fuchsia} rounded-lg`}
+        >
+          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500 grid place-content-center row-span-3">
+            01
+          </div>
+          <div className="p-4 rounded-lg bg-fuchsia-300 grid place-content-center col-span-2 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+            02
+          </div>
+          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500 grid place-content-center row-span-2 col-span-2">
+            03
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Starting and ending lines">
-        <div className="bg-white p-8">
-          <div className="h-64 grid grid-rows-3 grid-flow-col gap-4">
-            <div className="row-start-2 row-span-2 bg-gray-500"></div>
-            <div className="row-end-3 row-span-2 bg-gray-300"></div>
-            <div className="row-start-1 row-end-4 bg-gray-500"></div>
+        <div
+          className={`grid grid-rows-3 grid-flow-col gap-4 font-mono text-white text-sm text-center font-bold leading-6 ${stripes.sky} rounded-lg`}
+        >
+          <div className="p-4 sm:p-12 rounded-lg shadow-lg bg-blue-500 grid place-content-center row-start-2 row-span-2">
+            01
+          </div>
+          <div className="p-4 sm:p-12 rounded-lg shadow-lg bg-blue-500 grid place-content-center row-end-3 row-span-2">
+            02
+          </div>
+          <div className="p-4 sm:p-12 rounded-lg shadow-lg bg-blue-500 grid place-content-center row-start-1 row-end-4">
+            03
           </div>
         </div>
       </PanelSection>

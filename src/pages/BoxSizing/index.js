@@ -1,6 +1,6 @@
 import React from "react";
 
-import { skyStripes } from "utils/stripes";
+import stripes from "utils/stripes";
 
 import PanelSection from "components/PanelSection";
 
@@ -50,7 +50,7 @@ export default function BoxSizing() {
           </div>
           <div className="bg-white col-start-2 row-start-2 w-32 h-32 ring-1 ring-sky-300 dark:bg-slate-800 dark:ring-sky-400">
             <div
-              className={`box-border relative ${skyStripes} w-32 h-32 p-5 ring ring-sky-300 ring-inset`}
+              className={`box-border relative ${stripes.sky} w-32 h-32 p-5 ring ring-sky-300 ring-inset`}
             >
               <div className="w-full h-full bg-sky-500 ring-1 ring-sky-500" />
             </div>
@@ -95,7 +95,7 @@ export default function BoxSizing() {
           </div>
           <div className="bg-white col-start-2 row-start-2 w-32 h-32">
             <div
-              className={`transform box-content -translate-x-5 -translate-y-5 relative ${skyStripes} w-32 h-32 p-5 ring-4 ring-blue-300 ring-inset dark:ring-blue-500`}
+              className={`transform box-content -translate-x-5 -translate-y-5 relative ${stripes.sky} w-32 h-32 p-5 ring-4 ring-blue-300 ring-inset dark:ring-blue-500`}
             >
               <div className="w-full h-full bg-blue-500 ring-1 ring-blue-500" />
             </div>

@@ -19,7 +19,15 @@ module.exports = function generateGridTemplateColumns(configOptions = {}) {
           }
         `
       );
-      return cssString;
+      const cssString2 = getCssByOptions(
+        { default: "" },
+        () => `
+          ${pseudoClass(`${prefix}-subgrid`, {})} {
+            grid-template-columns: subgrid;
+          }
+        `
+      );
+      return `${cssString} ${cssString2}`;
     },
     configOptions,
     variants.gridTemplateColumns.indexOf("responsive") >= 0

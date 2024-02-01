@@ -32,8 +32,6 @@ const menus = [
       { label: "Grid Template Rows" },
       { label: "Grid Row Start / End" },
       { label: "Grid Auto Flow" },
-      { label: "Grid Auto Columns" },
-      { label: "Grid Auto Rows" },
       { label: "Gap" },
       { label: "Justify Content" },
       { label: "Justify Items" },

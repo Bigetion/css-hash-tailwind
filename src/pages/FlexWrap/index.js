@@ -33,7 +33,7 @@ export default function FlexWrap() {
       </PanelSection>
       <PanelSection title="Wrap Normally">
         <div
-          className={`flex flex-wrap gap-4 font-mono text-white text-sm font-bold leading-6 bg-stripes-indigo rounded-lg`}
+          className={`flex flex-wrap gap-4 font-mono text-white text-sm font-bold leading-6 ${stripes.indigo} rounded-lg`}
         >
           <div className="p-4 w-2/5 rounded-lg flex items-center justify-center bg-indigo-500 shadow-lg">
             01

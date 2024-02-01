@@ -1,5 +1,7 @@
 import React from "react";
 
+import stripes from "utils/stripes";
+
 import PanelSection from "components/PanelSection";
 
 export default function GridAutoFlow() {
@@ -8,36 +10,22 @@ export default function GridAutoFlow() {
       <div className="flex items-center">
         <h1 className="text-3xl">Grid Auto Flow</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="bg-white p-8">
-          <div className="grid grid-cols-3 grid-rows-3 grid-flow-col gap-4">
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              1
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              2
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              3
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              4
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              5
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              6
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              7
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              8
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              9
-            </div>
+      <PanelSection title="Controlling grid element placement">
+        <div
+          className={`grid grid-cols-3 grid-rows-3 grid-flow-row-dense gap-4 font-mono text-white text-sm text-center font-bold leading-6 ${stripes.purple} rounded-lg`}
+        >
+          <div className="p-4 col-span-2 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            01
+          </div>
+          <div className="p-4 col-span-2 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            02
+          </div>
+          <div className="p-4 rounded-lg shadow-lg bg-purple-500">03</div>
+          <div className="p-4 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            04
+          </div>
+          <div className="p-4 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            05
           </div>
         </div>
       </PanelSection>

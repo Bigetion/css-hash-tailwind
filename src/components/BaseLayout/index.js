@@ -23,7 +23,7 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
       <h5 className="mb-3 lg:mb-2 tracking-wide font-semibold text-slate-900">
         {title}
       </h5>
-      <ul className="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
+      <ul className="space-y-5 lg:space-y-3 border-l border-slate-100 dark:border-slate-800">
         {items.map((item, index) => {
           const path = `/${item.label
             .toLowerCase()
@@ -34,7 +34,7 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
             <li key={index}>
               <Link
                 className={classNames(
-                  "text-slate-700 border-l pl-2 -ml-px transition duration-200 ease-in-out relative block",
+                  "text-slate-700 border-l pl-3 -ml-px transition duration-200 ease-in-out relative block",
                   isActive
                     ? "text-sky-500 font-semibold border-sky-500"
                     : "border-transparent hover:border-slate-400"
