@@ -3,44 +3,48 @@ import React from "react";
 import PanelSection from "components/PanelSection";
 
 export default function GridTemplateColumns() {
-  return (
-    <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
-      <div className="flex items-center">
-        <h1 className="text-3xl">Grid Template Columns</h1>
-      </div>
-      <PanelSection title="Usage">
-        <div className="bg-white p-8">
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              1
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              2
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              3
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              4
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              5
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              6
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              7
-            </div>
-            <div className="bg-gray-500 h-12 flex items-center justify-center">
-              8
-            </div>
-            <div className="bg-gray-300 h-12 flex items-center justify-center">
-              9
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-    </div>
-  );
+	return (
+		<div className='mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12'>
+			<div className='flex items-center'>
+				<h1 className='text-3xl'>Grid Template Columns</h1>
+			</div>
+			<PanelSection title='Specifying the columns in a grid'>
+				<div className='grid grid-cols-4 gap-4 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-fuchsia rounded-lg'>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>01</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>02</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>03</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>04</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>05</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>06</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>07</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>08</div>
+					<div className='p-4 rounded-lg shadow-lg bg-fuchsia-500'>09</div>
+				</div>
+			</PanelSection>
+			<PanelSection title="Subgrid">
+				<div className='grid grid-cols-4 gap-4 rounded-lg text-center font-mono text-sm font-bold leading-6 text-white'>
+					<div className='rounded-lg dark:bg-indigo-900 bg-indigo-300 p-4 shadow-lg'>
+						01
+					</div>
+					<div className='rounded-lg dark:bg-indigo-900 bg-indigo-300 p-4 shadow-lg'>
+						02
+					</div>
+					<div className='rounded-lg dark:bg-indigo-900 bg-indigo-300 p-4 shadow-lg'>
+						03
+					</div>
+					<div className='rounded-lg dark:bg-indigo-900 bg-indigo-300 p-4 shadow-lg'>
+						04
+					</div>
+					<div className='rounded-lg dark:bg-indigo-900 bg-indigo-300 p-4 shadow-lg'>
+						05
+					</div>
+					<div className='col-span-3 grid grid-cols-subgrid gap-4'>
+						<div className='rounded-lg bg-stripes-pink p-4' />
+						<div className='rounded-lg bg-pink-500 p-4 shadow-lg'>06</div>
+						<div className='rounded-lg bg-stripes-pink p-4' />
+					</div>
+				</div>
+			</PanelSection>
+		</div>
+	);
 }

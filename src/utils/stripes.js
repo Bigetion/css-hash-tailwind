@@ -53,8 +53,8 @@ export default [
 ].reduce((currentData, item) => {
   currentData[item.name] = generateStripedBackground({
     color1: `rgba(${item.color}, 0.3)`,
-    color2: `rgba(${item.color}, 1)`,
-    ratio: 80,
+    color2: `rgba(${item.color}, 0.8)`,
+    ratio: 75,
     angle: 135,
   });
   return currentData;

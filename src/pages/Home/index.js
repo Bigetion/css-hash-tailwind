@@ -32,7 +32,7 @@ export default function Home() {
                   <tr>
                     <td className="px-6 py-4 whitespace-no-wrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10">
+                        <div className="shrink-0 h-10 w-10">
                           <img
                             className="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
@@ -78,7 +78,7 @@ export default function Home() {
                   <tr>
                     <td className="px-6 py-4 whitespace-no-wrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10">
+                        <div className="shrink-0 h-10 w-10">
                           <img
                             className="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
@@ -124,7 +124,7 @@ export default function Home() {
                   <tr>
                     <td className="px-6 py-4 whitespace-no-wrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10">
+                        <div className="shrink-0 h-10 w-10">
                           <img
                             className="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
@@ -170,7 +170,7 @@ export default function Home() {
                   <tr>
                     <td className="px-6 py-4 whitespace-no-wrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10">
+                        <div className="shrink-0 h-10 w-10">
                           <img
                             className="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
@@ -216,7 +216,7 @@ export default function Home() {
                   <tr>
                     <td className="px-6 py-4 whitespace-no-wrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10">
+                        <div className="shrink-0 h-10 w-10">
                           <img
                             className="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
@@ -262,7 +262,7 @@ export default function Home() {
                   <tr>
                     <td className="px-6 py-4 whitespace-no-wrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10">
+                        <div className="shrink-0 h-10 w-10">
                           <img
                             className="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"

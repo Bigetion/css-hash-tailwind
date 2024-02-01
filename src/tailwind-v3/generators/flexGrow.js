@@ -3,7 +3,7 @@ const { generateCssString } = require("../utils");
 module.exports = function generateFlexGrow(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
-  const prefix = `${globalPrefix}flex-grow`;
+  const prefix = `${globalPrefix}grow`;
 
   const { flexGrow: propertyOptions = {} } = theme;
 

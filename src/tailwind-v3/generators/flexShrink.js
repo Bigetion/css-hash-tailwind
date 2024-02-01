@@ -3,7 +3,7 @@ const { generateCssString } = require("../utils");
 module.exports = function generateFlexShrink(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
-  const prefix = `${globalPrefix}flex-shrink`;
+  const prefix = `${globalPrefix}shrink`;
 
   const { flexShrink: propertyOptions = {} } = theme;
 
