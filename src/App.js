@@ -10,7 +10,13 @@ import routes from "routes";
 import Layout from "components/BaseLayout";
 import PageLoader from "components/PageLoader";
 
-generateTailwindCss();
+generateTailwindCss({
+  variants: {
+    extend: {
+      borderWidth: ["first", "last"],
+    },
+  },
+});
 
 cssHash(
   () => `

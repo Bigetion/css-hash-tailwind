@@ -9,23 +9,21 @@ export default function ZIndex() {
         <h1 className="text-3xl">Z Index</h1>
       </div>
       <PanelSection title="Usage">
-        <div className="">
-          <div className="relative h-32 text-center">
-            <div className="z-40 absolute w-24 h-24 ml-0 mt-0 bg-gray-400 flex justify-center items-center">
-              z-40
-            </div>
-            <div className="z-30 absolute w-24 h-24 ml-2 mt-2 bg-gray-500 flex justify-center items-center">
-              z-30
-            </div>
-            <div className="z-20 absolute w-24 h-24 ml-4 mt-4 bg-gray-600 flex justify-center items-center">
-              z-20
-            </div>
-            <div className="z-10 absolute w-24 h-24 ml-6 mt-6 bg-gray-700 flex justify-center items-center">
-              z-10
-            </div>
-            <div className="z-0 absolute w-24 h-24 ml-8 mt-8 bg-gray-800 flex justify-center items-center">
-              z-0
-            </div>
+        <div className="flex justify-center -space-x-3 font-mono text-white text-sm font-bold leading-6">
+          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-pink-500 shadow-lg ring-2 ring-white z-40 dark:ring-slate-900">
+            05
+          </div>
+          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-pink-500 shadow-lg ring-2 ring-white z-30 dark:ring-slate-900">
+            04
+          </div>
+          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-pink-500 shadow-lg ring-2 ring-white z-20 dark:ring-slate-900">
+            03
+          </div>
+          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-pink-500 shadow-lg ring-2 ring-white z-10 dark:ring-slate-900">
+            02
+          </div>
+          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-pink-500 shadow-lg ring-2 ring-white z-0 dark:ring-slate-900">
+            01
           </div>
         </div>
       </PanelSection>

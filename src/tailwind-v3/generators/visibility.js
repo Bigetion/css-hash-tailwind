@@ -5,6 +5,7 @@ module.exports = function generateVisibility(configOptions = {}) {
 
   const propertyOptions = {
     visible: "visible",
+    collapse: "collapse",
     invisible: "hidden",
   };
 
