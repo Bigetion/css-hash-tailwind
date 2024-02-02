@@ -1,5 +1,7 @@
 import React from "react";
 
+import stripes from "utils/stripes";
+
 import PanelSection from "components/PanelSection";
 
 export default function PlaceSelf() {
@@ -9,122 +11,118 @@ export default function PlaceSelf() {
         <h1 className="text-3xl">Place Self</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="">
-          <div className="grid grid-cols-3 place-items-stretch bg-gray-200 h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="place-self-auto text-gray-800 text-center bg-gray-500 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
+        <div className="grid grid-cols-3 gap-4 place-iems-stretch font-mono text-white text-sm font-bold leading-6">
+          <div className="p-8 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            01
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-indigo-500 shadow-lg palce-self-auto">
+            02
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            03
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            04
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            05
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Start">
-        <div className="">
-          <div className="grid grid-cols-3 place-items-stretch bg-gray-200 h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
+        <div className="grid grid-cols-3 gap-4 place-iems-stretch font-mono text-white text-sm font-bold leading-6">
+          <div className="p-8 rounded-lg flex items-center justify-center bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            01
+          </div>
+          <div className={`${stripes.purple} rounded-lg grid`}>
+            <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-purple-500 shadow-lg place-self-start">
+              02
             </div>
-            <div className="place-self-start text-gray-800 text-center bg-gray-500 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            03
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            04
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            05
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Center">
-        <div className="">
-          <div className="grid grid-cols-3 place-items-stretch bg-gray-200 h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
+        <div className="grid grid-cols-3 gap-4 place-iems-stretch font-mono text-white text-sm font-bold leading-6">
+          <div className="p-8 rounded-lg flex items-center justify-center bg-sky-300 dark:bg-sky-800 dark:text-sky-500">
+            01
+          </div>
+          <div className={`${stripes.sky} rounded-lg grid`}>
+            <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-sky-500 shadow-lg place-self-center">
+              02
             </div>
-            <div className="place-self-center text-gray-800 text-center bg-gray-500 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-sky-300 dark:bg-sky-800 dark:text-sky-500">
+            03
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-sky-300 dark:bg-sky-800 dark:text-sky-500">
+            04
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-sky-300 dark:bg-sky-800 dark:text-sky-500">
+            05
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-sky-300 dark:bg-sky-800 dark:text-sky-500">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="End">
-        <div className="">
-          <div className="grid grid-cols-3 place-items-stretch bg-gray-200 h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
+        <div className="grid grid-cols-3 gap-4 place-iems-stretch font-mono text-white text-sm font-bold leading-6">
+          <div className="p-8 rounded-lg flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            01
+          </div>
+          <div className={`${stripes.pink} rounded-lg grid`}>
+            <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-pink-500 shadow-lg place-self-end">
+              02
             </div>
-            <div className="place-self-end text-gray-800 text-center bg-gray-500 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            03
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            04
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            05
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Stretch">
-        <div className="">
-          <div className="grid grid-cols-3 place-items-stretch bg-gray-200 h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="place-self-stretch text-gray-800 text-center bg-gray-500 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
+        <div className="grid grid-cols-3 gap-4 place-iems-stretch font-mono text-white text-sm font-bold leading-6">
+          <div className="p-8 rounded-lg flex items-center justify-center bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+            01
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-fuchsia-500 shadow-lg place-self-stretch">
+            02
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+            03
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+            04
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+            05
+          </div>
+          <div className="p-8 rounded-lg flex items-center justify-center bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+            06
           </div>
         </div>
       </PanelSection>
