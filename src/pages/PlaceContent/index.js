@@ -1,181 +1,155 @@
 import React from "react";
 
+import stripes from "utils/stripes";
+
 import PanelSection from "components/PanelSection";
 
 export default function PlaceContent() {
-  return (
-    <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
-      <div className="flex items-center">
-        <h1 className="text-3xl">Place Content</h1>
-      </div>
-      <PanelSection title="Start">
-        <div className="">
-          <div className="grid grid-cols-3 bg-gray-200 place-content-start h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Center">
-        <div className="">
-          <div className="grid grid-cols-3 bg-gray-200 place-content-center h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="End">
-        <div className="">
-          <div className="grid grid-cols-3 bg-gray-200 place-content-end h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Space Between">
-        <div className="">
-          <div className="grid grid-cols-3 bg-gray-200 place-content-between h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Space Around">
-        <div className="">
-          <div className="grid grid-cols-3 bg-gray-200 place-content-around h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Space Evenly">
-        <div className="">
-          <div className="grid grid-cols-3 bg-gray-200 place-content-evenly h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-      <PanelSection title="Stretch">
-        <div className="">
-          <div className="grid grid-cols-3 bg-gray-200 place-content-stretch h-48">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              1
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              2
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              3
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              4
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              5
-            </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-              6
-            </div>
-          </div>
-        </div>
-      </PanelSection>
-    </div>
-  );
+	return (
+		<div className='mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12'>
+			<div className='flex items-center'>
+				<h1 className='text-3xl'>Place Content</h1>
+			</div>
+			<PanelSection title='Center'>
+				<div
+					className={`font-mono text-white text-sm font-bold leading-6 ${stripes.sky} rounded-lg`}
+				>
+					<div className='grid place-content-center h-56 gap-4'>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-sky-500'>
+							01
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-sky-500'>
+							02
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-sky-500'>
+							03
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-sky-500'>
+							04
+						</div>
+					</div>
+				</div>
+			</PanelSection>
+			<PanelSection title='Start'>
+				<div
+					className={`font-mono text-white text-sm font-bold leading-6 ${stripes.fuchsia} rounded-lg`}
+				>
+					<div className='grid place-content-start h-56 gap-4'>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500'>
+							01
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500'>
+							02
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500'>
+							03
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500'>
+							04
+						</div>
+					</div>
+				</div>
+			</PanelSection>
+			<PanelSection title='End'>
+				<div
+					class={`font-mono text-white text-sm font-bold leading-6 ${stripes.indigo} rounded-lg`}
+				>
+					<div class='grid place-content-end h-56 gap-4'>
+						<div class='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500'>
+							01
+						</div>
+						<div class='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500'>
+							02
+						</div>
+						<div class='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500'>
+							03
+						</div>
+						<div class='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500'>
+							04
+						</div>
+					</div>
+				</div>
+			</PanelSection>
+			<PanelSection title='Space Between'>
+				<div
+					className={`font-mono text-white text-sm font-bold leading-6 ${stripes.purple} rounded-lg`}
+				>
+					<div className='grid place-content-between h-56 gap-4'>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-purple-500'>
+							01
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-purple-500'>
+							02
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-purple-500'>
+							03
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-purple-500'>
+							04
+						</div>
+					</div>
+				</div>
+			</PanelSection>
+			<PanelSection title='Space Around'>
+				<div
+					className={`font-mono text-white text-sm font-bold leading-6 ${stripes.cyan} rounded-lg`}
+				>
+					<div className='grid place-content-around h-56 gap-x-4'>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500'>
+							01
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500'>
+							02
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500'>
+							03
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500'>
+							04
+						</div>
+					</div>
+				</div>
+			</PanelSection>
+			<PanelSection title='Space Evenly'>
+				<div
+					className={`font-mono text-white text-sm font-bold leading-6 ${stripes.violet} rounded-lg`}
+				>
+					<div className='grid place-content-evenly h-56'>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-violet-500'>
+							01
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-violet-500'>
+							02
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-violet-500'>
+							03
+						</div>
+						<div className='p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-violet-500'>
+							04
+						</div>
+					</div>
+				</div>
+			</PanelSection>
+			<PanelSection title='Stretch'>
+				<div
+					className={`font-mono text-white text-sm font-bold leading-6 ${stripes.pink} rounded-lg`}
+				>
+					<div className='grid grid-cols-2 place-content-stretch h-56 gap-4'>
+						<div className='p-4 flex items-center justify-center shadow-lg rounded-lg bg-pink-500'>
+							01
+						</div>
+						<div className='p-4 flex items-center justify-center shadow-lg rounded-lg bg-pink-500'>
+							02
+						</div>
+						<div className='p-4 flex items-center justify-center shadow-lg rounded-lg bg-pink-500'>
+							03
+						</div>
+						<div className='p-4 flex items-center justify-center shadow-lg rounded-lg bg-pink-500'>
+							04
+						</div>
+					</div>
+				</div>
+			</PanelSection>
+		</div>
+	);
 }
