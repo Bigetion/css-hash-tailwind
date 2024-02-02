@@ -1,5 +1,7 @@
 import React from "react";
 
+import stripes from "utils/stripes";
+
 import PanelSection from "components/PanelSection";
 
 export default function JustifySelf() {
@@ -9,121 +11,135 @@ export default function JustifySelf() {
         <h1 className="text-3xl">Justify Self</h1>
       </div>
       <PanelSection title="Auto">
-        <div className="">
-          <div className="grid grid-cols-3 gap-4 justify-items-stretch h-48">
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              1
-            </div>
-            <div className="justify-self-auto text-gray-800 bg-gray-500 flex justify-center items-center px-4 py-2">
-              2
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              3
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              4
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              5
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              6
-            </div>
+        <div className="grid grid-cols-3 gap-4 justify-items-stretch auto-rows-fr font-mono text-white text-sm font-bold leading-6 text-center">
+          <div className="p-4 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            01
+          </div>
+          <div className="justify-self-auto p-4 rounded-lg bg-purple-500 shadow-lg">
+            02
+          </div>
+          <div className="p-4 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            03
+          </div>
+          <div className="p-4 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            04
+          </div>
+          <div className="p-4 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            05
+          </div>
+          <div className="p-4 rounded-lg bg-purple-300 dark:bg-purple-800 dark:text-purple-400">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Start">
-        <div className="">
-          <div className="grid grid-cols-3 gap-4 justify-items-stretch h-48">
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              1
+        <div className="grid grid-cols-3 gap-4 justify-items-stretch auto-rows-fr font-mono text-white text-sm font-bold leading-6 text-center">
+          <div className="p-4 rounded-lg bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            01
+          </div>
+          <div className={`${stripes.pink} rounded-lg`}>
+            <div className="justify-self-start p-4 w-14 h-14 rounded-lg bg-pink-500 shadow-lg">
+              02
             </div>
-            <div className="justify-self-start text-gray-800 bg-gray-500 flex justify-center items-center px-4 py-2">
-              2
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              3
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              4
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              5
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              6
-            </div>
+          </div>
+          <div className="p-4 rounded-lg bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            03
+          </div>
+          <div className="p-4 rounded-lg bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            04
+          </div>
+          <div className="p-4 rounded-lg bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            05
+          </div>
+          <div className="p-4 rounded-lg bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Center">
-        <div className="">
-          <div className="grid grid-cols-3 gap-4 justify-items-stretch h-48">
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              1
+        <div className="grid grid-cols-3 gap-4 justify-items-stretch auto-rows-fr font-mono text-white text-sm font-bold leading-6 text-center">
+          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            01
+          </div>
+          <div
+            className={`${stripes.indigo} justify-self-center grid w-full rounded-lg`}
+          >
+            <div className="justify-self-center p-4 w-14 h-14 rounded-lg bg-indigo-500 shadow-lg">
+              02
             </div>
-            <div className="justify-self-center text-gray-800 bg-gray-500 flex justify-center items-center px-4 py-2">
-              2
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              3
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              4
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              5
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              6
-            </div>
+          </div>
+          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            03
+          </div>
+          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            04
+          </div>
+          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            05
+          </div>
+          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="End">
-        <div className="">
-          <div className="grid grid-cols-3 gap-4 justify-items-stretch h-48">
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              1
+        <div className="grid grid-cols-3 gap-4 justify-items-stretch auto-rows-fr font-mono text-white text-sm font-bold leading-6 text-center">
+          <div className="p-4 rounded-lg bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+            01
+          </div>
+          <div
+            className={`${stripes.blue} justify-self-end grid w-full rounded-lg`}
+          >
+            <div className="justify-self-end p-4 w-14 h-14 rounded-lg bg-blue-500 shadow-lg">
+              02
             </div>
-            <div className="justify-self-end text-gray-800 bg-gray-500 flex justify-center items-center px-4 py-2">
-              2
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              3
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              4
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              5
-            </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              6
-            </div>
+          </div>
+          <div className="p-4 rounded-lg bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+            03
+          </div>
+          <div className="p-4 rounded-lg bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+            04
+          </div>
+          <div className="p-4 rounded-lg bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+            05
+          </div>
+          <div className="p-4 rounded-lg bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+            06
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Stretch">
-        <div className="">
-          <div className="grid grid-cols-3 gap-4 justify-items-start h-48">
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              1
+        <div className="grid grid-cols-3 gap-4 justify-items-stretch auto-rows-fr font-mono text-white text-sm font-bold leading-6 text-center">
+          <div className={`${stripes.fuchsia} rounded-lg`}>
+            <div className="p-4 w-14 h-14 rounded-lg bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+              01
             </div>
-            <div className="justify-self-stretch text-gray-800 bg-gray-500 flex justify-center items-center px-4 py-2">
-              2
+          </div>
+          <div
+            className={`${stripes.fuchsia} justify-self-stretch grid w-full rounded-lg`}
+          >
+            <div className="justify-self-stretch p-4 rounded-lg bg-fuchsia-500 shadow-lg">
+              02
             </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              3
+          </div>
+          <div className={`${stripes.fuchsia} rounded-lg`}>
+            <div className="p-4 w-14 h-14 rounded-lg bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+              03
             </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              4
+          </div>
+          <div className={`${stripes.fuchsia} rounded-lg`}>
+            <div className="p-4 w-14 h-14 rounded-lg bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+              04
             </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              5
+          </div>
+          <div className={`${stripes.fuchsia} rounded-lg`}>
+            <div className="p-4 w-14 h-14 rounded-lg bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+              05
             </div>
-            <div className="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
-              6
+          </div>
+          <div className={`${stripes.fuchsia} rounded-lg`}>
+            <div className="p-4 w-14 h-14 rounded-lg bg-fuchsia-300 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+              06
             </div>
           </div>
         </div>
