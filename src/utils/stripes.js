@@ -3,7 +3,7 @@ import { cssHash } from "css-hash";
 export const generateStripedBackground = ({
   color1: color1Tmp = "#ffffff",
   color2: color2Tmp = "#fafafa",
-  size = 8,
+  size = 6,
   angle = 45,
   ratio = 50,
   invert,
@@ -50,12 +50,23 @@ export default [
   { name: "fuchsia", color: "232, 121, 249" },
   { name: "pink", color: "244, 114, 182" },
   { name: "rose", color: "251, 113, 133" },
-].reduce((currentData, item) => {
-  currentData[item.name] = generateStripedBackground({
-    color1: `rgba(${item.color}, 0.3)`,
-    color2: `rgba(${item.color}, 0.9)`,
-    ratio: 75,
-    angle: 135,
-  });
-  return currentData;
-}, {});
+].reduce(
+  (currentData, item) => {
+    currentData[item.name] = generateStripedBackground({
+      color1: `rgba(${item.color}, 0.3)`,
+      color2: `rgba(${item.color}, 0.9)`,
+      ratio: 75,
+      angle: 135,
+    });
+    return currentData;
+  },
+  {
+    white: generateStripedBackground({
+      color1: `rgba(255,255,255, 0.2)`,
+      color2: `rgba(255,255,255, 0.9)`,
+      ratio: 75,
+      angle: 135,
+      size: 6,
+    }),
+  }
+);

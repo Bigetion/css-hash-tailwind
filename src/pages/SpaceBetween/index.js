@@ -1,5 +1,7 @@
 import React from "react";
 
+import stripes from "utils/stripes";
+
 import PanelSection from "components/PanelSection";
 
 export default function SpaceBetween() {
@@ -9,46 +11,50 @@ export default function SpaceBetween() {
         <h1 className="text-3xl">Space Between</h1>
       </div>
       <PanelSection title="Add horizontal space between children">
-        <div className="">
-          <div className="flex space-x-4 bg-gray-200">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              1
+        <div className="flex justify-start font-mono text-white text-sm font-bold leading-6">
+          <div className={`flex space-x-4 ${stripes.fuchsia} rounded-lg`}>
+            <div className="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500">
+              01
             </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              2
+            <div className="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500">
+              02
             </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              3
+            <div className="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500">
+              03
             </div>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Add vertical space between children">
-        <div className="">
-          <div className="space-y-6 bg-gray-200">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              1
+        <div className="flex flex-col justify-center text-center w-full font-mono text-white text-sm font-bold leading-6">
+          <div
+            className={`flex flex-col space-y-4 ${stripes.indigo} rounded-lg`}
+          >
+            <div className="p-4 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
+              01
             </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              2
+            <div className="p-4 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
+              02
             </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              3
+            <div className="p-4 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
+              03
             </div>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Reversing children order">
-        <div className="">
-          <div className="flex flex-row-reverse space-x-4 space-x-reverse bg-gray-200">
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              1
+        <div className="flex justify-end font-mono text-white text-sm font-bold leading-6">
+          <div
+            className={`flex flex-row-reverse space-x-4 space-x-reverse ${stripes.cyan} rounded-lg`}
+          >
+            <div className="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500">
+              01
             </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              2
+            <div className="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500">
+              02
             </div>
-            <div className="text-gray-700 text-center bg-gray-400 px-4 py-2">
-              3
+            <div className="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500">
+              03
             </div>
           </div>
         </div>

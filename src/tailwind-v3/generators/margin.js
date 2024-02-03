@@ -43,6 +43,12 @@ module.exports = function generateMargin(configOptions = {}) {
           ${pseudoClass(`${prefix}l-${key}`, variants.margin)} {
             margin-left: ${value};
           }
+          ${pseudoClass(`${prefix}s-${key}`, variants.margin)} {
+            margin-inline-start: ${value};
+          }
+          ${pseudoClass(`${prefix}e-${key}`, variants.margin)} {
+            margin-inline-end: ${value};
+          }
         `;
       });
       return cssString;
