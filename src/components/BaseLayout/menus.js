@@ -61,6 +61,7 @@ const menus = [
       { label: "Height" },
       { label: "Min-Height" },
       { label: "Max-Height" },
+      { label: "Size" },
     ],
   },
   {

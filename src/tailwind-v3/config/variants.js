@@ -111,6 +111,7 @@ const variants = {
   ringWidth: ["responsive", "focus-within", "focus"],
   rotate: ["responsive", "hover", "focus"],
   scale: ["responsive", "hover", "focus"],
+  size: ["responsive"],
   skew: ["responsive", "hover", "focus"],
   space: ["responsive"],
   stroke: ["responsive", "hover", "focus"],

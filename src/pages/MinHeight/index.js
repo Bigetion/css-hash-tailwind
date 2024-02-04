@@ -8,11 +8,41 @@ export default function MinHeight() {
       <div className="flex items-center">
         <h1 className="text-3xl">Min Height</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="">
-          <div className="h-48 p-6 bg-gray-300">
-            <div className="h-24 min-h-full p-6 bg-gray-400 flex items-center justify-center">
-              <span>min-h-full</span>
+      <PanelSection title="Setting the minimum height">
+        <div className="flex justify-center items-end gap-3 sm:gap-4 font-mono font-bold text-xs text-center text-white whitespace-nowrap h-96">
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg min-h-80 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="transform -rotate-90">min-h-80</div>
+            </div>
+          </div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg min-h-64 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="transform -rotate-90">min-h-64</div>
+            </div>
+          </div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg min-h-48 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="transform -rotate-90">min-h-48</div>
+            </div>
+          </div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg min-h-40 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="transform -rotate-90">min-h-40</div>
+            </div>
+          </div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg min-h-32 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="transform -rotate-90">min-h-32</div>
+            </div>
+          </div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg min-h-24 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="transform -rotate-90">min-h-24</div>
+            </div>
+          </div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg min-h-full h-96 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="transform -rotate-90">min-h-full</div>
             </div>
           </div>
         </div>

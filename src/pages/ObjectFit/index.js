@@ -50,7 +50,7 @@ export default function ObjectFit() {
       </PanelSection>
       <PanelSection title="Using an element’s original size">
         <div className="relative rounded-lg text-center overflow-hidden w-56 sm:w-96 mx-auto">
-          <div className="absolute inset-0 opacity-50 bg-stripes-gray" />
+          <div className={`absolute inset-0 opacity-50 ${stripes.gray}`} />
           <img
             alt=""
             className="relative z-10 object-none h-48 w-full"

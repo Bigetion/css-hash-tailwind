@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "size",
+    path: "/size",
+    exact: true,
+    component: () => import("pages/Size"),
+  },
+  {
     id: "flexBasis",
     path: "/flex-basis",
     exact: true,

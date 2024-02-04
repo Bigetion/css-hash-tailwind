@@ -96,6 +96,7 @@ const plugins = {
   ringWidth: true,
   rotate: true,
   scale: true,
+  size: true,
   skew: true,
   space: true,
   stroke: true,

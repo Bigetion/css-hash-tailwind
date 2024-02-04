@@ -97,6 +97,7 @@ const generateRingOpacity = require("./generators/ringOpacity");
 const generateRingWidth = require("./generators/ringWidth");
 const generateRotate = require("./generators/rotate");
 const generateScale = require("./generators/scale");
+const generateSize = require("./generators/size");
 const generateSkew = require("./generators/skew");
 const generateSpace = require("./generators/space");
 const generateStroke = require("./generators/stroke");
@@ -216,6 +217,7 @@ const generateOptions = {
   ringWidth: generateRingWidth,
   rotate: generateRotate,
   scale: generateScale,
+  size: generateSize,
   skew: generateSkew,
   space: generateSpace,
   stroke: generateStroke,
