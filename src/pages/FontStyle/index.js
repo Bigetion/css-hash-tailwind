@@ -9,17 +9,23 @@ export default function FontStyle() {
         <h1 className="text-3xl">Font Style</h1>
       </div>
       <PanelSection title="Non italics">
-        <div className="">
-          <p className="not-italic text-lg text-gray-800">
-            The quick brown fox jumped over the lazy dog.
-          </p>
-        </div>
-      </PanelSection>
-      <PanelSection title="Italics">
-        <div className="">
-          <p className="italic text-lg text-gray-800">
-            The quick brown fox jumped over the lazy dog.
-          </p>
+        <div className="flex flex-col gap-8">
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              italic
+            </span>
+            <p className="italic text-lg font-medium text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              not-italic
+            </span>
+            <p className="not-italic text-lg font-medium text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
         </div>
       </PanelSection>
     </div>

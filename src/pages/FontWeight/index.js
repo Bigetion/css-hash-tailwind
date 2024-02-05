@@ -8,60 +8,46 @@ export default function FontWeight() {
       <div className="flex items-center">
         <h1 className="text-3xl">Font Weight</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="font-sans p-4">
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-hairline</p>
-            <p className="font-hairline text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-thin</p>
-            <p className="font-thin text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-light</p>
-            <p className="font-light text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-normal</p>
-            <p className="font-normal text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-medium</p>
-            <p className="font-medium text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-semibold</p>
-            <p className="font-semibold text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-bold</p>
-            <p className="font-bold text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.font-extrabold</p>
-            <p className="font-extrabold text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
+      <PanelSection title="Setting the font weight">
+        <div className="flex flex-col gap-8">
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              font-light
+            </span>
+            <p className="font-light text-lg text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">.font-black</p>
-            <p className="font-black text-xl text-gray-800">
-              The quick brown fox jumped over the lazy dog.
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              font-normal
+            </span>
+            <p className="font-normal text-lg text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              font-medium
+            </span>
+            <p className="font-medium text-lg text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              font-semibold
+            </span>
+            <p className="font-semibold text-lg text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              font-bold
+            </span>
+            <p className="font-bold text-lg text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
             </p>
           </div>
         </div>
