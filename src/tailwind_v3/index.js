@@ -268,13 +268,13 @@ function generateTailwindCssString(options = {}) {
 
 export default function generateTailwindCss(options = {}) {
   if (typeof window === "object") {
-    const { attributeId = "tailwind-css" } = options;
+    const { id = "tailwind-css" } = options;
     const cssString = generateTailwindCssString(options).replace(/\s\s+/g, " ");
     const head = document.head || document.getElementsByTagName("head")[0];
     const style = document.createElement("style");
     head.appendChild(style);
     style.setAttribute("type", "text/css");
-    style.setAttribute("data-inline-style", attributeId);
+    style.setAttribute("data-inline-style", id);
     if (style.styleSheet) {
       style.styleSheet.cssText = cssString;
     } else {
