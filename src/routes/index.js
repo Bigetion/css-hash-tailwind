@@ -259,10 +259,34 @@ const routes = [
     component: () => import("pages/TextTransform"),
   },
   {
+    id: "textUnderlineOffset",
+    path: "/text-underline-offset",
+    exact: true,
+    component: () => import("pages/TextUnderlineOffset"),
+  },
+  {
     id: "textDecoration",
     path: "/text-decoration",
     exact: true,
     component: () => import("pages/TextDecoration"),
+  },
+  {
+    id: "textDecorationColor",
+    path: "/text-decoration-color",
+    exact: true,
+    component: () => import("pages/TextDecorationColor"),
+  },
+  {
+    id: "textDecorationStyle",
+    path: "/text-decoration-style",
+    exact: true,
+    component: () => import("pages/TextDecorationStyle"),
+  },
+  {
+    id: "textDecorationThickness",
+    path: "/text-decoration-thickness",
+    exact: true,
+    component: () => import("pages/TextDecorationThickness"),
   },
   {
     id: "textOpacity",

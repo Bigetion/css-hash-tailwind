@@ -2,33 +2,53 @@ import React from "react";
 
 import PanelSection from "components/PanelSection";
 
-export default function TextDecoration() {
+export default function TextDecorationColor() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl font-bold">Text Decoration</h1>
+        <h1 className="text-3xl font-bold">Text Decoration Color</h1>
       </div>
-      <PanelSection title="Underline">
-        <div className="">
-          <p className="underline text-lg text-gray-800">
-            The quick brown fox jumped over the lazy dog.
-          </p>
-        </div>
-      </PanelSection>
-      <PanelSection title="Line through">
-        <div className="">
-          <p className="line-through text-lg text-gray-800">
-            The quick brown fox jumped over the lazy dog.
-          </p>
-        </div>
-      </PanelSection>
-      <PanelSection title="No underline">
-        <div className="">
-          <div className="text-center">
-            <a href="/" className="no-underline text-blue-500 text-lg">
-              Link with no underline
-            </a>
+      <PanelSection title="Setting the text decoration">
+        <div className="flex flex-col gap-8">
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              underline
+            </span>
+            <p className="underline text-lg font-medium text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
           </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              overline
+            </span>
+            <p className="overline text-lg font-medium text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              line-through
+            </span>
+            <p className="line-through text-lg font-medium text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              no-underline
+            </span>
+            <p className="text-lg font-medium text-slate-900 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+          </div>
+        </div>
+      </PanelSection>
+      <PanelSection title="Try hover">
+        <div className="text-xl text-center font-medium leading-6 space-y-4">
+          <span className="no-underline hover:underline text-cyan-600 dark:text-cyan-400">
+            Link with no underline
+          </span>
         </div>
       </PanelSection>
     </div>

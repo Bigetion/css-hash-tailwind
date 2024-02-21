@@ -8,42 +8,54 @@ export default function TextAlign() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Text Align</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="">
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.text-left</p>
-            <p className="text-left text-base text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-              fugit, enim molestiae praesentium eveniet, recusandae et error
-              beatae facilis ex harum consequuntur, quia pariatur non. Doloribus
-              illo, ullam blanditiis ab.
+      <PanelSection title="Setting the text alignment">
+        <div className="flex flex-col space-y-8">
+          <div className="mx-auto max-w-xl">
+            <p className="font-medium text-sm text-slate-500 font-mono mb-1 dark:text-slate-400">
+              text-left
+            </p>
+            <p className="text-left bg-white shadow p-8 text-slate-700 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.text-center</p>
-            <p className="text-center text-base text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-              fugit, enim molestiae praesentium eveniet, recusandae et error
-              beatae facilis ex harum consequuntur, quia pariatur non. Doloribus
-              illo, ullam blanditiis ab.
+          <div className="mx-auto max-w-xl">
+            <p className="font-medium text-sm text-slate-500 font-mono mb-1 dark:text-slate-400">
+              text-center
+            </p>
+            <p className="text-center bg-white shadow p-8 text-slate-700 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.text-right</p>
-            <p className="text-right text-base text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-              fugit, enim molestiae praesentium eveniet, recusandae et error
-              beatae facilis ex harum consequuntur, quia pariatur non. Doloribus
-              illo, ullam blanditiis ab.
+          <div className="mx-auto max-w-xl">
+            <p className="font-medium text-sm text-slate-500 font-mono mb-1 dark:text-slate-400">
+              text-right
+            </p>
+            <p className="text-right bg-white shadow p-8 text-slate-700 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.text-justify</p>
-            <p className="text-justify text-base text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-              fugit, enim molestiae praesentium eveniet, recusandae et error
-              beatae facilis ex harum consequuntur, quia pariatur non. Doloribus
-              illo, ullam blanditiis ab.
+          <div className="mx-auto max-w-xl">
+            <p className="font-medium text-sm text-slate-500 font-mono mb-1 dark:text-slate-400">
+              text-justify
+            </p>
+            <p className="text-justify bg-white shadow p-8 text-slate-700 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
         </div>

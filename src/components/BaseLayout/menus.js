@@ -74,7 +74,6 @@ const menus = [
       { label: "Letter Spacing" },
       { label: "Line Clamp" },
       { label: "Line Height" },
-      { label: "List Style Image" },
       { label: "List Style Position" },
       { label: "List Style Type" },
       { label: "Text Align" },

@@ -107,8 +107,12 @@ import generateTableLayout from "./generators/tableLayout";
 import generateTextAlign from "./generators/textAlign";
 import generateTextColor from "./generators/textColor";
 import generateTextDecoration from "./generators/textDecoration";
+import generateTextDecorationColor from "./generators/textDecorationColor";
+import generateTextDecorationStyle from "./generators/textDecorationStyle";
+import generateTextDecorationThickness from "./generators/textDecorationThickness";
 import generateTextOpacity from "./generators/textOpacity";
 import generateTextTransform from "./generators/textTransform";
+import generateTextUnderlineOffset from "./generators/textUnderlineOffset";
 import generateTransform from "./generators/transform";
 import generateTransformOrigin from "./generators/transformOrigin";
 import generateTranslate from "./generators/translate";
@@ -228,8 +232,12 @@ const generateOptions = {
   textAlign: generateTextAlign,
   textColor: generateTextColor,
   textDecoration: generateTextDecoration,
+  textDecorationColor: generateTextDecorationColor,
+  textDecorationStyle: generateTextDecorationStyle,
+  textDecorationThickness: generateTextDecorationThickness,
   textOpacity: generateTextOpacity,
   textTransform: generateTextTransform,
+  textUnderlineOffset: generateTextUnderlineOffset,
   transform: generateTransform,
   transformOrigin: generateTransformOrigin,
   translate: generateTranslate,

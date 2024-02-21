@@ -8,31 +8,28 @@ export default function ListStylePosition() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">List Style Position</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="p-4 px-8">
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.list-inside</p>
-            <ul className="list-disc list-inside bg-gray-200 text-gray-800 py-2">
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-              <li>
-                Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              </li>
-              <li>
-                Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-              </li>
+      <PanelSection title="Setting the list style position">
+        <div className="flex flex-col sm:flex-row gap-8">
+          <div className="relative">
+            <div className="absolute left-8 -top-8 -bottom-8 w-px bg-pink-400 bg-opacity-40" />
+            <p className="font-medium text-sm text-slate-500 font-mono mb-3 ml-8">
+              list-inside
+            </p>
+            <ul className="list-disc list-inside text-slate-700 bg-white rounded-xl shadow-lg ring-1 ring-slate-900 ring-opacity-5 p-4 pl-8">
+              <li>5 cups chopped Porcini mushrooms</li>
+              <li>1/2 cup of olive oil</li>
+              <li>3lb of celery</li>
             </ul>
-            <p></p>
           </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.list-outside</p>
-            <ul className="list-disc list-outside bg-gray-200 text-gray-800 py-2">
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-              <li>
-                Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              </li>
-              <li>
-                Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-              </li>
+          <div className="relative">
+            <div className="absolute left-8 -top-0 sm:-top-8 -bottom-8 w-px bg-pink-400 bg-opacity-40" />
+            <p className="font-medium text-sm text-slate-500 font-mono mb-3 ml-8">
+              list-outside
+            </p>
+            <ul className="list-disc list-outside text-slate-700 bg-white rounded-xl shadow-lg ring-1 ring-slate-900 ring-opacity-5 p-4 pl-8">
+              <li>5 cups chopped Porcini mushrooms</li>
+              <li>1/2 cup of olive oil</li>
+              <li>3lb of celery</li>
             </ul>
           </div>
         </div>

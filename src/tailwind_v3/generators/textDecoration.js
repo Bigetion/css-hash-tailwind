@@ -5,6 +5,7 @@ export default function generateTextDecoration(configOptions = {}) {
 
   const propertyOptions = {
     underline: "underline",
+    overline: "overline",
     "line-through": "line-through",
     "no-underline": "none",
   };

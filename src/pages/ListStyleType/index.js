@@ -8,44 +8,52 @@ export default function ListStyleType() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">List Style Type</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="">
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.list-disc</p>
-            <ul className="list-disc list-inside">
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+      <PanelSection title="Setting the list style type">
+        <div className="flex flex-col gap-8">
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              list-disc
+            </span>
+            <ul className="list-disc list-inside text-slate-900 dark:text-slate-200">
               <li>
-                Assumenda, quia temporibus eveniet a libero incidunt suscipit
+                Now this is a story all about how, my life got flipped-turned
+                upside down
               </li>
+              <li>And I'd like to take a minute just sit right there</li>
               <li>
-                Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+                I'll tell you how I became the prince of a town called Bel-Air{" "}
               </li>
             </ul>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.list-decimal</p>
-            <ol className="list-decimal list-inside">
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-              <li>
-                Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              </li>
-              <li>
-                Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-              </li>
-            </ol>
           </div>
           <div>
-            <p className="text-sm text-gray-600">.list-none (default)</p>
-            <ul className="default">
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              list-decimal
+            </span>
+            <ul className="list-decimal list-inside text-slate-900 dark:text-slate-200">
               <li>
-                Assumenda, quia temporibus eveniet a libero incidunt suscipit
+                Now this is a story all about how, my life got flipped-turned
+                upside down
               </li>
+              <li>And I'd like to take a minute just sit right there</li>
               <li>
-                Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+                I'll tell you how I became the prince of a town called Bel-Air{" "}
               </li>
             </ul>
-            <p></p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              list-none
+            </span>
+            <ul className="list-none list-inside text-slate-900 dark:text-slate-200">
+              <li>
+                Now this is a story all about how, my life got flipped-turned
+                upside down
+              </li>
+              <li>And I'd like to take a minute just sit right there</li>
+              <li>
+                I'll tell you how I became the prince of a town called Bel-Air{" "}
+              </li>
+            </ul>
           </div>
         </div>
       </PanelSection>
