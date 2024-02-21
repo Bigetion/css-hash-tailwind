@@ -833,7 +833,9 @@ const theme = {
     4: "4px",
     8: "8px",
   },
+  textIndent: {},
   textOpacity: {},
+  textOverflow: {},
   textUnderlineOffset: {
     auto: "auto",
     0: "0",
@@ -842,6 +844,7 @@ const theme = {
     4: "4px",
     8: "8px",
   },
+  textWrap: {},
   transformOrigin: {
     center: "center",
     top: "top",

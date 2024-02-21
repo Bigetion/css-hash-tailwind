@@ -265,6 +265,12 @@ const routes = [
     component: () => import("pages/TextUnderlineOffset"),
   },
   {
+    id: "textWrap",
+    path: "/text-wrap",
+    exact: true,
+    component: () => import("pages/TextWrap"),
+  },
+  {
     id: "textDecoration",
     path: "/text-decoration",
     exact: true,
@@ -289,10 +295,22 @@ const routes = [
     component: () => import("pages/TextDecorationThickness"),
   },
   {
+    id: "textIndent",
+    path: "/text-indent",
+    exact: true,
+    component: () => import("pages/TextIndent"),
+  },
+  {
     id: "textOpacity",
     path: "/text-opacity",
     exact: true,
     component: () => import("pages/TextOpacity"),
+  },
+  {
+    id: "textOverflow",
+    path: "/text-overflow",
+    exact: true,
+    component: () => import("pages/TextOverflow"),
   },
   {
     id: "textColor",
