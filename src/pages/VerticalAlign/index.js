@@ -9,68 +9,80 @@ export default function VerticalAlign() {
         <h1 className="text-3xl font-bold">Vertical Align</h1>
       </div>
       <PanelSection title="Baseline">
-        <div className="">
+        <div className="bg-white rounded-lg shadow-lg ring-1 ring-slate-900 ring-opacity-5 py-4 max-w-md mx-auto dark:bg-slate-800 dark:ring-0 dark:highlight-white/5">
           <div className="leading-none relative">
-            <span className="w-1 h-8 inline-block align-baseline bg-blue-300">
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-4"></span>
+            <span className="w-0 h-8 inline-block align-baseline">
+              <span className="absolute top-0 border-slate-200 border-t border-b border-dashed w-full h-8 dark:border-slate-700"></span>
+              <span className="absolute top-0 border-slate-200 border-b border-dashed w-full h-4 dark:border-slate-700"></span>
             </span>
-            <span className="relative z-10">.align-baseline</span>
+            <span className="relative z-10 text-slate-700 font-medium px-4 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </span>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Top">
-        <div className="">
+        <div className="bg-white rounded-lg shadow-lg ring-1 ring-slate-900 ring-opacity-5 py-4 max-w-md mx-auto dark:bg-slate-800 dark:ring-0 dark:highlight-white/5">
           <div className="leading-none relative">
-            <span className="w-1 h-8 inline-block align-top bg-blue-300">
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-4"></span>
+            <span className="w-0 h-8 inline-block align-top">
+              <span className="absolute top-0 border-slate-200 border-t border-b border-dashed w-full h-8 dark:border-slate-700"></span>
+              <span className="absolute top-0 border-slate-200 border-b border-dashed w-full h-4 dark:border-slate-700"></span>
             </span>
-            <span className="relative z-10">.align-top</span>
+            <span className="relative z-10 text-slate-700 font-medium px-4 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </span>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Middle">
-        <div className="">
+        <div className="bg-white rounded-lg shadow-lg ring-1 ring-slate-900 ring-opacity-5 py-4 max-w-md mx-auto dark:bg-slate-800 dark:ring-0 dark:highlight-white/5">
           <div className="leading-none relative">
-            <span className="w-1 h-8 inline-block align-middle bg-blue-300">
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-4"></span>
+            <span className="w-0 h-8 inline-block align-middle">
+              <span className="absolute top-0 border-slate-200 border-t border-b border-dashed w-full h-8 dark:border-slate-700"></span>
+              <span className="absolute top-0 border-slate-200 border-b border-dashed w-full h-4 dark:border-slate-700"></span>
             </span>
-            <span className="relative z-10">.align-middle</span>
+            <span className="relative z-10 text-slate-700 font-medium px-4 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </span>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Bottom">
-        <div className="">
+        <div className="bg-white rounded-lg shadow-lg ring-1 ring-slate-900 ring-opacity-5 py-4 max-w-md mx-auto dark:bg-slate-800 dark:ring-0 dark:highlight-white/5">
           <div className="leading-none relative">
-            <span className="w-1 h-8 inline-block align-bottom bg-blue-300">
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-4"></span>
+            <span className="w-0 h-8 inline-block align-bottom">
+              <span className="absolute top-0 border-slate-200 border-t border-b border-dashed w-full h-8 dark:border-slate-700"></span>
+              <span className="absolute top-0 border-slate-200 border-b border-dashed w-full h-4 dark:border-slate-700"></span>
             </span>
-            <span className="relative z-10">.align-bottom</span>
+            <span className="relative z-10 text-slate-700 font-medium px-4 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </span>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Text top">
-        <div className="">
+        <div className="bg-white rounded-lg shadow-lg ring-1 ring-slate-900 ring-opacity-5 py-4 max-w-md mx-auto dark:bg-slate-800 dark:ring-0 dark:highlight-white/5">
           <div className="leading-none relative">
-            <span className="w-1 h-8 inline-block align-text-top bg-blue-300">
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-4"></span>
+            <span className="w-0 h-8 inline-block align-text-top">
+              <span className="absolute top-0 border-slate-200 border-t border-b border-dashed w-full h-8 dark:border-slate-700"></span>
+              <span className="absolute top-0 border-slate-200 border-b border-dashed w-full h-4 dark:border-slate-700"></span>
             </span>
-            <span className="relative z-10">.align-text-top</span>
+            <span className="relative z-10 text-slate-700 font-medium px-4 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </span>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Text bottom">
-        <div className="">
+        <div className="bg-white rounded-lg shadow-lg ring-1 ring-slate-900 ring-opacity-5 py-4 max-w-md mx-auto dark:bg-slate-800 dark:ring-0 dark:highlight-white/5">
           <div className="leading-none relative">
-            <span className="w-1 h-8 inline-block align-text-bottom bg-blue-300">
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-8"></span>
-              <span className="absolute top-0 border-blue-300 border-t border-b w-full h-4"></span>
+            <span className="w-0 h-8 inline-block align-text-bottom">
+              <span className="absolute top-0 border-slate-200 border-t border-b border-dashed w-full h-8 dark:border-slate-700"></span>
+              <span className="absolute top-0 border-slate-200 border-b border-dashed w-full h-4 dark:border-slate-700"></span>
             </span>
-            <span className="relative z-10">.align-text-bottom</span>
+            <span className="relative z-10 text-slate-700 font-medium px-4 dark:text-slate-200">
+              The quick brown fox jumps over the lazy dog.
+            </span>
           </div>
         </div>
       </PanelSection>

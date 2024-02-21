@@ -12,6 +12,8 @@ export default function generateVerticalAlign(configOptions = {}) {
     "bottom",
     "text-top",
     "text-bottom",
+    "text-sub",
+    "text-super",
   ];
 
   const responsiveCssString = generateCssString(

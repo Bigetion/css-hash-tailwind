@@ -5,16 +5,7 @@ export default function generateTextDecorationStyle(configOptions = {}) {
 
   const prefix = `${globalPrefix}decoration`;
 
-  const propertyOptions = [
-    "solid",
-    "double",
-    "dotted",
-    "dashed",
-    "wavy",
-  ].reduce((c, o) => {
-    c[o] = o;
-    return c;
-  }, {});
+  const propertyOptions = ["solid", "double", "dotted", "dashed", "wavy"];
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

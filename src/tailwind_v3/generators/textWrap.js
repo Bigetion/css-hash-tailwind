@@ -3,13 +3,7 @@ import { generateCssString } from "../utils/index";
 export default function generateTextDecoration(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
-  const propertyOptions = ["wrap", "nowrap", "balance", "pretty"].reduce(
-    (c, o) => {
-      c[o] = o;
-      return c;
-    },
-    {}
-  );
+  const propertyOptions = ["wrap", "nowrap", "balance", "pretty"];
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
