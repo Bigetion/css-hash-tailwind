@@ -65,6 +65,7 @@ const plugins = {
   justifyItems: true,
   justifySelf: true,
   letterSpacing: true,
+  lineClamp: true,
   lineHeight: true,
   listStylePosition: true,
   listStyleType: true,

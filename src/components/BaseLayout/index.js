@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { cssHash, classNames } from "css-hash";
+import { cssHash, classNames } from "css_hash";
 
 import { debounce } from "utils/general";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { cssHash, classNames } from "css-hash";
+import { cssHash, classNames } from "css_hash";
 
 const centerContainerClass = cssHash(
   (className) => `

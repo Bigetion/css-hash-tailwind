@@ -66,6 +66,7 @@ import generateJustifyContent from "./generators/justifyContent";
 import generateJustifyItems from "./generators/justifyItems";
 import generateJustifySelf from "./generators/justifySelf";
 import generateLetterSpacing from "./generators/letterSpacing";
+import generateLineClamp from "./generators/lineClamp";
 import generateLineHeight from "./generators/lineHeight";
 import generateListStylePosition from "./generators/listStylePosition";
 import generateListStyleType from "./generators/listStyleType";
@@ -186,6 +187,7 @@ const generateOptions = {
   justifyItems: generateJustifyItems,
   justifySelf: generateJustifySelf,
   letterSpacing: generateLetterSpacing,
+  lineClamp: generateLineClamp,
   lineHeight: generateLineHeight,
   listStylePosition: generateListStylePosition,
   listStyleType: generateListStyleType,

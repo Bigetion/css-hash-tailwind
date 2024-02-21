@@ -6,7 +6,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "css-hash": "^1.0.2",
     "history": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -23,7 +22,8 @@
     "eject": "react-scripts eject",
     "prettify": "prettier --write",
     "prettify:src": "prettier --write \"src/**/*.js\"",
-    "build:tailwind-css-generator": "rollup --config"
+    "rollup:tailwind-v3": "rollup --config rollup.config.tailwind-v3.mjs",
+    "rollup:css-hash": "rollup --config rollup.config.css-hash.mjs"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +44,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-terser": "^0.4.4",
     "plop": "^2.7.4",
-    "prettier": "2.1.2"
+    "prettier": "2.1.2",
+    "rollup": "^4.12.0"
   }
 }

@@ -319,6 +319,12 @@ const routes = [
     component: () => import("pages/LetterSpacing"),
   },
   {
+    id: "lineClamp",
+    path: "/line-clamp",
+    exact: true,
+    component: () => import("pages/LineClamp"),
+  },
+  {
     id: "fontWeight",
     path: "/font-weight",
     exact: true,

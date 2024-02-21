@@ -11,37 +11,37 @@ export default function LetterSpacing() {
       <PanelSection title="Usage">
         <div className="">
           <div className="mb-6">
-            <p className="text-sm text-gray-600">.tracking-tighter</p>
+            <p className="text-sm text-gray-600 font-mono">.tracking-tighter</p>
             <p className="tracking-tighter text-lg text-gray-800">
               The quick brown fox jumped over the lazy dog.
             </p>
           </div>
           <div className="mb-6">
-            <p className="text-sm text-gray-600">.tracking-tight</p>
+            <p className="text-sm text-gray-600 font-mono">.tracking-tight</p>
             <p className="tracking-tight text-lg text-gray-800">
               The quick brown fox jumped over the lazy dog.
             </p>
           </div>
           <div className="mb-6">
-            <p className="text-sm text-gray-600">.tracking-normal</p>
+            <p className="text-sm text-gray-600 font-mono">.tracking-normal</p>
             <p className="tracking-normal text-lg text-gray-800">
               The quick brown fox jumped over the lazy dog.
             </p>
           </div>
           <div className="mb-6">
-            <p className="text-sm text-gray-600">.tracking-wide</p>
+            <p className="text-sm text-gray-600 font-mono">.tracking-wide</p>
             <p className="tracking-wide text-lg text-gray-800">
               The quick brown fox jumped over the lazy dog.
             </p>
           </div>
           <div className="mb-6">
-            <p className="text-sm text-gray-600">.tracking-wider</p>
+            <p className="text-sm text-gray-600 font-mono">.tracking-wider</p>
             <p className="tracking-wider text-lg text-gray-800">
               The quick brown fox jumped over the lazy dog.
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">.tracking-widest</p>
+            <p className="text-sm text-gray-600 font-mono">.tracking-widest</p>
             <p className="tracking-widest text-lg text-gray-800">
               The quick brown fox jumped over the lazy dog.
             </p>

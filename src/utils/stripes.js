@@ -1,4 +1,4 @@
-import { cssHash } from "css-hash";
+import { cssHash } from "css_hash";
 
 export const generateStripedBackground = ({
   color1: color1Tmp = "#ffffff",

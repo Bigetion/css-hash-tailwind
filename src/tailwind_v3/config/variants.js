@@ -80,6 +80,7 @@ const variants = {
   justifyItems: ["responsive"],
   justifySelf: ["responsive"],
   letterSpacing: ["responsive"],
+  lineClamp: ["responsive"],
   lineHeight: ["responsive"],
   listStylePosition: ["responsive"],
   listStyleType: ["responsive"],

@@ -1,5 +1,5 @@
 import React from "react";
-import { classNames } from "css-hash";
+import { classNames } from "css_hash";
 
 export default function PanelSection({ title, children, paddingless }) {
   return (

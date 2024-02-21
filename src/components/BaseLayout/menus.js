@@ -71,7 +71,6 @@ const menus = [
       { label: "Font Smoothing" },
       { label: "Font Style" },
       { label: "Font Weight" },
-      { label: "Font Variant Numeric" },
       { label: "Letter Spacing" },
       { label: "Line Clamp" },
       { label: "Line Height" },
