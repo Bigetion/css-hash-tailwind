@@ -6,7 +6,7 @@ export default function BoxShadow() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Box Shadow</h1>
+        <h1 className="text-3xl font-bold">Box Shadow</h1>
       </div>
       <PanelSection title="Outer shadow">
         <div className="bg-gray-100 lg:flex justify-around items-center text-sm p-4 py-8">

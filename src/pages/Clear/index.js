@@ -6,7 +6,7 @@ export default function Clear() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Clear</h1>
+        <h1 className="text-3xl font-bold">Clear</h1>
       </div>
       <PanelSection title="Clearing left-floated elements" paddingless>
         <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7 dark:bg-slate-800 dark:text-slate-400">

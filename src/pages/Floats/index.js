@@ -6,7 +6,7 @@ export default function Floats() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Floats</h1>
+        <h1 className="text-3xl font-bold">Floats</h1>
       </div>
       <PanelSection title="Floating elements to the right" paddingless>
         <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400">

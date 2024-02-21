@@ -8,7 +8,7 @@ export default function GridColumnStartEnd() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Grid Column Start End</h1>
+        <h1 className="text-3xl font-bold">Grid Column Start End</h1>
       </div>
       <PanelSection title="Spanning columns">
         <div className="grid grid-cols-3 gap-4 font-mono text-white text-sm text-center font-bold leading-6">

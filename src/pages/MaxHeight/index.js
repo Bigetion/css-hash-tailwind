@@ -8,7 +8,7 @@ export default function MaxHeight() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Max Height</h1>
+        <h1 className="text-3xl font-bold">Max Height</h1>
       </div>
       <PanelSection title="Setting the maximum height">
         <div className="flex justify-center items-end gap-3 sm:gap-4 font-mono font-bold text-xs text-center text-white whitespace-nowrap h-96">

@@ -6,7 +6,7 @@ export default function Fill() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Fill</h1>
+        <h1 className="text-3xl font-bold">Fill</h1>
       </div>
       <PanelSection title="Usage">
         <div class="relative rounded-xl overflow-auto p-8">

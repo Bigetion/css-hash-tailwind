@@ -8,7 +8,7 @@ export default function BoxSizing() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Box Sizing</h1>
+        <h1 className="text-3xl font-bold">Box Sizing</h1>
       </div>
       <PanelSection title="Include borders and padding" paddingless>
         <div className="relative grid grid-cols-3 grid-rows-3 gap-px bg-slate-700/10 font-mono text-sm font-bold leading-6 max-w-sm mx-auto w-full shadow-xl dark:bg-slate-700">

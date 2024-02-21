@@ -6,7 +6,7 @@ export default function Overflow() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Overflow</h1>
+        <h1 className="text-3xl font-bold">Overflow</h1>
       </div>
       <PanelSection title="Showing content that overflows">
         <div className="overflow-visible relative max-w-sm mx-auto bg-white shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5">

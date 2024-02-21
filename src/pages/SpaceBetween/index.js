@@ -8,7 +8,7 @@ export default function SpaceBetween() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Space Between</h1>
+        <h1 className="text-3xl font-bold">Space Between</h1>
       </div>
       <PanelSection title="Add horizontal space between children">
         <div className="flex justify-start font-mono text-white text-sm font-bold leading-6">

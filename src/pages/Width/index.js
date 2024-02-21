@@ -6,7 +6,7 @@ export default function Width() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Width</h1>
+        <h1 className="text-3xl font-bold">Width</h1>
       </div>
       <PanelSection title="Fixed widths">
         <div className="flex justify-center">

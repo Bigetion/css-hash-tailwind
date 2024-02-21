@@ -8,7 +8,7 @@ export default function TopRightBottomLeft() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Top Right Bottom Left</h1>
+        <h1 className="text-3xl font-bold">Top Right Bottom Left</h1>
       </div>
       <PanelSection title="Placing a positioned element">
         <div className="grid grid-cols-3 grid-rows-3 place-items-center gap-4 font-mono text-white text-sm font-bold leading-6">

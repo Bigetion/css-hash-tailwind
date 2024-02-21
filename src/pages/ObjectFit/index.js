@@ -8,7 +8,7 @@ export default function ObjectFit() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Object Fit</h1>
+        <h1 className="text-3xl font-bold">Object Fit</h1>
       </div>
       <PanelSection title="Resizing to cover a container">
         <div className="text-center rounded-lg overflow-hidden w-56 sm:w-96 mx-auto">

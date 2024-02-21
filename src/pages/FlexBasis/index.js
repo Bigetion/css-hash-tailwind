@@ -6,7 +6,7 @@ export default function FlexBasis() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Flex Basis</h1>
+        <h1 className="text-3xl font-bold">Flex Basis</h1>
       </div>
       <PanelSection title="Setting the flex basis">
         <div className="flex flex-row space-x-4 font-mono text-white text-sm font-bold leading-6">

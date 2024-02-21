@@ -8,7 +8,7 @@ export default function PlaceSelf() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Place Self</h1>
+        <h1 className="text-3xl font-bold">Place Self</h1>
       </div>
       <PanelSection title="Auto">
         <div className="grid grid-cols-3 gap-4 place-iems-stretch font-mono text-white text-sm font-bold leading-6">

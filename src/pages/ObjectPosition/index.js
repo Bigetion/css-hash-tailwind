@@ -6,7 +6,7 @@ export default function ObjectPosition() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Object Position</h1>
+        <h1 className="text-3xl font-bold">Object Position</h1>
       </div>
       <PanelSection title="Positioning a replaced element" paddingless>
         <div className="overflow-x-scroll overflow-y-hidden snap-x scroll-p-4 flex sm:grid sm:grid-cols-3 sm:gap-16 p-8 items-end pt-16">

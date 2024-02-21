@@ -6,7 +6,7 @@ export default function BoxDecorationBreak() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Box Decoration Break</h1>
+        <h1 className="text-3xl font-bold">Box Decoration Break</h1>
       </div>
       <PanelSection title="">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-10 font-bold mb-3">

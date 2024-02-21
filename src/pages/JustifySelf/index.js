@@ -8,7 +8,7 @@ export default function JustifySelf() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Justify Self</h1>
+        <h1 className="text-3xl font-bold">Justify Self</h1>
       </div>
       <PanelSection title="Auto">
         <div className="grid grid-cols-3 gap-4 justify-items-stretch auto-rows-fr font-mono text-white text-sm font-bold leading-6 text-center">

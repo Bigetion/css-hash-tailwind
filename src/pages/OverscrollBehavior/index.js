@@ -6,7 +6,7 @@ export default function OverscrollBehavior() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Overscroll Behavior</h1>
+        <h1 className="text-3xl font-bold">Overscroll Behavior</h1>
       </div>
       <PanelSection title="Preventing parent overscrolling" paddingless>
         <div className="mx-4 overscroll-contain overflow-auto h-48 bg-white dark:bg-slate-800 shadow-xl p-8 space-y-4 text-slate-700 dark:text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">

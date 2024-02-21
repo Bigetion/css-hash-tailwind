@@ -8,7 +8,7 @@ export default function JustifyItems() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Justify Items</h1>
+        <h1 className="text-3xl font-bold">Justify Items</h1>
       </div>
       <PanelSection title="Start">
         <div className="grid grid-cols-3 gap-4 font-mono text-white text-sm font-bold leading-6">

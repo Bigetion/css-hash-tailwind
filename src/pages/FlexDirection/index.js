@@ -6,7 +6,7 @@ export default function FlexDirection() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Flex Direction</h1>
+        <h1 className="text-3xl font-bold">Flex Direction</h1>
       </div>
       <PanelSection title="Row">
         <div className="flex flex-row gap-x-4 font-mono text-white text-sm font-bold leading-6">

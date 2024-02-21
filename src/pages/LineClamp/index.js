@@ -6,7 +6,7 @@ export default function LineClamp() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Line Clamp</h1>
+        <h1 className="text-3xl font-bold">Line Clamp</h1>
       </div>
       <PanelSection title="Truncating multi-line text" paddingless>
         <article className="mx-auto max-w-sm bg-white p-8 text-sm leading-6 text-slate-700 shadow-xl dark:bg-slate-800 dark:text-slate-400 sm:text-base sm:leading-7">
@@ -31,7 +31,7 @@ export default function LineClamp() {
           </p>
           <div className="mt-4 flex gap-x-2.5 text-sm font-semibold leading-6 text-slate-900 dark:text-slate-200">
             <img
-              className="h-6 w-6 flex-none rounded-full bg-slate-50 dark:bg-slate-900 mr-3"
+              className="h-6 w-6 flex-none rounded-full bg-slate-50 dark:bg-slate-900"
               src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
             />

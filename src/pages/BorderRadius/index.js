@@ -6,7 +6,7 @@ export default function BorderRadius() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Border Radius</h1>
+        <h1 className="text-3xl font-bold">Border Radius</h1>
       </div>
       <PanelSection title="Rounded corners">
         <div className="flex justify-around text-sm p-4">

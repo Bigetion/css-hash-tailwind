@@ -6,7 +6,7 @@ export default function Order() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Order</h1>
+        <h1 className="text-3xl font-bold">Order</h1>
       </div>
       <PanelSection title="Ordering flex and grid items">
         <div className="flex justify-between font-mono text-white text-sm font-bold leading-6">

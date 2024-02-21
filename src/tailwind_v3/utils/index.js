@@ -151,7 +151,7 @@ const generateCssString = (
     }
     let str = "";
     Object.entries(nOptions).forEach(([key, value]) => {
-      str += getStr(key.replace("/", `\\/`), value);
+      str += getStr(key.replace("/", `\\/`).replace(".", "\\."), value);
     });
     return str;
   };

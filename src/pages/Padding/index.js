@@ -8,7 +8,7 @@ export default function Padding() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Padding</h1>
+        <h1 className="text-3xl font-bold">Padding</h1>
       </div>
       <PanelSection title="Add padding to a single side">
         <div className="flex flex-wrap items-start justify-center font-mono text-white text-sm font-bold leading-6 -mx-5">

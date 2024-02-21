@@ -6,7 +6,7 @@ export default function Translate() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Translate</h1>
+        <h1 className="text-3xl font-bold">Translate</h1>
       </div>
       <PanelSection title="Usage">
         <div className="bg-white lg:flex justify-around items-center text-sm p-4 py-12">

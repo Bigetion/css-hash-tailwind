@@ -6,138 +6,84 @@ export default function LineHeight() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl">Line Height</h1>
+        <h1 className="text-3xl font-bold">Line Height</h1>
       </div>
       <PanelSection title="Relative line-heights">
-        <div className="">
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-none</p>
-            <p className="leading-none text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-tight</p>
-            <p className="leading-tight text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-snug</p>
-            <p className="leading-snug text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-normal</p>
-            <p className="leading-normal text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-relaxed</p>
-            <p className="leading-relaxed text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
+        <div className="flex flex-col gap-8">
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              leading-normal
+            </span>
+            <p className="leading-normal text-slate-900 dark:text-slate-200">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">.leading-loose</p>
-            <p className="leading-loose text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              leading-relaxed
+            </span>
+            <p className="leading-relaxed text-slate-900 dark:text-slate-200">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              leading-loose
+            </span>
+            <p className="leading-loose text-slate-900 dark:text-slate-200">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Fixed line-heights">
-        <div className="">
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-3</p>
-            <p className="leading-3 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-4</p>
-            <p className="leading-4 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-5</p>
-            <p className="leading-5 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-6</p>
-            <p className="leading-6 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-7</p>
-            <p className="leading-7 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-8</p>
-            <p className="leading-8 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
-            </p>
-          </div>
-          <div className="mb-6">
-            <p className="text-sm text-gray-600">.leading-9</p>
-            <p className="leading-9 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
+        <div className="flex flex-col gap-8">
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              leading-6
+            </span>
+            <p className="leading-6 text-slate-900 dark:text-slate-200">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">.leading-10</p>
-            <p className="leading-10 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-              laborum, rerum accusantium modi quidem, ipsam illum quis sed
-              voluptatum quae eum fugit earum.
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              leading-7
+            </span>
+            <p className="leading-7 text-slate-900 dark:text-slate-200">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
+            </p>
+          </div>
+          <div>
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+              leading-8
+            </span>
+            <p className="leading-8 text-slate-900 dark:text-slate-200">
+              So I started to walk into the water. I won't lie to you boys, I
+              was terrified. But I pressed on, and as I made my way past the
+              breakers a strange calm came over me. I don't know if it was
+              divine intervention or the kinship of all living things but I tell
+              you Jerry at that moment, I <em>was</em> a marine biologist.
             </p>
           </div>
         </div>
