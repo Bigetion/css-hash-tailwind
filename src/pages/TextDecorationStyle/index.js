@@ -9,9 +9,9 @@ export default function TextDecorationStyle() {
         <h1 className="text-3xl font-bold">Text Decoration Style</h1>
       </div>
       <PanelSection title="Setting the text decoration style">
-        <div className="flex flex-col gap-8 text-slate-900 dark:text-slate-200">
+        <div className="flex flex-col gap-8 text-slate-900">
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-solid
             </div>
             <p className="text-lg font-medium underline decoration-solid">
@@ -19,7 +19,7 @@ export default function TextDecorationStyle() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-double
             </div>
             <p className="text-lg font-medium underline decoration-double">
@@ -27,7 +27,7 @@ export default function TextDecorationStyle() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-dotted
             </div>
             <p className="text-lg font-medium underline decoration-dotted">
@@ -35,7 +35,7 @@ export default function TextDecorationStyle() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-dashed
             </div>
             <p className="text-lg font-medium underline decoration-dashed">
@@ -43,7 +43,7 @@ export default function TextDecorationStyle() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-wavy
             </div>
             <p className="text-lg font-medium underline decoration-wavy">

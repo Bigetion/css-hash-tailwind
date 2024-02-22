@@ -9,7 +9,7 @@ export default function Floats() {
         <h1 className="text-3xl font-bold">Floats</h1>
       </div>
       <PanelSection title="Floating elements to the right" paddingless>
-        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700">
           <div className="float-right ml-6">
             <div className="relative aspect aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-20 sm:w-44">
               <img
@@ -17,7 +17,7 @@ export default function Floats() {
                 className="object-cover rounded-lg"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-lg" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-lg" />
             </div>
           </div>
           <p className="text-justify">
@@ -35,7 +35,7 @@ export default function Floats() {
         </div>
       </PanelSection>
       <PanelSection title="Floating elements to the left" paddingless>
-        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700">
           <div className="float-left mr-6">
             <div className="aspect aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-20 sm:w-44">
               <img
@@ -43,7 +43,7 @@ export default function Floats() {
                 className="object-cover rounded-lg"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-lg" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-lg" />
             </div>
           </div>
           <p className="text-justify">
@@ -61,7 +61,7 @@ export default function Floats() {
         </div>
       </PanelSection>
       <PanelSection title="Disabling a float" paddingless>
-        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700">
           <div className="inline-block relative mb-4">
             <div className="aspect aspect-w-16 aspect-h-9 w-44">
               <img
@@ -69,7 +69,7 @@ export default function Floats() {
                 className="object-cover rounded-lg"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-lg" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-lg" />
             </div>
           </div>
           <p className="text-justify">

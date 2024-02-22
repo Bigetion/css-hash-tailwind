@@ -17,7 +17,7 @@ export default function GridRowStartEnd() {
           <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500 grid place-content-center row-span-3">
             01
           </div>
-          <div className="p-4 rounded-lg bg-fuchsia-300 grid place-content-center col-span-2 dark:bg-fuchsia-800 dark:text-fuchsia-400">
+          <div className="p-4 rounded-lg bg-fuchsia-300 grid place-content-center col-span-2">
             02
           </div>
           <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500 grid place-content-center row-span-2 col-span-2">

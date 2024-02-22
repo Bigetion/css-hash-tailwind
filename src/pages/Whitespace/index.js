@@ -9,7 +9,7 @@ export default function Whitespace() {
         <h1 className="text-3xl font-bold">Whitespace</h1>
       </div>
       <PanelSection title="Normal" paddingless>
-        <div className="bg-white p-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="bg-white p-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7">
           <div className="whitespace-normal">
             Hey everyone! It's almost 2022 and we still don't know if there is
             aliens living among us, or do we? Maybe the person writing this is
@@ -18,7 +18,7 @@ export default function Whitespace() {
         </div>
       </PanelSection>
       <PanelSection title="No Wrap" paddingless>
-        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7">
           <div className="whitespace-nowrap">
             Hey everyone! It's almost 2022 and we still don't know if there is
             aliens living among us, or do we? Maybe the person writing this is
@@ -27,7 +27,7 @@ export default function Whitespace() {
         </div>
       </PanelSection>
       <PanelSection title="Pre" paddingless>
-        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7">
           <div className="whitespace-pre">
             Hey everyone! It's almost 2022 and we still don't know if there is
             aliens living among us, or do we? Maybe the person writing this is
@@ -36,7 +36,7 @@ export default function Whitespace() {
         </div>
       </PanelSection>
       <PanelSection title="Pre Line" paddingless>
-        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7">
           <div className="whitespace-pre-line">
             Hey everyone! It's almost 2022 and we still don't know if there is
             aliens living among us, or do we? Maybe the person writing this is
@@ -45,7 +45,7 @@ export default function Whitespace() {
         </div>
       </PanelSection>
       <PanelSection title="Pre Wrap" paddingless>
-        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7">
           <div className="whitespace-pre-wrap">
             Hey everyone! It's almost 2022 and we still don't know if there is
             aliens living among us, or do we? Maybe the person writing this is
@@ -54,7 +54,7 @@ export default function Whitespace() {
         </div>
       </PanelSection>
       <PanelSection title="Break Spaces" paddingless>
-        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7">
           <div className="whitespace-break-spaces">
             Hey everyone! It's almost 2022 and we still don't know if there is
             aliens living among us, or do we? Maybe the person writing this is

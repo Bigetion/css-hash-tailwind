@@ -14,13 +14,13 @@ export default function FlexGrow() {
         <div
           className={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.indigo} rounded-lg`}
         >
-          <div className="w-14 h-14 flex-none rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+          <div className="w-14 h-14 flex-none rounded-lg flex items-center justify-center bg-indigo-300">
             01
           </div>
           <div className="p-4 grow rounded-lg flex items-center justify-center bg-indigo-500 shadow-lg">
             02
           </div>
-          <div className="p-4 w-14 h-14 flex-none rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+          <div className="p-4 w-14 h-14 flex-none rounded-lg flex items-center justify-center bg-indigo-300">
             03
           </div>
         </div>
@@ -29,13 +29,13 @@ export default function FlexGrow() {
         <div
           className={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.pink} rounded-lg`}
         >
-          <div className="p-4 grow rounded-lg flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+          <div className="p-4 grow rounded-lg flex items-center justify-center bg-pink-300">
             01
           </div>
           <div className="shrink-0 w-14 h-14 grow-0 rounded-lg flex items-center justify-center bg-pink-500 shadow-lg">
             02
           </div>
-          <div className="p-4 grow rounded-lg hidden md:flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+          <div className="p-4 grow rounded-lg hidden md:flex items-center justify-center bg-pink-300">
             03
           </div>
         </div>

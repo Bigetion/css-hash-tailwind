@@ -9,7 +9,7 @@ export default function OverscrollBehavior() {
         <h1 className="text-3xl font-bold">Overscroll Behavior</h1>
       </div>
       <PanelSection title="Preventing parent overscrolling" paddingless>
-        <div className="mx-4 overscroll-contain overflow-auto h-48 bg-white dark:bg-slate-800 shadow-xl p-8 space-y-4 text-slate-700 dark:text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
+        <div className="mx-4 overscroll-contain overflow-auto h-48 bg-white shadow-xl p-8 space-y-4 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7">
           <p>
             Well, let me tell you something, funny boy. Y'know that little
             stamp, the one that says "New York Public Library"? Well that may
@@ -32,7 +32,7 @@ export default function OverscrollBehavior() {
         </div>
       </PanelSection>
       <PanelSection title="Preventing overscroll bouncing" paddingless>
-        <div className="mx-4 overscroll-none overflow-auto h-48 bg-white dark:bg-slate-800 shadow-xl p-8 space-y-4 text-slate-700 dark:text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
+        <div className="mx-4 overscroll-none overflow-auto h-48 bg-white shadow-xl p-8 space-y-4 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7">
           <p>
             Well, let me tell you something, funny boy. Y'know that little
             stamp, the one that says "New York Public Library"? Well that may
@@ -55,7 +55,7 @@ export default function OverscrollBehavior() {
         </div>
       </PanelSection>
       <PanelSection title="Using the default overscroll behavior" paddingless>
-        <div className="mx-4 overscroll-auto overflow-auto h-48 bg-white dark:bg-slate-800 shadow-xl p-8 space-y-4 text-slate-700 dark:text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
+        <div className="mx-4 overscroll-auto overflow-auto h-48 bg-white shadow-xl p-8 space-y-4 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7">
           <p>
             Well, let me tell you something, funny boy. Y'know that little
             stamp, the one that says "New York Public Library"? Well that may

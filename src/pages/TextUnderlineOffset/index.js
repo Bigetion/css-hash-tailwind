@@ -9,9 +9,9 @@ export default function TextUnderlineOffset() {
         <h1 className="text-3xl font-bold">Text Underline Offset</h1>
       </div>
       <PanelSection title="Setting the underline offset">
-        <div className="flex flex-col gap-8 text-slate-900 dark:text-slate-200">
+        <div className="flex flex-col gap-8 text-slate-900">
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               underline-offset-1
             </div>
             <p className="text-lg font-medium underline underline-offset-1">
@@ -19,7 +19,7 @@ export default function TextUnderlineOffset() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               underline-offset-2
             </div>
             <p className="text-lg font-medium underline underline-offset-2">
@@ -27,7 +27,7 @@ export default function TextUnderlineOffset() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               underline-offset-4
             </div>
             <p className="text-lg font-medium underline underline-offset-4">
@@ -35,7 +35,7 @@ export default function TextUnderlineOffset() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               underline-offset-8
             </div>
             <p className="text-lg font-medium underline underline-offset-8">

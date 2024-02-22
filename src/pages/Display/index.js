@@ -11,16 +11,16 @@ export default function Display() {
         <h1 className="text-3xl font-bold">Display</h1>
       </div>
       <PanelSection title="Block & Inline" paddingless>
-        <div className="mx-auto max-w-xs bg-white shadow-xl p-4 text-slate-500 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-auto max-w-xs bg-white shadow-xl p-4 text-slate-500 text-sm leading-6 sm:text-base sm:leading-7">
           When controlling the flow of text, using the CSS property{" "}
-          <span className="inline bg-sky-100 font-bold text-sm text-slate-900 font-mono rounded dark:bg-slate-600 dark:text-slate-200">
+          <span className="inline bg-sky-100 font-bold text-sm text-slate-900 font-mono rounded">
             display: inline
           </span>{" "}
           will cause the text inside the element to wrap normally.
           <br />
           <br />
           While using the property{" "}
-          <span className="inline-block bg-sky-100 font-bold text-sm text-slate-900 font-mono rounded dark:bg-slate-600 dark:text-slate-200">
+          <span className="inline-block bg-sky-100 font-bold text-sm text-slate-900 font-mono rounded">
             display: inline-block
           </span>{" "}
           will wrap the element to prevent the text inside from extending beyond
@@ -28,7 +28,7 @@ export default function Display() {
           <br />
           <br />
           Lastly, using the property{" "}
-          <span className="block bg-sky-100 font-bold text-sm text-slate-900 font-mono rounded dark:bg-slate-600 dark:text-slate-200">
+          <span className="block bg-sky-100 font-bold text-sm text-slate-900 font-mono rounded">
             {" "}
             display: block{" "}
           </span>{" "}
@@ -36,9 +36,9 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Flow Root" paddingless>
-        <div className="mx-auto max-w-xs bg-white shadow-xl p-4 text-slate-500 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-auto max-w-xs bg-white shadow-xl p-4 text-slate-500 text-sm leading-6 sm:text-base sm:leading-7">
           <div className={`flow-root mb-1 ${stripes.purple}`}>
-            <div className="my-4 bg-white dark:bg-slate-800">
+            <div className="my-4 bg-white">
               Well, let me tell you something, funny boy. Y'know that little
               stamp, the one that says "New York Public Library"? Well that may
               not mean anything to you, but that means a lot to me. One whole
@@ -46,7 +46,7 @@ export default function Display() {
             </div>
           </div>
           <div className={`flow-root mt-1 ${stripes.purple}`}>
-            <div className="my-4 bg-white dark:bg-slate-800">
+            <div className="my-4 bg-white">
               Sure, go ahead, laugh if you want to. I've seen your type before:
               Flashy, making the scene, flaunting convention. Yeah, I know what
               you're thinking. What's this guy making such a big stink about old
@@ -56,7 +56,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Flex" paddingless>
-        <div className="mx-auto max-w-xs bg-white shadow-xl p-4 text-slate-500 leading-6 flex justify-center dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-auto max-w-xs bg-white shadow-xl p-4 text-slate-500 leading-6 flex justify-center">
           <div className="flex items-center gap-4 p-4">
             <img
               alt=""
@@ -64,10 +64,10 @@ export default function Display() {
               src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
             />
             <div className="flex flex-col">
-              <strong className="text-slate-900 font-medium dark:text-slate-200">
+              <strong className="text-slate-900 font-medium">
                 Andrew Alfred
               </strong>
-              <span className="text-slate-500 font-medium dark:text-slate-400">
+              <span className="text-slate-500 font-medium">
                 Technical advisor
               </span>
             </div>
@@ -75,7 +75,7 @@ export default function Display() {
         </div>
       </PanelSection>
       <PanelSection title="Inline Flex" paddingless>
-        <p className="mx-auto max-w-lg bg-white shadow-xl p-4 text-slate-500 text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <p className="mx-auto max-w-lg bg-white shadow-xl p-4 text-slate-500 text-sm leading-6 sm:text-base sm:leading-7">
           Today I spent most of the day researching ways to take advantage of
           the fact that bottles can be returned for 10 cents in Michigan, but
           only 5 cents here.{" "}
@@ -85,9 +85,7 @@ export default function Display() {
               alt=""
               className="self-center w-5 h-5 rounded-full mr-1"
             />
-            <span className="font-medium text-slate-900 dark:text-slate-200">
-              Kramer
-            </span>
+            <span className="font-medium text-slate-900">Kramer</span>
           </span>{" "}
           keeps telling me there is no way to make it work, that he has run the
           numbers on every possible approach, but I just have to believe there's
@@ -182,48 +180,48 @@ export default function Display() {
           <div className="table border-collapse table-auto w-full text-sm">
             <div className="table-header-group">
               <div className="table-row">
-                <div className="table-cell border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+                <div className="table-cell border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 text-left">
                   Song
                 </div>
-                <div className="table-cell border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+                <div className="table-cell border-b font-medium p-4 pt-0 pb-3 text-slate-400 text-left">
                   Artist
                 </div>
-                <div className="table-cell border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+                <div className="table-cell border-b font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
                   Year
                 </div>
               </div>
             </div>
-            <div className="table-row-group bg-white dark:bg-slate-800">
+            <div className="table-row-group bg-white">
               <div className="table-row">
-                <div className="table-cell border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-100 p-4 pl-8 text-slate-500">
                   The Sliding Mr. Bones (Next Stop, Pottersville)
                 </div>
-                <div className="table-cell border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-100 p-4 text-slate-500">
                   Malcolm Lockyer
                 </div>
-                <div className="table-cell border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-100 p-4 pr-8 text-slate-500">
                   1961
                 </div>
               </div>
               <div className="table-row">
-                <div className="table-cell border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-100 p-4 pl-8 text-slate-500">
                   Witchy Woman
                 </div>
-                <div className="table-cell border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-100 p-4 text-slate-500">
                   The Eagles
                 </div>
-                <div className="table-cell border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-100 p-4 pr-8 text-slate-500">
                   1972
                 </div>
               </div>
               <div className="table-row">
-                <div className="table-cell border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-200 p-4 pl-8 text-slate-500">
                   Shining Star
                 </div>
-                <div className="table-cell border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-200 p-4 text-slate-500">
                   Earth, Wind, and Fire
                 </div>
-                <div className="table-cell border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                <div className="table-cell border-b border-slate-200 p-4 pr-8 text-slate-500">
                   1975
                 </div>
               </div>

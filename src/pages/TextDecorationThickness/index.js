@@ -9,9 +9,9 @@ export default function TextDecorationThickness() {
         <h1 className="text-3xl font-bold">Text Decoration Thickness</h1>
       </div>
       <PanelSection title="Setting the text decoration thickness">
-        <div className="flex flex-col gap-8 text-slate-900 dark:text-slate-200">
+        <div className="flex flex-col gap-8 text-slate-900">
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-1
             </div>
             <p className="text-lg font-medium underline decoration-1">
@@ -19,7 +19,7 @@ export default function TextDecorationThickness() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-2
             </div>
             <p className="text-lg font-medium underline decoration-2">
@@ -27,7 +27,7 @@ export default function TextDecorationThickness() {
             </p>
           </div>
           <div>
-            <div className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <div className="font-medium text-sm text-slate-500 font-mono mb-3">
               decoration-4
             </div>
             <p className="text-lg font-medium underline decoration-4">

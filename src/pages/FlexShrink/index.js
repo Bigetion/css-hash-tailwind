@@ -14,13 +14,13 @@ export default function FlexShrink() {
         <div
           className={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.indigo} rounded-lg`}
         >
-          <div className="p-4 w-14 h-14 flex-none rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+          <div className="p-4 w-14 h-14 flex-none rounded-lg flex items-center justify-center bg-indigo-300">
             01
           </div>
           <div className="p-4 w-64 shrink rounded-lg flex items-center justify-center bg-indigo-500 shadow-lg">
             02
           </div>
-          <div className="p-4 w-14 h-14 flex-none rounded-lg hidden sm:flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+          <div className="p-4 w-14 h-14 flex-none rounded-lg hidden sm:flex items-center justify-center bg-indigo-300">
             03
           </div>
         </div>
@@ -29,13 +29,13 @@ export default function FlexShrink() {
         <div
           className={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.blue} rounded-lg`}
         >
-          <div className="p-4 flex-1 rounded-lg flex items-center justify-center bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+          <div className="p-4 flex-1 rounded-lg flex items-center justify-center bg-blue-300">
             01
           </div>
           <div className="p-4 w-16 sm:w-64 shrink-0 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg">
             02
           </div>
-          <div className="p-4 flex-1 rounded-lg hidden sm:flex items-center justify-center bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+          <div className="p-4 flex-1 rounded-lg hidden sm:flex items-center justify-center bg-blue-300">
             03
           </div>
         </div>

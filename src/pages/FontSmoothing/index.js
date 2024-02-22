@@ -11,18 +11,18 @@ export default function FontSmoothing() {
       <PanelSection title="Subpixel Antialiasing">
         <div className="flex flex-col gap-8">
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               subpixel-antialiased
             </span>
-            <p className="subpixel-antialiased text-lg font-medium text-slate-900 dark:text-slate-200">
+            <p className="subpixel-antialiased text-lg font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               antialiased
             </span>
-            <p className="antialiased text-lg font-medium text-slate-900 dark:text-slate-200">
+            <p className="antialiased text-lg font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>

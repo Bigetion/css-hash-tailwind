@@ -27,19 +27,19 @@ export default function GridTemplateRows() {
       </PanelSection>
       <PanelSection title="Subgrid">
         <div className="grid grid-rows-4 grid-flow-col gap-4 rounded-lg text-center font-mono text-sm font-bold leading-6 text-white">
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             01
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             02
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             03
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             04
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             05
           </div>
           <div className="row-span-3 grid grid-rows-subgrid gap-4">
@@ -49,16 +49,16 @@ export default function GridTemplateRows() {
             </div>
             <div className={`rounded-lg ${stripes.fuchsia} h-14`} />
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             07
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             08
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             09
           </div>
-          <div className="rounded-lg dark:bg-indigo-900 bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
+          <div className="rounded-lg bg-indigo-300 grid items-center justify-center h-14 shadow-lg">
             10
           </div>
         </div>

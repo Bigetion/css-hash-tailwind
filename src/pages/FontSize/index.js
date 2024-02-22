@@ -11,42 +11,42 @@ export default function FontSize() {
       <PanelSection title="Setting the font size">
         <div className="flex flex-col gap-8">
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               text-sm
             </span>
-            <p className="text-sm font-medium text-slate-900 dark:text-slate-200">
+            <p className="text-sm font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               text-base
             </span>
-            <p className="text-base font-medium text-slate-900 dark:text-slate-200">
+            <p className="text-base font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               text-lg
             </span>
-            <p className="text-lg font-medium text-slate-900 dark:text-slate-200">
+            <p className="text-lg font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               text-xl
             </span>
-            <p className="text-xl font-medium text-slate-900 dark:text-slate-200">
+            <p className="text-xl font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               text-2xl
             </span>
-            <p className="text-2xl font-medium text-slate-900 dark:text-slate-200">
+            <p className="text-2xl font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>

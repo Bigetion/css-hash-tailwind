@@ -11,10 +11,10 @@ export default function LineHeight() {
       <PanelSection title="Relative line-heights">
         <div className="flex flex-col gap-8">
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               leading-normal
             </span>
-            <p className="leading-normal text-slate-900 dark:text-slate-200">
+            <p className="leading-normal text-slate-900">
               So I started to walk into the water. I won't lie to you boys, I
               was terrified. But I pressed on, and as I made my way past the
               breakers a strange calm came over me. I don't know if it was
@@ -23,10 +23,10 @@ export default function LineHeight() {
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               leading-relaxed
             </span>
-            <p className="leading-relaxed text-slate-900 dark:text-slate-200">
+            <p className="leading-relaxed text-slate-900">
               So I started to walk into the water. I won't lie to you boys, I
               was terrified. But I pressed on, and as I made my way past the
               breakers a strange calm came over me. I don't know if it was
@@ -35,10 +35,10 @@ export default function LineHeight() {
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               leading-loose
             </span>
-            <p className="leading-loose text-slate-900 dark:text-slate-200">
+            <p className="leading-loose text-slate-900">
               So I started to walk into the water. I won't lie to you boys, I
               was terrified. But I pressed on, and as I made my way past the
               breakers a strange calm came over me. I don't know if it was
@@ -51,10 +51,10 @@ export default function LineHeight() {
       <PanelSection title="Fixed line-heights">
         <div className="flex flex-col gap-8">
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               leading-6
             </span>
-            <p className="leading-6 text-slate-900 dark:text-slate-200">
+            <p className="leading-6 text-slate-900">
               So I started to walk into the water. I won't lie to you boys, I
               was terrified. But I pressed on, and as I made my way past the
               breakers a strange calm came over me. I don't know if it was
@@ -63,10 +63,10 @@ export default function LineHeight() {
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               leading-7
             </span>
-            <p className="leading-7 text-slate-900 dark:text-slate-200">
+            <p className="leading-7 text-slate-900">
               So I started to walk into the water. I won't lie to you boys, I
               was terrified. But I pressed on, and as I made my way past the
               breakers a strange calm came over me. I don't know if it was
@@ -75,10 +75,10 @@ export default function LineHeight() {
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               leading-8
             </span>
-            <p className="leading-8 text-slate-900 dark:text-slate-200">
+            <p className="leading-8 text-slate-900">
               So I started to walk into the water. I won't lie to you boys, I
               was terrified. But I pressed on, and as I made my way past the
               breakers a strange calm came over me. I don't know if it was

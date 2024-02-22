@@ -14,7 +14,7 @@ export default function Flex() {
         <div
           className={`xmt-2 flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.blue} rounded-lg`}
         >
-          <div className="p-4 flex-none w-14 h-14 rounded-lg flex items-center justify-center bg-blue-300 dark:bg-blue-800 dark:text-blue-500">
+          <div className="p-4 flex-none w-14 h-14 rounded-lg flex items-center justify-center bg-blue-300">
             01
           </div>
           <div className="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg">
@@ -29,7 +29,7 @@ export default function Flex() {
         <div
           className={`xmt-2 flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.pink} rounded-lg`}
         >
-          <div className="p-4 flex-none w-14 h-14 rounded-lg flex items-center justify-center bg-pink-300 dark:bg-pink-800 dark:text-pink-400">
+          <div className="p-4 flex-none w-14 h-14 rounded-lg flex items-center justify-center bg-pink-300">
             01
           </div>
           <div className="p-4 flex-1 w-64 rounded-lg flex items-center justify-center bg-pink-500 shadow-lg">
@@ -44,7 +44,7 @@ export default function Flex() {
         <div
           className={`xmt-2 flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.violet} rounded-lg`}
         >
-          <div className="p-4 flex-none w-14 h-14 rounded-lg flex items-center justify-center bg-violet-300 dark:bg-violet-800 dark:text-violet-400">
+          <div className="p-4 flex-none w-14 h-14 rounded-lg flex items-center justify-center bg-violet-300">
             01
           </div>
           <div className="p-4 flex-auto w-64 rounded-lg flex items-center justify-center bg-violet-500 shadow-lg">
@@ -60,7 +60,7 @@ export default function Flex() {
           className={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.indigo} rounded-lg`}
         >
           <div className="flex-none last:pr-8 sm:last:pr-0">
-            <div className="p-4 w-14 h-14 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            <div className="p-4 w-14 h-14 rounded-lg flex items-center justify-center bg-indigo-300">
               01
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function Flex() {
             </div>
           </div>
           <div className="flex-1 last:pr-8 sm:last:pr-0">
-            <div className="p-4 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+            <div className="p-4 rounded-lg flex items-center justify-center bg-indigo-300">
               03
             </div>
           </div>

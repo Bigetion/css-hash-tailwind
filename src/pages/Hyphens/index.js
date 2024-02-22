@@ -9,14 +9,11 @@ export default function Hyphens() {
         <h1 className="text-3xl font-bold">Hyphens</h1>
       </div>
       <PanelSection title="None" paddingless>
-        <div className="mx-auto max-w-xs bg-white shadow-xl p-12 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-auto max-w-xs bg-white shadow-xl p-12 text-slate-500">
           <p className="hyphens-none">
             Officially recognized by the Duden dictionary as the longest word in
             German,{" "}
-            <span
-              className="text-slate-900 font-medium dark:text-slate-200"
-              lang="de"
-            >
+            <span className="text-slate-900 font-medium" lang="de">
               {" "}
               Kraftfahrzeug­haftpflichtversicherung
             </span>{" "}
@@ -25,14 +22,11 @@ export default function Hyphens() {
         </div>
       </PanelSection>
       <PanelSection title="Manual" paddingless>
-        <div className="mx-auto max-w-xs bg-white shadow-xl p-12 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-auto max-w-xs bg-white shadow-xl p-12 text-slate-500">
           <p className="hyphens-manual">
             Officially recognized by the Duden dictionary as the longest word in
             German,{" "}
-            <span
-              className="text-slate-900 font-medium dark:text-slate-200"
-              lang="de"
-            >
+            <span className="text-slate-900 font-medium" lang="de">
               {" "}
               Kraftfahrzeug­haftpflichtversicherung
             </span>{" "}
@@ -41,14 +35,11 @@ export default function Hyphens() {
         </div>
       </PanelSection>
       <PanelSection title="Auto" paddingless>
-        <div className="mx-auto max-w-xs bg-white shadow-xl p-12 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-auto max-w-xs bg-white shadow-xl p-12 text-slate-500">
           <p className="hyphens-auto">
             Officially recognized by the Duden dictionary as the longest word in
             German,{" "}
-            <span
-              className="text-slate-900 font-medium dark:text-slate-200"
-              lang="de"
-            >
+            <span className="text-slate-900 font-medium" lang="de">
               {" "}
               Kraftfahrzeughaftpflichtversicherung
             </span>{" "}

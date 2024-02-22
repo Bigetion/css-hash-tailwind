@@ -23,7 +23,7 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
       <h5 className="mb-3 lg:mb-2 tracking-wide font-semibold text-slate-900">
         {title}
       </h5>
-      <ul className="space-y-5 lg:space-y-3 border-l border-slate-100 dark:border-slate-800">
+      <ul className="space-y-5 lg:space-y-3 border-l border-slate-100">
         {items.map((item, index) => {
           const path = `/${item.label
             .toLowerCase()

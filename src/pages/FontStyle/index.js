@@ -11,18 +11,18 @@ export default function FontStyle() {
       <PanelSection title="Non italics">
         <div className="flex flex-col gap-8">
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               italic
             </span>
-            <p className="italic text-lg font-medium text-slate-900 dark:text-slate-200">
+            <p className="italic text-lg font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>
           <div>
-            <span className="font-medium text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+            <span className="font-medium text-sm text-slate-500 font-mono mb-3">
               not-italic
             </span>
-            <p className="not-italic text-lg font-medium text-slate-900 dark:text-slate-200">
+            <p className="not-italic text-lg font-medium text-slate-900">
               The quick brown fox jumps over the lazy dog.
             </p>
           </div>

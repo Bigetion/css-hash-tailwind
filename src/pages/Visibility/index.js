@@ -23,166 +23,162 @@ export default function Visibility() {
       </PanelSection>
       <PanelSection title="Collapsing elements" paddingless>
         <div className="py-8">
-          <div className="mb-3 pl-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+          <div className="mb-3 pl-4 text-sm font-medium text-slate-500">
             Showing all rows
           </div>
-          <table className="border-collapse w-full border-y border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
-            <thead className="bg-slate-50 dark:bg-slate-700">
+          <table className="border-collapse w-full border-y border-slate-400 bg-white text-sm shadow-sm">
+            <thead className="bg-slate-50">
               <tr>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-left">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-left">
                   Invoice #
                 </th>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-left">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-left">
                   Client
                 </th>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-right">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-right">
                   Amount
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #100
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   Pendant Publishing
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $2,000.00
                 </td>
               </tr>
               <tr>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #101
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   Kruger Industrial Smoothing
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $545.00
                 </td>
               </tr>
               <tr>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #102
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   J. Peterman
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $10,000.25
                 </td>
               </tr>
             </tbody>
           </table>
-          <div className="mt-10 mb-3 pl-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+          <div className="mt-10 mb-3 pl-4 text-sm font-medium text-slate-500">
             Hiding a row using{" "}
-            <code className="text-xs text-slate-700 dark:text-slate-300">
-              `collapse`
-            </code>
+            <code className="text-xs text-slate-700">`collapse`</code>
           </div>
-          <table className="border-collapse w-full border-y border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
-            <thead className="bg-slate-50 dark:bg-slate-700">
+          <table className="border-collapse w-full border-y border-slate-400 bg-white text-sm shadow-sm">
+            <thead className="bg-slate-50">
               <tr>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-left">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-left">
                   Invoice #
                 </th>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-left">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-left">
                   Client
                 </th>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-right">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-right">
                   Amount
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #100
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   Pendant Publishing
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $2,000.00
                 </td>
               </tr>
               <tr className="collapse">
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #101
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   Kruger Industrial Smoothing
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $545.00
                 </td>
               </tr>
               <tr>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #102
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   J. Peterman
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $10,000.25
                 </td>
               </tr>
             </tbody>
           </table>
-          <div className="mt-10 mb-3 pl-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+          <div className="mt-10 mb-3 pl-4 text-sm font-medium text-slate-500">
             Hiding a row using{" "}
-            <code className="text-xs text-slate-700 dark:text-slate-300">
-              `hidden`
-            </code>
+            <code className="text-xs text-slate-700">`hidden`</code>
           </div>
-          <table className="border-collapse w-full border-y border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
-            <thead className="bg-slate-50 dark:bg-slate-700">
+          <table className="border-collapse w-full border-y border-slate-400 bg-white text-sm shadow-sm">
+            <thead className="bg-slate-50">
               <tr>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-left">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-left">
                   Invoice #
                 </th>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-left">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-left">
                   Client
                 </th>
-                <th className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-600 font-semibold px-4 py-3 text-slate-900 dark:text-slate-200 text-right">
+                <th className="border first:border-l-0 last:border-r-0 border-slate-300 font-semibold px-4 py-3 text-slate-900 text-right">
                   Amount
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #100
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   Pendant Publishing
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $2,000.00
                 </td>
               </tr>
               <tr className="hidden">
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #101
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   Kruger Industrial Smoothing
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $545.00
                 </td>
               </tr>
               <tr>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   #102
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500">
                   J. Peterman
                 </td>
-                <td className="border first:border-l-0 last:border-r-0 border-slate-300 dark:border-slate-700 px-4 py-3 text-slate-500 dark:text-slate-400 text-right tabular-nums">
+                <td className="border first:border-l-0 last:border-r-0 border-slate-300 px-4 py-3 text-slate-500 text-right tabular-nums">
                   $10,000.25
                 </td>
               </tr>

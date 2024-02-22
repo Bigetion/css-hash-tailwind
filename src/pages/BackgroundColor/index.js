@@ -22,7 +22,7 @@ export default function BackgroundColor() {
       <PanelSection title="Changing the opacity">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 text-sm text-white">
           <div className="flex flex-col items-center shrink-0">
-            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               bg-sky-500
             </p>
             <button className="px-4 py-2 font-semibold text-sm bg-sky-500 text-white rounded-md shadow-sm opacity-100 focus:outline-none">
@@ -30,7 +30,7 @@ export default function BackgroundColor() {
             </button>
           </div>
           <div className="flex flex-col items-center shrink-0">
-            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               bg-sky-500 bg-opacity-75
             </p>
             <button className="px-4 py-2 font-semibold text-sm bg-sky-500 bg-opacity-75 text-white rounded-md shadow-sm opacity-100 focus:outline-none">
@@ -38,7 +38,7 @@ export default function BackgroundColor() {
             </button>
           </div>
           <div className="flex flex-col items-center shrink-0">
-            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               bg-sky-500 bg-opacity-50
             </p>
             <button className="px-4 py-2 font-semibold text-sm bg-sky-500 bg-opacity-50 text-white rounded-md shadow-sm opacity-100 focus:outline-none">

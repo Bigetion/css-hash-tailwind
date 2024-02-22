@@ -12,24 +12,14 @@ export default function GridColumnStartEnd() {
       </div>
       <PanelSection title="Spanning columns">
         <div className="grid grid-cols-3 gap-4 font-mono text-white text-sm text-center font-bold leading-6">
-          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
-            01
-          </div>
-          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
-            02
-          </div>
-          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
-            03
-          </div>
+          <div className="p-4 rounded-lg bg-indigo-300">01</div>
+          <div className="p-4 rounded-lg bg-indigo-300">02</div>
+          <div className="p-4 rounded-lg bg-indigo-300">03</div>
           <div className="p-4 rounded-lg shadow-lg bg-indigo-500 col-span-2">
             04
           </div>
-          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
-            05
-          </div>
-          <div className="p-4 rounded-lg bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
-            06
-          </div>
+          <div className="p-4 rounded-lg bg-indigo-300">05</div>
+          <div className="p-4 rounded-lg bg-indigo-300">06</div>
           <div className="p-4 rounded-lg shadow-lg bg-indigo-500 col-span-2">
             07
           </div>

@@ -9,7 +9,7 @@ export default function Clear() {
         <h1 className="text-3xl font-bold">Clear</h1>
       </div>
       <PanelSection title="Clearing left-floated elements" paddingless>
-        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7">
           <div className="float-left mb-4 rounded-xl overflow-hidden">
             <div className="relative aspect aspect-w-1 aspect-h-1 sm:aspect-w-16 sm:aspect-h-9 w-24 sm:w-44">
               <img
@@ -17,7 +17,7 @@ export default function Clear() {
                 className="object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <div className="float-right ml-6 mb-4 rounded-xl overflow-hidden ">
@@ -27,7 +27,7 @@ export default function Clear() {
                 className="object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <p className="clear-left text-justify">
@@ -45,7 +45,7 @@ export default function Clear() {
         </div>
       </PanelSection>
       <PanelSection title="Clearing right-floated elements" paddingless>
-        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7">
           <div className="float-left mr-6 mb-4 rounded-xl overflow-hidden">
             <div className="relative aspect aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-28 sm:w-64">
               <img
@@ -53,7 +53,7 @@ export default function Clear() {
                 className="object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <div className="float-right mb-4 rounded-xl overflow-hidden ">
@@ -63,7 +63,7 @@ export default function Clear() {
                 className="object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <p className="clear-right text-justify">
@@ -81,7 +81,7 @@ export default function Clear() {
         </div>
       </PanelSection>
       <PanelSection title="Clearing all floated elements" paddingless>
-        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 text-sm sm:text-base leading-6 sm:leading-7">
           <div className="float-left mb-4 rounded-xl overflow-hidden">
             <div className="relative aspect aspect-w-16 aspect-h-9 w-44">
               <img
@@ -89,7 +89,7 @@ export default function Clear() {
                 className="object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <div className="float-right ml-6 mb-4 rounded-xl overflow-hidden ">
@@ -99,7 +99,7 @@ export default function Clear() {
                 className="object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <p className="clear-both text-justify">
@@ -117,7 +117,7 @@ export default function Clear() {
         </div>
       </PanelSection>
       <PanelSection title="Disabling applied clears" paddingless>
-        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400">
+        <div className="mx-4 bg-white shadow-xl p-8 text-slate-700">
           <div className="relative float-left mr-6 mb-4 rounded-xl overflow-hidden">
             <div className="relative aspect aspect-w-16 aspect-h-9 w-44">
               <img
@@ -125,7 +125,7 @@ export default function Clear() {
                 className="h-24 object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <div className="relative float-right ml-6 mb-4 rounded-xl overflow-hidden">
@@ -135,7 +135,7 @@ export default function Clear() {
                 className="h-36 object-cover"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
               />
-              <div className="absolute inset-0 ring-1 ring-inset rounded-xl" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-xl" />
             </div>
           </div>
           <p className="clear-none text-justify">

@@ -9,7 +9,7 @@ export default function TextIndent() {
         <h1 className="text-3xl font-bold">Text Indent</h1>
       </div>
       <PanelSection title="Adding a text indent" paddingless>
-        <div className="bg-white p-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto leading-6 dark:bg-slate-800 dark:text-slate-400">
+        <div className="bg-white p-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto leading-6">
           <p className="indent-8">
             So I started to walk into the water. I won't lie to you boys, I was
             terrified. But I pressed on, and as I made my way past the breakers

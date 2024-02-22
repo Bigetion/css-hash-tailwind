@@ -9,8 +9,8 @@ export default function TextWrap() {
         <h1 className="text-3xl font-bold">Text Wrap</h1>
       </div>
       <PanelSection title="Wrap" paddingless>
-        <div className="grid gap-4 mx-auto max-w-sm bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400 text-wrap">
-          <h3 className="text-xl dark:text-white font-semibold text-slate-900">
+        <div className="grid gap-4 mx-auto max-w-sm bg-white shadow-xl p-8 text-slate-700 text-wrap">
+          <h3 className="text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
           <p className="text-sm/6">
@@ -21,8 +21,8 @@ export default function TextWrap() {
         </div>
       </PanelSection>
       <PanelSection title="No Wrap" paddingless>
-        <div className="grid gap-4 bg-white px-6 py-8 shadow-xl text-slate-700 max-w-sm mx-auto overflow-auto dark:bg-slate-800 dark:text-slate-400 text-nowrap">
-          <h3 className="text-xl dark:text-white font-semibold text-slate-900">
+        <div className="grid gap-4 bg-white px-6 py-8 shadow-xl text-slate-700 max-w-sm mx-auto overflow-auto text-nowrap">
+          <h3 className="text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
           <p className="text-sm/6">
@@ -33,8 +33,8 @@ export default function TextWrap() {
         </div>
       </PanelSection>
       <PanelSection title="Balance" paddingless>
-        <div className="grid gap-4 mx-auto max-w-sm bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400">
-          <h3 className="text-balance text-xl dark:text-white font-semibold text-slate-900">
+        <div className="grid gap-4 mx-auto max-w-sm bg-white shadow-xl p-8 text-slate-700">
+          <h3 className="text-balance text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
           <p className="text-sm/6">
@@ -45,8 +45,8 @@ export default function TextWrap() {
         </div>
       </PanelSection>
       <PanelSection title="Pretty" paddingless>
-        <div className="grid gap-4 mx-auto max-w-sm bg-white shadow-xl p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400 text-pretty">
-          <h3 className="text-xl dark:text-white font-semibold text-slate-900">
+        <div className="grid gap-4 mx-auto max-w-sm bg-white shadow-xl p-8 text-slate-700 text-pretty">
+          <h3 className="text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
           <p className="text-sm/6">

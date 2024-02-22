@@ -52,7 +52,7 @@ export default function Height() {
       <PanelSection title="Dynamic viewport height">
         <div className="relative grid justify-items-center">
           <div
-            className={`${stripes.pink} relative rounded-lg border dark:border-slate-700 overscroll-none border-slate-300 text-center text-xs overflow-y-scroll`}
+            className={`${stripes.pink} relative rounded-lg border overscroll-none border-slate-300 text-center text-xs overflow-y-scroll`}
             style={{ width: 300, height: 491, scrollbarWidth: "none" }}
           >
             <div
@@ -60,7 +60,7 @@ export default function Height() {
               style={{ height: 491, transform: "none" }}
             >
               <div
-                className=" w-full grid items-center justify-start gap-4 rounded-t-lg border-b border-slate-300 dark:border-slate-600 dark:bg-slate-800 bg-slate-100 px-3"
+                className=" w-full grid items-center justify-start gap-4 rounded-t-lg border-b border-slate-300 bg-slate-100 px-3"
                 style={{
                   gridTemplateColumns: "auto 1fr auto",
                   height: 48,
@@ -72,7 +72,7 @@ export default function Height() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                  className="h-5 w-5 text-slate-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -80,7 +80,7 @@ export default function Height() {
                     d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                   />
                 </svg>
-                <div className="w-full rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 px-4 py-1  text-slate-600 dark:text-slate-400">
+                <div className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-1  text-slate-600">
                   tailwindcss.com
                 </div>
                 <svg
@@ -89,7 +89,7 @@ export default function Height() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                  className="h-5 w-5 text-slate-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -130,7 +130,7 @@ export default function Height() {
       <PanelSection title="Large viewport height">
         <div className="relative grid justify-items-center">
           <div
-            className={`${stripes.indigo} relative rounded-lg border dark:border-slate-700 overscroll-none border-slate-300 text-center text-xs overflow-y-scroll`}
+            className={`${stripes.indigo} relative rounded-lg border overscroll-none border-slate-300 text-center text-xs overflow-y-scroll`}
             style={{ width: 300, height: 491, scrollbarWidth: "none" }}
           >
             <div
@@ -138,7 +138,7 @@ export default function Height() {
               style={{ height: 491, transform: "none" }}
             >
               <div
-                className=" w-full grid items-center justify-start gap-4 rounded-t-lg border-b border-slate-300 dark:border-slate-600 dark:bg-slate-800 bg-slate-100 px-3"
+                className=" w-full grid items-center justify-start gap-4 rounded-t-lg border-b border-slate-300 bg-slate-100 px-3"
                 style={{
                   gridTemplateColumns: "auto 1fr auto",
                   height: 48,
@@ -150,7 +150,7 @@ export default function Height() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                  className="h-5 w-5 text-slate-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -158,7 +158,7 @@ export default function Height() {
                     d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                   />
                 </svg>
-                <div className="w-full rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 px-4 py-1 text-slate-600 dark:text-slate-400">
+                <div className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-slate-600">
                   tailwindcss.com
                 </div>
                 <svg
@@ -167,7 +167,7 @@ export default function Height() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                  className="h-5 w-5 text-slate-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -212,7 +212,7 @@ export default function Height() {
       <PanelSection title="Small viewport height">
         <div className="relative grid justify-items-center">
           <div
-            className={`${stripes.purple} relative rounded-lg border dark:border-slate-700 overscroll-none border-slate-300 text-center text-xs overflow-y-scroll no-scrollbar`}
+            className={`${stripes.purple} relative rounded-lg border overscroll-none border-slate-300 text-center text-xs overflow-y-scroll no-scrollbar`}
             style={{ width: 300, height: 491, scrollbarWidth: "none" }}
           >
             <div
@@ -220,7 +220,7 @@ export default function Height() {
               style={{ height: 491, transform: "none" }}
             >
               <div
-                className=" w-full grid items-center justify-start gap-4 rounded-t-lg border-b border-slate-300 dark:border-slate-600 dark:bg-slate-800 bg-slate-100 px-3"
+                className=" w-full grid items-center justify-start gap-4 rounded-t-lg border-b border-slate-300 bg-slate-100 px-3"
                 style={{
                   gridTemplateColumns: "auto 1fr auto",
                   height: 48,
@@ -232,7 +232,7 @@ export default function Height() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                  className="h-5 w-5 text-slate-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -240,7 +240,7 @@ export default function Height() {
                     d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                   />
                 </svg>
-                <div className="w-full rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 px-4 py-1  text-slate-600 dark:text-slate-400">
+                <div className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-1  text-slate-600">
                   tailwindcss.com
                 </div>
                 <svg
@@ -249,7 +249,7 @@ export default function Height() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                  className="h-5 w-5 text-slate-600"
                 >
                   <path
                     strokeLinecap="round"
