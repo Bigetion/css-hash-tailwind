@@ -59,6 +59,7 @@ const plugins = {
   gridTemplateColumns: true,
   gridTemplateRows: true,
   height: true,
+  hyphens: true,
   inset: true,
   isolation: true,
   justifyContent: true,

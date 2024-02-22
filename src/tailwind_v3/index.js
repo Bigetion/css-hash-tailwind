@@ -60,6 +60,7 @@ import generateGridRowStart from "./generators/gridRowStart";
 import generateGridTemplateColumns from "./generators/gridTemplateColumns";
 import generateGridTemplateRows from "./generators/gridTemplateRows";
 import generateHeight from "./generators/height";
+import generateHyphens from "./generators/hyphens";
 import generateInset from "./generators/inset";
 import generateIsolation from "./generators/isolation";
 import generateJustifyContent from "./generators/justifyContent";
@@ -188,6 +189,7 @@ const generateOptions = {
   gridTemplateColumns: generateGridTemplateColumns,
   gridTemplateRows: generateGridTemplateRows,
   height: generateHeight,
+  hyphens: generateHyphens,
   inset: generateInset,
   isolation: generateIsolation,
   justifyContent: generateJustifyContent,

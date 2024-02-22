@@ -90,8 +90,7 @@ const menus = [
       { label: "Vertical Align" },
       { label: "Whitespace" },
       { label: "Word Break" },
-      { label: "Hypens" },
-      { label: "Content" },
+      { label: "Hyphens" },
     ],
   },
   {

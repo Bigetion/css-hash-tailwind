@@ -74,6 +74,7 @@ const variants = {
   gridTemplateColumns: ["responsive"],
   gridTemplateRows: ["responsive"],
   height: ["responsive"],
+  hyphens: ["responsive"],
   inset: ["responsive"],
   isolation: ["responsive"],
   justifyContent: ["responsive"],

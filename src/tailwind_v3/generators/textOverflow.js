@@ -3,10 +3,7 @@ import { generateCssString } from "../utils/index";
 export default function generateTextDecoration(configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
-  const propertyOptions = {
-    ellipsis: "ellipsis",
-    clip: "clip",
-  };
+  const propertyOptions = ["ellipsis", "clip"];
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

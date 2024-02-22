@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "hyphens",
+    path: "/hyphens",
+    exact: true,
+    component: () => import("pages/Hyphens"),
+  },
+  {
     id: "size",
     path: "/size",
     exact: true,
