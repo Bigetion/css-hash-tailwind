@@ -9,10 +9,10 @@ export default function Fill() {
         <h1 className="text-3xl font-bold">Fill</h1>
       </div>
       <PanelSection title="Usage">
-        <div class="relative rounded-xl overflow-auto p-8">
-          <div class="flex items-center justify-center">
+        <div className="relative rounded-xl overflow-auto p-8">
+          <div className="flex items-center justify-center">
             <svg
-              class="fill-blue-500 h-12"
+              className="fill-blue-500 h-12"
               viewBox="0 0 46 48"
               xmlns="http://www.w3.org/2000/svg"
             >

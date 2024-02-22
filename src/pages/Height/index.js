@@ -11,40 +11,40 @@ export default function Height() {
         <h1 className="text-3xl font-bold">Height</h1>
       </div>
       <PanelSection title="Fixed Height">
-        <div class="flex justify-center items-end space-x-4 font-mono font-bold text-xs text-center text-white">
-          <div class="w-8 bg-blue-500 rounded-lg shadow-lg h-96 relative">
-            <div class="absolute w-8 bottom-6">
-              <div class="-rotate-90">h-96</div>
+        <div className="flex justify-center items-end space-x-4 font-mono font-bold text-xs text-center text-white">
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg h-96 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="-rotate-90">h-96</div>
             </div>
           </div>
-          <div class="w-8 bg-blue-500 rounded-lg shadow-lg h-80 relative">
-            <div class="absolute w-8 bottom-6">
-              <div class="-rotate-90">h-80</div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg h-80 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="-rotate-90">h-80</div>
             </div>
           </div>
-          <div class="w-8 bg-blue-500 rounded-lg shadow-lg h-64 relative">
-            <div class="absolute w-8 bottom-6">
-              <div class="-rotate-90">h-64</div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg h-64 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="-rotate-90">h-64</div>
             </div>
           </div>
-          <div class="w-8 bg-blue-500 rounded-lg shadow-lg h-48 relative">
-            <div class="absolute w-8 bottom-6">
-              <div class="-rotate-90">h-48</div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg h-48 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="-rotate-90">h-48</div>
             </div>
           </div>
-          <div class="w-8 bg-blue-500 rounded-lg shadow-lg h-40 relative">
-            <div class="absolute w-8 bottom-6">
-              <div class="-rotate-90">h-40</div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg h-40 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="-rotate-90">h-40</div>
             </div>
           </div>
-          <div class="w-8 bg-blue-500 rounded-lg shadow-lg h-32 relative">
-            <div class="absolute w-8 bottom-6">
-              <div class="-rotate-90">h-32</div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg h-32 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="-rotate-90">h-32</div>
             </div>
           </div>
-          <div class="w-8 bg-blue-500 rounded-lg shadow-lg h-24 relative">
-            <div class="absolute w-8 bottom-6">
-              <div class="-rotate-90">h-24</div>
+          <div className="w-8 bg-blue-500 rounded-lg shadow-lg h-24 relative">
+            <div className="absolute w-8 bottom-6">
+              <div className="-rotate-90">h-24</div>
             </div>
           </div>
         </div>

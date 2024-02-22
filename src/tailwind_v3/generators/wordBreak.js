@@ -16,10 +16,8 @@ export default function generateWordBreak(configOptions = {}) {
 				${pseudoClass(`${prefix}break-all`, variants.wordBreak)} {
 					word-break: break-all;
 				}
-				${pseudoClass(`${prefix}truncate`, variants.wordBreak)} {
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
+				${pseudoClass(`${prefix}break-keep`, variants.wordBreak)} {
+					word-break: keep-all;
 				}
 			`;
       return cssString;

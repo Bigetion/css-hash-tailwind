@@ -59,18 +59,18 @@ export default function Flex() {
         <div
           class={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.indigo} rounded-lg`}
         >
-          <div class="flex-none last:pr-8 sm:last:pr-0">
-            <div class="p-4 w-14 h-14 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+          <div className="flex-none last:pr-8 sm:last:pr-0">
+            <div className="p-4 w-14 h-14 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
               01
             </div>
           </div>
-          <div class="flex-none last:pr-8 sm:last:pr-0">
-            <div class="p-4 w-72 rounded-lg flex items-center justify-center bg-indigo-500 shadow-lg">
+          <div className="flex-none last:pr-8 sm:last:pr-0">
+            <div className="p-4 w-72 rounded-lg flex items-center justify-center bg-indigo-500 shadow-lg">
               02
             </div>
           </div>
-          <div class="flex-1 last:pr-8 sm:last:pr-0">
-            <div class="p-4 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+          <div className="flex-1 last:pr-8 sm:last:pr-0">
+            <div className="p-4 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
               03
             </div>
           </div>

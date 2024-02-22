@@ -13,6 +13,11 @@ export default function generateTextDecoration(configOptions = {}) {
       const cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
+          ${pseudoClass(`${prefix}truncate`, variants.wordBreak)} {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
           ${pseudoClass(`${prefix}text-${key}`, variants.textDecoration)} {
             text-overflow: ${value};
           }

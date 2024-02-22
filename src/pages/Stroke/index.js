@@ -9,10 +9,10 @@ export default function Stroke() {
         <h1 className="text-3xl font-bold">Stroke</h1>
       </div>
       <PanelSection title="Usage">
-        <div class="relative rounded-xl overflow-auto p-8">
-          <div class="flex items-center justify-center">
+        <div className="relative rounded-xl overflow-auto p-8">
+          <div className="flex items-center justify-center">
             <svg
-              class="stroke-cyan-500 h-10"
+              className="stroke-cyan-500 h-10"
               viewBox="0 0 48 40"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

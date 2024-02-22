@@ -5,14 +5,15 @@ export default function generateWhitespace(configOptions = {}) {
 
   const prefix = `${globalPrefix}whitespace`;
 
-  const propertyOptions = {
-    normal: "normal",
-    "no-wrap": "nowrap",
-    nowrap: "nowrap",
-    pre: "pre",
-    "pre-line": "pre-line",
-    "pre-wrap": "pre-wrap",
-  };
+  const propertyOptions = [
+    "normal",
+    "nowrap",
+    "nowrap",
+    "pre",
+    "pre-line",
+    "pre-wrap",
+    "break-spaces",
+  ];
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {

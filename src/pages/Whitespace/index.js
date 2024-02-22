@@ -8,53 +8,57 @@ export default function Whitespace() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Whitespace</h1>
       </div>
-      <PanelSection title="Normal">
-        <div className="">
+      <PanelSection title="Normal" paddingless>
+        <div className="bg-white p-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
           <div className="whitespace-normal">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            quidem itaque beatae, rem tenetur quia iure, eum natus enim maxime
-            laudantium quibusdam illo nihil, reprehenderit saepe quam aliquid
-            odio accusamus.
+            Hey everyone! It's almost 2022 and we still don't know if there is
+            aliens living among us, or do we? Maybe the person writing this is
+            an alien. You will never know.
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="No Wrap">
-        <div className="">
-          <div className="whitespace-no-wrap overflow-x-auto">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            quidem itaque beatae, rem tenetur quia iure, eum natus enim maxime
-            laudantium quibusdam illo nihil, reprehenderit saepe quam aliquid
-            odio accusamus.
+      <PanelSection title="No Wrap" paddingless>
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+          <div className="whitespace-nowrap">
+            Hey everyone! It's almost 2022 and we still don't know if there is
+            aliens living among us, or do we? Maybe the person writing this is
+            an alien. You will never know.
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="Pre">
-        <div className="">
-          <div className="whitespace-pre overflow-x-auto">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            quidem itaque beatae, rem tenetur quia iure, eum natus enim maxime
-            laudantium quibusdam illo nihil, reprehenderit saepe quam aliquid
-            odio accusamus.
+      <PanelSection title="Pre" paddingless>
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+          <div className="whitespace-pre">
+            Hey everyone! It's almost 2022 and we still don't know if there is
+            aliens living among us, or do we? Maybe the person writing this is
+            an alien. You will never know.
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="Pre Line">
-        <div className="">
+      <PanelSection title="Pre Line" paddingless>
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
           <div className="whitespace-pre-line">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            quidem itaque beatae, rem tenetur quia iure, eum natus enim maxime
-            laudantium quibusdam illo nihil, reprehenderit saepe quam aliquid
-            odio accusamus.
+            Hey everyone! It's almost 2022 and we still don't know if there is
+            aliens living among us, or do we? Maybe the person writing this is
+            an alien. You will never know.
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="Pre Wrap">
-        <div className="">
+      <PanelSection title="Pre Wrap" paddingless>
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
           <div className="whitespace-pre-wrap">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            quidem itaque beatae, rem tenetur quia iure, eum natus enim maxime
-            laudantium quibusdam illo nihil, reprehenderit saepe quam aliquid
-            odio accusamus.
+            Hey everyone! It's almost 2022 and we still don't know if there is
+            aliens living among us, or do we? Maybe the person writing this is
+            an alien. You will never know.
+          </div>
+        </div>
+      </PanelSection>
+      <PanelSection title="Break Spaces" paddingless>
+        <div className="bg-white px-6 py-8 shadow-xl text-slate-700 max-w-md mx-auto overflow-auto text-sm leading-6 sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
+          <div className="whitespace-break-spaces">
+            Hey everyone! It's almost 2022 and we still don't know if there is
+            aliens living among us, or do we? Maybe the person writing this is
+            an alien. You will never know.
           </div>
         </div>
       </PanelSection>

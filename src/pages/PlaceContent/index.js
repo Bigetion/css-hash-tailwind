@@ -61,19 +61,19 @@ export default function PlaceContent() {
           class={`font-mono text-white text-sm font-bold leading-6 ${stripes.indigo} rounded-lg`}
         >
           <div
-            class="grid place-content-end h-56 gap-4"
+            className="grid place-content-end h-56 gap-4"
             style={{ gridTemplateColumns: "repeat(2, 56px)" }}
           >
-            <div class="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
+            <div className="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
               01
             </div>
-            <div class="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
+            <div className="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
               02
             </div>
-            <div class="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
+            <div className="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
               03
             </div>
-            <div class="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
+            <div className="p-4 w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">
               04
             </div>
           </div>
