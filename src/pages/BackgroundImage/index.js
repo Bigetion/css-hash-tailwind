@@ -9,8 +9,11 @@ export default function BackgroundImage() {
         <h1 className="text-3xl font-bold">Background Image</h1>
       </div>
       <PanelSection title="Linear Gradient">
-        <div className="p-8">
-          <div className="h-24 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500"></div>
+        <div className="space-y-4">
+          <div className="h-14 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+          <div className="h-14 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+          <div className="h-14 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+          <div className="h-14 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500"></div>
         </div>
       </PanelSection>
     </div>

@@ -103,7 +103,7 @@ export default function Height() {
                 style={{ maxHeight: 441 }}
               >
                 <div
-                  className="dark:bg-pink-500 bg-pink-500 border border-pink-400 text-slate-50 font-mono font-bold py-4 w-full h-full gap-5 rounded-md grid items-center content-center self-center justify-items-center  overflow-hidden"
+                  className="bg-pink-500 border border-pink-400 text-slate-50 font-mono font-bold py-4 w-full h-full gap-5 rounded-md grid items-center content-center self-center justify-items-center  overflow-hidden"
                   style={{ gridTemplateRows: "1fr auto 1fr" }}
                 >
                   <div
@@ -181,7 +181,7 @@ export default function Height() {
                 style={{ maxHeight: 491 }}
               >
                 <div
-                  className="dark:bg-indigo-500 bg-indigo-500 border border-indigo-400 text-slate-50 font-mono font-bold py-4 w-full h-full gap-5 rounded-md grid items-center content-center self-center justify-items-center  overflow-hidden"
+                  className="bg-indigo-500 border border-indigo-400 text-slate-50 font-mono font-bold py-4 w-full h-full gap-5 rounded-md grid items-center content-center self-center justify-items-center  overflow-hidden"
                   style={{ gridTemplateRows: "1fr auto 1fr" }}
                 >
                   <div
@@ -204,7 +204,7 @@ export default function Height() {
             </div>
           </div>
           <div
-            className="dark:bg-indigo-500 bg-indigo-500 border border-indigo-400 opacity-20 rounded-b-md absolute left-0 right-0 mx-auto"
+            className="bg-indigo-500 border border-indigo-400 opacity-20 rounded-b-md absolute left-0 right-0 mx-auto"
             style={{ width: 288, bottom: "-48px", height: 48 }}
           />
         </div>
@@ -263,7 +263,7 @@ export default function Height() {
                 style={{ maxHeight: 441 }}
               >
                 <div
-                  className="dark:bg-pink-500 bg-pink-500 border border-pink-400 text-slate-50 font-mono font-bold py-4 w-full h-full gap-5 rounded-md grid items-center content-center self-center justify-items-center  overflow-hidden"
+                  className="bg-pink-500 border border-pink-400 text-slate-50 font-mono font-bold py-4 w-full h-full gap-5 rounded-md grid items-center content-center self-center justify-items-center  overflow-hidden"
                   style={{ gridTemplateRows: "1fr auto 1fr" }}
                 >
                   <div
