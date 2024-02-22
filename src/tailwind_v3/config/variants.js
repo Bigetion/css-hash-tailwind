@@ -22,6 +22,7 @@ const variants = {
     "hover",
     "focus",
   ],
+  backgroundOrigin: ["responsive"],
   backgroundPosition: ["responsive"],
   backgroundRepeat: ["responsive"],
   backgroundSize: ["responsive"],

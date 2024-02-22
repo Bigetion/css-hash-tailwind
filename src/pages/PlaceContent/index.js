@@ -58,7 +58,7 @@ export default function PlaceContent() {
       </PanelSection>
       <PanelSection title="End">
         <div
-          class={`font-mono text-white text-sm font-bold leading-6 ${stripes.indigo} rounded-lg`}
+          className={`font-mono text-white text-sm font-bold leading-6 ${stripes.indigo} rounded-lg`}
         >
           <div
             className="grid place-content-end h-56 gap-4"

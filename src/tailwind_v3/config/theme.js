@@ -20,6 +20,7 @@ const theme = {
       "linear-gradient(to top left, var(--gradient-color-stops))",
   },
   backgroundOpacity: {},
+  backgroundOrigin: {},
   backgroundPosition: {
     bottom: "bottom",
     center: "center",

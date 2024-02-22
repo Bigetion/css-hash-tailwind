@@ -223,6 +223,12 @@ const routes = [
     component: () => import("pages/BackgroundOpacity"),
   },
   {
+    id: "backgroundOrigin",
+    path: "/background-origin",
+    exact: true,
+    component: () => import("pages/BackgroundOrigin"),
+  },
+  {
     id: "backgroundColor",
     path: "/background-color",
     exact: true,

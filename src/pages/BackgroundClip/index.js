@@ -8,37 +8,33 @@ export default function BackgroundClip() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Background Clip</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="">
-          <div className="flex justify-around">
-            <div className="flex-1">
-              <p className="text-center text-sm text-gray-600 mb-1">
-                .bg-clip-border
-              </p>
-              <div className="mx-auto bg-purple-500 w-24 h-24 bg-clip-border border-4 border-dashed border-purple-800 p-4"></div>
-            </div>
-            <div className="flex-1">
-              <p className="text-center text-sm text-gray-600 mb-1">
-                .bg-clip-padding
-              </p>
-              <div className="mx-auto bg-purple-500 w-24 h-24 bg-clip-padding border-4 border-dashed border-purple-800 p-4"></div>
-            </div>
-            <div className="flex-1">
-              <p className="text-center text-sm text-gray-600 mb-1">
-                .bg-clip-content
-              </p>
-              <div className="mx-auto bg-purple-500 w-24 h-24 bg-clip-content border-4 border-dashed border-purple-800 p-4"></div>
-            </div>
+      <PanelSection title="Setting the background clip">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-10 sm:space-y-0 sm:space-x-10">
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              bg-clip-border
+            </p>
+            <div className="w-24 h-24 bg-clip-border p-3 rounded-lg shadow-lg bg-indigo-500 border-4 border-white border-opacity-50 border-dashed font-mono font-extrabold text-sm text-white flex justify-center items-center"></div>
+          </div>
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              bg-clip-padding
+            </p>
+            <div className="w-24 h-24 bg-clip-padding p-3 rounded-lg shadow-lg bg-indigo-500 border-4 border-indigo-500 border-opacity-50 border-dashed font-mono font-extrabold text-sm text-white flex justify-center items-center"></div>
+          </div>
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              bg-clip-content
+            </p>
+            <div className="w-24 h-24 bg-clip-content p-3 rounded-lg bg-indigo-500 border-4 border-indigo-500 border-opacity-50 border-dashed font-mono font-extrabold text-sm text-white flex justify-center items-center"></div>
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Cropping to text">
-        <div className="p-8">
-          <div className="text-center text-5xl font-extrabold leading-none tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
-              Hello world
-            </span>
-          </div>
+        <div className="text-4xl sm:text-5xl font-extrabold leading-none tracking-tight text-center">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+            Hello world
+          </span>
         </div>
       </PanelSection>
     </div>

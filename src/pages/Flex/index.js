@@ -57,7 +57,7 @@ export default function Flex() {
       </PanelSection>
       <PanelSection title="None">
         <div
-          class={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.indigo} rounded-lg`}
+          className={`flex gap-4 text-white text-sm font-bold font-mono leading-6 ${stripes.indigo} rounded-lg`}
         >
           <div className="flex-none last:pr-8 sm:last:pr-0">
             <div className="p-4 w-14 h-14 rounded-lg flex items-center justify-center bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">

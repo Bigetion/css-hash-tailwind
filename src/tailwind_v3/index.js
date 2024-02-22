@@ -11,6 +11,7 @@ import generateBackgroundClip from "./generators/backgroundClip";
 import generateBackgroundColor from "./generators/backgroundColor";
 import generateBackgroundImage from "./generators/backgroundImage";
 import generateBackgroundOpacity from "./generators/backgroundOpacity";
+import generateBackgroundOrigin from "./generators/backgroundOrigin";
 import generateBackgroundPosition from "./generators/backgroundPosition";
 import generateBackgroundRepeat from "./generators/backgroundRepeat";
 import generateBackgroundSize from "./generators/backgroundSize";
@@ -142,6 +143,7 @@ const generateOptions = {
   backgroundColor: generateBackgroundColor,
   backgroundImage: generateBackgroundImage,
   backgroundOpacity: generateBackgroundOpacity,
+  backgroundOrigin: generateBackgroundOrigin,
   backgroundPosition: generateBackgroundPosition,
   backgroundRepeat: generateBackgroundRepeat,
   backgroundSize: generateBackgroundSize,

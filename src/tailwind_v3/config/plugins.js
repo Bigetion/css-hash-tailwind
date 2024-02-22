@@ -10,6 +10,7 @@ const plugins = {
   backgroundColor: true,
   backgroundImage: true,
   backgroundOpacity: true,
+  backgroundOrigin: true,
   backgroundPosition: true,
   backgroundRepeat: true,
   backgroundSize: true,
