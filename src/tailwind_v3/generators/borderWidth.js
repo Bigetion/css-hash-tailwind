@@ -15,6 +15,20 @@ export default function generateBorderWidth(configOptions = {}) {
           ${pseudoClass(`${prefix}${key}`, variants.borderWidth)} {
             border-width: ${value};
           }
+          ${pseudoClass(`${prefix}-x${key}`, variants.borderWidth)} {
+            border-left-width: ${value};
+            border-right-width: ${value};
+          }
+          ${pseudoClass(`${prefix}-y${key}`, variants.borderWidth)} {
+            border-top-width: ${value};
+            border-bottom-width: ${value};
+          }
+          ${pseudoClass(`${prefix}-s${key}`, variants.borderWidth)} {
+            border-inline-start-width: ${value};
+          }
+          ${pseudoClass(`${prefix}-e${key}`, variants.borderWidth)} {
+            border-inline-end-width: ${value};
+          }
           ${pseudoClass(`${prefix}-t${key}`, variants.borderWidth)} {
             border-top-width: ${value};
           }

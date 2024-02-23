@@ -27,6 +27,40 @@ export default function generateBorderColor(configOptions = {}) {
               --border-opacity: 1;
               border-color: ${value};${rgbPropertyValue}
             }
+            ${pseudoClass(`${prefix}-x${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-left-color: ${value};${rgbPropertyValue}
+              border-right-color: ${value};${rgbPropertyValue}
+            }
+            ${pseudoClass(`${prefix}-y${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-top-color: ${value};${rgbPropertyValue}
+              border-bottom-color: ${value};${rgbPropertyValue}
+            }
+            ${pseudoClass(`${prefix}-s${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-inline-start-color: ${value};${rgbPropertyValue}
+            }
+            ${pseudoClass(`${prefix}-e${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-inline-end-color: ${value};${rgbPropertyValue}
+            }
+            ${pseudoClass(`${prefix}-t${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-top-color: ${value};${rgbPropertyValue}
+            }
+            ${pseudoClass(`${prefix}-r${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-right-color: ${value};${rgbPropertyValue}
+            }
+            ${pseudoClass(`${prefix}-b${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-bottom-color: ${value};${rgbPropertyValue}
+            }
+            ${pseudoClass(`${prefix}-l${key}`, variants.borderWidth)} {
+              --border-opacity: 1;
+              border-left-color: ${value};${rgbPropertyValue}
+            }
           `;
         }
       );
