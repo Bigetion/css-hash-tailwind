@@ -712,6 +712,26 @@ const theme = {
     normal: "0",
     none: "0",
   },
+  outlineColor: {
+    inherit: "inherit",
+    current: "currentColor",
+    transparent: "transparent",
+  },
+  outlineOffset: {
+    0: 0,
+    1: 1,
+    2: 2,
+    4: 4,
+    8: 8,
+  },
+  outlineOpacity: {},
+  outlineWidth: {
+    0: 0,
+    1: 1,
+    2: 2,
+    4: 4,
+    8: 8,
+  },
   padding: {},
   placeholderColor: {
     primary: "#3490dc",

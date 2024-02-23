@@ -81,7 +81,11 @@ import generateObjectFit from "./generators/objectFit";
 import generateObjectPosition from "./generators/objectPosition";
 import generateOpacity from "./generators/opacity";
 import generateOrder from "./generators/order";
-import generateOutline from "./generators/outline";
+import generateOutlineColor from "./generators/outlineColor";
+import generateOutlineOffset from "./generators/outlineOffset";
+import generateOutlineOpacity from "./generators/outlineOpacity";
+import generateOutlineStyle from "./generators/outlineStyle";
+import generateOutlineWidth from "./generators/outlineWidth";
 import generateOverflow from "./generators/overflow";
 import generateOverscrollBehavior from "./generators/overscrollBehavior";
 import generatePadding from "./generators/padding";
@@ -211,7 +215,11 @@ const generateOptions = {
   objectPosition: generateObjectPosition,
   opacity: generateOpacity,
   order: generateOrder,
-  outline: generateOutline,
+  outlineColor: generateOutlineColor,
+  outlineOffset: generateOutlineOffset,
+  outlineOpacity: generateOutlineOpacity,
+  outlineStyle: generateOutlineStyle,
+  outlineWidth: generateOutlineWidth,
   overflow: generateOverflow,
   overscrollBehavior: generateOverscrollBehavior,
   padding: generatePadding,

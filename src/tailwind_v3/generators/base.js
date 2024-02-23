@@ -166,9 +166,6 @@ export default function generateBase() {
       background-color: transparent;
       background-image: none;
     }
-    button:focus {
-      outline: 0;
-    }
     fieldset {
       margin: 0;
       padding: 0;
