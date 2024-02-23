@@ -49,10 +49,10 @@ export default function BoxShadow() {
       </PanelSection>
       <PanelSection title="Focus outline shadow">
         <div className="flex justify-center text-sm p-4 py-8">
-          <button className="focus:outline-none focus:shadow-outline bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-32 mr-6">
+          <button className="focus:shadow-outline bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-32 mr-6">
             Unfocused
           </button>
-          <button className="focus:outline-none shadow-outline bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-32">
+          <button className="shadow-outline bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-32">
             Focused
           </button>
         </div>

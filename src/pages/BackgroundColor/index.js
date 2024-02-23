@@ -12,7 +12,7 @@ export default function BackgroundColor() {
         <div className="text-center">
           <button
             type="button"
-            className="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+            className="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow"
             tabindex="-1"
           >
             Save changes
@@ -25,7 +25,7 @@ export default function BackgroundColor() {
             <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               bg-sky-500
             </p>
-            <button className="px-4 py-2 font-semibold text-sm bg-sky-500 text-white rounded-md shadow-sm opacity-100 focus:outline-none">
+            <button className="px-4 py-2 font-semibold text-sm bg-sky-500 text-white rounded-md shadow-sm opacity-100">
               Button A
             </button>
           </div>
@@ -33,7 +33,7 @@ export default function BackgroundColor() {
             <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               bg-sky-500 bg-opacity-75
             </p>
-            <button className="px-4 py-2 font-semibold text-sm bg-sky-500 bg-opacity-75 text-white rounded-md shadow-sm opacity-100 focus:outline-none">
+            <button className="px-4 py-2 font-semibold text-sm bg-sky-500 bg-opacity-75 text-white rounded-md shadow-sm opacity-100">
               Button B
             </button>
           </div>
@@ -41,7 +41,7 @@ export default function BackgroundColor() {
             <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               bg-sky-500 bg-opacity-50
             </p>
-            <button className="px-4 py-2 font-semibold text-sm bg-sky-500 bg-opacity-50 text-white rounded-md shadow-sm opacity-100 focus:outline-none">
+            <button className="px-4 py-2 font-semibold text-sm bg-sky-500 bg-opacity-50 text-white rounded-md shadow-sm opacity-100">
               Button C
             </button>
           </div>
@@ -51,7 +51,7 @@ export default function BackgroundColor() {
         <div className="text-center">
           <button
             type="button"
-            className="py-2 px-3 bg-cyan-500 hover:bg-cyan-600 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+            className="py-2 px-3 bg-cyan-500 hover:bg-cyan-600 text-white text-sm font-semibold rounded-md shadow"
             tabindex="-1"
           >
             Subscribe

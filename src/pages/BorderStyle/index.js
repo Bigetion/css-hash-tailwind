@@ -8,45 +8,47 @@ export default function BorderStyle() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Border Style</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="">
-          <div className="block sm:flex sm:justify-around">
-            <div className="sm:w-3/5 sm:mb-0 flex justify-around mb-6">
-              <div className="flex-1">
-                <p className="text-center text-sm text-gray-600 mb-1">
-                  .border-solid
-                </p>
-                <div className="mx-auto w-24 h-24 bg-gray-400 border-4 border-gray-600 border-solid"></div>
-              </div>
-              <div className="flex-1">
-                <p className="text-center text-sm text-gray-600 mb-1">
-                  .border-dashed
-                </p>
-                <div className="mx-auto w-24 h-24 bg-gray-400 border-4 border-gray-600 border-dashed"></div>
-              </div>
-              <div className="flex-1">
-                <p className="text-center text-sm text-gray-600 mb-1">
-                  .border-dotted
-                </p>
-                <div className="mx-auto w-24 h-24 bg-gray-400 border-4 border-gray-600 border-dotted"></div>
-              </div>
-            </div>
-            <div className="sm:w-2/5 flex justify-around">
-              <div className="flex-1">
-                <p className="text-center text-sm text-gray-600 mb-1">
-                  .border-double
-                </p>
-                <div className="mx-auto w-24 h-24 bg-gray-400 border-4 border-gray-600 border-double"></div>
-              </div>
-              <div className="flex-1">
-                <p className="text-center text-sm text-gray-600 mb-1">
-                  .border-none
-                </p>
-                <div className="mx-auto w-24 h-24 bg-gray-400 border-4 border-gray-600 border-none"></div>
-              </div>
-              <div className="flex-1 sm:hidden"></div>
-            </div>
+      <PanelSection title="Setting the border style">
+        <div className="flex flex-col sm:flex-row items-center justify-around gap-4 text-white text-sm text-center font-bold leading-6">
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              border-solid
+            </p>
+            <button className="px-4 py-2 font-semibold text-sm bg-white text-slate-700 dark:bg-slate-700 dark:text-white rounded-md shadow-sm ring-1 ring-slate-900 ring-opacity-5 border-indigo-500 dark:border-sky-500 border-2 border-solid">
+              Button A
+            </button>
           </div>
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              border-dashed
+            </p>
+            <button className="px-4 py-2 font-semibold text-sm bg-white text-slate-700 dark:bg-slate-700 dark:text-white rounded-md shadow-sm ring-1 ring-slate-900 ring-opacity-5 border-indigo-500 dark:border-sky-500 border-2 border-dashed">
+              Button A
+            </button>
+          </div>
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              border-dotted
+            </p>
+            <button className="px-4 py-2 font-semibold text-sm bg-white text-slate-700 dark:bg-slate-700 dark:text-white rounded-md shadow-sm ring-1 ring-slate-900 ring-opacity-5 border-indigo-500 dark:border-sky-500 border-2 border-dotted">
+              Button A
+            </button>
+          </div>
+          <div className="flex flex-col items-center shrink-0">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              border-double
+            </p>
+            <button className="px-4 py-2 font-semibold text-sm bg-white text-slate-700 dark:bg-slate-700 dark:text-white rounded-md shadow-sm ring-1 ring-slate-900 ring-opacity-5 border-indigo-500 dark:border-sky-500 border-4 border-double">
+              Button A
+            </button>
+          </div>
+        </div>
+      </PanelSection>
+      <PanelSection title="No style">
+        <div className="flex justify-center gap-4 text-white text-sm text-center font-bold leading-6">
+          <button className="px-4 py-2 font-semibold text-sm bg-white text-slate-700 dark:bg-slate-700 dark:text-white rounded-md shadow-sm ring-1 ring-slate-900 ring-opacity-5 dark:ring-white/10 dark:ring-inset border-indigo-500 border-2 border-none">
+            Save Changes
+          </button>
         </div>
       </PanelSection>
     </div>

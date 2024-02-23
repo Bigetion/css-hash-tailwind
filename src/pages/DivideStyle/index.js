@@ -8,13 +8,11 @@ export default function DivideStyle() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Divide Style</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="">
-          <div className="divide-y-2 divide-gray-500 divide-dashed">
-            <div className="text-center py-2">1</div>
-            <div className="text-center py-2">2</div>
-            <div className="text-center py-2">3</div>
-          </div>
+      <PanelSection title="Setting the divide style" paddingless>
+        <div className="grid grid-cols-1 divide-dashed divide-y font-mono text-sm text-center font-bold leading-6 shadow-lg overflow-hidden max-w-sm mx-auto">
+          <div className="p-4 text-slate-400 bg-white">01</div>
+          <div className="p-4 text-slate-400 bg-white">02</div>
+          <div className="p-4 text-slate-400 bg-white">03</div>
         </div>
       </PanelSection>
     </div>

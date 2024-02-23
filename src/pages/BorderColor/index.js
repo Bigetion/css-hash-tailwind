@@ -17,7 +17,7 @@ export default function BorderColor() {
             <input
               type="text"
               placeholder="jane@example.com"
-              className="font-sans block text-sm leading-5 w-full py-2 px-3 border-2 border-rose-600 text-slate-500 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-rose-200 focus:border-rose-500"
+              className="font-sans block text-sm leading-5 w-full py-2 px-3 border-2 border-rose-600 text-slate-500 rounded-lg shadow-sm focus:ring focus:ring-rose-200 focus:border-rose-500"
             />
           </label>
           <span className="text-rose-600 text-sm">This field is required.</span>
@@ -107,7 +107,7 @@ export default function BorderColor() {
       </PanelSection>
       <PanelSection title="Hover, focus, and other states">
         <div className="grid place-content-center text-white text-sm text-center font-bold leading-6">
-          <button className="px-4 py-2 font-semibold text-sm bg-white text-slate-700 border border-slate-300 hover:border-indigo-300 rounded-md shadow-sm focus:outline-none">
+          <button className="px-4 py-2 font-semibold text-sm bg-white text-slate-700 border border-slate-300 hover:border-indigo-300 rounded-md shadow-sm">
             Send email
           </button>
         </div>

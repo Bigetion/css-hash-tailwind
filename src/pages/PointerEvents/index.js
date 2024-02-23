@@ -19,7 +19,7 @@ export default function PointerEvents() {
               .pointer-events-auto (event captured)
             </p>
             <div className="relative">
-              <select className="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+              <select className="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:bg-white focus:border-gray-500">
                 <option>Indiana</option>
                 <option>Michigan</option>
                 <option>Ohio</option>
@@ -39,7 +39,7 @@ export default function PointerEvents() {
               .pointer-events-none (event passes through)
             </p>
             <div className="relative">
-              <select className="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+              <select className="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:bg-white focus:border-gray-500">
                 <option>Indiana</option>
                 <option>Michigan</option>
                 <option>Ohio</option>

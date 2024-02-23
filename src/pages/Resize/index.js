@@ -10,22 +10,22 @@ export default function Resize() {
       </div>
       <PanelSection title="Resize in all directions">
         <div className="">
-          <textarea className="resize border rounded focus:outline-none focus:shadow-outline"></textarea>
+          <textarea className="resize border rounded focus:shadow-outline"></textarea>
         </div>
       </PanelSection>
       <PanelSection title="Resize vertically">
         <div className="">
-          <textarea className="resize-y border rounded focus:outline-none focus:shadow-outline"></textarea>
+          <textarea className="resize-y border rounded focus:shadow-outline"></textarea>
         </div>
       </PanelSection>
       <PanelSection title="Resize horizontally">
         <div className="">
-          <textarea className="resize-x border rounded focus:outline-none focus:shadow-outline"></textarea>
+          <textarea className="resize-x border rounded focus:shadow-outline"></textarea>
         </div>
       </PanelSection>
       <PanelSection title="Prevent resizing">
         <div className="">
-          <textarea className="resize-none border rounded focus:outline-none focus:shadow-outline"></textarea>
+          <textarea className="resize-none border rounded focus:shadow-outline"></textarea>
         </div>
       </PanelSection>
     </div>

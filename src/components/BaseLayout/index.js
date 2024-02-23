@@ -145,7 +145,7 @@ function Layout(props) {
                 <button
                   type="button"
                   className={classNames(
-                    "flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
+                    "flex px-6 items-center lg:hidden text-gray-500 focus:text-gray-700",
                     showSidebar ? "hidden" : ""
                   )}
                   aria-label="Open site navigation"
@@ -162,7 +162,7 @@ function Layout(props) {
                 <button
                   type="button"
                   className={classNames(
-                    "flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700",
+                    "flex px-6 items-center lg:hidden text-gray-500 focus:text-gray-700",
                     showSidebar ? "" : "hidden"
                   )}
                   aria-label="Close site navigation"

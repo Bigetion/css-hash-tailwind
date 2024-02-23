@@ -12,11 +12,11 @@ export default function PlaceholderColor() {
         <div className="text-center p-6">
           <div className="max-w-xs">
             <input
-              className="block appearance-none placeholder-gray-500 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="block appearance-none placeholder-gray-500 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline"
               placeholder="jane@example.com"
             />
             <input
-              className="mt-4 block appearance-none placeholder-red-300 border border-red-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="mt-4 block appearance-none placeholder-red-300 border border-red-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline"
               placeholder="jane@example.com"
             />
           </div>
