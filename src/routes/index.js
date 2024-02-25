@@ -1,6 +1,18 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "brightness",
+    path: "/brightness",
+    exact: true,
+    component: () => import("pages/Brightness"),
+  },
+  {
+    id: "blur",
+    path: "/blur",
+    exact: true,
+    component: () => import("pages/Blur"),
+  },
+  {
     id: "mixBlendMode",
     path: "/mix-blend-mode",
     exact: true,

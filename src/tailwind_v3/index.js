@@ -16,6 +16,7 @@ import generateBackgroundPosition from "./generators/backgroundPosition";
 import generateBackgroundRepeat from "./generators/backgroundRepeat";
 import generateBackgroundSize from "./generators/backgroundSize";
 import generateBase from "./generators/base";
+import generateBlur from "./generators/blur";
 import generateBorderCollapse from "./generators/borderCollapse";
 import generateBorderColor from "./generators/borderColor";
 import generateBorderOpacity from "./generators/borderOpacity";
@@ -25,6 +26,7 @@ import generateBorderWidth from "./generators/borderWidth";
 import generateBoxDecorationBreak from "./generators/boxDecorationBreak";
 import generateBoxShadow from "./generators/boxShadow";
 import generateBoxSizing from "./generators/boxSizing";
+import generateBrightness from "./generators/brightness";
 import generateClear from "./generators/clear";
 import generateContainer from "./generators/container";
 import generateCursor from "./generators/cursor";
@@ -34,6 +36,7 @@ import generateDivideOpacity from "./generators/divideOpacity";
 import generateDivideStyle from "./generators/divideStyle";
 import generateDivideWidth from "./generators/divideWidth";
 import generateFill from "./generators/fill";
+import generateFilter from "./generators/filter";
 import generateFlex from "./generators/flex";
 import generateFlexBasis from "./generators/flexBasis";
 import generateFlexDirection from "./generators/flexDirection";
@@ -152,6 +155,7 @@ const generateOptions = {
   backgroundPosition: generateBackgroundPosition,
   backgroundRepeat: generateBackgroundRepeat,
   backgroundSize: generateBackgroundSize,
+  blur: generateBlur,
   borderCollapse: generateBorderCollapse,
   borderColor: generateBorderColor,
   borderOpacity: generateBorderOpacity,
@@ -161,6 +165,7 @@ const generateOptions = {
   boxDecorationBreak: generateBoxDecorationBreak,
   boxShadow: generateBoxShadow,
   boxSizing: generateBoxSizing,
+  brightness: generateBrightness,
   clear: generateClear,
   container: generateContainer,
   cursor: generateCursor,
@@ -170,6 +175,7 @@ const generateOptions = {
   divideStyle: generateDivideStyle,
   divideWidth: generateDivideWidth,
   fill: generateFill,
+  filter: generateFilter,
   flex: generateFlex,
   flexBasis: generateFlexBasis,
   flexDirection: generateFlexDirection,
