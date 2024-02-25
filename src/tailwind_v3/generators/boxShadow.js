@@ -11,9 +11,14 @@ export default function generateBoxShadow(configOptions = {}) {
     ({ pseudoClass, getCssByOptions, getCssByColors }) => {
       let cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
         const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+        const valueSplit = value.split(" ");
         return `
           ${pseudoClass(`${prefix}${key}`, variants.boxShadow)} {
-            box-shadow: ${value};
+            --shadow: ${value};
+            --shadow-colored: ${valueSplit
+              .slice(0, 4)
+              .join(" ")} var(--shadow-color);
+            box-shadow: var(--ring-offset-shadow, 0 0 #0000),var(--ring-shadow, 0 0 #0000),var(--shadow);
           }
         `;
       });
@@ -23,8 +28,9 @@ export default function generateBoxShadow(configOptions = {}) {
         let str = "";
         if (rgbValue) {
           str += `
-            ${pseudoClass(`${prefix}-outline-${key}`)} {
-              box-shadow: 0 0 0 3px rgba(${rgbValue}, 0.5) !important;
+            ${pseudoClass(`${prefix}-${key}`, variants.boxShadow)} {
+              --shadow-color: rgba(${rgbValue}, 0.5) !important;
+              --shadow: var(--shadow-colored);
             }
           `;
         }

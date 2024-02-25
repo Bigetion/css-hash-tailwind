@@ -76,6 +76,7 @@ const plugins = {
   maxWidth: true,
   minHeight: true,
   minWidth: true,
+  mixBlendMode: true,
   objectFit: true,
   objectPosition: true,
   opacity: true,

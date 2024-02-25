@@ -77,6 +77,7 @@ import generateMaxHeight from "./generators/maxHeight";
 import generateMaxWidth from "./generators/maxWidth";
 import generateMinHeight from "./generators/minHeight";
 import generateMinWidth from "./generators/minWidth";
+import generateMixBlendMode from "./generators/mixBlendMode";
 import generateObjectFit from "./generators/objectFit";
 import generateObjectPosition from "./generators/objectPosition";
 import generateOpacity from "./generators/opacity";
@@ -212,6 +213,7 @@ const generateOptions = {
   minHeight: generateMinHeight,
   minWidth: generateMinWidth,
   objectFit: generateObjectFit,
+  mixBlendMode: generateMixBlendMode,
   objectPosition: generateObjectPosition,
   opacity: generateOpacity,
   order: generateOrder,

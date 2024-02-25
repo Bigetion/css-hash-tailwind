@@ -9,7 +9,7 @@ export default function generateStroke(configOptions = {}) {
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions, getCssByColors }) => {
-      const cssString1 = getCssByOptions(
+      let cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.stroke)} {
@@ -17,14 +17,14 @@ export default function generateStroke(configOptions = {}) {
           }
         `
       );
-      const cssString2 = getCssByColors(colors, (key, value) => {
+      cssString += getCssByColors(colors, (key, value) => {
         return `
             ${pseudoClass(`${prefix}-${key}`, variants.textColor)} {
               stroke: ${value};
             }
           `;
       });
-      return `${cssString1} ${cssString2}`;
+      return cssString;
     },
     configOptions,
     variants.stroke.indexOf("responsive") >= 0

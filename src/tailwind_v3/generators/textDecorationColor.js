@@ -11,7 +11,7 @@ export default function generateTextDecorationColor(configOptions = {}) {
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors, getCssByOptions }) => {
-      const cssString = getCssByColors(
+      let cssString = getCssByColors(
         propertyOptions,
         (key, value, rgbValue) => {
           let rgbPropertyValue = "";
@@ -26,7 +26,7 @@ export default function generateTextDecorationColor(configOptions = {}) {
           `;
         }
       );
-      const cssStringOpacity = getCssByOptions(
+      cssString += getCssByOptions(
         opacity,
         (key, value) => `
           ${pseudoClass(`${prefix}-opacity-${key}`, variants.opacity)} {
@@ -34,7 +34,7 @@ export default function generateTextDecorationColor(configOptions = {}) {
           }
         `
       );
-      return `${cssString} ${cssStringOpacity}`;
+      return cssString;
     },
     configOptions,
     variants.textDecorationColor.indexOf("responsive") >= 0

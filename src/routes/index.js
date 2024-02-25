@@ -1,6 +1,18 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "mixBlendMode",
+    path: "/mix-blend-mode",
+    exact: true,
+    component: () => import("pages/MixBlendMode"),
+  },
+  {
+    id: "backgroundBlendMode",
+    path: "/background-blend-mode",
+    exact: true,
+    component: () => import("pages/BackgroundBlendMode"),
+  },
+  {
     id: "hyphens",
     path: "/hyphens",
     exact: true,
@@ -161,6 +173,12 @@ const routes = [
     path: "/box-shadow",
     exact: true,
     component: () => import("pages/BoxShadow"),
+  },
+  {
+    id: "boxShadowColor",
+    path: "/box-shadow-color",
+    exact: true,
+    component: () => import("pages/BoxShadowColor"),
   },
   {
     id: "tableLayout",

@@ -91,6 +91,7 @@ const variants = {
   maxWidth: ["responsive"],
   minHeight: ["responsive"],
   minWidth: ["responsive"],
+  mixBlendMode: ["responsive"],
   objectFit: ["responsive"],
   objectPosition: ["responsive"],
   opacity: ["responsive", "group-hover", "focus-within", "hover", "focus"],

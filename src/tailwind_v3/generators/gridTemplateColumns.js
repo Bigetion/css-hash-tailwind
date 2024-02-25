@@ -9,7 +9,7 @@ export default function generateGridTemplateColumns(configOptions = {}) {
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
+      let cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.gridTemplateColumns)} {
@@ -19,7 +19,7 @@ export default function generateGridTemplateColumns(configOptions = {}) {
           }
         `
       );
-      const cssString2 = getCssByOptions(
+      cssString += getCssByOptions(
         { default: "" },
         () => `
           ${pseudoClass(`${prefix}-subgrid`, {})} {
@@ -27,7 +27,7 @@ export default function generateGridTemplateColumns(configOptions = {}) {
           }
         `
       );
-      return `${cssString} ${cssString2}`;
+      return cssString;
     },
     configOptions,
     variants.gridTemplateColumns.indexOf("responsive") >= 0

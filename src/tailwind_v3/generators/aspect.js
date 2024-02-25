@@ -9,7 +9,7 @@ export default function generateMaxWidth(configOptions = {}) {
 
   const propertyOptions = Object.assign({}, spacing);
 
-  const responsiveCssString = generateCssString(
+  let responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
         propertyOptions,
@@ -30,8 +30,7 @@ export default function generateMaxWidth(configOptions = {}) {
     variants.aspect.indexOf("responsive") >= 0
   );
 
-  return `
-    ${responsiveCssString}
+  responsiveCssString += `
     .aspect>* {
       position: absolute;
       height: 100%;
@@ -42,4 +41,6 @@ export default function generateMaxWidth(configOptions = {}) {
       left: 0;
     }
   `;
+
+  return responsiveCssString;
 }
