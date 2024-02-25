@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "contrast",
+    path: "/contrast",
+    exact: true,
+    component: () => import("pages/Contrast"),
+  },
+  {
     id: "brightness",
     path: "/brightness",
     exact: true,

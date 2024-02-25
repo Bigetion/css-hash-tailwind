@@ -45,6 +45,7 @@ const variants = {
   brightness: ["responsive", "hover", "group-hover", "focus", "focus-within"],
   clear: ["responsive"],
   cursor: ["responsive"],
+  contrast: ["responsive", "hover", "group-hover", "focus", "focus-within"],
   display: ["responsive"],
   divideColor: ["responsive"],
   divideOpacity: ["responsive"],

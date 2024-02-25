@@ -29,6 +29,7 @@ import generateBoxSizing from "./generators/boxSizing";
 import generateBrightness from "./generators/brightness";
 import generateClear from "./generators/clear";
 import generateContainer from "./generators/container";
+import generateContrast from "./generators/contrast";
 import generateCursor from "./generators/cursor";
 import generateDisplay from "./generators/display";
 import generateDivideColor from "./generators/divideColor";
@@ -168,6 +169,7 @@ const generateOptions = {
   brightness: generateBrightness,
   clear: generateClear,
   container: generateContainer,
+  contrast: generateContrast,
   cursor: generateCursor,
   display: generateDisplay,
   divideColor: generateDivideColor,

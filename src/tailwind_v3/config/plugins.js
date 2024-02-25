@@ -28,6 +28,7 @@ const plugins = {
   brightness: true,
   clear: true,
   container: true,
+  contrast: true,
   cursor: true,
   display: true,
   divideColor: true,

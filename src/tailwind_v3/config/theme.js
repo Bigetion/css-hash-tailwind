@@ -77,7 +77,7 @@ const theme = {
   },
   boxShadow: {
     sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-    default: "0 1px 3px 0 rgb(0 0 0 / 0.05)",
+    default: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
     md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
     lg: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
     xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
@@ -367,6 +367,15 @@ const theme = {
       800: "#9f1239",
       900: "#881337",
     },
+  },
+  contrast: {
+    0: "0",
+    50: ".5",
+    75: ".75",
+    100: "1",
+    125: "1.25",
+    150: "1.50",
+    200: "2",
   },
   divideColor: {
     primary: "#3490dc",
