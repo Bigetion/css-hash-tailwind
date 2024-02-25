@@ -67,8 +67,10 @@ import generateGridRowStart from "./generators/gridRowStart";
 import generateGridTemplateColumns from "./generators/gridTemplateColumns";
 import generateGridTemplateRows from "./generators/gridTemplateRows";
 import generateHeight from "./generators/height";
+import generateHueRotate from "./generators/hueRotate";
 import generateHyphens from "./generators/hyphens";
 import generateInset from "./generators/inset";
+import generateInvert from "./generators/invert";
 import generateIsolation from "./generators/isolation";
 import generateJustifyContent from "./generators/justifyContent";
 import generateJustifyItems from "./generators/justifyItems";
@@ -109,8 +111,10 @@ import generateRingOffsetColor from "./generators/ringOffsetColor";
 import generateRingOffsetWidth from "./generators/ringOffsetWidth";
 import generateRingOpacity from "./generators/ringOpacity";
 import generateRingWidth from "./generators/ringWidth";
+import generateSaturate from "./generators/saturate";
 import generateRotate from "./generators/rotate";
 import generateScale from "./generators/scale";
+import generateSepia from "./generators/sepia";
 import generateSize from "./generators/size";
 import generateSkew from "./generators/skew";
 import generateSpace from "./generators/space";
@@ -208,8 +212,10 @@ const generateOptions = {
   gridTemplateColumns: generateGridTemplateColumns,
   gridTemplateRows: generateGridTemplateRows,
   height: generateHeight,
+  hueRotate: generateHueRotate,
   hyphens: generateHyphens,
   inset: generateInset,
+  invert: generateInvert,
   isolation: generateIsolation,
   justifyContent: generateJustifyContent,
   justifyItems: generateJustifyItems,
@@ -251,7 +257,9 @@ const generateOptions = {
   ringOpacity: generateRingOpacity,
   ringWidth: generateRingWidth,
   rotate: generateRotate,
+  saturate: generateSaturate,
   scale: generateScale,
+  sepia: generateSepia,
   size: generateSize,
   skew: generateSkew,
   space: generateSpace,

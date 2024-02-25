@@ -598,6 +598,19 @@ const theme = {
     full: "100%",
     screen: "100vh",
   },
+  hueRotate: {
+    0: "0deg",
+    15: "15deg",
+    30: "30deg",
+    60: "60deg",
+    90: "90deg",
+    180: "180deg",
+    "-180": "-180deg",
+    "-90": "-90deg",
+    "-60": "-60deg",
+    "-30": "-30deg",
+    "-15": "-15deg",
+  },
   inset: {
     0: "0",
     auto: "auto",
@@ -616,6 +629,7 @@ const theme = {
     "-3/4": "-75%",
     "-full": "-100%",
   },
+  invert: {},
   letterSpacing: {
     3: ".75rem",
     4: "1rem",
@@ -808,6 +822,13 @@ const theme = {
     "-2": "-2deg",
     "-1": "-1deg",
   },
+  saturate: {
+    0: "0",
+    50: ".5",
+    100: "1",
+    150: "1.50",
+    200: "2",
+  },
   scale: {
     0: "0",
     25: ".25",
@@ -829,6 +850,7 @@ const theme = {
     xl: "1280px",
     "2xl": "1536px",
   },
+  sepia: {},
   skew: {
     0: "0deg",
     1: "1deg",

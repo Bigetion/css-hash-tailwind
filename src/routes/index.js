@@ -1,6 +1,30 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "hueRotate",
+    path: "/hue-rotate",
+    exact: true,
+    component: () => import("pages/HueRotate"),
+  },
+  {
+    id: "saturate",
+    path: "/saturate",
+    exact: true,
+    component: () => import("pages/Saturate"),
+  },
+  {
+    id: "sepia",
+    path: "/sepia",
+    exact: true,
+    component: () => import("pages/Sepia"),
+  },
+  {
+    id: "invert",
+    path: "/invert",
+    exact: true,
+    component: () => import("pages/Invert"),
+  },
+  {
     id: "grayscale",
     path: "/grayscale",
     exact: true,

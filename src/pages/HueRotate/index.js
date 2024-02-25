@@ -2,20 +2,20 @@ import React from "react";
 
 import PanelSection from "components/PanelSection";
 
-export default function Contrast() {
+export default function HueRotate() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
       <div className="flex items-center">
-        <h1 className="text-3xl font-bold">Contrast</h1>
+        <h1 className="text-3xl font-bold">Hue Rotate</h1>
       </div>
-      <PanelSection title="Changing element contrast">
+      <PanelSection title="Rotating an element’s hue">
         <div className="flex justify-start sm:block overflow-scroll sm:overflow-visible scroll-p-8">
           <div className="flex items-center justify-around gap-6 sm:gap-4 font-mono font-bold shrink-0 p-8">
             <div className="flex flex-col items-center shrink-0">
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
-                contrast-50
+                hue-rotate-15
               </p>
-              <div className="relative filter contrast-50">
+              <div className="relative filter hue-rotate-15">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -26,9 +26,9 @@ export default function Contrast() {
             </div>
             <div className="flex flex-col items-center shrink-0">
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
-                contrast-100
+                hue-rotate-90
               </p>
-              <div className="relative filter contrast-100">
+              <div className="relative filter hue-rotate-90">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -39,9 +39,9 @@ export default function Contrast() {
             </div>
             <div className="flex flex-col items-center shrink-0">
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
-                contrast-125
+                hue-rotate-180
               </p>
-              <div className="relative filter contrast-125">
+              <div className="relative filter hue-rotate-180">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -52,9 +52,9 @@ export default function Contrast() {
             </div>
             <div className="flex flex-col items-center shrink-0">
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
-                contrast-200
+                -hue-rotate-60
               </p>
-              <div className="relative filter contrast-200">
+              <div className="relative filter -hue-rotate-60">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

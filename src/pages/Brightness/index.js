@@ -12,7 +12,7 @@ export default function Brightness() {
         <div className="flex justify-start sm:block overflow-scroll sm:overflow-visible scroll-p-8">
           <div className="flex items-center justify-around gap-6 sm:gap-4 font-mono font-bold shrink-0 p-8">
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-50
               </p>
               <div className="relative filter brightness-50">
@@ -25,7 +25,7 @@ export default function Brightness() {
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-100
               </p>
               <div className="relative filter brightness-100">
@@ -38,7 +38,7 @@ export default function Brightness() {
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-125
               </p>
               <div className="relative filter brightness-125">
@@ -51,7 +51,7 @@ export default function Brightness() {
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-200
               </p>
               <div className="relative filter brightness-200">

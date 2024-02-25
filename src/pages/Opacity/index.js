@@ -11,7 +11,7 @@ export default function Opacity() {
       <PanelSection title="Changing an element's opacity">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 text-white text-sm font-bold leading-6">
           <div className="flex flex-col items-center shrink-0">
-            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               opacity-100
             </p>
             <button className="px-4 py-2 font-semibold text-sm bg-indigo-500 text-white rounded-md shadow-sm opacity-100">
@@ -19,7 +19,7 @@ export default function Opacity() {
             </button>
           </div>
           <div className="flex flex-col items-center shrink-0">
-            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               opacity-75
             </p>
             <button className="px-4 py-2 font-semibold text-sm bg-indigo-500 text-white rounded-md shadow-sm opacity-75">
@@ -27,7 +27,7 @@ export default function Opacity() {
             </button>
           </div>
           <div className="flex flex-col items-center shrink-0">
-            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               opacity-50
             </p>
             <button className="px-4 py-2 font-semibold text-sm bg-indigo-500 text-white rounded-md shadow-sm opacity-50">
@@ -35,7 +35,7 @@ export default function Opacity() {
             </button>
           </div>
           <div className="flex flex-col items-center shrink-0">
-            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+            <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
               opacity-25
             </p>
             <button className="px-4 py-2 font-semibold text-sm bg-indigo-500 text-white rounded-md shadow-sm opacity-25">
