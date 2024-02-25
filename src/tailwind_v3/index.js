@@ -36,6 +36,7 @@ import generateDivideColor from "./generators/divideColor";
 import generateDivideOpacity from "./generators/divideOpacity";
 import generateDivideStyle from "./generators/divideStyle";
 import generateDivideWidth from "./generators/divideWidth";
+import generateDropShadow from "./generators/dropShadow";
 import generateFill from "./generators/fill";
 import generateFilter from "./generators/filter";
 import generateFlex from "./generators/flex";
@@ -53,6 +54,7 @@ import generateFontWeight from "./generators/fontWeight";
 import generateForm from "./generators/form";
 import generateGap from "./generators/gap";
 import generateGradientColorStops from "./generators/gradientColorStops";
+import generateGrayscale from "./generators/grayscale";
 import generateGridAutoColumns from "./generators/gridAutoColumns";
 import generateGridAutoFlow from "./generators/gridAutoFlow";
 import generateGridAutoRows from "./generators/gridAutoRows";
@@ -176,6 +178,7 @@ const generateOptions = {
   divideOpacity: generateDivideOpacity,
   divideStyle: generateDivideStyle,
   divideWidth: generateDivideWidth,
+  dropShadow: generateDropShadow,
   fill: generateFill,
   filter: generateFilter,
   flex: generateFlex,
@@ -192,6 +195,7 @@ const generateOptions = {
   fontWeight: generateFontWeight,
   gap: generateGap,
   gradientColorStops: generateGradientColorStops,
+  grayscale: generateGrayscale,
   gridAutoColumns: generateGridAutoColumns,
   gridAutoFlow: generateGridAutoFlow,
   gridAutoRows: generateGridAutoRows,

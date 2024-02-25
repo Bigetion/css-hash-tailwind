@@ -384,6 +384,15 @@ const theme = {
   },
   divideOpacity: {},
   divideWidth: {},
+  dropShadow: {
+    sm: "0 1px 1px rgb(0 0 0 / 0.05)",
+    default: "0 1px 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.06)",
+    md: "0 4px 3px rgb(0 0 0 / 0.07), 0 2px 2px rgb(0 0 0 / 0.06)",
+    lg: "0 10px 8px rgb(0 0 0 / 0.04), 0 4px 3px rgb(0 0 0 / 0.1)",
+    xl: "0 20px 13px rgb(0 0 0 / 0.03), 0 8px 5px rgb(0 0 0 / 0.08)",
+    "2xl": "0 25px 25px rgb(0 0 0 / 0.15)",
+    none: "0 0 #0000",
+  },
   fill: { none: "none", inherit: "inherit", current: "currentColor" },
   flex: {
     1: "1 1 0%",
@@ -428,6 +437,7 @@ const theme = {
     secondary: "#ffed4a",
     danger: "#e3342f",
   },
+  grayscale: {},
   gridAutoColumns: {
     auto: "auto",
     min: "min-content",

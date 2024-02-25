@@ -21,7 +21,7 @@ export default function Contrast() {
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
                   src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-lg" />
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
@@ -34,7 +34,7 @@ export default function Contrast() {
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
                   src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-lg" />
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
@@ -47,7 +47,7 @@ export default function Contrast() {
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
                   src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-lg" />
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
@@ -60,7 +60,7 @@ export default function Contrast() {
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
                   src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-black ring-opacity-10 rounded-lg" />
               </div>
             </div>
           </div>

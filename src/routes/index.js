@@ -1,6 +1,18 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "grayscale",
+    path: "/grayscale",
+    exact: true,
+    component: () => import("pages/Grayscale"),
+  },
+  {
+    id: "dropShadow",
+    path: "/drop-shadow",
+    exact: true,
+    component: () => import("pages/DropShadow"),
+  },
+  {
     id: "contrast",
     path: "/contrast",
     exact: true,
