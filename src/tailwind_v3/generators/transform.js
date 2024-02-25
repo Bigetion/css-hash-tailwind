@@ -1,4 +1,4 @@
-export default function generateTransform({ prefix }) {
+export default function ({ prefix }) {
   return `    
   .${prefix}transform {
     --transform-translate-x: 0;

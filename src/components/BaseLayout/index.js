@@ -191,7 +191,7 @@ function Layout(props) {
                   onScroll={() => {
                     onChangeSidebarScrollTop(sidebarRef.current.scrollTop);
                   }}
-                  className={`overscroll-contain px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
+                  className={`overscroll-contain px-6 pt-6 overflow-y-auto text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
                 >
                   {menus.map((item, index) => (
                     <Menu

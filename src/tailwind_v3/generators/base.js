@@ -1,4 +1,4 @@
-export default function generateBase() {
+export default function () {
   return `
     html {
       line-height: 1.15;

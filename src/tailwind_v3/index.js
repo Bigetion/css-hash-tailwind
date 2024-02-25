@@ -296,7 +296,7 @@ function generateTailwindCssString(options = {}) {
   return cssString;
 }
 
-export default function generateTailwindCss(options = {}) {
+export default function (options = {}) {
   if (typeof window === "object") {
     const { id = "tailwind-css" } = options;
     const cssString = generateTailwindCssString(options).replace(/\s\s+/g, " ");

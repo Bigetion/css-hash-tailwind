@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateRingOffsetWidth(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}ring-offset`;

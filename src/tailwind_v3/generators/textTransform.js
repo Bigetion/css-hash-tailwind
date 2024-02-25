@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateTextTransform(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = {

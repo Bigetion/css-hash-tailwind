@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generatePosition(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
   const propertyOptions = ["static", "fixed", "absolute", "relative", "sticky"];

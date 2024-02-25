@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateGradientColorStops(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix, variants = {}, theme = {} } = configOptions;
 
   const { colors, gradientColorStops } = theme;

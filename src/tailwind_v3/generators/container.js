@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateContainer(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix: globalPrefix = "", theme = {} } = configOptions;
   const { screens = {} } = theme;
 

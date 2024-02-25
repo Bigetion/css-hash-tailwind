@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateSpace(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}space`;

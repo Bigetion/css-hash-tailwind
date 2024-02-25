@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateVerticalAlign(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}align`;

@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateTranslate(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const { spacing = {}, translate = {} } = theme;

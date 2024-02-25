@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateGridColumn(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   let prefix = `${globalPrefix}col`;

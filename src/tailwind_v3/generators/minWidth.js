@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function generateMinWidth(configOptions = {}) {
+export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}min-w`;
