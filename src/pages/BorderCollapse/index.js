@@ -8,65 +8,85 @@ export default function BorderCollapse() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Border Collapse</h1>
       </div>
-      <PanelSection title="Collapse">
-        <div className="">
-          <table className="border-collapse border-2 border-gray-500">
-            <thead>
+      <PanelSection title="Collapse" paddingless>
+        <div className="px-4 py-8 sm:px-8">
+          <table className="border-collapse w-full border border-slate-400 bg-white text-sm shadow-sm">
+            <thead className="bg-slate-50">
               <tr>
-                <th className="border border-gray-400 px-4 py-2 text-gray-800">
+                <th className="w-1/2 border border-slate-300 font-semibold p-4 text-slate-900 text-left">
                   State
                 </th>
-                <th className="border border-gray-400 px-4 py-2 text-gray-800">
+                <th className="w-1/2 border border-slate-300 font-semibold p-4 text-slate-900 text-left">
                   City
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border border-gray-400 px-4 py-2">Indiana</td>
-                <td className="border border-gray-400 px-4 py-2">
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Indiana
+                </td>
+                <td className="border border-slate-300 p-4 text-slate-500">
                   Indianapolis
                 </td>
               </tr>
               <tr>
-                <td className="border border-gray-400 px-4 py-2">Ohio</td>
-                <td className="border border-gray-400 px-4 py-2">Columbus</td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Ohio
+                </td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Columbus
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-400 px-4 py-2">Michigan</td>
-                <td className="border border-gray-400 px-4 py-2">Detroit</td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Michigan
+                </td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Detroit
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </PanelSection>
-      <PanelSection title="Separate">
-        <div className="">
-          <table className="border-separate border-2 border-gray-500">
-            <thead>
+      <PanelSection title="Separate" paddingless>
+        <div className="px-4 py-8 sm:px-8">
+          <table className="border-separate w-full border border-slate-400 bg-white text-sm shadow-sm">
+            <thead className="bg-slate-50">
               <tr>
-                <th className="border border-gray-400 px-4 py-2 text-gray-800">
+                <th className="w-1/2 border border-slate-300 font-semibold p-4 text-slate-900 text-left">
                   State
                 </th>
-                <th className="border border-gray-400 px-4 py-2 text-gray-800">
+                <th className="w-1/2 border border-slate-300 font-semibold p-4 text-slate-900 text-left">
                   City
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="border border-gray-400 px-4 py-2">Indiana</td>
-                <td className="border border-gray-400 px-4 py-2">
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Indiana
+                </td>
+                <td className="border border-slate-300 p-4 text-slate-500">
                   Indianapolis
                 </td>
               </tr>
               <tr>
-                <td className="border border-gray-400 px-4 py-2">Ohio</td>
-                <td className="border border-gray-400 px-4 py-2">Columbus</td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Ohio
+                </td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Columbus
+                </td>
               </tr>
               <tr>
-                <td className="border border-gray-400 px-4 py-2">Michigan</td>
-                <td className="border border-gray-400 px-4 py-2">Detroit</td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Michigan
+                </td>
+                <td className="border border-slate-300 p-4 text-slate-500">
+                  Detroit
+                </td>
               </tr>
             </tbody>
           </table>
