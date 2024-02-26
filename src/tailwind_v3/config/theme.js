@@ -928,17 +928,7 @@ const theme = {
     8: "8px",
   },
   textWrap: {},
-  transformOrigin: {
-    center: "center",
-    top: "top",
-    "top-right": "top right",
-    right: "right",
-    "bottom-right": "bottom right",
-    bottom: "bottom",
-    "bottom-left": "bottom left",
-    left: "left",
-    "top-left": "top left",
-  },
+  transformOrigin: {},
   translate: {
     "1/2": "50%",
     "1/3": "33.333333%",

@@ -1,11 +1,21 @@
 import { generateCssString } from "../utils/index";
 
 export default function (configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}origin`;
 
-  const { transformOrigin: propertyOptions = {} } = theme;
+  const propertyOptions = [
+    "center",
+    "top",
+    "top-right",
+    "right",
+    "bottom-right",
+    "bottom",
+    "bottom-left",
+    "left",
+    "top-left",
+  ];
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
@@ -13,7 +23,7 @@ export default function (configOptions = {}) {
         propertyOptions,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.transformOrigin)} {
-            transform-origin: ${value} !important;
+            transform-origin: ${value.replace("-", " ")} !important;
           }
         `
       );
