@@ -4,6 +4,7 @@ export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}opacity`;
+  const basePrefix = prefix.replace(globalPrefix, "");
 
   const { opacity: propertyOptions = {} } = theme;
 
@@ -14,6 +15,12 @@ export default function (configOptions = {}) {
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.opacity)} {
             opacity: ${value};
+          }
+          ${pseudoClass(
+            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}-${key}`,
+            variants.opacity
+          )} {
+            --backdrop-opacity: opacity(${value});
           }
         `
       );

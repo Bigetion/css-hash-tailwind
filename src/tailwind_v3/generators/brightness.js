@@ -4,6 +4,7 @@ export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}brightness`;
+  const basePrefix = prefix.replace(globalPrefix, "");
 
   const { brightness: propertyOptions = {} } = theme;
 
@@ -14,6 +15,12 @@ export default function (configOptions = {}) {
         return `
           ${pseudoClass(`${prefix}${key}`, variants.brightness)} {
             --brightness: brightness(${value}) !important;
+          }
+          ${pseudoClass(
+            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
+            variants.brightness
+          )} {
+            --backdrop-brightness: brightness(${value}) !important;
           }
         `;
       });

@@ -4,6 +4,7 @@ export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}contrast`;
+  const basePrefix = prefix.replace(globalPrefix, "");
 
   const { contrast: propertyOptions = {} } = theme;
 
@@ -14,6 +15,12 @@ export default function (configOptions = {}) {
         return `
           ${pseudoClass(`${prefix}${key}`, variants.contrast)} {
             --contrast: contrast(${value}) !important;
+          }
+          ${pseudoClass(
+            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
+            variants.contrast
+          )} {
+            --backdrop-contrast: contrast(${value}) !important;
           }
         `;
       });

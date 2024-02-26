@@ -4,6 +4,7 @@ export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
   const prefix = `${globalPrefix}grayscale`;
+  const basePrefix = prefix.replace(globalPrefix, "");
 
   const propertyOptions = [0, 100];
 
@@ -14,6 +15,12 @@ export default function (configOptions = {}) {
         return `
           ${pseudoClass(`${prefix}${key}`, variants.grayscale)} {
             --grayscale: grayscale(${value}) !important;
+          }
+          ${pseudoClass(
+            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
+            variants.grayscale
+          )} {
+            --backdrop-grayscale: grayscale(${value}) !important;
           }
         `;
       });

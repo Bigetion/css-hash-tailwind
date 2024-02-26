@@ -1,6 +1,60 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "backdropHueRotate",
+    path: "/backdrop-hue-rotate",
+    exact: true,
+    component: () => import("pages/BackdropHueRotate"),
+  },
+  {
+    id: "backdropSaturate",
+    path: "/backdrop-saturate",
+    exact: true,
+    component: () => import("pages/BackdropSaturate"),
+  },
+  {
+    id: "backdropSepia",
+    path: "/backdrop-sepia",
+    exact: true,
+    component: () => import("pages/BackdropSepia"),
+  },
+  {
+    id: "backdropOpacity",
+    path: "/backdrop-opacity",
+    exact: true,
+    component: () => import("pages/BackdropOpacity"),
+  },
+  {
+    id: "backdropInvert",
+    path: "/backdrop-invert",
+    exact: true,
+    component: () => import("pages/BackdropInvert"),
+  },
+  {
+    id: "backdropGrayscale",
+    path: "/backdrop-grayscale",
+    exact: true,
+    component: () => import("pages/BackdropGrayscale"),
+  },
+  {
+    id: "backdropContrast",
+    path: "/backdrop-contrast",
+    exact: true,
+    component: () => import("pages/BackdropContrast"),
+  },
+  {
+    id: "backdropBrightness",
+    path: "/backdrop-brightness",
+    exact: true,
+    component: () => import("pages/BackdropBrightness"),
+  },
+  {
+    id: "backdropBlur",
+    path: "/backdrop-blur",
+    exact: true,
+    component: () => import("pages/BackdropBlur"),
+  },
+  {
     id: "hueRotate",
     path: "/hue-rotate",
     exact: true,

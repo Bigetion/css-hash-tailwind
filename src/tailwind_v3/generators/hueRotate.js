@@ -9,6 +9,7 @@ export default function (configOptions = {}) {
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
         let prefix = `${globalPrefix}hue-rotate`;
+        const basePrefix = prefix.replace(globalPrefix, "");
         let key = keyTmp;
         if (`${key}`.indexOf("-") >= 0) {
           key = key.split("-").join("");
@@ -17,6 +18,12 @@ export default function (configOptions = {}) {
         return `
           ${pseudoClass(`${prefix}-${key}`, variants.hueRotate)} {
             --hue-rotate: hue-rotate(${value}) !important;
+          }
+          ${pseudoClass(
+            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}-${key}`,
+            variants.hueRotate
+          )} {
+            --backdrop-hue-rotate: hue-rotate(${value}) !important;
           }
         `;
       });

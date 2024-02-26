@@ -4,6 +4,7 @@ export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}blur`;
+  const basePrefix = prefix.replace(globalPrefix, "");
 
   const { blur: propertyOptions = {} } = theme;
 
@@ -14,6 +15,12 @@ export default function (configOptions = {}) {
         return `
           ${pseudoClass(`${prefix}${key}`, variants.blur)} {
             --blur: blur(${value}) !important;
+          }
+          ${pseudoClass(
+            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
+            variants.blur
+          )} {
+            --backdrop-blur: blur(${value}) !important;
           }
         `;
       });
