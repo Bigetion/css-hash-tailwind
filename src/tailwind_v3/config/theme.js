@@ -67,6 +67,7 @@ const theme = {
     "3xl": "1.5rem",
     full: "9999px",
   },
+  borderSpacing: {},
   borderWidth: {
     0: "0",
     1: "1px",
@@ -98,6 +99,7 @@ const theme = {
     150: "1.50",
     200: "2",
   },
+  captionSide: {},
   colors: {
     transparent: "transparent",
     current: "currentColor",

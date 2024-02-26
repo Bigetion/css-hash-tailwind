@@ -21,12 +21,14 @@ import generateBorderCollapse from "./generators/borderCollapse";
 import generateBorderColor from "./generators/borderColor";
 import generateBorderOpacity from "./generators/borderOpacity";
 import generateBorderRadius from "./generators/borderRadius";
+import generateBorderSpacing from "./generators/borderSpacing";
 import generateBorderStyle from "./generators/borderStyle";
 import generateBorderWidth from "./generators/borderWidth";
 import generateBoxDecorationBreak from "./generators/boxDecorationBreak";
 import generateBoxShadow from "./generators/boxShadow";
 import generateBoxSizing from "./generators/boxSizing";
 import generateBrightness from "./generators/brightness";
+import generateCaptionSide from "./generators/captionSide";
 import generateClear from "./generators/clear";
 import generateContainer from "./generators/container";
 import generateContrast from "./generators/contrast";
@@ -167,12 +169,14 @@ const generateOptions = {
   borderColor: generateBorderColor,
   borderOpacity: generateBorderOpacity,
   borderRadius: generateBorderRadius,
+  borderSpacing: generateBorderSpacing,
   borderStyle: generateBorderStyle,
   borderWidth: generateBorderWidth,
   boxDecorationBreak: generateBoxDecorationBreak,
   boxShadow: generateBoxShadow,
   boxSizing: generateBoxSizing,
   brightness: generateBrightness,
+  captionSide: generateCaptionSide,
   clear: generateClear,
   container: generateContainer,
   contrast: generateContrast,

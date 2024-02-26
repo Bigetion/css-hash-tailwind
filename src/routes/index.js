@@ -1,6 +1,18 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "captionSide",
+    path: "/caption-side",
+    exact: true,
+    component: () => import("pages/CaptionSide"),
+  },
+  {
+    id: "borderSpacing",
+    path: "/border-spacing",
+    exact: true,
+    component: () => import("pages/BorderSpacing"),
+  },
+  {
     id: "backdropHueRotate",
     path: "/backdrop-hue-rotate",
     exact: true,

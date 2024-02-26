@@ -8,67 +8,109 @@ export default function TableLayout() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Table Layout</h1>
       </div>
-      <PanelSection title="Auto">
-        <div className="">
-          <table className="table-auto">
+      <PanelSection title="Auto" paddingless>
+        <div className="shadow-sm overflow-hidden my-8">
+          <table className="border-collapse table-auto w-full text-sm">
             <thead>
               <tr>
-                <th className="px-4 py-2">Title</th>
-                <th className="px-4 py-2">Author</th>
-                <th className="px-4 py-2">Views</th>
+                <th className="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 text-left">
+                  Song
+                </th>
+                <th className="border-b font-medium p-4 pt-0 pb-3 text-slate-400 text-left">
+                  Artist
+                </th>
+                <th className="border-b font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
+                  Year
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white">
               <tr>
-                <td className="border px-4 py-2">Intro to CSS</td>
-                <td className="border px-4 py-2">Adam</td>
-                <td className="border px-4 py-2">858</td>
-              </tr>
-              <tr className="bg-gray-100">
-                <td className="border px-4 py-2">
-                  A Long and Winding Tour of the History of UI Frameworks and
-                  Tools and the Impact on Design
+                <td className="border-b border-slate-100 p-4 pl-8 text-slate-500">
+                  The Sliding Mr. Bones (Next Stop, Pottersville)
                 </td>
-                <td className="border px-4 py-2">Adam</td>
-                <td className="border px-4 py-2">112</td>
+                <td className="border-b border-slate-100 p-4 text-slate-500">
+                  Malcolm Lockyer
+                </td>
+                <td className="border-b border-slate-100 p-4 pr-8 text-slate-500">
+                  1961
+                </td>
               </tr>
               <tr>
-                <td className="border px-4 py-2">Intro to JavaScript</td>
-                <td className="border px-4 py-2">Chris</td>
-                <td className="border px-4 py-2">1,280</td>
+                <td className="border-b border-slate-100 p-4 pl-8 text-slate-500">
+                  Witchy Woman
+                </td>
+                <td className="border-b border-slate-100 p-4 text-slate-500">
+                  The Eagles
+                </td>
+                <td className="border-b border-slate-100 p-4 pr-8 text-slate-500">
+                  1972
+                </td>
+              </tr>
+              <tr>
+                <td className="border-b border-slate-200 p-4 pl-8 text-slate-500">
+                  Shining Star
+                </td>
+                <td className="border-b border-slate-200 p-4 text-slate-500">
+                  Earth, Wind, and Fire
+                </td>
+                <td className="border-b border-slate-200 p-4 pr-8 text-slate-500">
+                  1975
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </PanelSection>
-      <PanelSection title="Fixed">
-        <div className="">
-          <table className="table-fixed">
+      <PanelSection title="Fixed" paddingless>
+        <div className="shadow-sm overflow-hidden my-8">
+          <table className="border-collapse table-fixed w-full text-sm">
             <thead>
               <tr>
-                <th className="w-1/2 px-4 py-2">Title</th>
-                <th className="w-1/4 px-4 py-2">Author</th>
-                <th className="w-1/4 px-4 py-2">Views</th>
+                <th className="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 text-left">
+                  Song
+                </th>
+                <th className="border-b font-medium p-4 pt-0 pb-3 text-slate-400 text-left">
+                  Artist
+                </th>
+                <th className="border-b font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
+                  Year
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white">
               <tr>
-                <td className="border px-4 py-2">Intro to CSS</td>
-                <td className="border px-4 py-2">Adam</td>
-                <td className="border px-4 py-2">858</td>
-              </tr>
-              <tr className="bg-gray-100">
-                <td className="border px-4 py-2">
-                  A Long and Winding Tour of the History of UI Frameworks and
-                  Tools and the Impact on Design
+                <td className="border-b border-slate-100 p-4 pl-8 text-slate-500">
+                  The Sliding Mr. Bones (Next Stop, Pottersville)
                 </td>
-                <td className="border px-4 py-2">Adam</td>
-                <td className="border px-4 py-2">112</td>
+                <td className="border-b border-slate-100 p-4 text-slate-500">
+                  Malcolm Lockyer
+                </td>
+                <td className="border-b border-slate-100 p-4 pr-8 text-slate-500">
+                  1961
+                </td>
               </tr>
               <tr>
-                <td className="border px-4 py-2">Intro to JavaScript</td>
-                <td className="border px-4 py-2">Chris</td>
-                <td className="border px-4 py-2">1,280</td>
+                <td className="border-b border-slate-100 p-4 pl-8 text-slate-500">
+                  Witchy Woman
+                </td>
+                <td className="border-b border-slate-100 p-4 text-slate-500">
+                  The Eagles
+                </td>
+                <td className="border-b border-slate-100 p-4 pr-8 text-slate-500">
+                  1972
+                </td>
+              </tr>
+              <tr>
+                <td className="border-b border-slate-200 p-4 pl-8 text-slate-500">
+                  Shining Star
+                </td>
+                <td className="border-b border-slate-200 p-4 text-slate-500">
+                  Earth, Wind, and Fire
+                </td>
+                <td className="border-b border-slate-200 p-4 pr-8 text-slate-500">
+                  1975
+                </td>
               </tr>
             </tbody>
           </table>
