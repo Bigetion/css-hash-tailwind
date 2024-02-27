@@ -7,7 +7,7 @@ export default function PanelSection({ title, children, paddingless }) {
       <h1 className="text-xl text-gray-700 mb-2 font-medium">{title}</h1>
       <div
         className={classNames(
-          "rounded-lg overflow-hidden bg-slate-50 border bg-square",
+          "rounded-lg overflow-hidden bg-slate-50 border bg-square relative",
           paddingless ? "" : "p-8"
         )}
       >
