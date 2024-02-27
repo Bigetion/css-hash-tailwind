@@ -188,7 +188,6 @@ const menus = [
       { label: "Caret Color" },
       { label: "Pointer Events" },
       { label: "Resize" },
-      { label: "Scroll Behavior" },
       { label: "Scroll Margin" },
       { label: "Scroll Padding" },
       { label: "Scroll Snap Align" },

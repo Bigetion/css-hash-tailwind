@@ -37,6 +37,12 @@ export default function (configOptions = {}) {
           ${pseudoClass(`${prefix}l-${key}`, variants.padding)} {
             padding-left: ${value};
           }
+          ${pseudoClass(`${prefix}s-${key}`, variants.padding)} {
+            padding-inline-start: ${value};
+          }
+          ${pseudoClass(`${prefix}e-${key}`, variants.padding)} {
+            padding-inline-end: ${value};
+          }
         `
       );
       return cssString;

@@ -12,7 +12,7 @@ export default function Translate() {
         <div className="flex sm:block overflow-scroll sm:overflow-visible scroll-p-8">
           <div className="flex items-center justify-around gap-4 font-mono font-bold p-8 pb-12 shrink-0">
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-9 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-9">
                 translate-y-6
               </p>
               <div className="relative">
@@ -34,7 +34,7 @@ export default function Translate() {
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-9 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-9">
                 -translate-y-6
               </p>
               <div className="relative">
@@ -56,7 +56,7 @@ export default function Translate() {
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-9 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-9">
                 translate-x-6
               </p>
               <div className="relative">

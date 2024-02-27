@@ -1,5 +1,6 @@
 import { getConfigOptions } from "./utils/index";
 
+import generateAccentColor from "./generators/accentColor";
 import generateAccessibility from "./generators/accessibility";
 import generateAlignContent from "./generators/alignContent";
 import generateAlignItems from "./generators/alignItems";
@@ -116,6 +117,12 @@ import generateRingWidth from "./generators/ringWidth";
 import generateSaturate from "./generators/saturate";
 import generateRotate from "./generators/rotate";
 import generateScale from "./generators/scale";
+import generateScrollBehavior from "./generators/scrollBehavior";
+import generateScrollMargin from "./generators/scrollMargin";
+import generateScrollPadding from "./generators/scrollPadding";
+import generateScrollSnapAlign from "./generators/scrollSnapAlign";
+import generateScrollSnapStop from "./generators/scrollSnapStop";
+import generateScrollSnapType from "./generators/scrollSnapType";
 import generateSepia from "./generators/sepia";
 import generateSize from "./generators/size";
 import generateSkew from "./generators/skew";
@@ -147,6 +154,7 @@ import generateWordBreak from "./generators/wordBreak";
 import generateZIndex from "./generators/zIndex";
 
 const generateOptions = {
+  accentColor: generateAccentColor,
   base: generateBase,
   form: generateForm,
   accessibility: generateAccessibility,
@@ -263,6 +271,12 @@ const generateOptions = {
   rotate: generateRotate,
   saturate: generateSaturate,
   scale: generateScale,
+  scrollBehavior: generateScrollBehavior,
+  scrollMargin: generateScrollMargin,
+  scrollPadding: generateScrollPadding,
+  scrollSnapAlign: generateScrollSnapAlign,
+  scrollSnapStop: generateScrollSnapStop,
+  scrollSnapType: generateScrollSnapType,
   sepia: generateSepia,
   size: generateSize,
   skew: generateSkew,
@@ -322,7 +336,7 @@ function generateTailwindCssString(options = {}) {
 
 export default function (options = {}) {
   if (typeof window === "object") {
-    const { id = "tailwind-css" } = options;
+    const { id = "tailwind-inline-style" } = options;
     const cssString = generateTailwindCssString(options).replace(/\s\s+/g, " ");
     const head = document.head || document.getElementsByTagName("head")[0];
     const style = document.createElement("style");

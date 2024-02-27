@@ -9,23 +9,35 @@ export default function Resize() {
         <h1 className="text-3xl font-bold">Resize</h1>
       </div>
       <PanelSection title="Resize in all directions">
-        <div className="">
-          <textarea className="resize border rounded focus:shadow-outline"></textarea>
+        <div className="w-full flex items-center justify-center">
+          <textarea
+            className="resize text-sm p-2 w-80 ring-1 ring-slate-900 ring-opacity-10 shadow-sm rounded-md"
+            rows="3"
+          ></textarea>
         </div>
       </PanelSection>
       <PanelSection title="Resize vertically">
-        <div className="">
-          <textarea className="resize-y border rounded focus:shadow-outline"></textarea>
+        <div className="w-full flex items-center justify-center">
+          <textarea
+            className="resize-y text-sm p-2 w-80 ring-1 ring-slate-900 ring-opacity-10 shadow-sm rounded-md"
+            rows="3"
+          ></textarea>
         </div>
       </PanelSection>
       <PanelSection title="Resize horizontally">
-        <div className="">
-          <textarea className="resize-x border rounded focus:shadow-outline"></textarea>
+        <div className="w-full flex items-center justify-center">
+          <textarea
+            className="resize-x text-sm p-2 w-80 ring-1 ring-slate-900 ring-opacity-10 shadow-sm rounded-md"
+            rows="3"
+          ></textarea>
         </div>
       </PanelSection>
       <PanelSection title="Prevent resizing">
-        <div className="">
-          <textarea className="resize-none border rounded focus:shadow-outline"></textarea>
+        <div className="w-full flex items-center justify-center">
+          <textarea
+            className="resize-none text-sm p-2 w-80 ring-1 ring-slate-900 ring-opacity-10 shadow-sm rounded-md"
+            rows="3"
+          ></textarea>
         </div>
       </PanelSection>
     </div>

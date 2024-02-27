@@ -8,51 +8,56 @@ export default function PointerEvents() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Pointer Events</h1>
       </div>
-      <PanelSection title="Usage">
-        <div className="">
-          <div className="max-w-sm">
-            <p className="text-sm text-gray-700">
-              Try clicking the caret icon to open the dropdown
+      <PanelSection title="Controlling pointer event behavior">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-0 sm:px-10 font-mono font-bold">
+          <div className="flex flex-col">
+            <p className="font-medium text-sm text-slate-500 font-mono mb-3">
+              pointer-events-auto
             </p>
-
-            <p className="text-sm text-gray-600 my-4">
-              .pointer-events-auto (event captured)
-            </p>
-            <div className="relative">
-              <select className="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:bg-white focus:border-gray-500">
-                <option>Indiana</option>
-                <option>Michigan</option>
-                <option>Ohio</option>
-              </select>
-              <div className="absolute flex inset-y-0 items-center px-3 right-0 text-gray-700 bg-gray-300 rounded-r pointer-events-auto">
+            <div className="relative rounded-lg shadow-sm w-full">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-auto">
                 <svg
-                  className="fill-current h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute text-slate-400 h-5 w-5"
                   viewBox="0 0 20 20"
+                  fill="currentColor"
                 >
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                  <path
+                    fillRule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </div>
+              <input
+                type="text"
+                placeholder="Search"
+                className="font-sans block text-sm w-full pl-10 py-2 px-3 ring-1 ring-slate-900 ring-opacity-10 text-slate-500 rounded-lg"
+              />
             </div>
-
-            <p className="text-sm text-gray-600 my-4">
-              .pointer-events-none (event passes through)
+          </div>
+          <div className="flex flex-col">
+            <p className="font-medium text-sm text-slate-500 font-mono mb-3">
+              pointer-events-none
             </p>
-            <div className="relative">
-              <select className="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:bg-white focus:border-gray-500">
-                <option>Indiana</option>
-                <option>Michigan</option>
-                <option>Ohio</option>
-              </select>
-              <div className="absolute flex inset-y-0 items-center px-3 right-0 text-gray-700 bg-gray-300 rounded-r pointer-events-none">
+            <div className="relative rounded-lg shadow-sm w-full">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg
-                  className="fill-current h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute text-slate-400 h-5 w-5"
                   viewBox="0 0 20 20"
+                  fill="currentColor"
                 >
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                  <path
+                    fillRule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </div>
+              <input
+                type="text"
+                placeholder="Search"
+                className="font-sans block text-sm w-full pl-10 py-2 px-3 ring-1 ring-slate-900 ring-opacity-10 text-slate-500 rounded-lg"
+              />
             </div>
           </div>
         </div>

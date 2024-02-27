@@ -12,7 +12,7 @@ export default function BackdropBlur() {
         <div className="flex justify-start sm:block overflow-scroll sm:overflow-visible scroll-p-8">
           <div className="flex items-center justify-around gap-6 sm:gap-4 font-mono font-bold shrink-0 p-8">
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 backdrop-blur-sm
               </p>
               <div className="relative">
@@ -26,7 +26,7 @@ export default function BackdropBlur() {
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 backdrop-blur-md
               </p>
               <div className="relative">
@@ -40,7 +40,7 @@ export default function BackdropBlur() {
               </div>
             </div>
             <div className="flex flex-col items-center shrink-0">
-              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3 dark:text-slate-400">
+              <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 backdrop-blur-xl
               </p>
               <div className="relative">

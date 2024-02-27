@@ -1,4 +1,5 @@
 const plugins = {
+  accentColor: true,
   accessibility: true,
   alignContent: true,
   alignItems: true,
@@ -115,6 +116,12 @@ const plugins = {
   rotate: true,
   saturate: true,
   scale: true,
+  scrollBehavior: true,
+  scrollMargin: true,
+  scrollPadding: true,
+  scrollSnapAlign: true,
+  scrollSnapStop: true,
+  scrollSnapType: true,
   sepia: true,
   size: true,
   skew: true,

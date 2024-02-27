@@ -1,4 +1,5 @@
 const variants = {
+  accentColor: ["responsive", "focus", "focus-within"],
   accessibility: ["responsive", "focus", "focus-within"],
   alignContent: ["responsive"],
   alignItems: ["responsive"],
@@ -129,6 +130,12 @@ const variants = {
   rotate: ["responsive", "hover", "focus"],
   saturate: ["responsive", "hover", "group-hover", "focus", "focus-within"],
   scale: ["responsive", "hover", "focus"],
+  scrollBehavior: ["responsive"],
+  scrollMargin: ["responsive"],
+  scrollPadding: ["responsive"],
+  scrollSnapAlign: ["responsive"],
+  scrollSnapStop: ["responsive"],
+  scrollSnapType: ["responsive"],
   sepia: ["responsive", "hover", "group-hover", "focus", "focus-within"],
   size: ["responsive"],
   skew: ["responsive", "hover", "focus"],

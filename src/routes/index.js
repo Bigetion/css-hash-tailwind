@@ -1,6 +1,42 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "scrollSnapType",
+    path: "/scroll-snap-type",
+    exact: true,
+    component: () => import("pages/ScrollSnapType"),
+  },
+  {
+    id: "scrollSnapStop",
+    path: "/scroll-snap-stop",
+    exact: true,
+    component: () => import("pages/ScrollSnapStop"),
+  },
+  {
+    id: "scrollSnapAlign",
+    path: "/scroll-snap-align",
+    exact: true,
+    component: () => import("pages/ScrollSnapAlign"),
+  },
+  {
+    id: "scrollPadding",
+    path: "/scroll-padding",
+    exact: true,
+    component: () => import("pages/ScrollPadding"),
+  },
+  {
+    id: "scrollMargin",
+    path: "/scroll-margin",
+    exact: true,
+    component: () => import("pages/ScrollMargin"),
+  },
+  {
+    id: "accentColor",
+    path: "/accent-color",
+    exact: true,
+    component: () => import("pages/AccentColor"),
+  },
+  {
     id: "captionSide",
     path: "/caption-side",
     exact: true,
