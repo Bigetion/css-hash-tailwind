@@ -143,6 +143,7 @@ import generateTextOverflow from "./generators/textOverflow";
 import generateTextTransform from "./generators/textTransform";
 import generateTextUnderlineOffset from "./generators/textUnderlineOffset";
 import generateTextWrap from "./generators/textWrap";
+import generateTouchAction from "./generators/touchAction";
 import generateTransform from "./generators/transform";
 import generateTransformOrigin from "./generators/transformOrigin";
 import generateTranslate from "./generators/translate";
@@ -152,6 +153,7 @@ import generateVisibility from "./generators/visibility";
 import generateWhitespace from "./generators/whitespace";
 import generateWidth from "./generators/width";
 import generateWordBreak from "./generators/wordBreak";
+import generateWillChange from "./generators/willChange";
 import generateZIndex from "./generators/zIndex";
 
 const generateOptions = {
@@ -298,6 +300,7 @@ const generateOptions = {
   textTransform: generateTextTransform,
   textUnderlineOffset: generateTextUnderlineOffset,
   textWrap: generateTextWrap,
+  touchAction: generateTouchAction,
   transform: generateTransform,
   transformOrigin: generateTransformOrigin,
   translate: generateTranslate,
@@ -306,6 +309,7 @@ const generateOptions = {
   visibility: generateVisibility,
   whitespace: generateWhitespace,
   width: generateWidth,
+  willChange: generateWillChange,
   wordBreak: generateWordBreak,
   zIndex: generateZIndex,
 };

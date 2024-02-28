@@ -10,7 +10,7 @@ export default function (configOptions = {}) {
       const cssString = getCssByOptions(
         propertyOptions,
         (key, value) => `
-          ${pseudoClass(`${prefix}truncate`, variants.wordBreak)} {
+          ${pseudoClass(`${prefix}truncate`, variants.textOverflow)} {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;

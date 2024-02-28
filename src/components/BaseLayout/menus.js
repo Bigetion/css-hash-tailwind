@@ -195,16 +195,11 @@ const menus = [
       { label: "Scroll Snap Type" },
       { label: "Touch Action" },
       { label: "User Select" },
-      { label: "Will Change" },
     ],
   },
   {
     title: "SVG",
     items: [{ label: "Fill" }, { label: "Stroke" }, { label: "Stroke Width" }],
-  },
-  {
-    title: "Accesibility",
-    items: [{ label: "Screen Readers" }],
   },
 ];
 

@@ -929,6 +929,7 @@ const theme = {
     8: "8px",
   },
   textWrap: {},
+  touchAction: {},
   transformOrigin: {},
   translate: {
     "1/2": "50%",

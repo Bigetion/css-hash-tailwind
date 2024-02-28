@@ -142,6 +142,7 @@ const plugins = {
   textTransform: true,
   textUnderlineOffset: true,
   textWrap: true,
+  touchAction: true,
   transform: true,
   transformOrigin: true,
   translate: true,
@@ -150,6 +151,7 @@ const plugins = {
   visibility: true,
   whitespace: true,
   width: true,
+  willChange: true,
   wordBreak: true,
   zIndex: true,
 };

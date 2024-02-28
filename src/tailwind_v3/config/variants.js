@@ -156,6 +156,7 @@ const variants = {
   textTransform: ["responsive"],
   textUnderlineOffset: ["responsive"],
   textWrap: ["responsive"],
+  touchAction: ["responsive", "hover", "focus"],
   transformOrigin: ["responsive"],
   translate: ["responsive", "hover", "focus"],
   userSelect: ["responsive"],
@@ -163,6 +164,7 @@ const variants = {
   visibility: ["responsive"],
   whitespace: ["responsive"],
   width: ["responsive"],
+  willChange: ["responsive"],
   wordBreak: ["responsive"],
   zIndex: ["responsive", "focus", "focus-within"],
 };

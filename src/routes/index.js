@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "touchAction",
+    path: "/touch-action",
+    exact: true,
+    component: () => import("pages/TouchAction"),
+  },
+  {
     id: "caretColor",
     path: "/caret-color",
     exact: true,

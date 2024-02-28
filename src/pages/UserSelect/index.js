@@ -8,31 +8,31 @@ export default function UserSelect() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">User Select</h1>
       </div>
-      <PanelSection title="Disable selecting text">
-        <div className="text-center p-4">
-          <div className="mx-auto max-w-sm bg-gray-200 p-2 select-none">
-            This text is not selectable
+      <PanelSection title="Disabling text selection">
+        <div className="flex justify-center">
+          <div className="select-none inline-flex text-center bg-white text-slate-900 font-semibold font-sans text-sm shadow-lg rounded-lg ring-1 ring-slate-900 ring-opacity-5 px-4 py-3">
+            The quick brown fox jumps over the lazy dog.
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="Allow selecting text">
-        <div className="text-center p-4">
-          <div className="mx-auto max-w-sm bg-gray-200 p-2 select-text">
-            This text is selectable
+      <PanelSection title="Allowing text selection">
+        <div className="flex justify-center">
+          <div className="select-text inline-flex text-center bg-white text-slate-900 font-semibold font-sans text-sm shadow-lg rounded-lg ring-1 ring-slate-900 ring-opacity-5 px-4 py-3">
+            The quick brown fox jumps over the lazy dog.
           </div>
         </div>
       </PanelSection>
       <PanelSection title="Select all text in one click">
-        <div className="text-center p-4">
-          <div className="mx-auto max-w-sm bg-gray-200 p-2 select-all">
-            Click anywhere in this text to select it all
+        <div className="flex justify-center">
+          <div className="select-all inline-flex text-center bg-white text-slate-900 font-semibold font-sans text-sm shadow-lg rounded-lg ring-1 ring-slate-900 ring-opacity-5 px-4 py-3">
+            The quick brown fox jumps over the lazy dog.
           </div>
         </div>
       </PanelSection>
-      <PanelSection title="Auto">
-        <div className="text-center p-4">
-          <div className="mx-auto max-w-sm bg-gray-200 p-2 select-auto">
-            This text is selectable
+      <PanelSection title="Using auto select behaviour">
+        <div className="flex justify-center">
+          <div className="select-auto inline-flex text-center bg-white text-slate-900 font-semibold font-sans text-sm shadow-lg rounded-lg ring-1 ring-slate-900 ring-opacity-5 px-4 py-3">
+            The quick brown fox jumps over the lazy dog.
           </div>
         </div>
       </PanelSection>

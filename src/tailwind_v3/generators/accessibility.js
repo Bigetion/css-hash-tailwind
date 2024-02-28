@@ -27,6 +27,18 @@ export default function (configOptions = {}) {
           clip: auto;
           white-space: normal;
         }
+        ${pseudoClass(
+          `${prefix}forced-color-adjust-auto`,
+          variants.accessibility
+        )} {
+          forced-color-adjust: auto;
+        }
+        ${pseudoClass(
+          `${prefix}forced-color-adjust-none`,
+          variants.accessibility
+        )} {
+          forced-color-adjust: none;
+        }
       `;
     },
     configOptions,
