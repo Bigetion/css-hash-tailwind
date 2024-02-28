@@ -100,6 +100,7 @@ const theme = {
     200: "2",
   },
   captionSide: {},
+  caretColor: {},
   colors: {
     transparent: "transparent",
     current: "currentColor",

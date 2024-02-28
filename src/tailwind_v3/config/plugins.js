@@ -29,6 +29,7 @@ const plugins = {
   boxSizing: true,
   brightness: true,
   captionSide: true,
+  caretColor: true,
   clear: true,
   container: true,
   contrast: true,

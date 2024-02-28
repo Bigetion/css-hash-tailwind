@@ -46,6 +46,7 @@ const variants = {
   boxSizing: ["responsive"],
   brightness: ["responsive", "hover", "group-hover", "focus", "focus-within"],
   captionSide: ["responsive"],
+  caretColor: ["responsive", "hover", "group-hover", "focus", "focus-within"],
   clear: ["responsive"],
   cursor: ["responsive"],
   contrast: ["responsive", "hover", "group-hover", "focus", "focus-within"],
