@@ -137,6 +137,7 @@ const generateCssString = (
         }
       });
     }
+    console.log({ classArray });
     return classArray.join(", ");
   };
 
