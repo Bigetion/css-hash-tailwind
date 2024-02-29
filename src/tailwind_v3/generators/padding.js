@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}p`;
 
-  const { spacing = {}, padding = {} } = theme;
-
-  const propertyOptions = Object.assign({}, spacing, padding);
+  const { padding = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        padding,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.padding)} {
             padding: ${value};

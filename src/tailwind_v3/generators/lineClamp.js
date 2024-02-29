@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}line-clamp`;
 
-  const { lineClamp: propertyOptions = {} } = theme;
+  const { lineClamp = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        lineClamp,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.lineClamp)} {
             overflow: hidden;

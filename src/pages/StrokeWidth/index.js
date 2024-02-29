@@ -8,7 +8,7 @@ export default function StrokeWidth() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Stroke Width</h1>
       </div>
-      <PanelSection title="Usage">
+      <PanelSection title="Setting the stroke width">
         <div className="relative rounded-xl overflow-auto p-8">
           <div className="flex items-center justify-center space-x-8">
             <svg

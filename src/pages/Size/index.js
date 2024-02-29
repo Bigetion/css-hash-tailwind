@@ -1,5 +1,7 @@
 import React from "react";
 
+import stripes from "utils/stripes";
+
 import PanelSection from "components/PanelSection";
 
 export default function Size() {
@@ -8,7 +10,7 @@ export default function Size() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Size</h1>
       </div>
-      <PanelSection title="Usage">
+      <PanelSection title="Fixed sizes">
         <div className="grid grid-flow-col justify-center gap-4 font-mono font-bold text-xs text-center text-white">
           <div className="grid items-center justify-center bg-blue-500 rounded-lg shadow-lg size-16">
             size-16
@@ -24,6 +26,15 @@ export default function Size() {
           </div>
           <div className="items-center justify-center bg-blue-500 rounded-lg shadow-lg size-40 hidden md:grid">
             size-40
+          </div>
+        </div>
+      </PanelSection>
+      <PanelSection title="Presentation Size">
+        <div className="space-y-4 font-mono font-bold text-xs text-white">
+          <div className={`h-56 ${stripes.purple} p-2`}>
+            <div className="size-full flex items-center justify-center px-4 py-2 bg-violet-500 rounded-lg shadow-lg">
+              size-full
+            </div>
           </div>
         </div>
       </PanelSection>

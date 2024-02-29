@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}ring`;
 
-  const { ringWidth: propertyOptions = {} } = theme;
+  const { ringWidth = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
-        const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+      let cssString = getCssByOptions(ringWidth, (keyTmp, value) => {
+        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
         return `
           ${pseudoClass(`${prefix}${key}`, variants.ringWidth)} {
             --ring-offset-shadow: var(--ring-inset) 0 0 0 var(--ring-offset-width) var(--ring-offset-color);

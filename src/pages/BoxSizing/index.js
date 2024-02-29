@@ -61,7 +61,7 @@ export default function BoxSizing() {
           <div className="bg-white col-start-3 row-start-3" />
         </div>
       </PanelSection>
-      <PanelSection title="Exclude borders and padding">
+      <PanelSection title="Exclude borders and padding" paddingless>
         <div className="relative grid grid-cols-3 grid-rows-3 gap-px bg-slate-700 bg-opacity-10 font-mono text-sm font-bold leading-6 max-w-sm mx-auto w-full shadow-xl">
           <div className="bg-white col-start-1 row-start-1" />
           <div className="relative bg-white col-start-2 row-start-1">

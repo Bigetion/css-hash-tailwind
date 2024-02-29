@@ -5,19 +5,17 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}border`;
 
-  const { colors, borderColor } = theme;
-
-  const propertyOptions = Object.assign({}, colors, borderColor);
+  const { borderColor = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {
       const cssString = getCssByColors(
-        propertyOptions,
+        borderColor,
         (keyTmp, value, rgbValue) => {
-          if (keyTmp === "default") {
+          if (keyTmp.toLowerCase() === "default") {
             return "";
           }
-          const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+          const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
           let rgbPropertyValue = "";
           if (rgbValue) {
             rgbPropertyValue = `border-color: rgba(${rgbValue}, var(--border-opacity));`;
@@ -27,37 +25,37 @@ export default function (configOptions = {}) {
               --border-opacity: 1;
               border-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-x${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-x${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-left-color: ${value};${rgbPropertyValue}
               border-right-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-y${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-y${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-top-color: ${value};${rgbPropertyValue}
               border-bottom-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-s${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-s${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-inline-start-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-e${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-e${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-inline-end-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-t${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-t${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-top-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-r${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-r${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-right-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-b${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-b${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-bottom-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-l${key}`, variants.borderWidth)} {
+            ${pseudoClass(`${prefix}-l${key}`, variants.borderColor)} {
               --border-opacity: 1;
               border-left-color: ${value};${rgbPropertyValue}
             }

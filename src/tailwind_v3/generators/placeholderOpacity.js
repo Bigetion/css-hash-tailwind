@@ -5,13 +5,11 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}placeholder-opacity`;
 
-  const { opacity = {}, placeholderOpacity = {} } = theme;
-
-  const propertyOptions = Object.assign({}, opacity, placeholderOpacity);
+  const { placeholderOpacity = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (key, value) => {
+      const cssString = getCssByOptions(placeholderOpacity, (key, value) => {
         const placeholderOpacityString = (placeholderPseudo) => `
           ${pseudoClass(
             (pseudoString) =>

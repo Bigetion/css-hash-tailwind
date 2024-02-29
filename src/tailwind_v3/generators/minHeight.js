@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}min-h`;
 
-  const { spacing = {}, minHeight = {} } = theme;
-
-  const propertyOptions = Object.assign({}, spacing, minHeight);
+  const { minHeight = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        minHeight,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.minHeight)} {
             min-height: ${value};

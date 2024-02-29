@@ -8,7 +8,7 @@ export default function Rotate() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Rotate</h1>
       </div>
-      <PanelSection title="Usage">
+      <PanelSection title="Rotating an element">
         <div className="flex sm:block overflow-scroll sm:overflow-visible scroll-p-8">
           <div className="flex items-center justify-around gap-12 sm:gap-4 font-mono font-bold p-8 shrink-0">
             <div className="flex flex-col items-center shrink-0">

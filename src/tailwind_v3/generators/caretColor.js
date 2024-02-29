@@ -5,27 +5,22 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}caret`;
 
-  const { colors, caretColor, opacity = {} } = theme;
-
-  const propertyOptions = Object.assign({}, colors, caretColor);
+  const { caretColor, opacity = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors, getCssByOptions }) => {
-      let cssString = getCssByColors(
-        propertyOptions,
-        (key, value, rgbValue) => {
-          let rgbPropertyValue = "";
-          if (rgbValue) {
-            rgbPropertyValue = `caret-color: rgba(${rgbValue}, var(--caret-opacity));`;
-          }
-          return `
+      let cssString = getCssByColors(caretColor, (key, value, rgbValue) => {
+        let rgbPropertyValue = "";
+        if (rgbValue) {
+          rgbPropertyValue = `caret-color: rgba(${rgbValue}, var(--caret-opacity));`;
+        }
+        return `
             ${pseudoClass(`${prefix}-${key}`, variants.caretColor)} {
               --caret-opacity: 1;
               caret-color: ${value};${rgbPropertyValue}
             }
           `;
-        }
-      );
+      });
       cssString += getCssByOptions(
         opacity,
         (key, value) => `

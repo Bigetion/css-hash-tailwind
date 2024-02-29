@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   let prefix = `${globalPrefix}auto-rows`;
 
-  const { gridAutoRows: propertyOptions = {} } = theme;
+  const { gridAutoRows = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        gridAutoRows,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.gridAutoRows)} {
             grid-auto-rows: ${value};

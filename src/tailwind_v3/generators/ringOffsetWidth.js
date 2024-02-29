@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}ring-offset`;
 
-  const { ringOffsetWidth: propertyOptions = {} } = theme;
+  const { ringOffsetWidth = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        ringOffsetWidth,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.ringOffsetWidth)} {
             --ring-offset-width: ${value};

@@ -3,14 +3,12 @@ import { generateCssString } from "../utils/index";
 export default function (configOptions = {}) {
   const { prefix, variants = {}, theme = {} } = configOptions;
 
-  const { colors, gradientColorStops } = theme;
-
-  const propertyOptions = Object.assign({}, colors, gradientColorStops);
+  const { gradientColorStops = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {
       const cssString = getCssByColors(
-        propertyOptions,
+        gradientColorStops,
         (key, value, rgbValue) => {
           let rgbFromPropertyValue =
             "--gradient-color-stops: var(--gradient-from-color),var(--gradient-to-color,rgba(255,255,255,0));";

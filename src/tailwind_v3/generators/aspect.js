@@ -7,12 +7,10 @@ export default function (configOptions = {}) {
 
   const { spacing = {} } = theme;
 
-  const propertyOptions = Object.assign({}, spacing);
-
   let responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        spacing,
         (key) => `
           ${pseudoClass(`${prefix}-h-${key}`, variants.aspect)} {
             --aspect-h: ${key};

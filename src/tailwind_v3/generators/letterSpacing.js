@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}tracking`;
 
-  const { letterSpacing: propertyOptions = {} } = theme;
+  const { letterSpacing = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        letterSpacing,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.letterSpacing)} {
             letter-spacing: ${value};

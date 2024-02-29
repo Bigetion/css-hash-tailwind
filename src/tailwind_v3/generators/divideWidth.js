@@ -5,9 +5,7 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}divide`;
 
-  const { borderWidth, divideWidth } = theme;
-
-  const propertyOptions = Object.assign({}, borderWidth, divideWidth);
+  const { divideWidth = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass }) => {
@@ -20,7 +18,7 @@ export default function (configOptions = {}) {
           borderPosition1 = "top";
           borderPosition2 = "bottom";
         }
-        const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
         return `
           ${pseudoClass(
             (pseudoString) =>
@@ -35,7 +33,7 @@ export default function (configOptions = {}) {
       };
 
       let cssString = "";
-      Object.entries(propertyOptions).forEach(([key, value]) => {
+      Object.entries(divideWidth).forEach(([key, value]) => {
         cssString += generateDivideWidth("y", key, value);
         cssString += generateDivideWidth("x", key, value);
       });

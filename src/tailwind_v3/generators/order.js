@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}order`;
 
-  const { order: propertyOptions = {} } = theme;
+  const { order = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        order,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.order)} {
             order: ${value};

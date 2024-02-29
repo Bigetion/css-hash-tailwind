@@ -5,11 +5,11 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}outline`;
 
-  const { outlineWidth: propertyOptions = {} } = theme;
+  const { outlineWidth = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (key, value) => {
+      const cssString = getCssByOptions(outlineWidth, (key, value) => {
         return `
           ${pseudoClass(`${prefix}-${key}`, variants.outlineWidth)} {
             outline-width: ${value}px;

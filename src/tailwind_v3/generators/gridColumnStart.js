@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   let prefix = `${globalPrefix}col-start`;
 
-  const { gridColumnStart: propertyOptions = {} } = theme;
+  const { gridColumnStart = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        gridColumnStart,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.gridColumnStart)} {
             grid-column-start: ${value};

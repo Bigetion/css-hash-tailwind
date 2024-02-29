@@ -5,27 +5,22 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}text`;
 
-  const { colors, textColor } = theme;
-
-  const propertyOptions = Object.assign({}, colors, textColor);
+  const { textColor } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {
-      const cssString = getCssByColors(
-        propertyOptions,
-        (key, value, rgbValue) => {
-          let rgbPropertyValue = "";
-          if (rgbValue) {
-            rgbPropertyValue = `color: rgba(${rgbValue}, var(--text-opacity));`;
-          }
-          return `
+      const cssString = getCssByColors(textColor, (key, value, rgbValue) => {
+        let rgbPropertyValue = "";
+        if (rgbValue) {
+          rgbPropertyValue = `color: rgba(${rgbValue}, var(--text-opacity));`;
+        }
+        return `
             ${pseudoClass(`${prefix}-${key}`, variants.textColor)} {
               --text-opacity: 1;
               color: ${value};${rgbPropertyValue}
             }
           `;
-        }
-      );
+      });
       return cssString;
     },
     configOptions,

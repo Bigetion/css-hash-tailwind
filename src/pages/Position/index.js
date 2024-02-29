@@ -81,70 +81,72 @@ export default function Position() {
         </div>
       </PanelSection>
       <PanelSection title="Fixed positioning elements">
-        <div className="relative max-w-md mx-auto bg-white shadow-lg h-80 overflow-hidden ring-1 ring-slate-900 ring-opacity-5">
-          <div className="absolute top-0 left-0 right-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
-            Contacts
-          </div>
-          <div className="overflow-auto flex flex-col divide-y h-80">
-            <div className="flex items-center gap-4 p-4">
-              <img
-                alt=""
-                className="w-12 h-12 rounded-full"
-                src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-slate-900 text-sm font-medium">
-                Andrew Alfred
-              </strong>
+        <div className="px-3">
+          <div className="relative max-w-md mx-auto bg-white shadow-lg h-80 overflow-hidden ring-1 ring-slate-900 ring-opacity-5">
+            <div className="absolute top-0 left-0 right-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+              Contacts
             </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                alt=""
-                className="w-12 h-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-slate-900 text-sm font-medium">
-                Debra Houston
-              </strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                alt=""
-                className="w-12 h-12 rounded-full"
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-slate-900 text-sm font-medium">
-                Jane White
-              </strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                alt=""
-                className="w-12 h-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-slate-900 text-sm font-medium">
-                Ray Flint
-              </strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                alt=""
-                className="w-12 h-12 rounded-full"
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-slate-900 text-sm font-medium">
-                Mindy Albrect
-              </strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                alt=""
-                className="w-12 h-12 rounded-full"
-                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-slate-900 text-sm font-medium">
-                David Arnold
-              </strong>
+            <div className="overflow-auto flex flex-col divide-y h-80">
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium">
+                  Andrew Alfred
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium">
+                  Debra Houston
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium">
+                  Jane White
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium">
+                  Ray Flint
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium">
+                  Mindy Albrect
+                </strong>
+              </div>
+              <div className="flex items-center gap-4 p-4">
+                <img
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                />
+                <strong className="text-slate-900 text-sm font-medium">
+                  David Arnold
+                </strong>
+              </div>
             </div>
           </div>
         </div>
@@ -152,7 +154,7 @@ export default function Position() {
       <PanelSection title="Sticky">
         <div className="relative max-w-md mx-auto bg-white shadow-lg h-80 overflow-auto ring-1 ring-slate-900 ring-opacity-5 -my-px">
           <div className="relative">
-            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
               A
             </div>
             <div className="divide-y">
@@ -199,7 +201,7 @@ export default function Position() {
             </div>
           </div>
           <div className="relative">
-            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
               B
             </div>
             <div className="divide-y">
@@ -246,7 +248,7 @@ export default function Position() {
             </div>
           </div>
           <div className="relative">
-            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
               C
             </div>
             <div className="divide-y">

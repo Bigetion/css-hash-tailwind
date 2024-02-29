@@ -541,12 +541,6 @@ const routes = [
     component: () => import("pages/TextIndent"),
   },
   {
-    id: "textOpacity",
-    path: "/text-opacity",
-    exact: true,
-    component: () => import("pages/TextOpacity"),
-  },
-  {
     id: "textOverflow",
     path: "/text-overflow",
     exact: true,
@@ -563,18 +557,6 @@ const routes = [
     path: "/text-align",
     exact: true,
     component: () => import("pages/TextAlign"),
-  },
-  {
-    id: "placeholderOpacity",
-    path: "/placeholder-opacity",
-    exact: true,
-    component: () => import("pages/PlaceholderOpacity"),
-  },
-  {
-    id: "placeholderColor",
-    path: "/placeholder-color",
-    exact: true,
-    component: () => import("pages/PlaceholderColor"),
   },
   {
     id: "listStylePosition",

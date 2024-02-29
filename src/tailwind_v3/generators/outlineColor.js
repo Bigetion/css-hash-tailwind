@@ -5,19 +5,17 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}outline`;
 
-  const { colors, outlineColor } = theme;
-
-  const propertyOptions = Object.assign({}, colors, outlineColor);
+  const { outlineColor = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {
       const cssString = getCssByColors(
-        propertyOptions,
+        outlineColor,
         (keyTmp, value, rgbValue) => {
-          if (keyTmp === "default") {
+          if (keyTmp.toLowerCase() === "default") {
             return "";
           }
-          const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+          const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
           let rgbPropertyValue = "";
           if (rgbValue) {
             rgbPropertyValue = `outline-color: rgba(${rgbValue}, var(--outline-opacity));`;

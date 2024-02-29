@@ -5,14 +5,13 @@ export default function (configOptions = {}) {
 
   const { skew = {} } = theme;
 
-  const propertyOptions = Object.assign({}, skew);
-  Object.entries(propertyOptions).forEach(([key, value]) => {
-    propertyOptions[`-${key}`] = `-${value}`.replace("--", "-");
+  Object.entries(skew).forEach(([key, value]) => {
+    skew[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
+      const cssString = getCssByOptions(skew, (keyTmp, value) => {
         let prefix = `${globalPrefix}skew`;
         let key = keyTmp;
         if (`${key}`.indexOf("-") >= 0) {

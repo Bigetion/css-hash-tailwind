@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}max-w`;
 
-  const { spacing = {}, maxWidth = {} } = theme;
-
-  const propertyOptions = Object.assign({}, spacing, maxWidth);
+  const { maxWidth = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        maxWidth,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.maxWidth)} {
             max-width: ${value};

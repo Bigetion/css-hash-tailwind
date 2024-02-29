@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}min-w`;
 
-  const { spacing = {}, minWidth = {} } = theme;
-
-  const propertyOptions = Object.assign({}, spacing, minWidth);
+  const { minWidth = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        minWidth,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.minWidth)} {
             min-width: ${value};

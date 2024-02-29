@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}bg`;
 
-  const { backgroundSize: propertyOptions = {} } = theme;
+  const { backgroundSize = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        backgroundSize,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.backgroundSize)} {
             background-size: ${value};

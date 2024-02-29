@@ -27,9 +27,28 @@ const getConfigOptions = (options = {}) => {
   );
 
   const { extend: themeExtend = {} } = theme;
+
   const newTheme = {};
-  Object.keys(defaultConfigOptions.theme).forEach((key) => {
+  const themeKeys = Object.keys(defaultConfigOptions.theme);
+
+  themeKeys.forEach((key) => {
     newTheme[key] = theme[key] || defaultConfigOptions.theme[key];
+    if (typeof newTheme[key] === "function") {
+      newTheme[key] = newTheme[key]({
+        theme: (keyRef) => {
+          return defaultConfigOptions.theme[keyRef];
+        },
+      });
+    }
+  });
+  themeKeys.forEach((key) => {
+    if (typeof newTheme[key] === "function") {
+      newTheme[key] = newTheme[key]({
+        theme: (keyRef) => {
+          return newTheme[keyRef];
+        },
+      });
+    }
     if (themeExtend[key]) {
       newTheme[key] = Object.assign({}, newTheme[key], themeExtend[key]);
     }
@@ -137,7 +156,6 @@ const generateCssString = (
         }
       });
     }
-    console.log({ classArray });
     return classArray.join(", ");
   };
 

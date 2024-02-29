@@ -3,11 +3,11 @@ import { generateCssString } from "../utils/index";
 export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
-  const { zIndex: propertyOptions = {} } = theme;
+  const { zIndex = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
+      const cssString = getCssByOptions(zIndex, (keyTmp, value) => {
         let prefix = `${globalPrefix}z`;
         let key = keyTmp;
         if (`${key}`.indexOf("-") >= 0) {

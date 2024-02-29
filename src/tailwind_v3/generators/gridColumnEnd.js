@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   let prefix = `${globalPrefix}col-end`;
 
-  const { gridColumnEnd: propertyOptions = {} } = theme;
+  const { gridColumnEnd = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        gridColumnEnd,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.gridColumnEnd)} {
             grid-column-end: ${value};

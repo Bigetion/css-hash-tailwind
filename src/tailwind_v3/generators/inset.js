@@ -3,16 +3,15 @@ import { generateCssString } from "../utils/index";
 export default function (configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
-  const { spacing = {}, inset = {} } = theme;
+  const { inset = {} } = theme;
 
-  const propertyOptions = Object.assign({}, spacing, inset);
-  Object.entries(spacing).forEach(([key, value]) => {
-    propertyOptions[`-${key}`] = `-${value}`.replace("--", "-");
+  Object.entries(inset).forEach(([key, value]) => {
+    inset[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
+      const cssString = getCssByOptions(inset, (keyTmp, value) => {
         let prefix = globalPrefix;
         let key = keyTmp;
         if (`${key}`.indexOf("-") >= 0) {

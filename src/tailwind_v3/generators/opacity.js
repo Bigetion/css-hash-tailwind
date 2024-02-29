@@ -6,12 +6,12 @@ export default function (configOptions = {}) {
   const prefix = `${globalPrefix}opacity`;
   const basePrefix = prefix.replace(globalPrefix, "");
 
-  const { opacity: propertyOptions = {} } = theme;
+  const { opacity = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        opacity,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.opacity)} {
             opacity: ${value};

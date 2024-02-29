@@ -5,15 +5,15 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}shrink`;
 
-  const { flexShrink: propertyOptions = {} } = theme;
+  const { flexShrink = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        flexShrink,
         (key, value) => `
           ${pseudoClass(
-            key === "default" ? prefix : `${prefix}-${key}`,
+            key.toLowerCase() === "default" ? prefix : `${prefix}-${key}`,
             variants.flexShrink
           )} {
             flex-shrink: ${value};

@@ -5,20 +5,16 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}divide`;
 
-  const { colors, divideColor } = theme;
-
-  const propertyOptions = Object.assign({}, colors, divideColor);
+  const { divideColor = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {
-      const cssString = getCssByColors(
-        propertyOptions,
-        (key, value, rgbValue) => {
-          let rgbPropertyValue = "";
-          if (rgbValue) {
-            rgbPropertyValue = `border-color: rgba(${rgbValue}, var(--divide-opacity));`;
-          }
-          return `
+      const cssString = getCssByColors(divideColor, (key, value, rgbValue) => {
+        let rgbPropertyValue = "";
+        if (rgbValue) {
+          rgbPropertyValue = `border-color: rgba(${rgbValue}, var(--divide-opacity));`;
+        }
+        return `
             ${pseudoClass(
               (pseudoString) =>
                 `${prefix}-${key}${pseudoString} > :not([hidden]) ~ :not([hidden])`,
@@ -28,8 +24,7 @@ export default function (configOptions = {}) {
               border-color: ${value};${rgbPropertyValue}
             }
           `;
-        }
-      );
+      });
       return cssString;
     },
     configOptions,

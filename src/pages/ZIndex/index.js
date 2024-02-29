@@ -8,7 +8,7 @@ export default function ZIndex() {
       <div className="flex items-center">
         <h1 className="text-3xl font-bold">Z Index</h1>
       </div>
-      <PanelSection title="Usage">
+      <PanelSection title="Setting the z-index">
         <div className="flex justify-center -space-x-3 font-mono text-white text-sm font-bold leading-6">
           <div className="w-16 h-16 rounded-full flex items-center justify-center bg-pink-500 shadow-lg ring-2 ring-white z-40">
             05

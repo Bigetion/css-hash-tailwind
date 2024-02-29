@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}underline-offset`;
 
-  const { textUnderlineOffset } = theme;
-
-  const propertyOptions = Object.assign({}, textUnderlineOffset);
+  const { textUnderlineOffset = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        textUnderlineOffset,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.textUnderlineOffset)} {
             text-underline-offset: ${value};

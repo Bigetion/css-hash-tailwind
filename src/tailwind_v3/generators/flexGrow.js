@@ -5,15 +5,15 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}grow`;
 
-  const { flexGrow: propertyOptions = {} } = theme;
+  const { flexGrow = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        flexGrow,
         (key, value) => `
           ${pseudoClass(
-            key === "default" ? prefix : `${prefix}-${key}`,
+            key.toLowerCase() === "default" ? prefix : `${prefix}-${key}`,
             variants.flexGrow
           )} {
             flex-grow: ${value};

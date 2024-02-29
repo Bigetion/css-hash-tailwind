@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}shadow`;
 
-  const { colors, boxShadow: propertyOptions = {} } = theme;
+  const { boxShadowColor, boxShadow = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions, getCssByColors }) => {
-      let cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
-        const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+      let cssString = getCssByOptions(boxShadow, (keyTmp, value) => {
+        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
         const valueSplit = value.split(" ");
         return `
           ${pseudoClass(`${prefix}${key}`, variants.boxShadow)} {
@@ -22,7 +22,7 @@ export default function (configOptions = {}) {
           }
         `;
       });
-      cssString += getCssByColors(colors, (...colorArgs) => {
+      cssString += getCssByColors(boxShadowColor, (...colorArgs) => {
         const key = colorArgs[0];
         const rgbValue = colorArgs[2];
         let str = "";

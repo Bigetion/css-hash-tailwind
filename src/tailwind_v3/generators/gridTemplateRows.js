@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   let prefix = `${globalPrefix}grid-rows`;
 
-  const { gridTemplateRows: propertyOptions = {} } = theme;
+  const { gridTemplateRows = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       let cssString = getCssByOptions(
-        propertyOptions,
+        gridTemplateRows,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.gridTemplateRows)} {
             grid-template-rows: ${

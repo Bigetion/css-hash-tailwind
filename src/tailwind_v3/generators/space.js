@@ -5,11 +5,10 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}space`;
 
-  const { spacing = {}, space = {} } = theme;
+  const { space = {} } = theme;
 
-  const propertyOptions = Object.assign({}, spacing, space);
-  Object.entries(spacing).forEach(([key, value]) => {
-    propertyOptions[`-${key}`] = `-${value}`.replace("--", "-");
+  Object.entries(space).forEach(([key, value]) => {
+    space[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
   const responsiveCssString = generateCssString(
@@ -45,7 +44,7 @@ export default function (configOptions = {}) {
         `;
       };
       let cssString = "";
-      Object.entries(propertyOptions).forEach(([space, spaceValue]) => {
+      Object.entries(space).forEach(([space, spaceValue]) => {
         cssString += generateSpace("y", space, spaceValue);
         cssString += generateSpace("x", space, spaceValue);
       });

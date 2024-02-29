@@ -20,10 +20,10 @@ function Menu({ title, items, sidebarScrollTop, onClickLink = () => {} }) {
 
   return (
     <div className="mb-8">
-      <h5 className="mb-3 lg:mb-2 tracking-wide font-semibold text-slate-900">
+      <h5 className="mb-2 tracking-wide font-semibold text-slate-900">
         {title}
       </h5>
-      <ul className="space-y-5 lg:space-y-3 border-l border-slate-100">
+      <ul className="space-y-3 border-l border-slate-100">
         {items.map((item, index) => {
           const path = `/${item.label
             .toLowerCase()
@@ -106,7 +106,7 @@ function Layout(props) {
       <div className="bg-white antialiased">
         <div className="flex bg-white border-b border-gray-200 fixed top-0 inset-x-0 z-100 h-16 items-center">
           <div className="w-full max-w-screen-xl relative mx-auto px-6">
-            <div className="flex items-center -mx-6">
+            <div className="flex justify-between sm:justify-start items-center -mx-6">
               <div className="lg:w-1/4 xl:w-1/5 pl-6 pr-6 lg:pr-8">
                 <div className="flex items-center">
                   <a className="block lg:mr-4" href="/">
@@ -140,7 +140,7 @@ function Layout(props) {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-grow min-w-0 lg:w-3/4 xl:w-4/5">
+              <div className="flex min-w-0 lg:w-3/4 xl:w-4/5">
                 <div className="w-full min-w-0 lg:px-6 xl:w-3/4 xl:px-12"></div>
                 <button
                   type="button"
@@ -191,7 +191,7 @@ function Layout(props) {
                   onScroll={() => {
                     onChangeSidebarScrollTop(sidebarRef.current.scrollTop);
                   }}
-                  className={`overscroll-contain px-6 pt-6 overflow-y-auto text-sm lg:py-12 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
+                  className={`overscroll-contain px-6 pt-6 overflow-y-auto text-sm lg:py-6 lg:pl-6 lg:pr-8 z-90 ${sidebarClass}`}
                 >
                   {menus.map((item, index) => (
                     <Menu

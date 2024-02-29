@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}gap`;
 
-  const { spacing = {}, gap = {} } = theme;
-
-  const propertyOptions = Object.assign({}, spacing, gap);
+  const { gap = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        gap,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.gap)} {
             gap: ${value};

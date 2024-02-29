@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}outline-opacity`;
 
-  const { opacity = {}, outlineOpacity = {} } = theme;
-
-  const propertyOptions = Object.assign({}, opacity, outlineOpacity);
+  const { outlineOpacity = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
-        const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+      const cssString = getCssByOptions(outlineOpacity, (keyTmp, value) => {
+        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
         return `
           ${pseudoClass(`${prefix}${key}`, variants.outlineOpacity)} {
             --outline-opacity: ${value};

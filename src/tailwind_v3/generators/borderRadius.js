@@ -5,12 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}rounded`;
 
-  const { borderRadius: propertyOptions = {} } = theme;
+  const { borderRadius = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
-        const key = keyTmp !== "default" ? `-${keyTmp}` : "";
+      const cssString = getCssByOptions(borderRadius, (keyTmp, value) => {
+        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
         return `
           ${pseudoClass(`${prefix}${key}`, variants.borderRadius)} {
             border-radius: ${value};

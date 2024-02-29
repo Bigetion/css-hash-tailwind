@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}ring-offset`;
 
-  const { colors, ringOffsetColor } = theme;
-
-  const propertyOptions = Object.assign({}, colors, ringOffsetColor);
+  const { ringOffsetColor = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors }) => {
       const cssString = getCssByColors(
-        propertyOptions,
+        ringOffsetColor,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.ringOffsetColor)} {
             --ring-offset-color: ${value};

@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}decoration`;
 
-  const { colors, textColor, opacity } = theme;
-
-  const propertyOptions = Object.assign({}, colors, textColor);
+  const { textDecorationColor = {}, opacity = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByColors, getCssByOptions }) => {
       let cssString = getCssByColors(
-        propertyOptions,
+        textDecorationColor,
         (key, value, rgbValue) => {
           let rgbPropertyValue = "";
           if (rgbValue) {

@@ -5,14 +5,12 @@ export default function (configOptions = {}) {
 
   const prefix = `${globalPrefix}size`;
 
-  const { spacing = {}, width = {}, height = {} } = theme;
-
-  const propertyOptions = Object.assign({}, spacing, height, width);
+  const { size = {} } = theme;
 
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(
-        propertyOptions,
+        size,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.size)} {
             width: ${value};
