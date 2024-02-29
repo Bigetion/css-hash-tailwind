@@ -1,19 +1,12 @@
-import json from '@rollup/plugin-json';
-import terser from '@rollup/plugin-terser';
+import json from "@rollup/plugin-json";
 
 export default {
-	input: 'src/tailwind_v3/index.js',
+	input: "src/tailwind_v3/index.min.js",
 	output: [
 		{
-			file: 'dist/tailwind-css-generator.js',
-			format: 'cjs'
+			file: "dist/tailwind-css-generator.js",
+			format: "cjs",
 		},
-		{
-			file: 'dist/tailwind-css-generator.min.js',
-			format: 'iife',
-			name: 'version',
-			plugins: [terser()]
-		}
 	],
-	plugins: [json()]
+	plugins: [json()],
 };

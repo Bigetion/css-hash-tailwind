@@ -63,11 +63,7 @@ const getConfigOptions = (options = {}) => {
   };
 };
 
-const generateCssString = (
-  getCssString = () => {},
-  options = {},
-  isResponsive = true
-) => {
+const generateCssString = (getCssString = () => {}, options = {}) => {
   const { theme = {} } = options;
   const { screens = {} } = theme;
   let orientationPrefix = "";
@@ -196,21 +192,19 @@ const generateCssString = (
     getCssByColors,
   });
 
-  if (isResponsive) {
-    Object.entries(screens).forEach(([screen, screenValue]) => {
-      orientationPrefix = `${screen}\\:`;
-      cssString += `
-        @media (min-width: ${screenValue}) {
-          ${getCssString({
-            orientationPrefix,
-            pseudoClass,
-            getCssByOptions,
-            getCssByColors,
-          })}     
-        }
-      `;
-    });
-  }
+  Object.entries(screens).forEach(([screen, screenValue]) => {
+    orientationPrefix = `${screen}\\:`;
+    cssString += `
+      @media (min-width: ${screenValue}) {
+        ${getCssString({
+          orientationPrefix,
+          pseudoClass,
+          getCssByOptions,
+          getCssByColors,
+        })}     
+      }
+    `;
+  });
 
   return cssString;
 };

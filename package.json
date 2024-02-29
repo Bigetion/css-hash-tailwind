@@ -23,6 +23,7 @@
     "prettify": "prettier --write",
     "prettify:src": "prettier --write \"src/**/*.js\"",
     "rollup:tailwind-v3": "rollup --config rollup.config.tailwind-v3.mjs",
+    "rollup:tailwind-v3-minify": "rollup --config rollup.config.tailwind-v3.min.mjs",
     "rollup:css-hash": "rollup --config rollup.config.css-hash.mjs"
   },
   "eslintConfig": {
