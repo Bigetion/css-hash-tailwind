@@ -340,19 +340,28 @@ function generateTailwindCssString(options = {}) {
   return cssString;
 }
 
-export default function (options = {}) {
-  if (typeof window === "object") {
-    const { id = "tailwind-inline-style" } = options;
-    const cssString = generateTailwindCssString(options).replace(/\s\s+/g, " ");
+function addStyleSheet(attributeId, attributeValue, cssString) {
+  const isElementExist = document.querySelector(
+    `style[${attributeId}=${attributeValue}]`
+  );
+  if (!isElementExist) {
     const head = document.head || document.getElementsByTagName("head")[0];
     const style = document.createElement("style");
     head.appendChild(style);
     style.setAttribute("type", "text/css");
-    style.setAttribute("data-inline-style", id);
+    style.setAttribute(attributeId, attributeValue);
     if (style.styleSheet) {
       style.styleSheet.cssText = cssString;
     } else {
       style.appendChild(document.createTextNode(cssString));
     }
+  }
+}
+
+export default function (options = {}) {
+  if (typeof window === "object") {
+    const { id = "tailwind-css" } = options;
+    const cssString = generateTailwindCssString(options).replace(/\s\s+/g, " ");
+    addStyleSheet("data-inline-style", id, cssString);
   }
 }
