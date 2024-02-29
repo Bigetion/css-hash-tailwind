@@ -775,6 +775,14 @@ const theme = {
     wider: "0.05em",
     widest: "0.1em",
   },
+  lineClamp: {
+    1: "1",
+    2: "2",
+    3: "3",
+    4: "4",
+    5: "5",
+    6: "6",
+  },
   lineHeight: {
     none: "1",
     tight: "1.25",
@@ -796,21 +804,10 @@ const theme = {
     disc: "disc",
     decimal: "decimal",
   },
-  listStyleImage: {
-    none: "none",
-  },
   margin: ({ theme }) => ({
     auto: "auto",
     ...theme("spacing"),
   }),
-  lineClamp: {
-    1: "1",
-    2: "2",
-    3: "3",
-    4: "4",
-    5: "5",
-    6: "6",
-  },
   maxHeight: ({ theme }) => ({
     ...theme("spacing"),
     none: "none",
@@ -920,6 +917,7 @@ const theme = {
     4: "4px",
     8: "8px",
   },
+  outlineOpacity: ({ theme }) => theme("opacity"),
   outlineWidth: {
     0: "0px",
     1: "1px",

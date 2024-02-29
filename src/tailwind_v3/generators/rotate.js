@@ -5,6 +5,10 @@ export default function (configOptions = {}) {
 
   const { rotate = {} } = theme;
 
+  Object.entries(rotate).forEach(([key, value]) => {
+    rotate[`-${key}`] = `-${value}`.replace("--", "-");
+  });
+
   const responsiveCssString = generateCssString(
     ({ pseudoClass, getCssByOptions }) => {
       const cssString = getCssByOptions(rotate, (keyTmp, value) => {
