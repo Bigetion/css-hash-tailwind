@@ -35,7 +35,7 @@ function generateHashId(str) {
   return generateAlphabeticName(hash(str) >>> 0);
 }
 
-function addStyleSheet(attributeId = "id", attributeValue, cssString) {
+function addStyleSheet(attributeId, attributeValue, cssString) {
   const isElementExist = document.querySelector(
     `style[${attributeId}=${attributeValue}]`
   );
