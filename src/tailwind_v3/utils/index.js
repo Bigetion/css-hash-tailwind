@@ -1,30 +1,32 @@
 import defaultConfigOptions from "../config/index";
 
-const getConfigOptions = (options = {}) => {
-  const {
-    prefix = "",
-    variants = {},
-    corePlugins = {},
-    theme = {},
-    form = {},
-  } = options;
+const isFunction = (functionToCheck) => {
+  return (
+    functionToCheck && {}.toString.call(functionToCheck) === "[object Function]"
+  );
+};
+
+const getConfigOptions = (options = {}, pluginKeys = []) => {
+  const { variants = {}, theme = {} } = options;
 
   const { extend: variantsExtend = {} } = variants;
   const newVariants = {};
-  Object.keys(defaultConfigOptions.variants).forEach((key) => {
-    newVariants[key] = variants[key] || defaultConfigOptions.variants[key];
+  pluginKeys.forEach((key) => {
+    newVariants[key] = ["responsive"].concat(
+      variants[key] || defaultConfigOptions.variants[key]
+    );
     if (variantsExtend[key]) {
       if (Array.isArray(variantsExtend[key])) {
         newVariants[key] = [].concat(newVariants[key], variantsExtend[key]);
       }
     }
+    if (newVariants[key].indexOf("hover")) {
+      newVariants[key].push("group-hover");
+    }
+    if (newVariants[key].indexOf("focus")) {
+      newVariants[key].push("focus-within");
+    }
   });
-
-  const newCorePlugins = Object.assign(
-    {},
-    defaultConfigOptions.corePlugins,
-    corePlugins
-  );
 
   const { extend: themeExtend = {} } = theme;
 
@@ -33,7 +35,7 @@ const getConfigOptions = (options = {}) => {
 
   themeKeys.forEach((key) => {
     newTheme[key] = theme[key] || defaultConfigOptions.theme[key];
-    if (typeof newTheme[key] === "function") {
+    if (isFunction(newTheme[key])) {
       newTheme[key] = newTheme[key]({
         theme: (keyRef) => {
           return defaultConfigOptions.theme[keyRef];
@@ -42,7 +44,7 @@ const getConfigOptions = (options = {}) => {
     }
   });
   themeKeys.forEach((key) => {
-    if (typeof newTheme[key] === "function") {
+    if (isFunction(newTheme[key])) {
       newTheme[key] = newTheme[key]({
         theme: (keyRef) => {
           return newTheme[keyRef];
@@ -55,11 +57,10 @@ const getConfigOptions = (options = {}) => {
   });
 
   return {
-    prefix,
+    prefix: "",
+    ...options,
     variants: newVariants,
-    corePlugins: newCorePlugins,
     theme: newTheme,
-    form,
   };
 };
 
@@ -67,13 +68,6 @@ const generateCssString = (getCssString = () => {}, options = {}) => {
   const { theme = {} } = options;
   const { screens = {} } = theme;
   let orientationPrefix = "";
-
-  const isFunction = (functionToCheck) => {
-    return (
-      functionToCheck &&
-      {}.toString.call(functionToCheck) === "[object Function]"
-    );
-  };
 
   const hexToRgb = (hex) => {
     const rgba = hex

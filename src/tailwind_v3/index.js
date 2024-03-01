@@ -156,7 +156,7 @@ import generateWordBreak from "./generators/wordBreak";
 import generateWillChange from "./generators/willChange";
 import generateZIndex from "./generators/zIndex";
 
-const generateOptions = {
+const plugins = {
   accentColor: generateAccentColor,
   base: generateBase,
   form: generateForm,
@@ -315,8 +315,10 @@ const generateOptions = {
 };
 
 function generateTailwindCssString(options = {}) {
-  const configOptions = getConfigOptions(options);
+  const pluginKeys = Object.keys(plugins);
+  const configOptions = getConfigOptions(options, pluginKeys);
   const { corePlugins = {} } = configOptions;
+  const corePluginKeys = Object.keys(corePlugins);
 
   let cssString = `
     *, ::after, ::before {
@@ -332,9 +334,11 @@ function generateTailwindCssString(options = {}) {
       --ring-shadow: 0 0 #0000;
     }
   `;
-  Object.keys(generateOptions).forEach((key) => {
-    if (corePlugins[key]) {
-      cssString += generateOptions[key](configOptions);
+  Object.keys(plugins).forEach((key) => {
+    if (corePluginKeys.indexOf(key) >= 0 && !corePlugins[key]) {
+      cssString += "";
+    } else {
+      cssString += plugins[key](configOptions);
     }
   });
   return cssString;
