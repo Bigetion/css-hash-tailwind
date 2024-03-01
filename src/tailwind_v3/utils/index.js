@@ -1,12 +1,12 @@
 import defaultConfigOptions from "../config/index";
 
-const isFunction = (functionToCheck) => {
+function isFunction(functionToCheck) {
   return (
     functionToCheck && {}.toString.call(functionToCheck) === "[object Function]"
   );
-};
+}
 
-const getConfigOptions = (options = {}, pluginKeys = []) => {
+function getConfigOptions(options = {}, pluginKeys = []) {
   const { variants = {}, theme = {} } = options;
 
   const { extend: variantsExtend = {} } = variants;
@@ -62,9 +62,9 @@ const getConfigOptions = (options = {}, pluginKeys = []) => {
     variants: newVariants,
     theme: newTheme,
   };
-};
+}
 
-const generateCssString = (getCssString = () => {}, options = {}) => {
+function generateCssString(getCssString = () => {}, options = {}) {
   const { theme = {} } = options;
   const { screens = {} } = theme;
   let orientationPrefix = "";
@@ -201,6 +201,6 @@ const generateCssString = (getCssString = () => {}, options = {}) => {
   });
 
   return cssString;
-};
+}
 
 export { getConfigOptions, generateCssString };
