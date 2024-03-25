@@ -140,6 +140,11 @@ import generateTextDecorationThickness from "./generators/textDecorationThicknes
 import generateTextIndent from "./generators/textIndent";
 import generateTextOpacity from "./generators/textOpacity";
 import generateTextOverflow from "./generators/textOverflow";
+import generateTextShadowBlur from "./generators/textShadowBlur";
+import generateTextShadowColor from "./generators/textShadowColor";
+import generateTextShadowOpacity from "./generators/textShadowOpacity";
+import generateTextShadowX from "./generators/textShadowX";
+import generateTextShadowY from "./generators/textShadowY";
 import generateTextTransform from "./generators/textTransform";
 import generateTextUnderlineOffset from "./generators/textUnderlineOffset";
 import generateTextWrap from "./generators/textWrap";
@@ -297,6 +302,11 @@ const plugins = {
   textIndent: generateTextIndent,
   textOpacity: generateTextOpacity,
   textOverflow: generateTextOverflow,
+  textShadowBlur: generateTextShadowBlur,
+  textShadowColor: generateTextShadowColor,
+  textShadowOpacity: generateTextShadowOpacity,
+  textShadowX: generateTextShadowX,
+  textShadowY: generateTextShadowY,
   textTransform: generateTextTransform,
   textUnderlineOffset: generateTextUnderlineOffset,
   textWrap: generateTextWrap,

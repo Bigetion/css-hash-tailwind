@@ -1,6 +1,12 @@
 const routes = [
   // -- APPEND ROUTES HERE --
   {
+    id: "textShadow",
+    path: "/text-shadow",
+    exact: true,
+    component: () => import("pages/TextShadow"),
+  },
+  {
     id: "touchAction",
     path: "/touch-action",
     exact: true,

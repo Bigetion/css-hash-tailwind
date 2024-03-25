@@ -87,6 +87,7 @@ const menus = [
       { label: "Text Overflow" },
       { label: "Text Wrap" },
       { label: "Text Indent" },
+      { label: "Text Shadow" },
       { label: "Vertical Align" },
       { label: "Whitespace" },
       { label: "Word Break" },
