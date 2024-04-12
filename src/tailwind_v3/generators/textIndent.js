@@ -27,8 +27,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.textIndent.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

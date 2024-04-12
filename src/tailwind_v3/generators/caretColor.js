@@ -15,7 +15,7 @@ export default function (configOptions = {}) {
           rgbPropertyValue = `caret-color: rgba(${rgbValue}, var(--caret-opacity));`;
         }
         return `
-            ${pseudoClass(`${prefix}-${key}`, variants.caretColor)} {
+            ${pseudoClass(`${prefix}-${key}`, variants.caretColor, {})} {
               --caret-opacity: 1;
               caret-color: ${value};${rgbPropertyValue}
             }
@@ -24,15 +24,14 @@ export default function (configOptions = {}) {
       cssString += getCssByOptions(
         opacity,
         (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.caretColor)} {
+          ${pseudoClass(`${prefix}-${key}`, variants.caretColor, {})} {
             --caret-opacity: ${value};
           }
         `
       );
       return cssString;
     },
-    configOptions,
-    variants.caretColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

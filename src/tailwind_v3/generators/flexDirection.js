@@ -24,8 +24,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.flexDirection.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

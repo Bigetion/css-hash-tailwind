@@ -7,19 +7,18 @@ export default function (configOptions = {}) {
 
   const { divideWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass }) => {
-      const generateDivideWidth = (position, keyTmp, value) => {
-        let dividePosition = "x";
-        let borderPosition1 = "left";
-        let borderPosition2 = "right";
-        if (position === "y") {
-          dividePosition = "y";
-          borderPosition1 = "top";
-          borderPosition2 = "bottom";
-        }
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
+  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+    const generateDivideWidth = (position, keyTmp, value) => {
+      let dividePosition = "x";
+      let borderPosition1 = "left";
+      let borderPosition2 = "right";
+      if (position === "y") {
+        dividePosition = "y";
+        borderPosition1 = "top";
+        borderPosition2 = "bottom";
+      }
+      const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
+      return `
           ${pseudoClass(
             (pseudoString) =>
               `${prefix}-${dividePosition}${key}${pseudoString} > :not([hidden]) ~ :not([hidden])`,
@@ -30,14 +29,14 @@ export default function (configOptions = {}) {
             border-${borderPosition2}-width: calc(${value} * var(--divide-${dividePosition}-reverse));
           }
         `;
-      };
+    };
 
-      let cssString = "";
-      Object.entries(divideWidth).forEach(([key, value]) => {
-        cssString += generateDivideWidth("y", key, value);
-        cssString += generateDivideWidth("x", key, value);
-      });
-      cssString += `
+    let cssString = "";
+    Object.entries(divideWidth).forEach(([key, value]) => {
+      cssString += generateDivideWidth("y", key, value);
+      cssString += generateDivideWidth("x", key, value);
+    });
+    cssString += `
         ${pseudoClass(
           (pseudoString) =>
             `${prefix}-y-reverse${pseudoString} > :not([hidden]) ~ :not([hidden])`,
@@ -53,11 +52,8 @@ export default function (configOptions = {}) {
           --divide-x-reverse: 1;
         }
       `;
-      return cssString;
-    },
-    configOptions,
-    variants.divideWidth.indexOf("responsive") >= 0
-  );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

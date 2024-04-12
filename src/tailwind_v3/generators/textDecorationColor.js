@@ -17,7 +17,11 @@ export default function (configOptions = {}) {
             rgbPropertyValue = `text-decoration-color: rgba(${rgbValue}, var(--text-decoration-opacity));`;
           }
           return `
-            ${pseudoClass(`${prefix}-${key}`, variants.textDecorationColor)} {
+            ${pseudoClass(
+              `${prefix}-${key}`,
+              variants.textDecorationColor,
+              {}
+            )} {
               --text-decoration-opacity: 1;
               text-decoration-color: ${value};${rgbPropertyValue}
             }
@@ -27,15 +31,14 @@ export default function (configOptions = {}) {
       cssString += getCssByOptions(
         opacity,
         (key, value) => `
-          ${pseudoClass(`${prefix}-opacity-${key}`, variants.opacity)} {
+          ${pseudoClass(`${prefix}-opacity-${key}`, variants.opacity, {})} {
             --text-decoration-opacity: ${value};
           }
         `
       );
       return cssString;
     },
-    configOptions,
-    variants.textDecorationColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

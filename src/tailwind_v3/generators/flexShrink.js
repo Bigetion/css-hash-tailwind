@@ -22,8 +22,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.flexShrink.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

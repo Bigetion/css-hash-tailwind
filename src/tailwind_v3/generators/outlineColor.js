@@ -21,7 +21,7 @@ export default function (configOptions = {}) {
             rgbPropertyValue = `outline-color: rgba(${rgbValue}, var(--outline-opacity));`;
           }
           return `
-            ${pseudoClass(`${prefix}${key}`, variants.outlineColor)} {
+            ${pseudoClass(`${prefix}${key}`, variants.outlineColor, {})} {
               --outline-opacity: 1;
               outline-color: ${value};${rgbPropertyValue}
             }
@@ -30,8 +30,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.outlineColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

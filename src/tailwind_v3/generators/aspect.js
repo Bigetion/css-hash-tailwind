@@ -24,8 +24,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.aspect.indexOf("responsive") >= 0
+    configOptions
   );
 
   responsiveCssString += `

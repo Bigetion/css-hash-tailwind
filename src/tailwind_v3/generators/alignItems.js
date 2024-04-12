@@ -25,8 +25,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.alignItems.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

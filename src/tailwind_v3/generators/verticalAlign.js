@@ -28,8 +28,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.verticalAlign.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

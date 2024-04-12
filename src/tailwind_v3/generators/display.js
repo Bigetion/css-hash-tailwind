@@ -40,8 +40,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.display.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

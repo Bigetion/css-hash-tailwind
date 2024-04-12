@@ -15,7 +15,7 @@ export default function (configOptions = {}) {
           rgbPropertyValue = `accent-color: rgba(${rgbValue}, var(--accent-opacity));`;
         }
         return `
-            ${pseudoClass(`${prefix}-${key}`, variants.accentColor)} {
+            ${pseudoClass(`${prefix}-${key}`, variants.accentColor, {})} {
               --accent-opacity: 1;
               accent-color: ${value};${rgbPropertyValue}
             }
@@ -24,15 +24,14 @@ export default function (configOptions = {}) {
       cssString += getCssByOptions(
         opacity,
         (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.accentColor)} {
+          ${pseudoClass(`${prefix}-${key}`, variants.accentColor, {})} {
             --accent-opacity: ${value};
           }
         `
       );
       return cssString;
     },
-    configOptions,
-    variants.accentColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

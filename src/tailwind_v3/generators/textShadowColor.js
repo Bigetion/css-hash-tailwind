@@ -21,7 +21,7 @@ export default function (configOptions = {}) {
             rgbPropertyValue = `text-shadow: var(--text-shadow-x) var(--text-shadow-y) var(--text-shadow-blur, 0) rgba(${rgbValue}, var(--text-shadow-opacity));`;
           }
           return `
-            ${pseudoClass(`${prefix}${key}`, variants.textShadowColor)} {
+            ${pseudoClass(`${prefix}${key}`, variants.textShadowColor, {})} {
               --text-shadow-opacity: 1;
               --text-shadow-x: 1px;
               --text-shadow-y: 1px;
@@ -32,8 +32,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.textShadowColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

@@ -33,8 +33,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.scrollSnapType.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

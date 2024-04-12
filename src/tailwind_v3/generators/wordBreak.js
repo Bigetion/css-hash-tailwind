@@ -3,9 +3,8 @@ import { generateCssString } from "../utils/index";
 export default function (configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass }) => {
-      const cssString = `
+  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+    const cssString = `
 				${pseudoClass(`${prefix}break-normal`, variants.wordBreak)} {
 					overflow-wrap: normal;
 					word-break: normal;
@@ -20,11 +19,8 @@ export default function (configOptions = {}) {
 					word-break: keep-all;
 				}
 			`;
-      return cssString;
-    },
-    configOptions,
-    variants.wordBreak.indexOf("responsive") >= 0
-  );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

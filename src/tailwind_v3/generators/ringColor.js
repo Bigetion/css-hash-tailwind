@@ -16,7 +16,7 @@ export default function (configOptions = {}) {
           rgbPropertyValue = `--ring-color: rgba(${rgbValue}, var(--ring-opacity));`;
         }
         return `
-            ${pseudoClass(`${prefix}${key}`, variants.ringColor)} {
+            ${pseudoClass(`${prefix}${key}`, variants.ringColor, {})} {
               --ring-opacity: 1;
               --ring-color: ${value};${rgbPropertyValue}
             }
@@ -24,8 +24,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.ringColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

@@ -21,41 +21,41 @@ export default function (configOptions = {}) {
             rgbPropertyValue = `border-color: rgba(${rgbValue}, var(--border-opacity));`;
           }
           return `
-            ${pseudoClass(`${prefix}${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-x${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-x${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-left-color: ${value};${rgbPropertyValue}
               border-right-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-y${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-y${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-top-color: ${value};${rgbPropertyValue}
               border-bottom-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-s${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-s${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-inline-start-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-e${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-e${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-inline-end-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-t${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-t${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-top-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-r${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-r${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-right-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-b${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-b${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-bottom-color: ${value};${rgbPropertyValue}
             }
-            ${pseudoClass(`${prefix}-l${key}`, variants.borderColor)} {
+            ${pseudoClass(`${prefix}-l${key}`, variants.borderColor, {})} {
               --border-opacity: 1;
               border-left-color: ${value};${rgbPropertyValue}
             }
@@ -64,8 +64,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.borderColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

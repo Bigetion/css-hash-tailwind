@@ -15,7 +15,7 @@ export default function (configOptions = {}) {
           rgbPropertyValue = `color: rgba(${rgbValue}, var(--text-opacity));`;
         }
         return `
-            ${pseudoClass(`${prefix}-${key}`, variants.textColor)} {
+            ${pseudoClass(`${prefix}-${key}`, variants.textColor, {})} {
               --text-opacity: 1;
               color: ${value};${rgbPropertyValue}
             }
@@ -23,8 +23,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.textColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

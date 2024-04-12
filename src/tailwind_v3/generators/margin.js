@@ -52,8 +52,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.margin.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

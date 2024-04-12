@@ -11,18 +11,17 @@ export default function (configOptions = {}) {
     space[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass }) => {
-      const generateSpace = (position, key, value) => {
-        let spacePosition = "x";
-        let margin1 = "left";
-        let margin2 = "right";
-        if (position === "y") {
-          spacePosition = "y";
-          margin1 = "top";
-          margin2 = "bottom";
-        }
-        return `
+  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+    const generateSpace = (position, key, value) => {
+      let spacePosition = "x";
+      let margin1 = "left";
+      let margin2 = "right";
+      if (position === "y") {
+        spacePosition = "y";
+        margin1 = "top";
+        margin2 = "bottom";
+      }
+      return `
           ${pseudoClass(
             (pseudoString) =>
               `${prefix}-${spacePosition}-${key}${pseudoString} > :not([hidden]) ~ :not([hidden])`,
@@ -42,13 +41,13 @@ export default function (configOptions = {}) {
             margin-${margin2}: calc(-${value} * var(--space-${spacePosition}-reverse));
           }
         `;
-      };
-      let cssString = "";
-      Object.entries(space).forEach(([space, spaceValue]) => {
-        cssString += generateSpace("y", space, spaceValue);
-        cssString += generateSpace("x", space, spaceValue);
-      });
-      cssString += `
+    };
+    let cssString = "";
+    Object.entries(space).forEach(([space, spaceValue]) => {
+      cssString += generateSpace("y", space, spaceValue);
+      cssString += generateSpace("x", space, spaceValue);
+    });
+    cssString += `
         ${pseudoClass(
           (pseudoString) =>
             `${prefix}-x-reverse${pseudoString} > :not([hidden]) ~ :not([hidden])`,
@@ -64,11 +63,8 @@ export default function (configOptions = {}) {
           --space-y-reverse: 1;
         }
       `;
-      return cssString;
-    },
-    configOptions,
-    variants.space.indexOf("responsive") >= 0
-  );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

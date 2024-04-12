@@ -21,7 +21,8 @@ export default function (configOptions = {}) {
             ${pseudoClass(
               (pseudoString) =>
                 `${prefix}-${key}${pseudoString}${placeholderPseudo}`,
-              variants.placeholderColor
+              variants.placeholderColor,
+              {}
             )} {
               ${propertyValue}
             }
@@ -36,8 +37,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.placeholderColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

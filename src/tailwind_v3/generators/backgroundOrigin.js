@@ -24,8 +24,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.backgroundOrigin.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

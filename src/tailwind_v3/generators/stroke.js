@@ -11,15 +11,14 @@ export default function (configOptions = {}) {
     ({ pseudoClass, getCssByColors }) => {
       const cssString = getCssByColors(stroke, (key, value) => {
         return `
-            ${pseudoClass(`${prefix}-${key}`, variants.textColor)} {
+            ${pseudoClass(`${prefix}-${key}`, variants.textColor, {})} {
               stroke: ${value};
             }
           `;
       });
       return cssString;
     },
-    configOptions,
-    variants.stroke.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

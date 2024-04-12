@@ -33,8 +33,7 @@ export default function (configOptions = {}) {
       `;
       return cssString;
     },
-    configOptions,
-    variants.overflow.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

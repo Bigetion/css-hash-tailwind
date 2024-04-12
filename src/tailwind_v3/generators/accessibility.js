@@ -3,9 +3,8 @@ import { generateCssString } from "../utils/index";
 export default function (configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass }) => {
-      return `
+  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+    return `
         ${pseudoClass(`${prefix}sr-only`, variants.accessibility)} {
           position: absolute;
           width: 1px;
@@ -40,10 +39,7 @@ export default function (configOptions = {}) {
           forced-color-adjust: none;
         }
       `;
-    },
-    configOptions,
-    variants.accessibility.indexOf("responsive") >= 0
-  );
+  }, configOptions);
 
   return responsiveCssString;
 }

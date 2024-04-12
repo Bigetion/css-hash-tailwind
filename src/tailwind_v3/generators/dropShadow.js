@@ -20,8 +20,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.dropShadow.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

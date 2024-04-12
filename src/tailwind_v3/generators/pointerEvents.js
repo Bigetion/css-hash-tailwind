@@ -3,9 +3,8 @@ import { generateCssString } from "../utils/index";
 export default function (configOptions = {}) {
   const { prefix, variants = {} } = configOptions;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass }) => {
-      return `
+  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+    return `
         ${pseudoClass(`${prefix}pointer-events-none`, variants.pointerEvents)} {
           pointer-events: none;
         }
@@ -13,10 +12,7 @@ export default function (configOptions = {}) {
           pointer-events: auto;
         }
       `;
-    },
-    configOptions,
-    variants.pointerEvents.indexOf("responsive") >= 0
-  );
+  }, configOptions);
 
   return responsiveCssString;
 }

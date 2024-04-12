@@ -13,7 +13,7 @@ export default function (configOptions = {}) {
         const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
         const valueSplit = value.split(" ");
         return `
-          ${pseudoClass(`${prefix}${key}`, variants.boxShadow)} {
+          ${pseudoClass(`${prefix}${key}`, variants.boxShadow, {})} {
             --shadow: ${value};
             --shadow-colored: ${valueSplit
               .slice(0, 4)
@@ -28,7 +28,7 @@ export default function (configOptions = {}) {
         let str = "";
         if (rgbValue) {
           str += `
-            ${pseudoClass(`${prefix}-${key}`, variants.boxShadow)} {
+            ${pseudoClass(`${prefix}-${key}`, variants.boxShadow, {})} {
               --shadow-color: rgba(${rgbValue}, 0.5) !important;
               --shadow: var(--shadow-colored);
             }
@@ -38,8 +38,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.boxShadow.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

@@ -52,8 +52,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.scrollPadding.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

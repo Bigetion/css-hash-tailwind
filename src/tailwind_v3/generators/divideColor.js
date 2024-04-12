@@ -18,7 +18,8 @@ export default function (configOptions = {}) {
             ${pseudoClass(
               (pseudoString) =>
                 `${prefix}-${key}${pseudoString} > :not([hidden]) ~ :not([hidden])`,
-              variants.divideColor
+              variants.divideColor,
+              {}
             )} {
               --divide-opacity: 1;
               border-color: ${value};${rgbPropertyValue}
@@ -27,8 +28,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.divideColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

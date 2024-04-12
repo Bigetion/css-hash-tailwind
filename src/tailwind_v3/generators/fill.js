@@ -11,15 +11,14 @@ export default function (configOptions = {}) {
     ({ pseudoClass, getCssByColors }) => {
       const cssString = getCssByColors(fill, (key, value) => {
         return `
-            ${pseudoClass(`${prefix}-${key}`, variants.textColor)} {
+            ${pseudoClass(`${prefix}-${key}`, variants.textColor, {})} {
               fill: ${value};
             }
           `;
       });
       return cssString;
     },
-    configOptions,
-    variants.fill.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

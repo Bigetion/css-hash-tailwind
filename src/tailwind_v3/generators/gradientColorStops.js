@@ -24,14 +24,23 @@ export default function (configOptions = {}) {
           return `
             ${pseudoClass(
               `${prefix}from-${key}`,
-              variants.gradientColorStops
+              variants.gradientColorStops,
+              {}
             )} {
               --gradient-from-color: ${value};${rgbFromPropertyValue}
             }
-            ${pseudoClass(`${prefix}via-${key}`, variants.gradientColorStops)} {
+            ${pseudoClass(
+              `${prefix}via-${key}`,
+              variants.gradientColorStops,
+              {}
+            )} {
               --gradient-via-color: ${value};${rgbViaPropertyValue}
             }
-            ${pseudoClass(`${prefix}to-${key}`, variants.gradientColorStops)} {
+            ${pseudoClass(
+              `${prefix}to-${key}`,
+              variants.gradientColorStops,
+              {}
+            )} {
               --gradient-to-color: ${value};${rgbToPropertyValue}
             }
           `;
@@ -39,8 +48,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.gradientColorStops.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

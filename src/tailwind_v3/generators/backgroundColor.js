@@ -17,7 +17,7 @@ export default function (configOptions = {}) {
             rgbPropertyValue = `background-color: rgba(${rgbValue}, var(--bg-opacity));`;
           }
           return `
-            ${pseudoClass(`${prefix}-${key}`, variants.backgroundColor)} {
+            ${pseudoClass(`${prefix}-${key}`, variants.backgroundColor, {})} {
               --bg-opacity: 1;
               background-color: ${value};${rgbPropertyValue}
             }
@@ -26,8 +26,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.backgroundColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

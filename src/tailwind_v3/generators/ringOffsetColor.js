@@ -12,15 +12,14 @@ export default function (configOptions = {}) {
       const cssString = getCssByColors(
         ringOffsetColor,
         (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.ringOffsetColor)} {
+          ${pseudoClass(`${prefix}-${key}`, variants.ringOffsetColor, {})} {
             --ring-offset-color: ${value};
           }
         `
       );
       return cssString;
     },
-    configOptions,
-    variants.ringOffsetColor.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

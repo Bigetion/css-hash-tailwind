@@ -23,8 +23,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.divideStyle.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

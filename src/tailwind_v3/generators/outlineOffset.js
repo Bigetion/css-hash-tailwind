@@ -18,8 +18,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.outlineOffset.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

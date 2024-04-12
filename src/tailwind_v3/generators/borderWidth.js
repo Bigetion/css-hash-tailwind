@@ -45,8 +45,7 @@ export default function (configOptions = {}) {
       });
       return cssString;
     },
-    configOptions,
-    variants.borderWidth.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;

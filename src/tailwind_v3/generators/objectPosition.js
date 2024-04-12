@@ -29,8 +29,7 @@ export default function (configOptions = {}) {
       );
       return cssString;
     },
-    configOptions,
-    variants.objectPosition.indexOf("responsive") >= 0
+    configOptions
   );
 
   return responsiveCssString;
