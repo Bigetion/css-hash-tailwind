@@ -1,4 +1,4 @@
-export default function ({ prefix }) {
+export default function generator({ prefix }) {
   return `    
   .${prefix}filter {
     --blur: ;

@@ -1,4 +1,4 @@
-export default function (configOptions = {}) {
+export default function generator(configOptions = {}) {
   const formOptions = Object.assign(
     {
       inputBackgroundColor: "#fff",

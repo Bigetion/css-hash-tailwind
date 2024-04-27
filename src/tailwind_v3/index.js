@@ -372,7 +372,7 @@ function addStyleSheet(attributeId, attributeValue, cssString) {
   }
 }
 
-export default function (options = {}) {
+export default function generateInlineStyle(options = {}) {
   if (typeof window === "object") {
     const { id = "tailwind-css" } = options;
     const cssString = generateTailwindCssString(options).replace(/\s\s+/g, " ");

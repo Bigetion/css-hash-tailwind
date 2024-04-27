@@ -1,6 +1,6 @@
 import { generateCssString } from "../utils/index";
 
-export default function (configOptions = {}) {
+export default function generator(configOptions = {}) {
   const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}gap`;
