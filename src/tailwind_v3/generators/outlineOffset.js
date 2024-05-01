@@ -12,7 +12,7 @@ export default function generator(configOptions = {}) {
       const cssString = getCssByOptions(outlineOffset, (key, value) => {
         return `
           ${pseudoClass(`${prefix}-${key}`, variants.outlineOffset)} {
-            outline-offset: ${value}px;
+            outline-offset: ${value};
           }
         `;
       });

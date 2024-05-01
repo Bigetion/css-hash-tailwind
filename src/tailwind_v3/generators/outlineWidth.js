@@ -12,7 +12,7 @@ export default function generator(configOptions = {}) {
       const cssString = getCssByOptions(outlineWidth, (key, value) => {
         return `
           ${pseudoClass(`${prefix}-${key}`, variants.outlineWidth)} {
-            outline-width: ${value}px;
+            outline-width: ${value};
           }
         `;
       });
