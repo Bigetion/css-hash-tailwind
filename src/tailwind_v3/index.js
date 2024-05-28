@@ -55,7 +55,6 @@ import generateFontSmoothing from "./generators/fontSmoothing";
 import generateFontStyle from "./generators/fontStyle";
 import generateFontVariantNumeric from "./generators/fontVariantNumeric";
 import generateFontWeight from "./generators/fontWeight";
-import generateForm from "./generators/form";
 import generateGap from "./generators/gap";
 import generateGradientColorStops from "./generators/gradientColorStops";
 import generateGrayscale from "./generators/grayscale";
@@ -164,7 +163,6 @@ import generateZIndex from "./generators/zIndex";
 const plugins = {
   accentColor: generateAccentColor,
   base: generateBase,
-  form: generateForm,
   accessibility: generateAccessibility,
   alignContent: generateAlignContent,
   alignItems: generateAlignItems,
