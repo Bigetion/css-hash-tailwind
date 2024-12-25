@@ -354,7 +354,7 @@ function inlineStyleToJson(styleString) {
   return styleObject;
 }
 
-export default function tss(classNames, convertToJson) {
+export default function twss(classNames, convertToJson) {
   const cssString = generateTailwindCssString().replace(/\s\s+/g, " ");
   const cssClasses = generateCssClasses(cssString);
 

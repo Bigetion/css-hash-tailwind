@@ -461,9 +461,6 @@ const theme = {
     "zoom-in": "zoom-in",
     "zoom-out": "zoom-out",
   },
-  divideColor: ({ theme }) => theme("borderColor"),
-  divideOpacity: ({ theme }) => theme("borderOpacity"),
-  divideWidth: ({ theme }) => theme("borderWidth"),
   dropShadow: {
     sm: "0 1px 1px rgb(0 0 0 / 0.05)",
     DEFAULT: "0 1px 2px rgb(0 0 0 / 0.1) , 0 1px 1px rgb(0 0 0 / 0.06)",
@@ -926,8 +923,6 @@ const theme = {
     8: "8px",
   },
   padding: ({ theme }) => theme("spacing"),
-  placeholderColor: ({ theme }) => theme("colors"),
-  placeholderOpacity: ({ theme }) => theme("opacity"),
   ringColor: ({ theme }) => ({
     DEFAULT: "#3b82f6",
     ...theme("colors"),
@@ -981,13 +976,6 @@ const theme = {
     110: "1.1",
     125: "1.25",
     150: "1.5",
-  },
-  screens: {
-    sm: "640px",
-    md: "768px",
-    lg: "1024px",
-    xl: "1280px",
-    "2xl": "1536px",
   },
   scrollMargin: ({ theme }) => ({
     ...theme("spacing"),

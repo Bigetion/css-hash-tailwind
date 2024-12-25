@@ -22,7 +22,8 @@ export default function generator(configOptions = {}) {
         return `
             ${prefix}${key} {
               --outline-opacity: 1;
-              outline-color: ${value};${rgbPropertyValue}
+              outline-color: ${value};
+              ${rgbPropertyValue}
             }
           `;
       }

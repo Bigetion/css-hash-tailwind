@@ -17,7 +17,8 @@ export default function generator(configOptions = {}) {
       return `
             ${prefix}${key} {
               --ring-opacity: 1;
-              --ring-color: ${value};${rgbPropertyValue}
+              --ring-color: ${value};
+              ${rgbPropertyValue}
             }
           `;
     });

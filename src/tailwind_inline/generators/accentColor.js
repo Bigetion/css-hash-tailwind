@@ -17,7 +17,8 @@ export default function generator(configOptions = {}) {
         return `
             ${prefix}-${key} {
               --accent-opacity: 1;
-              accent-color: ${value};${rgbPropertyValue}
+              accent-color: ${value};
+              ${rgbPropertyValue}
             }
           `;
       });

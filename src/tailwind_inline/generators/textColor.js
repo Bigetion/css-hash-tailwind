@@ -16,7 +16,8 @@ export default function generator(configOptions = {}) {
       return `
             ${prefix}-${key} {
               --text-opacity: 1;
-              color: ${value};${rgbPropertyValue}
+              color: ${value};
+              ${rgbPropertyValue}
             }
           `;
     });

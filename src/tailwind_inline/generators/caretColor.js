@@ -17,7 +17,8 @@ export default function generator(configOptions = {}) {
         return `
             ${prefix}-${key} {
               --caret-opacity: 1;
-              caret-color: ${value};${rgbPropertyValue}
+              caret-color: ${value};
+              ${rgbPropertyValue}
             }
           `;
       });
