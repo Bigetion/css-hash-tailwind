@@ -337,16 +337,37 @@ function generateCssClasses(cssString) {
   return cssClasses;
 }
 
-export default function tss(classNames) {
+function inlineStyleToJson(styleString) {
+  const styles = styleString.split(";").filter((style) => style.trim() !== "");
+  const styleObject = {};
+
+  styles.forEach((style) => {
+    const [key, value] = style.split(":").map((s) => s.trim());
+    if (key && value) {
+      const camelCaseKey = key.replace(/-([a-z])/g, (_, letter) =>
+        letter.toUpperCase()
+      );
+      styleObject[camelCaseKey] = value;
+    }
+  });
+
+  return styleObject;
+}
+
+export default function tss(classNames, convertToJson) {
   const cssString = generateTailwindCssString().replace(/\s\s+/g, " ");
   const cssClasses = generateCssClasses(cssString);
 
   const classes = classNames.split(" ");
-  const cssResult = classes.map((className) => {
+  let cssResult = classes.map((className) => {
     if (cssClasses[className]) {
       return cssClasses[className];
     }
     return "";
   });
-  return cssResult.join(" ");
+  cssResult = cssResult.join("");
+  if (convertToJson) {
+    cssResult = inlineStyleToJson(cssResult);
+  }
+  return cssResult;
 }

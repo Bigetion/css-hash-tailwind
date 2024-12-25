@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
 import generateTailwindCss from "tailwind_v3";
-import twi from "tailwind_inline";
 import { cssHash } from "css_hash";
 
 import routes from "routes";
@@ -18,9 +17,6 @@ generateTailwindCss({
     },
   },
 });
-
-const inlineStyle = twi("mb-4 p-5 flex");
-console.log({ inlineStyle });
 
 cssHash(
   () => `
