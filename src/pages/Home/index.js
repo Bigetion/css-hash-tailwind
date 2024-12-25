@@ -1,11 +1,12 @@
 import React from "react";
-import twss from "tailwind_inline";
 
 export default function Home() {
   return (
     <div className="mb-6 px-6 mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12">
-      <div style={twss("flex items-center mb-6", 1)}>
-        <h1 style={twss("text-3xl font-bold text-red-500 text-opacity-90", 1)}>Getting Started</h1>
+      <div className="flex items-center mb-6">
+        <h1 className="text-3xl font-bold">
+          Getting Started
+        </h1>
       </div>
       <div className="flex flex-col mb-6">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
