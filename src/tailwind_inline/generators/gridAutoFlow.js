@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const { prefix: globalPrefix } = configOptions;
 
   const prefix = `${globalPrefix}grid-flow`;
 
@@ -12,20 +12,17 @@ export default function generator(configOptions = {}) {
     "col-dense": "column dense",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.gridAutoFlow)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}-${key} {
             grid-auto-flow: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

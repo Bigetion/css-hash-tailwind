@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  const { prefix } = configOptions;
 
   const propertyOptions = {
     "normal-nums": "normal",
@@ -15,20 +15,17 @@ export default function generator(configOptions = {}) {
     "stacked-fractions": "stacked-fractions",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.fontVariantNumeric)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}-${key} {
             font-variant-numeric: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

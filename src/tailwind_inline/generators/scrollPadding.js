@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const { scrollPadding = {} } = theme;
 
@@ -9,51 +9,48 @@ export default function generator(configOptions = {}) {
     scrollPadding[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(scrollPadding, (keyTmp, value) => {
-        let prefix = `${globalPrefix}scroll-p`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-p`;
-        }
-        return `
-          ${pseudoClass(`${prefix}-${key}`, variants.scrollPadding)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(scrollPadding, (keyTmp, value) => {
+      let prefix = `${globalPrefix}scroll-p`;
+      let key = keyTmp;
+      if (`${key}`.indexOf("-") >= 0) {
+        key = key.split("-").join("");
+        prefix = `${globalPrefix}-p`;
+      }
+      return `
+          ${prefix}-${key} {
             scroll-padding: ${value};
           }
-          ${pseudoClass(`${prefix}y-${key}`, variants.scrollPadding)} {
+          ${prefix}y-${key} {
             scroll-padding-top: ${value};
             scroll-padding-bottom: ${value};
           }
-          ${pseudoClass(`${prefix}x-${key}`, variants.scrollPadding)} {
+          ${prefix}x-${key} {
             scroll-padding-left: ${value};
             scroll-padding-right: ${value};
           }
-          ${pseudoClass(`${prefix}t-${key}`, variants.scrollPadding)} {
+          ${prefix}t-${key} {
             scroll-padding-top: ${value};
           }
-          ${pseudoClass(`${prefix}r-${key}`, variants.scrollPadding)} {
+          ${prefix}r-${key} {
             scroll-padding-right: ${value};
           }
-          ${pseudoClass(`${prefix}b-${key}`, variants.scrollPadding)} {
+          ${prefix}b-${key} {
             scroll-padding-bottom: ${value};
           }
-          ${pseudoClass(`${prefix}l-${key}`, variants.scrollPadding)} {
+          ${prefix}l-${key} {
             scroll-padding-left: ${value};
           }
-          ${pseudoClass(`${prefix}s-${key}`, variants.scrollPadding)} {
+          ${prefix}s-${key} {
             scroll-padding-inline-start: ${value};
           }
-          ${pseudoClass(`${prefix}e-${key}`, variants.scrollPadding)} {
+          ${prefix}e-${key} {
             scroll-padding-inline-end: ${value};
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

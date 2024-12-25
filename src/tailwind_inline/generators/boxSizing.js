@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const { prefix: globalPrefix } = configOptions;
 
   const prefix = `${globalPrefix}box`;
 
@@ -10,20 +10,17 @@ export default function generator(configOptions = {}) {
     content: "content-box",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.boxSizing)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}-${key} {
             box-sizing: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const { textIndent = {} } = theme;
 
@@ -9,26 +9,23 @@ export default function generator(configOptions = {}) {
     textIndent[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(textIndent, (keyTmp, value) => {
-        let prefix = `${globalPrefix}indent`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-indent`;
-        }
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(textIndent, (keyTmp, value) => {
+      let prefix = `${globalPrefix}indent`;
+      let key = keyTmp;
+      if (`${key}`.indexOf("-") >= 0) {
+        key = key.split("-").join("");
+        prefix = `${globalPrefix}-indent`;
+      }
 
-        return `
-          ${pseudoClass(`${prefix}-${key}`, variants.textIndent)} {
+      return `
+          ${prefix}-${key} {
             text-indent: ${value};
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

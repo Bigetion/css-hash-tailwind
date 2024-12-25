@@ -12,20 +12,17 @@ export default function generator(configOptions = {}) {
     "col-reverse": "column-reverse",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
           ${prefix}-${key} {
             flex-direction: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

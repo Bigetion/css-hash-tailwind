@@ -1,26 +1,23 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}ring-offset`;
 
   const { ringOffsetWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        ringOffsetWidth,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.ringOffsetWidth)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      ringOffsetWidth,
+      (key, value) => `
+          ${prefix}-${key} {
             --ring-offset-width: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

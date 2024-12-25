@@ -1,40 +1,37 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const { prefix: globalPrefix } = configOptions;
 
   const prefix = `${globalPrefix}overflow`;
 
   const propertyOptions = ["auto", "hidden", "visible", "scroll"];
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.overflow)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}-${key} {
             overflow: ${value};
           }
-          ${pseudoClass(`${prefix}-x-${key}`, variants.overflow)} {
+          ${prefix}-x-${key} {
             overflow-x: ${value};
           }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.overflow)} {
+          ${prefix}-y-${key} {
             overflow-y: ${value};
           }
         `
-      );
-      cssString += `
-        ${pseudoClass(`${globalPrefix}scrolling-touch`, variants.overflow)} {
+    );
+    cssString += `
+        ${globalPrefix}scrolling-touch {
           -webkit-overflow-scrolling: touch;
         }
-        ${pseudoClass(`${globalPrefix}scrolling-auto`, variants.overflow)} {
+        ${globalPrefix}scrolling-auto {
           -webkit-overflow-scrolling: auto;
         }
       `;
-      return cssString;
-    },
-    configOptions
-  );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

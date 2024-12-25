@@ -1,52 +1,49 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}border`;
 
   const { borderWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(borderWidth, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.borderWidth)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(borderWidth, (keyTmp, value) => {
+      const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
+      return `
+          ${prefix}${key} {
             border-width: ${value};
           }
-          ${pseudoClass(`${prefix}-x${key}`, variants.borderWidth)} {
+          ${prefix}-x${key} {
             border-left-width: ${value};
             border-right-width: ${value};
           }
-          ${pseudoClass(`${prefix}-y${key}`, variants.borderWidth)} {
+          ${prefix}-y${key} {
             border-top-width: ${value};
             border-bottom-width: ${value};
           }
-          ${pseudoClass(`${prefix}-s${key}`, variants.borderWidth)} {
+          ${prefix}-s${key} {
             border-inline-start-width: ${value};
           }
-          ${pseudoClass(`${prefix}-e${key}`, variants.borderWidth)} {
+          ${prefix}-e${key} {
             border-inline-end-width: ${value};
           }
-          ${pseudoClass(`${prefix}-t${key}`, variants.borderWidth)} {
+          ${prefix}-t${key} {
             border-top-width: ${value};
           }
-          ${pseudoClass(`${prefix}-r${key}`, variants.borderWidth)} {
+          ${prefix}-r${key} {
             border-right-width: ${value};
           }
-          ${pseudoClass(`${prefix}-b${key}`, variants.borderWidth)} {
+          ${prefix}-b${key} {
             border-bottom-width: ${value};
           }
-          ${pseudoClass(`${prefix}-l${key}`, variants.borderWidth)} {
+          ${prefix}-l${key} {
             border-left-width: ${value};
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

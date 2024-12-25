@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const { translate = {} } = theme;
 
@@ -9,28 +9,25 @@ export default function generator(configOptions = {}) {
     translate[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(translate, (keyTmp, value) => {
-        let prefix = `${globalPrefix}translate`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-translate`;
-        }
-        return `
-          ${pseudoClass(`${prefix}-x-${key}`, variants.translate)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(translate, (keyTmp, value) => {
+      let prefix = `${globalPrefix}translate`;
+      let key = keyTmp;
+      if (`${key}`.indexOf("-") >= 0) {
+        key = key.split("-").join("");
+        prefix = `${globalPrefix}-translate`;
+      }
+      return `
+          ${prefix}-x-${key} {
             --transform-translate-x: ${value} !important;
           }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.translate)} {
+          ${prefix}-y-${key} {
             --transform-translate-y: ${value} !important;
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

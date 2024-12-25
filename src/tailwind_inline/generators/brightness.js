@@ -1,33 +1,27 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}brightness`;
   const basePrefix = prefix.replace(globalPrefix, "");
 
   const { brightness = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(brightness, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.brightness)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(brightness, (keyTmp, value) => {
+      const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
+      return `
+          ${prefix}${key} {
             --brightness: brightness(${value}) !important;
           }
-          ${pseudoClass(
-            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
-            variants.brightness
-          )} {
+          ${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key} {
             --backdrop-brightness: brightness(${value}) !important;
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

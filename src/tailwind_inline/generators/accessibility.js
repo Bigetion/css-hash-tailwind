@@ -1,11 +1,11 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  const { prefix } = configOptions;
 
-  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+  const responsiveCssString = generateCssString(() => {
     return `
-        ${pseudoClass(`${prefix}sr-only`, variants.accessibility)} {
+        ${prefix}sr-only {
           position: absolute;
           width: 1px;
           height: 1px;
@@ -16,7 +16,7 @@ export default function generator(configOptions = {}) {
           white-space: nowrap;
           border-width: 0;
         }
-        ${pseudoClass(`${prefix}not-sr-only`, variants.accessibility)} {
+        ${prefix}not-sr-only {
           position: static;
           width: auto;
           height: auto;
@@ -26,16 +26,10 @@ export default function generator(configOptions = {}) {
           clip: auto;
           white-space: normal;
         }
-        ${pseudoClass(
-          `${prefix}forced-color-adjust-auto`,
-          variants.accessibility
-        )} {
+        ${prefix}forced-color-adjust-auto {
           forced-color-adjust: auto;
         }
-        ${pseudoClass(
-          `${prefix}forced-color-adjust-none`,
-          variants.accessibility
-        )} {
+        ${prefix}forced-color-adjust-none {
           forced-color-adjust: none;
         }
       `;

@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const { prefix: globalPrefix } = configOptions;
 
   const prefix = `${globalPrefix}mix-blend`;
 
@@ -25,31 +25,25 @@ export default function generator(configOptions = {}) {
     "plus-lighter",
   ];
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.mixBlendMode)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}-${key} {
             mix-blend-mode: ${value};
           }
         `
-      );
-      cssString += getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(
-            `${prefix.replace("mix", "bg")}-${key}`,
-            variants.mixBlendMode
-          )} {
+    );
+    cssString += getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix.replace("mix", "bg")}-${key} {
             background-blend-mode: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

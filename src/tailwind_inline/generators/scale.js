@@ -1,33 +1,30 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}scale`;
 
   const { scale = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        scale,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.scale)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      scale,
+      (key, value) => `
+          ${prefix}-${key} {
             --transform-scale-x: ${value} !important;
             --transform-scale-y: ${value} !important;
           }
-          ${pseudoClass(`${prefix}-x-${key}`, variants.scale)} {
+          ${prefix}-x-${key} {
             --transform-scale-x: ${value} !important;
           }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.scale)} {
+          ${prefix}-y-${key} {
             --transform-scale-y: ${value} !important;
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

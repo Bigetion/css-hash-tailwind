@@ -1,32 +1,29 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}border-spacing`;
 
   const { borderSpacing = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(borderSpacing, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.borderSpacing)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(borderSpacing, (keyTmp, value) => {
+      const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
+      return `
+          ${prefix}${key} {
             border-spacing: ${value};
           }
-          ${pseudoClass(`${prefix}-x${key}`, variants.borderSpacing)} {
+          ${prefix}-x${key} {
             border-spacing-x: ${value};
           }
-          ${pseudoClass(`${prefix}-y${key}`, variants.borderSpacing)} {
+          ${prefix}-y${key} {
             border-spacing-y: ${value};
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

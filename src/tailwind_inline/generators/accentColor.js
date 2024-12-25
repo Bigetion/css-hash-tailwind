@@ -1,21 +1,21 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}accent`;
 
   const { accentColor, opacity = {} } = theme;
 
   const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors, getCssByOptions }) => {
+    ({ getCssByColors, getCssByOptions }) => {
       let cssString = getCssByColors(accentColor, (key, value, rgbValue) => {
         let rgbPropertyValue = "";
         if (rgbValue) {
           rgbPropertyValue = `accent-color: rgba(${rgbValue}, var(--accent-opacity));`;
         }
         return `
-            ${pseudoClass(`${prefix}-${key}`, variants.accentColor, {})} {
+            ${prefix}-${key} {
               --accent-opacity: 1;
               accent-color: ${value};${rgbPropertyValue}
             }
@@ -24,7 +24,7 @@ export default function generator(configOptions = {}) {
       cssString += getCssByOptions(
         opacity,
         (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.accentColor, {})} {
+          ${prefix}-${key} {
             --accent-opacity: ${value};
           }
         `

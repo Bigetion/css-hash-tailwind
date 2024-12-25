@@ -1,18 +1,15 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  const { prefix } = configOptions;
 
-  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+  const responsiveCssString = generateCssString(() => {
     return `
-        ${pseudoClass(`${prefix}antialiased`, variants.fontSmoothing)} {
+        ${prefix} {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-        ${pseudoClass(
-          `${prefix}subpixel-antialiased`,
-          variants.fontSmoothing
-        )} {
+        ${prefix}subpixel-antialiased {
           -webkit-font-smoothing: auto;
           -moz-osx-font-smoothing: auto;
         }

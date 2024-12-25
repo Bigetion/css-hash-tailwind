@@ -1,21 +1,21 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  const { prefix } = configOptions;
 
-  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+  const responsiveCssString = generateCssString(() => {
     const cssString = `
-				${pseudoClass(`${prefix}break-normal`, variants.wordBreak)} {
+				${prefix}break-normal {
 					overflow-wrap: normal;
 					word-break: normal;
 				}
-				${pseudoClass(`${prefix}break-words`, variants.wordBreak)} {
+				${prefix}break-words {
 					overflow-wrap: break-word;
 				}
-				${pseudoClass(`${prefix}break-all`, variants.wordBreak)} {
+				${prefix}break-all {
 					word-break: break-all;
 				}
-				${pseudoClass(`${prefix}break-keep`, variants.wordBreak)} {
+				${prefix}break-keep {
 					word-break: keep-all;
 				}
 			`;

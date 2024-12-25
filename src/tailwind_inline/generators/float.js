@@ -1,36 +1,23 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const { prefix: globalPrefix } = configOptions;
 
   const prefix = `${globalPrefix}float`;
 
   const propertyOptions = ["left", "right", "none"];
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.float)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}-${key} {
             float: ${value};
           }
         `
-      );
-      cssString += `
-        ${pseudoClass(
-          (pseudoString) => `${globalPrefix}clearfix${pseudoString}:after`,
-          variants.float
-        )} {
-          content: "";
-          display: table;
-          clear: both;
-        }
-      `;
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

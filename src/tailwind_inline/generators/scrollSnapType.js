@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const { prefix: globalPrefix } = configOptions;
 
   const prefix = `${globalPrefix}snap`;
 
@@ -12,29 +12,26 @@ export default function generator(configOptions = {}) {
     both: "both var(--scroll-snap-strictness)",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.scrollSnapType)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    let cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}-${key} {
             --scroll-snap-strictness: proximity;
             scroll-snap-type: ${value};
           }
         `
-      );
-      cssString += getCssByOptions(
-        ["mandatory", "proximity"],
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.scrollSnapType)} {
+    );
+    cssString += getCssByOptions(
+      ["mandatory", "proximity"],
+      (key, value) => `
+          ${prefix}-${key} {
             --scroll-snap-strictness: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

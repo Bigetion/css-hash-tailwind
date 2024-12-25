@@ -1,14 +1,14 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  const { prefix } = configOptions;
 
-  const responsiveCssString = generateCssString(({ pseudoClass }) => {
+  const responsiveCssString = generateCssString(() => {
     return `
-        ${pseudoClass(`${prefix}pointer-events-none`, variants.pointerEvents)} {
+        ${prefix}pointer-events-none {
           pointer-events: none;
         }
-        ${pseudoClass(`${prefix}pointer-events-auto`, variants.pointerEvents)} {
+        ${prefix}pointer-events-auto {
           pointer-events: auto;
         }
       `;

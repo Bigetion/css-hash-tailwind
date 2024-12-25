@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const { rotate = {} } = theme;
 
@@ -9,25 +9,22 @@ export default function generator(configOptions = {}) {
     rotate[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(rotate, (keyTmp, value) => {
-        let prefix = `${globalPrefix}rotate`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-rotate`;
-        }
-        return `
-          ${pseudoClass(`${prefix}-${key}`, variants.rotate)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(rotate, (keyTmp, value) => {
+      let prefix = `${globalPrefix}rotate`;
+      let key = keyTmp;
+      if (`${key}`.indexOf("-") >= 0) {
+        key = key.split("-").join("");
+        prefix = `${globalPrefix}-rotate`;
+      }
+      return `
+          ${prefix}-${key} {
             --transform-rotate: ${value} !important;
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

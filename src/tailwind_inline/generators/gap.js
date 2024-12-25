@@ -1,32 +1,29 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const prefix = `${globalPrefix}gap`;
 
   const { gap = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        gap,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.gap)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      gap,
+      (key, value) => `
+          ${prefix}-${key} {
             gap: ${value};
           }
-          ${pseudoClass(`${prefix}-x-${key}`, variants.gap)} {
+          ${prefix}-x-${key} {
             column-gap: ${value};
           }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.gap)} {
+          ${prefix}-y-${key} {
             row-gap: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

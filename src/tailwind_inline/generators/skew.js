@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const { skew = {} } = theme;
 
@@ -9,28 +9,25 @@ export default function generator(configOptions = {}) {
     skew[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(skew, (keyTmp, value) => {
-        let prefix = `${globalPrefix}skew`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-skew`;
-        }
-        return `
-          ${pseudoClass(`${prefix}-x-${key}`, variants.skew)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(skew, (keyTmp, value) => {
+      let prefix = `${globalPrefix}skew`;
+      let key = keyTmp;
+      if (`${key}`.indexOf("-") >= 0) {
+        key = key.split("-").join("");
+        prefix = `${globalPrefix}-skew`;
+      }
+      return `
+          ${prefix}-x-${key} {
             --transform-skew-x: ${value} !important;
           }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.skew)} {
+          ${prefix}-y-${key} {
             --transform-skew-y: ${value} !important;
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

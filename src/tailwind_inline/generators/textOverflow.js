@@ -1,29 +1,26 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  const { prefix } = configOptions;
 
   const propertyOptions = ["ellipsis", "clip"];
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}truncate`, variants.textOverflow)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(
+      propertyOptions,
+      (key, value) => `
+          ${prefix}truncate {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
           }
-          ${pseudoClass(`${prefix}text-${key}`, variants.textDecoration)} {
+          ${prefix}text-${key} {
             text-overflow: ${value};
           }
         `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+    );
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }

@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, theme = {} } = configOptions;
 
   const { inset = {} } = theme;
 
@@ -9,48 +9,45 @@ export default function generator(configOptions = {}) {
     inset[`-${key}`] = `-${value}`.replace("--", "-");
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(inset, (keyTmp, value) => {
-        let prefix = globalPrefix;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix += "-";
-        }
-        return `
-          ${pseudoClass(`${prefix}inset-${key}`, variants.inset)} {
+  const responsiveCssString = generateCssString(({ getCssByOptions }) => {
+    const cssString = getCssByOptions(inset, (keyTmp, value) => {
+      let prefix = globalPrefix;
+      let key = keyTmp;
+      if (`${key}`.indexOf("-") >= 0) {
+        key = key.split("-").join("");
+        prefix += "-";
+      }
+      return `
+          ${prefix}inset-${key} {
             right: ${value};
             left: ${value};
             top: ${value};
             bottom: ${value};
           }
-          ${pseudoClass(`${prefix}inset-x-${key}`, variants.inset)} {
+          ${prefix}inset-x-${key} {
             right: ${value};
             left: ${value};
           }
-          ${pseudoClass(`${prefix}inset-y-${key}`, variants.inset)} {
+          ${prefix}inset-y-${key} {
             top: ${value};
             bottom: ${value};
           }
-          ${pseudoClass(`${prefix}right-${key}`, variants.inset)} {
+          ${prefix}right-${key} {
             right: ${value};
           }
-          ${pseudoClass(`${prefix}left-${key}`, variants.inset)} {
+          ${prefix}left-${key} {
             left: ${value};
           }
-          ${pseudoClass(`${prefix}top-${key}`, variants.inset)} {
+          ${prefix}top-${key} {
             top: ${value};
           }
-          ${pseudoClass(`${prefix}bottom-${key}`, variants.inset)} {
+          ${prefix}bottom-${key} {
             bottom: ${value};
           }
         `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+    });
+    return cssString;
+  }, configOptions);
 
   return responsiveCssString;
 }
