@@ -15,16 +15,12 @@ export default function generator(configOptions = {}) {
             border-width: ${value};
           }
           ${prefix}-x${key} {
-            border-top-width: 0;
-            border-right-width: ${value};
-            border-bottom-width: 0;
             border-left-width: ${value};
+            border-right-width: ${value};
           }
           ${prefix}-y${key} {
             border-top-width: ${value};
-            border-right-width: 0;
             border-bottom-width: ${value};
-            border-left-width: 0;
           }
           ${prefix}-s${key} {
             border-inline-start-width: ${value};
@@ -34,26 +30,14 @@ export default function generator(configOptions = {}) {
           }
           ${prefix}-t${key} {
             border-top-width: ${value};
-            border-right-width: 0;
-            border-bottom-width: 0;
-            border-left-width: 0;
           }
           ${prefix}-r${key} {
-            border-top-width: 0;
             border-right-width: ${value};
-            border-bottom-width: 0;
-            border-left-width: 0;
           }
           ${prefix}-b${key} {
-            border-top-width: 0;
-            border-right-width: 0;
             border-bottom-width: ${value};
-            border-left-width: 0;
           }
           ${prefix}-l${key} {
-            border-top-width: 0;
-            border-right-width: 0;
-            border-bottom-width: 0;
             border-left-width: ${value};
           }
         `;
