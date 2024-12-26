@@ -354,8 +354,46 @@ function inlineStyleToJson(styleString) {
   return styleObject;
 }
 
+function jsonToStyle(json) {
+  return Object.entries(json)
+    .map(([key, value]) => {
+      // Convert camelCase to kebab-case for CSS properties
+      const kebabCaseKey = key.replace(
+        /[A-Z]/g,
+        (letter) => `-${letter.toLowerCase()}`
+      );
+      return `${kebabCaseKey}: ${value};`;
+    })
+    .join(" ");
+}
+
+function replaceAndRemoveCSSVariables(styleString) {
+  const customProperties = {};
+  const variableRegex = /--([\w-]+):\s*([^;]+);/g;
+  let match;
+
+  while ((match = variableRegex.exec(styleString)) !== null) {
+    const [_, variableName, value] = match;
+    customProperties[variableName] = value.trim();
+  }
+
+  let updatedStyleString = styleString.replace(
+    /var\(--([\w-]+)\)/g,
+    (_, variableName) => {
+      return customProperties[variableName] || `var(--${variableName})`;
+    }
+  );
+
+  updatedStyleString = updatedStyleString
+    .replace(/--[\w-]+:\s*[^;]+;/g, "")
+    .trim();
+
+  return updatedStyleString;
+}
+
 export default function twss(classNames, convertToJson) {
   const cssString = generateTailwindCssString().replace(/\s\s+/g, " ");
+
   const cssClasses = generateCssClasses(cssString);
 
   const classes = classNames.split(" ");
@@ -365,9 +403,12 @@ export default function twss(classNames, convertToJson) {
     }
     return "";
   });
-  cssResult = cssResult.join("");
-  if (convertToJson) {
-    cssResult = inlineStyleToJson(cssResult);
+  cssResult = replaceAndRemoveCSSVariables(cssResult.join(""));
+  cssResult = inlineStyleToJson(cssResult);
+
+  if (!convertToJson) {
+    cssResult = jsonToStyle(cssResult);
   }
+
   return cssResult;
 }
