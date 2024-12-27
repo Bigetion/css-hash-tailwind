@@ -357,7 +357,6 @@ function inlineStyleToJson(styleString) {
 function jsonToStyle(json) {
   return Object.entries(json)
     .map(([key, value]) => {
-      // Convert camelCase to kebab-case for CSS properties
       const kebabCaseKey = key.replace(
         /[A-Z]/g,
         (letter) => `-${letter.toLowerCase()}`
