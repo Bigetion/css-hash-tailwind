@@ -407,6 +407,15 @@ function tws(classNames, convertToJson) {
   let cssResult = classes.map((className) => {
     if (cssObject[className]) {
       return cssObject[className];
+    } else if (className.includes("[")) {
+      const customValue = className.match(/\[([^\]]+)\]/)[1];
+      const baseKey = className.split("[")[0];
+      if (cssObject[`${baseKey}custom`]) {
+        return cssObject[`${baseKey}custom`].replace(
+          /custom_value/g,
+          customValue
+        );
+      }
     }
     return "";
   });

@@ -2,11 +2,13 @@ const theme = {
   accentColor: ({ theme }) => ({
     ...theme("colors"),
     auto: "auto",
+    custom: "custom_value",
   }),
   aspectRatio: {
     auto: "auto",
     square: "1 / 1",
     video: "16 / 9",
+    custom: "custom_value",
   },
   backdropBlur: ({ theme }) => theme("blur"),
   backdropBrightness: ({ theme }) => theme("brightness"),
@@ -32,6 +34,7 @@ const theme = {
     "gradient-to-l": "linear-gradient(to left, var(--gradient-color-stops))",
     "gradient-to-tl":
       "linear-gradient(to top left, var(--gradient-color-stops))",
+    custom: "custom_value",
   },
   backgroundOpacity: ({ theme }) => theme("opacity"),
   backgroundPosition: {
@@ -60,6 +63,7 @@ const theme = {
     xl: "24px",
     "2xl": "40px",
     "3xl": "64px",
+    custom: "custom_value",
   },
   borderColor: ({ theme }) => ({
     ...theme("colors"),
@@ -76,6 +80,7 @@ const theme = {
     "2xl": "1rem",
     "3xl": "1.5rem",
     full: "9999px",
+    custom: "custom_value",
   },
   borderSpacing: ({ theme }) => ({
     ...theme("spacing"),
@@ -86,6 +91,7 @@ const theme = {
     2: "2px",
     4: "4px",
     8: "8px",
+    custom: "custom_value",
   },
   boxShadow: {
     sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
@@ -96,6 +102,7 @@ const theme = {
     "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
     inner: "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
     none: "none",
+    custom: "custom_value",
   },
   boxShadowColor: ({ theme }) => theme("colors"),
   brightness: {
@@ -110,6 +117,7 @@ const theme = {
     125: "1.25",
     150: "1.5",
     200: "2",
+    custom: "custom_value",
   },
   caretColor: ({ theme }) => theme("colors"),
   colors: {
@@ -381,6 +389,7 @@ const theme = {
       800: "#9f1239",
       900: "#881337",
     },
+    custom: "custom_value",
   },
   columns: {
     auto: "auto",
@@ -409,6 +418,7 @@ const theme = {
     "5xl": "64rem",
     "6xl": "72rem",
     "7xl": "80rem",
+    custom: "custom_value",
   },
   container: {},
   content: {
@@ -422,6 +432,7 @@ const theme = {
     125: "1.25",
     150: "1.5",
     200: "2",
+    custom: "custom_value",
   },
   cursor: {
     auto: "auto",
@@ -533,6 +544,7 @@ const theme = {
     "7xl": "4.5rem",
     "8xl": "6rem",
     "9xl": "8rem",
+    custom: "custom_value",
   },
   fontWeight: {
     thin: "100",
@@ -544,6 +556,7 @@ const theme = {
     bold: "700",
     extrabold: "800",
     black: "900",
+    custom: "custom_value",
   },
   gap: ({ theme }) => theme("spacing"),
   gradientColorStops: ({ theme }) => theme("colors"),
@@ -740,6 +753,7 @@ const theme = {
     min: "min-content",
     max: "max-content",
     fit: "fit-content",
+    custom: "custom_value",
   }),
   hueRotate: {
     0: "0deg",
@@ -771,6 +785,7 @@ const theme = {
     wide: "0.025em",
     wider: "0.05em",
     widest: "0.1em",
+    custom: "custom_value",
   },
   lineClamp: {
     1: "1",
@@ -779,6 +794,7 @@ const theme = {
     4: "4",
     5: "5",
     6: "6",
+    custom: "custom_value",
   },
   lineHeight: {
     none: "1",
@@ -795,6 +811,7 @@ const theme = {
     8: "2rem",
     9: "2.25rem",
     10: "2.5rem",
+    custom: "custom_value",
   },
   listStyleType: {
     none: "none",
@@ -888,6 +905,7 @@ const theme = {
     90: "0.9",
     95: "0.95",
     100: "1",
+    custom: "custom_value",
   },
   order: {
     first: "-9999",
@@ -905,6 +923,7 @@ const theme = {
     10: "10",
     11: "11",
     12: "12",
+    custom: "custom_value",
   },
   outlineColor: ({ theme }) => theme("colors"),
   outlineOffset: {
@@ -913,6 +932,7 @@ const theme = {
     2: "2px",
     4: "4px",
     8: "8px",
+    custom: "custom_value",
   },
   outlineOpacity: ({ theme }) => theme("opacity"),
   outlineWidth: {
@@ -921,6 +941,7 @@ const theme = {
     2: "2px",
     4: "4px",
     8: "8px",
+    custom: "custom_value",
   },
   padding: ({ theme }) => theme("spacing"),
   ringColor: ({ theme }) => ({
@@ -934,6 +955,7 @@ const theme = {
     2: "2px",
     4: "4px",
     8: "8px",
+    custom: "custom_value",
   },
   ringOpacity: ({ theme }) => ({
     DEFAULT: "0.5",
@@ -946,6 +968,7 @@ const theme = {
     2: "2px",
     4: "4px",
     8: "8px",
+    custom: "custom_value",
   },
   rotate: {
     0: "0deg",
@@ -957,6 +980,7 @@ const theme = {
     45: "45deg",
     90: "90deg",
     180: "180deg",
+    custom: "custom_value",
   },
   saturate: {
     0: "0",
@@ -964,6 +988,7 @@ const theme = {
     100: "1",
     150: "1.5",
     200: "2",
+    custom: "custom_value",
   },
   scale: {
     0: "0",
@@ -976,6 +1001,7 @@ const theme = {
     110: "1.1",
     125: "1.25",
     150: "1.5",
+    custom: "custom_value",
   },
   scrollMargin: ({ theme }) => ({
     ...theme("spacing"),
@@ -992,6 +1018,7 @@ const theme = {
     3: "3deg",
     6: "6deg",
     12: "12deg",
+    custom: "custom_value",
   },
   space: ({ theme }) => ({
     ...theme("spacing"),
@@ -1032,6 +1059,7 @@ const theme = {
     72: "18rem",
     80: "20rem",
     96: "24rem",
+    custom: "custom_value",
   },
   stroke: ({ theme }) => ({
     none: "none",
@@ -1041,6 +1069,7 @@ const theme = {
     0: "0",
     1: "1",
     2: "2",
+    custom: "custom_value",
   },
   textColor: ({ theme }) => theme("colors"),
   textDecorationColor: ({ theme }) => theme("colors"),
@@ -1052,6 +1081,7 @@ const theme = {
     2: "2px",
     4: "4px",
     8: "8px",
+    custom: "custom_value",
   },
   textIndent: ({ theme }) => ({
     ...theme("spacing"),
@@ -1075,6 +1105,7 @@ const theme = {
     8: "8px",
     9: "9px",
     10: "10px",
+    custom: "custom_value",
   },
   textShadowY: ({ theme }) => theme("textShadowX"),
   textUnderlineOffset: {
@@ -1084,6 +1115,7 @@ const theme = {
     2: "2px",
     4: "4px",
     8: "8px",
+    custom: "custom_value",
   },
   transformOrigin: {
     center: "center",
@@ -1197,6 +1229,7 @@ const theme = {
     90: "90",
     100: "100",
     auto: "auto",
+    custom: "custom_value",
   },
 };
 
