@@ -12,7 +12,11 @@ export default function generator(configOptions = {}) {
       const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
       return `
           ${prefix}${key} {
-            border-width: ${value};
+            border-style: solid;
+            border-top-width: ${value};
+            border-bottom-width: ${value};
+            border-left-width: ${value};
+            border-right-width: ${value};
           }
           ${prefix}-x${key} {
             border-left-width: ${value};

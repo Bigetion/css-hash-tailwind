@@ -391,7 +391,15 @@ function replaceAndRemoveCSSVariables(styleString) {
   return updatedStyleString;
 }
 
-export default function twss(classNames, convertToJson) {
+const breakpoints = {
+  sm: "@media (min-width: 640px)",
+  md: "@media (min-width: 768px)",
+  lg: "@media (min-width: 1024px)",
+  xl: "@media (min-width: 1280px)",
+  "2xl": "@media (min-width: 1536px)",
+};
+
+function tws(classNames, convertToJson) {
   const cssString = generateTailwindCssString().replace(/\s\s+/g, " ");
 
   const cssClasses = generateCssClasses(cssString);
@@ -412,3 +420,43 @@ export default function twss(classNames, convertToJson) {
 
   return cssResult;
 }
+
+function twsx(selectorsConfig) {
+  return Object.entries(selectorsConfig)
+    .map(([selector, [baseStyles, extensions = {}]]) => {
+      let baseCSS = `${selector} { ${tws(baseStyles)} }`;
+      let extendedCSS = "";
+
+      for (const [key, value] of Object.entries(extensions)) {
+        if (breakpoints[key]) {
+          const mediaQuery = breakpoints[key];
+          extendedCSS += `
+                ${mediaQuery} {
+                  ${selector} {
+                    ${tws(value)}
+                  }
+                }
+              `;
+        } else if (key.startsWith("@media")) {
+          extendedCSS += `
+                ${key} {
+                  ${selector} {
+                    ${tws(value)}
+                  }
+                }
+              `;
+        } else {
+          extendedCSS += `
+                ${selector}${key} {
+                  ${tws(value)}
+                }
+              `;
+        }
+      }
+
+      return `${baseCSS} ${extendedCSS}`;
+    })
+    .join(" ");
+}
+
+export { tws, twsx };
