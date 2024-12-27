@@ -373,7 +373,7 @@ function replaceAndRemoveCSSVariables(styleString) {
   let match;
 
   while ((match = variableRegex.exec(styleString)) !== null) {
-    const [_, variableName, value] = match;
+    const [, variableName, value] = match;
     customProperties[variableName] = value.trim();
   }
 
