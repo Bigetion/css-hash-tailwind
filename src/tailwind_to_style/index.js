@@ -31,7 +31,6 @@ import generateBrightness from "./generators/brightness";
 import generateCaptionSide from "./generators/captionSide";
 import generateCaretColor from "./generators/caretColor";
 import generateClear from "./generators/clear";
-import generateContainer from "./generators/container";
 import generateContrast from "./generators/contrast";
 import generateCursor from "./generators/cursor";
 import generateDisplay from "./generators/display";
@@ -184,7 +183,6 @@ const plugins = {
   captionSide: generateCaptionSide,
   caretColor: generateCaretColor,
   clear: generateClear,
-  container: generateContainer,
   contrast: generateContrast,
   cursor: generateCursor,
   display: generateDisplay,

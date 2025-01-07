@@ -419,7 +419,6 @@ const theme = {
     "7xl": "80rem",
     custom: "custom_value",
   },
-  container: {},
   content: {
     none: "none",
   },
@@ -1058,6 +1057,11 @@ const theme = {
     72: "18rem",
     80: "20rem",
     96: "24rem",
+    "screen-sm": "640px",
+    "screen-md": "768px",
+    "screen-lg": "1024px",
+    "screen-xl": "1280px",
+    "screen-2xl": "1536px",
     custom: "custom_value",
   },
   stroke: ({ theme }) => ({
