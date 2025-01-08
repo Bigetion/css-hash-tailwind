@@ -105,7 +105,7 @@ function Layout(props) {
     <React.Fragment>
       <div className="bg-white antialiased">
         <div className="flex bg-white border-b border-gray-200 fixed top-0 inset-x-0 z-100 h-16 items-center">
-          <div className="w-full max-w-screen-xl relative mx-auto px-6">
+          <div className="w-full relative mx-auto px-6">
             <div className="flex justify-between sm:justify-start items-center -mx-6">
               <div className="lg:w-1/4 xl:w-1/5 pl-6 pr-6 lg:pr-8">
                 <div className="flex items-center">
@@ -181,7 +181,7 @@ function Layout(props) {
           </div>
         </div>
       </div>
-      <div className="w-full max-w-screen-xl mx-auto px-6">
+      <div className="w-full mx-auto px-6">
         <div className="lg:flex -mx-6">
           {showSidebar && (
             <div className="fixed inset-0 h-full bg-white z-90 w-full border-b border-r -mb-16 lg:-mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:border-b-0 lg:pt-0 lg:w-1/4 lg:block xl:w-1/5 pt-16">
