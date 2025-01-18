@@ -15,10 +15,12 @@ export default function generator(configOptions = {}) {
             border-spacing: ${value};
           }
           ${prefix}-x${key} {
-            border-spacing-x: ${value};
+            --border-spacing-x: ${value};
+            border-spacing: var(--border-spacing-x) var(--border-spacing-y, 0);
           }
           ${prefix}-y${key} {
-            border-spacing-y: ${value};
+            --border-spacing-y: ${value};
+            border-spacing: var(--border-spacing-x, 0) var(--border-spacing-y);
           }
         `;
     });
