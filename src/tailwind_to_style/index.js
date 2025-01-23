@@ -352,23 +352,8 @@ function inlineStyleToJson(styleString) {
   return styleObject;
 }
 
-function jsonToStyle(json) {
-  return Object.entries(json)
-    .map(([key, value]) => {
-      const kebabCaseKey = key.replace(
-        /[A-Z]/g,
-        (letter) => `-${letter.toLowerCase()}`
-      );
-      return `${kebabCaseKey}: ${value};`;
-    })
-    .join(" ");
-}
-
 function separateAndResolveCSS(arr) {
-  const cssProperties = [];
-  const cssVariables = [];
-  const variableMap = {};
-
+  const cssProperties = {};
   arr.forEach((item) => {
     const declarations = item
       .split(";")
@@ -376,50 +361,38 @@ function separateAndResolveCSS(arr) {
       .filter((decl) => decl);
 
     declarations.forEach((declaration) => {
-      if (declaration.startsWith("--")) {
-        const [key, value] = declaration.split(":").map((part) => part.trim());
-        variableMap[key] = value;
-        cssVariables.push(declaration + ";");
-      } else {
-        cssProperties.push(declaration + ";");
-      }
+      const [key, value] = declaration.split(":").map((part) => part.trim());
+      cssProperties[key] = value;
     });
   });
 
-  function resolveVariable(value) {
-    return value.replace(/var\((--[\w-]+)\)/g, (_, varName) => {
-      if (variableMap[varName]) {
-        return resolveVariable(variableMap[varName]);
+  const resolvedProperties = { ...cssProperties };
+
+  const resolveValue = (value, variables) => {
+    return value.replace(
+      /var\((--[a-zA-Z0-9-]+)(?:,\s*([^\)]+))?\)/g,
+      (match, variable, fallback) => {
+        return variables[variable] || fallback || match;
       }
-      return `var(${varName})`;
-    });
-  }
+    );
+  };
 
-  const resolvedVariables = cssVariables.map((variable) => {
-    const [key, value] = variable.split(":").map((part) => part.trim());
-    const resolvedValue = resolveVariable(value.slice(0, -1));
-    return `${key}: ${resolvedValue};`;
+  Object.keys(resolvedProperties).forEach((key) => {
+    resolvedProperties[key] = resolveValue(
+      resolvedProperties[key],
+      resolvedProperties
+    );
   });
 
-  const uniqueVariables = [
-    ...new Map(
-      resolvedVariables.reverse().map((variable) => {
-        const key = variable.split(":")[0].trim();
-        return [key, variable];
-      })
-    ).values(),
-  ].reverse();
-
-  uniqueVariables.forEach((variable) => {
-    const [key, value] = variable.split(":").map((part) => part.trim());
-    variableMap[key] = value.slice(0, -1);
+  Object.keys(resolvedProperties).forEach((key) => {
+    if (key.startsWith("--")) {
+      delete resolvedProperties[key];
+    }
   });
 
-  const resolvedCSSProperties = cssProperties.map((property) =>
-    resolveVariable(property)
-  );
-
-  return resolvedCSSProperties;
+  return Object.entries(resolvedProperties)
+    .map(([key, value]) => `${key}: ${value};`)
+    .join(" ");
 }
 
 const breakpoints = {
@@ -466,10 +439,9 @@ function tws(classNames, convertToJson) {
   });
 
   cssResult = separateAndResolveCSS(cssResult);
-  cssResult = inlineStyleToJson(cssResult.join(""));
 
-  if (!convertToJson) {
-    cssResult = jsonToStyle(cssResult);
+  if (convertToJson) {
+    cssResult = inlineStyleToJson(cssResult);
   }
 
   return cssResult;
