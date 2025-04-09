@@ -192,9 +192,7 @@ export default function BoxSizing() {
             </div>
           </div>
           <div className="c-2 r-2 center exclude">
-            <div
-              className={`${stripes.sky}`}
-            >
+            <div className={`${stripes.sky}`}>
               <div />
             </div>
           </div>

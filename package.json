@@ -13,7 +13,8 @@
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "source-map-explorer": "^2.5.0"
+    "source-map-explorer": "^2.5.0",
+    "twind": "^0.16.19"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
@@ -26,7 +27,8 @@
     "rollup:tailwind-v3": "rollup --config rollup.config.tailwind-v3.mjs",
     "rollup:tailwind-v3-minify": "rollup --config rollup.config.tailwind-v3.min.mjs",
     "rollup:tailwind-to-style": "rollup --config rollup.config.tailwind-to-style.mjs",
-    "rollup:css-hash": "rollup --config rollup.config.css-hash.mjs"
+    "rollup:css-hash": "rollup --config rollup.config.css-hash.mjs",
+    "rollup:twsx": "rollup --config rollup.config.twsx.mjs"
   },
   "eslintConfig": {
     "extends": "react-app"
