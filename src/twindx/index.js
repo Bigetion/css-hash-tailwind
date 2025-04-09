@@ -90,7 +90,7 @@ function resolveSelector(parent, key) {
   }
 }
 
-function twsx(structure, parent = "") {
+function twindx(structure, parent = "") {
   let css = "";
 
   for (const key in structure) {
@@ -102,16 +102,16 @@ function twsx(structure, parent = "") {
       css += resolveClassToCSS(resolvedSelector, baseClass) + "\n\n";
 
       if (typeof nested === "object" && nested !== null) {
-        css += twsx(nested, resolvedSelector);
+        css += twindx(nested, resolvedSelector);
       }
     } else if (typeof value === "string") {
       css += resolveClassToCSS(resolvedSelector, value) + "\n\n";
     } else if (typeof value === "object" && value !== null) {
-      css += twsx(value, resolvedSelector);
+      css += twindx(value, resolvedSelector);
     }
   }
 
   return css.trim();
 }
 
-export default twsx;
+export default twindx;

@@ -28,7 +28,7 @@
     "rollup:tailwind-v3-minify": "rollup --config rollup.config.tailwind-v3.min.mjs",
     "rollup:tailwind-to-style": "rollup --config rollup.config.tailwind-to-style.mjs",
     "rollup:css-hash": "rollup --config rollup.config.css-hash.mjs",
-    "rollup:twsx": "rollup --config rollup.config.twsx.mjs"
+    "rollup:twindx": "rollup --config rollup.config.twindx.mjs"
   },
   "eslintConfig": {
     "extends": "react-app"

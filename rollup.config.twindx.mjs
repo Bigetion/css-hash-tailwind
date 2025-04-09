@@ -1,10 +1,10 @@
 import json from "@rollup/plugin-json";
 
 export default {
-	input: "src/twsx/index.js",
+	input: "src/twindx/index.js",
 	output: [
 		{
-			file: "dist/twsx.js",
+			file: "dist/twindx.js",
 			format: "cjs",
 		},
 	],
