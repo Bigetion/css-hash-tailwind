@@ -1,8 +1,14 @@
 import { virtualSheet } from "twind/sheets";
 import { setup, tw } from "twind";
+import colors from "./colors";
 
 const sheet = virtualSheet();
-setup({ sheet });
+setup({
+  sheet,
+  theme: {
+    colors,
+  },
+});
 
 function resolveClassToCSS(selector, className) {
   sheet.reset();
