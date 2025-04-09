@@ -11,27 +11,73 @@ function resolveClassToCSS(selector, className) {
   tw(classStr);
 
   const rules = sheet.target;
-  const declarationLines = [];
+  const normalMap = new Map();
+  const mediaMap = new Map();
 
   for (const rule of rules) {
-    const match = rule.match(/^\.(?:[\w:\-\[\]]+)\s*\{([^}]+)\}/);
+    if (rule.startsWith("@media")) {
+      const mediaMatch = rule.match(/^(@media[^{]+)\{([\s\S]+)\}$/);
+      if (mediaMatch) {
+        const mediaQuery = mediaMatch[1];
+        const inner = mediaMatch[2];
 
-    if (match) {
-      const declarations = match[1].trim();
+        const innerMatch = inner.match(/([^{]+)\{([^}]+)\}/g);
+        if (innerMatch) {
+          for (const block of innerMatch) {
+            const [, rawSel, rawDecl] = block.match(/([^{]+)\{([^}]+)\}/);
 
-      const lines = declarations
-        .split(/;/)
-        .map((line) => line.trim())
-        .filter((line) => line.length > 0)
-        .map((line) => line + ";");
+            const cleanedSel = rawSel.trim().replace(/\.[^\s]+/, selector);
+            const decls = rawDecl.trim().split(/;\s*/).filter(Boolean);
 
-      declarationLines.push(...lines);
+            if (!mediaMap.has(mediaQuery)) mediaMap.set(mediaQuery, new Map());
+            const map = mediaMap.get(mediaQuery);
+
+            const arr = map.get(cleanedSel) || [];
+            arr.push(...decls);
+            map.set(cleanedSel, arr);
+          }
+        }
+      }
+    } else {
+      const match = rule.match(/^\.([^\s]+)\s*\{([^}]+)\}/);
+      if (match) {
+        const fullClass = match[1];
+        const declarations = match[2].trim();
+
+        let finalSelector = selector;
+
+        const pseudoMatch = fullClass.match(
+          /(?:^|:)(hover|focus|active|visited|disabled)/
+        );
+        if (pseudoMatch) {
+          finalSelector += `:${pseudoMatch[1]}`;
+        }
+
+        const arr = normalMap.get(finalSelector) || [];
+        arr.push(...declarations.split(/;\s*/).filter(Boolean));
+        normalMap.set(finalSelector, arr);
+      }
     }
   }
 
-  if (declarationLines.length === 0) return "";
+  const formatBlock = (sel, decls) =>
+    `${sel} {\n  ${[...new Set(decls)].join(";\n  ")};\n}`;
 
-  return `${selector} {\n  ${declarationLines.join("\n  ")}\n}`;
+  const output = [];
+
+  for (const [sel, decls] of normalMap) {
+    output.push(formatBlock(sel, decls));
+  }
+
+  for (const [media, selMap] of mediaMap) {
+    const blocks = [];
+    for (const [sel, decls] of selMap) {
+      blocks.push(formatBlock(sel, decls).replace(/^/gm, "  "));
+    }
+    output.push(`${media} {\n${blocks.join("\n\n")}\n}`);
+  }
+
+  return output.join("\n\n");
 }
 
 function resolveSelector(parent, key) {
@@ -52,15 +98,15 @@ function twsx(structure, parent = "") {
     const resolvedSelector = resolveSelector(parent, key);
 
     if (Array.isArray(value)) {
-      const [baseClass, nested] = value;
+      const [baseClass, nested = {}] = value;
       css += resolveClassToCSS(resolvedSelector, baseClass) + "\n\n";
 
-      if (typeof nested === "object") {
+      if (typeof nested === "object" && nested !== null) {
         css += twsx(nested, resolvedSelector);
       }
     } else if (typeof value === "string") {
       css += resolveClassToCSS(resolvedSelector, value) + "\n\n";
-    } else if (typeof value === "object") {
+    } else if (typeof value === "object" && value !== null) {
       css += twsx(value, resolvedSelector);
     }
   }
