@@ -19,10 +19,10 @@ export default function generator(configOptions = {}) {
       }
       return `
           ${prefix}-x-${key} {
-            --transform-translate-x: ${value} !important;
+            --transform-translate-x: ${value};
           }
           ${prefix}-y-${key} {
-            --transform-translate-y: ${value} !important;
+            --transform-translate-y: ${value};
           }
         `;
     });

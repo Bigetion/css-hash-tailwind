@@ -19,7 +19,7 @@ export default function generator(configOptions = {}) {
       }
       return `
           ${prefix}-${key} {
-            --transform-rotate: ${value} !important;
+            --transform-rotate: ${value};
           }
         `;
     });

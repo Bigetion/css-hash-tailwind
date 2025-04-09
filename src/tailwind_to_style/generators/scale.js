@@ -12,14 +12,14 @@ export default function generator(configOptions = {}) {
       scale,
       (key, value) => `
           ${prefix}-${key} {
-            --transform-scale-x: ${value} !important;
-            --transform-scale-y: ${value} !important;
+            --transform-scale-x: ${value};
+            --transform-scale-y: ${value};
           }
           ${prefix}-x-${key} {
-            --transform-scale-x: ${value} !important;
+            --transform-scale-x: ${value};
           }
           ${prefix}-y-${key} {
-            --transform-scale-y: ${value} !important;
+            --transform-scale-y: ${value};
           }
         `
     );

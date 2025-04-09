@@ -36,6 +36,34 @@ export default function BoxDecorationBreak() {
           </div>
         </div>
       </PanelSection>
+      <div className="py-2" />
+      <div className="header">
+        <h1>Box Decoration Break</h1>
+      </div>
+      <PanelSection title="">
+        <div className="box-decoration-break">
+          <div>
+            <p>box-decoration-slice</p>
+            <div>
+              <span className="slice">
+                Hello
+                <br />
+                World
+              </span>
+            </div>
+          </div>
+          <div>
+            <p>box-decoration-clone</p>
+            <div>
+              <span className="clone">
+                Hello
+                <br />
+                World
+              </span>
+            </div>
+          </div>
+        </div>
+      </PanelSection>
     </div>
   );
 }

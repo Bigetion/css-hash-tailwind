@@ -10,6 +10,8 @@ import routes from "routes";
 import Layout from "components/BaseLayout";
 import PageLoader from "components/PageLoader";
 
+import "./style";
+
 generateTailwindCss({
   variants: {
     extend: {

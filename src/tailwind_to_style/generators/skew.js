@@ -19,10 +19,10 @@ export default function generator(configOptions = {}) {
       }
       return `
           ${prefix}-x-${key} {
-            --transform-skew-x: ${value} !important;
+            --transform-skew-x: ${value};
           }
           ${prefix}-y-${key} {
-            --transform-skew-y: ${value} !important;
+            --transform-skew-y: ${value};
           }
         `;
     });

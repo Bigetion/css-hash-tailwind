@@ -370,7 +370,7 @@ function separateAndResolveCSS(arr) {
 
   const resolveValue = (value, variables) => {
     return value.replace(
-      /var\((--[a-zA-Z0-9-]+)(?:,\s*([^\)]+))?\)/g,
+      /var\((--[a-zA-Z0-9-]+)(?:,\s*([^)]+))?\)/g,
       (match, variable, fallback) => {
         return variables[variable] || fallback || match;
       }

@@ -1,6 +1,6 @@
 export default function generator({ prefix }) {
   return `    
-  .${prefix}filter {
+  ${prefix}filter {
     --blur: ;
     --brightness: ;
     --contrast: ;
@@ -24,7 +24,7 @@ export default function generator({ prefix }) {
     -webkit-backdrop-filter: var(--backdrop-blur) var(--backdrop-brightness) var(--backdrop-contrast) var(--backdrop-grayscale) var(--backdrop-hue-rotate) var(--backdrop-invert) var(--backdrop-opacity) var(--backdrop-saturate) var(--backdrop-sepia);
     backdrop-filter: var(--backdrop-blur) var(--backdrop-brightness) var(--backdrop-contrast) var(--backdrop-grayscale) var(--backdrop-hue-rotate) var(--backdrop-invert) var(--backdrop-opacity) var(--backdrop-saturate) var(--backdrop-sepia);
   }
-  .${prefix}filter-none {
+  ${prefix}filter-none {
     filter: none;
     backdrop-filter: none;
   }
