@@ -34,24 +34,34 @@ function resolveClassToCSS(selector, className) {
   return `${selector} {\n  ${declarationLines.join("\n  ")}\n}`;
 }
 
+function resolveSelector(parent, key) {
+  if (key.includes("&")) {
+    return key.replace(/&/g, parent.trim());
+  } else if (parent.trim() !== "") {
+    return `${parent.trim()} ${key.trim()}`;
+  } else {
+    return key.trim();
+  }
+}
+
 function twsx(structure, parent = "") {
   let css = "";
 
   for (const key in structure) {
     const value = structure[key];
-    const selector = `${parent}${key}`.trim();
+    const resolvedSelector = resolveSelector(parent, key);
 
     if (Array.isArray(value)) {
       const [baseClass, nested] = value;
-      css += resolveClassToCSS(selector, baseClass) + "\n\n";
+      css += resolveClassToCSS(resolvedSelector, baseClass) + "\n\n";
 
       if (typeof nested === "object") {
-        css += twsx(nested, selector + " ");
+        css += twsx(nested, resolvedSelector);
       }
     } else if (typeof value === "string") {
-      css += resolveClassToCSS(selector, value) + "\n\n";
+      css += resolveClassToCSS(resolvedSelector, value) + "\n\n";
     } else if (typeof value === "object") {
-      css += twsx(value, selector + " ");
+      css += twsx(value, resolvedSelector);
     }
   }
 
