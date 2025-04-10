@@ -34,6 +34,10 @@ import generateClear from "./generators/clear";
 import generateContrast from "./generators/contrast";
 import generateCursor from "./generators/cursor";
 import generateDisplay from "./generators/display";
+import generateDivideColor from "./generators/divideColor";
+import generateDivideOpacity from "./generators/divideOpacity";
+import generateDivideStyle from "./generators/divideStyle";
+import generateDivideWidth from "./generators/divideWidth";
 import generateDropShadow from "./generators/dropShadow";
 import generateFill from "./generators/fill";
 import generateFilter from "./generators/filter";
@@ -118,6 +122,7 @@ import generateScrollSnapType from "./generators/scrollSnapType";
 import generateSepia from "./generators/sepia";
 import generateSize from "./generators/size";
 import generateSkew from "./generators/skew";
+import generateSpace from "./generators/space";
 import generateStroke from "./generators/stroke";
 import generateStrokeWidth from "./generators/strokeWidth";
 import generateTableLayout from "./generators/tableLayout";
@@ -186,6 +191,10 @@ const plugins = {
   contrast: generateContrast,
   cursor: generateCursor,
   display: generateDisplay,
+  divideColor: generateDivideColor,
+  divideOpacity: generateDivideOpacity,
+  divideStyle: generateDivideStyle,
+  divideWidth: generateDivideWidth,
   dropShadow: generateDropShadow,
   fill: generateFill,
   filter: generateFilter,
@@ -270,6 +279,7 @@ const plugins = {
   sepia: generateSepia,
   size: generateSize,
   skew: generateSkew,
+  space: generateSpace,
   stroke: generateStroke,
   strokeWidth: generateStrokeWidth,
   tableLayout: generateTableLayout,
@@ -320,6 +330,8 @@ function generateTailwindCssString(options = {}) {
   });
   return cssString;
 }
+
+const twString = generateTailwindCssString().replace(/\s\s+/g, " ");
 
 function convertCssToObject(cssString) {
   const cssObject = {};
@@ -395,15 +407,6 @@ function separateAndResolveCSS(arr) {
     .join(" ");
 }
 
-const breakpoints = {
-  sm: "@media (min-width: 640px)",
-  md: "@media (min-width: 768px)",
-  lg: "@media (min-width: 1024px)",
-  xl: "@media (min-width: 1280px)",
-  "2xl": "@media (min-width: 1536px)",
-};
-
-const twString = generateTailwindCssString().replace(/\s\s+/g, " ");
 const cssObject = convertCssToObject(twString);
 
 function tws(classNames, convertToJson) {
@@ -447,46 +450,139 @@ function tws(classNames, convertToJson) {
   return cssResult;
 }
 
-function twsx(styles, parentSelector = "") {
-  let cssString = "";
+const breakpoints = {
+  sm: "@media (min-width: 640px)",
+  md: "@media (min-width: 768px)",
+  lg: "@media (min-width: 1024px)",
+  xl: "@media (min-width: 1280px)",
+  "2xl": "@media (min-width: 1536px)",
+};
 
-  for (const key in styles) {
-    const value = styles[key];
+const pseudoVariants = new Set([
+  "hover",
+  "focus",
+  "active",
+  "visited",
+  "disabled",
+  "first",
+  "last",
+  "checked",
+  "invalid",
+  "required",
+]);
 
-    let newSelector = key.includes("&")
-      ? key.replace(/&/g, parentSelector)
-      : parentSelector
-      ? `${parentSelector} ${key}`
-      : key;
+const specialVariants = {
+  group: (state, sel) => `.group:${state} ${sel}`,
+  peer: (state, sel) => `.peer:${state} ~ ${sel}`,
+};
 
-    if (Array.isArray(value)) {
-      const [baseStyles, nestedRules] = value;
+function resolveVariants(selector, variants) {
+  let media = null;
+  let finalSelector = selector;
 
-      if (breakpoints[key]) {
-        newSelector = newSelector.replace(new RegExp(`\\b${key}\\b`, "g"), "");
-        cssString += `${breakpoints[key]} { ${newSelector} { ${tws(
-          baseStyles
-        )}} ${twsx(nestedRules, newSelector)}}`;
-      } else {
-        cssString += `${newSelector} { ${tws(baseStyles)} } `;
-
-        if (typeof nestedRules === "object") {
-          cssString += twsx(nestedRules, newSelector);
+  for (const v of variants) {
+    if (breakpoints[v]) {
+      media = breakpoints[v];
+    } else if (pseudoVariants.has(v)) {
+      finalSelector += `:${v}`;
+    } else {
+      for (const key in specialVariants) {
+        if (v.startsWith(`${key}-`)) {
+          const state = v.slice(key.length + 1);
+          finalSelector = specialVariants[key](state, finalSelector);
+          break;
         }
       }
-    } else if (typeof value === "object" && !breakpoints[key]) {
-      cssString += twsx(value, newSelector);
-    } else if (breakpoints[key]) {
-      newSelector = newSelector.replace(new RegExp(`\\b${key}\\b`, "g"), "");
-      cssString += `
-        ${breakpoints[key]} { ${newSelector} { ${tws(value)} }}
-      `;
-    } else {
-      cssString += `${newSelector} { ${tws(value)} } `;
     }
   }
 
-  return cssString;
+  return { media, finalSelector };
+}
+
+function twsx(obj) {
+  const styles = {};
+
+  function walk(selector, val) {
+    if (Array.isArray(val)) {
+      const [base, nested] = val;
+      if (typeof base !== "string") return;
+
+      for (const cls of base.split(" ")) {
+        const [rawVariants, className] = cls.includes(":")
+          ? [cls.split(":").slice(0, -1), cls.split(":").slice(-1)[0]]
+          : [[], cls];
+
+        const { media, finalSelector } = resolveVariants(selector, rawVariants);
+
+        let declarations = cssObject[className];
+        if (!declarations && className.includes("[")) {
+          const match = className.match(/^(.+?)\[(.+)\]$/);
+          if (match) {
+            const [, prefix, dynamicValue] = match;
+            const customKey = `${prefix}custom`;
+            const template = cssObject[customKey];
+            if (template) {
+              declarations = template.replace(/custom_value/g, dynamicValue);
+            }
+          }
+        }
+        if (!declarations) continue;
+
+        const isSpaceOrDivide = [
+          "space-x-",
+          "-space-x-",
+          "space-y-",
+          "-space-y-",
+          "divide-x-",
+          "divide-y-",
+        ].some((prefix) => className.startsWith(prefix));
+
+        const targetSelector = isSpaceOrDivide
+          ? `${finalSelector} > :not([hidden]) ~ :not([hidden])`
+          : finalSelector;
+
+        if (media) {
+          styles[media] = styles[media] || {};
+          styles[media][targetSelector] = styles[media][targetSelector] || "";
+          styles[media][targetSelector] += declarations + "\n";
+        } else {
+          styles[targetSelector] = styles[targetSelector] || "";
+          styles[targetSelector] += declarations + "\n";
+        }
+      }
+
+      for (const nestedSel in nested) {
+        const nestedVal = nested[nestedSel];
+        const combinedSel = nestedSel.includes("&")
+          ? nestedSel.replace(/&/g, selector)
+          : `${selector} ${nestedSel}`;
+        walk(combinedSel, nestedVal);
+      }
+    } else if (typeof val === "string") {
+      walk(selector, [val]);
+    }
+  }
+
+  for (const selector in obj) {
+    walk(selector, obj[selector]);
+  }
+
+  let cssString = "";
+  for (const sel in styles) {
+    if (sel.startsWith("@media")) {
+      cssString += `${sel}{`;
+      for (const subSel in styles[sel]) {
+        cssString += `${subSel}{${styles[sel][subSel]
+          .trim()
+          .replace(/\n/g, "")}}`;
+      }
+      cssString += `}`;
+    } else {
+      cssString += `${sel}{${styles[sel].trim().replace(/\n/g, "")}}`;
+    }
+  }
+
+  return cssString.trim();
 }
 
 export { tws, twsx };
