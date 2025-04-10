@@ -513,7 +513,19 @@ function twsx(obj) {
           : [[], cls];
 
         const { media, finalSelector } = resolveVariants(selector, rawVariants);
-        const declarations = cssObject[className];
+
+        let declarations = cssObject[className];
+        if (!declarations && className.includes("[")) {
+          const match = className.match(/^(.+?)\[(.+)\]$/);
+          if (match) {
+            const [_, prefix, dynamicValue] = match;
+            const customKey = `${prefix}custom`;
+            const template = cssObject[customKey];
+            if (template) {
+              declarations = template.replace(/custom_value/g, dynamicValue);
+            }
+          }
+        }
         if (!declarations) continue;
 
         const isSpaceOrDivide = [
