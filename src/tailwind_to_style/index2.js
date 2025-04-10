@@ -34,6 +34,10 @@ import generateClear from "./generators/clear";
 import generateContrast from "./generators/contrast";
 import generateCursor from "./generators/cursor";
 import generateDisplay from "./generators/display";
+import generateDivideColor from "./generators/divideColor";
+import generateDivideOpacity from "./generators/divideOpacity";
+import generateDivideStyle from "./generators/divideStyle";
+import generateDivideWidth from "./generators/divideWidth";
 import generateDropShadow from "./generators/dropShadow";
 import generateFill from "./generators/fill";
 import generateFilter from "./generators/filter";
@@ -187,6 +191,10 @@ const plugins = {
   contrast: generateContrast,
   cursor: generateCursor,
   display: generateDisplay,
+  divideColor: generateDivideColor,
+  divideOpacity: generateDivideOpacity,
+  divideStyle: generateDivideStyle,
+  divideWidth: generateDivideWidth,
   dropShadow: generateDropShadow,
   fill: generateFill,
   filter: generateFilter,
@@ -508,15 +516,18 @@ function twsx(obj) {
         const declarations = cssObject[className];
         if (!declarations) continue;
 
-        const isSpaceX =
-          className.startsWith("space-x-") || className.startsWith("-space-x-");
-        const isSpaceY =
-          className.startsWith("space-y-") || className.startsWith("-space-y-");
+        const isSpaceOrDivide = [
+          "space-x-",
+          "-space-x-",
+          "space-y-",
+          "-space-y-",
+          "divide-x-",
+          "divide-y-",
+        ].some((prefix) => className.startsWith(prefix));
 
-        const targetSelector =
-          isSpaceX || isSpaceY
-            ? `${finalSelector} > :not([hidden]) ~ :not([hidden])`
-            : finalSelector;
+        const targetSelector = isSpaceOrDivide
+          ? `${finalSelector} > :not([hidden]) ~ :not([hidden])`
+          : finalSelector;
 
         if (media) {
           styles[media] = styles[media] || {};

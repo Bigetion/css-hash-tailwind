@@ -46,7 +46,5 @@ export default function generator(configOptions = {}) {
     return cssString;
   }, configOptions);
 
-  console.log({ responsiveCssString });
-
   return responsiveCssString;
 }
