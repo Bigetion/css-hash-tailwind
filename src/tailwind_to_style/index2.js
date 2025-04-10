@@ -570,17 +570,15 @@ function twsx(obj) {
   let cssString = "";
   for (const sel in styles) {
     if (sel.startsWith("@media")) {
-      cssString += `${sel} {\n`;
+      cssString += `${sel}{`;
       for (const subSel in styles[sel]) {
-        cssString += `  ${subSel} {\n    ${styles[sel][subSel]
+        cssString += `${subSel}{${styles[sel][subSel]
           .trim()
-          .replace(/\n/g, "\n    ")}\n  }\n`;
+          .replace(/\n/g, "")}}`;
       }
-      cssString += `}\n`;
+      cssString += `}`;
     } else {
-      cssString += `${sel} {\n  ${styles[sel]
-        .trim()
-        .replace(/\n/g, "\n  ")}\n}\n`;
+      cssString += `${sel}{${styles[sel].trim().replace(/\n/g, "")}}`;
     }
   }
 
