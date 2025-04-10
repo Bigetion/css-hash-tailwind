@@ -118,6 +118,7 @@ import generateScrollSnapType from "./generators/scrollSnapType";
 import generateSepia from "./generators/sepia";
 import generateSize from "./generators/size";
 import generateSkew from "./generators/skew";
+import generateSpace from "./generators/space";
 import generateStroke from "./generators/stroke";
 import generateStrokeWidth from "./generators/strokeWidth";
 import generateTableLayout from "./generators/tableLayout";
@@ -270,6 +271,7 @@ const plugins = {
   sepia: generateSepia,
   size: generateSize,
   skew: generateSkew,
+  space: generateSpace,
   stroke: generateStroke,
   strokeWidth: generateStrokeWidth,
   tableLayout: generateTableLayout,
@@ -498,22 +500,31 @@ function twsx(obj) {
       if (typeof base !== "string") return;
 
       for (const cls of base.split(" ")) {
-        const [rawVariants, className] =
-          cls.split(":").length > 1
-            ? [cls.split(":").slice(0, -1), cls.split(":").slice(-1)[0]]
-            : [[], cls];
+        const [rawVariants, className] = cls.includes(":")
+          ? [cls.split(":").slice(0, -1), cls.split(":").slice(-1)[0]]
+          : [[], cls];
 
         const { media, finalSelector } = resolveVariants(selector, rawVariants);
         const declarations = cssObject[className];
         if (!declarations) continue;
 
+        const isSpaceX =
+          className.startsWith("space-x-") || className.startsWith("-space-x-");
+        const isSpaceY =
+          className.startsWith("space-y-") || className.startsWith("-space-y-");
+
+        const targetSelector =
+          isSpaceX || isSpaceY
+            ? `${finalSelector} > :not([hidden]) ~ :not([hidden])`
+            : finalSelector;
+
         if (media) {
           styles[media] = styles[media] || {};
-          styles[media][finalSelector] = styles[media][finalSelector] || "";
-          styles[media][finalSelector] += declarations + "\n";
+          styles[media][targetSelector] = styles[media][targetSelector] || "";
+          styles[media][targetSelector] += declarations + "\n";
         } else {
-          styles[finalSelector] = styles[finalSelector] || "";
-          styles[finalSelector] += declarations + "\n";
+          styles[targetSelector] = styles[targetSelector] || "";
+          styles[targetSelector] += declarations + "\n";
         }
       }
 
