@@ -518,7 +518,7 @@ function twsx(obj) {
         if (!declarations && className.includes("[")) {
           const match = className.match(/^(.+?)\[(.+)\]$/);
           if (match) {
-            const [_, prefix, dynamicValue] = match;
+            const [, prefix, dynamicValue] = match;
             const customKey = `${prefix}custom`;
             const template = cssObject[customKey];
             if (template) {
