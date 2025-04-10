@@ -7,7 +7,7 @@ export default function generator(configOptions = {}) {
 
   const { divideWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(({}) => {
+  const responsiveCssString = generateCssString(() => {
     const generateDivideWidth = (position, keyTmp, value) => {
       let dividePosition = "x";
       let borderPosition1 = "left";
