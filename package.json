@@ -25,7 +25,6 @@
     "prettify": "prettier --write",
     "prettify:src": "prettier --write \"src/**/*.js\"",
     "rollup:tailwind-v3": "rollup --config rollup.config.tailwind-v3.mjs",
-    "rollup:tailwind-v3-minify": "rollup --config rollup.config.tailwind-v3.min.mjs",
     "rollup:tailwind-to-style": "rollup --config rollup.config.tailwind-to-style.mjs",
     "rollup:css-hash": "rollup --config rollup.config.css-hash.mjs",
     "rollup:twindx": "rollup --config rollup.config.twindx.mjs"
