@@ -503,28 +503,42 @@ function twsx(obj) {
   const styles = {};
 
   function expandGroupedClass(input) {
-    return input
-      .replace(/(\w+):\(([^()]+)\)/g, (_, variant, content) => {
+    function process(str, parent = "") {
+      return str.replace(/(\w+)\(([^()]+)\)/g, (_, directive, content) => {
+        return content
+          .trim()
+          .split(/\s+/)
+          .map((part) => {
+            if (/\w+\([^()]+\)/.test(part)) {
+              return process(`${directive}-${part}`, parent);
+            }
+
+            const [variant, value] = part.includes(":")
+              ? part.split(":")
+              : [null, part];
+
+            if (variant) {
+              return `${variant}:${directive}-${value}`;
+            }
+
+            return `${directive}-${part}`;
+          })
+          .join(" ");
+      });
+    }
+
+    const directiveExpanded = process(input);
+
+    return directiveExpanded.replace(
+      /(\w+):\(([^()]+)\)/g,
+      (_, variant, content) => {
         return content
           .trim()
           .split(/\s+/)
           .map((part) => `${variant}:${part}`)
           .join(" ");
-      })
-      .replace(/(\w+)\(([^()]+)\)/g, (_, prefix, content) => {
-        return content
-          .trim()
-          .split(/\s+/)
-          .map((part) => {
-            // jika ada variant seperti sm:1/3 → sm:w-1/3
-            const [variant, value] = part.includes(":")
-              ? part.split(":")
-              : [null, part];
-            if (variant) return `${variant}:${prefix}-${value}`;
-            return part === "&" ? prefix : `${prefix}-${part}`;
-          })
-          .join(" ");
-      });
+      }
+    );
   }
 
   function walk(selector, val) {
@@ -593,7 +607,6 @@ function twsx(obj) {
     if (typeof val === "string") {
       val = expandGroupedClass(val);
     }
-    console.log({ val });
     walk(selector, val);
   }
 
