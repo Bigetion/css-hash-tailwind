@@ -502,6 +502,31 @@ function resolveVariants(selector, variants) {
 function twsx(obj) {
   const styles = {};
 
+  function expandGroupedClass(input) {
+    return input
+      .replace(/(\w+):\(([^()]+)\)/g, (_, variant, content) => {
+        return content
+          .trim()
+          .split(/\s+/)
+          .map((part) => `${variant}:${part}`)
+          .join(" ");
+      })
+      .replace(/(\w+)\(([^()]+)\)/g, (_, prefix, content) => {
+        return content
+          .trim()
+          .split(/\s+/)
+          .map((part) => {
+            // jika ada variant seperti sm:1/3 → sm:w-1/3
+            const [variant, value] = part.includes(":")
+              ? part.split(":")
+              : [null, part];
+            if (variant) return `${variant}:${prefix}-${value}`;
+            return part === "&" ? prefix : `${prefix}-${part}`;
+          })
+          .join(" ");
+      });
+  }
+
   function walk(selector, val) {
     if (Array.isArray(val)) {
       const [base, nested] = val;
@@ -564,7 +589,12 @@ function twsx(obj) {
   }
 
   for (const selector in obj) {
-    walk(selector, obj[selector]);
+    let val = obj[selector];
+    if (typeof val === "string") {
+      val = expandGroupedClass(val);
+    }
+    console.log({ val });
+    walk(selector, val);
   }
 
   let cssString = "";
