@@ -604,10 +604,24 @@ function twsx(obj) {
 
   for (const selector in obj) {
     let val = obj[selector];
+    let baseClass = "";
+    let nested = {};
+
     if (typeof val === "string") {
-      val = expandGroupedClass(val);
+      baseClass = expandGroupedClass(val);
+    } else if (Array.isArray(val)) {
+      for (const item of val) {
+        if (typeof item === "string") {
+          baseClass += (baseClass ? " " : "") + expandGroupedClass(item);
+        } else if (typeof item === "object" && item !== null) {
+          Object.assign(nested, item);
+        }
+      }
+    } else if (typeof val === "object" && val !== null) {
+      nested = val;
     }
-    walk(selector, val);
+
+    walk(selector, [baseClass, nested]);
   }
 
   let cssString = "";

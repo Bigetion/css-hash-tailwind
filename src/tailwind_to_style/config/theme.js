@@ -470,6 +470,9 @@ const theme = {
     "zoom-in": "zoom-in",
     "zoom-out": "zoom-out",
   },
+  divideColor: ({ theme }) => theme("borderColor"),
+  divideOpacity: ({ theme }) => theme("borderOpacity"),
+  divideWidth: ({ theme }) => theme("borderWidth"),
   dropShadow: {
     sm: "0 1px 1px rgb(0 0 0 / 0.05)",
     DEFAULT: "0 1px 2px rgb(0 0 0 / 0.1) , 0 1px 1px rgb(0 0 0 / 0.06)",

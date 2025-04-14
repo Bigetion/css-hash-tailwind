@@ -43,7 +43,7 @@ export default function BoxDecorationBreak() {
       <PanelSection title="">
         <div className="box-decoration-break">
           <div>
-            <p>box-decoration-slice</p>
+            <p className="font-mono">box-decoration-slice</p>
             <div>
               <span className="slice">
                 Hello
@@ -53,7 +53,7 @@ export default function BoxDecorationBreak() {
             </div>
           </div>
           <div>
-            <p>box-decoration-clone</p>
+            <p className="font-mono">box-decoration-clone</p>
             <div>
               <span className="clone">
                 Hello
