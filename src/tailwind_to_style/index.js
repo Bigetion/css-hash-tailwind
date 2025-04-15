@@ -598,7 +598,7 @@ function twsx(obj) {
         walk(combinedSel, nestedVal);
       }
     } else if (typeof val === "string") {
-      walk(selector, [val]);
+      walk(selector, [expandGroupedClass(val)]);
     }
   }
 
