@@ -575,8 +575,6 @@ function twsx(obj) {
           "divide-",
         ].some((prefix) => className.startsWith(prefix));
 
-        console.log({ isSpaceOrDivide, className });
-
         const targetSelector = isSpaceOrDivide
           ? `${finalSelector} > :not([hidden]) ~ :not([hidden])`
           : finalSelector;
