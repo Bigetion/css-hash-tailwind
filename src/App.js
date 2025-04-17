@@ -4,6 +4,7 @@ import Loadable from "react-loadable";
 
 import generateTailwindCss from "tailwind_v3";
 import { cssHash } from "css_hash";
+import { twsx } from "./tailwind_to_style";
 
 import routes from "routes";
 
@@ -19,6 +20,13 @@ generateTailwindCss({
     },
   },
 });
+
+const cssString = twsx({
+  ".title": "text-xl md:text-3xl",
+  ".box": "border size-10 md:size-12",
+});
+
+console.log({ cssString });
 
 cssHash(
   () => `
