@@ -522,40 +522,55 @@ function resolveVariants(selector, variants) {
 }
 
 function expandGroupedClass(input) {
-  function process(str) {
-    return str.replace(/(\w+)\(([^()]+)\)/g, (_, directive, content) => {
-      return content
-        .trim()
-        .split(/\s+/)
-        .map((part) => {
-          if (/\w+\([^()]+\)/.test(part)) {
-            return process(`${directive}-${part}`);
-          }
-
-          const [variant, value] = part.includes(":")
-            ? part.split(":")
-            : [null, part];
-
-          return variant
-            ? `${variant}:${directive}-${value}`
-            : `${directive}-${part}`;
-        })
-        .join(" ");
-    });
+  function isCustomValue(str) {
+    return /\[.*?\]/.test(str);
   }
 
-  const directiveExpanded = process(input);
+  function expandDirectiveGroup(str) {
+    return str
+      .split(/\s+/)
+      .map((item) => {
+        if (isCustomValue(item)) return item;
 
-  return directiveExpanded.replace(
-    /(\w+):\(([^()]+)\)/g,
-    (_, variant, content) => {
-      return content
-        .trim()
-        .split(/\s+/)
-        .map((part) => `${variant}:${part}`)
-        .join(" ");
-    }
-  );
+        return item.replace(/(\w+)\(([^()]+)\)/g, (_, directive, content) => {
+          return content
+            .trim()
+            .split(/\s+/)
+            .map((part) => {
+              if (/\w+\([^()]+\)/.test(part)) {
+                return expandDirectiveGroup(`${directive}-${part}`);
+              }
+
+              const [variant, value] = part.includes(":")
+                ? part.split(":")
+                : [null, part];
+
+              return variant
+                ? `${variant}:${directive}-${value}`
+                : `${directive}-${part}`;
+            })
+            .join(" ");
+        });
+      })
+      .join(" ");
+  }
+
+  const directiveExpanded = expandDirectiveGroup(input);
+
+  return directiveExpanded
+    .split(/\s+/)
+    .map((item) => {
+      if (isCustomValue(item)) return item;
+
+      return item.replace(/(\w+):\(([^()]+)\)/g, (_, variant, content) => {
+        return content
+          .trim()
+          .split(/\s+/)
+          .map((part) => `${variant}:${part}`)
+          .join(" ");
+      });
+    })
+    .join(" ");
 }
 
 function isSelectorObject(val) {
