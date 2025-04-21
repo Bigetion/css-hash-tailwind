@@ -476,6 +476,28 @@ const specialVariants = {
   peer: (state, sel) => `.peer:${state} ~ ${sel}`,
 };
 
+const selectorVariants = {
+  first: () => `> :first-child`,
+  last: () => `> :last-child`,
+  odd: () => `> :nth-child(odd)`,
+  even: () => `> :nth-child(even)`,
+  not: (arg) => `> :not(${arg})`,
+  number: (arg) => `> :nth-child(${arg})`,
+};
+
+function replaceSelector(selector) {
+  return selector.replace(
+    /c-(first|last|odd|even|\d+|not\([^)]+\))/g,
+    (_, raw) => {
+      if (/^\d+$/.test(raw)) return selectorVariants.number(raw);
+      const notMatch = raw.match(/^not\(([^)]+)\)$/);
+      if (notMatch) return selectorVariants.not(notMatch[1]);
+      if (selectorVariants[raw]) return selectorVariants[raw]();
+      return raw;
+    }
+  );
+}
+
 function resolveVariants(selector, variants) {
   let media = null;
   let finalSelector = selector;
@@ -499,167 +521,168 @@ function resolveVariants(selector, variants) {
   return { media, finalSelector };
 }
 
+function expandGroupedClass(input) {
+  function process(str) {
+    return str.replace(/(\w+)\(([^()]+)\)/g, (_, directive, content) => {
+      return content
+        .trim()
+        .split(/\s+/)
+        .map((part) => {
+          if (/\w+\([^()]+\)/.test(part)) {
+            return process(`${directive}-${part}`);
+          }
+
+          const [variant, value] = part.includes(":")
+            ? part.split(":")
+            : [null, part];
+
+          return variant
+            ? `${variant}:${directive}-${value}`
+            : `${directive}-${part}`;
+        })
+        .join(" ");
+    });
+  }
+
+  const directiveExpanded = process(input);
+
+  return directiveExpanded.replace(
+    /(\w+):\(([^()]+)\)/g,
+    (_, variant, content) => {
+      return content
+        .trim()
+        .split(/\s+/)
+        .map((part) => `${variant}:${part}`)
+        .join(" ");
+    }
+  );
+}
+
+function isSelectorObject(val) {
+  return typeof val === "object" && val !== null && !Array.isArray(val);
+}
+
+function flatten(obj, parentSelector = "") {
+  const result = {};
+
+  for (const selector in obj) {
+    const val = obj[selector];
+    const currentSelector = parentSelector
+      ? selector.includes("&")
+        ? selector.replace(/&/g, parentSelector)
+        : `${parentSelector} ${selector}`
+      : selector;
+
+    if (typeof val === "string") {
+      result[currentSelector] = val;
+    } else if (Array.isArray(val)) {
+      const flatArray = [];
+      for (const item of val) {
+        if (typeof item === "string") {
+          flatArray.push(item);
+        } else if (isSelectorObject(item)) {
+          Object.assign(result, flatten(item, currentSelector));
+        }
+      }
+      if (flatArray.length > 0) {
+        result[currentSelector] = result[currentSelector] || [];
+        result[currentSelector].push(...flatArray);
+      }
+    } else if (isSelectorObject(val)) {
+      Object.assign(result, flatten(val, currentSelector));
+    }
+  }
+
+  return result;
+}
+
+function walk(selector, val, styles) {
+  if (Array.isArray(val)) {
+    const [base, nested] = val;
+    if (typeof base !== "string") return;
+
+    for (const cls of base.split(" ")) {
+      const [rawVariants, className] = cls.includes(":")
+        ? [cls.split(":").slice(0, -1), cls.split(":").slice(-1)[0]]
+        : [[], cls];
+
+      let isImportant = false;
+      let pureClassName = className;
+
+      if (className.startsWith("!")) {
+        isImportant = true;
+        pureClassName = className.slice(1);
+      }
+
+      const { media, finalSelector } = resolveVariants(selector, rawVariants);
+
+      let declarations = cssObject[pureClassName];
+      if (!declarations && pureClassName.includes("[")) {
+        const match = pureClassName.match(/^(.+?)\[(.+)\]$/);
+        if (match) {
+          const [, prefix, dynamicValue] = match;
+          const customKey = `${prefix}custom`;
+          const template = cssObject[customKey];
+          if (template) {
+            declarations = template.replace(/custom_value/g, dynamicValue);
+          }
+        }
+      }
+
+      if (!declarations) continue;
+
+      if (isImportant) {
+        declarations = declarations.replace(
+          /([^:;]+):([^;]+)(;?)/g,
+          (_, prop, value) => {
+            return prop.trim().startsWith("--")
+              ? `${prop}:${value};`
+              : `${prop}:${value.trim()} !important;`;
+          }
+        );
+      }
+
+      const isSpaceOrDivide = [
+        "space-x-",
+        "-space-x-",
+        "space-y-",
+        "-space-y-",
+        "divide-",
+      ].some((prefix) => pureClassName.startsWith(prefix));
+
+      const expandedSelector = replaceSelector(finalSelector);
+      const targetSelector = isSpaceOrDivide
+        ? `${expandedSelector} > :not([hidden]) ~ :not([hidden])`
+        : expandedSelector;
+
+      if (media) {
+        styles[media] = styles[media] || {};
+        styles[media][targetSelector] = styles[media][targetSelector] || "";
+        styles[media][targetSelector] += declarations + "\n";
+      } else {
+        styles[targetSelector] = styles[targetSelector] || "";
+        styles[targetSelector] += declarations + "\n";
+      }
+    }
+
+    for (const nestedSel in nested) {
+      const nestedVal = nested[nestedSel];
+      const combinedSel = nestedSel.includes("&")
+        ? nestedSel.replace(/&/g, selector)
+        : `${selector} ${nestedSel}`;
+      walk(combinedSel, nestedVal, styles);
+    }
+  } else if (typeof val === "string") {
+    walk(selector, [expandGroupedClass(val)], styles);
+  }
+}
+
 function twsx(obj) {
   const styles = {};
-
-  function expandGroupedClass(input) {
-    function process(str, parent = "") {
-      return str.replace(/(\w+)\(([^()]+)\)/g, (_, directive, content) => {
-        return content
-          .trim()
-          .split(/\s+/)
-          .map((part) => {
-            if (/\w+\([^()]+\)/.test(part)) {
-              return process(`${directive}-${part}`, parent);
-            }
-
-            const [variant, value] = part.includes(":")
-              ? part.split(":")
-              : [null, part];
-
-            if (variant) {
-              return `${variant}:${directive}-${value}`;
-            }
-
-            return `${directive}-${part}`;
-          })
-          .join(" ");
-      });
-    }
-
-    const directiveExpanded = process(input);
-
-    return directiveExpanded.replace(
-      /(\w+):\(([^()]+)\)/g,
-      (_, variant, content) => {
-        return content
-          .trim()
-          .split(/\s+/)
-          .map((part) => `${variant}:${part}`)
-          .join(" ");
-      }
-    );
-  }
-
-  function walk(selector, val) {
-    if (Array.isArray(val)) {
-      const [base, nested] = val;
-      if (typeof base !== "string") return;
-
-      for (const cls of base.split(" ")) {
-        const [rawVariants, className] = cls.includes(":")
-          ? [cls.split(":").slice(0, -1), cls.split(":").slice(-1)[0]]
-          : [[], cls];
-
-        let isImportant = false;
-        let pureClassName = className;
-
-        if (className.startsWith("!")) {
-          isImportant = true;
-          pureClassName = className.slice(1);
-        }
-
-        const { media, finalSelector } = resolveVariants(selector, rawVariants);
-
-        let declarations = cssObject[pureClassName];
-        if (!declarations && pureClassName.includes("[")) {
-          const match = pureClassName.match(/^(.+?)\[(.+)\]$/);
-          if (match) {
-            const [, prefix, dynamicValue] = match;
-            const customKey = `${prefix}custom`;
-            const template = cssObject[customKey];
-            if (template) {
-              declarations = template.replace(/custom_value/g, dynamicValue);
-            }
-          }
-        }
-        if (!declarations) continue;
-
-        if (isImportant) {
-          declarations = declarations.replace(
-            /([^:;]+:[^;]+)(;?)/g,
-            (_, rule) => `${rule.trim()} !important;`
-          );
-        }
-
-        const isSpaceOrDivide = [
-          "space-x-",
-          "-space-x-",
-          "space-y-",
-          "-space-y-",
-          "divide-",
-        ].some((prefix) => pureClassName.startsWith(prefix));
-
-        const targetSelector = isSpaceOrDivide
-          ? `${finalSelector} > :not([hidden]) ~ :not([hidden])`
-          : finalSelector;
-
-        if (media) {
-          styles[media] = styles[media] || {};
-          styles[media][targetSelector] = styles[media][targetSelector] || "";
-          styles[media][targetSelector] += declarations + "\n";
-        } else {
-          styles[targetSelector] = styles[targetSelector] || "";
-          styles[targetSelector] += declarations + "\n";
-        }
-      }
-
-      for (const nestedSel in nested) {
-        const nestedVal = nested[nestedSel];
-        const combinedSel = nestedSel.includes("&")
-          ? nestedSel.replace(/&/g, selector)
-          : `${selector} ${nestedSel}`;
-        walk(combinedSel, nestedVal);
-      }
-    } else if (typeof val === "string") {
-      walk(selector, [expandGroupedClass(val)]);
-    }
-  }
-
-  function isSelectorObject(val) {
-    return typeof val === "object" && val !== null && !Array.isArray(val);
-  }
-
-  function flatten(obj, parentSelector = "") {
-    const result = {};
-
-    for (const selector in obj) {
-      const val = obj[selector];
-      const currentSelector = parentSelector
-        ? selector.includes("&")
-          ? selector.replace(/&/g, parentSelector)
-          : `${parentSelector} ${selector}`
-        : selector;
-
-      if (typeof val === "string") {
-        result[currentSelector] = val;
-      } else if (Array.isArray(val)) {
-        const flatArray = [];
-        for (const item of val) {
-          if (typeof item === "string") {
-            flatArray.push(item);
-          } else if (isSelectorObject(item)) {
-            const nested = flatten(item, currentSelector);
-            Object.assign(result, nested);
-          }
-        }
-        if (flatArray.length > 0) {
-          result[currentSelector] = result[currentSelector] || [];
-          result[currentSelector].push(...flatArray);
-        }
-      } else if (isSelectorObject(val)) {
-        const nested = flatten(val, currentSelector);
-        Object.assign(result, nested);
-      }
-    }
-
-    return result;
-  }
-
   const flattened = flatten(obj);
 
   for (const selector in flattened) {
-    let val = flattened[selector];
+    const val = flattened[selector];
     let baseClass = "";
     let nested = {};
 
@@ -669,13 +692,13 @@ function twsx(obj) {
       for (const item of val) {
         if (typeof item === "string") {
           baseClass += (baseClass ? " " : "") + expandGroupedClass(item);
-        } else if (typeof item === "object" && item !== null) {
+        } else if (isSelectorObject(item)) {
           Object.assign(nested, item);
         }
       }
     }
 
-    walk(selector, [baseClass, nested]);
+    walk(selector, [baseClass, nested], styles);
   }
 
   let cssString = "";
