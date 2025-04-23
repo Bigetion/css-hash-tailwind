@@ -487,6 +487,21 @@ const selectorVariants = {
   number: (arg) => `> :nth-child(${arg})`,
 };
 
+function encodeBracketValues(input) {
+  return input.replace(/\[([^\]]+)\]/g, (_, content) => {
+    const encoded = encodeURIComponent(content)
+      .replace(/\(/g, "__P__")
+      .replace(/\)/g, "__C__");
+    return `[${encoded}]`;
+  });
+}
+
+function decodeBracketValues(input) {
+  return decodeURIComponent(input)
+    .replace(/__P__/g, "(")
+    .replace(/__C__/g, ")");
+}
+
 function replaceSelector(selector) {
   return selector.replace(
     /c-(first|last|odd|even|\d+|not\([^)]+\))/g,
@@ -568,7 +583,7 @@ function twsx(obj) {
       );
     }
 
-    let result = input;
+    let result = encodeBracketValues(input);
     let prev;
 
     do {
@@ -611,7 +626,10 @@ function twsx(obj) {
             const customKey = `${prefix}custom`;
             const template = cssObject[customKey];
             if (template) {
-              declarations = template.replace(/custom_value/g, dynamicValue);
+              declarations = template.replace(
+                /custom_value/g,
+                decodeBracketValues(dynamicValue)
+              );
             }
           }
         }
