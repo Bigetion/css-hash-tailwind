@@ -525,42 +525,57 @@ function twsx(obj) {
   const styles = {};
 
   function expandGroupedClass(input) {
-    function process(str, parent = "") {
+    function expandDirectiveGroups(str) {
       return str.replace(/(\w+)\(([^()]+)\)/g, (_, directive, content) => {
         return content
           .trim()
           .split(/\s+/)
-          .map((part) => {
-            if (/\w+\([^()]+\)/.test(part)) {
-              return process(`${directive}-${part}`, parent);
+          .map((val) => {
+            if (val.includes(":")) {
+              const [variant, v] = val.split(":");
+              const prefix = v.startsWith("-") ? "-" : "";
+              const value = v.startsWith("-") ? v.slice(1) : v;
+              return `${variant}:${prefix}${directive}-${value}`;
             }
-
-            const [variant, value] = part.includes(":")
-              ? part.split(":")
-              : [null, part];
-
-            if (variant) {
-              return `${variant}:${directive}-${value}`;
-            }
-
-            return `${directive}-${part}`;
+            const prefix = val.startsWith("-") ? "-" : "";
+            const value = val.startsWith("-") ? val.slice(1) : val;
+            return `${prefix}${directive}-${value}`;
           })
           .join(" ");
       });
     }
 
-    const directiveExpanded = process(input);
+    function expandVariants(str, parent = "") {
+      return str.replace(
+        /(\w+):\(([^()]+(?:\((?:[^()]+)\))?[^()]*)\)/g,
+        (_, variant, content) => {
+          return content
+            .trim()
+            .split(/\s+/)
+            .map((c) => {
+              if (/\w+:\(.*\)/.test(c)) {
+                return expandVariants(
+                  c,
+                  parent ? `${parent}:${variant}` : variant
+                );
+              }
+              return `${parent ? `${parent}:${variant}` : variant}:${c}`;
+            })
+            .join(" ");
+        }
+      );
+    }
 
-    return directiveExpanded.replace(
-      /(\w+):\(([^()]+)\)/g,
-      (_, variant, content) => {
-        return content
-          .trim()
-          .split(/\s+/)
-          .map((part) => `${variant}:${part}`)
-          .join(" ");
-      }
-    );
+    let result = input;
+    let prev;
+
+    do {
+      prev = result;
+      result = expandVariants(result);
+      result = expandDirectiveGroups(result);
+    } while (result !== prev);
+
+    return result;
   }
 
   function walk(selector, val) {
