@@ -31,6 +31,7 @@ import generateBrightness from "./generators/brightness";
 import generateCaptionSide from "./generators/captionSide";
 import generateCaretColor from "./generators/caretColor";
 import generateClear from "./generators/clear";
+import generateContent from "./generators/content";
 import generateContrast from "./generators/contrast";
 import generateCursor from "./generators/cursor";
 import generateDisplay from "./generators/display";
@@ -188,6 +189,7 @@ const plugins = {
   captionSide: generateCaptionSide,
   caretColor: generateCaretColor,
   clear: generateClear,
+  content: generateContent,
   contrast: generateContrast,
   cursor: generateCursor,
   display: generateDisplay,
@@ -335,11 +337,11 @@ const twString = generateTailwindCssString().replace(/\s\s+/g, " ");
 
 function convertCssToObject(cssString) {
   const cssObject = {};
-  const regex = /([a-zA-Z0-9\-\\.]+)\s*{\s*([^}]+)\s*}/g;
+  const regex = /([a-zA-Z0-9\-_\\/.]+)\s*{\s*([^}]+)\s*}/g;
   let match;
 
   while ((match = regex.exec(cssString)) !== null) {
-    const className = match[1].replace(/\\/g, "");
+    const className = match[1].replace(/\\\\/g, "\\").replace(/^_/, ""); // Perbaiki unescaping dan hapus _ di awal jika ada
     const cssRules = match[2].trim().replace(/\s+/g, " ");
     cssObject[className] = cssRules;
   }
@@ -598,7 +600,10 @@ function twsx(obj) {
 
         const { media, finalSelector } = resolveVariants(selector, rawVariants);
 
-        let declarations = cssObject[pureClassName];
+        let declarations =
+          cssObject[pureClassName] ||
+          cssObject[pureClassName.replace(/(\/)/g, "\\$1")];
+
         if (!declarations && pureClassName.includes("[")) {
           const match = pureClassName.match(/^(.+?)\[(.+)\]$/);
           if (match) {

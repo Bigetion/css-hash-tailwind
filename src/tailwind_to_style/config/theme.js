@@ -421,6 +421,7 @@ const theme = {
   },
   content: {
     none: "none",
+    custom: "custom_value",
   },
   contrast: {
     0: "0",
