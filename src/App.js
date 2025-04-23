@@ -11,8 +11,6 @@ import routes from "routes";
 import Layout from "components/BaseLayout";
 import PageLoader from "components/PageLoader";
 
-import "./style";
-
 generateTailwindCss({
   variants: {
     extend: {
@@ -22,8 +20,7 @@ generateTailwindCss({
 });
 
 const cssString = twsx({
-  ".title": "text-xl md:text-3xl",
-  ".box": "border size-10 md:size-12",
+  ".width": "w-full md:w-6/12",
 });
 
 console.log({ cssString });
