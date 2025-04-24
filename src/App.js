@@ -29,7 +29,9 @@ cssHash(
   () => `
     html {
       line-height: 1.5;
-      font-family: Quicksand, sans-serif;
+      font-family: "Geist", sans-serif;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
     }
     .bg-square {
       background: conic-gradient(from 90deg at 1px 1px, #F8FAFC 90deg, #F4F6FA 0) -1px -1px/32px 32px; 
