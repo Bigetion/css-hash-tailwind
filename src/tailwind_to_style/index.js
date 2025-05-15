@@ -463,6 +463,7 @@ const breakpoints = {
 const pseudoVariants = new Set([
   "hover",
   "focus",
+  "focus-within",
   "active",
   "visited",
   "disabled",
