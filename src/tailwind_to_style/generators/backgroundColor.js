@@ -7,7 +7,7 @@ export default function generator(configOptions = {}) {
 
   const { backgroundColor = {} } = theme;
 
-  const responsiveCssString = generateCssString(({ getCssByColors }) => {
+  const responsiveCssString = generateCssString(({ getCssByColors, isValidCssColor }) => {
     const cssString = getCssByColors(
       backgroundColor,
       (key, value, rgbValue) => {
@@ -17,13 +17,9 @@ export default function generator(configOptions = {}) {
         }
 
         if (value === "custom_value") {
-          const style = new Option().style;
-          style.color = "";
-          style.color = value;
-          const isColor = style.color !== "";
           return `
             ${prefix}-${key} {
-              ${isColor ? "background-color" : "background"}: ${value};
+              ${isValidCssColor(value) ? "background-color" : "background"}: ${value};
             }
           `;
         }
