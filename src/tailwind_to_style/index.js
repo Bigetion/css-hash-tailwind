@@ -787,8 +787,3 @@ export function twsx(obj) {
 
   return cssString.trim();
 }
-
-export const tailwindCss = {
-  raw: twString,
-  object: cssObject,
-};
