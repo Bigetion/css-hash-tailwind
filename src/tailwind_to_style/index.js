@@ -157,6 +157,8 @@ import generateWordBreak from "./generators/wordBreak";
 import generateWillChange from "./generators/willChange";
 import generateZIndex from "./generators/zIndex";
 
+import patterns from "./patterns";
+
 const plugins = {
   accentColor: generateAccentColor,
   accessibility: generateAccessibility,
@@ -315,6 +317,18 @@ const plugins = {
   wordBreak: generateWordBreak,
   zIndex: generateZIndex,
 };
+
+function parseCustomClassWithPatterns(className) {
+  for (const key in patterns) {
+    const { regex, cssProp, formatter } = patterns[key];
+    const match = className.match(regex);
+    if (match) {
+      const value = formatter(match[1]);
+      return `${cssProp}: ${value};`;
+    }
+  }
+  return null;
+}
 
 function generateTailwindCssString(options = {}) {
   const pluginKeys = Object.keys(plugins);
@@ -641,6 +655,10 @@ export function twsx(obj) {
               );
             }
           }
+        }
+
+        if (!declarations) {
+          declarations = parseCustomClassWithPatterns(pureClassName);
         }
 
         if (!declarations) continue;
