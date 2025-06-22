@@ -353,7 +353,7 @@ function convertCssToObject(cssString) {
   let match;
 
   while ((match = regex.exec(cssString)) !== null) {
-    const className = match[1].replace(/\\\\/g, "\\").replace(/^_/, ""); // Perbaiki unescaping dan hapus _ di awal jika ada
+    const className = match[1].replace(/\\\\/g, "\\").replace(/^_/, "");
     const cssRules = match[2].trim().replace(/\s+/g, " ");
     obj[className] = cssRules;
   }
@@ -618,11 +618,31 @@ export function twsx(obj) {
   }
 
   function walk(selector, val) {
+    const { baseSelector, cssProperty } = parseSelector(selector);
+    if (
+      cssProperty &&
+      typeof val === "object" &&
+      Array.isArray(val) &&
+      val.length > 0
+    ) {
+      const cssValue = val[0];
+      if (typeof cssValue === "string") {
+        styles[baseSelector] = styles[baseSelector] || "";
+        styles[baseSelector] += `${cssProperty}: ${cssValue};\n`;
+        return;
+      }
+    }
+
     if (Array.isArray(val)) {
       const [base, nested] = val;
-      if (typeof base !== "string") return;
+
+      if (typeof base !== "string") {
+        return;
+      }
 
       for (const cls of base.split(" ")) {
+        if (cls.trim() === "") continue;
+
         const [rawVariants, className] = cls.includes(":")
           ? [cls.split(":").slice(0, -1), cls.split(":").slice(-1)[0]]
           : [[], cls];
@@ -661,7 +681,9 @@ export function twsx(obj) {
           declarations = parseCustomClassWithPatterns(pureClassName);
         }
 
-        if (!declarations) continue;
+        if (!declarations) {
+          continue;
+        }
 
         if (isImportant) {
           declarations = declarations.replace(
@@ -699,14 +721,57 @@ export function twsx(obj) {
 
       for (const nestedSel in nested) {
         const nestedVal = nested[nestedSel];
+        if (nestedSel === "@css" && typeof nestedVal === "object") {
+          const cssDeclarations = Object.entries(nestedVal)
+            .map(([key, value]) => `${key}: ${value};`)
+            .join(" ");
+
+          if (selector in styles) {
+            styles[selector] += cssDeclarations + "\n";
+          } else {
+            styles[selector] = cssDeclarations + "\n";
+          }
+          continue;
+        }
+
         const combinedSel = nestedSel.includes("&")
           ? nestedSel.replace(/&/g, selector)
           : `${selector} ${nestedSel}`;
         walk(combinedSel, nestedVal);
       }
     } else if (typeof val === "string") {
+      if (val.trim() === "") return;
+
       walk(selector, [expandGroupedClass(val)]);
+    } else if (typeof val === "object" && val !== null) {
+      const { baseSelector, cssProperty } = parseSelector(selector);
+      if (cssProperty) {
+        const cssValue = Object.values(val).join(" ");
+        styles[baseSelector] = styles[baseSelector] || "";
+        styles[baseSelector] += `${cssProperty}: ${cssValue};\n`;
+        return;
+      }
+
+      const cssDeclarations = Object.entries(val)
+        .map(([key, value]) => `${key}: ${value};`)
+        .join(" ");
+
+      if (selector in styles) {
+        styles[selector] += cssDeclarations + "\n";
+      } else {
+        styles[selector] = cssDeclarations + "\n";
+      }
     }
+  }
+
+  function parseSelector(selector) {
+    if (selector.includes("@css")) {
+      const parts = selector.split("@css");
+      const baseSelector = parts[0].trim();
+      const cssProperty = parts[1]?.trim();
+      return { baseSelector, cssProperty };
+    }
+    return { baseSelector: selector, cssProperty: null };
   }
 
   function isSelectorObject(val) {
