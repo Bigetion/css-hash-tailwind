@@ -157,7 +157,7 @@ import generateWordBreak from "./generators/wordBreak";
 import generateWillChange from "./generators/willChange";
 import generateZIndex from "./generators/zIndex";
 
-import patterns from "./patterns";
+import patterns from "./patterns/index";
 
 const plugins = {
   accentColor: generateAccentColor,
