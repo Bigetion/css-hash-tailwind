@@ -57,15 +57,6 @@ generateDirectionalUtility({
 });
 ```
 
-### `generateSpaceBetweenUtility()`
-Menghasilkan utilitas space-between untuk mengatur jarak antar elemen.
-
-```js
-generateSpaceBetweenUtility({
-  configOptions,
-  valueMap: theme.space
-});
-```
 
 ## Keuntungan
 
