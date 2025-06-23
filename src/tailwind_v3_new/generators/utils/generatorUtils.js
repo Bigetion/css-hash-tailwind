@@ -4,12 +4,14 @@ import { generateCssString } from "../../utils/index";
  * Generate a simple property-value CSS utility
  * Used for simple utilities that map directly to a CSS property with optional variants
  *
- * @param {Object} configOptions - Configuration options
- * @param {string} cssProperty - The CSS property to generate
+ * @param {Object} configOptions - Configuration options * @param {string|string[]|Object[]} cssProperty - The CSS property to generate. Can be:
+ *                                   - string: a single CSS property
+ *                                   - string[]: multiple CSS properties with the same value *                                   - Object[]: array of objects with 'property' and 'transformValue' keys for custom value transformation per property
+ *                                     Example: [{property: 'width', transformValue: v => v}, {property: 'height', transformValue: v => `calc(${v} * 2)`}]
  * @param {string} utilityPrefix - The prefix for utility classes
  * @param {Object} valueMap - Map of tailwind classes to CSS property values
  * @param {string} variantKey - Key for variants in configOptions
- * @param {function} transformValue - Optional function to transform the value
+ * @param {function} transformValue - Optional function to transform the value (used for simple string properties)
  * @param {boolean} useHyphen - Whether to use a hyphen between prefix and key (default: true)
  * @param {Array} propertyVariants - Optional array of property variants to generate (e.g., x/y variants for gap)
  *                                  Each variant should be an object with 'suffix' and 'property' keys
@@ -38,7 +40,18 @@ export function generateSimpleUtility({
 
       let result = `
           ${pseudoClass(className, variantOptions)} {
-            ${cssProperty}: ${transformValue(value)};
+            ${
+              // Handle three different types of cssProperty
+              Array.isArray(cssProperty)                ? cssProperty.map(prop => {                    // Check if prop is an object with property and transformValue keys
+                    if (typeof prop === 'object' && prop.property) {
+                      const propTransform = prop.transformValue || transformValue;
+                      return `${prop.property}: ${propTransform(value)};`;
+                    }
+                    // Simple string property
+                    return `${prop}: ${transformValue(value)};`;
+                  }).join('\n            ')
+                : `${cssProperty}: ${transformValue(value)};`
+            }
           }
         `;
 

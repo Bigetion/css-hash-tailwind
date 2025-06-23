@@ -1,4 +1,4 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
 /**
  * Generate size utility classes that set both width and height to the same value
@@ -10,17 +10,11 @@ export default function generator(configOptions = {}) {
   const { theme = {} } = configOptions;
   const { size = {} } = theme;
 
-  // Since we need to set both width and height properties,
-  // we'll use generateCssString directly for more control
-  return generateCssString(({ pseudoClass, getCssByOptions }) => {
-    return getCssByOptions(size, (key, value) => {
-      return `
-        ${pseudoClass(`${configOptions.prefix}size-${key}`, 
-          configOptions.variants.size || [])} {
-          width: ${value};
-          height: ${value};
-        }
-      `;
-    });
-  }, configOptions);
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: ["width", "height"], // Pass an array of properties
+    utilityPrefix: "size",
+    valueMap: size,
+    variantKey: "size"
+  });
 }
