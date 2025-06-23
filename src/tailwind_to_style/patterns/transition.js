@@ -1,4 +1,4 @@
-const patterns = {
+const transition = {
   transitionNone: {
     regex: /^transition-none$/,
     cssProp: "transition-property",
@@ -49,4 +49,4 @@ const patterns = {
   },
 };
 
-export default patterns;
+export default transition;
