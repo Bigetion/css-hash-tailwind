@@ -1,0 +1,33 @@
+import { generateCssString } from "../utils/index";
+
+export default function generator(configOptions = {}) {
+  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+
+  const prefix = `${globalPrefix}scale`;
+
+  const { scale = {} } = theme;
+
+  const responsiveCssString = generateCssString(
+    ({ pseudoClass, getCssByOptions }) => {
+      const cssString = getCssByOptions(
+        scale,
+        (key, value) => `
+          ${pseudoClass(`${prefix}-${key}`, variants.scale)} {
+            --transform-scale-x: ${value} !important;
+            --transform-scale-y: ${value} !important;
+          }
+          ${pseudoClass(`${prefix}-x-${key}`, variants.scale)} {
+            --transform-scale-x: ${value} !important;
+          }
+          ${pseudoClass(`${prefix}-y-${key}`, variants.scale)} {
+            --transform-scale-y: ${value} !important;
+          }
+        `
+      );
+      return cssString;
+    },
+    configOptions
+  );
+
+  return responsiveCssString;
+}
