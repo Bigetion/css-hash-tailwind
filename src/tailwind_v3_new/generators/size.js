@@ -1,27 +1,26 @@
 import { generateCssString } from "../utils/index";
 
+/**
+ * Generate size utility classes that set both width and height to the same value
+ * 
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}size`;
-
+  const { theme = {} } = configOptions;
   const { size = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        size,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.size)} {
-            width: ${value};
-            height: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  // Since we need to set both width and height properties,
+  // we'll use generateCssString directly for more control
+  return generateCssString(({ pseudoClass, getCssByOptions }) => {
+    return getCssByOptions(size, (key, value) => {
+      return `
+        ${pseudoClass(`${configOptions.prefix}size-${key}`, 
+          configOptions.variants.size || [])} {
+          width: ${value};
+          height: ${value};
+        }
+      `;
+    });
+  }, configOptions);
 }

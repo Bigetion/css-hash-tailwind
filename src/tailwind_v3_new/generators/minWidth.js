@@ -1,26 +1,20 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate min-width utility classes
+ * 
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}min-w`;
-
+  const { theme = {} } = configOptions;
   const { minWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        minWidth,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.minWidth)} {
-            min-width: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "min-width",
+    utilityPrefix: "min-w",
+    valueMap: minWidth,
+    variantKey: "minWidth"
+  });
 }

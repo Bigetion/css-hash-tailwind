@@ -1,26 +1,20 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate max-width utility classes
+ * 
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}max-w`;
-
+  const { theme = {} } = configOptions;
   const { maxWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        maxWidth,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.maxWidth)} {
-            max-width: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "max-width",
+    utilityPrefix: "max-w",
+    valueMap: maxWidth,
+    variantKey: "maxWidth"
+  });
 }
