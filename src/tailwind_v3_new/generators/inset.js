@@ -1,56 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateDirectionalProperties } from "./utils/generatorUtils";
 
+/**
+ * Generate inset utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
+  const { theme = {} } = configOptions;
   const { inset = {} } = theme;
-
-  Object.entries(inset).forEach(([key, value]) => {
-    inset[`-${key}`] = `-${value}`.replace("--", "-");
+  
+  // Atau kita bisa menggunakan generateDirectionalProperties yang lebih fleksibel
+  return generateDirectionalProperties({
+    configOptions,
+    valueMap: inset,
+    variantKey: "inset",
+    supportNegative: true,
+    mainProperty: "inset",  // properti CSS utama
+    utilityPrefix: "inset", // prefix untuk utility classes
+    useLogicalProps: true,  // generate start/end props (RTL support)
+    useAllDirections: true, // generate top/right/bottom/left
+    useShorthand: true      // generate inset-x/inset-y
   });
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(inset, (keyTmp, value) => {
-        let prefix = globalPrefix;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix += "-";
-        }
-        return `
-          ${pseudoClass(`${prefix}inset-${key}`, variants.inset)} {
-            right: ${value};
-            left: ${value};
-            top: ${value};
-            bottom: ${value};
-          }
-          ${pseudoClass(`${prefix}inset-x-${key}`, variants.inset)} {
-            right: ${value};
-            left: ${value};
-          }
-          ${pseudoClass(`${prefix}inset-y-${key}`, variants.inset)} {
-            top: ${value};
-            bottom: ${value};
-          }
-          ${pseudoClass(`${prefix}right-${key}`, variants.inset)} {
-            right: ${value};
-          }
-          ${pseudoClass(`${prefix}left-${key}`, variants.inset)} {
-            left: ${value};
-          }
-          ${pseudoClass(`${prefix}top-${key}`, variants.inset)} {
-            top: ${value};
-          }
-          ${pseudoClass(`${prefix}bottom-${key}`, variants.inset)} {
-            bottom: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
 }

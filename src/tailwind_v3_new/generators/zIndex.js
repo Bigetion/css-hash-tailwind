@@ -1,29 +1,29 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate z-index utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
+  const { theme = {} } = configOptions;
   const { zIndex = {} } = theme;
+  
+  // Handle negative z-index values
+  const processedValues = { ...zIndex };
+  Object.entries(zIndex).forEach(([key, value]) => {
+    // If key already has a minus sign, skip it
+    if (!key.startsWith("-") && key !== "auto") {
+      processedValues[`-${key}`] = `-${value}`.replace("--", "-");
+    }
+  });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(zIndex, (keyTmp, value) => {
-        let prefix = `${globalPrefix}z`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-z`;
-        }
-        return `
-          ${pseudoClass(`${prefix}-${key}`, variants.zIndex)} {
-            z-index: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "z-index",
+    utilityPrefix: "z", // The prefix for z-index utilities is "z"
+    valueMap: processedValues,
+    variantKey: "zIndex",
+    useHyphen: true // Use hyphen between prefix and key (e.g., "z-50", "z-auto")
+  });
 }
