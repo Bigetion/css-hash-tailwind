@@ -2,7 +2,7 @@ import { generateCssString } from "../../utils/index";
 
 /**
  * Generate a simple property-value CSS utility
- * Used for simple utilities that map directly to a single CSS property
+ * Used for simple utilities that map directly to a CSS property with optional variants
  *
  * @param {Object} configOptions - Configuration options
  * @param {string} cssProperty - The CSS property to generate
@@ -11,6 +11,9 @@ import { generateCssString } from "../../utils/index";
  * @param {string} variantKey - Key for variants in configOptions
  * @param {function} transformValue - Optional function to transform the value
  * @param {boolean} useHyphen - Whether to use a hyphen between prefix and key (default: true)
+ * @param {Array} propertyVariants - Optional array of property variants to generate (e.g., x/y variants for gap)
+ *                                  Each variant should be an object with 'suffix' and 'property' keys
+ *                                  Example: [{suffix: 'x', property: 'column-gap'}, {suffix: 'y', property: 'row-gap'}]
  * @returns {string} Generated CSS string
  */
 export function generateSimpleUtility({
@@ -21,6 +24,8 @@ export function generateSimpleUtility({
   variantKey,
   transformValue = (value) => value,
   useHyphen = true,
+  // New parameter to support variants like x/y for gap
+  propertyVariants = [],
 }) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
   const prefix = `${globalPrefix}${utilityPrefix}`;
@@ -30,12 +35,29 @@ export function generateSimpleUtility({
     return getCssByOptions(valueMap, (key, value) => {
       // Determine class name based on useHyphen flag
       const className = useHyphen ? `${prefix}-${key}` : `${prefix}${key}`;
-
-      return `
+      
+      let result = `
           ${pseudoClass(className, variantOptions)} {
             ${cssProperty}: ${transformValue(value)};
           }
         `;
+      
+      // Add variant properties if provided
+      if (propertyVariants && propertyVariants.length > 0) {
+        propertyVariants.forEach(variant => {
+          const variantClassName = useHyphen 
+            ? `${prefix}-${variant.suffix}-${key}` 
+            : `${prefix}${variant.suffix}-${key}`;
+            
+          result += `
+          ${pseudoClass(variantClassName, variantOptions)} {
+            ${variant.property}: ${transformValue(value)};
+          }
+          `;
+        });
+      }
+      
+      return result;
     });
   }, configOptions);
 }
