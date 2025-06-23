@@ -1,36 +1,41 @@
+import { generateSimpleUtility } from "./utils/generatorUtils";
 import { generateCssString } from "../utils/index";
 
+/**
+ * Generate grid-template-rows utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  let prefix = `${globalPrefix}grid-rows`;
-
+  const { theme = {}, prefix: globalPrefix, variants = {} } = configOptions;
   const { gridTemplateRows = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        gridTemplateRows,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.gridTemplateRows)} {
-            grid-template-rows: ${
-              isNaN(value) ? value : `repeat(${value}, minmax(0, 1fr));`
-            };
-          }
-        `
-      );
-      cssString += getCssByOptions(
-        { default: "" },
-        () => `
-          ${pseudoClass(`${prefix}-subgrid`, {})} {
-            grid-template-rows: subgrid;
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+  // Transform function for grid-template-rows values
+  // Numbers are converted to repeat(n, minmax(0, 1fr))
+  const transformGridValue = (value) => {
+    return isNaN(value) ? value : `repeat(${value}, minmax(0, 1fr))`;
+  };
 
-  return responsiveCssString;
+  // Generate the standard grid-template-rows utilities
+  const mainUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "grid-template-rows",
+    utilityPrefix: "grid-rows",
+    valueMap: gridTemplateRows,
+    variantKey: "gridTemplateRows",
+    transformValue: transformGridValue,
+  });
+
+  // Generate the special subgrid utility
+  const prefix = `${globalPrefix}grid-rows`;
+  const subgridUtility = generateCssString(({ pseudoClass }) => {
+    return `
+        ${pseudoClass(`${prefix}-subgrid`, variants.gridTemplateRows)} {
+          grid-template-rows: subgrid;
+        }
+      `;
+  }, configOptions);
+
+  // Combine both utility sets
+  return mainUtilities + subgridUtility;
 }

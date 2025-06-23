@@ -275,8 +275,14 @@ export function generatePositioningUtility({
     Object.entries(values).forEach(([key, value]) => {
       // Only add negative values for numeric values, not for auto, full, etc.
       // Skip if the key already starts with a minus sign
-      if (!key.startsWith('-') && key !== "auto" && key !== "px" && 
-          key !== "full" && key !== "screen" && !key.includes('/')) {
+      if (
+        !key.startsWith("-") &&
+        key !== "auto" &&
+        key !== "px" &&
+        key !== "full" &&
+        key !== "screen" &&
+        !key.includes("/")
+      ) {
         values[`-${key}`] = `-${value}`.replace("--", "-");
       }
     });
@@ -294,14 +300,28 @@ export function generatePositioningUtility({
       }
 
       // Create the appropriate class prefix for negative values
-      const insetPrefix = isNegative ? `${globalPrefix}-inset` : `${globalPrefix}inset`;
-      const topPrefix = isNegative ? `${globalPrefix}-top` : `${globalPrefix}top`;
-      const rightPrefix = isNegative ? `${globalPrefix}-right` : `${globalPrefix}right`;
-      const bottomPrefix = isNegative ? `${globalPrefix}-bottom` : `${globalPrefix}bottom`;
-      const leftPrefix = isNegative ? `${globalPrefix}-left` : `${globalPrefix}left`;
-      const startPrefix = isNegative ? `${globalPrefix}-start` : `${globalPrefix}start`;
-      const endPrefix = isNegative ? `${globalPrefix}-end` : `${globalPrefix}end`;
-      
+      const insetPrefix = isNegative
+        ? `${globalPrefix}-inset`
+        : `${globalPrefix}inset`;
+      const topPrefix = isNegative
+        ? `${globalPrefix}-top`
+        : `${globalPrefix}top`;
+      const rightPrefix = isNegative
+        ? `${globalPrefix}-right`
+        : `${globalPrefix}right`;
+      const bottomPrefix = isNegative
+        ? `${globalPrefix}-bottom`
+        : `${globalPrefix}bottom`;
+      const leftPrefix = isNegative
+        ? `${globalPrefix}-left`
+        : `${globalPrefix}left`;
+      const startPrefix = isNegative
+        ? `${globalPrefix}-start`
+        : `${globalPrefix}start`;
+      const endPrefix = isNegative
+        ? `${globalPrefix}-end`
+        : `${globalPrefix}end`;
+
       return `        ${pseudoClass(`${insetPrefix}-${key}`, variantOptions)} {
           inset: ${value};
         }
@@ -341,7 +361,7 @@ export function generatePositioningUtility({
  * Generate directional CSS properties with comprehensive options
  * This is a more generalized version that can handle various CSS properties
  * that need directional variants (top/right/bottom/left or logical properties)
- * 
+ *
  * @param {Object} options - Configuration options
  * @param {Object} options.configOptions - Configuration options from Tailwind
  * @param {Object} options.valueMap - Map of size keys to size values
@@ -363,7 +383,7 @@ export function generateDirectionalProperties({
   utilityPrefix,
   useLogicalProps = false,
   useAllDirections = true,
-  useShorthand = true
+  useShorthand = true,
 }) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
   const variantOptions = variants[variantKey] || [];
@@ -375,8 +395,14 @@ export function generateDirectionalProperties({
   if (supportNegative) {
     Object.entries(values).forEach(([key, value]) => {
       // Skip special values and already negative values
-      if (!key.startsWith('-') && key !== "auto" && key !== "px" && 
-          key !== "full" && key !== "screen" && !key.includes('/')) {
+      if (
+        !key.startsWith("-") &&
+        key !== "auto" &&
+        key !== "px" &&
+        key !== "full" &&
+        key !== "screen" &&
+        !key.includes("/")
+      ) {
         values[`-${key}`] = `-${value}`.replace("--", "-");
       }
     });
@@ -394,28 +420,42 @@ export function generateDirectionalProperties({
       }
 
       // Create the appropriate class prefix for negative values
-      const basePrefix = isNegative ? `${globalPrefix}-${utilityPrefix}` : `${globalPrefix}${utilityPrefix}`;
-      const topPrefix = isNegative ? `${globalPrefix}-top` : `${globalPrefix}top`;
-      const rightPrefix = isNegative ? `${globalPrefix}-right` : `${globalPrefix}right`;
-      const bottomPrefix = isNegative ? `${globalPrefix}-bottom` : `${globalPrefix}bottom`;
-      const leftPrefix = isNegative ? `${globalPrefix}-left` : `${globalPrefix}left`;
-      
+      const basePrefix = isNegative
+        ? `${globalPrefix}-${utilityPrefix}`
+        : `${globalPrefix}${utilityPrefix}`;
+      const topPrefix = isNegative
+        ? `${globalPrefix}-top`
+        : `${globalPrefix}top`;
+      const rightPrefix = isNegative
+        ? `${globalPrefix}-right`
+        : `${globalPrefix}right`;
+      const bottomPrefix = isNegative
+        ? `${globalPrefix}-bottom`
+        : `${globalPrefix}bottom`;
+      const leftPrefix = isNegative
+        ? `${globalPrefix}-left`
+        : `${globalPrefix}left`;
+
       // Logical property prefixes (for RTL support)
-      const startPrefix = isNegative ? `${globalPrefix}-start` : `${globalPrefix}start`;
-      const endPrefix = isNegative ? `${globalPrefix}-end` : `${globalPrefix}end`;
-      
-      let result = '';
-      
+      const startPrefix = isNegative
+        ? `${globalPrefix}-start`
+        : `${globalPrefix}start`;
+      const endPrefix = isNegative
+        ? `${globalPrefix}-end`
+        : `${globalPrefix}end`;
+
+      let result = "";
+
       // Main property (e.g., inset: 1px)
       result += `
         ${pseudoClass(`${basePrefix}-${key}`, variantOptions)} {
           ${mainProperty}: ${value};
         }
       `;
-        // Shorthand x/y variants (e.g., inset-x, margin-y)
+      // Shorthand x/y variants (e.g., inset-x, margin-y)
       if (useShorthand) {
         // Special case for inset that doesn't use property prefixing for directions
-        if (mainProperty === 'inset') {
+        if (mainProperty === "inset") {
           result += `
             ${pseudoClass(`${basePrefix}-x-${key}`, variantOptions)} {
               left: ${value};
@@ -439,10 +479,10 @@ export function generateDirectionalProperties({
           `;
         }
       }
-        // Individual direction variants
+      // Individual direction variants
       if (useAllDirections) {
         // Special case for inset that doesn't use property prefixing for directions
-        if (mainProperty === 'inset') {
+        if (mainProperty === "inset") {
           result += `
             ${pseudoClass(`${topPrefix}-${key}`, variantOptions)} {
               top: ${value};
@@ -474,7 +514,7 @@ export function generateDirectionalProperties({
           `;
         }
       }
-      
+
       // Logical properties (RTL support)
       if (useLogicalProps) {
         result += `
@@ -486,11 +526,9 @@ export function generateDirectionalProperties({
           }
         `;
       }
-      
+
       return result;
     });
     return cssString;
   }, configOptions);
 }
-
-

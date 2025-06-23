@@ -8,7 +8,7 @@ import { generateSimpleUtility } from "./utils/generatorUtils";
 export default function generator(configOptions = {}) {
   const { theme = {} } = configOptions;
   const { zIndex = {} } = theme;
-  
+
   // Handle negative z-index values
   const processedValues = { ...zIndex };
   Object.entries(zIndex).forEach(([key, value]) => {
@@ -24,6 +24,6 @@ export default function generator(configOptions = {}) {
     utilityPrefix: "z", // The prefix for z-index utilities is "z"
     valueMap: processedValues,
     variantKey: "zIndex",
-    useHyphen: true // Use hyphen between prefix and key (e.g., "z-50", "z-auto")
+    useHyphen: true, // Use hyphen between prefix and key (e.g., "z-50", "z-auto")
   });
 }

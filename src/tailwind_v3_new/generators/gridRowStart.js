@@ -1,26 +1,19 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate grid-row-start utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  let prefix = `${globalPrefix}row-start`;
-
+  const { theme = {} } = configOptions;
   const { gridRowStart = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        gridRowStart,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.gridRowStart)} {
-            grid-row-start: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "grid-row-start",
+    utilityPrefix: "row-start",
+    valueMap: gridRowStart,
+    variantKey: "gridRowStart",
+  });
 }

@@ -1,26 +1,19 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate grid-auto-rows utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  let prefix = `${globalPrefix}auto-rows`;
-
+  const { theme = {} } = configOptions;
   const { gridAutoRows = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        gridAutoRows,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.gridAutoRows)} {
-            grid-auto-rows: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "grid-auto-rows",
+    utilityPrefix: "auto-rows",
+    valueMap: gridAutoRows,
+    variantKey: "gridAutoRows",
+  });
 }

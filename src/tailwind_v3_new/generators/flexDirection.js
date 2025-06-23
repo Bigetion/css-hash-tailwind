@@ -1,31 +1,25 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate flex-direction utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}flex`;
-
-  const propertyOptions = {
+  // Define the flex direction values directly in the generator
+  // This differs from other generators that typically get values from theme
+  const valueMap = {
     row: "row",
     "row-reverse": "row-reverse",
     col: "column",
     "col-reverse": "column-reverse",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.flexDirection)} {
-            flex-direction: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "flex-direction",
+    utilityPrefix: "flex", // The prefix is "flex" (e.g., flex-row, flex-col)
+    valueMap,
+    variantKey: "flexDirection",
+  });
 }

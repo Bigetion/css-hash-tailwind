@@ -1,31 +1,23 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate grid-auto-flow utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}grid-flow`;
-
-  const propertyOptions = {
+  const valueMap = {
     row: "row",
     col: "column",
     "row-dense": "row dense",
     "col-dense": "column dense",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.gridAutoFlow)} {
-            grid-auto-flow: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "grid-auto-flow",
+    utilityPrefix: "grid-flow",
+    valueMap,
+    variantKey: "gridAutoFlow",
+  });
 }

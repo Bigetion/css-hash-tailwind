@@ -1,31 +1,25 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate flex-wrap utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}flex`;
-
-  const propertyOptions = {
+  // Define the flex-wrap values directly in the generator
+  // Like flexDirection, these values are hardcoded rather than from theme
+  const valueMap = {
     wrap: "wrap",
     "wrap-reverse": "wrap-reverse",
     "no-wrap": "nowrap",
-    nowrap: "nowrap",
+    nowrap: "nowrap", // Provides both flex-nowrap and flex-no-wrap options
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.flexWrap)} {
-            flex-wrap: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "flex-wrap",
+    utilityPrefix: "flex", // The prefix is "flex" (e.g., flex-wrap, flex-nowrap)
+    valueMap,
+    variantKey: "flexWrap",
+  });
 }

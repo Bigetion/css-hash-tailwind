@@ -1,26 +1,19 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate flex-basis utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}basis`;
-
+  const { theme = {} } = configOptions;
   const { flexBasis = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        flexBasis,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.flexBasis)} {
-            flex-basis: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "flex-basis",
+    utilityPrefix: "basis",
+    valueMap: flexBasis,
+    variantKey: "flexBasis",
+  });
 }

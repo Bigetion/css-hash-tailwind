@@ -1,26 +1,19 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate grid-column-end utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  let prefix = `${globalPrefix}col-end`;
-
+  const { theme = {} } = configOptions;
   const { gridColumnEnd = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        gridColumnEnd,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.gridColumnEnd)} {
-            grid-column-end: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "grid-column-end",
+    utilityPrefix: "col-end",
+    valueMap: gridColumnEnd,
+    variantKey: "gridColumnEnd",
+  });
 }

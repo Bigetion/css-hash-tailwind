@@ -12,7 +12,7 @@ export default function FlexWrap() {
       </div>
       <PanelSection title="Don't Wrap">
         <div
-          className={`flex flex-nowrap gap-4 font-mono text-white text-sm font-bold leading-6 ${stripes.sky} rounded-lg`}
+          className={`flex overflow-auto flex-nowrap gap-4 font-mono text-white text-sm font-bold leading-6 ${stripes.sky} rounded-lg`}
         >
           <div className="w-2/5 flex-none last:pr-8">
             <div className="p-4 w-full rounded-lg flex items-center justify-center bg-sky-500 shadow-lg">
