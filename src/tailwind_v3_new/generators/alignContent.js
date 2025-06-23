@@ -1,11 +1,12 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate align-content utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}content`;
-
-  const propertyOptions = {
+  const valueMap = {
     start: "flex-start",
     end: "flex-end",
     center: "center",
@@ -14,20 +15,11 @@ export default function generator(configOptions = {}) {
     evenly: "space-evenly",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.alignContent)} {
-            align-content: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "align-content",
+    utilityPrefix: "content", // Using "content" prefix instead of "align-content" following Tailwind's convention
+    valueMap,
+    variantKey: "alignContent",
+  });
 }

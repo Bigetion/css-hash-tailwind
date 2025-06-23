@@ -1,26 +1,25 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate justify-items utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Create a value map from the array of property options
+  const valueMap = {
+    auto: "auto",
+    start: "start",
+    end: "end",
+    center: "center",
+    stretch: "stretch",
+  };
 
-  const prefix = `${globalPrefix}justify-items`;
-
-  const propertyOptions = ["auto", "start", "end", "center", "stretch"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.justifyItems)} {
-            justify-items: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "justify-items",
+    utilityPrefix: "justify-items",
+    valueMap,
+    variantKey: "justifyItems",
+  });
 }

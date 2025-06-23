@@ -1,24 +1,22 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate appearance utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  // Convert the property options array to a value map object
+  const valueMap = {
+    auto: "auto",
+    none: "none",
+  };
 
-  const propertyOptions = ["auto", "none"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}appearance-${key}`, variants.appearance)} {
-            appearance: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "appearance",
+    utilityPrefix: "appearance",
+    valueMap,
+    variantKey: "appearance",
+  });
 }

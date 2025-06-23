@@ -1,11 +1,12 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate place-content utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}place-content`;
-
-  const propertyOptions = {
+  const valueMap = {
     start: "start",
     end: "end",
     center: "center",
@@ -15,20 +16,11 @@ export default function generator(configOptions = {}) {
     stretch: "stretch",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.placeContent)} {
-            place-content: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "place-content",
+    utilityPrefix: "place-content",
+    valueMap,
+    variantKey: "placeContent",
+  });
 }

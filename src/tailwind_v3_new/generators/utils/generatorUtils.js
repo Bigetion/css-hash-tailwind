@@ -35,20 +35,20 @@ export function generateSimpleUtility({
     return getCssByOptions(valueMap, (key, value) => {
       // Determine class name based on useHyphen flag
       const className = useHyphen ? `${prefix}-${key}` : `${prefix}${key}`;
-      
+
       let result = `
           ${pseudoClass(className, variantOptions)} {
             ${cssProperty}: ${transformValue(value)};
           }
         `;
-      
+
       // Add variant properties if provided
       if (propertyVariants && propertyVariants.length > 0) {
-        propertyVariants.forEach(variant => {
-          const variantClassName = useHyphen 
-            ? `${prefix}-${variant.suffix}-${key}` 
+        propertyVariants.forEach((variant) => {
+          const variantClassName = useHyphen
+            ? `${prefix}-${variant.suffix}-${key}`
             : `${prefix}${variant.suffix}-${key}`;
-            
+
           result += `
           ${pseudoClass(variantClassName, variantOptions)} {
             ${variant.property}: ${transformValue(value)};
@@ -56,7 +56,7 @@ export function generateSimpleUtility({
           `;
         });
       }
-      
+
       return result;
     });
   }, configOptions);

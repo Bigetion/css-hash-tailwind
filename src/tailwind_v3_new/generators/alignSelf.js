@@ -1,11 +1,12 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate align-self utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}self`;
-
-  const propertyOptions = {
+  const valueMap = {
     auto: "auto",
     start: "flex-start",
     end: "flex-end",
@@ -13,20 +14,11 @@ export default function generator(configOptions = {}) {
     stretch: "stretch",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.alignSelf)} {
-            align-self: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "align-self",
+    utilityPrefix: "self",
+    valueMap,
+    variantKey: "alignSelf",
+  });
 }
