@@ -1,7 +1,7 @@
 import { getConfigOptions } from "./utils/index";
 
-// Import all generators from the optimized folder
-import * as generators from "./generators";
+// Import all generators from the single folder
+import * as generators from "./generators/index.single";
 
 // Define the plugins object with all generators
 const plugins = {
