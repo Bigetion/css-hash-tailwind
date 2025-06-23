@@ -10,6 +10,7 @@ import { generateCssString } from "../../utils/index";
  * @param {Object} valueMap - Map of tailwind classes to CSS property values
  * @param {string} variantKey - Key for variants in configOptions
  * @param {function} transformValue - Optional function to transform the value
+ * @param {boolean} useHyphen - Whether to use a hyphen between prefix and key (default: true)
  * @returns {string} Generated CSS string
  */
 export function generateSimpleUtility({
@@ -19,20 +20,23 @@ export function generateSimpleUtility({
   valueMap,
   variantKey,
   transformValue = (value) => value,
+  useHyphen = true,
 }) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
   const prefix = `${globalPrefix}${utilityPrefix}`;
   const variantOptions = variants[variantKey] || [];
 
   return generateCssString(({ pseudoClass, getCssByOptions }) => {
-    return getCssByOptions(
-      valueMap,
-      (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variantOptions)} {
+    return getCssByOptions(valueMap, (key, value) => {
+      // Determine class name based on useHyphen flag
+      const className = useHyphen ? `${prefix}-${key}` : `${prefix}${key}`;
+
+      return `
+          ${pseudoClass(className, variantOptions)} {
             ${cssProperty}: ${transformValue(value)};
           }
-        `
-    );
+        `;
+    });
   }, configOptions);
 }
 

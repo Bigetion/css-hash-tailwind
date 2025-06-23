@@ -1,24 +1,26 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate position utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  // Create a value map for position options
+  const valueMap = {
+    static: "static",
+    fixed: "fixed",
+    absolute: "absolute",
+    relative: "relative",
+    sticky: "sticky",
+  };
 
-  const propertyOptions = ["static", "fixed", "absolute", "relative", "sticky"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}${key}`, variants.position)} {
-            position: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "position",
+    utilityPrefix: "", // Empty prefix since we use the position value directly as class name
+    valueMap,
+    variantKey: "position",
+    useHyphen: false, // Don't use hyphen between prefix and key for position
+  });
 }

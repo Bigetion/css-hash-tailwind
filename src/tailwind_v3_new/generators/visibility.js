@@ -1,28 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate visibility utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
-
-  const propertyOptions = {
+  // Create a value map for visibility options
+  const valueMap = {
     visible: "visible",
     collapse: "collapse",
     invisible: "hidden",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}${key}`, variants.visibility)} {
-            visibility: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "visibility",
+    utilityPrefix: "", // Empty prefix since visibility classes don't use a prefix
+    valueMap,
+    variantKey: "visibility",
+    useHyphen: false, // Don't use hyphen between prefix and key
+  });
 }
