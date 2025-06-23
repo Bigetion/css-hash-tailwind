@@ -15,6 +15,6 @@ export default function generator(configOptions = {}) {
     utilityPrefix: "p",
     valueMap: padding,
     variantKey: "padding",
-    supportNegative: false
+    supportNegative: false,
   });
 }

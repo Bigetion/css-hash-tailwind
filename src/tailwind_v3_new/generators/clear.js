@@ -1,26 +1,26 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate clear utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Create a value map for clear options
+  const valueMap = {
+    start: "inline-start",
+    end: "inline-end",
+    left: "left",
+    right: "right",
+    both: "both",
+    none: "none",
+  };
 
-  const prefix = `${globalPrefix}clear`;
-
-  const propertyOptions = ["left", "right", "both", "none"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.clear)} {
-            clear: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "clear",
+    utilityPrefix: "clear",
+    valueMap,
+    variantKey: "clear",
+  });
 }

@@ -1,36 +1,45 @@
 import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate float utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
-  const prefix = `${globalPrefix}float`;
+  // Create a value map for float options
+  const valueMap = {
+    left: "left",
+    right: "right",
+    none: "none",
+  };
 
-  const propertyOptions = ["left", "right", "none"];
+  // Generate standard float utilities
+  const floatCSS = generateSimpleUtility({
+    configOptions,
+    cssProperty: "float",
+    utilityPrefix: "float",
+    valueMap,
+    variantKey: "float",
+  });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.float)} {
-            float: ${value};
-          }
-        `
-      );
-      cssString += `
-        ${pseudoClass(
-          (pseudoString) => `${globalPrefix}clearfix${pseudoString}:after`,
-          variants.float
-        )} {
-          content: "";
-          display: table;
-          clear: both;
-        }
-      `;
-      return cssString;
-    },
+  // Generate the special clearfix utility
+  const clearfixCSS = generateCssString(
+    ({ pseudoClass }) => `
+      ${pseudoClass(
+        (pseudoString) => `${globalPrefix}clearfix${pseudoString}:after`,
+        variants.float || []
+      )} {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    `,
     configOptions
   );
 
-  return responsiveCssString;
+  // Combine both CSS strings
+  return floatCSS + clearfixCSS;
 }

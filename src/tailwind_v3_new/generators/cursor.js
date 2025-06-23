@@ -1,11 +1,13 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate cursor utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}cursor`;
-
-  const propertyOptions = [
+  // Create a value map from the array of cursor options
+  const cursorOptions = [
     "auto",
     "default",
     "pointer",
@@ -42,22 +44,16 @@ export default function generator(configOptions = {}) {
     "nwse-resize",
     "zoom-in",
     "zoom-out",
-  ];
+  ].reduce((acc, value) => {
+    acc[value] = value;
+    return acc;
+  }, {});
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.cursor)} {
-            cursor: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "cursor",
+    utilityPrefix: "cursor",
+    valueMap: cursorOptions,
+    variantKey: "cursor",
+  });
 }

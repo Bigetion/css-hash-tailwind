@@ -15,6 +15,6 @@ export default function generator(configOptions = {}) {
     utilityPrefix: "bg",
     colorMap: backgroundColor,
     variantKey: "backgroundColor",
-    opacityVar: "--bg-opacity"
+    opacityVar: "--bg-opacity",
   });
 }

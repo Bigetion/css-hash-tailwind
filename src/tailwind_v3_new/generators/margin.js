@@ -15,6 +15,6 @@ export default function generator(configOptions = {}) {
     utilityPrefix: "m",
     valueMap: margin,
     variantKey: "margin",
-    supportNegative: true
+    supportNegative: true,
   });
 }

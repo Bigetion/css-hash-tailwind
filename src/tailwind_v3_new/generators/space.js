@@ -11,6 +11,6 @@ export default function generator(configOptions = {}) {
 
   return generateSpaceBetweenUtility({
     configOptions,
-    valueMap: space
+    valueMap: space,
   });
 }

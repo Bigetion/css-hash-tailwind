@@ -1,29 +1,22 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate box-sizing utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}box`;
-
-  const propertyOptions = {
+  // Define the value map for box-sizing options
+  const valueMap = {
     border: "border-box",
     content: "content-box",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.boxSizing)} {
-            box-sizing: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "box-sizing",
+    utilityPrefix: "box",
+    valueMap,
+    variantKey: "boxSizing",
+  });
 }

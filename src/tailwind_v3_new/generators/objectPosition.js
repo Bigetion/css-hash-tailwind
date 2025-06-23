@@ -1,11 +1,14 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate object-position utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}object`;
-
-  const propertyOptions = [
+  // Create a value map for object-position options
+  // For this utility, keys and base values are the same
+  const valueMap = [
     "bottom",
     "center",
     "left",
@@ -15,22 +18,20 @@ export default function generator(configOptions = {}) {
     "right-bottom",
     "right-top",
     "top",
-  ];
+  ].reduce((acc, value) => {
+    acc[value] = value;
+    return acc;
+  }, {});
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.objectPosition)} {
-            object-position: ${value.split("-").join(" ")};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+  // Transform function to convert hyphens to spaces
+  const transformValue = (value) => value.split("-").join(" ");
 
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "object-position",
+    utilityPrefix: "object",
+    valueMap,
+    variantKey: "objectPosition",
+    transformValue,
+  });
 }

@@ -19,6 +19,6 @@ export default function generator(configOptions = {}) {
     cssProperty: "align-items",
     utilityPrefix: "items",
     valueMap: propertyOptions,
-    variantKey: "alignItems"
+    variantKey: "alignItems",
   });
 }

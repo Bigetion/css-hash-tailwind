@@ -1,29 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate isolation utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}`;
-
-  const propertyOptions = {
+  // Create a value map for isolation options
+  const valueMap = {
     isolate: "isolate",
-    "isolation-auto": "no-repeat",
+    "isolation-auto": "auto", // Fixed value from "no-repeat" to "auto"
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}${key}`, variants.isolation)} {
-            isolation: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  // Note: This utility doesn't use a prefix like "isolation-",
+  // it uses the exact class names "isolate" and "isolation-auto"
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "isolation",
+    utilityPrefix: "", // Empty prefix because classes don't use common prefix
+    valueMap,
+    variantKey: "isolation",
+  });
 }

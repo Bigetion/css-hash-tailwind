@@ -20,6 +20,6 @@ export default function generator(configOptions = {}) {
     cssProperty: "justify-content",
     utilityPrefix: "justify",
     valueMap: propertyOptions,
-    variantKey: "justifyContent"
+    variantKey: "justifyContent",
   });
 }

@@ -1,27 +1,29 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate box-decoration-break utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Create a value map from the array of box-decoration-break options
+  const valueMap = {
+    slice: "slice",
+    clone: "clone",
+  };
 
-  const prefix = `${globalPrefix}box-decoration`;
+  // Use custom transform to add webkit prefix
+  const transformValue = (value) => {
+    // Return multiple properties as a string
+    return `${value};\n  -webkit-box-decoration-break: ${value}`;
+  };
 
-  const propertyOptions = ["slice", "clone"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.boxDecorationBreak)} {
-            box-decoration-break: ${value};
-            -webkit-box-decoration-break: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "box-decoration-break",
+    utilityPrefix: "box-decoration",
+    valueMap,
+    variantKey: "boxDecorationBreak",
+    transformValue,
+  });
 }

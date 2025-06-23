@@ -15,6 +15,6 @@ export default function generator(configOptions = {}) {
     utilityPrefix: "text",
     colorMap: textColor,
     variantKey: "textColor",
-    opacityVar: "--text-opacity"
+    opacityVar: "--text-opacity",
   });
 }

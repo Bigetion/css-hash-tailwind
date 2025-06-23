@@ -1,40 +1,61 @@
 import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate overflow utility classes
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
-  const prefix = `${globalPrefix}overflow`;
+  // Create value maps for overflow options
+  const valueMap = {
+    auto: "auto",
+    hidden: "hidden",
+    visible: "visible",
+    scroll: "scroll",
+  };
 
-  const propertyOptions = ["auto", "hidden", "visible", "scroll"];
+  // Helper function to generate overflow utilities for a specific direction
+  const generateOverflowUtilities = (direction = null) => {
+    const directionSuffix = direction ? `-${direction}` : "";
+    const propertySuffix = direction ? `-${direction}` : "";
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.overflow)} {
-            overflow: ${value};
-          }
-          ${pseudoClass(`${prefix}-x-${key}`, variants.overflow)} {
-            overflow-x: ${value};
-          }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.overflow)} {
-            overflow-y: ${value};
-          }
-        `
-      );
-      cssString += `
-        ${pseudoClass(`${globalPrefix}scrolling-touch`, variants.overflow)} {
-          -webkit-overflow-scrolling: touch;
-        }
-        ${pseudoClass(`${globalPrefix}scrolling-auto`, variants.overflow)} {
-          -webkit-overflow-scrolling: auto;
-        }
-      `;
-      return cssString;
-    },
+    return generateSimpleUtility({
+      configOptions,
+      cssProperty: `overflow${propertySuffix}`,
+      utilityPrefix: `overflow${directionSuffix}`,
+      valueMap,
+      variantKey: "overflow",
+    });
+  };
+
+  // Generate standard overflow utilities
+  const overflowCSS = generateOverflowUtilities();
+
+  // Generate overflow-x utilities
+  const overflowXCSS = generateOverflowUtilities("x");
+
+  // Generate overflow-y utilities
+  const overflowYCSS = generateOverflowUtilities("y");
+
+  // Generate webkit-overflow-scrolling utilities
+  const scrollingCSS = generateCssString(
+    ({ pseudoClass }) => `
+      ${pseudoClass(
+        `${globalPrefix}scrolling-touch`,
+        variants.overflow || []
+      )} {
+        -webkit-overflow-scrolling: touch;
+      }
+      ${pseudoClass(`${globalPrefix}scrolling-auto`, variants.overflow || [])} {
+        -webkit-overflow-scrolling: auto;
+      }
+    `,
     configOptions
   );
 
-  return responsiveCssString;
+  // Combine all CSS strings
+  return overflowCSS + overflowXCSS + overflowYCSS + scrollingCSS;
 }
