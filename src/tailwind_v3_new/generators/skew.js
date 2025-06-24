@@ -1,36 +1,38 @@
-import { generateCssString } from "../utils/index";
+import { generateNegativeSupportedUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate skew transform utility classes
+ * Controls the skewing of elements with support for both positive and negative values
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
+  const { theme = {}, prefix: globalPrefix } = configOptions;
   const { skew = {} } = theme;
 
-  Object.entries(skew).forEach(([key, value]) => {
-    skew[`-${key}`] = `-${value}`.replace("--", "-");
+  // Generate skew-x utilities
+  const skewXUtilities = generateNegativeSupportedUtility({
+    configOptions,
+    cssProperty: "--transform-skew-x",
+    utilityPrefix: "skew-x",
+    negativePrefix: `${globalPrefix}-skew-x`,
+    valueMap: skew,
+    variantKey: "skew",
+    transformValue: (value) => `${value} !important`,
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(skew, (keyTmp, value) => {
-        let prefix = `${globalPrefix}skew`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-skew`;
-        }
-        return `
-          ${pseudoClass(`${prefix}-x-${key}`, variants.skew)} {
-            --transform-skew-x: ${value} !important;
-          }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.skew)} {
-            --transform-skew-y: ${value} !important;
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  // Generate skew-y utilities
+  const skewYUtilities = generateNegativeSupportedUtility({
+    configOptions,
+    cssProperty: "--transform-skew-y",
+    utilityPrefix: "skew-y",
+    negativePrefix: `${globalPrefix}-skew-y`,
+    valueMap: skew,
+    variantKey: "skew",
+    transformValue: (value) => `${value} !important`,
+  });
 
-  return responsiveCssString;
+  // Combine all utilities
+  return skewXUtilities + "\n" + skewYUtilities;
 }

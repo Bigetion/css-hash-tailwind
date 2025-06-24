@@ -532,7 +532,7 @@ export function generateCustomUtility({
 
 /**
  * Generate a utility with support for negative values with custom prefixes
- * Used for utilities that need different prefix handling for negative values (like text-indent)
+ * Used for utilities that need different prefix handling for negative values (like text-indent, rotate)
  *
  * @param {Object} configOptions - Configuration options
  * @param {string} cssProperty - The CSS property to set
@@ -540,6 +540,7 @@ export function generateCustomUtility({
  * @param {string} negativePrefix - The prefix for negative utility classes (will override globalPrefix)
  * @param {Object} valueMap - Map of values without the negative entries
  * @param {string} variantKey - Key for variants in configOptions
+ * @param {function} transformValue - Optional function to transform the value before using it (e.g., append !important)
  * @returns {string} Generated CSS string
  */
 export function generateNegativeSupportedUtility({
@@ -549,6 +550,7 @@ export function generateNegativeSupportedUtility({
   negativePrefix,
   valueMap,
   variantKey,
+  transformValue = (value) => value, // Add transformValue parameter with default function
 }) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
   const positivePrefix = `${globalPrefix}${utilityPrefix}`;
@@ -571,9 +573,12 @@ export function generateNegativeSupportedUtility({
         prefix = negativePrefix;
       }
 
+      // Apply the transformValue function to the value
+      const transformedValue = transformValue(value);
+
       return `
         ${pseudoClass(`${prefix}-${key}`, variantOptions)} {
-          ${cssProperty}: ${value};
+          ${cssProperty}: ${transformedValue};
         }
       `;
     });

@@ -13,7 +13,7 @@ export default function generator(configOptions = {}) {
   const { hueRotate = {} } = theme;
   // Create a modified hueRotate object with both positive and negative values
   const processedHueRotate = { ...hueRotate };
-  
+
   // Add negative versions of each value if they don't already exist
   Object.entries(hueRotate).forEach(([key, value]) => {
     // Skip keys that already start with "-" or are "0" (no need for negative zero)
@@ -21,13 +21,13 @@ export default function generator(configOptions = {}) {
       const valueAsNumber = parseFloat(value);
       if (!isNaN(valueAsNumber)) {
         // Create negative key with the same base value
-        processedHueRotate[`-${key}`] = value.toString().startsWith("-") 
+        processedHueRotate[`-${key}`] = value.toString().startsWith("-")
           ? value.substring(1) // If value is already negative, make it positive
           : `-${value}`; // Otherwise make it negative
       }
     }
   });
-  
+
   return generateCssString(({ pseudoClass, getCssByOptions }) => {
     const cssString = getCssByOptions(processedHueRotate, (keyTmp, value) => {
       let prefix = `${globalPrefix}hue-rotate`;
@@ -40,7 +40,7 @@ export default function generator(configOptions = {}) {
         // For class names: remove hyphen from key, add it to prefix
         key = key.substring(1);
         prefix = `${globalPrefix}-hue-rotate`;
-        
+
         // Make sure value is negative for presentation
         if (!cssValue.toString().startsWith("-") && key !== "0") {
           cssValue = `-${cssValue}`;
@@ -64,6 +64,7 @@ export default function generator(configOptions = {}) {
         `;
 
       return result;
-    });    return cssString;
+    });
+    return cssString;
   }, configOptions);
 }

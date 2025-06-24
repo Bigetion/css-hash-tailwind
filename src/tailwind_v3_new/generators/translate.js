@@ -1,36 +1,38 @@
-import { generateCssString } from "../utils/index";
+import { generateNegativeSupportedUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate translate transform utility classes
+ * Controls the translation of elements with support for both positive and negative values
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
+  const { theme = {}, prefix: globalPrefix } = configOptions;
   const { translate = {} } = theme;
 
-  Object.entries(translate).forEach(([key, value]) => {
-    translate[`-${key}`] = `-${value}`.replace("--", "-");
+  // Generate translate-x utilities
+  const translateXUtilities = generateNegativeSupportedUtility({
+    configOptions,
+    cssProperty: "--transform-translate-x",
+    utilityPrefix: "translate-x",
+    negativePrefix: `${globalPrefix}-translate-x`,
+    valueMap: translate,
+    variantKey: "translate",
+    transformValue: (value) => `${value} !important`,
   });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(translate, (keyTmp, value) => {
-        let prefix = `${globalPrefix}translate`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-translate`;
-        }
-        return `
-          ${pseudoClass(`${prefix}-x-${key}`, variants.translate)} {
-            --transform-translate-x: ${value} !important;
-          }
-          ${pseudoClass(`${prefix}-y-${key}`, variants.translate)} {
-            --transform-translate-y: ${value} !important;
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  // Generate translate-y utilities
+  const translateYUtilities = generateNegativeSupportedUtility({
+    configOptions,
+    cssProperty: "--transform-translate-y",
+    utilityPrefix: "translate-y",
+    negativePrefix: `${globalPrefix}-translate-y`,
+    valueMap: translate,
+    variantKey: "translate",
+    transformValue: (value) => `${value} !important`,
+  });
 
-  return responsiveCssString;
+  // Combine all utilities
+  return translateXUtilities + "\n" + translateYUtilities;
 }

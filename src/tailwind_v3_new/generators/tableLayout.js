@@ -1,26 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate table-layout utility classes
+ * Controls the algorithm used for table layout (auto or fixed)
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Define the value map for table layout options
+  const valueMap = {
+    auto: "auto",
+    fixed: "fixed",
+  };
 
-  const prefix = `${globalPrefix}table`;
-
-  const propertyOptions = ["auto", "fixed"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.tableLayout)} {
-            table-layout: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "table-layout",
+    utilityPrefix: "table",
+    valueMap,
+    variantKey: "tableLayout",
+  });
 }

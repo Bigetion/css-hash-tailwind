@@ -1,36 +1,33 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate transform-origin utility classes
+ * Controls the origin point for transformations
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Define the values map - here we need to map each key to itself
+  // since our array only contains the values
+  const originValues = {
+    center: "center",
+    top: "top",
+    "top-right": "top-right",
+    right: "right",
+    "bottom-right": "bottom-right",
+    bottom: "bottom",
+    "bottom-left": "bottom-left",
+    left: "left",
+    "top-left": "top-left",
+  };
 
-  const prefix = `${globalPrefix}origin`;
-
-  const propertyOptions = [
-    "center",
-    "top",
-    "top-right",
-    "right",
-    "bottom-right",
-    "bottom",
-    "bottom-left",
-    "left",
-    "top-left",
-  ];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.transformOrigin)} {
-            transform-origin: ${value.replace("-", " ")} !important;
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "transform-origin",
+    utilityPrefix: "origin",
+    valueMap: originValues,
+    variantKey: "transformOrigin",
+    transformValue: (value) => `${value.replace(/-/g, " ")} !important`,
+  });
 }
