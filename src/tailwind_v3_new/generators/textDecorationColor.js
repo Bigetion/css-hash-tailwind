@@ -1,45 +1,36 @@
-import { generateCssString } from "../utils/index";
+import {
+  generateColorUtility,
+  generateSimpleUtility,
+} from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text-decoration-color with opacity support
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-decoration-color utilities and opacity
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}decoration`;
-
+  const { theme = {} } = configOptions;
   const { textDecorationColor = {}, opacity = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors, getCssByOptions }) => {
-      let cssString = getCssByColors(
-        textDecorationColor,
-        (key, value, rgbValue) => {
-          let rgbPropertyValue = "";
-          if (rgbValue) {
-            rgbPropertyValue = `text-decoration-color: rgba(${rgbValue}, var(--text-decoration-opacity));`;
-          }
-          return `
-            ${pseudoClass(
-              `${prefix}-${key}`,
-              variants.textDecorationColor,
-              {}
-            )} {
-              --text-decoration-opacity: 1;
-              text-decoration-color: ${value};${rgbPropertyValue}
-            }
-          `;
-        }
-      );
-      cssString += getCssByOptions(
-        opacity,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-opacity-${key}`, variants.opacity, {})} {
-            --text-decoration-opacity: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+  // Generate color utilities
+  const colorUtilities = generateColorUtility({
+    configOptions,
+    cssProperty: "text-decoration-color",
+    utilityPrefix: "decoration",
+    colorMap: textDecorationColor,
+    variantKey: "textDecorationColor",
+    opacityVar: "--text-decoration-opacity",
+  });
 
-  return responsiveCssString;
+  // Generate opacity utilities
+  const opacityUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--text-decoration-opacity",
+    utilityPrefix: "decoration-opacity",
+    valueMap: opacity,
+    variantKey: "opacity",
+  });
+
+  return colorUtilities + opacityUtilities;
 }

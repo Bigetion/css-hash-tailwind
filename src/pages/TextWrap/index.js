@@ -13,7 +13,7 @@ export default function TextWrap() {
           <h3 className="text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
-          <p className="text-sm/6">
+          <p className="text-sm">
             New Yorkers are facing the winter chill with less warmth this year
             as the city's most revered soup stand unexpectedly shutters,
             following a series of events that have left the community puzzled.
@@ -25,7 +25,7 @@ export default function TextWrap() {
           <h3 className="text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
-          <p className="text-sm/6">
+          <p className="text-sm">
             New Yorkers are facing the winter chill with less warmth this year
             as the city's most revered soup stand unexpectedly shutters,
             following a series of events that have left the community puzzled.
@@ -37,7 +37,7 @@ export default function TextWrap() {
           <h3 className="text-balance text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
-          <p className="text-sm/6">
+          <p className="text-sm">
             New Yorkers are facing the winter chill with less warmth this year
             as the city's most revered soup stand unexpectedly shutters,
             following a series of events that have left the community puzzled.
@@ -49,7 +49,7 @@ export default function TextWrap() {
           <h3 className="text-xl font-semibold text-slate-900">
             Beloved Manhattan soup stand closes
           </h3>
-          <p className="text-sm/6">
+          <p className="text-sm">
             New Yorkers are facing the winter chill with less warmth this year
             as the city's most revered soup stand unexpectedly shutters,
             following a series of events that have left the community puzzled.

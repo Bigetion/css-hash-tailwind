@@ -42,14 +42,19 @@ export function generateSimpleUtility({
           ${pseudoClass(className, variantOptions)} {
             ${
               // Handle three different types of cssProperty
-              Array.isArray(cssProperty)                ? cssProperty.map(prop => {                    // Check if prop is an object with property and transformValue keys
-                    if (typeof prop === 'object' && prop.property) {
-                      const propTransform = prop.transformValue || transformValue;
-                      return `${prop.property}: ${propTransform(value)};`;
-                    }
-                    // Simple string property
-                    return `${prop}: ${transformValue(value)};`;
-                  }).join('\n            ')
+              Array.isArray(cssProperty)
+                ? cssProperty
+                    .map((prop) => {
+                      // Check if prop is an object with property and transformValue keys
+                      if (typeof prop === "object" && prop.property) {
+                        const propTransform =
+                          prop.transformValue || transformValue;
+                        return `${prop.property}: ${propTransform(value)};`;
+                      }
+                      // Simple string property
+                      return `${prop}: ${transformValue(value)};`;
+                    })
+                    .join("\n            ")
                 : `${cssProperty}: ${transformValue(value)};`
             }
           }
@@ -201,8 +206,6 @@ export function generateDirectionalUtility({
     return cssString;
   }, configOptions);
 }
-
-
 
 /**
  * Generate positioning utilities for inset and related properties
@@ -486,5 +489,93 @@ export function generateDirectionalProperties({
       return result;
     });
     return cssString;
+  }, configOptions);
+}
+
+/**
+ * Generate a custom utility with multiple CSS properties
+ * Used for special utilities that set multiple CSS properties with a single class
+ *
+ * @param {Object} configOptions - Configuration options
+ * @param {string|null} utilityPrefix - The prefix for utility classes (empty string if not needed)
+ * @param {string} className - The specific class name (without the global prefix)
+ * @param {Object} properties - An object mapping CSS properties to their values
+ * @param {string} variantKey - Key for variants in configOptions
+ * @returns {string} Generated CSS string
+ */
+export function generateCustomUtility({
+  configOptions,
+  utilityPrefix = "",
+  className,
+  properties,
+  variantKey,
+}) {
+  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const fullPrefix = utilityPrefix
+    ? `${globalPrefix}${utilityPrefix}`
+    : globalPrefix;
+  const variantOptions = variants[variantKey] || [];
+
+  return generateCssString(({ pseudoClass }) => {
+    // Create CSS property-value pairs from the properties object
+    const cssProperties = Object.entries(properties)
+      .map(([prop, value]) => `${prop}: ${value};`)
+      .join("\n      ");
+
+    return `
+      ${pseudoClass(`${fullPrefix}${className}`, variantOptions)} {
+        ${cssProperties}
+      }
+    `;
+  }, configOptions);
+}
+
+/**
+ * Generate a utility with support for negative values with custom prefixes
+ * Used for utilities that need different prefix handling for negative values (like text-indent)
+ *
+ * @param {Object} configOptions - Configuration options
+ * @param {string} cssProperty - The CSS property to set
+ * @param {string} utilityPrefix - The prefix for positive utility classes
+ * @param {string} negativePrefix - The prefix for negative utility classes (will override globalPrefix)
+ * @param {Object} valueMap - Map of values without the negative entries
+ * @param {string} variantKey - Key for variants in configOptions
+ * @returns {string} Generated CSS string
+ */
+export function generateNegativeSupportedUtility({
+  configOptions,
+  cssProperty,
+  utilityPrefix,
+  negativePrefix,
+  valueMap,
+  variantKey,
+}) {
+  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const positivePrefix = `${globalPrefix}${utilityPrefix}`;
+  const variantOptions = variants[variantKey] || [];
+
+  // Create a combined map with both positive and negative values
+  const combinedValues = { ...valueMap };
+  Object.entries(valueMap).forEach(([key, value]) => {
+    combinedValues[`-${key}`] = `-${value}`.replace("--", "-");
+  });
+
+  return generateCssString(({ pseudoClass, getCssByOptions }) => {
+    return getCssByOptions(combinedValues, (keyTmp, value) => {
+      let prefix = positivePrefix;
+      let key = keyTmp;
+
+      // Handle negative keys
+      if (`${key}`.indexOf("-") === 0) {
+        key = key.substring(1); // Remove the leading minus sign
+        prefix = negativePrefix;
+      }
+
+      return `
+        ${pseudoClass(`${prefix}-${key}`, variantOptions)} {
+          ${cssProperty}: ${value};
+        }
+      `;
+    });
   }, configOptions);
 }

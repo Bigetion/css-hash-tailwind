@@ -1,26 +1,30 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text-shadow-y custom property
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-shadow-y utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}text-shadow-y`;
-
+  const { theme = {} } = configOptions;
   const { textShadowY = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(textShadowY, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.textShadowY)} {
-            --text-shadow-y: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  // Create a new object for the values with properly formatted keys
+  const formattedValues = {};
+  Object.entries(textShadowY).forEach(([key, value]) => {
+    // Use an empty string as the key for "default" to create a class without suffix
+    // For all other keys, add a leading hyphen
+    const formattedKey = key.toLowerCase() === "default" ? "" : `-${key}`;
+    formattedValues[formattedKey] = value;
+  });
 
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--text-shadow-y",
+    utilityPrefix: "text-shadow-y",
+    valueMap: formattedValues,
+    variantKey: "textShadowY",
+    useHyphen: false, // Don't add a hyphen between prefix and key since keys already have it when needed
+  });
 }

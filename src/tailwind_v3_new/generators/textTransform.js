@@ -1,8 +1,12 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text transformation
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-transform utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
-
   const propertyOptions = {
     uppercase: "uppercase",
     lowercase: "lowercase",
@@ -10,20 +14,12 @@ export default function generator(configOptions = {}) {
     "normal-case": "none",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}${key}`, variants.textTransform)} {
-            text-transform: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "text-transform",
+    utilityPrefix: "", // No additional prefix needed as keys are the full class names
+    valueMap: propertyOptions,
+    variantKey: "textTransform",
+    useHyphen: false, // Don't use hyphen between prefix and key (e.g., uppercase not text-uppercase)
+  });
 }

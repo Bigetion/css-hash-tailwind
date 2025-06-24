@@ -1,26 +1,20 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text decoration thickness
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-decoration-thickness utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}decoration`;
-
+  const { theme = {} } = configOptions;
   const { textDecorationThickness = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        textDecorationThickness,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.textDecorationThickness)} {
-            text-decoration-thickness: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "text-decoration-thickness",
+    utilityPrefix: "decoration",
+    valueMap: textDecorationThickness,
+    variantKey: "textDecorationThickness",
+  });
 }

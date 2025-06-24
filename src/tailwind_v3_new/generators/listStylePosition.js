@@ -1,26 +1,22 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for list style position
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for list-style-position utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const propertyOptions = {
+    inside: "inside",
+    outside: "outside",
+  };
 
-  const prefix = `${globalPrefix}list`;
-
-  const propertyOptions = ["inside", "outside"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.listStylePosition)} {
-            list-style-position: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "list-style-position",
+    utilityPrefix: "list",
+    valueMap: propertyOptions,
+    variantKey: "listStylePosition",
+  });
 }

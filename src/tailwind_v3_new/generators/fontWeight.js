@@ -1,26 +1,20 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate font-weight utility classes
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}font`;
-
+  const { theme = {} } = configOptions;
   const { fontWeight = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        fontWeight,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.fontWeight)} {
-            font-weight: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "font-weight",
+    utilityPrefix: "font",
+    valueMap: fontWeight,
+    variantKey: "fontWeight",
+  });
 }

@@ -1,26 +1,25 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text decoration style
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-decoration-style utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const propertyOptions = {
+    solid: "solid",
+    double: "double",
+    dotted: "dotted",
+    dashed: "dashed",
+    wavy: "wavy",
+  };
 
-  const prefix = `${globalPrefix}decoration`;
-
-  const propertyOptions = ["solid", "double", "dotted", "dashed", "wavy"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.textDecorationStyle)} {
-            text-decoration-style: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "text-decoration-style",
+    utilityPrefix: "decoration",
+    valueMap: propertyOptions,
+    variantKey: "textDecorationStyle",
+  });
 }

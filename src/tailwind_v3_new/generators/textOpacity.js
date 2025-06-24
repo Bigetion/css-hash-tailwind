@@ -1,26 +1,20 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text opacity
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-opacity utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}text-opacity`;
-
+  const { theme = {} } = configOptions;
   const { textOpacity = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        textOpacity,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.textOpacity)} {
-            --text-opacity: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--text-opacity",
+    utilityPrefix: "text-opacity",
+    valueMap: textOpacity,
+    variantKey: "textOpacity",
+  });
 }

@@ -1,26 +1,20 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text underline offset
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-underline-offset utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}underline-offset`;
-
+  const { theme = {} } = configOptions;
   const { textUnderlineOffset = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        textUnderlineOffset,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.textUnderlineOffset)} {
-            text-underline-offset: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "text-underline-offset",
+    utilityPrefix: "underline-offset",
+    valueMap: textUnderlineOffset,
+    variantKey: "textUnderlineOffset",
+  });
 }

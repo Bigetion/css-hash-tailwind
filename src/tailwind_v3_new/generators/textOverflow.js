@@ -1,29 +1,40 @@
-import { generateCssString } from "../utils/index";
+import {
+  generateSimpleUtility,
+  generateCustomUtility,
+} from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text overflow handling
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-overflow utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
-
-  const propertyOptions = ["ellipsis", "clip"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}truncate`, variants.textOverflow)} {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-          ${pseudoClass(`${prefix}text-${key}`, variants.textDecoration)} {
-            text-overflow: ${value};
-          }
-        `
-      );
-      return cssString;
+  // Generate the special truncate utility which sets multiple properties
+  const truncateUtility = generateCustomUtility({
+    configOptions,
+    className: "truncate",
+    properties: {
+      overflow: "hidden",
+      "text-overflow": "ellipsis",
+      "white-space": "nowrap",
     },
-    configOptions
-  );
+    variantKey: "textOverflow",
+  });
 
-  return responsiveCssString;
+  // Generate the regular text-overflow utilities
+  const propertyOptions = {
+    ellipsis: "ellipsis",
+    clip: "clip",
+  };
+
+  const textOverflowUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "text-overflow",
+    utilityPrefix: "text",
+    valueMap: propertyOptions,
+    variantKey: "textDecoration",
+  });
+
+  return truncateUtility + textOverflowUtilities;
 }

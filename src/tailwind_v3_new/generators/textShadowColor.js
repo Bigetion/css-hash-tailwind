@@ -25,7 +25,8 @@ export default function generator(configOptions = {}) {
               --text-shadow-opacity: 1;
               --text-shadow-x: 1px;
               --text-shadow-y: 1px;
-              text-shadow: var(--text-shadow-x) var(--text-shadow-y) var(--text-shadow-blur, 0) ${value};${rgbPropertyValue}
+              text-shadow: var(--text-shadow-x) var(--text-shadow-y) var(--text-shadow-blur, 0) ${value};
+              ${rgbPropertyValue}
             }
           `;
         }

@@ -1,34 +1,21 @@
-import { generateCssString } from "../utils/index";
+import { generateNegativeSupportedUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text-indent with support for negative values
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-indent utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
+  const { theme = {}, prefix: globalPrefix } = configOptions;
   const { textIndent = {} } = theme;
 
-  Object.entries(textIndent).forEach(([key, value]) => {
-    textIndent[`-${key}`] = `-${value}`.replace("--", "-");
+  return generateNegativeSupportedUtility({
+    configOptions,
+    cssProperty: "text-indent",
+    utilityPrefix: "indent",
+    negativePrefix: `${globalPrefix}-indent`,
+    valueMap: textIndent,
+    variantKey: "textIndent",
   });
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(textIndent, (keyTmp, value) => {
-        let prefix = `${globalPrefix}indent`;
-        let key = keyTmp;
-        if (`${key}`.indexOf("-") >= 0) {
-          key = key.split("-").join("");
-          prefix = `${globalPrefix}-indent`;
-        }
-
-        return `
-          ${pseudoClass(`${prefix}-${key}`, variants.textIndent)} {
-            text-indent: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
 }

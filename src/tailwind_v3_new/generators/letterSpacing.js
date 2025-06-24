@@ -1,26 +1,20 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate letter-spacing utility classes
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}tracking`;
-
+  const { theme = {} } = configOptions;
   const { letterSpacing = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        letterSpacing,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.letterSpacing)} {
-            letter-spacing: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "letter-spacing",
+    utilityPrefix: "tracking",
+    valueMap: letterSpacing,
+    variantKey: "letterSpacing",
+  });
 }

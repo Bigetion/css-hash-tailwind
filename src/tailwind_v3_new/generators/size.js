@@ -2,7 +2,7 @@ import { generateSimpleUtility } from "./utils/generatorUtils";
 
 /**
  * Generate size utility classes that set both width and height to the same value
- * 
+ *
  * @param {Object} configOptions - Configuration options
  * @returns {string} Generated CSS string
  */
@@ -15,6 +15,6 @@ export default function generator(configOptions = {}) {
     cssProperty: ["width", "height"], // Pass an array of properties
     utilityPrefix: "size",
     valueMap: size,
-    variantKey: "size"
+    variantKey: "size",
   });
 }

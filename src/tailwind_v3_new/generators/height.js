@@ -2,7 +2,7 @@ import { generateSimpleUtility } from "./utils/generatorUtils";
 
 /**
  * Generate height utility classes
- * 
+ *
  * @param {Object} configOptions - Configuration options
  * @returns {string} Generated CSS string
  */
@@ -15,6 +15,6 @@ export default function generator(configOptions = {}) {
     cssProperty: "height",
     utilityPrefix: "h",
     valueMap: height,
-    variantKey: "height"
+    variantKey: "height",
   });
 }

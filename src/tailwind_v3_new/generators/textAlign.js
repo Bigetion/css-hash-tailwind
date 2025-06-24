@@ -1,26 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text alignment
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-align utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const propertyOptions = {
+    left: "left",
+    center: "center",
+    right: "right",
+    justify: "justify",
+  };
 
-  const prefix = `${globalPrefix}text`;
-
-  const propertyOptions = ["left", "center", "right", "justify"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.textAlign)} {
-            text-align: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "text-align",
+    utilityPrefix: "text",
+    valueMap: propertyOptions,
+    variantKey: "textAlign",
+  });
 }

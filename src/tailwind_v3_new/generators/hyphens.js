@@ -1,27 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for hyphens with vendor prefixes
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for hyphens utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Map property values as object with key-value pairs
+  const propertyOptions = {
+    none: "none",
+    manual: "manual",
+    auto: "auto",
+  };
 
-  const prefix = `${globalPrefix}hyphens`;
-
-  const propertyOptions = ["none", "manual", "auto"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.hyphens)} {
-            -webkit-hyphens: ${value};
-            hyphens: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: ["-webkit-hyphens", "hyphens"], // Array of properties to set with the same value
+    utilityPrefix: "hyphens",
+    valueMap: propertyOptions,
+    variantKey: "hyphens",
+  });
 }

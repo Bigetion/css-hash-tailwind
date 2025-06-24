@@ -1,27 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate font-style utility classes
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
-
-  const propertyOptions = {
+  // Nilai untuk properti font-style
+  const valueMap = {
     italic: "italic",
     "not-italic": "normal",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}${key}`, variants.fontStyle)} {
-            font-style: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "font-style",
+    utilityPrefix: "", // Kosong karena kita ingin kelas seperti "italic", bukan "font-style-italic"
+    valueMap,
+    variantKey: "fontStyle",
+    useHyphen: false, // Jangan gunakan pemisah antara prefix dan key
+  });
 }

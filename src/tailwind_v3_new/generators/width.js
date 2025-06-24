@@ -2,7 +2,7 @@ import { generateSimpleUtility } from "./utils/generatorUtils";
 
 /**
  * Generate width utility classes
- * 
+ *
  * @param {Object} configOptions - Configuration options
  * @returns {string} Generated CSS string
  */
@@ -15,6 +15,6 @@ export default function generator(configOptions = {}) {
     cssProperty: "width",
     utilityPrefix: "w",
     valueMap: width,
-    variantKey: "width"
+    variantKey: "width",
   });
 }

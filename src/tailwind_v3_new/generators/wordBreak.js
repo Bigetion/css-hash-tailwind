@@ -1,26 +1,53 @@
-import { generateCssString } from "../utils/index";
+import { generateCustomUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for word breaking and overflow wrap
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for word-break utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
+  // Generate break-normal class (sets both overflow-wrap and word-break)
+  const breakNormal = generateCustomUtility({
+    configOptions,
+    className: "break-normal",
+    properties: {
+      "overflow-wrap": "normal",
+      "word-break": "normal",
+    },
+    variantKey: "wordBreak",
+  });
 
-  const responsiveCssString = generateCssString(({ pseudoClass }) => {
-    const cssString = `
-				${pseudoClass(`${prefix}break-normal`, variants.wordBreak)} {
-					overflow-wrap: normal;
-					word-break: normal;
-				}
-				${pseudoClass(`${prefix}break-words`, variants.wordBreak)} {
-					overflow-wrap: break-word;
-				}
-				${pseudoClass(`${prefix}break-all`, variants.wordBreak)} {
-					word-break: break-all;
-				}
-				${pseudoClass(`${prefix}break-keep`, variants.wordBreak)} {
-					word-break: keep-all;
-				}
-			`;
-    return cssString;
-  }, configOptions);
+  // Generate break-words class
+  const breakWords = generateCustomUtility({
+    configOptions,
+    className: "break-words",
+    properties: {
+      "overflow-wrap": "break-word",
+    },
+    variantKey: "wordBreak",
+  });
 
-  return responsiveCssString;
+  // Generate break-all class
+  const breakAll = generateCustomUtility({
+    configOptions,
+    className: "break-all",
+    properties: {
+      "word-break": "break-all",
+    },
+    variantKey: "wordBreak",
+  });
+
+  // Generate break-keep class
+  const breakKeep = generateCustomUtility({
+    configOptions,
+    className: "break-keep",
+    properties: {
+      "word-break": "keep-all",
+    },
+    variantKey: "wordBreak",
+  });
+
+  // Combine all utilities
+  return breakNormal + breakWords + breakAll + breakKeep;
 }

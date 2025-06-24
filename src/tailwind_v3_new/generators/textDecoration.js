@@ -1,8 +1,12 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for text decoration
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for text-decoration utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
-
   const propertyOptions = {
     underline: "underline",
     overline: "overline",
@@ -10,20 +14,12 @@ export default function generator(configOptions = {}) {
     "no-underline": "none",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}${key}`, variants.textDecoration)} {
-            text-decoration: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "text-decoration",
+    utilityPrefix: "", // No additional prefix needed since keys already have it
+    valueMap: propertyOptions,
+    variantKey: "textDecoration",
+    useHyphen: false, // Use class names without hyphens (e.g., underline not text-underline)
+  });
 }

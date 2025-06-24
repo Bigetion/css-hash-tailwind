@@ -1,9 +1,14 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate font-variant-numeric utility classes for controlling numeric figures
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix, variants = {} } = configOptions;
-
-  const propertyOptions = {
+  // Map nilai untuk properti font-variant-numeric
+  const valueMap = {
     "normal-nums": "normal",
     ordinal: "ordinal",
     "slashed-zero": "slashed-zero",
@@ -15,20 +20,12 @@ export default function generator(configOptions = {}) {
     "stacked-fractions": "stacked-fractions",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.fontVariantNumeric)} {
-            font-variant-numeric: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "font-variant-numeric",
+    utilityPrefix: "", // Menggunakan prefix dari configOptions
+    valueMap,
+    variantKey: "fontVariantNumeric",
+    useHyphen: true, // Mempertahankan hyphen di nama kelas seperti "normal-nums"
+  });
 }
