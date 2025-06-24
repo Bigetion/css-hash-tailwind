@@ -1,31 +1,23 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for background-origin with vendor prefixes
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for background-origin utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}bg-origin`;
-
   const propertyOptions = {
     border: "border-box",
     padding: "padding-box",
     content: "content-box",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.backgroundOrigin)} {
-            -webkit-background-origin: ${value};
-            background-origin: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: ["-webkit-background-origin", "background-origin"], // Array of properties to set with the same value
+    utilityPrefix: "bg-origin",
+    valueMap: propertyOptions,
+    variantKey: "backgroundOrigin",
+  });
 }

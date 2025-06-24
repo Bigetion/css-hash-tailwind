@@ -1,33 +1,45 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for blur and backdrop-blur effects
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for blur and backdrop-blur utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}blur`;
-  const basePrefix = prefix.replace(globalPrefix, "");
-
+  const { theme = {} } = configOptions;
   const { blur = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(blur, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.blur)} {
-            --blur: blur(${value}) !important;
-          }
-          ${pseudoClass(
-            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
-            variants.blur
-          )} {
-            --backdrop-blur: blur(${value}) !important;
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  // Create a new object for the values with properly formatted keys and values
+  const formattedValues = {};
+  Object.entries(blur).forEach(([key, value]) => {
+    // Use an empty string as the key for "default" to create a class without suffix
+    // For all other keys, add a leading hyphen
+    const formattedKey = key.toLowerCase() === "default" ? "" : `-${key}`;
+    formattedValues[formattedKey] = `blur(${value})`;
+  });
 
-  return responsiveCssString;
+  // Generate blur utilities
+  const blurUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--blur",
+    utilityPrefix: "blur",
+    valueMap: formattedValues,
+    variantKey: "blur",
+    useHyphen: false, // Don't add a hyphen between prefix and key since keys already have it when needed
+    transformValue: (value) => `${value} !important`, // Add !important to each value
+  });
+
+  // Generate backdrop-blur utilities
+  const backdropBlurUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--backdrop-blur",
+    utilityPrefix: "backdrop-blur",
+    valueMap: formattedValues,
+    variantKey: "blur",
+    useHyphen: false, // Don't add a hyphen between prefix and key since keys already have it when needed
+    transformValue: (value) => `${value} !important`, // Add !important to each value
+  });
+
+  return blurUtilities + backdropBlurUtilities;
 }

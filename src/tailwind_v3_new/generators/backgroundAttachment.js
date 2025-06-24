@@ -1,26 +1,24 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for background-attachment
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for background-attachment utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Map property values as object with key-value pairs
+  const propertyOptions = {
+    fixed: "fixed",
+    local: "local",
+    scroll: "scroll",
+  };
 
-  const prefix = `${globalPrefix}bg`;
-
-  const propertyOptions = ["fixed", "local", "scroll"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.backgroundAttachment)} {
-            background-attachment: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "background-attachment",
+    utilityPrefix: "bg",
+    valueMap: propertyOptions,
+    variantKey: "backgroundAttachment",
+  });
 }

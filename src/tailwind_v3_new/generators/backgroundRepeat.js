@@ -1,10 +1,12 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for background-repeat
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for background-repeat utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}bg`;
-
   const propertyOptions = {
     repeat: "repeat",
     "no-repeat": "no-repeat",
@@ -14,20 +16,11 @@ export default function generator(configOptions = {}) {
     "repeat-space": "space",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.backgroundRepeat)} {
-            background-repeat: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "background-repeat",
+    utilityPrefix: "bg",
+    valueMap: propertyOptions,
+    variantKey: "backgroundRepeat",
+  });
 }

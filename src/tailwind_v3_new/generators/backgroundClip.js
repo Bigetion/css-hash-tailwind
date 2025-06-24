@@ -1,10 +1,12 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for background-clip with vendor prefixes
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for background-clip utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}bg-clip`;
-
   const propertyOptions = {
     border: "border-box",
     padding: "padding-box",
@@ -12,21 +14,11 @@ export default function generator(configOptions = {}) {
     text: "text",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.backgroundClip)} {
-            -webkit-background-clip: ${value};
-            background-clip: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: ["-webkit-background-clip", "background-clip"], // Array of properties to set with the same value
+    utilityPrefix: "bg-clip",
+    valueMap: propertyOptions,
+    variantKey: "backgroundClip",
+  });
 }
