@@ -1,55 +1,52 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate mix-blend-mode and background-blend-mode utilities
+ * Creates utilities for controlling how an element's content blends with its background and how an element's background layers blend
+ * 
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Define the blend mode values
+  const blendModes = {
+    "normal": "normal",
+    "multiply": "multiply",
+    "screen": "screen",
+    "overlay": "overlay",
+    "darken": "darken",
+    "lighten": "lighten",
+    "color-dodge": "color-dodge",
+    "color-burn": "color-burn",
+    "hard-light": "hard-light",
+    "soft-light": "soft-light",
+    "difference": "difference",
+    "exclusion": "exclusion",
+    "hue": "hue",
+    "saturation": "saturation",
+    "color": "color",
+    "luminosity": "luminosity",
+    "plus-lighter": "plus-lighter"
+  };
 
-  const prefix = `${globalPrefix}mix-blend`;
+  // Generate mix-blend-mode utilities
+  const mixBlendModeUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "mix-blend-mode",
+    utilityPrefix: "mix-blend",
+    valueMap: blendModes,
+    variantKey: "mixBlendMode"
+  });
 
-  const propertyOptions = [
-    "normal",
-    "multiply",
-    "screen",
-    "overlay",
-    "darken",
-    "lighten",
-    "color-dodge",
-    "color-burn",
-    "hard-light",
-    "soft-light",
-    "difference",
-    "exclusion",
-    "hue",
-    "saturation",
-    "color",
-    "luminosity",
-    "plus-lighter",
-  ];
+  // Generate background-blend-mode utilities
+  const backgroundBlendModeUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "background-blend-mode",
+    utilityPrefix: "bg-blend",
+    valueMap: blendModes,
+    variantKey: "mixBlendMode"
+  });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.mixBlendMode)} {
-            mix-blend-mode: ${value};
-          }
-        `
-      );
-      cssString += getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(
-            `${prefix.replace("mix", "bg")}-${key}`,
-            variants.mixBlendMode
-          )} {
-            background-blend-mode: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  // Combine both sets of utilities
+  return mixBlendModeUtilities + "\n" + backgroundBlendModeUtilities;
 }

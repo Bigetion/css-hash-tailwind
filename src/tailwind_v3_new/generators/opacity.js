@@ -1,33 +1,34 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate opacity utilities
+ * Creates both standard opacity and backdrop opacity utilities
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}opacity`;
-  const basePrefix = prefix.replace(globalPrefix, "");
-
+  const { theme = {} } = configOptions;
   const { opacity = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        opacity,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.opacity)} {
-            opacity: ${value};
-          }
-          ${pseudoClass(
-            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}-${key}`,
-            variants.opacity
-          )} {
-            --backdrop-opacity: opacity(${value});
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+  // Generate standard opacity utilities
+  const opacityUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "opacity",
+    utilityPrefix: "opacity",
+    valueMap: opacity,
+    variantKey: "opacity",
+  });
 
-  return responsiveCssString;
+  // Generate backdrop opacity utilities
+  const backdropOpacityUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--backdrop-opacity",
+    utilityPrefix: "backdrop-opacity",
+    valueMap: opacity,
+    variantKey: "opacity",
+    transformValue: (value) => `opacity(${value})`,
+  });
+
+  return opacityUtilities + "\n" + backdropOpacityUtilities;
 }

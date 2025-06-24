@@ -1,33 +1,46 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for saturate and backdrop-saturate effects
+ * These utilities control the color saturation filter applied to elements
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for saturate and backdrop-saturate utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}saturate`;
-  const basePrefix = prefix.replace(globalPrefix, "");
-
+  const { theme = {} } = configOptions;
   const { saturate = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(saturate, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.saturate)} {
-            --saturate: saturate(${value}) !important;
-          }
-          ${pseudoClass(
-            `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
-            variants.saturate
-          )} {
-            --backdrop-saturate: saturate(${value}) !important;
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  // Create a new object for the values with properly formatted keys and values
+  const formattedValues = {};
+  Object.entries(saturate).forEach(([key, value]) => {
+    // Use an empty string as the key for "default" to create a class without suffix
+    // For all other keys, add a leading hyphen
+    const formattedKey = key.toLowerCase() === "default" ? "" : `-${key}`;
+    formattedValues[formattedKey] = value;
+  });
 
-  return responsiveCssString;
+  // Generate saturate utilities
+  const saturateUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--saturate",
+    utilityPrefix: "saturate",
+    valueMap: formattedValues,
+    variantKey: "saturate",
+    useHyphen: false, // Don't add a hyphen between prefix and key since keys already have it when needed
+    transformValue: (value) => `saturate(${value}) !important`, // Transform and add !important
+  });
+
+  // Generate backdrop-saturate utilities
+  const backdropSaturateUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--backdrop-saturate",
+    utilityPrefix: "backdrop-saturate",
+    valueMap: formattedValues,
+    variantKey: "saturate",
+    useHyphen: false, // Don't add a hyphen between prefix and key since keys already have it when needed
+    transformValue: (value) => `saturate(${value}) !important`, // Transform and add !important
+  });
+
+  return saturateUtilities + "\n" + backdropSaturateUtilities;
 }
