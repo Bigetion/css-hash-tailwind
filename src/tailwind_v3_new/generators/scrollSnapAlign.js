@@ -1,31 +1,25 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate scroll-snap-align utility classes
+ * Controls how a scroll container's elements are aligned within its container
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}snap`;
-
-  const propertyOptions = {
+  const scrollSnapAlignValues = {
     start: "start",
     end: "end",
     center: "center",
     "align-none": "none",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.scrollSnapAlign)} {
-            scroll-snap-align: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "scroll-snap-align",
+    utilityPrefix: "snap",
+    valueMap: scrollSnapAlignValues,
+    variantKey: "scrollSnapAlign",
+  });
 }

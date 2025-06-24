@@ -1,38 +1,38 @@
-import { generateCssString } from "../utils/index";
+import {
+  generateColorUtility,
+  generateSimpleUtility,
+} from "./utils/generatorUtils";
 
+/**
+ * Generate caret-color utility classes with opacity support
+ * Controls the color of the text input cursor (caret)
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { theme = {} } = configOptions;
+  const { caretColor = {}, opacity = {} } = theme;
 
-  const prefix = `${globalPrefix}caret`;
+  // Generate the caret color utilities
+  const colorUtilities = generateColorUtility({
+    configOptions,
+    cssProperty: "caret-color",
+    utilityPrefix: "caret",
+    colorMap: caretColor,
+    variantKey: "caretColor",
+    opacityVar: "--caret-opacity",
+  });
 
-  const { caretColor, opacity = {} } = theme;
+  // Generate opacity utilities for caret colors
+  const opacityUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--caret-opacity",
+    utilityPrefix: "caret-opacity",
+    valueMap: opacity,
+    variantKey: "caretColor",
+  });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors, getCssByOptions }) => {
-      let cssString = getCssByColors(caretColor, (key, value, rgbValue) => {
-        let rgbPropertyValue = "";
-        if (rgbValue) {
-          rgbPropertyValue = `caret-color: rgba(${rgbValue}, var(--caret-opacity));`;
-        }
-        return `
-            ${pseudoClass(`${prefix}-${key}`, variants.caretColor, {})} {
-              --caret-opacity: 1;
-              caret-color: ${value};${rgbPropertyValue}
-            }
-          `;
-      });
-      cssString += getCssByOptions(
-        opacity,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.caretColor, {})} {
-            --caret-opacity: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  // Combine both utility sets
+  return colorUtilities + "\n" + opacityUtilities;
 }

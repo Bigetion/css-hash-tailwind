@@ -1,31 +1,44 @@
+import { generateSimpleUtility } from "./utils/generatorUtils";
 import { generateCssString } from "../utils/index";
 
+/**
+ * Generate resize utility classes
+ * Controls how an element can be resized
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
   const { prefix: globalPrefix, variants = {} } = configOptions;
 
-  const prefix = `${globalPrefix}resize`;
+  // Resize has a special case where the class name "resize" with no suffix
+  // creates "resize: both". We need custom handling for this.
 
+  // First, handle the regular resize-x and resize-y utilities
   const propertyOptions = {
     none: "none",
     y: "vertical",
     x: "horizontal",
-    default: "both",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(propertyOptions, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.resize)} {
-            resize: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  // Generate the standard variants
+  const standardResizeUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "resize",
+    utilityPrefix: "resize",
+    valueMap: propertyOptions,
+    variantKey: "resize",
+  });
 
-  return responsiveCssString;
+  // Now handle the special case for "resize" (without suffix) → "resize: both"
+  const specialCaseUtility = generateCssString(({ pseudoClass }) => {
+    return `
+        ${pseudoClass(`${globalPrefix}resize`, variants.resize)} {
+          resize: both;
+        }
+      `;
+  }, configOptions);
+
+  // Combine all utilities
+  return standardResizeUtilities + "\n" + specialCaseUtility;
 }

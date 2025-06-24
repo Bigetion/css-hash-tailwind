@@ -1,25 +1,38 @@
-import { generateCssString } from "../utils/index";
+import {
+  generateColorUtility,
+  generateSimpleUtility,
+} from "./utils/generatorUtils";
 
+/**
+ * Generate stroke utility classes for SVG elements
+ * Controls the color of the SVG stroke attribute with support for opacity
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { theme = {} } = configOptions;
+  const { stroke = {}, opacity = {} } = theme;
 
-  const prefix = `${globalPrefix}stroke`;
+  // Generate stroke color utilities with opacity support
+  const colorUtilities = generateColorUtility({
+    configOptions,
+    cssProperty: "stroke",
+    utilityPrefix: "stroke",
+    colorMap: stroke,
+    variantKey: "stroke",
+    opacityVar: "--stroke-opacity",
+  });
 
-  const { stroke } = theme;
+  // Generate stroke-opacity utilities for controlling opacity independently
+  const opacityUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--stroke-opacity",
+    utilityPrefix: "stroke-opacity",
+    valueMap: opacity,
+    variantKey: "stroke",
+  });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors }) => {
-      const cssString = getCssByColors(stroke, (key, value) => {
-        return `
-            ${pseudoClass(`${prefix}-${key}`, variants.textColor, {})} {
-              stroke: ${value};
-            }
-          `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  // Combine both utility sets
+  return colorUtilities + "\n" + opacityUtilities;
 }

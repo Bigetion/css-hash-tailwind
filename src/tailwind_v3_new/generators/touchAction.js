@@ -1,37 +1,32 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate touch-action utility classes
+ * Controls how touch interactions are handled on an element
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Convert array to object mapping for generateSimpleUtility
+  const touchActionValues = {
+    auto: "auto",
+    none: "none",
+    "pan-x": "pan-x",
+    "pan-left": "pan-left",
+    "pan-right": "pan-right",
+    "pan-y": "pan-y",
+    "pan-up": "pan-up",
+    "pan-down": "pan-down",
+    "pinch-zoom": "pinch-zoom",
+    manipulation: "manipulation",
+  };
 
-  const prefix = `${globalPrefix}touch`;
-
-  const propertyOptions = [
-    "auto",
-    "none",
-    "pan-x",
-    "pan-left",
-    "pan-right",
-    "pan-y",
-    "pan-up",
-    "pan-down",
-    "pinch-zoom",
-    "manipulation",
-  ];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.touchAction)} {
-            touch-action: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "touch-action",
+    utilityPrefix: "touch",
+    valueMap: touchActionValues,
+    variantKey: "touchAction",
+  });
 }

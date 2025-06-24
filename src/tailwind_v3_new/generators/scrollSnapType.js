@@ -1,40 +1,50 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate scroll-snap-type utility classes
+ * Controls how strictly snap points are enforced on a scroll container
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}snap`;
-
-  const propertyOptions = {
+  // Main snap type values (none, x, y, both)
+  const snapTypeValues = {
     none: "none",
     x: "x var(--scroll-snap-strictness)",
     y: "y var(--scroll-snap-strictness)",
     both: "both var(--scroll-snap-strictness)",
   };
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      let cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.scrollSnapType)} {
-            --scroll-snap-strictness: proximity;
-            scroll-snap-type: ${value};
-          }
-        `
-      );
-      cssString += getCssByOptions(
-        ["mandatory", "proximity"],
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.scrollSnapType)} {
-            --scroll-snap-strictness: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
+  // Generate the main snap type utilities with default strictness
+  const snapTypeUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: [
+      {
+        property: "--scroll-snap-strictness",
+        transformValue: () => "proximity",
+      },
+      "scroll-snap-type",
+    ],
+    utilityPrefix: "snap",
+    valueMap: snapTypeValues,
+    variantKey: "scrollSnapType",
+  });
 
-  return responsiveCssString;
+  // Generate the strictness utilities (mandatory, proximity)
+  const strictnessValues = {
+    mandatory: "mandatory",
+    proximity: "proximity",
+  };
+
+  const strictnessUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--scroll-snap-strictness",
+    utilityPrefix: "snap",
+    valueMap: strictnessValues,
+    variantKey: "scrollSnapType",
+  });
+
+  // Combine all utilities
+  return snapTypeUtilities + "\n" + strictnessUtilities;
 }

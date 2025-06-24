@@ -1,38 +1,38 @@
-import { generateCssString } from "../utils/index";
+import {
+  generateColorUtility,
+  generateSimpleUtility,
+} from "./utils/generatorUtils";
 
+/**
+ * Generate accent-color utility classes with opacity support
+ * Controls the color of accent elements like checkboxes and radio buttons
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { theme = {} } = configOptions;
+  const { accentColor = {}, opacity = {} } = theme;
 
-  const prefix = `${globalPrefix}accent`;
+  // Generate the accent color utilities
+  const colorUtilities = generateColorUtility({
+    configOptions,
+    cssProperty: "accent-color",
+    utilityPrefix: "accent",
+    colorMap: accentColor,
+    variantKey: "accentColor",
+    opacityVar: "--accent-opacity",
+  });
 
-  const { accentColor, opacity = {} } = theme;
+  // Generate opacity utilities for accent colors
+  const opacityUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--accent-opacity",
+    utilityPrefix: "accent-opacity",
+    valueMap: opacity,
+    variantKey: "accentColor",
+  });
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors, getCssByOptions }) => {
-      let cssString = getCssByColors(accentColor, (key, value, rgbValue) => {
-        let rgbPropertyValue = "";
-        if (rgbValue) {
-          rgbPropertyValue = `accent-color: rgba(${rgbValue}, var(--accent-opacity));`;
-        }
-        return `
-            ${pseudoClass(`${prefix}-${key}`, variants.accentColor, {})} {
-              --accent-opacity: 1;
-              accent-color: ${value};${rgbPropertyValue}
-            }
-          `;
-      });
-      cssString += getCssByOptions(
-        opacity,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.accentColor, {})} {
-            --accent-opacity: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  // Combine both utility sets
+  return colorUtilities + "\n" + opacityUtilities;
 }

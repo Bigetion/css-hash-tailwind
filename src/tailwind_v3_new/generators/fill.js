@@ -1,21 +1,38 @@
-import { generateSimpleUtility } from "./utils/generatorUtils";
+import {
+  generateColorUtility,
+  generateSimpleUtility,
+} from "./utils/generatorUtils";
 
 /**
  * Generate fill utilities for SVG elements
- * Sets the fill color for SVG elements
+ * Sets the fill color for SVG elements with support for opacity
  *
  * @param {Object} configOptions - Configuration options
  * @returns {string} Generated CSS string
  */
 export default function generator(configOptions = {}) {
   const { theme = {} } = configOptions;
-  const { fill = {} } = theme;
+  const { fill = {}, opacity = {} } = theme;
 
-  return generateSimpleUtility({
+  // Generate fill color utilities with opacity support
+  const colorUtilities = generateColorUtility({
     configOptions,
     cssProperty: "fill",
     utilityPrefix: "fill",
-    valueMap: fill,
-    variantKey: "textColor", // Using textColor variants as in the original implementation
+    colorMap: fill,
+    variantKey: "fill",
+    opacityVar: "--fill-opacity",
   });
+
+  // Generate fill-opacity utilities for controlling opacity independently
+  const opacityUtilities = generateSimpleUtility({
+    configOptions,
+    cssProperty: "--fill-opacity",
+    utilityPrefix: "fill-opacity",
+    valueMap: opacity,
+    variantKey: "fill",
+  });
+
+  // Combine both utility sets
+  return colorUtilities + "\n" + opacityUtilities;
 }
