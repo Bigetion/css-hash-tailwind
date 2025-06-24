@@ -1,26 +1,21 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate border opacity utilities
+ * Sets a CSS custom property (--border-opacity) that's used by border-color utilities
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}border-opacity`;
-
+  const { theme = {} } = configOptions;
   const { borderOpacity = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        borderOpacity,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.borderOpacity)} {
-            --border-opacity: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--border-opacity", // Using CSS custom property
+    utilityPrefix: "border-opacity",
+    valueMap: borderOpacity,
+    variantKey: "borderOpacity",
+  });
 }

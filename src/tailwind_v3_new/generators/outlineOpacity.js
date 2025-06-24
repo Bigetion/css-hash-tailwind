@@ -1,26 +1,22 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate outline opacity utilities
+ * Sets a CSS custom property (--outline-opacity) that's used by outline-color utilities
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}outline-opacity`;
-
+  const { theme = {} } = configOptions;
   const { outlineOpacity = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(outlineOpacity, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.outlineOpacity)} {
-            --outline-opacity: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  // The generateSimpleUtility function will handle the default case correctly
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--outline-opacity", // Using CSS custom property
+    utilityPrefix: "outline-opacity",
+    valueMap: outlineOpacity,
+    variantKey: "outlineOpacity",
+  });
 }

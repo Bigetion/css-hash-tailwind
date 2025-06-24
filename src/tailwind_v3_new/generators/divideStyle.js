@@ -1,30 +1,36 @@
 import { generateCssString } from "../utils/index";
 
+/**
+ * Generate divide style utilities
+ * Applies border styles to elements using the '> :not([hidden]) ~ :not([hidden])' selector pattern
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
+  const { prefix: globalPrefix } = configOptions;
   const prefix = `${globalPrefix}divide`;
 
-  const propertyOptions = ["solid", "dashed", "dotted", "double", "none"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(
-            (pseudoString) =>
-              `${prefix}-${key}${pseudoString} > :not([hidden]) ~ :not([hidden])`,
-            variants.divideStyle
-          )} {
-            border-style: ${value};
-          }
-        `
-      );
-      return cssString;
+  // Define the available border styles
+  const borderStyles = ["solid", "dashed", "dotted", "double", "none"].reduce(
+    (acc, style) => {
+      acc[style] = style;
+      return acc;
     },
-    configOptions
+    {}
   );
 
-  return responsiveCssString;
+  return generateCssString(({ pseudoClass, getCssByOptions }) => {
+    return getCssByOptions(borderStyles, (key, value) => {
+      // Create the custom selector function for divide utilities
+      const selectorFn = (pseudoString) =>
+        `${prefix}-${key}${pseudoString} > :not([hidden]) ~ :not([hidden])`;
+
+      return `
+          ${pseudoClass(selectorFn, configOptions.variants.divideStyle)} {
+            border-style: ${value};
+          }
+        `;
+    });
+  }, configOptions);
 }

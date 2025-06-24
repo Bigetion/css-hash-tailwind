@@ -1,26 +1,23 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generates CSS utility classes for border-collapse
+ *
+ * @param {Object} configOptions - Configuration options from Tailwind config
+ * @returns {string} Generated CSS string for border-collapse utilities
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  // Map property values as object with key-value pairs
+  const propertyOptions = {
+    collapse: "collapse",
+    separate: "separate",
+  };
 
-  const prefix = `${globalPrefix}border`;
-
-  const propertyOptions = ["collapse", "separate"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.borderCollapse)} {
-            border-collapse: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "border-collapse",
+    utilityPrefix: "border",
+    valueMap: propertyOptions,
+    variantKey: "borderCollapse",
+  });
 }

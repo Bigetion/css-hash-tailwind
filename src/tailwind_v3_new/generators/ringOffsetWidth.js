@@ -1,26 +1,21 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate ring offset width utilities
+ * Sets a CSS custom property (--ring-offset-width) used for controlling the offset of focus rings
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}ring-offset`;
-
+  const { theme = {} } = configOptions;
   const { ringOffsetWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        ringOffsetWidth,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.ringOffsetWidth)} {
-            --ring-offset-width: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--ring-offset-width",
+    utilityPrefix: "ring-offset",
+    valueMap: ringOffsetWidth,
+    variantKey: "ringOffsetWidth",
+  });
 }

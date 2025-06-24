@@ -1,26 +1,21 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate ring offset color utilities
+ * Sets a CSS custom property (--ring-offset-color) used for controlling the color of focus ring offsets
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}ring-offset`;
-
+  const { theme = {} } = configOptions;
   const { ringOffsetColor = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors }) => {
-      const cssString = getCssByColors(
-        ringOffsetColor,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.ringOffsetColor, {})} {
-            --ring-offset-color: ${value};
-          }
-        `
-      );
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--ring-offset-color",
+    utilityPrefix: "ring-offset",
+    valueMap: ringOffsetColor,
+    variantKey: "ringOffsetColor",
+  });
 }

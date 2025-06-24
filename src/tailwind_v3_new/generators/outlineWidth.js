@@ -1,25 +1,21 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate outline width utilities
+ * Sets the outline-width CSS property to control the thickness of an element's outline
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}outline`;
-
+  const { theme = {} } = configOptions;
   const { outlineWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(outlineWidth, (key, value) => {
-        return `
-          ${pseudoClass(`${prefix}-${key}`, variants.outlineWidth)} {
-            outline-width: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "outline-width",
+    utilityPrefix: "outline",
+    valueMap: outlineWidth,
+    variantKey: "outlineWidth",
+  });
 }

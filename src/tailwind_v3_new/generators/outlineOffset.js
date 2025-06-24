@@ -1,25 +1,21 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate outline offset utilities
+ * Sets the outline-offset CSS property to control distance between an outline and the edge of an element
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}outline-offset`;
-
+  const { theme = {} } = configOptions;
   const { outlineOffset = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(outlineOffset, (key, value) => {
-        return `
-          ${pseudoClass(`${prefix}-${key}`, variants.outlineOffset)} {
-            outline-offset: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "outline-offset",
+    utilityPrefix: "outline-offset",
+    valueMap: outlineOffset,
+    variantKey: "outlineOffset",
+  });
 }

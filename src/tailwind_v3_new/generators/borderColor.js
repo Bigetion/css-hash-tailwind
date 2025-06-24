@@ -1,71 +1,180 @@
 import { generateCssString } from "../utils/index";
 
+/**
+ * Generate border color utilities with directional variants
+ * Supports all sides, x/y axes, and individual sides for border color
+ * Uses CSS variable for opacity control
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
+  const { prefix: globalPrefix, theme = {} } = configOptions;
   const prefix = `${globalPrefix}border`;
-
   const { borderColor = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors }) => {
-      const cssString = getCssByColors(
-        borderColor,
-        (keyTmp, value, rgbValue) => {
-          if (keyTmp.toLowerCase() === "default") {
-            return "";
-          }
-          const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-          let rgbPropertyValue = "";
-          if (rgbValue) {
-            rgbPropertyValue = `border-color: rgba(${rgbValue}, var(--border-opacity));`;
-          }
-          return `
-            ${pseudoClass(`${prefix}${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-x${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-left-color: ${value};${rgbPropertyValue}
-              border-right-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-y${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-top-color: ${value};${rgbPropertyValue}
-              border-bottom-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-s${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-inline-start-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-e${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-inline-end-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-t${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-top-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-r${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-right-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-b${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-bottom-color: ${value};${rgbPropertyValue}
-            }
-            ${pseudoClass(`${prefix}-l${key}`, variants.borderColor, {})} {
-              --border-opacity: 1;
-              border-left-color: ${value};${rgbPropertyValue}
-            }
-          `;
-        }
-      );
-      return cssString;
-    },
-    configOptions
-  );
+  return generateCssString(({ pseudoClass, getCssByColors }) => {
+    return getCssByColors(borderColor, (keyTmp, value, rgbValue) => {
+      // Skip default key
+      if (keyTmp.toLowerCase() === "default") {
+        return "";
+      }
+      const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
 
-  return responsiveCssString;
+      // Define all border color variants
+      const colorVariants = [
+        // All borders
+        {
+          suffix: "",
+          properties: [
+            {
+              name: "border-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        // X-axis (left and right)
+        {
+          suffix: "-x",
+          properties: [
+            {
+              name: "border-left-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+            {
+              name: "border-right-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        // Y-axis (top and bottom)
+        {
+          suffix: "-y",
+          properties: [
+            {
+              name: "border-top-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+            {
+              name: "border-bottom-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        // Logical directions (for RTL support)
+        {
+          suffix: "-s",
+          properties: [
+            {
+              name: "border-inline-start-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        {
+          suffix: "-e",
+          properties: [
+            {
+              name: "border-inline-end-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        // Individual sides
+        {
+          suffix: "-t",
+          properties: [
+            {
+              name: "border-top-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        {
+          suffix: "-r",
+          properties: [
+            {
+              name: "border-right-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        {
+          suffix: "-b",
+          properties: [
+            {
+              name: "border-bottom-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+        {
+          suffix: "-l",
+          properties: [
+            {
+              name: "border-left-color",
+              value,
+              rgbValue: rgbValue
+                ? `rgba(${rgbValue}, var(--border-opacity))`
+                : null,
+            },
+          ],
+        },
+      ];
+
+      // Generate CSS for all variants
+      let cssString = "";
+
+      colorVariants.forEach((variant) => {
+        const className = `${prefix}${variant.suffix}${key}`;
+        let propertyCss = "";
+
+        // Add all properties for this variant
+        variant.properties.forEach((prop) => {
+          propertyCss += `\n              ${prop.name}: ${prop.value};`;
+          if (prop.rgbValue) {
+            propertyCss += `\n              ${prop.name}: ${prop.rgbValue};`;
+          }
+        });
+
+        // Add this variant's CSS
+        cssString += `
+            ${pseudoClass(className, configOptions.variants.borderColor, {})} {
+              --border-opacity: 1;${propertyCss}
+            }`;
+      });
+
+      return cssString;
+    });
+  }, configOptions);
 }

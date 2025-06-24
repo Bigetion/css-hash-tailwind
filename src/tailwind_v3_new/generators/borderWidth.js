@@ -1,52 +1,81 @@
 import { generateCssString } from "../utils/index";
+import { generateCustomUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate border width utilities
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
+  const { prefix: globalPrefix, theme = {} } = configOptions;
   const prefix = `${globalPrefix}border`;
-
   const { borderWidth = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(borderWidth, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.borderWidth)} {
-            border-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-x${key}`, variants.borderWidth)} {
-            border-left-width: ${value};
-            border-right-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-y${key}`, variants.borderWidth)} {
-            border-top-width: ${value};
-            border-bottom-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-s${key}`, variants.borderWidth)} {
-            border-inline-start-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-e${key}`, variants.borderWidth)} {
-            border-inline-end-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-t${key}`, variants.borderWidth)} {
-            border-top-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-r${key}`, variants.borderWidth)} {
-            border-right-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-b${key}`, variants.borderWidth)} {
-            border-bottom-width: ${value};
-          }
-          ${pseudoClass(`${prefix}-l${key}`, variants.borderWidth)} {
-            border-left-width: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  return generateCssString(({ getCssByOptions }) => {
+    return getCssByOptions(borderWidth, (keyTmp, value) => {
+      const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
 
-  return responsiveCssString;
+      // Define all the border width variants
+      const widthVariants = [
+        // All sides (default)
+        {
+          className: `${prefix}${key}`,
+          properties: { "border-width": value },
+        },
+        // X/Y axes
+        {
+          className: `${prefix}-x${key}`,
+          properties: {
+            "border-left-width": value,
+            "border-right-width": value,
+          },
+        },
+        {
+          className: `${prefix}-y${key}`,
+          properties: {
+            "border-top-width": value,
+            "border-bottom-width": value,
+          },
+        },
+        // Logical properties (RTL support)
+        {
+          className: `${prefix}-s${key}`,
+          properties: { "border-inline-start-width": value },
+        },
+        {
+          className: `${prefix}-e${key}`,
+          properties: { "border-inline-end-width": value },
+        },
+        // Individual sides
+        {
+          className: `${prefix}-t${key}`,
+          properties: { "border-top-width": value },
+        },
+        {
+          className: `${prefix}-r${key}`,
+          properties: { "border-right-width": value },
+        },
+        {
+          className: `${prefix}-b${key}`,
+          properties: { "border-bottom-width": value },
+        },
+        {
+          className: `${prefix}-l${key}`,
+          properties: { "border-left-width": value },
+        },
+      ];
+
+      // Generate CSS for all variants
+      return widthVariants
+        .map((variant) => {
+          return generateCustomUtility({
+            configOptions,
+            className: variant.className.substring(globalPrefix.length), // Remove the global prefix
+            properties: variant.properties,
+            variantKey: "borderWidth",
+          }).replace(/\n\s*generateCssString\([^)]+\)/, ""); // Remove the generateCssString wrapper
+        })
+        .join("\n");
+    });
+  }, configOptions);
 }

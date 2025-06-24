@@ -1,31 +1,23 @@
-import { generateCssString } from "../utils/index";
+import { generateColorUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate ring color utilities
+ * Sets CSS variables for ring color with opacity support
+ * These variables are used by the box-shadow property in ring width utilities
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}ring`;
-
+  const { theme = {} } = configOptions;
   const { ringColor = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors }) => {
-      const cssString = getCssByColors(ringColor, (keyTmp, value, rgbValue) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        let rgbPropertyValue = "";
-        if (rgbValue) {
-          rgbPropertyValue = `--ring-color: rgba(${rgbValue}, var(--ring-opacity));`;
-        }
-        return `
-            ${pseudoClass(`${prefix}${key}`, variants.ringColor, {})} {
-              --ring-opacity: 1;
-              --ring-color: ${value};${rgbPropertyValue}
-            }
-          `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateColorUtility({
+    configOptions,
+    cssProperty: "--ring-color",
+    utilityPrefix: "ring",
+    colorMap: ringColor,
+    variantKey: "ringColor",
+    opacityVar: "--ring-opacity",
+  });
 }

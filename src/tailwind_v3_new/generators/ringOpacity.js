@@ -1,26 +1,22 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate ring opacity utilities
+ * Sets a CSS custom property (--ring-opacity) that's used by ring-color utilities
+ * Controls the opacity of focus rings
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}ring-opacity`;
-
+  const { theme = {} } = configOptions;
   const { ringOpacity = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(ringOpacity, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.ringOpacity)} {
-            --ring-opacity: ${value};
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
-
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--ring-opacity",
+    utilityPrefix: "ring-opacity",
+    valueMap: ringOpacity,
+    variantKey: "ringOpacity",
+  });
 }

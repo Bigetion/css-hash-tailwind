@@ -1,37 +1,30 @@
-import { generateCssString } from "../utils/index";
+import { generateColorUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate outline color utilities
+ * Sets outline colors with opacity support via CSS variable
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}outline`;
-
+  const { theme = {} } = configOptions;
   const { outlineColor = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByColors }) => {
-      const cssString = getCssByColors(
-        outlineColor,
-        (keyTmp, value, rgbValue) => {
-          if (keyTmp.toLowerCase() === "default") {
-            return "";
-          }
-          const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-          let rgbPropertyValue = "";
-          if (rgbValue) {
-            rgbPropertyValue = `outline-color: rgba(${rgbValue}, var(--outline-opacity));`;
-          }
-          return `
-            ${pseudoClass(`${prefix}${key}`, variants.outlineColor, {})} {
-              --outline-opacity: 1;
-              outline-color: ${value};${rgbPropertyValue}
-            }
-          `;
-        }
-      );
-      return cssString;
-    },
-    configOptions
-  );
+  // Filter out the 'default' key if present
+  const filteredColors = Object.entries(outlineColor)
+    .filter(([key]) => key.toLowerCase() !== "default")
+    .reduce((acc, [key, value]) => {
+      acc[key] = value;
+      return acc;
+    }, {});
 
-  return responsiveCssString;
+  return generateColorUtility({
+    configOptions,
+    cssProperty: "outline-color",
+    utilityPrefix: "outline",
+    colorMap: filteredColors,
+    variantKey: "outlineColor",
+    opacityVar: "--outline-opacity",
+  });
 }

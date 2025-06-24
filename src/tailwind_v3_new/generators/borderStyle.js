@@ -1,26 +1,25 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate border style utilities
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
-
-  const prefix = `${globalPrefix}border`;
-
-  const propertyOptions = ["solid", "dashed", "dotted", "double", "none"];
-
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(
-        propertyOptions,
-        (key, value) => `
-          ${pseudoClass(`${prefix}-${key}`, variants.borderStyle)} {
-            border-style: ${value};
-          }
-        `
-      );
-      return cssString;
+  // Define the values for border styles
+  const borderStyles = ["solid", "dashed", "dotted", "double", "none"].reduce(
+    (acc, style) => {
+      acc[style] = style;
+      return acc;
     },
-    configOptions
+    {}
   );
 
-  return responsiveCssString;
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "border-style",
+    utilityPrefix: "border",
+    valueMap: borderStyles,
+    variantKey: "borderStyle",
+  });
 }

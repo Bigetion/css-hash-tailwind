@@ -1,27 +1,39 @@
-import { generateCssString } from "../utils/index";
+import { generateSimpleUtility } from "./utils/generatorUtils";
 
+/**
+ * Generate drop shadow utilities
+ * Sets a CSS custom property (--drop-shadow) that can be used for filter effects
+ * Transforms comma-separated shadow values into space-separated drop-shadow() functions
+ *
+ * @param {Object} configOptions - Configuration options
+ * @returns {string} Generated CSS string
+ */
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
-
-  const prefix = `${globalPrefix}drop-shadow`;
-
+  const { theme = {} } = configOptions;
   const { dropShadow = {} } = theme;
 
-  const responsiveCssString = generateCssString(
-    ({ pseudoClass, getCssByOptions }) => {
-      const cssString = getCssByOptions(dropShadow, (keyTmp, value) => {
-        const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
-        const values = value.split(",").map((o) => `drop-shadow(${o.trim()})`);
-        return `
-          ${pseudoClass(`${prefix}${key}`, variants.dropShadow)} {
-            --drop-shadow:  ${values.join(" ")} !important;
-          }
-        `;
-      });
-      return cssString;
-    },
-    configOptions
-  );
+  /**
+   * Transform function to convert comma-separated shadow values
+   * into space-separated drop-shadow() functions with !important
+   *
+   * @param {string} value - The comma-separated shadow value
+   * @returns {string} Transformed value with drop-shadow() functions
+   */
+  const transformShadowValue = (value) => {
+    const shadowFunctions = value
+      .split(",")
+      .map((shadow) => `drop-shadow(${shadow.trim()})`)
+      .join(" ");
 
-  return responsiveCssString;
+    return `${shadowFunctions} !important`;
+  };
+
+  return generateSimpleUtility({
+    configOptions,
+    cssProperty: "--drop-shadow",
+    utilityPrefix: "drop-shadow",
+    valueMap: dropShadow,
+    variantKey: "dropShadow",
+    transformValue: transformShadowValue,
+  });
 }
