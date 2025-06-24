@@ -1,4 +1,4 @@
-import { generateSimpleUtility } from "./utils/generatorUtils";
+import { generateSimpleUtility } from "../utils/generator";
 
 /**
  * Generate gap utility classes for gap, column-gap, and row-gap

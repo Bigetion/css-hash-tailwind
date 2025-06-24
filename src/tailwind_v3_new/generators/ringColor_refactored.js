@@ -1,20 +1,20 @@
 import { generateColorUtility } from "../utils/generator";
 
 /**
- * Generate background-color utility classes
+ * Generate ring color utility classes
  * @param {Object} configOptions - Configuration options
  * @returns {string} Generated CSS string
  */
 export default function generator(configOptions = {}) {
   const { theme = {} } = configOptions;
-  const { backgroundColor = {} } = theme;
+  const { ringColor = {} } = theme;
 
   return generateColorUtility({
     configOptions,
-    cssProperty: "background-color",
-    utilityPrefix: "bg",
-    colorMap: backgroundColor,
-    variantKey: "backgroundColor",
-    opacityVar: "--bg-opacity",
+    cssProperty: "--ring-color",
+    utilityPrefix: "ring",
+    colorMap: ringColor,
+    variantKey: "ringColor",
+    opacityVar: "--ring-opacity"
   });
 }

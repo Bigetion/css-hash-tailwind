@@ -1,4 +1,4 @@
-import { generateDirectionalProperties } from "./utils/generatorUtils";
+import { generateDirectionalProperties } from "../utils/generator";
 
 /**
  * Generate inset utility classes

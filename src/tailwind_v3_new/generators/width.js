@@ -1,4 +1,4 @@
-import { generateSimpleUtility } from "./utils/generatorUtils";
+import { generateSimpleUtility } from "../utils/generator";
 
 /**
  * Generate width utility classes

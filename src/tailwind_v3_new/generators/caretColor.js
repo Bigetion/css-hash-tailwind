@@ -1,7 +1,7 @@
 import {
   generateColorUtility,
   generateSimpleUtility,
-} from "./utils/generatorUtils";
+} from "../utils/generator";
 
 /**
  * Generate caret-color utility classes with opacity support

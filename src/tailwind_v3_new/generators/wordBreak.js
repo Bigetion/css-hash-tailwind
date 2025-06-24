@@ -1,4 +1,4 @@
-import { generateCustomUtility } from "./utils/generatorUtils";
+import { generateCustomUtility } from "../utils/generator";
 
 /**
  * Generates CSS utility classes for word breaking and overflow wrap

@@ -1,4 +1,4 @@
-import { generateDirectionalUtility } from "./utils/generatorUtils";
+import { generateDirectionalUtility } from "../utils/generator";
 
 /**
  * Generate scroll-margin utility classes

@@ -1,4 +1,4 @@
-import { generateColorUtility } from "./utils/generatorUtils";
+import { generateColorUtility } from "../utils/generator";
 
 /**
  * Generate text-color utility classes

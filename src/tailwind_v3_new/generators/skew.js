@@ -1,4 +1,4 @@
-import { generateNegativeSupportedUtility } from "./utils/generatorUtils";
+import { generateNegativeSupportedUtility } from "../utils/generator";
 
 /**
  * Generate skew transform utility classes

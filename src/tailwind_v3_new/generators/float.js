@@ -1,5 +1,5 @@
 import { generateCssString } from "../utils/index";
-import { generateSimpleUtility } from "./utils/generatorUtils";
+import { generateSimpleUtility } from "../utils/generator";
 
 /**
  * Generate float utility classes

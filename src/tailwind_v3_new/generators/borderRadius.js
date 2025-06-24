@@ -1,5 +1,5 @@
 import { generateCssString } from "../utils/index";
-import { generateCustomUtility } from "./utils/generatorUtils";
+import { generateCustomUtility } from "../utils/generator";
 
 /**
  * Generate border radius utilities

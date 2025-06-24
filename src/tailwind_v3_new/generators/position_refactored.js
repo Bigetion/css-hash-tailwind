@@ -9,10 +9,10 @@ export default function generator(configOptions = {}) {
   // Create a value map for position options
   const valueMap = {
     static: "static",
-    fixed: "fixed",
+    fixed: "fixed", 
     absolute: "absolute",
     relative: "relative",
-    sticky: "sticky",
+    sticky: "sticky"
   };
 
   return generateSimpleUtility({
@@ -20,7 +20,6 @@ export default function generator(configOptions = {}) {
     cssProperty: "position",
     utilityPrefix: "", // Empty prefix since we use the position value directly as class name
     valueMap,
-    variantKey: "position",
-    useHyphen: false, // Don't use hyphen between prefix and key for position
+    variantKey: "position"
   });
 }

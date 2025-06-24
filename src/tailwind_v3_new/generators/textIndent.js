@@ -1,4 +1,4 @@
-import { generateNegativeSupportedUtility } from "./utils/generatorUtils";
+import { generateNegativeSupportedUtility } from "../utils/generator";
 
 /**
  * Generates CSS utility classes for text-indent with support for negative values

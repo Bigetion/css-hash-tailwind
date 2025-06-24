@@ -1,7 +1,7 @@
 import {
   generateColorUtility,
   generateSimpleUtility,
-} from "./utils/generatorUtils";
+} from "../utils/generator";
 
 /**
  * Generates CSS utility classes for text-decoration-color with opacity support

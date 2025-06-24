@@ -1,4 +1,4 @@
-import { generateCssString } from "../../utils/index";
+import { generateCssString } from "./index";
 
 /**
  * Generate a simple property-value CSS utility

@@ -1,7 +1,7 @@
 import {
   generateColorUtility,
   generateSimpleUtility,
-} from "./utils/generatorUtils";
+} from "../utils/generator";
 
 /**
  * Generate stroke utility classes for SVG elements

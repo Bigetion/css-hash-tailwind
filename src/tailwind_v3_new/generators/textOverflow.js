@@ -1,7 +1,7 @@
 import {
   generateSimpleUtility,
   generateCustomUtility,
-} from "./utils/generatorUtils";
+} from "../utils/generator";
 
 /**
  * Generates CSS utility classes for text overflow handling
