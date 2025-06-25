@@ -1,7 +1,12 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {}, vars = {} } = configOptions;
+  const {
+    prefix: globalPrefix,
+    variants = {},
+    theme = {},
+    vars = {},
+  } = configOptions;
 
   const prefix = `${globalPrefix}saturate`;
   const basePrefix = prefix.replace(globalPrefix, "");

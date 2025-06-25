@@ -1,7 +1,12 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {}, vars={} } = configOptions;
+  const {
+    prefix: globalPrefix,
+    variants = {},
+    theme = {},
+    vars = {},
+  } = configOptions;
 
   const { hueRotate = {} } = theme;
 
@@ -28,7 +33,10 @@ export default function generator(configOptions = {}) {
             ${vars.filter}
           }
           ${pseudoClass(
-            `${negativePrefix.replace(basePrefix, `backdrop-${basePrefix}`)}-${key}`,
+            `${negativePrefix.replace(
+              basePrefix,
+              `backdrop-${basePrefix}`
+            )}-${key}`,
             variants.hueRotate
           )} {
             --backdrop-hue-rotate: -${value};

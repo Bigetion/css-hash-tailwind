@@ -18,16 +18,16 @@ export default function generator(configOptions = {}) {
         scale,
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.scale)} {
-            --transform-scale-x: ${value} !important;
-            --transform-scale-y: ${value} !important;
+            --transform-scale-x: ${value};
+            --transform-scale-y: ${value};
             ${vars.transform}
           }
           ${pseudoClass(`${prefix}-x-${key}`, variants.scale)} {
-            --transform-scale-x: ${value} !important;
+            --transform-scale-x: ${value};
             ${vars.transform}
           }
           ${pseudoClass(`${prefix}-y-${key}`, variants.scale)} {
-            --transform-scale-y: ${value} !important;
+            --transform-scale-y: ${value};
             ${vars.transform}
           }
         `

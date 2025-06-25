@@ -25,11 +25,11 @@ export default function generator(configOptions = {}) {
         }
         return `
           ${pseudoClass(`${prefix}-x-${key}`, variants.skew)} {
-            --transform-skew-x: ${value} !important;
+            --transform-skew-x: ${value};
             ${vars.transform}
           }
           ${pseudoClass(`${prefix}-y-${key}`, variants.skew)} {
-            --transform-skew-y: ${value} !important;
+            --transform-skew-y: ${value};
             ${vars.transform}
           }
         `;

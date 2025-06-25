@@ -25,11 +25,11 @@ export default function generator(configOptions = {}) {
         }
         return `
           ${pseudoClass(`${prefix}-x-${key}`, variants.translate)} {
-            --transform-translate-x: ${value} !important;
+            --transform-translate-x: ${value};
             ${vars.transform}
           }
           ${pseudoClass(`${prefix}-y-${key}`, variants.translate)} {
-            --transform-translate-y: ${value} !important;
+            --transform-translate-y: ${value};
             ${vars.transform}
           }
         `;

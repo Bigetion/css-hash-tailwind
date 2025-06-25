@@ -25,7 +25,7 @@ export default function generator(configOptions = {}) {
         }
         return `
           ${pseudoClass(`${prefix}-${key}`, variants.rotate)} {
-            --transform-rotate: ${value} !important;
+            --transform-rotate: ${value};
             ${vars.transform}
           }
         `;
