@@ -23,7 +23,7 @@ export default function TransformOrigin() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform origin-center rotate-45">
+                <div className="relative z-10 origin-center rotate-45">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -45,7 +45,7 @@ export default function TransformOrigin() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform origin-top-left rotate-12">
+                <div className="relative z-10 origin-top-left rotate-12">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -67,7 +67,7 @@ export default function TransformOrigin() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform origin-bottom -rotate-12">
+                <div className="relative z-10 origin-bottom -rotate-12">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"

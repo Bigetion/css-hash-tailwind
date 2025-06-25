@@ -1,7 +1,12 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const {
+    prefix: globalPrefix,
+    variants = {},
+    theme = {},
+    vars = {},
+  } = configOptions;
 
   const { rotate = {} } = theme;
 
@@ -21,6 +26,7 @@ export default function generator(configOptions = {}) {
         return `
           ${pseudoClass(`${prefix}-${key}`, variants.rotate)} {
             --transform-rotate: ${value} !important;
+            ${vars.transform}
           }
         `;
       });

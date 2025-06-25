@@ -83,7 +83,7 @@ export default function Position() {
       <PanelSection title="Fixed positioning elements">
         <div className="px-3">
           <div className="relative max-w-md mx-auto bg-white shadow-lg h-80 overflow-hidden ring-1 ring-slate-900 ring-opacity-5">
-            <div className="absolute top-0 left-0 right-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+            <div className="absolute top-0 left-0 right-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
               Contacts
             </div>
             <div className="overflow-auto flex flex-col divide-y h-80">
@@ -154,7 +154,7 @@ export default function Position() {
       <PanelSection title="Sticky">
         <div className="relative max-w-md mx-auto bg-white shadow-lg h-80 overflow-auto ring-1 ring-slate-900 ring-opacity-5 -my-px">
           <div className="relative">
-            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
               A
             </div>
             <div className="divide-y">
@@ -201,7 +201,7 @@ export default function Position() {
             </div>
           </div>
           <div className="relative">
-            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
               B
             </div>
             <div className="divide-y">
@@ -248,7 +248,7 @@ export default function Position() {
             </div>
           </div>
           <div className="relative">
-            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 filter backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
+            <div className="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 bg-slate-50 bg-opacity-90 backdrop-blur-sm ring-1 ring-slate-900 ring-opacity-10">
               C
             </div>
             <div className="divide-y">

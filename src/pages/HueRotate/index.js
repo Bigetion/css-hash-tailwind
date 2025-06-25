@@ -15,7 +15,7 @@ export default function HueRotate() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 hue-rotate-15
               </p>
-              <div className="relative filter hue-rotate-15">
+              <div className="relative hue-rotate-15">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -28,7 +28,7 @@ export default function HueRotate() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 hue-rotate-90
               </p>
-              <div className="relative filter hue-rotate-90">
+              <div className="relative hue-rotate-90">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -41,7 +41,7 @@ export default function HueRotate() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 hue-rotate-180
               </p>
-              <div className="relative filter hue-rotate-180">
+              <div className="relative hue-rotate-180">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -54,7 +54,7 @@ export default function HueRotate() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 -hue-rotate-60
               </p>
-              <div className="relative filter -hue-rotate-60">
+              <div className="relative -hue-rotate-60">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

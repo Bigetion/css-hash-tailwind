@@ -15,7 +15,7 @@ export default function Grayscale() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 grayscale-0
               </p>
-              <div className="relative filter grayscale-0">
+              <div className="relative grayscale-0">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -28,7 +28,7 @@ export default function Grayscale() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 grayscale
               </p>
-              <div className="relative filter grayscale">
+              <div className="relative grayscale">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

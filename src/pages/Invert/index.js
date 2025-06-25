@@ -15,7 +15,7 @@ export default function Invert() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 invert-0
               </p>
-              <div className="relative filter invert-0">
+              <div className="relative invert-0">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -28,7 +28,7 @@ export default function Invert() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 invert
               </p>
-              <div className="relative filter invert">
+              <div className="relative invert">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

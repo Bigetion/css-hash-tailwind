@@ -16,7 +16,7 @@ export default function BackdropBlur() {
                 backdrop-blur-sm
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-blur-sm h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-blur-sm h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"
@@ -30,7 +30,7 @@ export default function BackdropBlur() {
                 backdrop-blur-md
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-blur-md h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-blur-md h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"
@@ -44,7 +44,7 @@ export default function BackdropBlur() {
                 backdrop-blur-xl
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-blur-xl h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-blur-xl h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"

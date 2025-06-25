@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {} } = configOptions;
+  const { prefix: globalPrefix, variants = {}, vars = {} } = configOptions;
 
   const prefix = `${globalPrefix}origin`;
 
@@ -24,6 +24,7 @@ export default function generator(configOptions = {}) {
         (key, value) => `
           ${pseudoClass(`${prefix}-${key}`, variants.transformOrigin)} {
             transform-origin: ${value.replace("-", " ")} !important;
+            ${vars.transform}
           }
         `
       );

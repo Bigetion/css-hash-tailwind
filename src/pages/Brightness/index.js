@@ -15,7 +15,7 @@ export default function Brightness() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-50
               </p>
-              <div className="relative filter brightness-50">
+              <div className="relative brightness-50">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -28,7 +28,7 @@ export default function Brightness() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-100
               </p>
-              <div className="relative filter brightness-100">
+              <div className="relative brightness-100">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -41,7 +41,7 @@ export default function Brightness() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-125
               </p>
-              <div className="relative filter brightness-125">
+              <div className="relative brightness-125">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -54,7 +54,7 @@ export default function Brightness() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 brightness-200
               </p>
-              <div className="relative filter brightness-200">
+              <div className="relative brightness-200">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

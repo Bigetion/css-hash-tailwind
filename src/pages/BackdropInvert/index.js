@@ -16,7 +16,7 @@ export default function BackdropInvert() {
                 backdrop-invert-0
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-invert-0 h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-invert-0 h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"
@@ -30,7 +30,7 @@ export default function BackdropInvert() {
                 backdrop-invert
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"

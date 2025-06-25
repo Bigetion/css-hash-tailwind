@@ -23,7 +23,7 @@ export default function Skew() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform skew-y-0">
+                <div className="relative z-10 skew-y-0">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -45,7 +45,7 @@ export default function Skew() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform skew-y-3">
+                <div className="relative z-10 skew-y-3">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -67,7 +67,7 @@ export default function Skew() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform skew-y-6">
+                <div className="relative z-10 skew-y-6">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -89,7 +89,7 @@ export default function Skew() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform skew-y-12">
+                <div className="relative z-10 skew-y-12">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"

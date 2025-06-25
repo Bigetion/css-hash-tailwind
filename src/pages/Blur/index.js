@@ -15,7 +15,7 @@ export default function Blur() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 blur-none
               </p>
-              <div className="relative filter blur-none">
+              <div className="relative blur-none">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -28,7 +28,7 @@ export default function Blur() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 blur-sm
               </p>
-              <div className="relative filter blur-sm">
+              <div className="relative blur-sm">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -41,7 +41,7 @@ export default function Blur() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 blur-lg
               </p>
-              <div className="relative filter blur-lg">
+              <div className="relative blur-lg">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -54,7 +54,7 @@ export default function Blur() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 blur-2xl
               </p>
-              <div className="relative filter blur-2xl">
+              <div className="relative blur-2xl">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

@@ -16,7 +16,7 @@ export default function BackdropOpacity() {
                 backdrop-opacity-10
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-opacity-10 backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-opacity-10 backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"
@@ -30,7 +30,7 @@ export default function BackdropOpacity() {
                 backdrop-opacity-60
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-opacity-60 backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-opacity-60 backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"
@@ -44,7 +44,7 @@ export default function BackdropOpacity() {
                 backdrop-opacity-95
               </p>
               <div className="relative">
-                <div className="absolute inset-6 filter backdrop-opacity-95 backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
+                <div className="absolute inset-6 backdrop-opacity-95 backdrop-invert h-20 w-20 bg-white bg-opacity-30" />
                 <img
                   alt=""
                   className="w-32 h-32 object-cover rounded-lg shadow-xl"

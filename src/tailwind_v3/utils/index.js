@@ -58,6 +58,7 @@ function getConfigOptions(options = {}, pluginKeys = []) {
 
   return {
     prefix: "",
+    ...defaultConfigOptions,
     ...options,
     variants: newVariants,
     theme: newTheme,

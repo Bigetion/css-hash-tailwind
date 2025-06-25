@@ -15,7 +15,7 @@ export default function Sepia() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 sepia-0
               </p>
-              <div className="relative filter sepia-0">
+              <div className="relative sepia-0">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -28,7 +28,7 @@ export default function Sepia() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 sepia
               </p>
-              <div className="relative filter sepia">
+              <div className="relative sepia">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

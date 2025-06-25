@@ -23,7 +23,7 @@ export default function Scale() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform scale-75">
+                <div className="relative z-10 scale-75">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -45,7 +45,7 @@ export default function Scale() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform scale-100">
+                <div className="relative z-10 scale-100">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -67,7 +67,7 @@ export default function Scale() {
                     src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80"
                   />
                 </div>
-                <div className="relative z-10 transform scale-125">
+                <div className="relative z-10 scale-125">
                   <img
                     alt=""
                     className="w-24 h-24 object-cover rounded-lg shadow-xl"

@@ -15,7 +15,7 @@ export default function Contrast() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 contrast-50
               </p>
-              <div className="relative filter contrast-50">
+              <div className="relative contrast-50">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -28,7 +28,7 @@ export default function Contrast() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 contrast-100
               </p>
-              <div className="relative filter contrast-100">
+              <div className="relative contrast-100">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -41,7 +41,7 @@ export default function Contrast() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 contrast-125
               </p>
-              <div className="relative filter contrast-125">
+              <div className="relative contrast-125">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"
@@ -54,7 +54,7 @@ export default function Contrast() {
               <p className="font-medium text-sm text-slate-500 font-mono text-center mb-3">
                 contrast-200
               </p>
-              <div className="relative filter contrast-200">
+              <div className="relative contrast-200">
                 <img
                   alt=""
                   className="w-24 h-24 object-cover rounded-lg shadow-xl"

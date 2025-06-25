@@ -1,7 +1,7 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const { prefix: globalPrefix, variants = {}, theme = {}, vars = {} } = configOptions;
 
   const prefix = `${globalPrefix}brightness`;
   const basePrefix = prefix.replace(globalPrefix, "");
@@ -14,13 +14,15 @@ export default function generator(configOptions = {}) {
         const key = keyTmp.toLowerCase() !== "default" ? `-${keyTmp}` : "";
         return `
           ${pseudoClass(`${prefix}${key}`, variants.brightness)} {
-            --brightness: brightness(${value}) !important;
+            --brightness: ${value};
+            ${vars.filter}
           }
           ${pseudoClass(
             `${prefix.replace(basePrefix, `backdrop-${basePrefix}`)}${key}`,
             variants.brightness
           )} {
-            --backdrop-brightness: brightness(${value}) !important;
+            --backdrop-brightness: ${value};
+            ${vars.backdropFilter}
           }
         `;
       });

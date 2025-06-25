@@ -1,7 +1,12 @@
 import { generateCssString } from "../utils/index";
 
 export default function generator(configOptions = {}) {
-  const { prefix: globalPrefix, variants = {}, theme = {} } = configOptions;
+  const {
+    prefix: globalPrefix,
+    variants = {},
+    theme = {},
+    vars = {},
+  } = configOptions;
 
   const { skew = {} } = theme;
 
@@ -21,9 +26,11 @@ export default function generator(configOptions = {}) {
         return `
           ${pseudoClass(`${prefix}-x-${key}`, variants.skew)} {
             --transform-skew-x: ${value} !important;
+            ${vars.transform}
           }
           ${pseudoClass(`${prefix}-y-${key}`, variants.skew)} {
             --transform-skew-y: ${value} !important;
+            ${vars.transform}
           }
         `;
       });
